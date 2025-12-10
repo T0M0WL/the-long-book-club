@@ -219,6 +219,226 @@ export const books: Book[] = [
         genre: 'Science Fiction',
         description: 'Set on the desert planet Arrakis, Dune is the story of the boy Paul Atreides, who would become the mysterious man known as Muad\'Dib. He would avenge the traitorous plot against his noble family.',
         affiliateLink: 'https://www.audible.com/pd/Dune-Audiobook/B002V1ORRO'
+    },
+    {
+        id: '21',
+        title: 'The Pillars of the Earth',
+        author: 'Ken Follett',
+        coverUrl: 'https://covers.openlibrary.org/b/isbn/9780451166890-L.jpg',
+        length: '40h 55m',
+        lengthHours: 40.9,
+        genre: 'Historical Fiction',
+        description: 'A spellbinding epic tale of ambition, anarchy, and absolute power set against the sprawling medieval canvas of twelfth-century England.',
+        affiliateLink: 'https://www.audible.com/pd/The-Pillars-of-the-Earth-Audiobook/B0032NVMKK'
+    },
+    {
+        id: '22',
+        title: 'War and Peace',
+        author: 'Leo Tolstoy',
+        coverUrl: 'https://covers.openlibrary.org/b/isbn/9780199232765-L.jpg',
+        length: '61h 8m',
+        lengthHours: 61.1,
+        genre: 'Classic',
+        description: 'Tolstoy\'s epic masterpiece that intertwines the lives of private and public individuals during the time of the Napoleonic wars.',
+        affiliateLink: 'https://www.audible.com/pd/War-and-Peace-Audiobook/B002V8K6E0'
+    },
+    {
+        id: '23',
+        title: 'The Name of the Wind',
+        author: 'Patrick Rothfuss',
+        coverUrl: 'https://covers.openlibrary.org/b/isbn/9780756404741-L.jpg',
+        length: '28h',
+        lengthHours: 28,
+        genre: 'Fantasy',
+        description: 'I have stolen princesses back from sleeping barrow kings. I burned down the town of Trebon. I have spent the night with Felurian and left with both my sanity and my life.',
+        affiliateLink: 'https://www.audible.com/pd/The-Name-of-the-Wind-Audiobook/B002UZMLXM'
+    },
+    {
+        id: '24',
+        title: 'Shantaram',
+        author: 'Gregory David Roberts',
+        coverUrl: 'https://covers.openlibrary.org/b/isbn/9780312330538-L.jpg',
+        length: '43h',
+        lengthHours: 43,
+        genre: 'Fiction',
+        description: 'A novel of high adventure, deep love, and unforgettable characters, set in the underbelly of contemporary Bombay.',
+        affiliateLink: 'https://www.audible.com/pd/Shantaram-Audiobook/B00GT12A52'
+    },
+    {
+        id: '25',
+        title: 'The Goldfinch',
+        author: 'Donna Tartt',
+        coverUrl: 'https://covers.openlibrary.org/b/isbn/9780316055437-L.jpg',
+        length: '32h 24m',
+        lengthHours: 32.4,
+        genre: 'Fiction',
+        description: 'A young New Yorker grieving his mother\'s death is pulled into a gritty underworld of art and wealth.',
+        affiliateLink: 'https://www.audible.com/pd/The-Goldfinch-Audiobook/B00F2MHG1G'
+    },
+    {
+        id: '26',
+        title: 'A Little Life',
+        author: 'Hanya Yanagihara',
+        coverUrl: 'https://covers.openlibrary.org/b/isbn/9780385539253-L.jpg',
+        length: '32h 51m',
+        lengthHours: 32.8,
+        genre: 'Fiction',
+        description: 'A profound and powerful story of brotherly love and the limits of human endurance.',
+        affiliateLink: 'https://www.audible.com/pd/A-Little-Life-Audiobook/B015D585HU'
+    },
+    {
+        id: '27',
+        title: 'Cryptonomicon',
+        author: 'Neal Stephenson',
+        coverUrl: 'https://covers.openlibrary.org/b/isbn/9780380973460-L.jpg',
+        length: '42h 53m',
+        lengthHours: 42.9,
+        genre: 'Science Fiction',
+        description: 'A tour de force of code-breaking, WWII espionage, and modern computing.',
+        affiliateLink: 'https://www.audible.com/pd/Cryptonomicon-Audiobook/B002V0K3C2'
+    },
+    {
+        id: '28',
+        title: 'Crime and Punishment',
+        author: 'Fyodor Dostoevsky',
+        coverUrl: 'https://covers.openlibrary.org/b/isbn/9780140449136-L.jpg',
+        length: '26h 11m',
+        lengthHours: 26.2,
+        genre: 'Classic',
+        description: 'Raskolnikov, an impoverished student, formulates a plan to kill an unscrupulous pawnbroker for her cash.',
+        affiliateLink: 'https://www.audible.com/pd/Crime-and-Punishment-Audiobook/B002V8L5Y4'
+    },
+    {
+        id: '29',
+        title: 'American Gods',
+        author: 'Neil Gaiman',
+        coverUrl: 'https://covers.openlibrary.org/b/isbn/9780380973651-L.jpg',
+        length: '19h 40m',
+        lengthHours: 19.7,
+        genre: 'Fantasy',
+        description: 'Shadow Moon is released from prison and recruited by the mysterious Mr. Wednesday.',
+        affiliateLink: 'https://www.audible.com/pd/American-Gods-The-Tenth-Anniversary-Edition-Audiobook/B0055274U2'
+    },
+    {
+        id: '30',
+        title: 'Anna Karenina',
+        author: 'Leo Tolstoy',
+        coverUrl: 'https://covers.openlibrary.org/b/isbn/9780140449174-L.jpg',
+        length: '35h 35m',
+        lengthHours: 35.6,
+        genre: 'Classic',
+        description: 'A complex novel of families, romance, and Russian society in the 19th century.',
+        affiliateLink: 'https://www.audible.com/pd/Anna-Karenina-Audiobook/B01F9EZS1C'
+    },
+    {
+        id: '31',
+        title: 'Don Quixote',
+        author: 'Miguel de Cervantes',
+        coverUrl: 'https://covers.openlibrary.org/b/isbn/9780060934347-L.jpg',
+        length: '39h 42m',
+        lengthHours: 39.7,
+        genre: 'Classic',
+        description: 'The adventures of a noble (but deluded) knight and his faithful squire, Sancho Panza.',
+        affiliateLink: 'https://www.audible.com/pd/Don-Quixote-Audiobook/B004G7Q8E8'
+    },
+    {
+        id: '32',
+        title: 'The Brothers Karamazov',
+        author: 'Fyodor Dostoevsky',
+        coverUrl: 'https://covers.openlibrary.org/b/isbn/9780374528379-L.jpg',
+        length: '37h 5m',
+        lengthHours: 37.1,
+        genre: 'Classic',
+        description: 'A passionate philosophical novel that enters deeply into the ethical debates of God, free will, and morality.',
+        affiliateLink: 'https://www.audible.com/pd/The-Brothers-Karamazov-Audiobook/B004D8G69Y'
+    },
+    {
+        id: '33',
+        title: 'Steve Jobs',
+        author: 'Walter Isaacson',
+        coverUrl: 'https://covers.openlibrary.org/b/isbn/9781451648539-L.jpg',
+        length: '25h 18m',
+        lengthHours: 25.3,
+        genre: 'Biography',
+        description: 'The exclusive biography of Steve Jobs. Based on more than forty interviews with Jobs conducted over two years.',
+        affiliateLink: 'https://www.audible.com/pd/Steve-Jobs-Audiobook/B005V0Q5BO'
+    },
+    {
+        id: '34',
+        title: 'Titan',
+        author: 'Ron Chernow',
+        coverUrl: 'https://covers.openlibrary.org/b/isbn/9781400077304-L.jpg',
+        length: '35h',
+        lengthHours: 35,
+        genre: 'Biography',
+        description: 'The Life of John D. Rockefeller, Sr. A detailed portrait of the ruthless industrialist and generous philanthropist.',
+        affiliateLink: 'https://www.audible.com/pd/Titan-Audiobook/B003V0V1R0'
+    },
+    {
+        id: '35',
+        title: 'The Rise and Fall of the Third Reich',
+        author: 'William L. Shirer',
+        coverUrl: 'https://covers.openlibrary.org/b/isbn/9781451651683-L.jpg',
+        length: '57h 11m',
+        lengthHours: 57.2,
+        genre: 'History',
+        description: 'A history of Nazi Germany. One of the most important historical works of the 20th century.',
+        affiliateLink: 'https://www.audible.com/pd/The-Rise-and-Fall-of-the-Third-Reich-Audiobook/B003V1B8A0'
+    },
+    {
+        id: '36',
+        title: 'Outlander',
+        author: 'Diana Gabaldon',
+        coverUrl: 'https://covers.openlibrary.org/b/isbn/9780440212560-L.jpg',
+        length: '32h 38m',
+        lengthHours: 32.6,
+        genre: 'Historical Fiction',
+        description: 'Claire Randall is a British combat nurse who is mysteriously swept back in time to 1743 Scotland.',
+        affiliateLink: 'https://www.audible.com/pd/Outlander-Audiobook/B002V1LB08'
+    },
+    {
+        id: '37',
+        title: 'Middlemarch',
+        author: 'George Eliot',
+        coverUrl: 'https://covers.openlibrary.org/b/isbn/9780140430066-L.jpg',
+        length: '32h',
+        lengthHours: 32,
+        genre: 'Classic',
+        description: 'A study of provincial life in the town of Middlemarch, exploring the status of women, the nature of marriage, and religion.',
+        affiliateLink: 'https://www.audible.com/pd/Middlemarch-Audiobook/B003V1L8A0'
+    },
+    {
+        id: '38',
+        title: 'Jonathan Strange & Mr Norrell',
+        author: 'Susanna Clarke',
+        coverUrl: 'https://covers.openlibrary.org/b/isbn/9781582344164-L.jpg',
+        length: '32h 30m',
+        lengthHours: 32.5,
+        genre: 'Fantasy',
+        description: 'In the midst of the Napoleonic Wars in 1806, most people believe magic to have long since disappeared from England - until the reclusive Mr Norrell reveals his powers.',
+        affiliateLink: 'https://www.audible.com/pd/Jonathan-Strange-Mr-Norrell-Audiobook/B003V1L8A0'
+    },
+    {
+        id: '39',
+        title: 'Bleak House',
+        author: 'Charles Dickens',
+        coverUrl: 'https://covers.openlibrary.org/b/isbn/9780140430639-L.jpg',
+        length: '35h',
+        lengthHours: 35,
+        genre: 'Classic',
+        description: 'A satire of the English judicial system, centered on the endless legal case of Jarndyce and Jarndyce.',
+        affiliateLink: 'https://www.audible.com/pd/Bleak-House-Audiobook/B003V1L8A0'
+    },
+    {
+        id: '40',
+        title: 'Gone with the Wind',
+        author: 'Margaret Mitchell',
+        coverUrl: 'https://covers.openlibrary.org/b/isbn/9780446365383-L.jpg',
+        length: '49h 7m',
+        lengthHours: 49.1,
+        genre: 'Historical Fiction',
+        description: 'The epic tale of Scarlett O\'Hara and the American South during the Civil War and Reconstruction.',
+        affiliateLink: 'https://www.audible.com/pd/Gone-with-the-Wind-Audiobook/B003V1L8A0'
     }
 ];
 
