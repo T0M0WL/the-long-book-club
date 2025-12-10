@@ -208,6 +208,17 @@ export const books: Book[] = [
         genre: 'Classic',
         description: 'David Copperfield is the story of a young man\'s adventures on his journey from an unhappy and impoverished childhood to the discovery of his vocation as a successful novelist.',
         affiliateLink: 'https://www.audible.com/pd/David-Copperfield-Audiobook/B01E9O31VI'
+    },
+    {
+        id: '20',
+        title: 'Dune',
+        author: 'Frank Herbert',
+        coverUrl: '/covers/dune.jpg',
+        length: '21h 2m',
+        lengthHours: 21.0,
+        genre: 'Science Fiction',
+        description: 'Set on the desert planet Arrakis, Dune is the story of the boy Paul Atreides, who would become the mysterious man known as Muad\'Dib. He would avenge the traitorous plot against his noble family.',
+        affiliateLink: 'https://www.audible.com/pd/Dune-Audiobook/B002V1ORRO'
     }
 ];
 
