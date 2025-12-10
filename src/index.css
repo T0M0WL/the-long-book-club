@@ -1,39 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap');
+
 :root {
-  --color-bg: #0f172a;
-  --color-surface: #1e293b;
-  --color-surface-hover: #334155;
-  --color-primary: #818cf8;
-  --color-primary-hover: #6366f1;
-  --color-text: #f1f5f9;
-  --color-text-muted: #94a3b8;
-  --color-accent: #38bdf8;
-  
-  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-glow: 0 0 20px rgba(129, 140, 248, 0.15);
+  /* Light Mode Palette */
+  --color-bg: #f5f2eb;
+  /* Darker, richer cream/parchment */
+  --color-surface: #ffffff;
+  --color-primary: #d97706;
+  /* Warm amber/brown for "classic book" feel */
+  --color-primary-hover: #b45309;
+  --color-text: #1f2937;
+  /* Dark gray for readability */
+  --color-text-muted: #6b7280;
+  --color-accent: #8b5cf6;
+  /* Kept purple for subtle accents, or change to match */
+  --color-border: rgba(0, 0, 0, 0.08);
+
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Instrument Serif', serif;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-glow: 0 0 15px rgba(217, 119, 6, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  /* Seamess "Ultra Fine Grain" Paper Texture */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  color: var(--color-text);
+  line-height: 1.5;
   min-width: 320px;
   min-height: 100vh;
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  font-family: var(--font-family);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 #root {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 2rem 2rem 2rem;
   text-align: center;
 }
 
@@ -42,14 +55,21 @@ button {
   transition: all 0.2s ease;
 }
 
-h1, h2, h3, h4 {
-  color: var(--color-text);
-  font-weight: 700;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  color: #111827;
   line-height: 1.1;
 }
 
+/* Link Resets */
 a {
-  color: var(--color-primary);
+  color: inherit;
   text-decoration: none;
   transition: color 0.2s;
 }

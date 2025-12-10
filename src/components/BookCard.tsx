@@ -1,5 +1,5 @@
 import type { Book } from '../data/books';
-import { FaClock, FaBookOpen } from 'react-icons/fa';
+import { FaClock } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 interface BookCardProps {
@@ -29,7 +29,7 @@ export const BookCard = ({ book }: BookCardProps) => {
                 e.currentTarget.style.boxShadow = 'var(--shadow-md)';
             }}
         >
-            <Link to={`/book/${book.id}`} style={{ display: 'block', position: 'relative', paddingTop: '100%', color: 'inherit' }}>
+            <Link to={`/book/${book.id}`} style={{ display: 'block', position: 'relative', paddingTop: '160%', color: 'inherit' }}>
                 <img
                     src={book.coverUrl}
                     alt={book.title}
@@ -44,20 +44,25 @@ export const BookCard = ({ book }: BookCardProps) => {
                 />
                 <div style={{
                     position: 'absolute',
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    padding: '0.5rem',
-                    background: 'rgba(0,0,0,0.8)',
+                    bottom: '1rem',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    padding: '0.5rem 1.5rem',
+                    background: '#8b5cf6', // Bright purple from visual
+                    border: '2px solid #fff',
+                    borderRadius: '0.5rem',
                     color: '#fff',
-                    fontSize: '0.75rem',
+                    fontSize: '1rem',
+                    fontWeight: 800,
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '0.25rem',
-                    backdropFilter: 'blur(4px)'
+                    gap: '0.5rem',
+                    boxShadow: '0 4px 6px rgba(0,0,0,0.2)',
+                    whiteSpace: 'nowrap',
+                    zIndex: 2
                 }}>
-                    <FaClock size={12} color="var(--color-accent)" />
-                    <span style={{ fontWeight: 600 }}>{book.length}</span>
+                    <FaClock size={16} />
+                    <span>{book.length}</span>
                 </div>
             </Link>
 
@@ -76,7 +81,9 @@ export const BookCard = ({ book }: BookCardProps) => {
                     <h3 style={{
                         fontSize: '1.125rem',
                         marginBottom: '0.25rem',
-                        lineHeight: 1.3
+                        lineHeight: 1.3,
+                        fontFamily: 'var(--font-body)',
+                        fontWeight: 700
                     }}>
                         {book.title}
                     </h3>
@@ -123,7 +130,7 @@ export const BookCard = ({ book }: BookCardProps) => {
                     onMouseEnter={e => e.currentTarget.style.backgroundColor = 'var(--color-primary-hover)'}
                     onMouseLeave={e => e.currentTarget.style.backgroundColor = 'var(--color-primary)'}
                 >
-                    <FaBookOpen />
+                    <img src="/audible-chevron.png" alt="" style={{ width: '21px', height: 'auto' }} />
                     Listen on Audible
                 </a>
             </div>

@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { books } from '../data/books';
-import { FaArrowLeft, FaClock, FaBookOpen } from 'react-icons/fa';
+import { FaArrowLeft, FaClock } from 'react-icons/fa';
 import { Helmet } from 'react-helmet-async';
 
 export const BookDetails = () => {
@@ -124,7 +124,7 @@ export const BookDetails = () => {
                         onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.02)'}
                         onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
                     >
-                        <FaBookOpen />
+                        <img src="/audible-chevron.png" alt="" style={{ width: '27px', height: 'auto' }} />
                         Listen on Audible
                     </a>
 

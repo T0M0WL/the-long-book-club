@@ -8,23 +8,28 @@ import { Helmet } from 'react-helmet-async';
 export const Home = () => {
     const [selectedGenre, setSelectedGenre] = useState('All');
     const [minLength, setMinLength] = useState(10);
-    const [sortBy, setSortBy] = useState('default');
+    const [sortBy, setSortBy] = useState<'default' | 'length-desc' | 'length-asc'>('default');
+    const [searchTerm, setSearchTerm] = useState('');
 
     const filteredBooks = useMemo(() => {
-        const result = books.filter(book => {
+        let result = books.filter(book => {
             const matchesGenre = selectedGenre === 'All' || book.genre === selectedGenre;
             const matchesLength = book.lengthHours >= minLength;
-            return matchesGenre && matchesLength;
+            const matchesSearch =
+                book.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                book.author.toLowerCase().includes(searchTerm.toLowerCase());
+
+            return matchesGenre && matchesLength && matchesSearch;
         });
 
-        if (sortBy === 'longest') {
-            return result.sort((a, b) => b.lengthHours - a.lengthHours);
-        } else if (sortBy === 'shortest') {
-            return result.sort((a, b) => a.lengthHours - b.lengthHours);
+        if (sortBy === 'length-desc') {
+            result.sort((a, b) => b.lengthHours - a.lengthHours);
+        } else if (sortBy === 'length-asc') {
+            result.sort((a, b) => a.lengthHours - b.lengthHours);
         }
 
         return result;
-    }, [selectedGenre, minLength, sortBy]);
+    }, [selectedGenre, minLength, sortBy, searchTerm]);
 
     return (
         <>
@@ -35,11 +40,13 @@ export const Home = () => {
             <Hero />
             <FilterBar
                 selectedGenre={selectedGenre}
-                onSelectGenre={setSelectedGenre}
+                onGenreChange={setSelectedGenre}
                 minLength={minLength}
-                onSetMinLength={setMinLength}
+                onLengthChange={setMinLength}
                 sortBy={sortBy}
                 onSortChange={setSortBy}
+                searchTerm={searchTerm}
+                onSearchChange={setSearchTerm}
             />
             <BookGrid books={filteredBooks} />
         </>

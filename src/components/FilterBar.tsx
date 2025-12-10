@@ -2,32 +2,62 @@ import { genres } from '../data/books';
 
 interface FilterBarProps {
     selectedGenre: string;
-    onSelectGenre: (genre: string) => void;
+    onGenreChange: (genre: string) => void;
     minLength: number;
-    onSetMinLength: (hours: number) => void;
-    sortBy: string;
-    onSortChange: (sort: string) => void;
+    onLengthChange: (length: number) => void;
+    sortBy: 'default' | 'length-desc' | 'length-asc';
+    onSortChange: (sort: 'default' | 'length-desc' | 'length-asc') => void;
+    searchTerm: string;
+    onSearchChange: (term: string) => void;
 }
 
-export const FilterBar = ({ selectedGenre, onSelectGenre, minLength, onSetMinLength, sortBy, onSortChange }: FilterBarProps) => {
+export const FilterBar = ({
+    selectedGenre,
+    onGenreChange,
+    minLength,
+    onLengthChange,
+    sortBy,
+    onSortChange,
+    searchTerm,
+    onSearchChange
+}: FilterBarProps) => {
     return (
         <div style={{
-            marginBottom: '2rem',
             display: 'flex',
             flexWrap: 'wrap',
-            gap: '1.5rem',
-            alignItems: 'center',
+            gap: '1rem',
             justifyContent: 'center',
-            background: 'rgba(255,255,255,0.03)',
+            marginBottom: '2rem',
             padding: '1rem',
-            borderRadius: '0.75rem',
-            border: '1px solid rgba(255,255,255,0.05)'
+            background: 'rgba(255,255,255,0.5)',
+            backdropFilter: 'blur(10px)',
+            borderRadius: '1rem',
+            border: '1px solid var(--color-border)'
         }}>
+            {/* Search Input */}
+            <div style={{ flex: '1 1 300px', minWidth: '200px' }}>
+                <input
+                    type="text"
+                    placeholder="Search by title or author..."
+                    value={searchTerm}
+                    onChange={(e) => onSearchChange(e.target.value)}
+                    style={{
+                        width: '100%',
+                        padding: '0.75rem',
+                        borderRadius: '0.5rem',
+                        border: '1px solid var(--color-border)',
+                        fontSize: '1rem',
+                        fontFamily: 'var(--font-body)',
+                        backgroundColor: 'var(--color-surface)',
+                        color: 'var(--color-text)'
+                    }}
+                />
+            </div>
 
             {/* Genre Filter */}
             <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', justifyContent: 'center' }}>
                 <button
-                    onClick={() => onSelectGenre('All')}
+                    onClick={() => onGenreChange('All')}
                     style={{
                         background: selectedGenre === 'All' ? 'var(--color-primary)' : 'rgba(255,255,255,0.1)',
                         color: selectedGenre === 'All' ? '#fff' : 'var(--color-text)',
@@ -42,14 +72,17 @@ export const FilterBar = ({ selectedGenre, onSelectGenre, minLength, onSetMinLen
                 {genres.map(genre => (
                     <button
                         key={genre}
-                        onClick={() => onSelectGenre(genre)}
+                        onClick={() => onGenreChange(genre)}
                         style={{
-                            background: selectedGenre === genre ? 'var(--color-primary)' : 'rgba(255,255,255,0.1)',
+                            background: selectedGenre === genre ? 'var(--color-primary)' : 'rgba(0,0,0,0.05)',
                             color: selectedGenre === genre ? '#fff' : 'var(--color-text)',
-                            border: 'none',
-                            borderRadius: '2rem',
+                            border: '1px solid var(--color-border)',
                             padding: '0.5rem 1rem',
-                            fontSize: '0.875rem'
+                            borderRadius: '2rem',
+                            cursor: 'pointer',
+                            fontSize: '0.875rem',
+                            fontWeight: 500,
+                            transition: 'all 0.2s'
                         }}
                     >
                         {genre}
@@ -57,48 +90,45 @@ export const FilterBar = ({ selectedGenre, onSelectGenre, minLength, onSetMinLen
                 ))}
             </div>
 
-            <div style={{ width: '1px', height: '2rem', background: 'rgba(255,255,255,0.1)' }} className="divider" />
-
             {/* Length Filter */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                <label style={{ fontSize: '0.875rem', color: 'var(--color-text-muted)' }}>
-                    Min Length: <strong style={{ color: 'var(--color-text)' }}>{minLength}h+</strong>
-                </label>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: 'rgba(0,0,0,0.05)', padding: '0.5rem 1rem', borderRadius: '0.5rem', border: '1px solid var(--color-border)' }}>
+                <span style={{ fontSize: '0.875rem', color: 'var(--color-text)', whiteSpace: 'nowrap' }}>
+                    Min Length: <strong>{minLength}h</strong>
+                </span>
                 <input
                     type="range"
                     min="10"
-                    max="100"
+                    max="60"
                     step="5"
                     value={minLength}
-                    onChange={(e) => onSetMinLength(Number(e.target.value))}
+                    onChange={(e) => onLengthChange(parseInt(e.target.value))}
                     style={{
-                        accentColor: 'var(--color-accent)',
-                        cursor: 'pointer'
+                        cursor: 'pointer',
+                        accentColor: 'var(--color-primary)'
                     }}
                 />
             </div>
 
-            <div style={{ width: '1px', height: '2rem', background: 'rgba(255,255,255,0.1)' }} className="divider" />
-
-            {/* Sort Control */}
-            <select
-                value={sortBy}
-                onChange={(e) => onSortChange(e.target.value)}
-                style={{
-                    background: 'rgba(255,255,255,0.1)',
-                    color: 'var(--color-text)',
-                    border: 'none',
-                    borderRadius: '0.5rem',
-                    padding: '0.5rem 1rem',
-                    fontSize: '0.875rem',
-                    cursor: 'pointer'
-                }}
-            >
-                <option value="default">Default</option>
-                <option value="longest">Longest First</option>
-                <option value="shortest">Shortest First</option>
-            </select>
+            {/* Sort Filter */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <select
+                    value={sortBy}
+                    onChange={(e) => onSortChange(e.target.value as 'default' | 'length-desc' | 'length-asc')}
+                    style={{
+                        padding: '0.5rem',
+                        borderRadius: '0.5rem',
+                        border: '1px solid var(--color-border)',
+                        backgroundColor: 'var(--color-surface)',
+                        color: 'var(--color-text)',
+                        fontSize: '0.875rem',
+                        cursor: 'pointer'
+                    }}
+                >
+                    <option value="default">Default Sort</option>
+                    <option value="length-desc">Longest First</option>
+                    <option value="length-asc">Shortest First</option>
+                </select>
+            </div>
         </div>
     );
 };
-
