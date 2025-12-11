@@ -407,3 +407,7 @@ export const books: Book[] = [
         description: 'In the midst of the Napoleonic Wars in 1806, most people believe magic to have long since disappeared from England - until the reclusive Mr Norrell reveals his powers.',
         affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B0DFCVV8LB?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
     },
+    }
+];
+
+export const genres = Array.from(new Set(books.map(b => b.genre))).sort();
