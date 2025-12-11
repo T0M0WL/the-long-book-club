@@ -418,3 +418,7 @@ export const books: Book[] = [
         description: 'A satire of the English judicial system, centered on the endless legal case of Jarndyce and Jarndyce.',
         affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B079LPF5YN?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
     },
+    }
+];
+
+export const genres = Array.from(new Set(books.map(b => b.genre))).sort();
