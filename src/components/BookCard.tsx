@@ -29,7 +29,7 @@ export const BookCard = ({ book }: BookCardProps) => {
                 e.currentTarget.style.boxShadow = 'var(--shadow-md)';
             }}
         >
-            <Link to={`/book/${book.id}`} style={{ display: 'block', position: 'relative', paddingTop: '160%', color: 'inherit' }}>
+            <Link to={`/book/${book.id}`} style={{ display: 'block', position: 'relative', paddingTop: '100%', color: 'inherit' }}>
                 <img
                     src={book.coverUrl}
                     alt={book.title}
