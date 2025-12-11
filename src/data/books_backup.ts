@@ -20,7 +20,7 @@ export const books: Book[] = [
         lengthHours: 60,
         genre: 'Classic',
         description: 'Introducing one of the most famous characters in literature, Jean Valjean—the noble peasant imprisoned for stealing a loaf of bread.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B004FK8S3C?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B002V8K70S?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
     },
     {
         id: '11',
@@ -31,7 +31,7 @@ export const books: Book[] = [
         lengthHours: 44.9,
         genre: 'Horror',
         description: 'The story follows the experiences of seven children as they are terrorized by an evil entity that exploits the fears of its victims to disguise itself while hunting its prey.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B01H0JQSGS?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B019WPM4ZM?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
     },
     {
         id: '12',
@@ -42,7 +42,7 @@ export const books: Book[] = [
         lengthHours: 34.4,
         genre: 'Science Fiction',
         description: 'On an entirely normal, beautiful fall day in Chester\'s Mill, Maine, the town is inexplicably and suddenly sealed off from the rest of the world by an invisible force field.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B0032NVMKK?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B002V8HA30?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
     },
     {
         id: '13',
@@ -53,7 +53,7 @@ export const books: Book[] = [
         lengthHours: 45.6,
         genre: 'Fantasy',
         description: 'Roshar is a world of stone and storms. Uncanny tempests of incredible power sweep across the rocky terrain so frequently that they have shaped ecology and civilization alike.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B0052EFCH0?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B003ZWFO7E?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
     },
     {
         id: '14',
@@ -64,7 +64,7 @@ export const books: Book[] = [
         lengthHours: 36.8,
         genre: 'Western',
         description: 'A love story, an adventure, and an epic of the frontier, Lonesome Dove is the grandest novel ever written about the last defiant wilderness of America.',
-        affiliateLink: 'https://www.audible.co.uk/search?keywords=lonesome+dove&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B002V0Q86Q?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
     },
     {
         id: '2',
@@ -86,7 +86,7 @@ export const books: Book[] = [
         lengthHours: 47.8,
         genre: 'Horror',
         description: 'A patient escapes from a biological testing facility, unknowingly carrying a deadly weapon: a mutated strain of super-flu that will wipe out 99 percent of the world\'s population within a few weeks.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B008K1Z9S4?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B007R8W832?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
     },
     {
         id: '4',
@@ -163,7 +163,7 @@ export const books: Book[] = [
         lengthHours: 71.9,
         genre: 'Mystery',
         description: 'Stephen Fry presents a complete and unabridged collection of the stories of Sherlock Holmes.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B06X1BRZYC?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B06WLMWF2S?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
     },
     {
         id: '16',
@@ -218,7 +218,7 @@ export const books: Book[] = [
         lengthHours: 21.0,
         genre: 'Science Fiction',
         description: 'Set on the desert planet Arrakis, Dune is the story of the boy Paul Atreides, who would become the mysterious man known as Muad\'Dib. He would avenge the traitorous plot against his noble family.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B002SQ5UD6?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B002V1ORRO?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
     },
     {
         id: '21',
@@ -251,7 +251,7 @@ export const books: Book[] = [
         lengthHours: 28,
         genre: 'Fantasy',
         description: 'I have stolen princesses back from sleeping barrow kings. I burned down the town of Trebon. I have spent the night with Felurian and left with both my sanity and my life.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B007FGF3P4?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B002UZMLXM?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
     },
     {
         id: '24',
