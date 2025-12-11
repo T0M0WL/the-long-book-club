@@ -15,7 +15,7 @@ export const books: Book[] = [
         id: '15',
         title: 'Les Misérables',
         author: 'Victor Hugo',
-        coverUrl: '/covers/les-misrables.jpg',
+        coverUrl: '/covers/les-miserables.jpg',
         length: '60h',
         lengthHours: 60,
         genre: 'Classic',
