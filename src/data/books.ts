@@ -407,6 +407,27 @@ export const books: Book[] = [
         description: 'In the midst of the Napoleonic Wars in 1806, most people believe magic to have long since disappeared from England - until the reclusive Mr Norrell reveals his powers.',
         affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B0DFCVV8LB?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
     },
+    {
+        id: '39',
+        title: 'Bleak House',
+        author: 'Charles Dickens',
+        coverUrl: '/covers/bleak-house.jpg',
+        length: '35h',
+        lengthHours: 35,
+        genre: 'Classic',
+        description: 'A satire of the English judicial system, centered on the endless legal case of Jarndyce and Jarndyce.',
+        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B079LPF5YN?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+    },
+    {
+        id: '40',
+        title: 'Gone with the Wind',
+        author: 'Margaret Mitchell',
+        coverUrl: '/covers/gone-with-the-wind.jpg',
+        length: '49h 7m',
+        lengthHours: 49.1,
+        genre: 'Historical Fiction',
+        description: 'The epic tale of Scarlett O\'Hara and the American South during the Civil War and Reconstruction.',
+        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B082FPX77Y?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
     }
 ];
 
