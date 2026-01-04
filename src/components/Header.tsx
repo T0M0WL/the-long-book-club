@@ -1,39 +1,29 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export const Header = () => {
+    const { pathname } = useLocation();
+
+    // Hide global header on Home page because Hero has its own branding
+    if (pathname === '/') return null;
+
     return (
         <header style={{
+            padding: '2rem clamp(1.5rem, 5vw, 3rem)', // Mobile breathing room
+            marginBottom: '2rem',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center',
-            padding: '100px 1rem 2rem 1rem',
-            marginBottom: '2rem'
+            justifyContent: 'center'
         }}>
-            <Link to="/" style={{ display: 'block', textAlign: 'center', width: '100%' }}>
+            <Link to="/" style={{ display: 'block' }}>
                 <img
-                    src="/logo.png"
+                    src="/assets/lbc-logo-horiz.svg"
                     alt="The Long Book Club"
                     style={{
-                        maxWidth: '600px',
-                        width: '100%',
-                        height: 'auto',
-                        filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.1))'
+                        width: '100%', // Fills container (minus padding)
+                        maxWidth: '440px', // Caps at desktop size
+                        height: 'auto'
                     }}
                 />
-                {/* SEO-only invisible Title */}
-                <h1 style={{
-                    position: 'absolute',
-                    width: '1px',
-                    height: '1px',
-                    padding: 0,
-                    margin: -1,
-                    overflow: 'hidden',
-                    clip: 'rect(0, 0, 0, 0)',
-                    whiteSpace: 'nowrap',
-                    border: 0
-                }}>
-                    The Long Book Club
-                </h1>
             </Link>
         </header>
     );

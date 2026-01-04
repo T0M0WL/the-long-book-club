@@ -1,27 +1,64 @@
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
 :root {
-  /* Light Mode Palette */
-  --color-bg: #f5f2eb;
-  /* Darker, richer cream/parchment */
+  /* 
+     OFFICIAL BRAND PALETTE 
+     Nicknames provided by User (Tom)
+  */
+  --color-brand-coral: #ff6b4a;
+  /* Primary Action */
+  --color-brand-sage: #cbd6ab;
+  /* Secondary/Accent */
+  --color-brand-forrest: #2c5143;
+  /* Dark/Contrast */
+  --color-brand-cloud: #eae8da;
+  /* Background/Surface */
+  --color-brand-slate: #353d3d;
+  /* Text/Dark accents */
+
+  /* Functional Mapping */
+  --color-bg: var(--color-brand-cloud);
+  /* Was cream/parchment */
   --color-surface: #ffffff;
-  --color-primary: #d97706;
-  /* Warm amber/brown for "classic book" feel */
-  --color-primary-hover: #b45309;
-  --color-text: #1f2937;
-  /* Dark gray for readability */
+  /* Cards remain white for contrast, or use Cloud if preferred? keeping white for now */
+
+  --color-primary: var(--color-brand-coral);
+  --color-primary-hover: #e55a3b;
+  /* Slightly darker coral */
+
+  --color-text: var(--color-brand-slate);
+  /* Main text */
   --color-text-muted: #6b7280;
-  --color-accent: #8b5cf6;
-  /* Kept purple for subtle accents, or change to match */
-  --color-border: rgba(0, 0, 0, 0.08);
+  /* Keep gray for now, or mix Slate with opacity? */
+
+  --color-accent: var(--color-brand-sage);
+  --color-highlight: var(--color-brand-forrest);
+
+  --color-border: rgba(53, 61, 61, 0.1);
+  /* Slate with low opacity */
 
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
   --font-heading: 'Instrument Serif', serif;
+  --font-serif-accent: 'Lora', serif;
 
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-glow: 0 0 15px rgba(217, 119, 6, 0.3);
+  --shadow-glow: 0 0 15px rgba(255, 107, 74, 0.3);
+  /* Coral Glow */
+}
+
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.5'/%3E%3C/svg%3E");
 }
 
 * {
@@ -46,10 +83,15 @@ body {
 
 #root {
   width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.page-container {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 2rem 2rem 2rem;
-  text-align: center;
 }
 
 button {
@@ -58,15 +100,23 @@ button {
 }
 
 h1,
-h2,
 h3,
 h4,
 h5,
 h6 {
   font-family: var(--font-heading);
   font-weight: 400;
-  color: #111827;
+  color: var(--color-brand-forrest);
+  /* Use Forrest for headings */
   line-height: 1.1;
+}
+
+h2 {
+  font-family: var(--font-serif-accent);
+  font-size: clamp(1.4rem, 3vw, 1.6rem);
+  font-weight: 400;
+  color: var(--color-brand-forrest);
+  line-height: 1.3;
 }
 
 /* Link Resets */
@@ -93,6 +143,20 @@ a:hover {
   border-radius: 4px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-text-muted);
+/* Footer Logo */
+.footer-logo {
+  height: 120px;
+  width: auto;
+  margin-bottom: 1.5rem;
+  /* Tint to Cloud (#eae8da): Invert to white, then subtle sepia/warmth */
+  filter: brightness(0) saturate(100%) invert(94%) sepia(10%) saturate(229%) hue-rotate(7deg) brightness(105%) contrast(89%);
+  transition: margin 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .footer-logo {
+    margin-top: 2rem;
+    margin-bottom: 6rem;
+    /* Increased padding for mobile */
+  }
 }

@@ -19,7 +19,7 @@ export const PrivacyPolicy: React.FC = () => {
             </h1>
 
             <section style={{ marginBottom: '2.5rem' }}>
-                <h2 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: 'var(--color-primary)' }}>Amazon Affiliate Disclosure</h2>
+                <h2>Amazon Affiliate Disclosure</h2>
                 <p style={{ lineHeight: '1.7', marginBottom: '1rem' }}>
                     The Long Book Club is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com and Amazon.co.uk.
                 </p>
@@ -29,7 +29,7 @@ export const PrivacyPolicy: React.FC = () => {
             </section>
 
             <section style={{ marginBottom: '2.5rem' }}>
-                <h2 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: 'var(--color-primary)' }}>Audible & Subscriptions</h2>
+                <h2>Audible & Subscriptions</h2>
                 <p style={{ lineHeight: '1.7' }}>
                     We promote Audible memberships and audiobooks. We may receive a fixed "bounty" commission if you sign up for a free trial or paid membership through our links. This comes at no additional cost to you and helps support the site.
                 </p>

@@ -1,3 +1,5 @@
+import { reviews } from './reviews';
+
 export interface Book {
     id: string;
     title: string;
@@ -7,12 +9,17 @@ export interface Book {
     lengthHours: number; // for sorting/filtering
     genre: string;
     description: string;
+    curatorNote?: string; // "Why this is the best..." section
+    curatorTitle?: string; // Optional: Overrides the default "Why this is the best..." header
     affiliateLink: string;
+    affiliateLinkUS?: string;
+    relatedBookIds?: string[];
 }
 
-export const books: Book[] = [
+const baseBooks: Book[] = [
     {
         id: '15',
+        relatedBookIds: ['75', '6', '19', '39', '71', '72', '73', '37', '74', '70', '31', '10'],
         title: 'Les Misérables',
         author: 'Victor Hugo',
         coverUrl: '/covers/les-miserables.jpg',
@@ -20,10 +27,12 @@ export const books: Book[] = [
         lengthHours: 60,
         genre: 'Classic',
         description: 'Introducing one of the most famous characters in literature, Jean Valjean—the noble peasant imprisoned for stealing a loaf of bread.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B00WKWJW5A?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B00WKWJW5A?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B07VT6WPNM?tag=thelongbookcl-20'
     },
     {
         id: '11',
+        relatedBookIds: ['3', '12', '7'],
         title: 'It',
         author: 'Stephen King',
         coverUrl: '/covers/it.jpg',
@@ -31,10 +40,12 @@ export const books: Book[] = [
         lengthHours: 44.9,
         genre: 'Horror',
         description: 'The story follows the experiences of seven children as they are terrorized by an evil entity that exploits the fears of its victims to disguise itself while hunting its prey.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B01H0IF7MA?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B01H0IF7MA?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B01H0IH01Q?tag=thelongbookcl-20'
     },
     {
         id: '12',
+        relatedBookIds: ['11', '3', '7'],
         title: 'Under the Dome',
         author: 'Stephen King',
         coverUrl: '/covers/under-the-dome.jpg',
@@ -42,10 +53,11 @@ export const books: Book[] = [
         lengthHours: 34.4,
         genre: 'Science Fiction',
         description: 'On an entirely normal, beautiful fall day in Chester\'s Mill, Maine, the town is inexplicably and suddenly sealed off from the rest of the world by an invisible force field.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B0030MK9LU?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0030MK9LU?tag=thelongbookclub-21'
     },
     {
         id: '13',
+        relatedBookIds: ['48', '49', '50', '57', '58', '59', '45', '46', '47', '9', '51', '52', '53', '54', '41', '42', '43', '44', '23', '55', '56', '38', '29'],
         title: 'The Way of Kings',
         author: 'Brandon Sanderson',
         coverUrl: '/covers/the-way-of-kings.jpg',
@@ -53,10 +65,12 @@ export const books: Book[] = [
         lengthHours: 45.6,
         genre: 'Fantasy',
         description: 'Roshar is a world of stone and storms. Uncanny tempests of incredible power sweep across the rocky terrain so frequently that they have shaped ecology and civilization alike.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B0052TNVN2?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0052TNVN2?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B005EG4CYA?tag=thelongbookcl-20'
     },
     {
         id: '2',
+        relatedBookIds: ['4', '18', '34', '33', '81', '82', '84', '85', '16', '35'],
         title: 'The Power Broker',
         author: 'Robert A. Caro',
         coverUrl: '/covers/the-power-broker.jpg',
@@ -64,10 +78,12 @@ export const books: Book[] = [
         lengthHours: 66.1,
         genre: 'Biography',
         description: 'The story of Robert Moses and the fall of New York. A masterpiece of modern reporting.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B0DKG7DCG5?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0DKG7DCG5?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0DKG75PBH?tag=thelongbookcl-20'
     },
     {
         id: '3',
+        relatedBookIds: ['11', '12', '7'],
         title: 'The Stand',
         author: 'Stephen King',
         coverUrl: '/covers/the-stand.jpg',
@@ -75,10 +91,12 @@ export const books: Book[] = [
         lengthHours: 47.8,
         genre: 'Horror',
         description: 'A patient escapes from a biological testing facility, unknowingly carrying a deadly weapon: a mutated strain of super-flu that will wipe out 99 percent of the world\'s population within a few weeks.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B008MZT1V4?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B008MZT1V4?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B008MTA66E?tag=thelongbookcl-20'
     },
     {
         id: '4',
+        relatedBookIds: ['18', '34', '2', '33', '81', '82', '84', '85', '16', '35'],
         title: 'Hamilton',
         author: 'Ron Chernow',
         coverUrl: '/covers/hamilton.jpg',
@@ -86,10 +104,12 @@ export const books: Book[] = [
         lengthHours: 36,
         genre: 'Biography',
         description: 'The biography that inspired the hit musical. A sweeping look at the life of Alexander Hamilton.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B077DS3W25?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B077DS3W25?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B077D7S5DP?tag=thelongbookcl-20'
     },
     {
         id: '5',
+        relatedBookIds: ['25', '26', '90', '96', '17', '24', '89', '76', '78'],
         title: 'Infinite Jest',
         author: 'David Foster Wallace',
         coverUrl: '/covers/infinite-jest.jpg',
@@ -97,10 +117,12 @@ export const books: Book[] = [
         lengthHours: 56.2,
         genre: 'Fiction',
         description: 'A gargantuan, mind-altering comedy about the Pursuit of Happiness in America.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B07L8KNKDG?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B07L8KNKDG?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0CZ4N145R?tag=thelongbookcl-20'
     },
     {
         id: '6',
+        relatedBookIds: ['15', '75', '19', '39', '71', '72', '73', '37', '74', '70', '31', '10'],
         title: 'The Count of Monte Cristo',
         author: 'Alexandre Dumas',
         coverUrl: '/covers/the-count-of-monte-cristo.jpg',
@@ -108,10 +130,12 @@ export const books: Book[] = [
         lengthHours: 52.7,
         genre: 'Classic',
         description: 'Thrown in prison for a crime he has not committed, Edmond Dantes is confined to the grim fortress of If. There he learns of a great hoard of treasure hidden on the Isle of Monte Cristo.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B008QZBHPI?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B008QZBHPI?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B005GG1APM?tag=thelongbookcl-20'
     },
     {
         id: '7',
+        relatedBookIds: ['11', '3', '12'],
         title: '11/22/63',
         author: 'Stephen King',
         coverUrl: '/covers/11-22-63.jpg',
@@ -119,10 +143,12 @@ export const books: Book[] = [
         lengthHours: 30.6,
         genre: 'Thiller',
         description: 'Life can turn on a dime—or miss it, but what if you could change it all?',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B0064P650E?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0064P650E?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0064I1KGA?tag=thelongbookcl-20'
     },
     {
         id: '8',
+        relatedBookIds: ['20', '68', '69', '60', '61', '63', '65', '66', '27', '64', '67'],
         title: 'Atlas Shrugged',
         author: 'Ayn Rand',
         coverUrl: '/covers/atlas-shrugged.jpg',
@@ -130,10 +156,12 @@ export const books: Book[] = [
         lengthHours: 63,
         genre: 'Fiction',
         description: 'Who is John Galt? When he says that he will stop the motor of the world, is he a destroyer or a liberator?',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B009T9SYQK?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B009T9SYQK?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B001MXQ7AQ?tag=thelongbookcl-20'
     },
     {
         id: '9',
+        relatedBookIds: ['51', '52', '53', '54', '45', '46', '47', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '23', '55', '56', '38', '29'],
         title: 'A Game of Thrones',
         author: 'George R.R. Martin',
         coverUrl: '/covers/a-game-of-thrones.jpg',
@@ -141,21 +169,27 @@ export const books: Book[] = [
         lengthHours: 33.7,
         genre: 'Fantasy',
         description: 'Summers span decades. Winter can last a lifetime. And the struggle for the Iron Throne has begun.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B005CB5HTG?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B005CB5HTG?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B005C7QQ2M?tag=thelongbookcl-20'
     },
     {
         id: '10',
+        relatedBookIds: ['15', '75', '6', '19', '39', '71', '72', '73', '37', '74', '70', '31'],
         title: 'Sherlock Holmes: The Definitive Collection',
         author: 'Arthur Conan Doyle',
         coverUrl: '/covers/sherlock-holmes-the-definitive-collection.jpg',
         length: '71h 57m',
         lengthHours: 71.9,
         genre: 'Mystery',
+
+
         description: 'Stephen Fry presents a complete and unabridged collection of the stories of Sherlock Holmes.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B06X3XG5Y6?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B06X3XG5Y6?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B06VWQTBZ9?tag=thelongbookcl-20'
     },
     {
         id: '16',
+        relatedBookIds: ['2', '4', '18', '34', '33', '81', '82', '84', '85', '35'],
         title: 'Team of Rivals',
         author: 'Doris Kearns Goodwin',
         coverUrl: '/covers/team-of-rivals.jpg',
@@ -163,10 +197,12 @@ export const books: Book[] = [
         lengthHours: 41.5,
         genre: 'Biography',
         description: 'The monumental history of Abraham Lincoln and his cabinet. A masterpiece of political biography.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B093TBNFWK?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B093TBNFWK?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B093TC2K3D?tag=thelongbookcl-20'
     },
     {
         id: '17',
+        relatedBookIds: ['5', '25', '26', '90', '96', '24', '89', '76', '78'],
         title: '1Q84',
         author: 'Haruki Murakami',
         coverUrl: '/covers/1q84.jpg',
@@ -174,10 +210,12 @@ export const books: Book[] = [
         lengthHours: 46.8,
         genre: 'Fantasy',
         description: 'A young woman named Aomame follows a taxi driver\'s enigmatic suggestion and begins to notice puzzling discrepancies in the world around her.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B0060MI0T0?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0060MI0T0?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0060C2CEE?tag=thelongbookcl-20'
     },
     {
         id: '18',
+        relatedBookIds: ['4', '34', '2', '33', '81', '82', '84', '85', '16', '35'],
         title: 'Grant',
         author: 'Ron Chernow',
         coverUrl: '/covers/grant.jpg',
@@ -185,10 +223,11 @@ export const books: Book[] = [
         lengthHours: 48,
         genre: 'Biography',
         description: 'The definitive biography of Ulysses S. Grant, confirming his stature as one of history\'s greatest generals and presidents.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B07WV5K96L?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B07WV5K96L?tag=thelongbookclub-21'
     },
     {
         id: '19',
+        relatedBookIds: ['39', '71', '15', '75', '6', '72', '73', '37', '74', '70', '31', '10'],
         title: 'David Copperfield',
         author: 'Charles Dickens',
         coverUrl: '/covers/david-copperfield.jpg',
@@ -196,10 +235,12 @@ export const books: Book[] = [
         lengthHours: 36.5,
         genre: 'Classic',
         description: 'David Copperfield is the story of a young man\'s adventures on his journey from an unhappy and impoverished childhood to the discovery of his vocation as a successful novelist.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B0CQZ6P3K1?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0CQZ6P3K1?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0D4ZPDPGS?tag=thelongbookcl-20'
     },
     {
         id: '20',
+        relatedBookIds: ['68', '69', '60', '61', '63', '65', '66', '27', '64', '67', '8'],
         title: 'Dune',
         author: 'Frank Herbert',
         coverUrl: '/covers/dune.jpg',
@@ -207,10 +248,12 @@ export const books: Book[] = [
         lengthHours: 21.0,
         genre: 'Science Fiction',
         description: 'Set on the desert planet Arrakis, Dune is the story of the boy Paul Atreides, who would become the mysterious man known as Muad\'Dib. He would avenge the traitorous plot against his noble family.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B002SQ5UD6?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ5UD6?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B000R34YKC?tag=thelongbookcl-20'
     },
     {
         id: '21',
+        relatedBookIds: ['40', '36'],
         title: 'The Pillars of the Earth',
         author: 'Ken Follett',
         coverUrl: '/covers/the-pillars-of-the-earth.jpg',
@@ -218,10 +261,12 @@ export const books: Book[] = [
         lengthHours: 40.9,
         genre: 'Historical Fiction',
         description: 'A spellbinding epic tale of ambition, anarchy, and absolute power set against the sprawling medieval canvas of twelfth-century England.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B0047VIL0O?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0047VIL0O?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B00852WNUU?tag=thelongbookcl-20'
     },
     {
         id: '22',
+        relatedBookIds: ['30', '28', '32', '77'],
         title: 'War and Peace',
         author: 'Leo Tolstoy',
         coverUrl: '/covers/war-and-peace.jpg',
@@ -229,10 +274,12 @@ export const books: Book[] = [
         lengthHours: 61.1,
         genre: 'Classic',
         description: 'Tolstoy\'s epic masterpiece that intertwines the lives of private and public individuals during the time of the Napoleonic wars.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B095V1SM5H?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B095V1SM5H?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0007OB4TU?tag=thelongbookcl-20'
     },
     {
         id: '23',
+        relatedBookIds: ['45', '46', '47', '9', '51', '52', '53', '54', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '55', '56', '38', '29'],
         title: 'The Name of the Wind',
         author: 'Patrick Rothfuss',
         coverUrl: '/covers/the-name-of-the-wind.jpg',
@@ -240,10 +287,12 @@ export const books: Book[] = [
         lengthHours: 28,
         genre: 'Fantasy',
         description: 'I have stolen princesses back from sleeping barrow kings. I burned down the town of Trebon. I have spent the night with Felurian and left with both my sanity and my life.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B007HOLTHU?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B007HOLTHU?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B007HI3HUI?tag=thelongbookcl-20'
     },
     {
         id: '24',
+        relatedBookIds: ['5', '25', '26', '90', '96', '17', '89', '76', '78'],
         title: 'Shantaram',
         author: 'Gregory David Roberts',
         coverUrl: '/covers/shantaram.jpg',
@@ -251,10 +300,12 @@ export const books: Book[] = [
         lengthHours: 43,
         genre: 'Fiction',
         description: 'A novel of high adventure, deep love, and unforgettable characters, set in the underbelly of contemporary Bombay.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B00KOIRNLW?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B00KOIRNLW?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B00KO77Z20?tag=thelongbookcl-20'
     },
     {
         id: '25',
+        relatedBookIds: ['5', '26', '90', '96', '17', '24', '89', '76', '78'],
         title: 'The Goldfinch',
         author: 'Donna Tartt',
         coverUrl: '/covers/the-goldfinch.jpg',
@@ -262,10 +313,12 @@ export const books: Book[] = [
         lengthHours: 32.4,
         genre: 'Fiction',
         description: 'A young New Yorker grieving his mother\'s death is pulled into a gritty underworld of art and wealth.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B00FR6TIQE?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B00FR6TIQE?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B08FD62LJM?tag=thelongbookcl-20'
     },
     {
         id: '26',
+        relatedBookIds: ['5', '25', '90', '96', '17', '24', '89', '76', '78'],
         title: 'A Little Life',
         author: 'Hanya Yanagihara',
         coverUrl: '/covers/a-little-life.jpg',
@@ -273,10 +326,12 @@ export const books: Book[] = [
         lengthHours: 32.8,
         genre: 'Fiction',
         description: 'A profound and powerful story of brotherly love and the limits of human endurance.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B0DT7DB8KL?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0DT7DB8KL?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0DT7F93TV?tag=thelongbookcl-20'
     },
     {
         id: '27',
+        relatedBookIds: ['65', '66', '20', '68', '69', '60', '61', '63', '64', '67', '8'],
         title: 'Cryptonomicon',
         author: 'Neal Stephenson',
         coverUrl: '/covers/cryptonomicon.jpg',
@@ -284,10 +339,12 @@ export const books: Book[] = [
         lengthHours: 42.9,
         genre: 'Science Fiction',
         description: 'A tour de force of code-breaking, WWII espionage, and modern computing.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B086WMM52D?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B086WMM52D?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B086WP1FW6?tag=thelongbookcl-20'
     },
     {
         id: '28',
+        relatedBookIds: ['32', '22', '30', '77'],
         title: 'Crime and Punishment',
         author: 'Fyodor Dostoevsky',
         coverUrl: '/covers/crime-and-punishment.jpg',
@@ -295,10 +352,12 @@ export const books: Book[] = [
         lengthHours: 26.2,
         genre: 'Classic',
         description: 'Raskolnikov, an impoverished student, formulates a plan to kill an unscrupulous pawnbroker for her cash.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B085F2N7KG?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B085F2N7KG?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B085F3LK3Z?tag=thelongbookcl-20'
     },
     {
         id: '29',
+        relatedBookIds: ['45', '46', '47', '9', '51', '52', '53', '54', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '23', '55', '56', '38'],
         title: 'American Gods',
         author: 'Neil Gaiman',
         coverUrl: '/covers/american-gods.jpg',
@@ -306,10 +365,12 @@ export const books: Book[] = [
         lengthHours: 19.7,
         genre: 'Fantasy',
         description: 'Shadow Moon is released from prison and recruited by the mysterious Mr. Wednesday.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B0080HPAK0?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0080HPAK0?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B00807NRJQ?tag=thelongbookcl-20'
     },
     {
         id: '30',
+        relatedBookIds: ['22', '28', '32', '77'],
         title: 'Anna Karenina',
         author: 'Leo Tolstoy',
         coverUrl: '/covers/anna-karenina.jpg',
@@ -317,10 +378,12 @@ export const books: Book[] = [
         lengthHours: 35.6,
         genre: 'Classic',
         description: 'A complex novel of families, romance, and Russian society in the 19th century.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B01FN8BL6A?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B01FN8BL6A?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B01FN887G2?tag=thelongbookcl-20'
     },
     {
         id: '31',
+        relatedBookIds: ['15', '75', '6', '19', '39', '71', '72', '73', '37', '74', '70', '10'],
         title: 'Don Quixote',
         author: 'Miguel de Cervantes',
         coverUrl: '/covers/don-quixote.jpg',
@@ -328,10 +391,12 @@ export const books: Book[] = [
         lengthHours: 39.7,
         genre: 'Classic',
         description: 'The adventures of a noble (but deluded) knight and his faithful squire, Sancho Panza.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B083JK2J89?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B083JK2J89?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0DFR4LCJM?tag=thelongbookcl-20'
     },
     {
         id: '32',
+        relatedBookIds: ['28', '22', '30', '77'],
         title: 'The Brothers Karamazov',
         author: 'Fyodor Dostoevsky',
         coverUrl: '/covers/the-brothers-karamazov.jpg',
@@ -339,10 +404,12 @@ export const books: Book[] = [
         lengthHours: 37.1,
         genre: 'Classic',
         description: 'A passionate philosophical novel that enters deeply into the ethical debates of God, free will, and morality.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B08YRWH6V3?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B08YRWH6V3?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0CKM2R2KF?tag=thelongbookcl-20'
     },
     {
         id: '33',
+        relatedBookIds: ['81', '82', '2', '4', '18', '34', '84', '85', '16', '35'],
         title: 'Steve Jobs',
         author: 'Walter Isaacson',
         coverUrl: '/covers/steve-jobs.jpg',
@@ -350,10 +417,12 @@ export const books: Book[] = [
         lengthHours: 25.3,
         genre: 'Biography',
         description: 'The exclusive biography of Steve Jobs. Based on more than forty interviews with Jobs conducted over two years.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B005Z267BO?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B005Z267BO?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B005YUDQ4S?tag=thelongbookcl-20'
     },
     {
         id: '34',
+        relatedBookIds: ['4', '18', '2', '33', '81', '82', '84', '85', '16', '35'],
         title: 'Titan',
         author: 'Ron Chernow',
         coverUrl: '/covers/titan.jpg',
@@ -361,10 +430,12 @@ export const books: Book[] = [
         lengthHours: 35,
         genre: 'Biography',
         description: 'The Life of John D. Rockefeller, Sr. A detailed portrait of the ruthless industrialist and generous philanthropist.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B00EE0TV20?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B00EE0TV20?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B00EDSLSBK?tag=thelongbookcl-20'
     },
     {
         id: '35',
+        relatedBookIds: ['2', '4', '18', '34', '33', '81', '82', '84', '85', '16'],
         title: 'The Rise and Fall of the Third Reich',
         author: 'William L. Shirer',
         coverUrl: '/covers/the-rise-and-fall-of-the-third-reich.jpg',
@@ -372,10 +443,12 @@ export const books: Book[] = [
         lengthHours: 57.2,
         genre: 'History',
         description: 'A history of Nazi Germany. One of the most important historical works of the 20th century.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B003W5VXPG?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B003W5VXPG?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B003X4R6GQ?tag=thelongbookcl-20'
     },
     {
         id: '36',
+        relatedBookIds: ['21', '40'],
         title: 'Outlander',
         author: 'Diana Gabaldon',
         coverUrl: '/covers/outlander.jpg',
@@ -383,10 +456,12 @@ export const books: Book[] = [
         lengthHours: 32.6,
         genre: 'Historical Fiction',
         description: 'Claire Randall is a British combat nurse who is mysteriously swept back in time to 1743 Scotland.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B08JGG6H1C?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B08JGG6H1C?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B08JFQFVC5?tag=thelongbookcl-20'
     },
     {
         id: '37',
+        relatedBookIds: ['15', '75', '6', '19', '39', '71', '72', '73', '74', '70', '31', '10'],
         title: 'Middlemarch',
         author: 'George Eliot',
         coverUrl: '/covers/middlemarch.jpg',
@@ -394,10 +469,12 @@ export const books: Book[] = [
         lengthHours: 32,
         genre: 'Classic',
         description: 'A study of provincial life in the town of Middlemarch, exploring the status of women, the nature of marriage, and religion.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B0030H21JS?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0030H21JS?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0030HF9E2?tag=thelongbookcl-20'
     },
     {
         id: '38',
+        relatedBookIds: ['45', '46', '47', '9', '51', '52', '53', '54', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '23', '55', '56', '29'],
         title: 'Jonathan Strange & Mr Norrell',
         author: 'Susanna Clarke',
         coverUrl: '/covers/jonathan-strange-and-mr-norrell.jpg',
@@ -405,10 +482,12 @@ export const books: Book[] = [
         lengthHours: 32.5,
         genre: 'Fantasy',
         description: 'In the midst of the Napoleonic Wars in 1806, most people believe magic to have long since disappeared from England - until the reclusive Mr Norrell reveals his powers.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B0DFCVV8LB?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0DFCVV8LB?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0DFCZ16X2?tag=thelongbookcl-20'
     },
     {
         id: '39',
+        relatedBookIds: ['19', '71', '15', '75', '6', '72', '73', '37', '74', '70', '31', '10'],
         title: 'Bleak House',
         author: 'Charles Dickens',
         coverUrl: '/covers/bleak-house.jpg',
@@ -416,10 +495,12 @@ export const books: Book[] = [
         lengthHours: 35,
         genre: 'Classic',
         description: 'A satire of the English judicial system, centered on the endless legal case of Jarndyce and Jarndyce.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B079LPF5YN?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B079LPF5YN?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B00005AAOV?tag=thelongbookcl-20'
     },
     {
         id: '40',
+        relatedBookIds: ['21', '36'],
         title: 'Gone with the Wind',
         author: 'Margaret Mitchell',
         coverUrl: '/covers/gone-with-the-wind.jpg',
@@ -427,8 +508,628 @@ export const books: Book[] = [
         lengthHours: 49.1,
         genre: 'Historical Fiction',
         description: 'The epic tale of Scarlett O\'Hara and the American South during the Civil War and Reconstruction.',
-        affiliateLink: 'https://www.amazon.co.uk/hz/audible/mlp/mfpdp/B082FPX77Y?actionCode=AMN30DFT1Bk06604291990WX&tag=thelongbookclub-21'
+        affiliateLink: 'https://www.amazon.co.uk/dp/B082FPX77Y?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0DW1LX95D?tag=thelongbookcl-20'
+    },
+    // NEW BOOKS START HERE
+    {
+        id: '41',
+        relatedBookIds: ['42', '43', '44', '45', '46', '47', '9', '51', '52', '53', '54', '13', '48', '49', '50', '57', '58', '59', '23', '55', '56', '38', '29'],
+        title: 'The Eye of the World',
+        author: 'Robert Jordan',
+        coverUrl: '/covers/the-eye-of-the-world.jpg',
+        length: '29h 57m',
+        lengthHours: 29.9,
+        genre: 'Fantasy',
+        description: 'The Wheel of Time turns. Ages come and go, leaving memories that become legend. Legend fades to myth, and even myth is long forgotten when the Age that gave it birth comes again.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ946A?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B00026WUO6?tag=thelongbookcl-20'
+    },
+    {
+        id: '42',
+        relatedBookIds: ['41', '43', '44', '45', '46', '47', '9', '51', '52', '53', '54', '13', '48', '49', '50', '57', '58', '59', '23', '55', '56', '38', '29'],
+        title: 'The Great Hunt',
+        author: 'Robert Jordan',
+        coverUrl: '/covers/the-great-hunt.jpg',
+        length: '26h 34m',
+        lengthHours: 26.5,
+        genre: 'Fantasy',
+        description: 'The hunt creates the hunter. The chase creates the pursuer. The Shadow continues to rise in this second volume of the epic Wheel of Time series.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ4T38?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B00026WUOG?tag=thelongbookcl-20'
+    },
+    {
+        id: '43',
+        relatedBookIds: ['41', '42', '44', '45', '46', '47', '9', '51', '52', '53', '54', '13', '48', '49', '50', '57', '58', '59', '23', '55', '56', '38', '29'],
+        title: 'The Dragon Reborn',
+        author: 'Robert Jordan',
+        coverUrl: '/covers/the-dragon-reborn.jpg',
+        length: '26h 4m',
+        lengthHours: 26.1,
+        genre: 'Fantasy',
+        description: 'Rand al\'Thor is the Dragon Reborn, but he does not yet know how to wield the One Power. He must strike at the Dark One\'s fortress, Sky Valley.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ1O0O?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0006IU3BC?tag=thelongbookcl-20'
+    },
+    {
+        id: '44',
+        relatedBookIds: ['41', '42', '43', '45', '46', '47', '9', '51', '52', '53', '54', '13', '48', '49', '50', '57', '58', '59', '23', '55', '56', '38', '29'],
+        title: 'The Shadow Rising',
+        author: 'Robert Jordan',
+        coverUrl: '/covers/the-shadow-rising.jpg',
+        length: '40h 57m',
+        lengthHours: 40.9,
+        genre: 'Fantasy',
+        description: 'The seals of Shayol Ghul are weakening. The Dark One is reaching out. The Shadow is rising to cover the world.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ5ZMC?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0006IU3BM?tag=thelongbookcl-20'
+    },
+    {
+        id: '45',
+        relatedBookIds: ['46', '47', '9', '51', '52', '53', '54', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '23', '55', '56', '38', '29'],
+        title: 'The Fellowship of the Ring',
+        author: 'J.R.R. Tolkien',
+        coverUrl: '/covers/the-fellowship-of-the-ring.jpg',
+        length: '19h 7m',
+        lengthHours: 19.1,
+        genre: 'Fantasy',
+        description: 'One Ring to rule them all, One Ring to find them, One Ring to bring them all and in the darkness bind them.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B002SQAXZG?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B098T84Y1N?tag=thelongbookcl-20'
+    },
+    {
+        id: '46',
+        relatedBookIds: ['45', '47', '9', '51', '52', '53', '54', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '23', '55', '56', '38', '29'],
+        title: 'The Two Towers',
+        author: 'J.R.R. Tolkien',
+        coverUrl: '/covers/the-two-towers.jpg',
+        length: '16h 44m',
+        lengthHours: 16.7,
+        genre: 'Fantasy',
+        description: 'The Fellowship is scattered. Some are preparing for war against the Dark Lord. Some are fighting the treachery of the wizard Saruman.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B002SQD0P6?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B098T8CFMD?tag=thelongbookcl-20'
+    },
+    {
+        id: '47',
+        relatedBookIds: ['45', '46', '9', '51', '52', '53', '54', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '23', '55', '56', '38', '29'],
+        title: 'The Return of the King',
+        author: 'J.R.R. Tolkien',
+        coverUrl: '/covers/the-return-of-the-king.jpg',
+        length: '18h 12m',
+        lengthHours: 18.2,
+        genre: 'Fantasy',
+        description: 'The armies of the Dark Lord are massing as his evil shadow spreads even wider. Men, Dwarves, Elves and Ents unite forces to do battle against the Dark.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ47B2?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B098T8RGF4?tag=thelongbookcl-20'
+    },
+    {
+        id: '48',
+        relatedBookIds: ['13', '49', '50', '57', '58', '59', '45', '46', '47', '9', '51', '52', '53', '54', '41', '42', '43', '44', '23', '55', '56', '38', '29'],
+        title: 'Words of Radiance',
+        author: 'Brandon Sanderson',
+        coverUrl: '/covers/words-of-radiance.jpg',
+        length: '48h 14m',
+        lengthHours: 48.2,
+        genre: 'Fantasy',
+        description: 'The Assassin in White has killed the Alethi king. Now he awaits the weeping of the world.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B00IN7Y5US?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B00IN5WM0K?tag=thelongbookcl-20'
+    },
+    {
+        id: '49',
+        relatedBookIds: ['13', '48', '50', '57', '58', '59', '45', '46', '47', '9', '51', '52', '53', '54', '41', '42', '43', '44', '23', '55', '56', '38', '29'],
+        title: 'Oathbringer',
+        author: 'Brandon Sanderson',
+        coverUrl: '/covers/oathbringer.jpg',
+        length: '55h 5m',
+        lengthHours: 55.1,
+        genre: 'Fantasy',
+        description: 'Dalinar Kholin’s Alethi armies won a fleeting victory at a terrible cost: The enemy Parshendi summoned the violent Everstorm.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B01N9YPONF?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B01N3B7RZC?tag=thelongbookcl-20'
+    },
+    {
+        id: '50',
+        relatedBookIds: ['13', '48', '49', '57', '58', '59', '45', '46', '47', '9', '51', '52', '53', '54', '41', '42', '43', '44', '23', '55', '56', '38', '29'],
+        title: 'Rhythm of War',
+        author: 'Brandon Sanderson',
+        coverUrl: '/covers/rhythm-of-war.jpg',
+        length: '57h 26m',
+        lengthHours: 57.4,
+        genre: 'Fantasy',
+        description: 'After forming a coalition of human resistance against the enemy invasion, Dalinar Kholin and his Knights Radiant have spent a year fighting a protracted, brutal war.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B082MM7CSY?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B082MLHB9M?tag=thelongbookcl-20'
+    },
+    {
+        id: '51',
+        relatedBookIds: ['9', '52', '53', '54', '45', '46', '47', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '23', '55', '56', '38', '29'],
+        title: 'A Clash of Kings',
+        author: 'George R.R. Martin',
+        coverUrl: '/covers/a-clash-of-kings.jpg',
+        length: '37h 16m',
+        lengthHours: 37.3,
+        genre: 'Fantasy',
+        description: 'Time is out of joint. The summer of peace and plenty, ten years long, is drawing to a close, and the harsh, chill winter approaches like an angry beast.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B005CB5ICW?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B005C8AZVY?tag=thelongbookcl-20'
+    },
+    {
+        id: '52',
+        relatedBookIds: ['9', '51', '53', '54', '45', '46', '47', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '23', '55', '56', '38', '29'],
+        title: 'A Storm of Swords',
+        author: 'George R.R. Martin',
+        coverUrl: '/covers/a-storm-of-swords.jpg',
+        length: '47h 34m',
+        lengthHours: 47.6,
+        genre: 'Fantasy',
+        description: 'The Seven Kingdoms are divided by revolt and blood feud. In the northern wastes, a horde of hungry, savage people steeped in the dark magic of the wilderness is poised to invade the Kingdom of the North.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B005G48XL8?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B005CCQNH0?tag=thelongbookcl-20'
+    },
+    {
+        id: '53',
+        relatedBookIds: ['9', '51', '52', '54', '45', '46', '47', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '23', '55', '56', '38', '29'],
+        title: 'A Feast for Crows',
+        author: 'George R.R. Martin',
+        coverUrl: '/covers/a-feast-for-crows.jpg',
+        length: '31h 10m',
+        lengthHours: 31.2,
+        genre: 'Fantasy',
+        description: 'It seems too good to be true. After centuries of bitter strife and fatal treachery, the seven powers dividing the land have decimated one another into an uneasy truce.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B006MWM378?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B006MPV7BS?tag=thelongbookcl-20'
+    },
+    {
+        id: '54',
+        relatedBookIds: ['9', '51', '52', '53', '45', '46', '47', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '23', '55', '56', '38', '29'],
+        title: 'A Dance with Dragons',
+        author: 'George R.R. Martin',
+        coverUrl: '/covers/a-dance-with-dragons.jpg',
+        length: '48h 55m',
+        lengthHours: 48.9,
+        genre: 'Fantasy',
+        description: 'In the aftermath of a colossal battle, the future of the Seven Kingdoms hangs in the balance.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B005CB5HGY?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B005C7QVY0?tag=thelongbookcl-20'
+    },
+    {
+        id: '55',
+        relatedBookIds: ['45', '46', '47', '9', '51', '52', '53', '54', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '23', '56', '38', '29'],
+        title: 'The Priory of the Orange Tree',
+        author: 'Samantha Shannon',
+        coverUrl: '/covers/the-priory-of-the-orange-tree.jpg',
+        length: '25h 52m',
+        lengthHours: 25.9,
+        genre: 'Fantasy',
+        description: 'A world divided. A queendom without an heir. An ancient enemy awakens.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B07NBX6QHV?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B07NBS2F36?tag=thelongbookcl-20'
+    },
+    {
+        id: '56',
+        relatedBookIds: ['45', '46', '47', '9', '51', '52', '53', '54', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '23', '55', '38', '29'],
+        title: 'Babel',
+        author: 'R.F. Kuang',
+        coverUrl: '/covers/babel.jpg',
+        length: '21h 38m',
+        lengthHours: 21.6,
+        genre: 'Fantasy',
+        description: 'Traduttore, traditore: An act of translation is always an act of betrayal.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0B3GKFF5S?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0B3G9JCKW?tag=thelongbookcl-20'
+    },
+    {
+        id: '57',
+        relatedBookIds: ['58', '59', '13', '48', '49', '50', '45', '46', '47', '9', '51', '52', '53', '54', '41', '42', '43', '44', '23', '55', '56', '38', '29'],
+        title: 'The Final Empire',
+        author: 'Brandon Sanderson',
+        coverUrl: '/covers/the-final-empire.jpg',
+        length: '24h 39m',
+        lengthHours: 24.7,
+        genre: 'Fantasy',
+        description: 'For a thousand years the ash fell and no flowers bloomed. For a thousand years the Skaa slaved in misery and lived in fear.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B004TASE4Q?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B00557U2II?tag=thelongbookcl-20'
+    },
+    {
+        id: '58',
+        relatedBookIds: ['57', '59', '13', '48', '49', '50', '45', '46', '47', '9', '51', '52', '53', '54', '41', '42', '43', '44', '23', '55', '56', '38', '29'],
+        title: 'The Well of Ascension',
+        author: 'Brandon Sanderson',
+        coverUrl: '/covers/the-well-of-ascension.jpg',
+        length: '27h 14m',
+        lengthHours: 27.2,
+        genre: 'Fantasy',
+        description: 'The impossible has been accomplished. The Lord Ruler – the man who held the world in his iron grip for a thousand years – is dead.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B004SUIL5O?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B005NDCIAE?tag=thelongbookcl-20'
+    },
+    {
+        id: '59',
+        relatedBookIds: ['57', '58', '13', '48', '49', '50', '45', '46', '47', '9', '51', '52', '53', '54', '41', '42', '43', '44', '23', '55', '56', '38', '29'],
+        title: 'The Hero of Ages',
+        author: 'Brandon Sanderson',
+        coverUrl: '/covers/the-hero-of-ages.jpg',
+        length: '26h 18m',
+        lengthHours: 26.3,
+        genre: 'Fantasy',
+        description: 'Who is the Hero of Ages? To end the Final Empire and restore freedom, Vin killed the Lord Ruler.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B004TASEWS?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B005NDD43O?tag=thelongbookcl-20'
+    },
+    {
+        id: '60',
+        relatedBookIds: ['61', '20', '68', '69', '63', '65', '66', '27', '64', '67', '8'],
+        title: 'Hyperion',
+        author: 'Dan Simmons',
+        coverUrl: '/covers/hyperion.jpg',
+        length: '20h 44m',
+        lengthHours: 20.7,
+        genre: 'Science Fiction',
+        description: 'On the world called Hyperion, beyond the law of the Hegemony of Man, there waits the creature called the Shrike.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ2SS6?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B001OC2W04?tag=thelongbookcl-20'
+    },
+    {
+        id: '61',
+        relatedBookIds: ['60', '20', '68', '69', '63', '65', '66', '27', '64', '67', '8'],
+        title: 'The Fall of Hyperion',
+        author: 'Dan Simmons',
+        coverUrl: '/covers/the-fall-of-hyperion.jpg',
+        length: '19h 54m',
+        lengthHours: 19.9,
+        genre: 'Science Fiction',
+        description: 'In the stunning continuation of the epic adventure begun in Hyperion, Simmons returns us to a far future resplendent with drama and invention.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B002SPV8VA?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B001OC2W0E?tag=thelongbookcl-20'
+    },
+    {
+        id: '62',
+        title: 'Pandora\'s Star',
+        author: 'Peter F. Hamilton',
+        coverUrl: '/covers/pandoras-star.jpg',
+        length: '37h 16m',
+        lengthHours: 37.3,
+        genre: 'Science Fiction',
+        description: 'The year is 2380. The Intersolar Commonwealth, a sphere of stars, contains more than six hundred worlds.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0041SYV5W?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B005NDFK6S?tag=thelongbookcl-20'
+    },
+    {
+        id: '63',
+        relatedBookIds: ['20', '68', '69', '60', '61', '65', '66', '27', '64', '67', '8'],
+        title: 'Judas Unchained',
+        author: 'Peter F. Hamilton',
+        coverUrl: '/covers/judas-unchained.jpg',
+        length: '41h 22m',
+        lengthHours: 41.4,
+        genre: 'Science Fiction',
+        description: 'In the far future, the Intersolar Commonwealth is under attack by the Primes, a hostile alien race.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0041T6398?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B005ND8542?tag=thelongbookcl-20'
+    },
+    {
+        id: '64',
+        relatedBookIds: ['20', '68', '69', '60', '61', '63', '65', '66', '27', '67', '8'],
+        title: 'Leviathan Wakes',
+        author: 'James S.A. Corey',
+        coverUrl: '/covers/leviathan-wakes.jpg',
+        length: '20h 56m',
+        lengthHours: 20.9,
+        genre: 'Science Fiction',
+        description: 'Humanity has colonized the solar system - Mars, the Moon, the Asteroid Belt and beyond - but the stars are still out of our reach.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B00PABWMLO?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B00P9W7LQA?tag=thelongbookcl-20'
+    },
+    {
+        id: '65',
+        relatedBookIds: ['27', '66', '20', '68', '69', '60', '61', '63', '64', '67', '8'],
+        title: 'Seveneves',
+        author: 'Neal Stephenson',
+        coverUrl: '/covers/seveneves.jpg',
+        length: '31h 55m',
+        lengthHours: 31.9,
+        genre: 'Science Fiction',
+        description: 'A catastrophic event renders the earth a ticking time bomb. In a feverish race against the inevitable, nations around the globe band together.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B00VWIN35S?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B00VVWBFM8?tag=thelongbookcl-20'
+    },
+    {
+        id: '66',
+        relatedBookIds: ['27', '65', '20', '68', '69', '60', '61', '63', '64', '67', '8'],
+        title: 'Anathem',
+        author: 'Neal Stephenson',
+        coverUrl: '/covers/anathem.jpg',
+        length: '32h 45m',
+        lengthHours: 32.8,
+        genre: 'Science Fiction',
+        description: 'In 1999, Neal Stephenson wrote Cryptonomicon, a novel about the "information age". In Anathem he gives us the "long now".',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B086WNLRX5?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B086WNY826?tag=thelongbookcl-20'
+    },
+    {
+        id: '67',
+        relatedBookIds: ['20', '68', '69', '60', '61', '63', '65', '66', '27', '64', '8'],
+        title: 'Stranger in a Strange Land',
+        author: 'Robert A. Heinlein',
+        coverUrl: '/covers/stranger-in-a-strange-land.jpg',
+        length: '16h 3m',
+        lengthHours: 16.1,
+        genre: 'Science Fiction',
+        description: 'Valentine Michael Smith is a human being raised on Mars, newly arrived on Earth.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B00AJQQMHK?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B00AJEV7T0?tag=thelongbookcl-20'
+    },
+    {
+        id: '68',
+        relatedBookIds: ['20', '69', '60', '61', '63', '65', '66', '27', '64', '67', '8'],
+        title: 'Dune Messiah',
+        author: 'Frank Herbert',
+        coverUrl: '/covers/dune-messiah.jpg',
+        length: '9h 7m',
+        lengthHours: 9.1,
+        genre: 'Science Fiction',
+        description: 'Paul Atreides, now the Emperor of the Known Universe, possesses more power than a single man was ever meant to wield.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B004V86KWA?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B000WS9ZHY?tag=thelongbookcl-20'
+    },
+    {
+        id: '69',
+        relatedBookIds: ['20', '68', '60', '61', '63', '65', '66', '27', '64', '67', '8'],
+        title: 'Children of Dune',
+        author: 'Frank Herbert',
+        coverUrl: '/covers/children-of-dune.jpg',
+        length: '19h 42m',
+        lengthHours: 19.7,
+        genre: 'Science Fiction',
+        description: 'The Children of Dune are twin siblings Leto and Ghanima Atreides, whose father, the Emperor Paul Muad\'Dib, disappeared in the desert wastelands.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B002SQDFGK?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0013O8X60?tag=thelongbookcl-20'
+    },
+    {
+        id: '70',
+        relatedBookIds: ['15', '75', '6', '19', '39', '71', '72', '73', '37', '74', '31', '10'],
+        title: 'Moby Dick',
+        author: 'Herman Melville',
+        coverUrl: '/covers/moby-dick.jpg',
+        length: '24h 23m',
+        lengthHours: 24.4,
+        genre: 'Classic',
+        description: 'Ishmael narrating the monomaniacal quest of Ahab, captain of the whaler Pequod, for revenge on the albino sperm whale Moby Dick.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B008QZAKDS?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B000OYDIVU?tag=thelongbookcl-20'
+    },
+    {
+        id: '71',
+        relatedBookIds: ['19', '39', '15', '75', '6', '72', '73', '37', '74', '70', '31', '10'],
+        title: 'Great Expectations',
+        author: 'Charles Dickens',
+        coverUrl: '/covers/great-expectations.jpg',
+        length: '18h 44m',
+        lengthHours: 18.7,
+        genre: 'Classic',
+        description: 'The story of the orphan Pip, writing his life from his early days of childhood until adulthood and trying to be a gentleman along the way.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ1CJW?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B005ZO8FGW?tag=thelongbookcl-20'
+    },
+    {
+        id: '72',
+        relatedBookIds: ['15', '75', '6', '19', '39', '71', '73', '37', '74', '70', '31', '10'],
+        title: 'Jane Eyre',
+        author: 'Charlotte Brontë',
+        coverUrl: '/covers/jane-eyre.jpg',
+        length: '19h 11m',
+        lengthHours: 19.2,
+        genre: 'Classic',
+        description: 'Jane Eyre is a young orphan being raised by Mrs. Reed, her cruel, wealthy aunt.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0D33S6NCJ?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B01COOQAPI?tag=thelongbookcl-20'
+    },
+    {
+        id: '73',
+        relatedBookIds: ['15', '75', '6', '19', '39', '71', '72', '37', '74', '70', '31', '10'],
+        title: 'Wuthering Heights',
+        author: 'Emily Brontë',
+        coverUrl: '/covers/wuthering-heights.jpg',
+        length: '14h 2m',
+        lengthHours: 14.0,
+        genre: 'Classic',
+        description: 'The story of the love between Heathcliff and Catherine Earnshaw which remains unresolved and destroys them and the people around them.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0FZMD9N16?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B076PP94DP?tag=thelongbookcl-20'
+    },
+    {
+        id: '74',
+        relatedBookIds: ['15', '75', '6', '19', '39', '71', '72', '73', '37', '70', '31', '10'],
+        title: 'Vanity Fair',
+        author: 'William Makepeace Thackeray',
+        coverUrl: '/covers/vanity-fair.jpg',
+        length: '31h 22m',
+        lengthHours: 31.4,
+        genre: 'Classic',
+        description: 'The novel follows the lives of Becky Sharp and Amelia Sedley amid their friends and families during and after the Napoleonic Wars.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B002SPWQIY?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B001SB91TQ?tag=thelongbookcl-20'
+    },
+    {
+        id: '75',
+        relatedBookIds: ['15', '6', '19', '39', '71', '72', '73', '37', '74', '70', '31', '10'],
+        title: 'The Hunchback of Notre-Dame',
+        author: 'Victor Hugo',
+        coverUrl: '/covers/the-hunchback-of-notre-dame.jpg',
+        length: '19h 2m',
+        lengthHours: 19.0,
+        genre: 'Classic',
+        description: 'The story is set in Paris in 1482 during the reign of Louis XI.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B096KX16MW?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0000547BL?tag=thelongbookcl-20'
+    },
+    {
+        id: '76',
+        relatedBookIds: ['5', '25', '26', '90', '96', '17', '24', '89', '78'],
+        title: 'Ulysses',
+        author: 'James Joyce',
+        coverUrl: '/covers/ulysses.jpg',
+        length: '27h 15m',
+        lengthHours: 27.3,
+        genre: 'Classic',
+        description: 'Ulysses chronicles the appointments and encounters of Leopold Bloom in Dublin in the course of an ordinary day, 16 June 1904.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B002SPWRW4?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B001DNNASW?tag=thelongbookcl-20'
+    },
+    {
+        id: '77',
+        relatedBookIds: ['22', '30', '28', '32'],
+        title: 'Doctor Zhivago',
+        author: 'Boris Pasternak',
+        coverUrl: '/covers/doctor-zhivago.jpg',
+        length: '21h 56m',
+        lengthHours: 22.0,
+        genre: 'Classic',
+        description: 'Doctor Zhivago is the story of the life and loves of a poet/physician during the turmoil of the Russian Revolution.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B005BEHDVY?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B005B51C74?tag=thelongbookcl-20'
+    },
+    {
+        id: '78',
+        relatedBookIds: ['5', '25', '26', '90', '96', '17', '24', '89', '76'],
+        title: 'The Magic Mountain',
+        author: 'Thomas Mann',
+        coverUrl: '/covers/the-magic-mountain.jpg',
+        length: '35h 15m',
+        lengthHours: 35.3,
+        genre: 'Classic',
+        description: 'Hans Castorp visits his cousin in a sanatorium in Davos and stays for seven years.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0BNNYM6KR?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B088FZL1JZ?tag=thelongbookcl-20'
+    },
+    {
+        id: '81',
+        relatedBookIds: ['33', '82', '2', '4', '18', '34', '84', '85', '16', '35'],
+        title: 'Leonardo da Vinci',
+        author: 'Walter Isaacson',
+        coverUrl: '/covers/leonardo-da-vinci.jpg',
+        length: '18h 35m',
+        lengthHours: 18.6,
+        genre: 'Biography',
+        description: 'Based on thousands of pages from Leonardo da Vinci\'s astonishing notebooks and new discoveries about his life and work.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B075ZG9NGL?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B075Z7YZBK?tag=thelongbookcl-20'
+    },
+    {
+        id: '82',
+        relatedBookIds: ['33', '81', '2', '4', '18', '34', '84', '85', '16', '35'],
+        title: 'Benjamin Franklin: An American Life',
+        author: 'Walter Isaacson',
+        coverUrl: '/covers/benjamin-franklin.jpg',
+        length: '20h 3m',
+        lengthHours: 20.0,
+        genre: 'Biography',
+        description: 'In this colorful and intimate narrative, Isaacson provides the full sweep of Franklin\'s amazing life.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B008CPXDFY?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B004VLETYM?tag=thelongbookcl-20'
+    },
+    {
+        id: '84',
+        relatedBookIds: ['85', '2', '4', '18', '34', '33', '81', '82', '16', '35'],
+        title: 'Peter the Great',
+        author: 'Robert K. Massie',
+        coverUrl: '/covers/peter-the-great.jpg',
+        length: '35h 27m',
+        lengthHours: 35.5,
+        genre: 'Biography',
+        description: 'Against the monumental canvas of seventeenth- and eighteenth-century Europe and Russia unfolds the magnificent story of Peter the Great.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0064P6HTS?tag=thelongbookclub-21'
+    },
+    {
+        id: '85',
+        relatedBookIds: ['84', '2', '4', '18', '34', '33', '81', '82', '16', '35'],
+        title: 'Catherine the Great',
+        author: 'Robert K. Massie',
+        coverUrl: '/covers/catherine-the-great.jpg',
+        length: '23h 24m',
+        lengthHours: 23.4,
+        genre: 'Biography',
+        description: 'The story of a German princess who became the Empress of all the Russias.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0064P6HTS?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0064I14FM?tag=thelongbookcl-20'
+    },
+    {
+        id: '87',
+        relatedBookIds: ['88'],
+        title: 'East of Eden',
+        author: 'John Steinbeck',
+        coverUrl: '/covers/east-of-eden.jpg',
+        length: '25h 32m',
+        lengthHours: 25.5,
+        genre: 'Fiction',
+        description: 'Set in the rich farmland of California\'s Salinas Valley, this sprawling and often brutal novel follows the intertwined destinies of two families.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B09N7P9M2K?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B09N7PZQRT?tag=thelongbookcl-20'
+    },
+    {
+        id: '88',
+        relatedBookIds: ['87'],
+        title: 'The Grapes of Wrath',
+        author: 'John Steinbeck',
+        coverUrl: '/covers/the-grapes-of-wrath.jpg',
+        length: '21h 10m',
+        lengthHours: 21.2,
+        genre: 'Fiction',
+        description: 'The Joads are driven from their homestead in Oklahoma and forced to travel west to the promised land of California.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B09N7R2B3S?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B09N7Q1H5N?tag=thelongbookcl-20'
+    },
+    {
+        id: '89',
+        relatedBookIds: ['5', '25', '26', '90', '96', '17', '24', '76', '78'],
+        title: 'Demon Copperhead',
+        author: 'Barbara Kingsolver',
+        coverUrl: '/covers/demon-copperhead.jpg',
+        length: '21h 3m',
+        lengthHours: 21.0,
+        genre: 'Fiction',
+        description: 'The story of a boy born in Appalachia to a teenaged single mother in a single-wide trailer.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0B2X4K4FW?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0B2X423CV?tag=thelongbookcl-20'
+    },
+    {
+        id: '90',
+        relatedBookIds: ['5', '25', '26', '96', '17', '24', '89', '76', '78'],
+        title: 'The Amazing Adventures of Kavalier & Clay',
+        author: 'Michael Chabon',
+        coverUrl: '/covers/the-amazing-adventures-of-kavalier-and-clay.jpg',
+        length: '26h 15m',
+        lengthHours: 26.3,
+        genre: 'Fiction',
+        description: 'Joe Kavalier, a young Jewish artist who has also been trained in the art of Houdini-esque escape, has just smuggled himself out of Nazi-occupied Prague.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B008AXA4LY?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B008ARPKNW?tag=thelongbookcl-20'
+    },
+    {
+        id: '96',
+        relatedBookIds: ['5', '25', '26', '90', '17', '24', '89', '76', '78'],
+        title: '2666',
+        author: 'Roberto Bolaño',
+        coverUrl: '/covers/2666.jpg',
+        length: '39h 15m',
+        lengthHours: 39.25,
+        genre: 'Fiction',
+        description: 'Composed of five parts, 2666 is a novel of such power that it has transformed the way we understand literature.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0D81JXQBW?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0D81HSP37?tag=thelongbookcl-20'
     }
 ];
+
+// Merge curator reviews from reviews.ts
+export const books: Book[] = baseBooks.map(book => {
+    const review = reviews[book.title];
+    return {
+        ...book,
+        ...(review ? review : {})
+    };
+});
 
 export const genres = Array.from(new Set(books.map(b => b.genre))).sort();

@@ -12,7 +12,7 @@ export const Home = () => {
     const [searchTerm, setSearchTerm] = useState('');
 
     const filteredBooks = useMemo(() => {
-        let result = books.filter(book => {
+        const result = books.filter(book => {
             const matchesGenre = selectedGenre === 'All' || book.genre === selectedGenre;
             const matchesLength = book.lengthHours >= minLength;
             const matchesSearch =
@@ -38,17 +38,20 @@ export const Home = () => {
                 <meta name="description" content="Discover the best long audiobooks to maximize your monthly credits. Curated selection of 40+ hour epics across all genres." />
             </Helmet>
             <Hero />
-            <FilterBar
-                selectedGenre={selectedGenre}
-                onGenreChange={setSelectedGenre}
-                minLength={minLength}
-                onLengthChange={setMinLength}
-                sortBy={sortBy}
-                onSortChange={setSortBy}
-                searchTerm={searchTerm}
-                onSearchChange={setSearchTerm}
-            />
-            <BookGrid books={filteredBooks} />
+            <div className="page-container">
+                <div id="scroll-target" style={{ scrollMarginTop: '2rem', height: 0 }} />
+                <FilterBar
+                    selectedGenre={selectedGenre}
+                    onGenreChange={setSelectedGenre}
+                    minLength={minLength}
+                    onLengthChange={setMinLength}
+                    sortBy={sortBy}
+                    onSortChange={setSortBy}
+                    searchTerm={searchTerm}
+                    onSearchChange={setSearchTerm}
+                />
+                <BookGrid books={filteredBooks} />
+            </div>
         </>
     );
 };
