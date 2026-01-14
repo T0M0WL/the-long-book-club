@@ -6,6 +6,21 @@
     <priority>1</priority>
   </url>
   <url>
+    <loc>https://thelongbookclub.com/collections</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/generator</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://thelongbookclub.com/privacy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
@@ -16,428 +31,613 @@
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/15</loc>
+    <loc>https://thelongbookclub.com/book/les-misrables-victor-hugo</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/11</loc>
+    <loc>https://thelongbookclub.com/book/it-stephen-king</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/12</loc>
+    <loc>https://thelongbookclub.com/book/under-the-dome-stephen-king</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/13</loc>
+    <loc>https://thelongbookclub.com/book/the-way-of-kings-brandon-sanderson</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/2</loc>
+    <loc>https://thelongbookclub.com/book/the-power-broker-robert-a-caro</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/3</loc>
+    <loc>https://thelongbookclub.com/book/the-stand-stephen-king</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/4</loc>
+    <loc>https://thelongbookclub.com/book/hamilton-ron-chernow</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/5</loc>
+    <loc>https://thelongbookclub.com/book/infinite-jest-david-foster-wallace</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/6</loc>
+    <loc>https://thelongbookclub.com/book/the-count-of-monte-cristo-alexandre-dumas</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/7</loc>
+    <loc>https://thelongbookclub.com/book/112263-stephen-king</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/8</loc>
+    <loc>https://thelongbookclub.com/book/atlas-shrugged-ayn-rand</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/9</loc>
+    <loc>https://thelongbookclub.com/book/a-game-of-thrones-george-rr-martin</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/10</loc>
+    <loc>https://thelongbookclub.com/book/sherlock-holmes-the-definitive-collection-arthur-conan-doyle</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/16</loc>
+    <loc>https://thelongbookclub.com/book/team-of-rivals-doris-kearns-goodwin</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/17</loc>
+    <loc>https://thelongbookclub.com/book/1q84-haruki-murakami</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/18</loc>
+    <loc>https://thelongbookclub.com/book/grant-ron-chernow</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/19</loc>
+    <loc>https://thelongbookclub.com/book/david-copperfield-charles-dickens</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/20</loc>
+    <loc>https://thelongbookclub.com/book/dune-frank-herbert</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/21</loc>
+    <loc>https://thelongbookclub.com/book/the-pillars-of-the-earth-ken-follett</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/22</loc>
+    <loc>https://thelongbookclub.com/book/war-and-peace-leo-tolstoy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/23</loc>
+    <loc>https://thelongbookclub.com/book/the-name-of-the-wind-patrick-rothfuss</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/24</loc>
+    <loc>https://thelongbookclub.com/book/shantaram-gregory-david-roberts</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/25</loc>
+    <loc>https://thelongbookclub.com/book/the-goldfinch-donna-tartt</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/26</loc>
+    <loc>https://thelongbookclub.com/book/a-little-life-hanya-yanagihara</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/27</loc>
+    <loc>https://thelongbookclub.com/book/cryptonomicon-neal-stephenson</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/28</loc>
+    <loc>https://thelongbookclub.com/book/crime-and-punishment-fyodor-dostoevsky</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/29</loc>
+    <loc>https://thelongbookclub.com/book/american-gods-neil-gaiman</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/30</loc>
+    <loc>https://thelongbookclub.com/book/anna-karenina-leo-tolstoy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/31</loc>
+    <loc>https://thelongbookclub.com/book/don-quixote-miguel-de-cervantes</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/32</loc>
+    <loc>https://thelongbookclub.com/book/the-brothers-karamazov-fyodor-dostoevsky</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/33</loc>
+    <loc>https://thelongbookclub.com/book/steve-jobs-walter-isaacson</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/34</loc>
+    <loc>https://thelongbookclub.com/book/titan-ron-chernow</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/35</loc>
+    <loc>https://thelongbookclub.com/book/the-rise-and-fall-of-the-third-reich-william-l-shirer</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/36</loc>
+    <loc>https://thelongbookclub.com/book/outlander-diana-gabaldon</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/37</loc>
+    <loc>https://thelongbookclub.com/book/middlemarch-george-eliot</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/38</loc>
+    <loc>https://thelongbookclub.com/book/jonathan-strange-mr-norrell-susanna-clarke</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/39</loc>
+    <loc>https://thelongbookclub.com/book/bleak-house-charles-dickens</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/40</loc>
+    <loc>https://thelongbookclub.com/book/gone-with-the-wind-margaret-mitchell</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/41</loc>
+    <loc>https://thelongbookclub.com/book/the-eye-of-the-world-robert-jordan</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/42</loc>
+    <loc>https://thelongbookclub.com/book/the-great-hunt-robert-jordan</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/43</loc>
+    <loc>https://thelongbookclub.com/book/the-dragon-reborn-robert-jordan</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/44</loc>
+    <loc>https://thelongbookclub.com/book/the-shadow-rising-robert-jordan</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/45</loc>
+    <loc>https://thelongbookclub.com/book/the-fellowship-of-the-ring-jrr-tolkien</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/46</loc>
+    <loc>https://thelongbookclub.com/book/the-two-towers-jrr-tolkien</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/47</loc>
+    <loc>https://thelongbookclub.com/book/the-return-of-the-king-jrr-tolkien</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/48</loc>
+    <loc>https://thelongbookclub.com/book/words-of-radiance-brandon-sanderson</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/49</loc>
+    <loc>https://thelongbookclub.com/book/oathbringer-brandon-sanderson</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/50</loc>
+    <loc>https://thelongbookclub.com/book/rhythm-of-war-brandon-sanderson</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/51</loc>
+    <loc>https://thelongbookclub.com/book/a-clash-of-kings-george-rr-martin</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/52</loc>
+    <loc>https://thelongbookclub.com/book/a-storm-of-swords-george-rr-martin</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/53</loc>
+    <loc>https://thelongbookclub.com/book/a-feast-for-crows-george-rr-martin</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/54</loc>
+    <loc>https://thelongbookclub.com/book/a-dance-with-dragons-george-rr-martin</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/55</loc>
+    <loc>https://thelongbookclub.com/book/the-priory-of-the-orange-tree-samantha-shannon</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/56</loc>
+    <loc>https://thelongbookclub.com/book/babel-rf-kuang</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/57</loc>
+    <loc>https://thelongbookclub.com/book/the-final-empire-brandon-sanderson</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/58</loc>
+    <loc>https://thelongbookclub.com/book/the-well-of-ascension-brandon-sanderson</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/59</loc>
+    <loc>https://thelongbookclub.com/book/the-hero-of-ages-brandon-sanderson</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/60</loc>
+    <loc>https://thelongbookclub.com/book/hyperion-dan-simmons</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/61</loc>
+    <loc>https://thelongbookclub.com/book/the-fall-of-hyperion-dan-simmons</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/62</loc>
+    <loc>https://thelongbookclub.com/book/judas-unchained-peter-f-hamilton</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/63</loc>
+    <loc>https://thelongbookclub.com/book/leviathan-wakes-james-sa-corey</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/64</loc>
+    <loc>https://thelongbookclub.com/book/seveneves-neal-stephenson</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/65</loc>
+    <loc>https://thelongbookclub.com/book/anathem-neal-stephenson</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/66</loc>
+    <loc>https://thelongbookclub.com/book/stranger-in-a-strange-land-robert-a-heinlein</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/67</loc>
+    <loc>https://thelongbookclub.com/book/dune-messiah-frank-herbert</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/68</loc>
+    <loc>https://thelongbookclub.com/book/children-of-dune-frank-herbert</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/69</loc>
+    <loc>https://thelongbookclub.com/book/moby-dick-herman-melville</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/70</loc>
+    <loc>https://thelongbookclub.com/book/great-expectations-charles-dickens</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/71</loc>
+    <loc>https://thelongbookclub.com/book/jane-eyre-charlotte-bront</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/72</loc>
+    <loc>https://thelongbookclub.com/book/wuthering-heights-emily-bront</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/73</loc>
+    <loc>https://thelongbookclub.com/book/vanity-fair-william-makepeace-thackeray</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/74</loc>
+    <loc>https://thelongbookclub.com/book/the-hunchback-of-notre-dame-victor-hugo</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/75</loc>
+    <loc>https://thelongbookclub.com/book/ulysses-james-joyce</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/76</loc>
+    <loc>https://thelongbookclub.com/book/doctor-zhivago-boris-pasternak</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/77</loc>
+    <loc>https://thelongbookclub.com/book/the-magic-mountain-thomas-mann</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/78</loc>
+    <loc>https://thelongbookclub.com/book/leonardo-da-vinci-walter-isaacson</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/81</loc>
+    <loc>https://thelongbookclub.com/book/benjamin-franklin-an-american-life-walter-isaacson</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/82</loc>
+    <loc>https://thelongbookclub.com/book/peter-the-great-robert-k-massie</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/84</loc>
+    <loc>https://thelongbookclub.com/book/catherine-the-great-robert-k-massie</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/85</loc>
+    <loc>https://thelongbookclub.com/book/east-of-eden-john-steinbeck</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/87</loc>
+    <loc>https://thelongbookclub.com/book/the-grapes-of-wrath-john-steinbeck</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/88</loc>
+    <loc>https://thelongbookclub.com/book/demon-copperhead-barbara-kingsolver</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/89</loc>
+    <loc>https://thelongbookclub.com/book/the-amazing-adventures-of-kavalier-clay-michael-chabon</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/90</loc>
+    <loc>https://thelongbookclub.com/book/2666-roberto-bolao</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/96</loc>
+    <loc>https://thelongbookclub.com/book/the-bee-sting-paul-murray</loc>
     <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/polostan-neal-stephenson</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/the-city-and-its-uncertain-walls-haruki-murakami</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/caledonian-road-andrew-ohagan</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/nexus-yuval-noah-harari</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/wind-and-truth-brandon-sanderson</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/shogun-james-clavell</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/empire-of-the-damned-jay-kristoff</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/the-covenant-of-water-abraham-verghese</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/my-name-is-barbra-barbra-streisand</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/alchemised-senlinyu</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/the-secret-history-donna-tartt</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/the-historian-elizabeth-kostova</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/a-discovery-of-witches-deborah-harkness</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/iron-flame-rebecca-yarros</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/house-of-earth-and-blood-sarah-j-maas</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/kushiels-dart-jacqueline-carey</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/when-the-moon-hatched-sarah-a-parker</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/galaxy-outlaws-js-morin</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/the-decline-and-fall-of-the-roman-empire-edward-gibbon</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/the-cycle-of-arawn-edward-w-robertson</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/the-wandering-inn-book-2-pirateaba</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/churchill-walking-with-destiny-andrew-roberts</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/empire-of-the-vampire-jay-kristoff</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/empire-of-the-dawn-jay-kristoff</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/genre/classic</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/genre/historical-fiction</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/genre/horror</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/genre/fantasy</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/genre/science-fiction</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/genre/biography</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/genre/fiction</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/genre/adventure</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/genre/thriller</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/genre/literary-fiction</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/genre/history</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/genre/nonfiction</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/genre/dark-academia</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 </urlset>

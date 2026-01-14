@@ -3,24 +3,22 @@ import { FaTimes } from 'react-icons/fa';
 
 export const StickyNewsletter = () => {
     const [isVisible, setIsVisible] = useState(false);
-    const [isDismissed, setIsDismissed] = useState(false);
-
-    useEffect(() => {
-        // Check localStorage for dismissal or signup
+    const [isDismissed, setIsDismissed] = useState(() => {
+        // Check localStorage for dismissal or signup on mount
         const status = localStorage.getItem('newsletter_status');
-        if (status === 'signed_up') {
-            setIsDismissed(true);
-            return;
-        }
+        if (status === 'signed_up') return true;
         if (status) {
             const timestamp = parseInt(status, 10);
             const now = Date.now();
             const oneDay = 24 * 60 * 60 * 1000;
-            if (now - timestamp < oneDay) {
-                setIsDismissed(true);
-                return;
-            }
+            if (now - timestamp < oneDay) return true;
         }
+        return false;
+    });
+
+    useEffect(() => {
+        // Only handle scroll visibility in effect now, since dismissal is handled in initial state
+        if (isDismissed) return;
 
         const handleScroll = () => {
             // Show after scrolling down 300px
@@ -33,7 +31,7 @@ export const StickyNewsletter = () => {
 
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    }, [isDismissed]);
 
     const handleClose = () => {
         localStorage.setItem('newsletter_status', Date.now().toString());

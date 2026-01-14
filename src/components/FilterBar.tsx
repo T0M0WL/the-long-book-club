@@ -1,5 +1,5 @@
 import { genres } from '../data/books';
-import { FaSearch } from 'react-icons/fa';
+import { FaSearch, FaTimes } from 'react-icons/fa';
 
 interface FilterBarProps {
     selectedGenre: string;
@@ -67,7 +67,7 @@ export const FilterBar = ({
                     {genres.map(genre => (
                         <button
                             key={genre}
-                            onClick={() => onGenreChange(genre)}
+                            onClick={() => onGenreChange(selectedGenre === genre ? 'All' : genre)}
                             onMouseEnter={(e) => {
                                 if (selectedGenre !== genre) e.currentTarget.style.background = '#cc563b'; // 20% darker coral
                             }}
@@ -100,10 +100,9 @@ export const FilterBar = ({
                     <input
                         type="range"
                         min="10"
-                        max="60"
-                        step="5"
+                        max="130"
                         value={minLength}
-                        onChange={(e) => onLengthChange(parseInt(e.target.value))}
+                        onChange={(e) => onLengthChange(Number(e.target.value))}
                         style={{
                             cursor: 'pointer',
                             accentColor: 'var(--color-primary)'
@@ -167,16 +166,64 @@ export const FilterBar = ({
                         display: 'flex',
                         alignItems: 'center',
                         gap: '0.5rem',
-                        color: '#aaa', // Placeholder gray
+                        color: '#777', // Placeholder gray (Darkened)
                         fontFamily: 'var(--font-body)', // Match input font
                         fontSize: '1rem', // Match input size
                         width: '100%',
                         justifyContent: 'center'
                     }}>
-                        <span>Search by title or author...</span>
                         <FaSearch style={{ color: 'var(--color-brand-forrest)' }} />
+                        <span>Search by title, author or narrator...</span>
                     </div>
                 )}
+            </div>
+
+            {/* Clear Filters Button */}
+            <div style={{
+                display: 'flex',
+                justifyContent: 'center',
+                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)', // Smooth ease-out
+                maxHeight: (selectedGenre !== 'All' || minLength > 10 || sortBy !== 'default' || searchTerm !== '') ? '120px' : '0',
+                opacity: (selectedGenre !== 'All' || minLength > 10 || sortBy !== 'default' || searchTerm !== '') ? 1 : 0,
+                marginTop: (selectedGenre !== 'All' || minLength > 10 || sortBy !== 'default' || searchTerm !== '') ? '1.5rem' : '0',
+                paddingTop: (selectedGenre !== 'All' || minLength > 10 || sortBy !== 'default' || searchTerm !== '') ? '10px' : '0',
+                overflow: 'hidden',
+                pointerEvents: (selectedGenre !== 'All' || minLength > 10 || sortBy !== 'default' || searchTerm !== '') ? 'auto' : 'none'
+            }}>
+                <button
+                    onClick={() => {
+                        onGenreChange('All');
+                        onLengthChange(10);
+                        onSortChange('default');
+                        onSearchChange('');
+                    }}
+                    style={{
+                        background: 'var(--color-brand-slate)',
+                        color: 'var(--color-brand-cloud)',
+                        border: 'none',
+                        padding: '1rem 2rem',
+                        borderRadius: '3rem',
+                        fontSize: 'clamp(1.1rem, 2vw, 1.5rem)',
+                        fontFamily: 'var(--font-serif-accent)',
+                        fontWeight: 400,
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.75rem',
+                        boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
+                    }}
+                    onMouseEnter={e => {
+                        e.currentTarget.style.transform = 'translateY(-2px)';
+                        e.currentTarget.style.boxShadow = '0 6px 8px rgba(0,0,0,0.15)';
+                    }}
+                    onMouseLeave={e => {
+                        e.currentTarget.style.transform = 'translateY(0)';
+                        e.currentTarget.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+                    }}
+                >
+                    <FaTimes size={16} /> {/* Cross Icon */}
+                    Clear All Filters
+                </button>
             </div>
         </div>
     );

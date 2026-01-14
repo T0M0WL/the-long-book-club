@@ -7,25 +7,30 @@ export interface Book {
     coverUrl: string;
     length: string; // e.g., "48h 12m"
     lengthHours: number; // for sorting/filtering
-    genre: string;
+    genre: string | string[];
     description: string;
     curatorNote?: string; // "Why this is the best..." section
     curatorTitle?: string; // Optional: Overrides the default "Why this is the best..." header
     affiliateLink: string;
     affiliateLinkUS?: string;
     relatedBookIds?: string[];
+    narrator?: string;
+    longBookClubTake?: string;
+    soundCheck?: string;
+    slug?: string;
 }
 
 const baseBooks: Book[] = [
     {
         id: '15',
         relatedBookIds: ['75', '6', '19', '39', '71', '72', '73', '37', '74', '70', '31', '10'],
+        slug: 'les-misrables-victor-hugo',
         title: 'Les Misérables',
         author: 'Victor Hugo',
         coverUrl: '/covers/les-miserables.jpg',
         length: '60h',
         lengthHours: 60,
-        genre: 'Classic',
+        genre: ['Classic', 'Historical Fiction'],
         description: 'Introducing one of the most famous characters in literature, Jean Valjean—the noble peasant imprisoned for stealing a loaf of bread.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00WKWJW5A?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B07VT6WPNM?tag=thelongbookcl-20'
@@ -33,12 +38,13 @@ const baseBooks: Book[] = [
     {
         id: '11',
         relatedBookIds: ['3', '12', '7'],
+        slug: 'it-stephen-king',
         title: 'It',
         author: 'Stephen King',
         coverUrl: '/covers/it.jpg',
         length: '44h 57m',
         lengthHours: 44.9,
-        genre: 'Horror',
+        genre: ['Horror', 'Fantasy'],
         description: 'The story follows the experiences of seven children as they are terrorized by an evil entity that exploits the fears of its victims to disguise itself while hunting its prey.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B01H0IF7MA?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B01H0IH01Q?tag=thelongbookcl-20'
@@ -46,6 +52,7 @@ const baseBooks: Book[] = [
     {
         id: '12',
         relatedBookIds: ['11', '3', '7'],
+        slug: 'under-the-dome-stephen-king',
         title: 'Under the Dome',
         author: 'Stephen King',
         coverUrl: '/covers/under-the-dome.jpg',
@@ -58,6 +65,7 @@ const baseBooks: Book[] = [
     {
         id: '13',
         relatedBookIds: ['48', '49', '50', '57', '58', '59', '45', '46', '47', '9', '51', '52', '53', '54', '41', '42', '43', '44', '23', '55', '56', '38', '29'],
+        slug: 'the-way-of-kings-brandon-sanderson',
         title: 'The Way of Kings',
         author: 'Brandon Sanderson',
         coverUrl: '/covers/the-way-of-kings.jpg',
@@ -71,6 +79,7 @@ const baseBooks: Book[] = [
     {
         id: '2',
         relatedBookIds: ['4', '18', '34', '33', '81', '82', '84', '85', '16', '35'],
+        slug: 'the-power-broker-robert-a-caro',
         title: 'The Power Broker',
         author: 'Robert A. Caro',
         coverUrl: '/covers/the-power-broker.jpg',
@@ -84,12 +93,13 @@ const baseBooks: Book[] = [
     {
         id: '3',
         relatedBookIds: ['11', '12', '7'],
+        slug: 'the-stand-stephen-king',
         title: 'The Stand',
         author: 'Stephen King',
         coverUrl: '/covers/the-stand.jpg',
         length: '47h 47m',
         lengthHours: 47.8,
-        genre: 'Horror',
+        genre: ['Horror', 'Fantasy'],
         description: 'A patient escapes from a biological testing facility, unknowingly carrying a deadly weapon: a mutated strain of super-flu that will wipe out 99 percent of the world\'s population within a few weeks.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B008MZT1V4?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B008MTA66E?tag=thelongbookcl-20'
@@ -97,6 +107,7 @@ const baseBooks: Book[] = [
     {
         id: '4',
         relatedBookIds: ['18', '34', '2', '33', '81', '82', '84', '85', '16', '35'],
+        slug: 'hamilton-ron-chernow',
         title: 'Hamilton',
         author: 'Ron Chernow',
         coverUrl: '/covers/hamilton.jpg',
@@ -110,6 +121,7 @@ const baseBooks: Book[] = [
     {
         id: '5',
         relatedBookIds: ['25', '26', '90', '96', '17', '24', '89', '76', '78'],
+        slug: 'infinite-jest-david-foster-wallace',
         title: 'Infinite Jest',
         author: 'David Foster Wallace',
         coverUrl: '/covers/infinite-jest.jpg',
@@ -123,12 +135,13 @@ const baseBooks: Book[] = [
     {
         id: '6',
         relatedBookIds: ['15', '75', '19', '39', '71', '72', '73', '37', '74', '70', '31', '10'],
+        slug: 'the-count-of-monte-cristo-alexandre-dumas',
         title: 'The Count of Monte Cristo',
         author: 'Alexandre Dumas',
         coverUrl: '/covers/the-count-of-monte-cristo.jpg',
         length: '52h 41m',
         lengthHours: 52.7,
-        genre: 'Classic',
+        genre: ['Classic', 'Adventure'],
         description: 'Thrown in prison for a crime he has not committed, Edmond Dantes is confined to the grim fortress of If. There he learns of a great hoard of treasure hidden on the Isle of Monte Cristo.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B008QZBHPI?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005GG1APM?tag=thelongbookcl-20'
@@ -136,12 +149,13 @@ const baseBooks: Book[] = [
     {
         id: '7',
         relatedBookIds: ['11', '3', '12'],
+        slug: '112263-stephen-king',
         title: '11/22/63',
         author: 'Stephen King',
         coverUrl: '/covers/11-22-63.jpg',
         length: '30h 40m',
         lengthHours: 30.6,
-        genre: 'Thiller',
+        genre: ['Thriller', 'Historical Fiction'],
         description: 'Life can turn on a dime—or miss it, but what if you could change it all?',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0064P650E?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0064I1KGA?tag=thelongbookcl-20'
@@ -149,6 +163,7 @@ const baseBooks: Book[] = [
     {
         id: '8',
         relatedBookIds: ['20', '68', '69', '60', '61', '63', '65', '66', '27', '64', '67'],
+        slug: 'atlas-shrugged-ayn-rand',
         title: 'Atlas Shrugged',
         author: 'Ayn Rand',
         coverUrl: '/covers/atlas-shrugged.jpg',
@@ -162,6 +177,7 @@ const baseBooks: Book[] = [
     {
         id: '9',
         relatedBookIds: ['51', '52', '53', '54', '45', '46', '47', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '23', '55', '56', '38', '29'],
+        slug: 'a-game-of-thrones-george-rr-martin',
         title: 'A Game of Thrones',
         author: 'George R.R. Martin',
         coverUrl: '/covers/a-game-of-thrones.jpg',
@@ -175,12 +191,13 @@ const baseBooks: Book[] = [
     {
         id: '10',
         relatedBookIds: ['15', '75', '6', '19', '39', '71', '72', '73', '37', '74', '70', '31'],
+        slug: 'sherlock-holmes-the-definitive-collection-arthur-conan-doyle',
         title: 'Sherlock Holmes: The Definitive Collection',
         author: 'Arthur Conan Doyle',
         coverUrl: '/covers/sherlock-holmes-the-definitive-collection.jpg',
         length: '71h 57m',
         lengthHours: 71.9,
-        genre: 'Mystery',
+        genre: 'Classic',
 
 
         description: 'Stephen Fry presents a complete and unabridged collection of the stories of Sherlock Holmes.',
@@ -190,6 +207,7 @@ const baseBooks: Book[] = [
     {
         id: '16',
         relatedBookIds: ['2', '4', '18', '34', '33', '81', '82', '84', '85', '35'],
+        slug: 'team-of-rivals-doris-kearns-goodwin',
         title: 'Team of Rivals',
         author: 'Doris Kearns Goodwin',
         coverUrl: '/covers/team-of-rivals.jpg',
@@ -203,12 +221,13 @@ const baseBooks: Book[] = [
     {
         id: '17',
         relatedBookIds: ['5', '25', '26', '90', '96', '24', '89', '76', '78'],
+        slug: '1q84-haruki-murakami',
         title: '1Q84',
         author: 'Haruki Murakami',
         coverUrl: '/covers/1q84.jpg',
         length: '46h 50m',
         lengthHours: 46.8,
-        genre: 'Fantasy',
+        genre: ['Fantasy', 'Literary Fiction'],
         description: 'A young woman named Aomame follows a taxi driver\'s enigmatic suggestion and begins to notice puzzling discrepancies in the world around her.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0060MI0T0?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0060C2CEE?tag=thelongbookcl-20'
@@ -216,6 +235,7 @@ const baseBooks: Book[] = [
     {
         id: '18',
         relatedBookIds: ['4', '34', '2', '33', '81', '82', '84', '85', '16', '35'],
+        slug: 'grant-ron-chernow',
         title: 'Grant',
         author: 'Ron Chernow',
         coverUrl: '/covers/grant.jpg',
@@ -228,6 +248,7 @@ const baseBooks: Book[] = [
     {
         id: '19',
         relatedBookIds: ['39', '71', '15', '75', '6', '72', '73', '37', '74', '70', '31', '10'],
+        slug: 'david-copperfield-charles-dickens',
         title: 'David Copperfield',
         author: 'Charles Dickens',
         coverUrl: '/covers/david-copperfield.jpg',
@@ -241,12 +262,13 @@ const baseBooks: Book[] = [
     {
         id: '20',
         relatedBookIds: ['68', '69', '60', '61', '63', '65', '66', '27', '64', '67', '8'],
+        slug: 'dune-frank-herbert',
         title: 'Dune',
         author: 'Frank Herbert',
         coverUrl: '/covers/dune.jpg',
         length: '21h 2m',
         lengthHours: 21.0,
-        genre: 'Science Fiction',
+        genre: ['Science Fiction', 'Adventure'],
         description: 'Set on the desert planet Arrakis, Dune is the story of the boy Paul Atreides, who would become the mysterious man known as Muad\'Dib. He would avenge the traitorous plot against his noble family.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ5UD6?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B000R34YKC?tag=thelongbookcl-20'
@@ -254,12 +276,13 @@ const baseBooks: Book[] = [
     {
         id: '21',
         relatedBookIds: ['40', '36'],
+        slug: 'the-pillars-of-the-earth-ken-follett',
         title: 'The Pillars of the Earth',
         author: 'Ken Follett',
         coverUrl: '/covers/the-pillars-of-the-earth.jpg',
         length: '40h 55m',
         lengthHours: 40.9,
-        genre: 'Historical Fiction',
+        genre: ['Historical Fiction', 'Adventure'],
         description: 'A spellbinding epic tale of ambition, anarchy, and absolute power set against the sprawling medieval canvas of twelfth-century England.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0047VIL0O?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00852WNUU?tag=thelongbookcl-20'
@@ -267,12 +290,13 @@ const baseBooks: Book[] = [
     {
         id: '22',
         relatedBookIds: ['30', '28', '32', '77'],
+        slug: 'war-and-peace-leo-tolstoy',
         title: 'War and Peace',
         author: 'Leo Tolstoy',
         coverUrl: '/covers/war-and-peace.jpg',
         length: '61h 8m',
         lengthHours: 61.1,
-        genre: 'Classic',
+        genre: ['Classic', 'Historical Fiction'],
         description: 'Tolstoy\'s epic masterpiece that intertwines the lives of private and public individuals during the time of the Napoleonic wars.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B095V1SM5H?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0007OB4TU?tag=thelongbookcl-20'
@@ -280,6 +304,7 @@ const baseBooks: Book[] = [
     {
         id: '23',
         relatedBookIds: ['45', '46', '47', '9', '51', '52', '53', '54', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '55', '56', '38', '29'],
+        slug: 'the-name-of-the-wind-patrick-rothfuss',
         title: 'The Name of the Wind',
         author: 'Patrick Rothfuss',
         coverUrl: '/covers/the-name-of-the-wind.jpg',
@@ -293,12 +318,13 @@ const baseBooks: Book[] = [
     {
         id: '24',
         relatedBookIds: ['5', '25', '26', '90', '96', '17', '89', '76', '78'],
+        slug: 'shantaram-gregory-david-roberts',
         title: 'Shantaram',
         author: 'Gregory David Roberts',
         coverUrl: '/covers/shantaram.jpg',
         length: '43h',
         lengthHours: 43,
-        genre: 'Fiction',
+        genre: ['Fiction', 'Adventure'],
         description: 'A novel of high adventure, deep love, and unforgettable characters, set in the underbelly of contemporary Bombay.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00KOIRNLW?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00KO77Z20?tag=thelongbookcl-20'
@@ -306,6 +332,7 @@ const baseBooks: Book[] = [
     {
         id: '25',
         relatedBookIds: ['5', '26', '90', '96', '17', '24', '89', '76', '78'],
+        slug: 'the-goldfinch-donna-tartt',
         title: 'The Goldfinch',
         author: 'Donna Tartt',
         coverUrl: '/covers/the-goldfinch.jpg',
@@ -319,6 +346,7 @@ const baseBooks: Book[] = [
     {
         id: '26',
         relatedBookIds: ['5', '25', '90', '96', '17', '24', '89', '76', '78'],
+        slug: 'a-little-life-hanya-yanagihara',
         title: 'A Little Life',
         author: 'Hanya Yanagihara',
         coverUrl: '/covers/a-little-life.jpg',
@@ -332,12 +360,13 @@ const baseBooks: Book[] = [
     {
         id: '27',
         relatedBookIds: ['65', '66', '20', '68', '69', '60', '61', '63', '64', '67', '8'],
+        slug: 'cryptonomicon-neal-stephenson',
         title: 'Cryptonomicon',
         author: 'Neal Stephenson',
         coverUrl: '/covers/cryptonomicon.jpg',
         length: '42h 53m',
         lengthHours: 42.9,
-        genre: 'Science Fiction',
+        genre: ['Science Fiction', 'Historical Fiction'],
         description: 'A tour de force of code-breaking, WWII espionage, and modern computing.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B086WMM52D?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B086WP1FW6?tag=thelongbookcl-20'
@@ -345,6 +374,7 @@ const baseBooks: Book[] = [
     {
         id: '28',
         relatedBookIds: ['32', '22', '30', '77'],
+        slug: 'crime-and-punishment-fyodor-dostoevsky',
         title: 'Crime and Punishment',
         author: 'Fyodor Dostoevsky',
         coverUrl: '/covers/crime-and-punishment.jpg',
@@ -358,6 +388,7 @@ const baseBooks: Book[] = [
     {
         id: '29',
         relatedBookIds: ['45', '46', '47', '9', '51', '52', '53', '54', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '23', '55', '56', '38'],
+        slug: 'american-gods-neil-gaiman',
         title: 'American Gods',
         author: 'Neil Gaiman',
         coverUrl: '/covers/american-gods.jpg',
@@ -371,12 +402,13 @@ const baseBooks: Book[] = [
     {
         id: '30',
         relatedBookIds: ['22', '28', '32', '77'],
+        slug: 'anna-karenina-leo-tolstoy',
         title: 'Anna Karenina',
         author: 'Leo Tolstoy',
         coverUrl: '/covers/anna-karenina.jpg',
         length: '35h 35m',
         lengthHours: 35.6,
-        genre: 'Classic',
+        genre: ['Classic', 'Literary Fiction'],
         description: 'A complex novel of families, romance, and Russian society in the 19th century.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B01FN8BL6A?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B01FN887G2?tag=thelongbookcl-20'
@@ -384,12 +416,13 @@ const baseBooks: Book[] = [
     {
         id: '31',
         relatedBookIds: ['15', '75', '6', '19', '39', '71', '72', '73', '37', '74', '70', '10'],
+        slug: 'don-quixote-miguel-de-cervantes',
         title: 'Don Quixote',
         author: 'Miguel de Cervantes',
         coverUrl: '/covers/don-quixote.jpg',
         length: '39h 42m',
         lengthHours: 39.7,
-        genre: 'Classic',
+        genre: ['Classic', 'Adventure'],
         description: 'The adventures of a noble (but deluded) knight and his faithful squire, Sancho Panza.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B083JK2J89?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0DFR4LCJM?tag=thelongbookcl-20'
@@ -397,12 +430,13 @@ const baseBooks: Book[] = [
     {
         id: '32',
         relatedBookIds: ['28', '22', '30', '77'],
+        slug: 'the-brothers-karamazov-fyodor-dostoevsky',
         title: 'The Brothers Karamazov',
         author: 'Fyodor Dostoevsky',
         coverUrl: '/covers/the-brothers-karamazov.jpg',
         length: '37h 5m',
         lengthHours: 37.1,
-        genre: 'Classic',
+        genre: ['Classic', 'Literary Fiction'],
         description: 'A passionate philosophical novel that enters deeply into the ethical debates of God, free will, and morality.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B08YRWH6V3?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CKM2R2KF?tag=thelongbookcl-20'
@@ -410,6 +444,7 @@ const baseBooks: Book[] = [
     {
         id: '33',
         relatedBookIds: ['81', '82', '2', '4', '18', '34', '84', '85', '16', '35'],
+        slug: 'steve-jobs-walter-isaacson',
         title: 'Steve Jobs',
         author: 'Walter Isaacson',
         coverUrl: '/covers/steve-jobs.jpg',
@@ -423,6 +458,7 @@ const baseBooks: Book[] = [
     {
         id: '34',
         relatedBookIds: ['4', '18', '2', '33', '81', '82', '84', '85', '16', '35'],
+        slug: 'titan-ron-chernow',
         title: 'Titan',
         author: 'Ron Chernow',
         coverUrl: '/covers/titan.jpg',
@@ -436,12 +472,13 @@ const baseBooks: Book[] = [
     {
         id: '35',
         relatedBookIds: ['2', '4', '18', '34', '33', '81', '82', '84', '85', '16'],
+        slug: 'the-rise-and-fall-of-the-third-reich-william-l-shirer',
         title: 'The Rise and Fall of the Third Reich',
         author: 'William L. Shirer',
         coverUrl: '/covers/the-rise-and-fall-of-the-third-reich.jpg',
         length: '57h 11m',
         lengthHours: 57.2,
-        genre: 'History',
+        genre: ['History', 'Nonfiction'],
         description: 'A history of Nazi Germany. One of the most important historical works of the 20th century.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B003W5VXPG?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B003X4R6GQ?tag=thelongbookcl-20'
@@ -449,12 +486,13 @@ const baseBooks: Book[] = [
     {
         id: '36',
         relatedBookIds: ['21', '40'],
+        slug: 'outlander-diana-gabaldon',
         title: 'Outlander',
         author: 'Diana Gabaldon',
         coverUrl: '/covers/outlander.jpg',
         length: '32h 38m',
         lengthHours: 32.6,
-        genre: 'Historical Fiction',
+        genre: ['Historical Fiction', 'Fantasy'],
         description: 'Claire Randall is a British combat nurse who is mysteriously swept back in time to 1743 Scotland.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B08JGG6H1C?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B08JFQFVC5?tag=thelongbookcl-20'
@@ -462,6 +500,7 @@ const baseBooks: Book[] = [
     {
         id: '37',
         relatedBookIds: ['15', '75', '6', '19', '39', '71', '72', '73', '74', '70', '31', '10'],
+        slug: 'middlemarch-george-eliot',
         title: 'Middlemarch',
         author: 'George Eliot',
         coverUrl: '/covers/middlemarch.jpg',
@@ -475,12 +514,13 @@ const baseBooks: Book[] = [
     {
         id: '38',
         relatedBookIds: ['45', '46', '47', '9', '51', '52', '53', '54', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '23', '55', '56', '29'],
+        slug: 'jonathan-strange-mr-norrell-susanna-clarke',
         title: 'Jonathan Strange & Mr Norrell',
         author: 'Susanna Clarke',
         coverUrl: '/covers/jonathan-strange-and-mr-norrell.jpg',
         length: '32h 30m',
         lengthHours: 32.5,
-        genre: 'Fantasy',
+        genre: ['Fantasy', 'Historical Fiction'],
         description: 'In the midst of the Napoleonic Wars in 1806, most people believe magic to have long since disappeared from England - until the reclusive Mr Norrell reveals his powers.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0DFCVV8LB?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0DFCZ16X2?tag=thelongbookcl-20'
@@ -488,6 +528,7 @@ const baseBooks: Book[] = [
     {
         id: '39',
         relatedBookIds: ['19', '71', '15', '75', '6', '72', '73', '37', '74', '70', '31', '10'],
+        slug: 'bleak-house-charles-dickens',
         title: 'Bleak House',
         author: 'Charles Dickens',
         coverUrl: '/covers/bleak-house.jpg',
@@ -501,12 +542,13 @@ const baseBooks: Book[] = [
     {
         id: '40',
         relatedBookIds: ['21', '36'],
+        slug: 'gone-with-the-wind-margaret-mitchell',
         title: 'Gone with the Wind',
         author: 'Margaret Mitchell',
         coverUrl: '/covers/gone-with-the-wind.jpg',
         length: '49h 7m',
         lengthHours: 49.1,
-        genre: 'Historical Fiction',
+        genre: ['Historical Fiction', 'Classic'],
         description: 'The epic tale of Scarlett O\'Hara and the American South during the Civil War and Reconstruction.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B082FPX77Y?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0DW1LX95D?tag=thelongbookcl-20'
@@ -515,6 +557,7 @@ const baseBooks: Book[] = [
     {
         id: '41',
         relatedBookIds: ['42', '43', '44', '45', '46', '47', '9', '51', '52', '53', '54', '13', '48', '49', '50', '57', '58', '59', '23', '55', '56', '38', '29'],
+        slug: 'the-eye-of-the-world-robert-jordan',
         title: 'The Eye of the World',
         author: 'Robert Jordan',
         coverUrl: '/covers/the-eye-of-the-world.jpg',
@@ -528,6 +571,7 @@ const baseBooks: Book[] = [
     {
         id: '42',
         relatedBookIds: ['41', '43', '44', '45', '46', '47', '9', '51', '52', '53', '54', '13', '48', '49', '50', '57', '58', '59', '23', '55', '56', '38', '29'],
+        slug: 'the-great-hunt-robert-jordan',
         title: 'The Great Hunt',
         author: 'Robert Jordan',
         coverUrl: '/covers/the-great-hunt.jpg',
@@ -541,6 +585,7 @@ const baseBooks: Book[] = [
     {
         id: '43',
         relatedBookIds: ['41', '42', '44', '45', '46', '47', '9', '51', '52', '53', '54', '13', '48', '49', '50', '57', '58', '59', '23', '55', '56', '38', '29'],
+        slug: 'the-dragon-reborn-robert-jordan',
         title: 'The Dragon Reborn',
         author: 'Robert Jordan',
         coverUrl: '/covers/the-dragon-reborn.jpg',
@@ -554,6 +599,7 @@ const baseBooks: Book[] = [
     {
         id: '44',
         relatedBookIds: ['41', '42', '43', '45', '46', '47', '9', '51', '52', '53', '54', '13', '48', '49', '50', '57', '58', '59', '23', '55', '56', '38', '29'],
+        slug: 'the-shadow-rising-robert-jordan',
         title: 'The Shadow Rising',
         author: 'Robert Jordan',
         coverUrl: '/covers/the-shadow-rising.jpg',
@@ -567,6 +613,7 @@ const baseBooks: Book[] = [
     {
         id: '45',
         relatedBookIds: ['46', '47', '9', '51', '52', '53', '54', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '23', '55', '56', '38', '29'],
+        slug: 'the-fellowship-of-the-ring-jrr-tolkien',
         title: 'The Fellowship of the Ring',
         author: 'J.R.R. Tolkien',
         coverUrl: '/covers/the-fellowship-of-the-ring.jpg',
@@ -580,6 +627,7 @@ const baseBooks: Book[] = [
     {
         id: '46',
         relatedBookIds: ['45', '47', '9', '51', '52', '53', '54', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '23', '55', '56', '38', '29'],
+        slug: 'the-two-towers-jrr-tolkien',
         title: 'The Two Towers',
         author: 'J.R.R. Tolkien',
         coverUrl: '/covers/the-two-towers.jpg',
@@ -593,6 +641,7 @@ const baseBooks: Book[] = [
     {
         id: '47',
         relatedBookIds: ['45', '46', '9', '51', '52', '53', '54', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '23', '55', '56', '38', '29'],
+        slug: 'the-return-of-the-king-jrr-tolkien',
         title: 'The Return of the King',
         author: 'J.R.R. Tolkien',
         coverUrl: '/covers/the-return-of-the-king.jpg',
@@ -606,6 +655,7 @@ const baseBooks: Book[] = [
     {
         id: '48',
         relatedBookIds: ['13', '49', '50', '57', '58', '59', '45', '46', '47', '9', '51', '52', '53', '54', '41', '42', '43', '44', '23', '55', '56', '38', '29'],
+        slug: 'words-of-radiance-brandon-sanderson',
         title: 'Words of Radiance',
         author: 'Brandon Sanderson',
         coverUrl: '/covers/words-of-radiance.jpg',
@@ -619,6 +669,7 @@ const baseBooks: Book[] = [
     {
         id: '49',
         relatedBookIds: ['13', '48', '50', '57', '58', '59', '45', '46', '47', '9', '51', '52', '53', '54', '41', '42', '43', '44', '23', '55', '56', '38', '29'],
+        slug: 'oathbringer-brandon-sanderson',
         title: 'Oathbringer',
         author: 'Brandon Sanderson',
         coverUrl: '/covers/oathbringer.jpg',
@@ -632,6 +683,7 @@ const baseBooks: Book[] = [
     {
         id: '50',
         relatedBookIds: ['13', '48', '49', '57', '58', '59', '45', '46', '47', '9', '51', '52', '53', '54', '41', '42', '43', '44', '23', '55', '56', '38', '29'],
+        slug: 'rhythm-of-war-brandon-sanderson',
         title: 'Rhythm of War',
         author: 'Brandon Sanderson',
         coverUrl: '/covers/rhythm-of-war.jpg',
@@ -645,6 +697,7 @@ const baseBooks: Book[] = [
     {
         id: '51',
         relatedBookIds: ['9', '52', '53', '54', '45', '46', '47', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '23', '55', '56', '38', '29'],
+        slug: 'a-clash-of-kings-george-rr-martin',
         title: 'A Clash of Kings',
         author: 'George R.R. Martin',
         coverUrl: '/covers/a-clash-of-kings.jpg',
@@ -658,6 +711,7 @@ const baseBooks: Book[] = [
     {
         id: '52',
         relatedBookIds: ['9', '51', '53', '54', '45', '46', '47', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '23', '55', '56', '38', '29'],
+        slug: 'a-storm-of-swords-george-rr-martin',
         title: 'A Storm of Swords',
         author: 'George R.R. Martin',
         coverUrl: '/covers/a-storm-of-swords.jpg',
@@ -671,6 +725,7 @@ const baseBooks: Book[] = [
     {
         id: '53',
         relatedBookIds: ['9', '51', '52', '54', '45', '46', '47', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '23', '55', '56', '38', '29'],
+        slug: 'a-feast-for-crows-george-rr-martin',
         title: 'A Feast for Crows',
         author: 'George R.R. Martin',
         coverUrl: '/covers/a-feast-for-crows.jpg',
@@ -684,6 +739,7 @@ const baseBooks: Book[] = [
     {
         id: '54',
         relatedBookIds: ['9', '51', '52', '53', '45', '46', '47', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '23', '55', '56', '38', '29'],
+        slug: 'a-dance-with-dragons-george-rr-martin',
         title: 'A Dance with Dragons',
         author: 'George R.R. Martin',
         coverUrl: '/covers/a-dance-with-dragons.jpg',
@@ -697,6 +753,7 @@ const baseBooks: Book[] = [
     {
         id: '55',
         relatedBookIds: ['45', '46', '47', '9', '51', '52', '53', '54', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '23', '56', '38', '29'],
+        slug: 'the-priory-of-the-orange-tree-samantha-shannon',
         title: 'The Priory of the Orange Tree',
         author: 'Samantha Shannon',
         coverUrl: '/covers/the-priory-of-the-orange-tree.jpg',
@@ -710,12 +767,13 @@ const baseBooks: Book[] = [
     {
         id: '56',
         relatedBookIds: ['45', '46', '47', '9', '51', '52', '53', '54', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '23', '55', '38', '29'],
+        slug: 'babel-rf-kuang',
         title: 'Babel',
         author: 'R.F. Kuang',
         coverUrl: '/covers/babel.jpg',
         length: '21h 38m',
         lengthHours: 21.6,
-        genre: 'Fantasy',
+        genre: ['Fantasy', 'Dark Academia'],
         description: 'Traduttore, traditore: An act of translation is always an act of betrayal.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0B3GKFF5S?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0B3G9JCKW?tag=thelongbookcl-20'
@@ -723,6 +781,7 @@ const baseBooks: Book[] = [
     {
         id: '57',
         relatedBookIds: ['58', '59', '13', '48', '49', '50', '45', '46', '47', '9', '51', '52', '53', '54', '41', '42', '43', '44', '23', '55', '56', '38', '29'],
+        slug: 'the-final-empire-brandon-sanderson',
         title: 'The Final Empire',
         author: 'Brandon Sanderson',
         coverUrl: '/covers/the-final-empire.jpg',
@@ -736,6 +795,7 @@ const baseBooks: Book[] = [
     {
         id: '58',
         relatedBookIds: ['57', '59', '13', '48', '49', '50', '45', '46', '47', '9', '51', '52', '53', '54', '41', '42', '43', '44', '23', '55', '56', '38', '29'],
+        slug: 'the-well-of-ascension-brandon-sanderson',
         title: 'The Well of Ascension',
         author: 'Brandon Sanderson',
         coverUrl: '/covers/the-well-of-ascension.jpg',
@@ -749,6 +809,7 @@ const baseBooks: Book[] = [
     {
         id: '59',
         relatedBookIds: ['57', '58', '13', '48', '49', '50', '45', '46', '47', '9', '51', '52', '53', '54', '41', '42', '43', '44', '23', '55', '56', '38', '29'],
+        slug: 'the-hero-of-ages-brandon-sanderson',
         title: 'The Hero of Ages',
         author: 'Brandon Sanderson',
         coverUrl: '/covers/the-hero-of-ages.jpg',
@@ -762,6 +823,7 @@ const baseBooks: Book[] = [
     {
         id: '60',
         relatedBookIds: ['61', '20', '68', '69', '63', '65', '66', '27', '64', '67', '8'],
+        slug: 'hyperion-dan-simmons',
         title: 'Hyperion',
         author: 'Dan Simmons',
         coverUrl: '/covers/hyperion.jpg',
@@ -775,6 +837,7 @@ const baseBooks: Book[] = [
     {
         id: '61',
         relatedBookIds: ['60', '20', '68', '69', '63', '65', '66', '27', '64', '67', '8'],
+        slug: 'the-fall-of-hyperion-dan-simmons',
         title: 'The Fall of Hyperion',
         author: 'Dan Simmons',
         coverUrl: '/covers/the-fall-of-hyperion.jpg',
@@ -800,6 +863,7 @@ const baseBooks: Book[] = [
     {
         id: '63',
         relatedBookIds: ['20', '68', '69', '60', '61', '65', '66', '27', '64', '67', '8'],
+        slug: 'judas-unchained-peter-f-hamilton',
         title: 'Judas Unchained',
         author: 'Peter F. Hamilton',
         coverUrl: '/covers/judas-unchained.jpg',
@@ -813,6 +877,7 @@ const baseBooks: Book[] = [
     {
         id: '64',
         relatedBookIds: ['20', '68', '69', '60', '61', '63', '65', '66', '27', '67', '8'],
+        slug: 'leviathan-wakes-james-sa-corey',
         title: 'Leviathan Wakes',
         author: 'James S.A. Corey',
         coverUrl: '/covers/leviathan-wakes.jpg',
@@ -826,6 +891,7 @@ const baseBooks: Book[] = [
     {
         id: '65',
         relatedBookIds: ['27', '66', '20', '68', '69', '60', '61', '63', '64', '67', '8'],
+        slug: 'seveneves-neal-stephenson',
         title: 'Seveneves',
         author: 'Neal Stephenson',
         coverUrl: '/covers/seveneves.jpg',
@@ -839,6 +905,7 @@ const baseBooks: Book[] = [
     {
         id: '66',
         relatedBookIds: ['27', '65', '20', '68', '69', '60', '61', '63', '64', '67', '8'],
+        slug: 'anathem-neal-stephenson',
         title: 'Anathem',
         author: 'Neal Stephenson',
         coverUrl: '/covers/anathem.jpg',
@@ -852,6 +919,7 @@ const baseBooks: Book[] = [
     {
         id: '67',
         relatedBookIds: ['20', '68', '69', '60', '61', '63', '65', '66', '27', '64', '8'],
+        slug: 'stranger-in-a-strange-land-robert-a-heinlein',
         title: 'Stranger in a Strange Land',
         author: 'Robert A. Heinlein',
         coverUrl: '/covers/stranger-in-a-strange-land.jpg',
@@ -865,6 +933,7 @@ const baseBooks: Book[] = [
     {
         id: '68',
         relatedBookIds: ['20', '69', '60', '61', '63', '65', '66', '27', '64', '67', '8'],
+        slug: 'dune-messiah-frank-herbert',
         title: 'Dune Messiah',
         author: 'Frank Herbert',
         coverUrl: '/covers/dune-messiah.jpg',
@@ -878,6 +947,7 @@ const baseBooks: Book[] = [
     {
         id: '69',
         relatedBookIds: ['20', '68', '60', '61', '63', '65', '66', '27', '64', '67', '8'],
+        slug: 'children-of-dune-frank-herbert',
         title: 'Children of Dune',
         author: 'Frank Herbert',
         coverUrl: '/covers/children-of-dune.jpg',
@@ -891,12 +961,13 @@ const baseBooks: Book[] = [
     {
         id: '70',
         relatedBookIds: ['15', '75', '6', '19', '39', '71', '72', '73', '37', '74', '31', '10'],
+        slug: 'moby-dick-herman-melville',
         title: 'Moby Dick',
         author: 'Herman Melville',
         coverUrl: '/covers/moby-dick.jpg',
         length: '24h 23m',
         lengthHours: 24.4,
-        genre: 'Classic',
+        genre: ['Classic', 'Adventure'],
         description: 'Ishmael narrating the monomaniacal quest of Ahab, captain of the whaler Pequod, for revenge on the albino sperm whale Moby Dick.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B008QZAKDS?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B000OYDIVU?tag=thelongbookcl-20'
@@ -904,6 +975,7 @@ const baseBooks: Book[] = [
     {
         id: '71',
         relatedBookIds: ['19', '39', '15', '75', '6', '72', '73', '37', '74', '70', '31', '10'],
+        slug: 'great-expectations-charles-dickens',
         title: 'Great Expectations',
         author: 'Charles Dickens',
         coverUrl: '/covers/great-expectations.jpg',
@@ -917,6 +989,7 @@ const baseBooks: Book[] = [
     {
         id: '72',
         relatedBookIds: ['15', '75', '6', '19', '39', '71', '73', '37', '74', '70', '31', '10'],
+        slug: 'jane-eyre-charlotte-bront',
         title: 'Jane Eyre',
         author: 'Charlotte Brontë',
         coverUrl: '/covers/jane-eyre.jpg',
@@ -930,6 +1003,7 @@ const baseBooks: Book[] = [
     {
         id: '73',
         relatedBookIds: ['15', '75', '6', '19', '39', '71', '72', '37', '74', '70', '31', '10'],
+        slug: 'wuthering-heights-emily-bront',
         title: 'Wuthering Heights',
         author: 'Emily Brontë',
         coverUrl: '/covers/wuthering-heights.jpg',
@@ -943,6 +1017,7 @@ const baseBooks: Book[] = [
     {
         id: '74',
         relatedBookIds: ['15', '75', '6', '19', '39', '71', '72', '73', '37', '70', '31', '10'],
+        slug: 'vanity-fair-william-makepeace-thackeray',
         title: 'Vanity Fair',
         author: 'William Makepeace Thackeray',
         coverUrl: '/covers/vanity-fair.jpg',
@@ -956,12 +1031,13 @@ const baseBooks: Book[] = [
     {
         id: '75',
         relatedBookIds: ['15', '6', '19', '39', '71', '72', '73', '37', '74', '70', '31', '10'],
+        slug: 'the-hunchback-of-notre-dame-victor-hugo',
         title: 'The Hunchback of Notre-Dame',
         author: 'Victor Hugo',
         coverUrl: '/covers/the-hunchback-of-notre-dame.jpg',
         length: '19h 2m',
         lengthHours: 19.0,
-        genre: 'Classic',
+        genre: ['Classic', 'Historical Fiction'],
         description: 'The story is set in Paris in 1482 during the reign of Louis XI.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B096KX16MW?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0000547BL?tag=thelongbookcl-20'
@@ -969,6 +1045,7 @@ const baseBooks: Book[] = [
     {
         id: '76',
         relatedBookIds: ['5', '25', '26', '90', '96', '17', '24', '89', '78'],
+        slug: 'ulysses-james-joyce',
         title: 'Ulysses',
         author: 'James Joyce',
         coverUrl: '/covers/ulysses.jpg',
@@ -982,12 +1059,13 @@ const baseBooks: Book[] = [
     {
         id: '77',
         relatedBookIds: ['22', '30', '28', '32'],
+        slug: 'doctor-zhivago-boris-pasternak',
         title: 'Doctor Zhivago',
         author: 'Boris Pasternak',
         coverUrl: '/covers/doctor-zhivago.jpg',
         length: '21h 56m',
         lengthHours: 22.0,
-        genre: 'Classic',
+        genre: ['Classic', 'Historical Fiction'],
         description: 'Doctor Zhivago is the story of the life and loves of a poet/physician during the turmoil of the Russian Revolution.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B005BEHDVY?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005B51C74?tag=thelongbookcl-20'
@@ -995,6 +1073,7 @@ const baseBooks: Book[] = [
     {
         id: '78',
         relatedBookIds: ['5', '25', '26', '90', '96', '17', '24', '89', '76'],
+        slug: 'the-magic-mountain-thomas-mann',
         title: 'The Magic Mountain',
         author: 'Thomas Mann',
         coverUrl: '/covers/the-magic-mountain.jpg',
@@ -1008,6 +1087,7 @@ const baseBooks: Book[] = [
     {
         id: '81',
         relatedBookIds: ['33', '82', '2', '4', '18', '34', '84', '85', '16', '35'],
+        slug: 'leonardo-da-vinci-walter-isaacson',
         title: 'Leonardo da Vinci',
         author: 'Walter Isaacson',
         coverUrl: '/covers/leonardo-da-vinci.jpg',
@@ -1021,6 +1101,7 @@ const baseBooks: Book[] = [
     {
         id: '82',
         relatedBookIds: ['33', '81', '2', '4', '18', '34', '84', '85', '16', '35'],
+        slug: 'benjamin-franklin-an-american-life-walter-isaacson',
         title: 'Benjamin Franklin: An American Life',
         author: 'Walter Isaacson',
         coverUrl: '/covers/benjamin-franklin.jpg',
@@ -1034,6 +1115,7 @@ const baseBooks: Book[] = [
     {
         id: '84',
         relatedBookIds: ['85', '2', '4', '18', '34', '33', '81', '82', '16', '35'],
+        slug: 'peter-the-great-robert-k-massie',
         title: 'Peter the Great',
         author: 'Robert K. Massie',
         coverUrl: '/covers/peter-the-great.jpg',
@@ -1046,6 +1128,7 @@ const baseBooks: Book[] = [
     {
         id: '85',
         relatedBookIds: ['84', '2', '4', '18', '34', '33', '81', '82', '16', '35'],
+        slug: 'catherine-the-great-robert-k-massie',
         title: 'Catherine the Great',
         author: 'Robert K. Massie',
         coverUrl: '/covers/catherine-the-great.jpg',
@@ -1059,12 +1142,13 @@ const baseBooks: Book[] = [
     {
         id: '87',
         relatedBookIds: ['88'],
+        slug: 'east-of-eden-john-steinbeck',
         title: 'East of Eden',
         author: 'John Steinbeck',
         coverUrl: '/covers/east-of-eden.jpg',
         length: '25h 32m',
         lengthHours: 25.5,
-        genre: 'Fiction',
+        genre: ['Fiction', 'Literary Fiction'],
         description: 'Set in the rich farmland of California\'s Salinas Valley, this sprawling and often brutal novel follows the intertwined destinies of two families.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B09N7P9M2K?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B09N7PZQRT?tag=thelongbookcl-20'
@@ -1072,6 +1156,7 @@ const baseBooks: Book[] = [
     {
         id: '88',
         relatedBookIds: ['87'],
+        slug: 'the-grapes-of-wrath-john-steinbeck',
         title: 'The Grapes of Wrath',
         author: 'John Steinbeck',
         coverUrl: '/covers/the-grapes-of-wrath.jpg',
@@ -1085,6 +1170,7 @@ const baseBooks: Book[] = [
     {
         id: '89',
         relatedBookIds: ['5', '25', '26', '90', '96', '17', '24', '76', '78'],
+        slug: 'demon-copperhead-barbara-kingsolver',
         title: 'Demon Copperhead',
         author: 'Barbara Kingsolver',
         coverUrl: '/covers/demon-copperhead.jpg',
@@ -1098,12 +1184,13 @@ const baseBooks: Book[] = [
     {
         id: '90',
         relatedBookIds: ['5', '25', '26', '96', '17', '24', '89', '76', '78'],
+        slug: 'the-amazing-adventures-of-kavalier-clay-michael-chabon',
         title: 'The Amazing Adventures of Kavalier & Clay',
         author: 'Michael Chabon',
         coverUrl: '/covers/the-amazing-adventures-of-kavalier-and-clay.jpg',
         length: '26h 15m',
         lengthHours: 26.3,
-        genre: 'Fiction',
+        genre: ['Fiction', 'Historical Fiction'],
         description: 'Joe Kavalier, a young Jewish artist who has also been trained in the art of Houdini-esque escape, has just smuggled himself out of Nazi-occupied Prague.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B008AXA4LY?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B008ARPKNW?tag=thelongbookcl-20'
@@ -1111,6 +1198,7 @@ const baseBooks: Book[] = [
     {
         id: '96',
         relatedBookIds: ['5', '25', '26', '90', '17', '24', '89', '76', '78'],
+        slug: '2666-roberto-bolao',
         title: '2666',
         author: 'Roberto Bolaño',
         coverUrl: '/covers/2666.jpg',
@@ -1120,6 +1208,335 @@ const baseBooks: Book[] = [
         description: 'Composed of five parts, 2666 is a novel of such power that it has transformed the way we understand literature.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0D81JXQBW?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0D81HSP37?tag=thelongbookcl-20'
+    },
+    {
+        id: '97',
+        slug: 'the-bee-sting-paul-murray',
+        title: 'The Bee Sting',
+        author: 'Paul Murray',
+        coverUrl: '/covers/the-bee-sting-paul-murray.jpg',
+        length: '26h 10m',
+        lengthHours: 26.2,
+        genre: ['Literary Fiction', 'Fiction'],
+        description: 'The Barnes family in a small Irish town facing financial ruin and personal crises. Interweaves perspectives of four family members as they deal with secrets, past mistakes, and their dysfunctional present.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0BLCS77CW?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0BLC76F72?tag=thelongbookcl-20'
+    },
+    {
+        id: '98',
+        slug: 'polostan-neal-stephenson',
+        title: 'Polostan',
+        author: 'Neal Stephenson',
+        coverUrl: '/covers/polostan-neal-stephenson.jpg',
+        length: '11h 41m',
+        lengthHours: 11.7,
+        genre: 'Historical Fiction',
+        description: 'An expansive historical epic of intrigue and espionage set in the early 20th century. Follows Dawn Rae Bjornberg (Aurora Artemyeva) from the American West to Russia, where she is trained as a spy.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0D619DC6K?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0D5ZMQ4WF?tag=thelongbookcl-20'
+    },
+    {
+        id: '99',
+        slug: 'the-city-and-its-uncertain-walls-haruki-murakami',
+        title: 'The City and Its Uncertain Walls',
+        author: 'Haruki Murakami',
+        coverUrl: '/covers/the-city-and-its-uncertain-walls-haruki-murakami.jpg',
+        length: '17h 26m',
+        lengthHours: 17.4,
+        genre: 'Literary Fiction',
+        description: 'A love story and quest narrative following a protagonist searching for an imaginary city where his true love resides. Explores lost love, memory, and the boundary between reality and imagination.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0CWP8K8NY?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0CWP7W8NV?tag=thelongbookcl-20'
+    },
+    {
+        id: '100',
+        slug: 'caledonian-road-andrew-ohagan',
+        title: 'Caledonian Road',
+        author: 'Andrew O\'Hagan',
+        coverUrl: '/covers/caledonian-road-andrew-ohagan.jpg',
+        length: '22h 51m',
+        lengthHours: 22.9,
+        genre: ['Literary Fiction', 'Fiction'],
+        description: 'A state-of-the-nation novel centering on Campbell Flynn, a celebrity intellectual whose life unravels over an incendiary year in London. Explores class, race, money, and corruption.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0CS3ZYJV8?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0CS4ZHPJ5?tag=thelongbookcl-20'
+    },
+    {
+        id: '101',
+        slug: 'nexus-yuval-noah-harari',
+        title: 'Nexus: A Brief History of Information Networks',
+        author: 'Yuval Noah Harari',
+        coverUrl: '/covers/nexus-yuval-noah-harari.jpg',
+        length: '17h 52m',
+        lengthHours: 17.9,
+        genre: 'Nonfiction',
+        description: 'Explores deeply how information networks have shaped our world from the Stone Age to AI, and how we are currently facing an existential threat from non-human intelligence.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0CSYYMZKP?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0CSYYCJ9K?tag=thelongbookcl-20'
+    },
+    {
+        id: '102',
+        slug: 'wind-and-truth-brandon-sanderson',
+        title: 'Wind and Truth',
+        author: 'Brandon Sanderson',
+        coverUrl: '/covers/wind-and-truth-brandon-sanderson.jpg',
+        length: '62h 48m',
+        lengthHours: 62.8,
+        genre: 'Fantasy',
+        description: 'The conclusion to the first half of The Stormlight Archive. Dalinar Kholin challenges Odium to a contest of champions to decide the fate of Roshar.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0CQDF5PP6?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0CQD8T35J?tag=thelongbookcl-20'
+    },
+    {
+        id: '103',
+        slug: 'shogun-james-clavell',
+        title: 'Shōgun',
+        author: 'James Clavell',
+        coverUrl: '/covers/shogun-james-clavell.jpg',
+        length: '53h 33m',
+        lengthHours: 53.5,
+        genre: ['Historical Fiction', 'Adventure'],
+        description: 'A sweeping epic set in 1600 feudal Japan. English pilot John Blackthorne is shipwrecked and rises to become a samurai and key player in the rise of the Shogun.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0CRM21VRN?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0CRMBF73W?tag=thelongbookcl-20'
+    },
+    {
+        id: '104',
+        slug: 'empire-of-the-damned-jay-kristoff',
+        title: 'Empire of the Damned',
+        author: 'Jay Kristoff',
+        coverUrl: '/covers/empire-of-the-damned-jay-kristoff.jpg',
+        length: '31h 34m',
+        lengthHours: 31.6,
+        genre: 'Fantasy',
+        description: 'Gabriel de León, the last Silversaint, continues his journey to end the eternal night. A dark and gritty tale of vampires, faith, and political intrigue.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0C6R9GNJW?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0C6RB4R3K?tag=thelongbookcl-20'
+    },
+    {
+        id: '105',
+        slug: 'the-covenant-of-water-abraham-verghese',
+        title: 'The Covenant of Water',
+        author: 'Abraham Verghese',
+        coverUrl: '/covers/the-covenant-of-water-abraham-verghese.jpg',
+        length: '31h 16m',
+        lengthHours: 31.3,
+        genre: ['Historical Fiction', 'Literary Fiction'],
+        description: 'A sweeping multigenerational saga set in Kerala, South India. Follows a family afflicted by a "Condition" where in every generation, at least one person dies by drowning.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0BVDPD31S?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0BVDNPQ1V?tag=thelongbookcl-20'
+    },
+    {
+        id: '106',
+        slug: 'my-name-is-barbra-barbra-streisand',
+        title: 'My Name is Barbra',
+        author: 'Barbra Streisand',
+        coverUrl: '/covers/my-name-is-barbra-barbra-streisand.jpg',
+        length: '48h 7m',
+        lengthHours: 48.1,
+        genre: 'Biography',
+        description: 'The long-awaited memoir by Barbra Streisand, recounting her six-decade career, childhood in Brooklyn, and personal life. Narrated by the author herself.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0BV6YLFGV?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0BV6WQC9L?tag=thelongbookcl-20'
+    },
+    {
+        id: '107',
+        slug: 'alchemised-senlinyu',
+        title: 'Alchemised',
+        author: 'SenLinYu',
+        coverUrl: '/covers/alchemised.jpg',
+        length: '36h 15m',
+        lengthHours: 36.25,
+        genre: 'Fantasy',
+        description: 'A riveting dark fantasy debut about a promising alchemist who must protect her lost history and preserve her former self while unearthing the secrets of her prison and captor.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0DT78JY9L?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0DT78HWGS?tag=thelongbookcl-20'
+    },
+    // DARK ACADEMIA & ROMANTASY ADDITIONS
+    {
+        id: '108',
+        slug: 'the-secret-history-donna-tartt',
+        title: 'The Secret History',
+        author: 'Donna Tartt',
+        coverUrl: '/covers/the-secret-history.jpg',
+        length: '22h 4m',
+        lengthHours: 22.1,
+        genre: ['Dark Academia', 'Thriller'],
+        description: 'Under the influence of their charismatic classics professor, a group of clever, eccentric misfits at an elite New England college discover a way of thinking and living that is a world away from the humdrum existence of their contemporaries.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0045F6IMK?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0045HJDVG?tag=thelongbookcl-20'
+    },
+    {
+        id: '109',
+        slug: 'the-historian-elizabeth-kostova',
+        title: 'The Historian',
+        author: 'Elizabeth Kostova',
+        coverUrl: '/covers/the-historian.jpg',
+        length: '26h 5m',
+        lengthHours: 26.1,
+        genre: ['Dark Academia', 'Historical Fiction'],
+        description: 'A young woman discovers an ancient book and a cache of faded letters in her father\'s library, plunging her into a world that she never dreamed existed—a world where the presence of Vlad the Impaler is all too real.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B08QW793PC?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B08QWBDL83?tag=thelongbookcl-20'
+    },
+    {
+        id: '110',
+        slug: 'a-discovery-of-witches-deborah-harkness',
+        title: 'A Discovery of Witches',
+        author: 'Deborah Harkness',
+        coverUrl: '/covers/a-discovery-of-witches.jpg',
+        length: '23h 59m',
+        lengthHours: 24.0,
+        genre: ['Fantasy', 'Dark Academia'],
+        description: 'Deep in the stacks of Oxford\'s Bodleian Library, young scholar Diana Bishop unwittingly calls up a bewitched alchemical manuscript in the course of her research.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B004NU711Y?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B005FIPMZK?tag=thelongbookcl-20'
+    },
+    {
+        id: '111',
+        slug: 'iron-flame-rebecca-yarros',
+        title: 'Iron Flame',
+        author: 'Rebecca Yarros',
+        coverUrl: '/covers/iron-flame.jpg',
+        length: '28h 16m',
+        lengthHours: 28.3,
+        genre: 'Fantasy',
+        description: 'The second book in the Empyrean series. Everyone expected Violet Sorrengail to die during her first year at Basgiath War College—Violet included. But Threshing was only the first impossible test meant to weed out the weak-willed, the unworthy, and the unlucky.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0C9V499ND?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0C9V75P93?tag=thelongbookcl-20'
+    },
+    {
+        id: '112',
+        slug: 'house-of-earth-and-blood-sarah-j-maas',
+        title: 'House of Earth and Blood',
+        author: 'Sarah J. Maas',
+        coverUrl: '/covers/house-of-earth-and-blood.jpg',
+        length: '27h 50m',
+        lengthHours: 27.8,
+        genre: 'Fantasy',
+        description: 'Bound by blood. Tempted by desire. Unleashed by destiny. Bryce Quinlan had the perfect life—working hard all day and partying all night—until a demon murdered her closest friends, leaving her bereft, wounded, and alone.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B084P37J2B?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0D342BV2R?tag=thelongbookcl-20'
+    },
+    {
+        id: '113',
+        slug: 'kushiels-dart-jacqueline-carey',
+        title: 'Kushiel\'s Dart',
+        author: 'Jacqueline Carey',
+        coverUrl: '/covers/kushiels-dart.jpg',
+        length: '31h 5m',
+        lengthHours: 31.1,
+        genre: 'Fantasy',
+        description: 'The land of Terre d\'Ange is a place of rigorous beauty and grace. It is a country where gods walk the earth. And it is a country where Phèdre nó Delaunay was sold into indentured servitude.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0BVGMPG9V?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0BVG8RMYG?tag=thelongbookcl-20'
+    },
+    {
+        id: '114',
+        slug: 'when-the-moon-hatched-sarah-a-parker',
+        title: 'When the Moon Hatched',
+        author: 'Sarah A. Parker',
+        coverUrl: '/covers/when-the-moon-hatched.jpg',
+        length: '20h 13m',
+        lengthHours: 20.2,
+        genre: 'Fantasy',
+        description: 'A quote-worthy, enemies-to-lovers fantasy romance about a prickly assassin and a dragon rider.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0CZ159XPK?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0CZ14SS1Q?tag=thelongbookcl-20'
+    },
+    // LONGEST EVER COLLECTION ADDITIONS
+    {
+        id: '115',
+        slug: 'galaxy-outlaws-js-morin',
+        title: 'Galaxy Outlaws: The Complete Black Ocean Mobius Missions',
+        author: 'J.S. Morin',
+        coverUrl: '/covers/galaxy-outlaws.jpg',
+        length: '85h 6m',
+        lengthHours: 85.1,
+        genre: ['Science Fiction', 'Adventure'],
+        description: 'Carl Ramsey is an ex-earth military pilot turned con artist. His ship, the Mobius, is home to a ragtag crew of misfits and refugees. They\'ll take any job that pays, legal or otherwise.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B079YWFX6B?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B079YYQNMM?tag=thelongbookcl-20'
+    },
+    {
+        id: '116',
+        slug: 'the-decline-and-fall-of-the-roman-empire-edward-gibbon',
+        title: 'The Decline and Fall of the Roman Empire',
+        author: 'Edward Gibbon',
+        coverUrl: '/covers/the-decline-and-fall-of-the-roman-empire.jpg',
+        length: '126h 37m',
+        lengthHours: 126.6,
+        genre: ['History', 'Nonfiction'],
+        description: 'The definitive history of the Roman Empire, from its height in the 2nd century AD to its fall in 1453. A masterpiece of historical writing.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B00VY9VVBS?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B00WHCB85K?tag=thelongbookcl-20'
+    },
+    {
+        id: '117',
+        slug: 'the-cycle-of-arawn-edward-w-robertson',
+        title: 'The Cycle of Arawn: The Complete Trilogy',
+        author: 'Edward W. Robertson',
+        coverUrl: '/covers/the-cycle-of-arawn.jpg',
+        length: '65h 54m',
+        lengthHours: 65.9,
+        genre: 'Fantasy',
+        description: 'Dante Galand is young. Penniless. Alone. But devoted to learning the dark arts. As he opens a book of forbidden etheric power, he is attacked by the Nether.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B00W8Y1WY4?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B00W8EBOHO?tag=thelongbookcl-20'
+    },
+    {
+        id: '118',
+        slug: 'the-wandering-inn-book-2-pirateaba',
+        title: 'The Wandering Inn: Book 2',
+        author: 'Pirateaba',
+        coverUrl: '/covers/the-wandering-inn-book-2.jpg',
+        length: '61h 4m',
+        lengthHours: 61.1,
+        genre: 'Fantasy',
+        description: 'Erin Solstice is an innkeeper. She\'s also an [Innkeeper]. It\'s a Class, and it comes with Skills. Ryoka Griffin is a runner. She\'s also a [Runner]. They are both from Earth, and they are both lost in a world of monsters and magic.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0892SMMMM?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0892T6Q4L?tag=thelongbookcl-20'
+    },
+    {
+        id: '119',
+        slug: 'churchill-walking-with-destiny-andrew-roberts',
+        title: 'Churchill: Walking with Destiny',
+        author: 'Andrew Roberts',
+        coverUrl: '/covers/churchill-walking-with-destiny.jpg',
+        length: '50h 28m',
+        lengthHours: 50.5,
+        genre: 'Biography',
+        description: 'The definitive biography of Winston Churchill, who was considered the greatest Briton of the 20th century.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B07HB8TDDH?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B07HB7HYFZ?tag=thelongbookcl-20'
+    },
+    {
+        id: '120',
+        slug: 'empire-of-the-vampire-jay-kristoff',
+        title: 'Empire of the Vampire',
+        author: 'Jay Kristoff',
+        coverUrl: '/covers/empire-of-the-vampire.jpg',
+        length: '27h 10m',
+        lengthHours: 27.2,
+        genre: 'Fantasy',
+        description: 'From the New York Times bestselling author of the Nevernight Chronicle, Jay Kristoff, comes the first book of an astonishing new dark fantasy series. It has been twenty-seven long years since the last sunrise. For nearly three decades, vampires have waged war against humanity; building their eternal empire even as they tear down our own.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B098KP7LLM?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B098KMY3XV?tag=thelongbookcl-20',
+        narrator: 'Damian Lynch'
+    },
+    {
+        id: '121',
+        slug: 'empire-of-the-dawn-jay-kristoff',
+        title: 'Empire of the Dawn',
+        author: 'Jay Kristoff',
+        coverUrl: '/covers/empire-of-the-dawn.jpg',
+        length: '34h 41m',
+        lengthHours: 34.7,
+        genre: 'Fantasy',
+        description: 'The epic conclusion to the internationally bestselling Empire of the Vampire series. Gabriel de León has saved the Grail, but at what cost? Now, he must face the final darkness and determine the price of the dawn.',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0DZJ46ZPB?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0DZJ5QLC6?tag=thelongbookcl-20',
+        narrator: 'Damian Lynch, Shakira Shute'
     }
 ];
 
@@ -1132,4 +1549,6 @@ export const books: Book[] = baseBooks.map(book => {
     };
 });
 
-export const genres = Array.from(new Set(books.map(b => b.genre))).sort();
+export const genres = Array.from(new Set(
+    books.flatMap(b => Array.isArray(b.genre) ? b.genre : [b.genre])
+)).sort();

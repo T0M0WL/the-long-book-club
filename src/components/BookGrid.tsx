@@ -22,8 +22,13 @@ export const BookGrid = ({ books }: BookGridProps) => {
             gap: '2rem',
             padding: '1rem 0'
         }}>
-            {books.map(book => (
-                <BookCard key={book.id} book={book} />
+            {books.map((book, index) => (
+                <div key={book.id} style={{
+                    animation: 'fadeIn 0.5s ease backwards',
+                    animationDelay: `${index * 0.05}s` // 50ms stagger
+                }}>
+                    <BookCard book={book} />
+                </div>
             ))}
         </div>
     );

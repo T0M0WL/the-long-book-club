@@ -4,6 +4,11 @@ import { Header } from './components/Header';
 import { Home } from './pages/Home';
 import { BookDetails } from './pages/BookDetails';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
+import { Collections } from './pages/Collections';
+import { CollectionDetail } from './pages/CollectionDetail';
+import { ReviewGenerator } from './pages/ReviewGenerator';
+import { About } from './pages/About';
+import { Genre } from './pages/Genre';
 
 import { ThankYou } from './pages/ThankYou';
 import { Footer } from './components/Footer';
@@ -13,6 +18,8 @@ import { StickyNewsletter } from './components/StickyNewsletter';
 import ReactGA from 'react-ga4';
 import { useEffect } from 'react';
 import { ScrollToTop } from './components/ScrollToTop';
+
+import { SEO } from './components/SEO';
 
 // Initialize GA4 with a placeholder ID
 // REPLACE 'G-XXXXXXXXXX' with your actual Measurement ID
@@ -29,6 +36,14 @@ const AnalyticsTracker = () => {
 
   return null;
 };
+const NoiseOverlay = () => {
+  const location = useLocation();
+  const isCollectionsPage = location.pathname === '/collections';
+
+  if (isCollectionsPage) return null;
+
+  return <div className="noise-overlay" />;
+};
 
 function App() {
   return (
@@ -37,14 +52,22 @@ function App() {
         <div className="app-container">
           <ScrollToTop />
           <AnalyticsTracker />
-          <div className="noise-overlay" />
+          <SEO />
+          <NoiseOverlay />
           <Header />
           <main>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/book/:id" element={<BookDetails />} />
+              <Route path="/book/:slug" element={<BookDetails />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/thank-you" element={<ThankYou />} />
+              <Route path="/collections" element={<Collections />} />
+              <Route path="/collections/:slug" element={<CollectionDetail />} />
+              <Route path="/generator" element={<ReviewGenerator />} />
+              <Route path="/generator" element={<ReviewGenerator />} />
+
+              <Route path="/about" element={<About />} />
+              <Route path="/genre/:slug" element={<Genre />} />
             </Routes>
           </main>
           <Footer />

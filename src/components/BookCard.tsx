@@ -1,6 +1,7 @@
 import type { Book } from '../data/books';
 import { FaClock } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { slugify } from '../utils/slugify';
 
 interface BookCardProps {
     book: Book;
@@ -29,7 +30,7 @@ export const BookCard = ({ book }: BookCardProps) => {
                 e.currentTarget.style.boxShadow = 'var(--shadow-md)';
             }}
         >
-            <Link to={`/book/${book.id}`} style={{ display: 'block', position: 'relative', paddingTop: '100%', color: 'inherit' }}>
+            <Link to={`/book/${book.slug || book.id}`} style={{ display: 'block', position: 'relative', paddingTop: '100%', color: 'inherit' }}>
                 <img
                     src={book.coverUrl}
                     alt={book.title}
@@ -74,7 +75,7 @@ export const BookCard = ({ book }: BookCardProps) => {
 
             <div style={{ padding: '1rem', paddingTop: '3.5rem', flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 {/* 1. Title */}
-                <Link to={`/book/${book.id}`} style={{ textDecoration: 'none', color: 'inherit', width: '100%', textAlign: 'center' }}>
+                <Link to={`/book/${book.slug || book.id}`} style={{ textDecoration: 'none', color: 'inherit', width: '100%', textAlign: 'center' }}>
                     <h3 style={{
                         fontSize: '1.25rem', // Spec: 19pt ~ 25px, but 20px (1.25rem) is safer for cards. 1.5rem = 24px. Let's try 1.2rem first to fit.
                         marginBottom: '0.25rem',
@@ -99,21 +100,36 @@ export const BookCard = ({ book }: BookCardProps) => {
                     {book.author}
                 </p>
 
-                {/* 3. Genre Lozenge (Moved Here) */}
-                <div style={{
-                    display: 'inline-block',
-                    fontSize: '0.75rem',
-                    color: 'var(--color-brand-cloud)', // User update: Cloud
-                    backgroundColor: 'var(--color-brand-forrest)', // Spec: Background Forrest
-                    padding: '0.25rem 0.75rem',
-                    borderRadius: '1rem',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.05em',
-                    fontWeight: 700,
-                    marginBottom: '1rem',
-                    fontFamily: 'Inter, sans-serif'
-                }}>
-                    {book.genre}
+
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.25rem', marginBottom: '1rem' }}>
+                    {(Array.isArray(book.genre) ? book.genre : [book.genre]).map((g, i) => (
+                        <Link key={i} to={`/genre/${slugify(g)}`} style={{ textDecoration: 'none' }}>
+                            <div style={{
+                                fontSize: '0.75rem',
+                                color: 'var(--color-brand-cloud)',
+                                backgroundColor: 'var(--color-brand-forrest)',
+                                padding: '0.25rem 0.75rem',
+                                borderRadius: '1rem',
+                                textTransform: 'uppercase',
+                                letterSpacing: '0.05em',
+                                fontWeight: 700,
+                                fontFamily: 'Inter, sans-serif',
+                                display: 'inline-block', // Ensure it behaves like a button
+                                transition: 'background-color 0.2s', // Hover effect setup
+                            }}
+                                onMouseEnter={e => {
+                                    e.currentTarget.style.backgroundColor = '#2a4a3d';
+                                    e.currentTarget.style.color = 'var(--color-brand-coral-light)';
+                                }}
+                                onMouseLeave={e => {
+                                    e.currentTarget.style.backgroundColor = 'var(--color-brand-forrest)';
+                                    e.currentTarget.style.color = 'var(--color-brand-cloud)';
+                                }}
+                            >
+                                {g}
+                            </div>
+                        </Link>
+                    ))}
                 </div>
 
                 <p style={{
@@ -121,7 +137,7 @@ export const BookCard = ({ book }: BookCardProps) => {
                     color: 'var(--color-text-muted)',
                     lineHeight: 1.5,
                     marginBottom: '1.5rem',
-                    flex: 1,
+                    padding: '0 0.5rem',
                     display: '-webkit-box',
                     WebkitLineClamp: 3,
                     WebkitBoxOrient: 'vertical',
