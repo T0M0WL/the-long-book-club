@@ -203,7 +203,6 @@ export const baseBooks: Book[] = [
         lengthHours: 71.9,
         genre: 'Classic',
 
-
         description: 'Stephen Fry presents a complete and unabridged collection of the stories of Sherlock Holmes.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B06X3XG5Y6?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B06VWQTBZ9?tag=thelongbookcl-20'
@@ -1552,8 +1551,8 @@ export const baseBooks: Book[] = [
         lengthHours: 24.5,
         genre: ["Fantasy", "Dark Romance", "Romantasy", "Urban Fantasy", "Magic", "Mystery"],
         description: "Now crowned queen of the Blood Court, Saeris Fane must confront political treachery and a spreading supernatural corruption. The stakes are higher and the magic deadlier in this explosive sequel.",
-        affiliateLink: 'https://www.amazon.co.uk/dp/B0DBJB1Q4L?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0DBJBFHGT?tag=thelongbookcl-20',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0FBSCF8N3?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0FBS7GCTV?tag=thelongbookcl-20',
         narrator: "Stella Bloom, Anthony Palmini",
         cardOverview: "20 hours of Fae & Alchemy. An addictive enemies-to-lovers phenomenon full of banter and blistering heat."
     },
@@ -1567,8 +1566,8 @@ export const baseBooks: Book[] = [
         lengthHours: 39.5,
         genre: ["Horror", "Thriller", "Supernatural", "Psychic", "Nazis", "Mind Control"],
         description: "Three individuals discover they have the power to control human minds and have used this gift for decades to feed off the suffering of others. Now they are hunted.",
-        affiliateLink: 'https://www.amazon.co.uk/dp/B07BNSH1LY?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B08375RPDL?tag=thelongbookcl-20',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B005S0YL7K?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B005RZ7LN2?tag=thelongbookcl-20',
         narrator: "Tom Sellwood",
         cardOverview: "39 hours of psychic horror. A forgotten masterpiece often called the scariest book ever written."
     },
@@ -1582,8 +1581,8 @@ export const baseBooks: Book[] = [
         lengthHours: 199.4,
         genre: ["Classics", "Victorian", "Anthology", "Historical Fiction", "Social Commentary", "Satire"],
         description: "A massive collection featuring the first six major works of Charles Dickens, including Oliver Twist, Nicholas Nickleby, The Old Curiosity Shop, and A Christmas Carol. This Audible Original production brings these timeless tales to life with a full cast of celebrated narrators.",
-        affiliateLink: 'https://www.amazon.co.uk/dp/B07TD6S8SS?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B07THG2JCC?tag=thelongbookcl-20',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0DJDFLLFK?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0DJDGQ7TL?tag=thelongbookcl-20',
         narrator: "P. J. Ochlan, Bruno Roubicek",
         cardOverview: "12 hours exploring the gaps. A fan-favorite expansion of the Three Body universe."
     },
@@ -1597,8 +1596,8 @@ export const baseBooks: Book[] = [
         lengthHours: 29.9,
         genre: ["Science Fiction", "Hard Sci-Fi", "Fan Sequel", "Space Opera", "Physics", "Time"],
         description: "Visualizing the end of the universe, explicit dimensional warfare, and the fate of humanity millions of years in the future. This is the mind-bending conclusion to the Remembrance of Earth's Past trilogy.",
-        affiliateLink: 'https://www.amazon.co.uk/dp/B0CFYK53C1?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0CFYLXMT2?tag=thelongbookcl-20',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0CFYJ7DGT?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0CFYKH5D2?tag=thelongbookcl-20',
         narrator: "Jess Hong, Daniel York Loh, P.J. Ochlan",
         cardOverview: "23 hours of cosmic silence. The sequel introduces the terrifying Fermi Paradox solution that will haunt you."
     },
@@ -1627,8 +1626,8 @@ export const baseBooks: Book[] = [
         lengthHours: 37.6,
         genre: ["Fantasy", "LitRPG", "Slice of Life", "Cozy Fantasy", "Portal Fantasy", "High Fantasy"],
         description: "Erin Solstice finds herself far from the inn in the city of Celum. Meanwhile, Lyonette is struggling to hold the inn together as the Goblin Lord's forces encroach. The world of Izril is changing, and new heroes like the blind Laken Godart must rise to meet the challenge.",
-        affiliateLink: 'https://www.amazon.co.uk/dp/B07X4LZ3QC?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B07X3MVKQ7?tag=thelongbookcl-20',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B08WHR2S6T?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B08WHGSDLL?tag=thelongbookcl-20',
         narrator: "Andrea Parsneau",
         cardOverview: "43 hours opening the Inn. The start of the viral LitRPG phenomenon that changes how you see fantasy."
     },
@@ -1657,8 +1656,8 @@ export const baseBooks: Book[] = [
         lengthHours: 29.7,
         genre: ["Fantasy", "Urban Fantasy", "Romantasy", "Crossover", "Paranormal", "Fae"],
         description: "The stunning third book in the sexy, action-packed Crescent City series, following the global bestsellers House of Earth and Blood and House of Sky and Breath. Bryce Quinlan never expected to see a world other than Midgard, but now that she has, all she wants is to get back.",
-        affiliateLink: 'https://www.amazon.co.uk/dp/B09S11QF6K?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B09S11QF6K?tag=thelongbookcl-20',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0CN1JMJ8X?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0DJN1CZKC?tag=thelongbookcl-20',
         narrator: "Elizabeth Evans",
         cardOverview: "A massive 27-hour sequel. Maas expands the world in this sprawling, character-rich blockbuster."
     },
@@ -1672,8 +1671,8 @@ export const baseBooks: Book[] = [
         lengthHours: 27.7,
         genre: ["Fantasy", "Urban Fantasy", "Romantasy", "Mystery", "Paranormal", "Fae"],
         description: "Bryce Quinlan and Hunt Athalar are trying to get back to normal\u2014they may have saved Crescent City, but with so much upheaval in their lives lately, they mostly want a chance to relax. Slow down. Figure out what the future holds.",
-        affiliateLink: 'https://www.amazon.co.uk/dp/B0CZF79X5G?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0CZF874CW?tag=thelongbookcl-20',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B09RZZQDRL?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0D3QR164F?tag=thelongbookcl-20',
         narrator: "Jasmin Walker, Justis Bolding, Teddy Hamilton, Rebecca Soler",
         cardOverview: "At nearly 24 hours, the stakes have never been higher. The longest entry in the Empyrean saga yet."
     },
@@ -1687,8 +1686,8 @@ export const baseBooks: Book[] = [
         lengthHours: 22.7,
         genre: ["Spy Thriller", "Espionage", "Crime", "Terrorism", "Mystery", "Action"],
         description: "A retired intelligence agent is pulled back into the shadows to stop a faceless terrorist known as the Saracen, who is planning an attack that could destroy the western world.",
-        affiliateLink: 'https://www.amazon.co.uk/dp/B00EMRB29A?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B00EMRB45O?tag=thelongbookcl-20',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B00E67KWXI?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B00E652E72?tag=thelongbookcl-20',
         narrator: "Ray Porter",
         cardOverview: "22 hours of pure espionage. A relentless spy thriller that reads like a film from the first page."
     },
@@ -1702,8 +1701,8 @@ export const baseBooks: Book[] = [
         lengthHours: 18.55,
         genre: ["Fantasy", "Dark Academia", "Mythology", "Literary Fiction", "Adventure"],
         description: "Two rival PhD students at Cambridge must descend into Hell to rescue their deceased thesis advisor in this dark academia fantasy that blends Dante\u2019s Inferno with academic satire.",
-        affiliateLink: 'https://www.amazon.co.uk/dp/B0CN1LZRCK?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0CN1LZRCK?tag=thelongbookcl-20',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0CYTD95YH?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B0CYTD8DGP?tag=thelongbookcl-20',
         narrator: "Elizabeth Evans"
     },
     {
@@ -1731,8 +1730,8 @@ export const baseBooks: Book[] = [
         lengthHours: 37.3,
         genre: ["Science Fiction", "Space Opera", "Hard Sci-Fi", "War", "Action", "Thriller"],
         description: "The year is 2380. The Intersolar Commonwealth, a sphere of stars, contains more than six hundred worlds.",
-        affiliateLink: 'https://www.amazon.co.uk/dp/B002SPV8VA?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B001OC2W0E?tag=thelongbookcl-20',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0041SYV5W?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B005NDFK6S?tag=thelongbookcl-20',
         narrator: "Victor Bevine",
         cardOverview: "20 hours of war. The stunning conclusion to the Hyperion cantos delivers on every promise."
     },
@@ -1761,8 +1760,8 @@ export const baseBooks: Book[] = [
         lengthHours: 38,
         genre: ["Techno-thriller", "Action", "Crime", "MMORPG", "Adventure", "Global"],
         description: "A wealthy tech entrepreneur gets caught up in a global chase involving Russian mobsters, Islamic terrorists, and Chinese hackers after a ransomware virus infects his MMORPG.",
-        affiliateLink: 'https://www.amazon.co.uk/dp/B00I2TS9BS?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B004FI3EBU?tag=thelongbookcl-20',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B005QBI6LS?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B005Q20OBM?tag=thelongbookcl-20',
         narrator: "Michael Prichard",
         cardOverview: "31 hours of WWIII. Clancy's tactical masterpiece imagines a conventional war in the 1980s."
     },
@@ -1776,8 +1775,8 @@ export const baseBooks: Book[] = [
         lengthHours: 31.2,
         genre: ["Techno-thriller", "War", "Cold War", "Military", "Action", "Alternate History"],
         description: "When Muslim fundamentalists destroy a vital Soviet oil complex, the USSR decides to seize the Persian Gulf. To prevent NATO from intervening, they launch a massive deception campaign that leads to World War III.",
-        affiliateLink: 'https://www.amazon.co.uk/dp/B00E67KWXI?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B00J4X5TKA?tag=thelongbookcl-20',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B00I2TS9BS?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B00I54G188?tag=thelongbookcl-20',
         narrator: "Christopher Ragland",
         cardOverview: "23 hours chasing the Saracen. The ultimate modern spy thriller that never lets up."
     },
@@ -1806,7 +1805,7 @@ export const baseBooks: Book[] = [
         lengthHours: 22.6,
         genre: ["Science Fiction", "Hard Sci-Fi", "Cosmic Horror", "Sociology", "Space Opera", "Aliens"],
         description: "The Trisolaran fleet is on its way. In response, Earth forms the Wallfacer Project, granting four individuals near-infinite resources to design secret strategies hidden from the sophons that monitor all human communication.",
-        affiliateLink: 'https://www.amazon.co.uk/dp/B0BVWJ3X7B?tag=thelongbookclub-21',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0CFYK53C1?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0BVW68DMG?tag=thelongbookcl-20',
         narrator: "Daniel York Loh, P.J. Ochlan, Bruno Roubicek",
         cardOverview: "13 hours of hard sci-fi. First contact like you've never seen it before, grounded in physics and history."
@@ -1821,25 +1820,10 @@ export const baseBooks: Book[] = [
         lengthHours: 36.8,
         genre: ["Horror", "Post-Apocalyptic", "Science Fiction", "Vampires", "Survival", "Epic"],
         description: "A government experiment goes wrong, unleashing a viral apocalypse of vampire-like beings. A century later, a colony of survivors must leave their sanctuary to save the world, guided by a girl who has been alive since it all began.",
-        affiliateLink: 'https://www.amazon.co.uk/dp/B005S0YL7K?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B005RZ7LN2?tag=thelongbookcl-20',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B003TXKQQ8?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B005WJSSXU?tag=thelongbookcl-20',
         narrator: "Mel Foster, Laural Merlington",
         cardOverview: "39 hours of mind games. Psychic vampires manipulating history in a sprawling thriller."
-    },
-    {
-        id: '136',
-        slug: 'the-power-of-the-dog-don-winslow',
-        title: "The Power of the Dog",
-        author: "Don Winslow",
-        coverUrl: '/covers/the-power-of-the-dog.jpg',
-        length: '20h 13m',
-        lengthHours: 20.2,
-        genre: ["Crime Thriller", "Cartel", "Noir", "War on Drugs", "Action", "Mystery"],
-        description: "DEA agent Art Keller battles the Barrera drug cartel in a blood-soaked saga that spans three decades and multiple countries. It is an epic, gritty look at the war on drugs.",
-        affiliateLink: 'https://www.amazon.co.uk/dp/B003TXKQQ8?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B003QL14NC?tag=thelongbookcl-20',
-        narrator: "Scott Brick",
-        cardOverview: "37 hours of the viral apocalypse. A literary blockbuster that spans a century of survival."
     },
     {
         id: '144',
@@ -1851,8 +1835,8 @@ export const baseBooks: Book[] = [
         lengthHours: 12.3,
         genre: ["Science Fiction", "Hard Sci-Fi", "Fan Sequel", "Space Opera", "Physics", "Time"],
         description: "Set in the universe of the Three-Body Problem, this authorized fan-sequel (paraquel) follows Yun Tianming's journey after the end of the original trilogy. It explores the mysteries of the Entities and the ultimate nature of the universe.",
-        affiliateLink: 'https://www.amazon.co.uk/dp/B0CFYJ7DGT?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0CFYKH5D2?tag=thelongbookcl-20',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B07TD6S8SS?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B07THG2JCC?tag=thelongbookcl-20',
         narrator: "Daniel York Loh, P.J. Ochlan, Bruno Roubicek",
         cardOverview: "30 hours at the end of the universe. The mind-bending conclusion that expands the scope to billions of years."
     },
@@ -1866,8 +1850,8 @@ export const baseBooks: Book[] = [
         lengthHours: 28.5,
         genre: ["Horror", "Historical Horror", "Survival", "Supernatural", "Sea Story", "History"],
         description: "The men on board the HMS Terror have every right to be scared: their ship is stuck in the Arctic ice, rations are low, and there is a thing out there in the dark that is stalking them. Based on the true story of the lost Franklin Expedition.",
-        affiliateLink: 'https://www.amazon.co.uk/dp/B00684FLDI?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0067VJ2DM?tag=thelongbookcl-20',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B07BNSH1LY?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B07BNMN6CZ?tag=thelongbookcl-20',
         narrator: "Tom Stechschulte",
         cardOverview: "28 hours suspended in ice. A chilling mix of historical survival and supernatural horror."
     },
@@ -1881,8 +1865,8 @@ export const baseBooks: Book[] = [
         lengthHours: 13.4,
         genre: ["Science Fiction", "Hard Sci-Fi", "First Contact", "Physics", "China", "Mystery"],
         description: "Set against the backdrop of China's Cultural Revolution, a secret military project sends signals into space to establish contact with aliens. An alien civilization on the brink of destruction captures the signal and plans to invade Earth.",
-        affiliateLink: 'https://www.amazon.co.uk/dp/B005QBI6LS?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B005Q20OBM?tag=thelongbookcl-20',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0BVWJ3X7B?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B005NDFK6S?tag=thelongbookcl-20',
         narrator: "Malcolm Hillgartner",
         cardOverview: "38 hours of global chaos. A high-tech thriller involving MMORPGs, terrorists, and the Russian mob."
     },
@@ -1896,8 +1880,8 @@ export const baseBooks: Book[] = [
         lengthHours: 43.1,
         genre: ["Fantasy", "LitRPG", "Slice of Life", "Cozy Fantasy", "Portal Fantasy", "Adventure"],
         description: "Two rival PhD students at Cambridge must descend into Hell to rescue their deceased thesis advisor in this dark academia fantasy that blends Dante\u2019s Inferno with academic satire.",
-        affiliateLink: 'https://www.amazon.co.uk/dp/B0CYTD95YH?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0DLTR6D1R?tag=thelongbookcl-20',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B07X4LZ3QC?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B07X3MVKQ7?tag=thelongbookcl-20',
         narrator: "Morag Sims, Will Watt",
         cardOverview: "43 hours opening the Inn. The start of the viral LitRPG phenomenon that changes how you see fantasy."
     },
@@ -1911,8 +1895,8 @@ export const baseBooks: Book[] = [
         lengthHours: 42.8,
         genre: ["Fantasy", "LitRPG", "Slice of Life", "Cozy Fantasy", "Portal Fantasy", "Magic"],
         description: "Picking up the tale of Kvothe Kingkiller once again, we follow him into exile, into political intrigue, courtship, adventure, love and magic... and further along the path that has turned Kvothe, the mightiest magician of his age, a legend in his own time, into Kote, the unassuming pub landlord.",
-        affiliateLink: 'https://www.amazon.co.uk/dp/B08WHR2S6T?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B08WHGSDLL?tag=thelongbookcl-20',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B007QDSAL0?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B007Q726XE?tag=thelongbookcl-20',
         narrator: "Andrea Parsneau",
         cardOverview: "37 hours expanding the world. Erin leaves the Inn, and the scope of the story explodes."
     },
@@ -1926,8 +1910,8 @@ export const baseBooks: Book[] = [
         lengthHours: 34.2,
         genre: ["Fantasy", "LitRPG", "Slice of Life", "Cozy Fantasy", "Portal Fantasy", "Magic"],
         description: "Winter has come to Innworld. Erin Solstice tries to bring the joy of Christmas to a world that has never heard of it, while Rags the Goblin heads north to face a new threat, and Ryoka Griffin meets the Deadly Flower of the North.",
-        affiliateLink: 'https://www.amazon.co.uk/dp/B007QDSAL0?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B007Q726XE?tag=thelongbookcl-20',
+        affiliateLink: 'https://www.amazon.co.uk/dp/B093QYS1F2?tag=thelongbookclub-21',
+        affiliateLinkUS: 'https://www.amazon.com/dp/B093QNBCGJ?tag=thelongbookcl-20',
         narrator: "Rupert Degas",
         cardOverview: "43 hours in exile. Kvothe's journey continues in this massive sequel to The Name of the Wind."
     }
