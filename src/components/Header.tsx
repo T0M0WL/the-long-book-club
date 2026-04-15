@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaInstagram, FaTiktok } from 'react-icons/fa';
+
 import { StickyHeader } from './StickyHeader';
-import { LogoSmall } from './LogoSmall';
+import { useHeaderContext } from '../context/HeaderContext';
 
 export const Header = () => {
     const { pathname } = useLocation();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    // Close menu on route change
+    const { theme } = useHeaderContext();
+
     // Close menu on route change
     useEffect(() => {
         if (isMenuOpen) setIsMenuOpen(false);
@@ -25,67 +26,128 @@ export const Header = () => {
     }, [isMenuOpen]);
 
     // Determine if we are on a page with a Hero section (Home or Collections)
-    const isHeroPage = pathname === '/' || pathname.startsWith('/genre/') || pathname === '/collections' || pathname === '/collections/best-long-books-2025' || pathname === '/collections/dark-academia' || pathname === '/collections/romantasy' || pathname === '/collections/longest-ever' || pathname === '/collections/long-life-stories' || pathname === '/collections/bucket-list';
+    // NOTE: This logic might be redundant if we use the Context correctly on all pages,
+    // but for now we keep the layout logic simple. All pages get the new header structure.
 
     return (
         <>
             <StickyHeader onMenuOpen={() => setIsMenuOpen(true)} />
-            {/* ... Header JSX ... */}
+
+            {/* Static "Chameleon" Header */}
             <header style={{
-                padding: 'clamp(1.5rem, 5vw, 3rem)',
-                marginBottom: isHeroPage ? 0 : '2rem',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center', // Always center content (Logo)
-                position: isHeroPage ? 'absolute' : 'relative',
+                padding: 'clamp(2rem, 3vw, 2.5rem) clamp(2rem, 6vw, 3.5rem)', // Increased padding (Top/Bottom, Left/Right)
+                position: 'absolute',
                 top: 0,
                 left: 0,
                 right: 0,
-                zIndex: 50,
-                backgroundColor: 'transparent'
-            }}>
-                {!isHeroPage ? (
-                    <Link to="/" style={{ display: 'block', maxWidth: '300px' }}>
-                        <img
-                            src="/assets/lbc-logo-horiz.svg"
-                            alt="The Long Book Club"
-                            style={{ width: '100%', height: 'auto' }}
-                        />
-                    </Link>
-                ) : pathname.includes('/collections') ? (
-                    <Link to="/" style={{ display: 'block', maxWidth: '240px' }}>
-                        <LogoSmall
-                            color="var(--color-brand-cloud)"
-                            style={{
-                                width: '100%',
-                                height: 'auto'
-                            }}
-                        />
-                    </Link>
-                ) : <div />}
+                zIndex: 1000,
+                display: 'flex', // Default to Flex for Mobile
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                backgroundColor: 'transparent',
+                pointerEvents: 'none' // Allow clicks to pass through empty space
+            }} className="site-header">
+                {/* 1. LEFT: Logo */}
+                <Link to="/" className="nav-interactive" style={{ display: 'block', visibility: pathname === '/' ? 'hidden' : 'visible', justifySelf: 'start', pointerEvents: pathname === '/' ? 'none' : 'auto' }}>
+                    <div className="header-logo" style={{
+                        width: '140px', // Mobile Size (Significantly Larger)
+                        height: '78px',
+                        backgroundColor: isMenuOpen ? 'var(--color-brand-coral)' : theme.logoColor,
+                        transition: 'background-color 0.3s ease',
+                        maskImage: 'url(/assets/lbc-logo-stack-v2.svg)',
+                        maskSize: 'contain',
+                        maskRepeat: 'no-repeat',
+                        maskPosition: 'left center',
+                        WebkitMaskImage: 'url(/assets/lbc-logo-stack-v2.svg)',
+                        WebkitMaskSize: 'contain',
+                        WebkitMaskRepeat: 'no-repeat',
+                        WebkitMaskPosition: 'left center',
+                    }} />
+                </Link>
+
+                {/* 2. CENTER: Navigation Links (Desktop Only) */}
+                <nav className="desktop-nav" style={{
+                    justifySelf: 'center',
+                    display: 'none', // Hidden by default (mobile), shown via media query
+                    gap: '1rem',
+                    alignItems: 'center',
+                    pointerEvents: isMenuOpen ? 'none' : 'auto', // Disable clicks when menu open
+                    opacity: isMenuOpen ? 0 : 1, // Hide when menu open
+                    transition: 'opacity 0.3s ease'
+                }}>
+                    {[
+                        { id: 'finder', label: 'Long Book Finder', path: '/long-book-finder' },
+                        { id: 'collections', label: 'Collections', path: '/collections' },
+                        { id: 'journal', label: 'Journal', path: '/journal' }
+                    ].map(link => {
+                        const isActive = theme.activeLink === link.id;
+                        return (
+                            <Link
+                                key={link.id}
+                                to={link.path}
+                                className="nav-text-hover"
+                                style={{
+                                    fontFamily: 'Lora, serif', // Spec: Lora
+                                    fontSize: '1.375rem', // Increased by 25% (was 1.1rem)
+                                    color: isActive ? theme.activeLinkText : theme.textColor,
+                                    textDecoration: 'none',
+                                    padding: '0.5rem 1.5rem',
+                                    borderRadius: '50px', // Lozenge shape
+                                    backgroundColor: isActive ? theme.activeLinkBg : 'transparent',
+                                    transition: 'background-color 0.3s ease, color 0.3s ease', // Specific transitions to allow class to handle transform
+                                    fontWeight: isActive ? 600 : 400,
+                                    whiteSpace: 'nowrap'
+                                }}
+                            >
+                                {link.label}
+                            </Link>
+                        );
+                    })}
+                </nav>
+
+                <style>{`
+                    @media (min-width: 960px) {
+                        .site-header {
+                            display: grid !important;
+                            grid-template-columns: 1fr auto 1fr !important;
+                            justify-content: unset !important;
+                        }
+                        .header-logo {
+                            width: 180px !important; // Desktop Size (Bolder)
+                            height: 100px !important;
+                        }
+                        .desktop-nav {
+                            display: flex !important;
+                        }
+                    }
+                `}</style>
+
+
+                {/* 3. RIGHT: Hamburger Menu */}
                 <button
                     onClick={() => setIsMenuOpen(true)}
+                    className="nav-interactive"
                     style={{
-                        position: 'absolute', // Absolute position to keep Logo centered
-                        right: 'clamp(1.5rem, 5vw, 3rem)', // Match container padding
-                        top: 'clamp(1.5rem, 5vw, 3rem)', // Match right padding for symmetry
+                        justifySelf: 'end',
                         background: 'none',
                         border: 'none',
-                        color: 'var(--color-brand-coral)', // Reverted to Coral
+                        color: theme.hamburgerColor,
                         cursor: 'pointer',
                         padding: '0.5rem',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        zIndex: 60
+                        pointerEvents: isMenuOpen ? 'none' : 'auto', // Disable when open (let close button underneath work)
+                        opacity: isMenuOpen ? 0 : 1, // Hide when open
+                        transition: 'opacity 0.3s ease'
                     }}
                     aria-label="Open Menu"
                 >
-                    {/* Sage Hamburger (Sharp Corners) - Size 42 - Stroke 4 - Gap 4 */}
-                    <svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3 4H21" stroke="currentColor" strokeWidth="4" strokeLinecap="square" />
-                        <path d="M3 12H21" stroke="currentColor" strokeWidth="4" strokeLinecap="square" />
-                        <path d="M3 20H21" stroke="currentColor" strokeWidth="4" strokeLinecap="square" />
+                    {/* Sage Hamburger (Sharp Corners) - Size 32 (smaller for nav) */}
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 4H21" stroke="currentColor" strokeWidth="3" strokeLinecap="square" />
+                        <path d="M3 12H21" stroke="currentColor" strokeWidth="3" strokeLinecap="square" />
+                        <path d="M3 20H21" stroke="currentColor" strokeWidth="3" strokeLinecap="square" />
                     </svg>
                 </button>
             </header>
@@ -143,7 +205,9 @@ export const Header = () => {
                 }}>
                     {[
                         { label: 'Home', path: '/' },
+                        { label: 'Long Book Finder', path: '/long-book-finder' },
                         { label: 'Collections', path: '/collections' },
+                        { label: 'Journal', path: '/journal' },
                         { label: 'About', path: '/about' }
                     ].map((link, index, arr) => (
                         <div key={link.path} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
@@ -183,28 +247,7 @@ export const Header = () => {
                     ))}
                 </nav>
 
-                {/* Social Icons */}
-                <div style={{
-                    marginTop: '3rem',
-                    display: 'flex',
-                    gap: '2rem',
-                    alignItems: 'center'
-                }}>
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
-                        style={{ color: 'var(--color-brand-coral)', transition: 'color 0.3s' }}
-                        onMouseEnter={e => e.currentTarget.style.color = 'var(--color-brand-sage)'}
-                        onMouseLeave={e => e.currentTarget.style.color = 'var(--color-brand-coral)'}
-                    >
-                        <FaInstagram size={32} />
-                    </a>
-                    <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer"
-                        style={{ color: 'var(--color-brand-coral)', transition: 'color 0.3s' }}
-                        onMouseEnter={e => e.currentTarget.style.color = 'var(--color-brand-sage)'}
-                        onMouseLeave={e => e.currentTarget.style.color = 'var(--color-brand-coral)'}
-                    >
-                        <FaTiktok size={28} />
-                    </a>
-                </div>
+
 
 
             </div>

@@ -68,9 +68,7 @@ export const ContactForm = () => {
     };
 
     return (
-        <div style={{
-            marginTop: '4rem',
-            padding: '2rem',
+        <div className="contact-form-wrapper" style={{
             background: 'linear-gradient(135deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.4) 100%)',
             backdropFilter: 'blur(10px)',
             borderRadius: '16px',

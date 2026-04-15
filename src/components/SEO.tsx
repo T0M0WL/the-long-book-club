@@ -8,9 +8,10 @@ interface SEOProps {
     canonical?: string;
     type?: 'website' | 'article' | 'book';
     schema?: string; // JSON-LD string
+    themeColor?: string; // Hex code for browser UI (notch/status bar)
 }
 
-export const SEO = ({ title, description, image, canonical, type = 'website', schema }: SEOProps) => {
+export const SEO = ({ title, description, image, canonical, type = 'website', schema, themeColor = '#2c5143' }: SEOProps) => {
     const location = useLocation();
     const baseUrl = 'https://thelongbookclub.com';
 
@@ -31,6 +32,7 @@ export const SEO = ({ title, description, image, canonical, type = 'website', sc
             {/* Basic Metadata */}
             <title>{fullTitle}</title>
             <meta name="description" content={description || defaultDescription} />
+            <meta name="theme-color" content={themeColor} />
             <link rel="canonical" href={url} />
 
             {/* Open Graph */}
@@ -48,6 +50,14 @@ export const SEO = ({ title, description, image, canonical, type = 'website', sc
             <meta name="twitter:image" content={image || defaultImage} />
 
             {/* Structured Data (JSON-LD) */}
+            <script type="application/ld+json">
+                {JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "Organization",
+                    "url": baseUrl,
+                    "logo": `${baseUrl}/assets/lbc-fav.svg`
+                })}
+            </script>
             {schema && (
                 <script type="application/ld+json">
                     {schema}

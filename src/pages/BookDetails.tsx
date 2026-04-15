@@ -1,15 +1,36 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useLocation, Navigate } from 'react-router-dom';
 import { books } from '../data/books';
+import { getRoundedHours } from '../utils/formatLength';
 import { collections } from '../data/collections';
 import { BookCard } from '../components/BookCard';
-import { FaArrowLeft, FaClock } from 'react-icons/fa';
+import { FaClock } from 'react-icons/fa';
 import { SEO } from '../components/SEO'; // Use Global SEO Component
 import { slugify } from '../utils/slugify';
+import { useSetHeaderTheme } from '../context/HeaderContext';
+import { reviews } from '../data/reviews';
+import SoundCheckCard from '../components/SoundCheckCard';
+import Breadcrumbs from '../components/Breadcrumbs';
+import AudiobookCommuteCalculator from '../components/AudiobookCommuteCalculator';
+import AudiobookValueCalculator from '../components/AudiobookValueCalculator';
 
 export const BookDetails = () => {
+    useSetHeaderTheme({
+        logoColor: 'var(--color-brand-coral)',
+        textColor: 'var(--color-brand-coral)',
+        hamburgerColor: 'var(--color-brand-coral)',
+        activeLink: '',
+        activeLinkBg: 'var(--color-brand-coral)',
+        activeLinkText: 'var(--color-brand-slate)'
+    });
+
     const { slug } = useParams<{ slug: string }>();
+    const location = useLocation();
     // Backward compatibility: Find by slug (new) OR id (old)
     const book = books.find(b => b.slug === slug || b.id === slug);
+    const review = book ? reviews[book.title] : undefined;
+
+    // Determine previous page from state, default to Library/Home if direct access
+    const from = location.state?.from;
 
     if (!book) {
         return (
@@ -21,6 +42,11 @@ export const BookDetails = () => {
         );
     }
 
+    // Redirect old ID-based URLs to new Slug-based URLs
+    if (slug === book.id && book.slug && slug !== book.slug) {
+        return <Navigate to={`/book/${book.slug}`} replace />;
+    }
+
     // Helper to convert "62h 48m" -> "PT62H48M" (ISO 8601)
     const formatDuration = (str: string) => {
         const parts = str.split(' ');
@@ -28,6 +54,10 @@ export const BookDetails = () => {
         parts.forEach(p => iso += p.toUpperCase());
         return iso;
     };
+
+    // Generate completely original SEO text, ignoring the Amazon description
+    const rawNote = (review?.curatorNote || book.curatorNote || "").replace(/<[^>]*>?/gm, '');
+    const seoDesc = book.teaser || book.cardOverview || (rawNote.length > 10 ? rawNote.substring(0, 150) + "..." : `Listen to ${book.title} by ${book.author}. ${getRoundedHours(book.length)} hours of epic narration.`);
 
     const structuredData = JSON.stringify({
         "@context": "https://schema.org",
@@ -37,7 +67,7 @@ export const BookDetails = () => {
             "@type": "Person",
             "name": book.author
         }],
-        "description": book.description,
+        "description": seoDesc,
         "datePublished": "2024", // Optional: We don't have this in data yet, could omit or add later
         "duration": formatDuration(book.length),
         "inLanguage": "en",
@@ -60,15 +90,15 @@ export const BookDetails = () => {
     });
 
     return (
-        <div style={{
+        <div className="book-details-container" style={{
             maxWidth: '1000px',
             margin: '0 auto',
-            padding: '2rem 1.5rem 6rem 1.5rem',
+            padding: '0 2rem 6rem 2rem',
             animation: 'fadeIn 0.5s ease'
         }}>
             <SEO
                 title={`${book.title} by ${book.author}`}
-                description={`Listen to ${book.title} by ${book.author}. Length: ${book.length}. Genre: ${book.genre}. ${book.description.substring(0, 150)}...`}
+                description={seoDesc}
                 image={book.coverUrl}
                 canonical={`https://thelongbookclub.com/book/${book.slug}`}
                 type="book"
@@ -76,33 +106,12 @@ export const BookDetails = () => {
             />
 
             {/* Breadcrumb */}
-            <Link to="/" style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-                marginBottom: '3rem',
-                backgroundColor: 'var(--color-brand-coral)',
-                color: '#fff',
-                padding: '0.5rem 1.2rem',
-                borderRadius: '100px',
-                fontSize: '0.9rem',
-                fontFamily: 'Inter, sans-serif',
-                fontWeight: 600,
-                textDecoration: 'none',
-                transition: 'transform 0.2s, box-shadow 0.2s',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
-            }}
-                onMouseEnter={e => {
-                    e.currentTarget.style.transform = 'translateY(-2px)';
-                    e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
-                }}
-                onMouseLeave={e => {
-                    e.currentTarget.style.transform = 'translateY(0)';
-                    e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
-                }}
-            >
-                <FaArrowLeft size={12} /> Back to Library
-            </Link>
+            {/* Breadcrumb Navigation - Clears fixed header */}
+            <Breadcrumbs items={[
+                { label: 'Home', path: '/' },
+                from ? { label: from.label, path: from.path } : { label: 'Long Book Finder', path: '/' },
+                { label: book.title }
+            ]} />
 
             <div className="book-details-grid" style={{
                 display: 'grid',
@@ -120,8 +129,7 @@ export const BookDetails = () => {
                             loading="eager"
                             style={{
                                 width: '100%',
-                                borderRadius: '12px',
-                                boxShadow: '0 20px 40px -10px rgba(0,0,0,0.3)', // Deep premium shadow
+                                borderRadius: '0',
                                 border: '1px solid rgba(0,0,0,0.05)'
                             }}
                         />
@@ -135,88 +143,110 @@ export const BookDetails = () => {
                             width: '100px', // Slightly larger than card (90px)
                             height: '100px',
                             background: 'var(--color-brand-forrest)',
-                            border: '4px solid #fff',
+                            border: '8px solid var(--color-brand-coral)',
                             borderRadius: '50%',
                             color: 'var(--color-brand-cloud)',
                             display: 'flex',
                             flexDirection: 'column',
                             justifyContent: 'center',
                             alignItems: 'center',
-                            boxShadow: '0 4px 10px rgba(0,0,0,0.15)',
                             zIndex: 10,
-                            lineHeight: 1.2
+                            lineHeight: 1
                         }}>
-                            <FaClock size={16} style={{ position: 'absolute', top: '22px' }} />
+                            <FaClock size={12} style={{ opacity: 0.9, marginBottom: '4px' }} />
                             <span style={{
-                                fontSize: '14px',
-                                fontWeight: 600,
+                                fontSize: '2rem',
+                                fontWeight: 400,
+                                fontFamily: 'var(--font-serif-accent)',
+                                letterSpacing: '-0.03em',
+                                lineHeight: '0.9',
+                                marginTop: '0'
+                            }}>{getRoundedHours(book.length)}</span>
+                            <span style={{
+                                fontSize: '0.75rem',
+                                fontWeight: 500,
                                 fontFamily: 'Inter, sans-serif',
-                                marginTop: '10px'
-                            }}>{book.length}</span>
+                                opacity: 0.9,
+                                marginTop: '2px'
+                            }}>hours</span>
                         </div>
                     </div>
 
                     {/* CTAs Moved Here */}
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', width: '100%', marginTop: '4rem' }}>
-                        <a
-                            href={book.affiliateLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                gap: '0.5rem',
-                                backgroundColor: 'var(--color-primary)',
-                                color: '#fff',
-                                padding: '1rem 1.5rem',
-                                borderRadius: '2rem',
-                                fontSize: '1rem',
-                                fontWeight: 600,
-                                textDecoration: 'none',
-                                transition: 'background-color 0.2s',
-                                width: '100%'
-                            }}
-                            onMouseEnter={e => e.currentTarget.style.backgroundColor = 'var(--color-primary-hover)'}
-                            onMouseLeave={e => e.currentTarget.style.backgroundColor = 'var(--color-primary)'}
-                        >
-                            <img src="/flags/uk.png" alt="UK" style={{ width: '24px', height: '24px', borderRadius: '50%', objectFit: 'cover', border: 'none' }} />
-                            Listen on Audible UK
-                            <img src="/audible-chevron.png" alt="" style={{ width: '21px', height: 'auto' }} />
-                        </a>
+                    <div className="audible-cta-container" style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', width: '100%', marginTop: '4rem' }}>
+                        <div className="audible-buttons-wrapper" style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', width: '100%' }}>
+                            {book.affiliateLink && (
+                                <a
+                                    href={book.affiliateLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        gap: '0.5rem',
+                                        backgroundColor: 'var(--color-primary)',
+                                        color: '#fff',
+                                        padding: '1rem 1.5rem',
+                                        borderRadius: '2rem',
+                                        fontSize: '1rem',
+                                        fontWeight: 600,
+                                        textDecoration: 'none',
+                                        transition: 'background-color 0.2s',
+                                        width: '100%'
+                                    }}
+                                    onMouseEnter={e => e.currentTarget.style.backgroundColor = 'var(--color-primary-hover)'}
+                                    onMouseLeave={e => e.currentTarget.style.backgroundColor = 'var(--color-primary)'}
+                                >
+                                    <img src="/flags/uk.png" alt="UK" style={{ width: '24px', height: '24px', borderRadius: '50%', objectFit: 'cover', border: 'none' }} />
+                                    Listen on Audible UK
+                                    <img src="/audible-chevron.png" alt="" style={{ width: '21px', height: 'auto' }} />
+                                </a>
+                            )}
 
-                        {book.affiliateLinkUS && (
-                            <a
-                                href={book.affiliateLinkUS}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    gap: '0.5rem',
-                                    backgroundColor: 'var(--color-primary)',
-                                    color: '#fff',
-                                    padding: '1rem 1.5rem',
-                                    borderRadius: '2rem',
-                                    fontSize: '1rem',
-                                    fontWeight: 600,
-                                    textDecoration: 'none',
-                                    transition: 'background-color 0.2s',
-                                    width: '100%'
-                                }}
-                                onMouseEnter={e => e.currentTarget.style.backgroundColor = 'var(--color-primary-hover)'}
-                                onMouseLeave={e => e.currentTarget.style.backgroundColor = 'var(--color-primary)'}
-                            >
-                                <img src="/flags/us.png" alt="US" style={{ width: '24px', height: '24px', borderRadius: '50%', objectFit: 'cover', border: 'none' }} />
-                                Listen on Audible US
-                                <img src="/audible-chevron.png" alt="" style={{ width: '21px', height: 'auto' }} />
-                            </a>
-                        )}
+                            {book.affiliateLinkUS && (
+                                <a
+                                    href={book.affiliateLinkUS}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        gap: '0.5rem',
+                                        backgroundColor: 'var(--color-primary)',
+                                        color: '#fff',
+                                        padding: '1rem 1.5rem',
+                                        borderRadius: '2rem',
+                                        fontSize: '1rem',
+                                        fontWeight: 600,
+                                        textDecoration: 'none',
+                                        transition: 'background-color 0.2s',
+                                        width: '100%'
+                                    }}
+                                    onMouseEnter={e => e.currentTarget.style.backgroundColor = 'var(--color-primary-hover)'}
+                                    onMouseLeave={e => e.currentTarget.style.backgroundColor = 'var(--color-primary)'}
+                                >
+                                    <img src="/flags/us.png" alt="US" style={{ width: '24px', height: '24px', borderRadius: '50%', objectFit: 'cover', border: 'none' }} />
+                                    Listen on Audible US
+                                    <img src="/audible-chevron.png" alt="" style={{ width: '21px', height: 'auto' }} />
+                                </a>
+                            )}
+                        </div>
 
                         <p style={{ marginTop: '0.5rem', fontSize: '0.8rem', color: 'var(--color-brand-forrest)', fontWeight: 'bold', textAlign: 'center' }}>
                             *A free trial is available for non members.
                         </p>
+                    </div>
+
+                    {/* Audiobook Commute Calculator Widget */}
+                    <div style={{ marginTop: '2rem', width: '100%' }}>
+                        <AudiobookCommuteCalculator initialBookLength={book.length} />
+                    </div>
+
+                    {/* Audiobook Value Calculator Widget */}
+                    <div style={{ width: '100%' }}>
+                        <AudiobookValueCalculator initialBookLength={book.length} />
                     </div>
                 </div>
 
@@ -229,7 +259,7 @@ export const BookDetails = () => {
                 }}>
 
                     {/* Genre Pill - Matched to BookCard */}
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '0.5rem', marginBottom: '1.5rem' }}>
+                    <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', alignItems: 'flex-start', gap: '0.5rem', marginBottom: '1.5rem' }}>
                         {(Array.isArray(book.genre) ? book.genre : [book.genre]).map((g, i) => (
                             <Link key={i} to={`/genre/${slugify(g)}`} style={{ textDecoration: 'none' }}>
                                 <div style={{
@@ -244,6 +274,7 @@ export const BookDetails = () => {
                                     textTransform: 'uppercase',
                                     display: 'inline-block',
                                     transition: 'background-color 0.2s',
+                                    whiteSpace: 'nowrap' // Prevent breaking inside the pill
                                 }}
                                     onMouseEnter={e => {
                                         e.currentTarget.style.backgroundColor = '#2a4a3d';
@@ -267,7 +298,7 @@ export const BookDetails = () => {
                         lineHeight: 1.1,
                         fontFamily: 'var(--font-serif-accent)', // Fraunces
                         color: 'var(--color-brand-forrest)',
-                        fontWeight: 700
+                        fontWeight: 500
                     }}>
                         {book.title}
                     </h1>
@@ -279,7 +310,7 @@ export const BookDetails = () => {
                     </h2>
 
                     {/* Content Logic: Curator Note vs Publisher Summary */}
-                    {book.curatorNote ? (
+                    {review?.curatorNote || book.curatorNote ? (
                         <>
                             {/* Curator's Note (SEO Hook) */}
                             <h2 style={{
@@ -290,7 +321,7 @@ export const BookDetails = () => {
                                 textAlign: 'left',
                                 width: '100%'
                             }}>
-                                {book.curatorTitle || "Why this is the best long audiobook for your credit"}
+                                {review?.curatorTitle || book.curatorTitle || "Why this is the best long audiobook for your credit"}
                             </h2>
                             <p className="curator-note-content" style={{
                                 fontSize: '1.15rem',
@@ -302,89 +333,29 @@ export const BookDetails = () => {
                                 textAlign: 'left',
                                 alignSelf: 'flex-start'
                             }}
-                                dangerouslySetInnerHTML={{ __html: book.curatorNote }}
+                                dangerouslySetInnerHTML={{ __html: review?.curatorNote || book.curatorNote || '' }}
                             />
 
-                            {/* Additional Metadata (Narrator, Sound Check) */}
-                            {(book.narrator || book.soundCheck) && (
-                                <div style={{
-                                    marginBottom: '2.5rem',
-                                    padding: '0',
-                                    fontFamily: 'var(--font-body)',
-                                    color: 'var(--color-brand-slate)'
-                                }}>
-                                    {book.narrator && (
-                                        <div style={{ marginBottom: '0.75rem', fontSize: '1.1rem', lineHeight: '1.5' }}>
-                                            <strong style={{ color: 'var(--color-brand-forrest)' }}>Narrator:</strong> {book.narrator}
-                                        </div>
-                                    )}
-                                    {book.soundCheck && (
-                                        <div style={{ marginBottom: '0.75rem', fontSize: '1.1rem', lineHeight: '1.5' }}>
-                                            <strong style={{ color: 'var(--color-brand-forrest)' }}>Sound Check:</strong> {book.soundCheck}
-                                        </div>
-                                    )}
-                                </div>
-                            )}
+
 
                             {/* Divider */}
-                            <hr style={{
-                                width: '100%',
-                                border: 'none',
-                                borderTop: '1px solid rgba(0,0,0,0.1)',
-                                margin: '0 0 3rem 0'
-                            }} />
 
-                            {/* Publisher's Summary Header */}
-                            <h2 style={{
-                                color: 'var(--color-brand-forrest)',
-                                marginBottom: '1.5rem',
-                                alignSelf: 'flex-start',
-                                textAlign: 'left',
-                                width: '100%'
-                            }}>
-                                Publisher's Summary
-                            </h2>
 
-                            {/* Publisher's Summary Text */}
-                            <p style={{
-                                fontSize: '1.05rem',
-                                lineHeight: 1.7,
-                                color: 'var(--color-brand-slate)',
-                                marginBottom: '3rem',
-                                fontFamily: 'var(--font-body)',
-                                maxWidth: '60ch',
-                                textAlign: 'left',
-                                alignSelf: 'flex-start',
-                                opacity: 0.9
-                            }}>
-                                {book.description}
-                            </p>
+
                         </>
                     ) : (
-                        // Fallback for books without a curator note
-                        <>
-                            {/* Publisher's Summary Header (Standardized) */}
-                            <h2 style={{
-                                color: 'var(--color-brand-forrest)',
-                                marginBottom: '1.5rem',
-                                alignSelf: 'flex-start',
-                                textAlign: 'left',
-                                width: '100%'
-                            }}>
-                                Publisher's Summary
-                            </h2>
-                            <p style={{
-                                fontSize: '1.05rem', // Matched to the new size (down from 1.15)
-                                lineHeight: 1.7,
-                                color: 'var(--color-brand-slate)',
-                                marginBottom: '3rem',
-                                fontFamily: 'var(--font-body)',
-                                maxWidth: '60ch',
-                                opacity: 0.9
-                            }}>
-                                {book.description}
-                            </p>
-                        </>
+                        // Fallback for books without a curator note - Empty now as Publisher's Summary is removed
+                        <></>
+                    )}
+
+                    {/* SoundCheck Feature Card */}
+                    {review?.soundCheck && review?.narrator && (
+                        <SoundCheckCard
+                            narrator={review.narrator}
+                            soundCheckText={review.soundCheck}
+                            affiliateLinkUK={book.affiliateLink}
+                            affiliateLinkUS={book.affiliateLinkUS}
+                        />
                     )}
 
 
@@ -396,8 +367,62 @@ export const BookDetails = () => {
             @media (max-width: 850px) {
                 .book-details-grid {
                     grid-template-columns: 1fr !important;
-                    gap: 3rem !important;
+                    gap: 6rem !important; /* Increased from 3rem to clear the time badge */
                 }
+                
+                /* Sticky Audible Buttons on Mobile */
+                .audible-cta-container {
+                    position: fixed;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    z-index: 1000;
+                    background-color: var(--color-brand-cloud);
+                    padding: 1.25rem 0.75rem 0.5rem 0.75rem; /* Increased top padding */
+                    box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+                    margin-top: 0 !important;
+                    border-top: 1px solid rgba(0,0,0,0.05);
+                    flex-direction: column !important; /* Stack buttons above text */
+                    gap: 0.25rem !important;
+                }
+
+                .audible-buttons-wrapper {
+                    flex-direction: row !important; /* Horizontal buttons */
+                    gap: 0.5rem !important;
+                }
+
+                .audible-buttons-wrapper > a {
+                    flex: 1;
+                    padding: 0.75rem 0.25rem !important; /* Tight padding */
+                    font-size: 0.8rem !important; /* Slightly larger than 0.75rem */
+                    width: auto !important;
+                    white-space: nowrap; /* Keep on one line */
+                }
+
+                .audible-buttons-wrapper > a img {
+                    height: 16px !important; /* Fixed height */
+                    width: auto !important; /* Maintain aspect ratio */
+                    object-fit: contain;
+                }
+                
+                .audible-cta-container p {
+                    font-size: 0.65rem !important;
+                    margin-top: 0 !important;
+                    opacity: 0.8;
+                }
+                
+                /* Add padding to body or main container to prevent occlusion at bottom */
+                /* Since we can't easily reach body here, we'll add it to the component root container via .book-details-grid margin or similar if needed. 
+                   Actually, the root div has padding-bottom: 6rem (line 85), which might be enough. 
+                   Let's check line 85: padding: '0 2rem 6rem 2rem'. 
+                   If sticky header is ~150px, 6rem (96px) might be tight. Let's increase it to 10rem on mobile.
+                */
+            }
+            
+            @media (max-width: 850px) {
+               .book-details-container {
+                   padding-bottom: 14rem !important; /* Increased space for sticky footer */
+               }
             }
         `}</style>
 
@@ -432,7 +457,7 @@ export const BookDetails = () => {
 
                 if (displayBooks.length > 0 || linkedCollection) {
                     return (
-                        <div style={{ marginTop: '6rem', borderTop: '1px solid rgba(0,0,0,0.1)', paddingTop: '4rem' }}>
+                        <div style={{ marginTop: '1.3rem', borderTop: '1px solid rgba(0,0,0,0.1)', paddingTop: '4rem' }}>
                             <h3 style={{
                                 fontFamily: 'var(--font-serif-accent)',
                                 fontSize: '2rem',
@@ -458,21 +483,18 @@ export const BookDetails = () => {
                                         }}
                                     >
                                         <div style={{
-                                            filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.1))',
-                                            transition: 'transform 0.3s ease, filter 0.3s ease',
+                                            transition: 'transform 0.3s ease',
                                             height: '100%',
                                             display: 'flex',
                                             flexDirection: 'column',
-                                            borderRadius: '8px', // Slightly rounded to match book cards if they are? Book cards are usually squareish or have their own style.
-                                            overflow: 'hidden' // Ensure rounded corners work
+                                            borderRadius: '0',
+                                            overflow: 'hidden' // Ensure square corners work
                                         }}
                                             onMouseEnter={(e) => {
                                                 e.currentTarget.style.transform = 'translateY(-5px)';
-                                                e.currentTarget.style.filter = 'drop-shadow(0 10px 15px rgba(0,0,0,0.15))';
                                             }}
                                             onMouseLeave={(e) => {
                                                 e.currentTarget.style.transform = 'translateY(0)';
-                                                e.currentTarget.style.filter = 'drop-shadow(0 4px 6px rgba(0,0,0,0.1))';
                                             }}
                                         >
                                             {/* Top Graphic */}
@@ -492,7 +514,7 @@ export const BookDetails = () => {
 
                                             {/* Content Area - Mimicking the Collections Grid Style */}
                                             <div style={{
-                                                backgroundColor: '#efeee6',
+                                                backgroundColor: '#f2f1e7',
                                                 padding: '1.5rem',
                                                 flex: 1,
                                                 display: 'flex',
@@ -534,14 +556,14 @@ export const BookDetails = () => {
                                                 <div style={{
                                                     backgroundColor: 'var(--color-brand-coral)',
                                                     color: 'white',
-                                                    padding: '0.5rem 1.5rem',
+                                                    padding: '0.75rem 2rem',
                                                     borderRadius: '50px',
-                                                    fontSize: '0.8rem',
-                                                    fontWeight: 600,
-                                                    textTransform: 'uppercase',
+                                                    fontSize: '1rem',
+                                                    fontWeight: 400,
+                                                    fontFamily: 'var(--font-serif-accent)',
                                                     marginTop: 'auto' // Push button to bottom
                                                 }}>
-                                                    View Collection
+                                                    View Collection <span style={{ fontSize: '1.1em', lineHeight: 1, fontFamily: 'var(--font-body)' }}>&rarr;</span>
                                                 </div>
                                             </div>
                                             {/* Bottom Curve */}

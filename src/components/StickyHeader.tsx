@@ -46,10 +46,12 @@ export const StickyHeader = ({ onMenuOpen }: { onMenuOpen: () => void }) => {
                 alt=""
                 style={{
                     position: 'absolute',
-                    top: '100%',
+                    top: 'calc(100% - 1.5px)', // Small overlap to hide 1px gap
                     left: '50%',
-                    transform: 'translateX(-50%)',
+                    transform: 'translateX(-50%) scaleY(1.02)', // Tiny scale to 'bleed' and cover sub-pixels
+                    transformOrigin: 'top',
                     width: '356px',
+                    maxWidth: '90vw', // Aggressive constraint to prevent mobile wobble
                     height: '58px',
                     pointerEvents: 'none',
                     zIndex: 40,
@@ -69,6 +71,7 @@ export const StickyHeader = ({ onMenuOpen }: { onMenuOpen: () => void }) => {
                 <img
                     src="/assets/lbc-fav.svg"
                     alt="Home"
+                    className="nav-interactive"
                     style={{
                         height: '40px',
                         width: 'auto'
@@ -95,7 +98,7 @@ export const StickyHeader = ({ onMenuOpen }: { onMenuOpen: () => void }) => {
                 }}
                 aria-label="Open Menu"
             >
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className="nav-interactive" width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M3 5H21" stroke="currentColor" strokeWidth="3" strokeLinecap="square" />
                     <path d="M3 12H21" stroke="currentColor" strokeWidth="3" strokeLinecap="square" />
                     <path d="M3 19H21" stroke="currentColor" strokeWidth="3" strokeLinecap="square" />

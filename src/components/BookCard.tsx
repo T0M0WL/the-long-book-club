@@ -1,36 +1,39 @@
 import type { Book } from '../data/books';
+import { getRoundedHours } from '../utils/formatLength';
 import { FaClock } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { slugify } from '../utils/slugify';
 
 interface BookCardProps {
     book: Book;
+    navigationState?: any;
 }
 
-export const BookCard = ({ book }: BookCardProps) => {
+export const BookCard = ({ book, navigationState }: BookCardProps) => {
     return (
         <article style={{
             backgroundColor: 'var(--color-surface)',
-            borderRadius: '2rem',
+            borderRadius: '0',
             overflow: 'hidden',
             display: 'flex',
             flexDirection: 'column',
-            transition: 'transform 0.2s, box-shadow 0.2s',
+            transition: 'transform 0.2s',
             border: '1px solid rgba(255,255,255,0.05)',
             height: '100%',
-            position: 'relative',
-            boxShadow: 'var(--shadow-md)'
+            position: 'relative'
         }}
             onMouseEnter={e => {
                 e.currentTarget.style.transform = 'translateY(-4px)';
-                e.currentTarget.style.boxShadow = 'var(--shadow-lg)';
             }}
             onMouseLeave={e => {
                 e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = 'var(--shadow-md)';
             }}
         >
-            <Link to={`/book/${book.slug || book.id}`} style={{ display: 'block', position: 'relative', paddingTop: '100%', color: 'inherit' }}>
+            <Link
+                to={`/book/${book.slug || book.id}`}
+                state={navigationState}
+                style={{ display: 'block', position: 'relative', paddingTop: '100%', color: 'inherit' }}
+            >
                 <img
                     src={book.coverUrl}
                     alt={book.title}
@@ -49,33 +52,46 @@ export const BookCard = ({ book }: BookCardProps) => {
                     bottom: 0,
                     left: '50%',
                     transform: 'translate(-50%, 50%)',
-                    width: '90px',
-                    height: '90px',
-                    background: 'var(--color-brand-forrest)', // Spec: Forrest
-                    border: '4px solid #fff',
+                    width: '100px', // Slightly larger to accommodate big text? 90px might be tight for 200+. Let's try 94px first or keep 90px.
+                    height: '100px',
+                    background: 'var(--color-brand-forrest)', // User Request: Forest
+                    border: '8px solid var(--color-brand-coral)',
                     borderRadius: '50%',
-                    color: 'var(--color-brand-cloud)', // User update: Cloud
+                    color: 'var(--color-brand-cloud)',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
+                    boxShadow: '0 4px 6px rgba(0,0,0,0.15)',
                     zIndex: 2,
-                    lineHeight: 1.2
+                    lineHeight: 1
                 }}>
-                    <FaClock size={14} style={{ position: 'absolute', top: '20px' }} />
+                    <FaClock size={12} style={{ opacity: 0.9, marginBottom: '4px' }} />
                     <span style={{
-                        fontSize: '12px', // Spec: 12pt (using px for web consistency near 12pt)
-                        fontWeight: 600,  // Spec: Semi Bold 600
+                        fontSize: '2rem',
+                        fontWeight: 400,
+                        fontFamily: 'var(--font-serif-accent)',
+                        letterSpacing: '-0.03em',
+                        lineHeight: '0.9',
+                        marginTop: '0'
+                    }}>{getRoundedHours(book.length)}</span>
+                    <span style={{
+                        fontSize: '0.75rem',
+                        fontWeight: 500,
                         fontFamily: 'Inter, sans-serif',
-                        marginTop: '8px'
-                    }}>{book.length}</span>
+                        opacity: 0.9,
+                        marginTop: '2px'
+                    }}>hours</span>
                 </div>
             </Link>
 
-            <div style={{ padding: '1rem', paddingTop: '3.5rem', flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <div style={{ padding: '1rem', paddingTop: '4.75rem', flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 {/* 1. Title */}
-                <Link to={`/book/${book.slug || book.id}`} style={{ textDecoration: 'none', color: 'inherit', width: '100%', textAlign: 'center' }}>
+                <Link
+                    to={`/book/${book.slug || book.id}`}
+                    state={navigationState}
+                    style={{ textDecoration: 'none', color: 'inherit', width: '100%', textAlign: 'center' }}
+                >
                     <h3 style={{
                         fontSize: '1.25rem', // Spec: 19pt ~ 25px, but 20px (1.25rem) is safer for cards. 1.5rem = 24px. Let's try 1.2rem first to fit.
                         marginBottom: '0.25rem',
@@ -101,8 +117,8 @@ export const BookCard = ({ book }: BookCardProps) => {
                 </p>
 
 
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.25rem', marginBottom: '1rem' }}>
-                    {(Array.isArray(book.genre) ? book.genre : [book.genre]).map((g, i) => (
+                <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: '0.25rem', marginBottom: '1rem' }}>
+                    {(Array.isArray(book.genre) ? book.genre : [book.genre]).slice(0, 3).map((g, i) => (
                         <Link key={i} to={`/genre/${slugify(g)}`} style={{ textDecoration: 'none' }}>
                             <div style={{
                                 fontSize: '0.75rem',
@@ -133,9 +149,9 @@ export const BookCard = ({ book }: BookCardProps) => {
                 </div>
 
                 <p style={{
-                    fontSize: '0.875rem',
+                    fontSize: '1rem', // Bumped from 0.875rem to match CollectionCard
                     color: 'var(--color-text-muted)',
-                    lineHeight: 1.5,
+                    lineHeight: 1.4, // Reduced from 1.6 as per user request
                     marginBottom: '1.5rem',
                     padding: '0 0.5rem',
                     display: '-webkit-box',
@@ -143,63 +159,35 @@ export const BookCard = ({ book }: BookCardProps) => {
                     WebkitBoxOrient: 'vertical',
                     overflow: 'hidden'
                 }}>
-                    {book.description}
+                    {book.cardOverview || book.description}
                 </p>
 
-                <div style={{ marginTop: 'auto', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                    <a
-                        href={book.affiliateLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                <div style={{ marginTop: 'auto', display: 'flex', flexDirection: 'column', gap: '0.5rem', width: '100%' }}>
+                    <Link
+                        to={`/book/${book.slug || book.id}`}
+                        state={navigationState}
                         style={{
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
                             gap: '0.5rem',
-                            backgroundColor: 'var(--color-primary)',
+                            backgroundColor: 'var(--color-brand-coral)', // Using Coral explicitly as primary
                             color: '#fff',
                             padding: '0.75rem',
                             borderRadius: '2rem',
-                            fontSize: '0.875rem',
-                            fontWeight: 600,
+                            fontSize: '1rem', // Bumped up slightly for serif readability
+                            fontWeight: 400,
+                            fontFamily: 'var(--font-serif-accent)',
                             textDecoration: 'none',
-                            width: '100%'
+                            width: '100%',
+                            letterSpacing: '0',
+                            textTransform: 'none'
                         }}
                         onMouseEnter={e => e.currentTarget.style.backgroundColor = 'var(--color-primary-hover)'}
-                        onMouseLeave={e => e.currentTarget.style.backgroundColor = 'var(--color-primary)'}
+                        onMouseLeave={e => e.currentTarget.style.backgroundColor = 'var(--color-brand-coral)'}
                     >
-                        <img src="/flags/uk.png" alt="UK" style={{ width: '24px', height: '24px', borderRadius: '50%', objectFit: 'cover', border: 'none' }} />
-                        Listen on Audible UK
-                        <img src="/audible-chevron.png" alt="" style={{ width: '21px', height: 'auto' }} />
-                    </a>
-                    {book.affiliateLinkUS && (
-                        <a
-                            href={book.affiliateLinkUS}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                gap: '0.5rem',
-                                backgroundColor: 'var(--color-primary)',
-                                color: '#fff',
-                                padding: '0.75rem',
-                                borderRadius: '2rem',
-                                fontSize: '0.875rem',
-                                fontWeight: 600,
-                                textDecoration: 'none',
-                                width: '100%'
-
-                            }}
-                            onMouseEnter={e => e.currentTarget.style.backgroundColor = 'var(--color-primary-hover)'}
-                            onMouseLeave={e => e.currentTarget.style.backgroundColor = 'var(--color-primary)'}
-                        >
-                            <img src="/flags/us.png" alt="US" style={{ width: '24px', height: '24px', borderRadius: '50%', objectFit: 'cover', border: 'none' }} />
-                            Listen on Audible US
-                            <img src="/audible-chevron.png" alt="" style={{ width: '21px', height: 'auto' }} />
-                        </a>
-                    )}
+                        Read Full Review <span style={{ fontSize: '1.1em', lineHeight: 1, fontFamily: 'var(--font-body)' }}>&rarr;</span>
+                    </Link>
                 </div>
             </div>
         </article >

@@ -5,16 +5,18 @@ const path = require('path');
 // Configuration
 const BASE_URL = 'https://thelongbookclub.com';
 const BOOKS_FILE_PATH = path.join(__dirname, '../src/data/books.ts');
+const JOURNAL_FILE_PATH = path.join(__dirname, '../src/data/journal.ts');
 const OUTPUT_FILE_PATH = path.join(__dirname, '../public/sitemap.xml');
 
 // Static Routes
 const staticRoutes = [
     { url: '/', changefreq: 'weekly', priority: 1.0 },
-    { url: '/collections', changefreq: 'weekly', priority: 0.9 },
-    { url: '/about', changefreq: 'monthly', priority: 0.7 },
-    { url: '/generator', changefreq: 'monthly', priority: 0.7 },
-    { url: '/privacy', changefreq: 'yearly', priority: 0.5 },
-    { url: '/thank-you', changefreq: 'yearly', priority: 0.3 }
+    { url: '/collections/', changefreq: 'weekly', priority: 0.9 },
+    { url: '/journal/', changefreq: 'weekly', priority: 0.9 }, // Added Journal index
+    { url: '/about/', changefreq: 'monthly', priority: 0.7 },
+    { url: '/generator/', changefreq: 'monthly', priority: 0.7 },
+    { url: '/privacy/', changefreq: 'yearly', priority: 0.5 },
+    { url: '/thank-you/', changefreq: 'yearly', priority: 0.3 }
 ];
 
 function generateSitemap() {
@@ -36,7 +38,7 @@ function generateSitemap() {
 
         while ((match = slugRegex.exec(booksContent)) !== null) {
             urls.push({
-                url: `/book/${match[1]}`, // Use the captured slug
+                url: `/book/${match[1]}/`, // Use the captured slug with trailing slash
                 changefreq: 'monthly',
                 priority: 0.8
             });
@@ -70,7 +72,7 @@ function generateSitemap() {
 
         uniqueGenres.forEach(genre => {
             urls.push({
-                url: `/genre/${slugify(genre)}`,
+                url: `/genre/${slugify(genre)}/`,
                 changefreq: 'weekly',
                 priority: 0.8
             });
@@ -82,7 +84,31 @@ function generateSitemap() {
         process.exit(1);
     }
 
-    // 3. Build XML
+    // 3. Read Journal Posts
+    try {
+        if (fs.existsSync(JOURNAL_FILE_PATH)) {
+            const journalContent = fs.readFileSync(JOURNAL_FILE_PATH, 'utf8');
+            const jSlugRegex = /slug:\s*['"]([^'"]+)['"]/g;
+
+            let jMatch;
+            let jCount = 0;
+
+            while ((jMatch = jSlugRegex.exec(journalContent)) !== null) {
+                urls.push({
+                    url: `/journal/${jMatch[1]}/`,
+                    changefreq: 'weekly', // Journals might update or be important
+                    priority: 0.9 // High priority for shareable content
+                });
+                jCount++;
+            }
+            console.log(`   Found ${jCount} journal posts.`);
+        }
+    } catch (err) {
+        console.error('   ❌ Error reading journal file:', err);
+        // Don't exit, just continue
+    }
+
+    // 4. Build XML
     const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map(route => `  <url>
@@ -92,7 +118,7 @@ ${urls.map(route => `  <url>
   </url>`).join('\n')}
 </urlset>`;
 
-    // 4. Write to file
+    // 5. Write to file
     fs.writeFileSync(OUTPUT_FILE_PATH, xml);
     console.log(`✅ Sitemap generated at ${OUTPUT_FILE_PATH} with ${urls.length} URLs.`);
 }

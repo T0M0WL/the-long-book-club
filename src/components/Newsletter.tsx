@@ -20,7 +20,7 @@ export const Newsletter = () => {
                 zIndex: 0
             }}>
                 <img
-                    src="/assets/newsletter-backgrounds/LongBookClub-Forrest-Newsletter-Image-01.webp"
+                    src="/assets/newsletter-backgrounds/LongBookClub-Newsletter-Image-01.jpg"
                     alt=""
                     style={{
                         width: '100%',
@@ -42,7 +42,7 @@ export const Newsletter = () => {
             {/* TOP MASK (Rotated 180deg to curve into the content) */}
             <div style={{
                 position: 'absolute',
-                top: -1,
+                top: -1.5, // Sub-pixel nudge
                 left: 0,
                 width: '100%',
                 height: 'clamp(20px, 5vw, 60px)',
@@ -51,49 +51,53 @@ export const Newsletter = () => {
                 backgroundColor: 'var(--color-bg)',
                 backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('/paper-texture.png')`,
                 backgroundRepeat: 'repeat',
-                maskImage: `url("data:image/svg+xml,%3Csvg id='Layer_1' xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 595.3 30.4' preserveAspectRatio='none'%3E%3Cpath d='M392.5,0h0c-22.9,0-46.2,3.1-63.9,8.5-9.1,2.7-16.2,5.9-21.2,9.5-5.1,3.6-7.7,7.3-7.8,11.1h-2c0,0-2,0-2,0-.1-3.8-2.7-7.5-7.8-11.1-5-3.5-12.2-6.7-21.2-9.5C248.9,3.1,225.7,0,202.9,0H0v30.4h595.1V0h-202.7'/%3E%3C/svg%3E")`,
-                WebkitMaskImage: `url("data:image/svg+xml,%3Csvg id='Layer_1' xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 595.3 30.4' preserveAspectRatio='none'%3E%3Cpath d='M392.5,0h0c-22.9,0-46.2,3.1-63.9,8.5-9.1,2.7-16.2,5.9-21.2,9.5-5.1,3.6-7.7,7.3-7.8,11.1h-2c0,0-2,0-2,0-.1-3.8-2.7-7.5-7.8-11.1-5-3.5-12.2-6.7-21.2-9.5C248.9,3.1,225.7,0,202.9,0H0v30.4h595.1V0h-202.7'/%3E%3C/svg%3E")`,
+                maskImage: `url("data:image/svg+xml,%3Csvg id='Layer_1' xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 595.28 30.38' preserveAspectRatio='none'%3E%3Cpath d='M392.5,0h0c-22.9,0-46.2,3.1-63.9,8.5-9.1,2.7-16.2,5.9-21.2,9.5-5.1,3.6-7.7,7.3-7.8,11.1h-2c0,0-2,0-2,0-.1-3.8-2.7-7.5-7.8-11.1-5-3.5-12.2-6.7-21.2-9.5C248.9,3.1,225.7,0,202.9,0H0v30.38H595.13V0h-202.63'/%3E%3C/svg%3E")`,
+                WebkitMaskImage: `url("data:image/svg+xml,%3Csvg id='Layer_1' xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 595.28 30.38' preserveAspectRatio='none'%3E%3Cpath d='M392.5,0h0c-22.9,0-46.2,3.1-63.9,8.5-9.1,2.7-16.2,5.9-21.2,9.5-5.1,3.6-7.7,7.3-7.8,11.1h-2c0,0-2,0-2,0-.1-3.8-2.7-7.5-7.8-11.1-5-3.5-12.2-6.7-21.2-9.5C248.9,3.1,225.7,0,202.9,0H0v30.38H595.13V0h-202.63'/%3E%3C/svg%3E")`,
                 maskSize: '100% 100%',
                 WebkitMaskSize: '100% 100%',
-                transform: 'rotate(180deg)' // Inverts the curve
+                transform: 'rotate(180deg) scaleY(1.05)', // Inverts the curve + tiny scale
+                transformOrigin: 'top'
             }} />
 
             {/* BOTTOM MASK (Standard) - Blends into Footer */}
             <div style={{
                 position: 'absolute',
-                bottom: -1,
+                bottom: -1.5, // Sub-pixel nudge
                 left: 0,
                 width: '100%',
                 height: 'clamp(20px, 5vw, 60px)',
                 zIndex: 10000, // Sit above global noise to match footer
                 pointerEvents: 'none',
-                backgroundColor: 'var(--color-brand-coral)', // Matches Footer (Coral)
+                backgroundColor: 'var(--color-brand-coral)', // Baseline match
+                backgroundImage: "url('/assets/collections-hero-images/LongBookClub-Collections-background-01.gif')",
+                backgroundSize: 'cover',
+                backgroundPosition: 'bottom center',
                 // No texture here, just solid coral to merge with footer
-                maskImage: `url("data:image/svg+xml,%3Csvg id='Layer_1' xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 595.3 30.4' preserveAspectRatio='none'%3E%3Cpath d='M392.5,0h0c-22.9,0-46.2,3.1-63.9,8.5-9.1,2.7-16.2,5.9-21.2,9.5-5.1,3.6-7.7,7.3-7.8,11.1h-2c0,0-2,0-2,0-.1-3.8-2.7-7.5-7.8-11.1-5-3.5-12.2-6.7-21.2-9.5C248.9,3.1,225.7,0,202.9,0H0v30.4h595.1V0h-202.7'/%3E%3C/svg%3E")`,
-                WebkitMaskImage: `url("data:image/svg+xml,%3Csvg id='Layer_1' xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 595.3 30.4' preserveAspectRatio='none'%3E%3Cpath d='M392.5,0h0c-22.9,0-46.2,3.1-63.9,8.5-9.1,2.7-16.2,5.9-21.2,9.5-5.1,3.6-7.7,7.3-7.8,11.1h-2c0,0-2,0-2,0-.1-3.8-2.7-7.5-7.8-11.1-5-3.5-12.2-6.7-21.2-9.5C248.9,3.1,225.7,0,202.9,0H0v30.4h595.1V0h-202.7'/%3E%3C/svg%3E")`,
+                maskImage: `url("data:image/svg+xml,%3Csvg id='Layer_1' xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 595.28 30.38' preserveAspectRatio='none'%3E%3Cpath d='M392.5,0h0c-22.9,0-46.2,3.1-63.9,8.5-9.1,2.7-16.2,5.9-21.2,9.5-5.1,3.6-7.7,7.3-7.8,11.1h-2c0,0-2,0-2,0-.1-3.8-2.7-7.5-7.8-11.1-5-3.5-12.2-6.7-21.2-9.5C248.9,3.1,225.7,0,202.9,0H0v30.38H595.13V0h-202.63'/%3E%3C/svg%3E")`,
+                WebkitMaskImage: `url("data:image/svg+xml,%3Csvg id='Layer_1' xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 595.28 30.38' preserveAspectRatio='none'%3E%3Cpath d='M392.5,0h0c-22.9,0-46.2,3.1-63.9,8.5-9.1,2.7-16.2,5.9-21.2,9.5-5.1,3.6-7.7,7.3-7.8,11.1h-2c0,0-2,0-2,0-.1-3.8-2.7-7.5-7.8-11.1-5-3.5-12.2-6.7-21.2-9.5C248.9,3.1,225.7,0,202.9,0H0v30.38H595.13V0h-202.63'/%3E%3C/svg%3E")`,
                 maskSize: '100% 100%',
-                WebkitMaskSize: '100% 100%'
+                WebkitMaskSize: '100% 100%',
+                transform: 'scaleY(1.05)',
+                transformOrigin: 'bottom'
             }} />
 
-            {/* Top Left: Mail Icon */}
-            <img
-                src="/assets/mail-icon.svg"
-                alt=""
-                style={{
-                    position: 'absolute',
-                    top: '8rem', // Pushed down to clear the top mask
-                    left: '3rem',
-                    height: '40px', // Standard icon size
-                    width: 'auto',
-                    zIndex: 1,
-                    opacity: 0.9
-                }}
-            />
+            {/* Content Container */}
+            <div style={{ position: 'relative', zIndex: 10, maxWidth: '900px', margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
 
-            <div style={{ position: 'relative', zIndex: 10, maxWidth: '900px', margin: '0 auto' }}>
+                {/* Mail Icon */}
+                <img
+                    src="/assets/mail-icon.svg"
+                    alt=""
+                    style={{
+                        height: '40px', // Reduced by 20% (50 -> 40)
+                        width: 'auto',
+                        marginBottom: '25px', // Added 25px explicit spacing
+                        marginTop: '2rem'
+                    }}
+                />
 
                 <h2 style={{
-                    fontSize: 'clamp(5rem, 10vw, 8rem)', // Doubled size
+                    fontSize: 'clamp(4.4rem, 9vw, 7.4rem)', // Reduced by ~10px
                     marginBottom: '1.5rem',
                     fontFamily: 'var(--font-heading)',
                     color: 'var(--color-brand-coral)',
@@ -102,7 +106,7 @@ export const Newsletter = () => {
                     letterSpacing: '-0.02em' // Tightened kerning match Hero
                 }}>
                     Join the <br />
-                    <span style={{ fontStyle: 'italic' }}>Long Book Club</span>
+                    Long Book Club
                 </h2>
 
                 <p style={{

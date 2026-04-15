@@ -1,0 +1,14 @@
+export const FeatureCurve = ({ className, style }: { className?: string, style?: React.CSSProperties }) => (
+    <svg
+        className={className}
+        style={style}
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 380.5 61.8"
+        preserveAspectRatio="none" // Allow stretching if needed, though we likely want fixed aspect ratio for the 'spine' look
+    >
+        <path
+            fill="currentColor"
+            d="M123.9,17.8c19.2,6,34.6,12.8,45.3,20.3,10.9,7.7,16.4,15.6,16.7,23.7h8.5c.2-8.1,5.8-16,16.7-23.7,10.7-7.7,25.8-14.5,45.3-20.3C291.1,7.2,335.8.8,380.8-.2H-.1c44.7,1,89.3,7.4,124,18Z"
+        />
+    </svg>
+);

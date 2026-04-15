@@ -8,7 +8,6 @@ interface HeroProps {
     topGraphic?: string;
     titleColor?: string;
     subtitleColor?: string;
-    compactLogo?: boolean;
     overlayOpacity?: number;
     topGraphicOpacity?: number;
     contentBlendMode?: React.CSSProperties['mixBlendMode'];
@@ -20,16 +19,24 @@ interface HeroProps {
     chevronColor?: string;
     chevronOpacity?: number;
     topGraphicFilter?: string;
-    showLogo?: boolean;
     separatorColor?: string;
     useDynamicColor?: boolean;
     titleFontSize?: string;
     topGraphicDimensions?: { width?: string; height?: string };
     topGraphicColor?: string;
+    contentPaddingTop?: string;
+    showSeparator?: boolean;
+    subtitleLineHeight?: string | number;
+    subtitleMarginTop?: string;
+    sectionHeight?: string;
+    sectionMinHeight?: string;
+    sectionPadding?: string;
+    titleLineHeight?: string | number;
+    titleOpacity?: number;
 }
 
 export const Hero = ({
-    backgroundImage = "/assets/home-hero-images/LongBookClub-Forrest-Hero-Image-01.webp",
+    backgroundImage = "/assets/home-hero-images/LongBookClub-GreenTexture-Hero-Image-02.webp",
     title = (
         <>
             Lost in <br /> <span style={{ fontStyle: 'italic' }}>Listening</span>
@@ -40,8 +47,7 @@ export const Hero = ({
     topGraphic,
     titleColor = 'var(--color-brand-coral)',
     subtitleColor = '#cbd6ab',
-    compactLogo = false,
-    overlayOpacity = 0.3,
+    overlayOpacity = 0,
     topGraphicOpacity = 1,
     contentBlendMode,
     chevronBlendMode,
@@ -52,12 +58,21 @@ export const Hero = ({
     subtitleBlendMode,
     subtitleShadow,
     topGraphicFilter,
-    showLogo = true,
     separatorColor,
     useDynamicColor = false,
     titleFontSize,
     topGraphicDimensions,
-    topGraphicColor
+    topGraphicColor,
+    contentPaddingTop = 'clamp(45px, 10vh, 85px)',
+    showSeparator = true,
+    subtitleLineHeight,
+    subtitleMarginTop,
+    sectionHeight,
+    sectionMinHeight,
+    sectionPadding,
+    titleLineHeight,
+    titleOpacity,
+    // Removed legacy logo props: compactLogo, showLogo
 }: HeroProps) => {
     const heroImageRef = useRef<HTMLImageElement>(null);
     const [dynamicTheme, setDynamicTheme] = useState<'light' | 'dark' | null>(null);
@@ -162,8 +177,9 @@ export const Hero = ({
             className="hero-section"
             style={{
                 position: 'relative',
-                height: '100vh', // Full viewport height
-                minHeight: '700px',
+                height: sectionHeight || '100vh', // Default to full-screen
+                minHeight: sectionMinHeight || '700px',
+                padding: sectionPadding || '0',
                 width: '100%',
                 overflow: 'hidden',
                 display: 'flex',
@@ -177,7 +193,7 @@ export const Hero = ({
             {/* ... (Texture and BG Image stay same) ... */}
             <div style={{
                 position: 'absolute',
-                bottom: -1,
+                bottom: -1.5, // Sub-pixel nudge
                 left: 0,
                 width: '100%',
                 height: 'clamp(20px, 5vw, 60px)',
@@ -186,35 +202,51 @@ export const Hero = ({
                 backgroundColor: 'var(--color-bg)',
                 backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('/paper-texture.png')`,
                 backgroundRepeat: 'repeat',
-                maskImage: `url("data:image/svg+xml,%3Csvg id='Layer_1' xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 595.3 30.4' preserveAspectRatio='none'%3E%3Cpath d='M392.5,0h0c-22.9,0-46.2,3.1-63.9,8.5-9.1,2.7-16.2,5.9-21.2,9.5-5.1,3.6-7.7,7.3-7.8,11.1h-2c0,0-2,0-2,0-.1-3.8-2.7-7.5-7.8-11.1-5-3.5-12.2-6.7-21.2-9.5C248.9,3.1,225.7,0,202.9,0H0v30.4h595.1V0h-202.7'/%3E%3C/svg%3E")`,
-                WebkitMaskImage: `url("data:image/svg+xml,%3Csvg id='Layer_1' xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 595.3 30.4' preserveAspectRatio='none'%3E%3Cpath d='M392.5,0h0c-22.9,0-46.2,3.1-63.9,8.5-9.1,2.7-16.2,5.9-21.2,9.5-5.1,3.6-7.7,7.3-7.8,11.1h-2c0,0-2,0-2,0-.1-3.8-2.7-7.5-7.8-11.1-5-3.5-12.2-6.7-21.2-9.5C248.9,3.1,225.7,0,202.9,0H0v30.4h595.1V0h-202.7'/%3E%3C/svg%3E")`,
+                maskImage: `url("data:image/svg+xml,%3Csvg id='Layer_1' xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 595.28 30.38' preserveAspectRatio='none'%3E%3Cpath d='M392.5,0h0c-22.9,0-46.2,3.1-63.9,8.5-9.1,2.7-16.2,5.9-21.2,9.5-5.1,3.6-7.7,7.3-7.8,11.1h-2c0,0-2,0-2,0-.1-3.8-2.7-7.5-7.8-11.1-5-3.5-12.2-6.7-21.2-9.5C248.9,3.1,225.7,0,202.9,0H0v30.38H595.13V0h-202.63'/%3E%3C/svg%3E")`,
+                WebkitMaskImage: `url("data:image/svg+xml,%3Csvg id='Layer_1' xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 595.28 30.38' preserveAspectRatio='none'%3E%3Cpath d='M392.5,0h0c-22.9,0-46.2,3.1-63.9,8.5-9.1,2.7-16.2,5.9-21.2,9.5-5.1,3.6-7.7,7.3-7.8,11.1h-2c0,0-2,0-2,0-.1-3.8-2.7-7.5-7.8-11.1-5-3.5-12.2-6.7-21.2-9.5C248.9,3.1,225.7,0,202.9,0H0v30.38H595.13V0h-202.63'/%3E%3C/svg%3E")`,
                 maskSize: '100% 100%',
                 WebkitMaskSize: '100% 100%',
                 maskRepeat: 'no-repeat',
                 WebkitMaskRepeat: 'no-repeat',
                 maskPosition: 'bottom center',
-                WebkitMaskPosition: 'bottom center'
+                WebkitMaskPosition: 'bottom center',
+                transform: 'scaleY(1.05)',
+                transformOrigin: 'bottom'
             }} />
 
-            {/* Background Image */}
-            <img
-                ref={heroImageRef}
-                src={backgroundImage}
-                alt=""
-                crossOrigin={useDynamicColor ? "anonymous" : undefined}
-                onLoad={handleImageLoad}
-                style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    zIndex: 0,
-                    willChange: 'transform',
-                    transition: 'transform 0.1s linear'
-                }}
-            />
+            {/* Background Image Wrapper (Intro Animation) */}
+            <div style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                zIndex: 0,
+                animation: 'hero-intro-scale 2.5s cubic-bezier(0.19, 1, 0.22, 1) forwards', // Smooth ease-out
+                overflow: 'hidden'
+            }}>
+                <img
+                    ref={heroImageRef}
+                    src={backgroundImage}
+                    alt=""
+                    crossOrigin={useDynamicColor ? "anonymous" : undefined}
+                    onLoad={handleImageLoad}
+                    style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        willChange: 'transform',
+                        transition: 'transform 0.1s linear'
+                    }}
+                />
+            </div>
+
+            <style>{`
+                @keyframes hero-intro-scale {
+                    from { transform: scale(1.3); }
+                    to { transform: scale(1); }
+                }
+            `}</style>
 
             {/* Dark Overlay gradient */}
             <div style={{
@@ -257,43 +289,29 @@ export const Hero = ({
                         />
                     </>
                 )}
-                {showLogo && (
-                    <img
-                        src="/assets/lbc-logo-horiz.svg"
-                        alt="The Long Book Club"
-                        style={{
-                            position: 'absolute',
-                            top: 'clamp(1.5rem, 5vw, 3rem)',
-                            left: '50%',
-                            transform: 'translateX(-50%)',
-                            width: compactLogo
-                                ? 'clamp(130px, 25vw, 200px)'
-                                : 'clamp(260px, 50vw, 400px)',
-                            height: 'auto',
-                            zIndex: 20
-                        }}
-                    />
-                )}
             </div>
 
             {/* Central Content */}
             <div style={{
                 position: 'relative',
                 zIndex: containerZIndex, // Use calculated Z-index
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
                 textAlign: 'center',
-                padding: '0 2.5rem',
-                paddingTop: showLogo
-                    ? 'clamp(180px, 20vh, 240px)'
-                    : 'clamp(45px, 10vh, 85px)',
+                padding: '0 clamp(1rem, 5vw, 2.5rem)', // Reduced mobile padding to prevent text overflow
+                paddingTop: contentPaddingTop,
+                width: '100%', // Enforce width
                 maxWidth: '900px',
-                mixBlendMode: contentBlendMode
+                mixBlendMode: contentBlendMode,
+                margin: '0 auto' // Ensure relative centering if width is constrained
             }}>
                 {/* Top Graphic */}
                 {topGraphic && (
                     topGraphicColor ? (
                         <div style={{
                             display: 'block',
-                            margin: '0 auto 1.5rem auto',
+                            margin: '0 auto 1rem auto',
                             width: topGraphicDimensions?.width || 'auto',
                             height: topGraphicDimensions?.height || 'clamp(76px, 15.3vw, 117px)',
                             backgroundColor: topGraphicColor,
@@ -317,7 +335,7 @@ export const Hero = ({
                             alt=""
                             style={{
                                 display: 'block',
-                                margin: '0 auto 1.5rem auto',
+                                margin: '0 auto 1rem auto',
                                 width: topGraphicDimensions?.width ?? 'auto',
                                 height: topGraphicDimensions?.height ?? 'clamp(76px, 15.3vw, 117px)',
                                 maxWidth: '100%',
@@ -332,15 +350,16 @@ export const Hero = ({
                 )}
 
                 <h1 style={{
-                    fontSize: titleFontSize ?? 'clamp(6.8rem, 16vmin, 11rem)',
+                    fontSize: titleFontSize ?? 'clamp(6.2rem, 12vw, 9rem)', // Bigger Mobile (6.2rem), Smaller Desktop (9rem)
                     fontFamily: 'var(--font-heading)',
                     color: effectiveTitleColor,
                     transition: 'color 0.5s ease',
-                    lineHeight: 0.85,
-                    margin: 0,
+                    lineHeight: titleLineHeight ?? 0.85,
+                    margin: '0 auto 1rem auto',
                     fontWeight: 400,
-                    letterSpacing: '-0.02em',
+                    letterSpacing: 'normal',
                     mixBlendMode: titleBlendMode,
+                    opacity: titleOpacity ?? 0.88,
                     position: childPosition, // Promote if needed
                     zIndex: childZIndex
                 }}>
@@ -348,24 +367,27 @@ export const Hero = ({
                 </h1>
 
                 {/* Separator Line */}
-                <div style={{
-                    width: '60px',
-                    height: '2px',
-                    backgroundColor: effectiveSeparatorColor,
-                    transition: 'background-color 0.5s ease',
-                    margin: '2.4rem auto 1.4rem auto',
-                    opacity: 0.8,
-                    position: childPosition, // Promote if needed
-                    zIndex: childZIndex
-                }} />
+                {showSeparator && (
+                    <div style={{
+                        width: '60px',
+                        height: '1px',
+                        backgroundColor: effectiveSeparatorColor,
+                        transition: 'background-color 0.5s ease',
+                        margin: '1.5rem auto',
+                        opacity: 0.8,
+                        position: childPosition, // Promote if needed
+                        zIndex: childZIndex
+                    }} />
+                )}
 
-                <p style={{
-                    fontSize: 'clamp(1.4rem, 3vw, 1.6rem)',
+                <p className="hero-subtitle" style={{
+                    fontSize: '1.4rem',
                     color: effectiveSubtitleColor,
                     transition: 'color 0.5s ease',
                     maxWidth: '660px',
                     margin: '0 auto',
-                    lineHeight: 1.6,
+                    marginTop: subtitleMarginTop,
+                    lineHeight: subtitleLineHeight ?? 1.6,
                     fontFamily: 'var(--font-serif-accent)',
                     mixBlendMode: subtitleBlendMode,
                     textShadow: subtitleShadow,
@@ -375,15 +397,13 @@ export const Hero = ({
                     {subtitle}
                 </p>
 
-                {/* Chevron */}
                 <div
                     onClick={() => {
                         document.getElementById('scroll-target')?.scrollIntoView({ behavior: 'smooth' });
                     }}
                     style={{
-                        marginTop: '1.8rem',
+                        marginTop: '3rem',
                         cursor: 'pointer',
-                        padding: '1rem',
                         position: childPosition, // Promote if needed
                         zIndex: childZIndex
                     }}
@@ -431,6 +451,10 @@ export const Hero = ({
                     @media (max-width: 768px) {
                         .hide-on-mobile {
                             display: none !important;
+                        }
+                        .hero-subtitle {
+                            padding-left: 25px !important;
+                            padding-right: 25px !important;
                         }
                     }
                 `}</style>

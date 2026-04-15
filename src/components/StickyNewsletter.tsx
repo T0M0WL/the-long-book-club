@@ -110,13 +110,13 @@ export const StickyNewsletter = () => {
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    gap: '2px',
+                    gap: '12px',
                     marginTop: '-5px', // Moved up ~10px
-                    marginBottom: '2rem' // Added ~25px spacing
+                    marginBottom: '22px' // Reduced by 10px from 2rem
                 }}
             >
                 <div style={{
-                    backgroundColor: '#cbd6ab', // Sage Green Circle
+                    backgroundColor: 'var(--color-brand-coral)', // Coral Circle
                     borderRadius: '50%',
                     width: '28px',
                     height: '28px',
@@ -125,12 +125,12 @@ export const StickyNewsletter = () => {
                     justifyContent: 'center',
                     boxShadow: '0 4px 10px rgba(0,0,0,0.2)' // Matched shadow
                 }}>
-                    <FaTimes size={14} color="var(--color-brand-coral)" />
+                    <FaTimes size={14} color="#fff" />
                 </div>
                 <span style={{
                     fontSize: '0.65rem',
                     fontWeight: 800,
-                    color: '#cbd6ab',
+                    color: 'var(--color-brand-coral)',
                     letterSpacing: '0.05em',
                     lineHeight: 1,
                     textShadow: '0 4px 10px rgba(0,0,0,0.2)' // Matched shadow
@@ -157,7 +157,7 @@ export const StickyNewsletter = () => {
                 fontSize: '0.9rem',
                 marginTop: '0.75rem',
                 marginBottom: '0.875rem', // Reduced from 1.5rem to lift form up ~10px
-                color: '#fff',
+                color: 'var(--color-brand-coral)', // Coral
                 fontFamily: 'var(--font-body)',
                 fontWeight: 500
             }}>
@@ -187,7 +187,7 @@ export const StickyNewsletter = () => {
                         padding: '0.8rem 1.5rem',
                         borderRadius: '100px',
                         border: 'none',
-                        backgroundColor: '#EDECE4', // Cloud/Beige
+                        backgroundColor: '#fff', // White
                         color: 'var(--color-brand-slate)',
                         fontSize: '1rem',
                         outline: 'none',
@@ -202,12 +202,12 @@ export const StickyNewsletter = () => {
                 <button
                     type="submit"
                     style={{
-                        backgroundColor: '#cbd6ab', // Sage Green
-                        color: 'var(--color-brand-forrest)',
+                        backgroundColor: 'var(--color-brand-coral)', // Coral
+                        color: '#fff', // White
                         padding: '0.6rem 2.5rem', // Wide padding, shorter height
                         borderRadius: '100px',
                         fontSize: '1.5rem',
-                        fontFamily: 'var(--font-heading)',
+                        fontFamily: 'var(--font-serif-accent)', // Lora
                         fontWeight: 400,
                         border: 'none',
                         cursor: 'pointer',

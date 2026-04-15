@@ -1,6 +1,10 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+  
+  # Redirect non-hyphenated nonfiction to hyphenated non-fiction
+  RewriteRule ^genre/nonfiction/?$ /genre/non-fiction/ [R=301,L]
+
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d

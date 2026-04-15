@@ -71,3 +71,9 @@ export default defineConfig([
   },
 ])
 ```
+
+## Cookie Consent Note (Feb 2, 2026)
+The `<CookieConsent />` component has been temporarily disabled (commented out in `src/App.tsx`).
+
+**Action Required:**
+When the site begins attracting significant traffic or hosting advertisements, this component **MUST** be uncommented and reintroduced to ensure compliance with privacy regulations (GDPR/CPRA). The component is fully styled and functional.

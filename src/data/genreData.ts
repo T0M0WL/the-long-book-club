@@ -56,9 +56,9 @@ export const genreData: GenreMeta[] = [
         "intro": "Masterpieces that demand your time. A selection of complex, beautifully written long literary fiction audiobooks for the thoughtful listener."
     },
     {
-        "genre": "Nonfiction",
-        "metaTitle": "Best Long Nonfiction Audiobooks (10+ Hours) | TLBC",
-        "intro": "Learn something new in depth. From science to philosophy, browse our collection of the best long nonfiction audiobooks."
+        "genre": "Non-Fiction",
+        "metaTitle": "Best Long Non-Fiction Audiobooks (10+ Hours) | TLBC",
+        "intro": "Learn something new in depth. From science to philosophy, browse our collection of the best long non-fiction audiobooks."
     },
     {
         "genre": "Science Fiction",

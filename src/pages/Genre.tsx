@@ -3,11 +3,20 @@ import { books } from '../data/books';
 import { BookGrid } from '../components/BookGrid';
 import { SEO } from '../components/SEO';
 import { slugify, unslugify } from '../utils/slugify';
-import { FaArrowLeft } from 'react-icons/fa';
 import { genreData } from '../data/genreData';
 import { useEffect, useRef } from 'react';
+import { useSetHeaderTheme } from '../context/HeaderContext';
 
 export const Genre = () => {
+    useSetHeaderTheme({
+        logoColor: 'var(--color-brand-forrest)',
+        textColor: 'var(--color-brand-forrest)',
+        hamburgerColor: 'var(--color-brand-forrest)',
+        activeLink: '', // No specific top-level link active
+        activeLinkBg: 'var(--color-brand-forrest)',
+        activeLinkText: 'var(--color-brand-cloud)'
+    });
+
     const { slug } = useParams<{ slug: string }>();
     const genreName = slug ? unslugify(slug) : '';
     const heroImageRef = useRef<HTMLImageElement>(null);
@@ -58,7 +67,17 @@ export const Genre = () => {
     }
 
     const pageTitle = metadata?.metaTitle || `Best Long ${genreName} Audiobooks`;
-    const pageIntro = metadata?.intro || `Curated selections for ${genreName}. Only the best long-listens make the cut.`;
+
+    // SEO description (String only)
+    const seoDescription = metadata?.intro || `Curated selections for ${genreName}. Only the best long-listens make the cut.`;
+
+    // Display content (Can contain JSX/Breaks)
+    const pageIntro = metadata?.intro || (
+        <>
+            Curated selections for {genreName}.<br />
+            Only the best long-listens make the cut.
+        </>
+    );
 
     // Helper for scroll
     const scrollToContent = () => {
@@ -72,8 +91,9 @@ export const Genre = () => {
         <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
             <SEO
                 title={pageTitle}
-                description={pageIntro}
+                description={seoDescription}
                 canonical={`https://thelongbookclub.com/genre/${slug}`}
+                themeColor="#eae8da"
             />
 
             {/* Custom Genre Hero */}
@@ -81,7 +101,7 @@ export const Genre = () => {
                 position: 'relative',
                 width: '100%',
                 minHeight: '600px', // Substantial height for the hero
-                padding: '4rem 1rem 8rem 1rem', // Extra bottom padding for the curve
+                padding: '8rem 1rem 8rem 1rem', // Top padding doubled (8rem) to clear fixed nav
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
@@ -112,7 +132,7 @@ export const Genre = () => {
                 {/* Mask for Curved Bottom (Same as Home Hero) */}
                 <div style={{
                     position: 'absolute',
-                    bottom: -1,
+                    bottom: -1.5, // Sub-pixel nudge
                     left: 0,
                     width: '100%',
                     height: 'clamp(20px, 5vw, 60px)',
@@ -120,40 +140,22 @@ export const Genre = () => {
                     backgroundColor: 'var(--color-bg)',
                     backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('/paper-texture.png')`,
                     backgroundRepeat: 'repeat',
-                    maskImage: `url("data:image/svg+xml,%3Csvg id='Layer_1' xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 595.3 30.4' preserveAspectRatio='none'%3E%3Cpath d='M392.5,0h0c-22.9,0-46.2,3.1-63.9,8.5-9.1,2.7-16.2,5.9-21.2,9.5-5.1,3.6-7.7,7.3-7.8,11.1h-2c0,0-2,0-2,0-.1-3.8-2.7-7.5-7.8-11.1-5-3.5-12.2-6.7-21.2-9.5C248.9,3.1,225.7,0,202.9,0H0v30.4h595.1V0h-202.7'/%3E%3C/svg%3E")`,
-                    WebkitMaskImage: `url("data:image/svg+xml,%3Csvg id='Layer_1' xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 595.3 30.4' preserveAspectRatio='none'%3E%3Cpath d='M392.5,0h0c-22.9,0-46.2,3.1-63.9,8.5-9.1,2.7-16.2,5.9-21.2,9.5-5.1,3.6-7.7,7.3-7.8,11.1h-2c0,0-2,0-2,0-.1-3.8-2.7-7.5-7.8-11.1-5-3.5-12.2-6.7-21.2-9.5C248.9,3.1,225.7,0,202.9,0H0v30.4h595.1V0h-202.7'/%3E%3C/svg%3E")`,
+                    maskImage: `url("data:image/svg+xml,%3Csvg id='Layer_1' xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 595.28 30.38' preserveAspectRatio='none'%3E%3Cpath d='M392.5,0h0c-22.9,0-46.2,3.1-63.9,8.5-9.1,2.7-16.2,5.9-21.2,9.5-5.1,3.6-7.7,7.3-7.8,11.1h-2c0,0-2,0-2,0-.1-3.8-2.7-7.5-7.8-11.1-5-3.5-12.2-6.7-21.2-9.5C248.9,3.1,225.7,0,202.9,0H0v30.38H595.13V0h-202.63'/%3E%3C/svg%3E")`,
+                    WebkitMaskImage: `url("data:image/svg+xml,%3Csvg id='Layer_1' xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 595.28 30.38' preserveAspectRatio='none'%3E%3Cpath d='M392.5,0h0c-22.9,0-46.2,3.1-63.9,8.5-9.1,2.7-16.2,5.9-21.2,9.5-5.1,3.6-7.7,7.3-7.8,11.1h-2c0,0-2,0-2,0-.1-3.8-2.7-7.5-7.8-11.1-5-3.5-12.2-6.7-21.2-9.5C248.9,3.1,225.7,0,202.9,0H0v30.38H595.13V0h-202.63'/%3E%3C/svg%3E")`,
                     maskSize: '100% 100%',
                     WebkitMaskSize: '100% 100%',
                     maskRepeat: 'no-repeat',
                     WebkitMaskRepeat: 'no-repeat',
                     maskPosition: 'bottom center',
-                    WebkitMaskPosition: 'bottom center'
+                    WebkitMaskPosition: 'bottom center',
+                    transform: 'scaleY(1.05)',
+                    transformOrigin: 'bottom'
                 }} />
 
                 {/* Content Container */}
                 <div style={{ position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', alignItems: 'center', maxWidth: '800px' }}>
 
-                    {/* Logo - Matches visual placement */}
-                    <Link
-                        to="/"
-                        style={{
-                            marginBottom: '2.5rem',
-                            opacity: 0.9,
-                            display: 'block', // Ensure it behaves like a block in the flex container
-                            transition: 'opacity 0.2s'
-                        }}
-                        onMouseEnter={e => e.currentTarget.style.opacity = '1'}
-                        onMouseLeave={e => e.currentTarget.style.opacity = '0.9'}
-                    >
-                        <img
-                            src="/assets/lbc-logo-horiz.svg"
-                            alt="The Long Book Club"
-                            style={{
-                                width: 'clamp(210px, 42vw, 310px)',
-                                display: 'block'
-                            }}
-                        />
-                    </Link>
+
 
                     {/* Genre Pill */}
                     <div style={{
@@ -234,28 +236,7 @@ export const Genre = () => {
             <div className="page-container" id="genre-content" style={{ paddingTop: '1rem' }}>
 
                 {/* Back Link - Shifted Below Hero */}
-                <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-                    <Link to="/" style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '0.5rem',
-                        backgroundColor: 'var(--color-brand-coral)',
-                        color: '#fff',
-                        padding: '0.6rem 1.4rem',
-                        borderRadius: '100px',
-                        fontSize: '0.9rem',
-                        fontFamily: 'Inter, sans-serif',
-                        fontWeight: 600,
-                        textDecoration: 'none',
-                        transition: 'transform 0.2s, box-shadow 0.2s',
-                        boxShadow: '0 4px 12px rgba(255, 107, 74, 0.25)'
-                    }}
-                        onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-2px)'}
-                        onMouseLeave={e => e.currentTarget.style.transform = 'translateY(0)'}
-                    >
-                        <FaArrowLeft size={12} /> Back to Library
-                    </Link>
-                </div>
+                {/* Back Link Removed per request */}
 
                 <BookGrid books={genreBooks} />
             </div>
