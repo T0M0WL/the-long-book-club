@@ -36,6 +36,10 @@ export const baseBooks: Book[] = [
         lengthHours: 60,
         genre: ['Classics', 'Historical Fiction', 'Social Commentary', 'Tragedy', 'France', 'War'],
         description: 'Introducing one of the most famous characters in literature, Jean Valjean—the noble peasant imprisoned for stealing a loaf of bread.',
+        relatedBookIds: ['75', '6', '19', '39', '71', '72', '73', '37', '74', '70', '31', '10'],
+        cardOverview: "60 hours of revolution and redemption. The musical is great, but the novel is a universe unto itself.",
+        teaser: "An emotional marathon that justifies its massive runtime. The musical is great, but the book is a universe. It explores justice, love, and redemption on a scale that few other novels can match.",
+        teaserTitle: "The Greatest Story Ever Told?",
         affiliateLink: 'https://www.amazon.co.uk/dp/B00WKWJW5A?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B07VT6WPNM?tag=thelongbookcl-20'
     },
@@ -50,6 +54,8 @@ export const baseBooks: Book[] = [
         lengthHours: 44.9,
         genre: ['Horror', 'Thriller', 'Supernatural', 'Coming of Age', 'Small Town', 'Monsters'],
         description: 'The story follows the experiences of seven children as they are terrorized by an evil entity that exploits the fears of its victims to disguise itself while hunting its prey.',
+        relatedBookIds: ['3', '12', '7'],
+        cardOverview: "45 hours of childhood trauma. The definitive horror epic that explores the fears we never outgrow.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B01H0IF7MA?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B01H0IH01Q?tag=thelongbookcl-20'
     },
@@ -64,6 +70,8 @@ export const baseBooks: Book[] = [
         lengthHours: 34.4,
         genre: ['Science Fiction', 'Horror', 'Thriller', 'Dystopian', 'Small Town', 'Survival'],
         description: 'On an entirely normal, beautiful fall day in Chester\'s Mill, Maine, the town is inexplicably and suddenly sealed off from the rest of the world by an invisible force field.',
+        relatedBookIds: ['11', '3', '7'],
+        cardOverview: "34 hours trapped in a small town. A claustrophobic study of society breaking down.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0030MK9LU?tag=thelongbookclub-21'
     },
     {
@@ -77,6 +85,8 @@ export const baseBooks: Book[] = [
         lengthHours: 45.6,
         genre: ['Fantasy', 'Epic Fantasy', 'High Fantasy', 'War', 'Magic Systems', 'Political Intrigue'],
         description: 'Roshar is a world of stone and storms. Uncanny tempests of incredible power sweep across the rocky terrain so frequently that they have shaped ecology and civilization alike.',
+        relatedBookIds: ['48', '49', '50', '57', '58', '59', '45', '46', '47', '9', '51', '52', '53', '54', '41', '42', '43', '44', '23', '55', '56', '38', '29'],
+        cardOverview: "45 hours of world-building. The start of the Stormlight Archive masterfully balances magic and character.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0052TNVN2?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005EG4CYA?tag=thelongbookcl-20'
     },
@@ -91,6 +101,10 @@ export const baseBooks: Book[] = [
         lengthHours: 66.1,
         genre: ['Biography', 'History', 'Politics', 'Non-Fiction', 'New York', 'Urban Planning'],
         description: 'The story of Robert Moses and the fall of New York. A masterpiece of modern reporting.',
+        relatedBookIds: ['4', '18', '34', '33', '81', '82', '84', '85', '16', '35'],
+        cardOverview: "66 hours of pure power. The definitive study of how New York was built, and the cost of ambition.",
+        teaser: "At 66 hours, this isn't just a biography—it's the definitive study of unrestricted political power. Caro's masterpiece explains how modern New York was built, and at what cost. Essential listening.",
+        teaserTitle: "The Greatest Biography Ever Written?",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0DKG7DCG5?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0DKG75PBH?tag=thelongbookcl-20'
     },
@@ -105,6 +119,8 @@ export const baseBooks: Book[] = [
         lengthHours: 47.8,
         genre: ['Horror', 'Post-Apocalyptic', 'Science Fiction', 'Dark Fantasy', 'Survival', 'Good vs Evil'],
         description: 'A patient escapes from a biological testing facility, unknowingly carrying a deadly weapon: a mutated strain of super-flu that will wipe out 99 percent of the world\'s population within a few weeks.',
+        relatedBookIds: ['11', '12', '7'],
+        cardOverview: "48 hours of apocalypse. The ultimate battle between good and evil, with a scope that justifies every minute.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B008MZT1V4?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B008MTA66E?tag=thelongbookcl-20'
     },
@@ -119,6 +135,10 @@ export const baseBooks: Book[] = [
         lengthHours: 36,
         genre: ['Biography', 'History', 'American History', 'Politics', 'Founding Fathers'],
         description: 'The biography that inspired the hit musical. A sweeping look at the life of Alexander Hamilton.',
+        relatedBookIds: ['18', '34', '2', '33', '81', '82', '84', '85', '16', '35'],
+        cardOverview: "The book behind the musical. A 36-hour epic of relentless ambition that moves faster than you expect.",
+        teaser: "The book that inspired the musical. This 36-hour epic captures the relentless ambition of an immigrant who built a nation. It is dense, dramatic, and surprisingly fast-paced.",
+        teaserTitle: "The Man. The Myth. The Musical.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B077DS3W25?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B077D7S5DP?tag=thelongbookcl-20'
     },
@@ -133,6 +153,8 @@ export const baseBooks: Book[] = [
         lengthHours: 56.2,
         genre: ['Literary Fiction', 'Satire', 'Science Fiction', 'Tragicomedy', 'Experimental', 'Sports'],
         description: 'A gargantuan, mind-altering comedy about the Pursuit of Happiness in America.',
+        relatedBookIds: ['25', '26', '90', '96', '17', '24', '89', '76', '78'],
+        cardOverview: "56 hours of footnotes and tennis. A challenging, hilarious, and heartbreaking dive into addiction and entertainment.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B07L8KNKDG?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CZ4N145R?tag=thelongbookcl-20'
     },
@@ -147,6 +169,10 @@ export const baseBooks: Book[] = [
         lengthHours: 52.7,
         genre: ['Classics', 'Historical Adventure', 'Revenge', 'Historical Fiction', 'France', 'Prison'],
         description: 'Thrown in prison for a crime he has not committed, Edmond Dantes is confined to the grim fortress of If. There he learns of a great hoard of treasure hidden on the Isle of Monte Cristo.',
+        relatedBookIds: ['15', '75', '19', '39', '71', '72', '73', '37', '74', '70', '31', '10'],
+        cardOverview: "The ultimate 52-hour revenge thriller. Shockingly modern, fast-paced, and deeply satisfying.",
+        teaser: "The ultimate 52-hour revenge thriller. If you only read one Classic in your life, make it this one. It feels shockingly modern, moves like an action movie, and delivers one of the most satisfying payoffs in fiction.",
+        teaserTitle: "The King of All Revenges",
         affiliateLink: 'https://www.amazon.co.uk/dp/B008QZBHPI?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005GG1APM?tag=thelongbookcl-20'
     },
@@ -161,6 +187,8 @@ export const baseBooks: Book[] = [
         lengthHours: 30.6,
         genre: ['Science Fiction', 'Time Travel', 'Historical Fiction', 'Thriller', 'Romance', 'Mystery'],
         description: 'Life can turn on a dime—or miss it, but what if you could change it all?',
+        relatedBookIds: ['11', '3', '12'],
+        cardOverview: "30 hours to save JFK. King's tightest thriller is a heartbreaking time-travel romance.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0064P650E?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0064I1KGA?tag=thelongbookcl-20'
     },
@@ -175,6 +203,8 @@ export const baseBooks: Book[] = [
         lengthHours: 63,
         genre: ['Science Fiction', 'Philosophical Fiction', 'Mystery', 'Dystopian', 'Political', 'Objectivism'],
         description: 'Who is John Galt? When he says that he will stop the motor of the world, is he a destroyer or a liberator?',
+        relatedBookIds: ['20', '68', '69', '60', '61', '63', '65', '66', '27', '64', '67'],
+        cardOverview: "63 hours of philosophy and railways. Love it or hate it, this massive treatise demands your full attention.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B009T9SYQK?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B001MXQ7AQ?tag=thelongbookcl-20'
     },
@@ -189,6 +219,8 @@ export const baseBooks: Book[] = [
         lengthHours: 33.7,
         genre: ['Fantasy', 'Epic Fantasy', 'Grimdark', 'Political Intrigue', 'War', 'High Fantasy'],
         description: 'Summers span decades. Winter can last a lifetime. And the struggle for the Iron Throne has begun.',
+        relatedBookIds: ['51', '52', '53', '54', '45', '46', '47', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '23', '55', '56', '38', '29'],
+        cardOverview: "34 hours of winter. The book that launched the phenomenon feels deeper and richer than the show.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B005CB5HTG?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005C7QQ2M?tag=thelongbookcl-20'
     },
@@ -204,6 +236,10 @@ export const baseBooks: Book[] = [
         genre: ['Mystery', 'Classics', 'Short Stories', 'Crime', 'Detective', 'Victorian'],
 
         description: 'Stephen Fry presents a complete and unabridged collection of the stories of Sherlock Holmes.',
+        relatedBookIds: ['15', '75', '6', '19', '39', '71', '72', '73', '37', '74', '70', '31'],
+        cardOverview: "72 hours of the world's greatest detective stories. The entire canon, performed by Stephen Fry.",
+        teaser: "It's elementary, my dear listener. Over 70 hours of the world's greatest detective stories, brought to life by the legendary Stephen Fry. This isn't just a reading; it's a cozy, personal storytelling session with a national treasure. Includes intimate personal introductions by Fry himself.",
+        teaserTitle: "The Entire Canon, Performed by Stephen Fry",
         affiliateLink: 'https://www.amazon.co.uk/dp/B06X3XG5Y6?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B06VWQTBZ9?tag=thelongbookcl-20'
     },
@@ -218,6 +254,10 @@ export const baseBooks: Book[] = [
         lengthHours: 41.5,
         genre: ['History', 'Biography', 'Politics', 'Civil War', 'Non-Fiction', 'Lincoln'],
         description: 'The monumental history of Abraham Lincoln and his cabinet. A masterpiece of political biography.',
+        relatedBookIds: ['2', '4', '18', '34', '33', '81', '82', '84', '85', '35'],
+        cardOverview: "41 hours on Lincoln's genius. A masterclass in leadership and how to turn enemies into allies.",
+        teaser: "How does a leader unite a fractured nation? By gathering his enemies. This 41-hour masterpiece details Lincoln's political genius. It is a long listen that offers lessons for every era.",
+        teaserTitle: "Leadership Lesson from Lincoln",
         affiliateLink: 'https://www.amazon.co.uk/dp/B093TBNFWK?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B093TC2K3D?tag=thelongbookcl-20'
     },
@@ -232,6 +272,8 @@ export const baseBooks: Book[] = [
         lengthHours: 46.8,
         genre: ['Fantasy', 'Magical Realism', 'Dystopian', 'Literary Fiction', 'Mystery', 'Romance'],
         description: 'A young woman named Aomame follows a taxi driver\'s enigmatic suggestion and begins to notice puzzling discrepancies in the world around her.',
+        relatedBookIds: ['5', '25', '26', '90', '96', '24', '89', '76', '78'],
+        cardOverview: "47 hours of surreal mystery. Moonshine, assassins, and parallel worlds in Murakami's most ambitious work.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0060MI0T0?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0060C2CEE?tag=thelongbookcl-20'
     },
@@ -246,6 +288,10 @@ export const baseBooks: Book[] = [
         lengthHours: 48,
         genre: ['Biography', 'History', 'American Civil War', 'Non-Fiction', 'Military'],
         description: 'The definitive biography of Ulysses S. Grant, confirming his stature as one of history\'s greatest generals and presidents.',
+        relatedBookIds: ['4', '34', '2', '33', '81', '82', '84', '85', '16', '35'],
+        cardOverview: "A definitive 48-hour redemption arc. The true, gritty story of the general who saved the Union.",
+        teaser: "Chernow does it again. This 48-hour biography redeems a president often dismissed as a drunk and a failure. It is a gritty, honest look at the man who won the Civil War.",
+        teaserTitle: "The General Who Saved the Union",
         affiliateLink: 'https://www.amazon.co.uk/dp/B07WV5K96L?tag=thelongbookclub-21'
     },
     {
@@ -259,6 +305,8 @@ export const baseBooks: Book[] = [
         lengthHours: 36.5,
         genre: ['Classics', 'Bildungsroman', 'Victorian', 'Historical Fiction', 'Social Commentary'],
         description: 'David Copperfield is the story of a young man\'s adventures on his journey from an unhappy and impoverished childhood to the discovery of his vocation as a successful novelist.',
+        relatedBookIds: ['39', '71', '15', '75', '6', '72', '73', '37', '74', '70', '31', '10'],
+        cardOverview: "36 hours of Dickens' favorite child. A warm, personal coming-of-age story narrated by Richard Armitage.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CQZ6P3K1?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0D4ZPDPGS?tag=thelongbookcl-20'
     },
@@ -273,6 +321,8 @@ export const baseBooks: Book[] = [
         lengthHours: 21.0,
         genre: ['Science Fiction', 'Space Opera', 'Philosophy', 'Ecology', 'Epic', 'Political Intrigue'],
         description: 'Set on the desert planet Arrakis, Dune is the story of the boy Paul Atreides, who would become the mysterious man known as Muad\'Dib. He would avenge the traitorous plot against his noble family.',
+        relatedBookIds: ['68', '69', '60', '61', '63', '65', '66', '27', '64', '67', '8'],
+        cardOverview: "21 hours on Arrakis. The sci-fi masterpiece that defined the genre, with a unique full-cast production.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ5UD6?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B000R34YKC?tag=thelongbookcl-20'
     },
@@ -287,6 +337,8 @@ export const baseBooks: Book[] = [
         lengthHours: 40.9,
         genre: ['Historical Fiction', 'Historical Saga', 'Medieval History', 'Architecture', 'Religion', 'War'],
         description: 'A spellbinding epic tale of ambition, anarchy, and absolute power set against the sprawling medieval canvas of twelfth-century England.',
+        relatedBookIds: ['40', '36'],
+        cardOverview: "41 hours building a cathedral. An addictive historical soap opera that spans generations.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0047VIL0O?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00852WNUU?tag=thelongbookcl-20'
     },
@@ -301,6 +353,10 @@ export const baseBooks: Book[] = [
         lengthHours: 61.1,
         genre: ['Classics', 'Historical Fiction', 'War', 'Philosophy', 'Romance', 'Russian Lit'],
         description: 'Tolstoy\'s epic masterpiece that intertwines the lives of private and public individuals during the time of the Napoleonic wars.',
+        relatedBookIds: ['30', '28', '32', '77'],
+        cardOverview: "The mountaintop of literature. 61 hours of life, love, and history. Intimidating, but incredibly human.",
+        teaser: "The mountaintop of literature. 61 hours of life, love, and history. It is intimidating, yes, but it is also incredibly human. Just take it one chapter at a time.",
+        teaserTitle: "The Big One",
         affiliateLink: 'https://www.amazon.co.uk/dp/B095V1SM5H?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0007OB4TU?tag=thelongbookcl-20'
     },
@@ -315,6 +371,8 @@ export const baseBooks: Book[] = [
         lengthHours: 28,
         genre: ['Fantasy', 'Epic Fantasy', 'High Fantasy', 'Magic', 'Bildungsroman', 'Music'],
         description: 'I have stolen princesses back from sleeping barrow kings. I burned down the town of Trebon. I have spent the night with Felurian and left with both my sanity and my life.',
+        relatedBookIds: ['45', '46', '47', '9', '51', '52', '53', '54', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '55', '56', '38', '29'],
+        cardOverview: "28 hours of lyrical fantasy. A story about stories, told with prose that sings.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B007HOLTHU?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B007HI3HUI?tag=thelongbookcl-20'
     },
@@ -329,6 +387,8 @@ export const baseBooks: Book[] = [
         lengthHours: 43,
         genre: ['Literary Fiction', 'Adventure', 'Travel', 'Crime', 'India', 'Philosophy'],
         description: 'A novel of high adventure, deep love, and unforgettable characters, set in the underbelly of contemporary Bombay.',
+        relatedBookIds: ['5', '25', '26', '90', '96', '17', '89', '76', '78'],
+        cardOverview: "43 hours in Bombay's underworld. A vivid, gritty memoir-novel that feels like a lived life.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B00KOIRNLW?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00KO77Z20?tag=thelongbookcl-20'
     },
@@ -343,6 +403,8 @@ export const baseBooks: Book[] = [
         lengthHours: 32.4,
         genre: ['Literary Fiction', 'Coming of Age', 'Art History', 'Mystery', 'Contemporary', 'Tragedy'],
         description: 'A young New Yorker grieving his mother\'s death is pulled into a gritty underworld of art and wealth.',
+        relatedBookIds: ['5', '26', '90', '96', '17', '24', '89', '76', '78'],
+        cardOverview: "32 hours of art and grief. A Dickensian novel for the modern age, centered on a stolen painting.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B00FR6TIQE?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B08FD62LJM?tag=thelongbookcl-20'
     },
@@ -357,6 +419,8 @@ export const baseBooks: Book[] = [
         lengthHours: 32.8,
         genre: ['Literary Fiction', 'Contemporary', 'Drama', 'Tragedy', 'LGBTQ+', 'Friendship'],
         description: 'A profound and powerful story of brotherly love and the limits of human endurance.',
+        relatedBookIds: ['5', '25', '90', '96', '17', '24', '89', '76', '78'],
+        cardOverview: "33 hours of heartbreak. A devastatingly beautiful portrait of male friendship and trauma.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0DT7DB8KL?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0DT7F93TV?tag=thelongbookcl-20'
     },
@@ -371,6 +435,8 @@ export const baseBooks: Book[] = [
         lengthHours: 42.9,
         genre: ['Science Fiction', 'Historical Fiction', 'Techno-thriller', 'WWII', 'Cryptography', 'Adventure'],
         description: 'A tour de force of code-breaking, WWII espionage, and modern computing.',
+        relatedBookIds: ['65', '66', '20', '68', '69', '60', '61', '63', '64', '67', '8'],
+        cardOverview: "43 hours of code-breaking. WWII espionage meets modern computing in this geek masterpiece.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B086WMM52D?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B086WP1FW6?tag=thelongbookcl-20'
     },
@@ -385,6 +451,8 @@ export const baseBooks: Book[] = [
         lengthHours: 26.2,
         genre: ['Classics', 'Psychological Thriller', 'Philosophy', 'Crime', 'Russian Lit', 'Redemption'],
         description: 'Raskolnikov, an impoverished student, formulates a plan to kill an unscrupulous pawnbroker for her cash.',
+        relatedBookIds: ['32', '22', '30', '77'],
+        cardOverview: "26 hours inside a killer's mind. A psychological thriller that predates the genre by a century.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B085F2N7KG?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B085F3LK3Z?tag=thelongbookcl-20'
     },
@@ -399,6 +467,8 @@ export const baseBooks: Book[] = [
         lengthHours: 19.7,
         genre: ['Fantasy', 'Urban Fantasy', 'Mythology', 'Americana', 'Road Trip', 'Low Fantasy'],
         description: 'Shadow Moon is released from prison and recruited by the mysterious Mr. Wednesday.',
+        relatedBookIds: ['45', '46', '47', '9', '51', '52', '53', '54', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '23', '55', '56', '38'],
+        cardOverview: "20 hours on the road in America. Ancient myths clash with modern obsessions in this full-cast road trip.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0080HPAK0?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00807NRJQ?tag=thelongbookcl-20'
     },
@@ -413,6 +483,10 @@ export const baseBooks: Book[] = [
         lengthHours: 35.6,
         genre: ['Classics', 'Romance', 'Realism', 'Social Commentary', 'Russian Lit', 'Tragedy'],
         description: 'A complex novel of families, romance, and Russian society in the 19th century.',
+        relatedBookIds: ['22', '28', '32', '77'],
+        cardOverview: "35 hours of high-stakes Russian drama. Often cited as the greatest novel ever written.",
+        teaser: "Often cited as the greatest novel ever written. A lush, immersive deep-dive into high-stakes Russian drama, forbidden love, and society politics. It constructs a world so complete you will forget to check the time.",
+        teaserTitle: "The Perfect Novel",
         affiliateLink: 'https://www.amazon.co.uk/dp/B01FN8BL6A?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B01FN887G2?tag=thelongbookcl-20'
     },
@@ -427,6 +501,10 @@ export const baseBooks: Book[] = [
         lengthHours: 39.7,
         genre: ['Classics', 'Satire', 'Adventure', 'Picaresque', 'Spain', 'Metafiction'],
         description: 'The adventures of a noble (but deluded) knight and his faithful squire, Sancho Panza.',
+        relatedBookIds: ['15', '75', '6', '19', '39', '71', '72', '73', '37', '74', '70', '10'],
+        cardOverview: "The book that started it all. A 40-hour picaresque journey that is funnier and more tragic than you expect.",
+        teaser: "The book that started it all. This rambling, picaresque journey is funnier and more tragic than you expect. It isn't just about tilting at windmills; it's about the power of stories.",
+        teaserTitle: "The First Modern Novel",
         affiliateLink: 'https://www.amazon.co.uk/dp/B083JK2J89?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0DFR4LCJM?tag=thelongbookcl-20'
     },
@@ -441,6 +519,10 @@ export const baseBooks: Book[] = [
         lengthHours: 37.1,
         genre: ['Classics', 'Philosophical Fiction', 'Family Saga', 'Mystery', 'Russian Lit', 'Theology'],
         description: 'A passionate philosophical novel that enters deeply into the ethical debates of God, free will, and morality.',
+        relatedBookIds: ['28', '22', '30', '77'],
+        cardOverview: "A 37-hour murder mystery with a soul. An intense family drama and philosophical debate.",
+        teaser: "A murder mystery with a soul. It is an intense, sustained philosophical debate masquerading as a family drama. It gives the biggest questions—faith, free will, and morality—the space they actually need.",
+        teaserTitle: "A Whodunnit for the Soul",
         affiliateLink: 'https://www.amazon.co.uk/dp/B08YRWH6V3?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CKM2R2KF?tag=thelongbookcl-20'
     },
@@ -455,6 +537,10 @@ export const baseBooks: Book[] = [
         lengthHours: 25.3,
         genre: ['Biography', 'Technology', 'Business', 'Non-Fiction', 'Innovation'],
         description: 'The exclusive biography of Steve Jobs. Based on more than forty interviews with Jobs conducted over two years.',
+        relatedBookIds: ['81', '82', '2', '4', '18', '34', '84', '85', '16', '35'],
+        cardOverview: '25 hours inside the "Reality Distortion Field". A portrait of genius and cruelty in equal measure.',
+        teaser: 'The only authorized biography, and it pulls no punches. Spend 25 hours inside the "Reality Distortion Field" with the man who invented the future. It is a portrait of genius and cruelty in equal measure.',
+        teaserTitle: "Inside the Reality Distortion Field",
         affiliateLink: 'https://www.amazon.co.uk/dp/B005Z267BO?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005YUDQ4S?tag=thelongbookcl-20'
     },
@@ -469,6 +555,10 @@ export const baseBooks: Book[] = [
         lengthHours: 35,
         genre: ['Biography', 'History', 'Business', 'Non-Fiction', 'Gilded Age'],
         description: 'The Life of John D. Rockefeller, Sr. A detailed portrait of the ruthless industrialist and generous philanthropist.',
+        relatedBookIds: ['4', '18', '2', '33', '81', '82', '84', '85', '16', '35'],
+        cardOverview: "A 35-hour study in raw capitalism. The story of the first billionaire is as fascinating as it is ruthless.",
+        teaser: "John D. Rockefeller's life was as massive as his fortune. This 35-hour saga tracks the birth of modern capitalism through the eyes of its most ruthless titan. A fascinating study of money, religion, and power.",
+        teaserTitle: "The God of American Capitalism",
         affiliateLink: 'https://www.amazon.co.uk/dp/B00EE0TV20?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00EDSLSBK?tag=thelongbookcl-20'
     },
@@ -483,6 +573,8 @@ export const baseBooks: Book[] = [
         lengthHours: 57.2,
         genre: ['History', 'World War II', 'Non-Fiction', 'Politics', 'Germany', 'Military History'],
         description: 'A history of Nazi Germany. One of the most important historical works of the 20th century.',
+        relatedBookIds: ['2', '4', '18', '34', '33', '81', '82', '84', '85', '16'],
+        cardOverview: "57 hours of Nazi history. The definitive account of the darkest chapter in modern history.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B003W5VXPG?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B003X4R6GQ?tag=thelongbookcl-20'
     },
@@ -497,6 +589,8 @@ export const baseBooks: Book[] = [
         lengthHours: 32.6,
         genre: ['Historical Fiction', 'Romance', 'Time Travel', 'Fantasy', 'Adventure', 'Scotland'],
         description: 'Claire Randall is a British combat nurse who is mysteriously swept back in time to 1743 Scotland.',
+        relatedBookIds: ['21', '40'],
+        cardOverview: "32 hours in the Highlands. The romance that redefined the genre mixes history, time travel, and steam.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B08JGG6H1C?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B08JFQFVC5?tag=thelongbookcl-20'
     },
@@ -511,6 +605,10 @@ export const baseBooks: Book[] = [
         lengthHours: 32,
         genre: ['Classics', 'Realism', 'Victorian', 'Social Commentary', 'Romance', 'Politics'],
         description: 'A study of provincial life in the town of Middlemarch, exploring the status of women, the nature of marriage, and religion.',
+        relatedBookIds: ['15', '75', '6', '19', '39', '71', '72', '73', '74', '70', '31', '10'],
+        cardOverview: "A 32-hour study of provincial life. Smart, unhurried, and startlingly modern.",
+        teaser: 'Virginia Woolf called this "one of the few English novels written for grown-up people." It is a wide-ranging, unhurried study of provincial life that feels startlingly modern.',
+        teaserTitle: 'The "Adult" Novel',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0030H21JS?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0030HF9E2?tag=thelongbookcl-20'
     },
@@ -525,6 +623,10 @@ export const baseBooks: Book[] = [
         lengthHours: 32.5,
         genre: ['Fantasy', 'Historical Fantasy', 'Alternative History', 'Magic', 'Victorian', 'Faerie'],
         description: 'In the midst of the Napoleonic Wars in 1806, most people believe magic to have long since disappeared from England - until the reclusive Mr Norrell reveals his powers.',
+        relatedBookIds: ['45', '46', '47', '9', '51', '52', '53', '54', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '23', '55', '56', '29'],
+        cardOverview: "A 32-hour alternate history masterpiece. Jane Austen meets Harry Potter in this detailed, magical epic.",
+        teaser: "Imagine if magic was as real and dry as mathematics, then insert it into the Napoleonic Wars. This isn't just a fantasy novel; it's an alternate history so detailed you'll believe it actually happened. A perfect mix of Jane Austen wit and Harry Potter wonder.",
+        teaserTitle: "Jane Austen Meets Harry Potter",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0DFCVV8LB?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0DFCZ16X2?tag=thelongbookcl-20'
     },
@@ -539,6 +641,8 @@ export const baseBooks: Book[] = [
         lengthHours: 35,
         genre: ['Classics', 'Mystery', 'Legal Satire', 'Victorian', 'Social Commentary'],
         description: 'A satire of the English judicial system, centered on the endless legal case of Jarndyce and Jarndyce.',
+        relatedBookIds: ['19', '71', '15', '75', '6', '72', '73', '37', '74', '70', '31', '10'],
+        cardOverview: "35 hours of legal satire. Dickens at his peak, tackling a lawsuit as endless as the audiobook itself.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B079LPF5YN?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00005AAOV?tag=thelongbookcl-20'
     },
@@ -553,6 +657,10 @@ export const baseBooks: Book[] = [
         lengthHours: 49.1,
         genre: ['Historical Fiction', 'Romance', 'Civil War', 'Southern Gothic', 'Classics', 'War'],
         description: 'The epic tale of Scarlett O\'Hara and the American South during the Civil War and Reconstruction.',
+        relatedBookIds: ['21', '36'],
+        cardOverview: "A controversial, 49-hour American epic. Problematic, yet undeniably powerful.",
+        teaser: "A controversial, complicated, and utterly massive American epic. It is problematic, yes, but also undeniably powerful. A sweeping mythology of the South that demands your full attention.",
+        teaserTitle: "The Complicated American Epic",
         affiliateLink: 'https://www.amazon.co.uk/dp/B082FPX77Y?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0DW1LX95D?tag=thelongbookcl-20'
     },
@@ -568,6 +676,8 @@ export const baseBooks: Book[] = [
         lengthHours: 29.9,
         genre: ['Fantasy', 'Epic Fantasy', 'High Fantasy', 'Adventure', 'Magic', 'Coming of Age'],
         description: 'The Wheel of Time turns. Ages come and go, leaving memories that become legend. Legend fades to myth, and even myth is long forgotten when the Age that gave it birth comes again.',
+        relatedBookIds: ['42', '43', '44', '45', '46', '47', '9', '51', '52', '53', '54', '13', '48', '49', '50', '57', '58', '59', '23', '55', '56', '38', '29'],
+        cardOverview: "30 hours beginning the Wheel of Time. A classic hero's journey that launches the biggest fantasy series ever written.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ946A?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00026WUO6?tag=thelongbookcl-20'
     },
@@ -582,6 +692,8 @@ export const baseBooks: Book[] = [
         lengthHours: 26.5,
         genre: ['Fantasy', 'Epic Fantasy', 'High Fantasy', 'Adventure', 'Magic', 'Political Intrigue'],
         description: 'The hunt creates the hunter. The chase creates the pursuer. The Shadow continues to rise in this second volume of the epic Wheel of Time series.',
+        relatedBookIds: ['41', '43', '44', '45', '46', '47', '9', '51', '52', '53', '54', '13', '48', '49', '50', '57', '58', '59', '23', '55', '56', '38', '29'],
+        cardOverview: "26 hours hunting the Horn. The world expands as Rand accepts his destiny.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ4T38?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00026WUOG?tag=thelongbookcl-20'
     },
@@ -596,6 +708,8 @@ export const baseBooks: Book[] = [
         lengthHours: 26.1,
         genre: ['Fantasy', 'Epic Fantasy', 'High Fantasy', 'Magic', 'Adventure', 'Prophecy'],
         description: 'Rand al\'Thor is the Dragon Reborn, but he does not yet know how to wield the One Power. He must strike at the Dark One\'s fortress, Sky Valley.',
+        relatedBookIds: ['41', '42', '44', '45', '46', '47', '9', '51', '52', '53', '54', '13', '48', '49', '50', '57', '58', '59', '23', '55', '56', '38', '29'],
+        cardOverview: "26 hours chasing the Dragon. Rand is off-screen for much of this, letting Mat and Perrin shine.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ1O0O?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0006IU3BC?tag=thelongbookcl-20'
     },
@@ -610,6 +724,8 @@ export const baseBooks: Book[] = [
         lengthHours: 40.9,
         genre: ['Fantasy', 'Epic Fantasy', 'High Fantasy', 'World Building', 'Politics', 'History'],
         description: 'The seals of Shayol Ghul are weakening. The Dark One is reaching out. The Shadow is rising to cover the world.',
+        relatedBookIds: ['41', '42', '43', '45', '46', '47', '9', '51', '52', '53', '54', '13', '48', '49', '50', '57', '58', '59', '23', '55', '56', '38', '29'],
+        cardOverview: "41 hours in the Waste. Widely considered the best book in the Wheel of Time series.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ5ZMC?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0006IU3BM?tag=thelongbookcl-20'
     },
@@ -624,6 +740,9 @@ export const baseBooks: Book[] = [
         lengthHours: 19.1,
         genre: ['Fantasy', 'Epic Fantasy', 'High Fantasy', 'Adventure', 'Classics', 'Quest'],
         description: 'One Ring to rule them all, One Ring to find them, One Ring to bring them all and in the darkness bind them.',
+        relatedBookIds: ['46', '47', '9', '51', '52', '53', '54', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '23', '55', '56', '38', '29'],
+        cardOverview: "19 hours leaving the Shire. Where the legend begins, narrated to perfection by Andy Serkis.",
+        teaserTitle: "Sapiens for the AI Age",
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQAXZG?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B098T84Y1N?tag=thelongbookcl-20'
     },
@@ -638,6 +757,8 @@ export const baseBooks: Book[] = [
         lengthHours: 16.7,
         genre: ['Fantasy', 'Epic Fantasy', 'High Fantasy', 'Adventure', 'War', 'Classics'],
         description: 'The Fellowship is scattered. Some are preparing for war against the Dark Lord. Some are fighting the treachery of the wizard Saruman.',
+        relatedBookIds: ['45', '47', '9', '51', '52', '53', '54', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '23', '55', '56', '38', '29'],
+        cardOverview: "17 hours of war. Rohan, Helm's Deep, and the march of the Ents come alive.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQD0P6?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B098T8CFMD?tag=thelongbookcl-20'
     },
@@ -652,6 +773,8 @@ export const baseBooks: Book[] = [
         lengthHours: 18.2,
         genre: ['Fantasy', 'Epic Fantasy', 'High Fantasy', 'Adventure', 'War', 'Classics'],
         description: 'The armies of the Dark Lord are massing as his evil shadow spreads even wider. Men, Dwarves, Elves and Ents unite forces to do battle against the Dark.',
+        relatedBookIds: ['45', '46', '9', '51', '52', '53', '54', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '23', '55', '56', '38', '29'],
+        cardOverview: "18 hours to save Middle-earth. The emotional conclusion to the greatest fantasy epic.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ47B2?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B098T8RGF4?tag=thelongbookcl-20'
     },
@@ -666,6 +789,8 @@ export const baseBooks: Book[] = [
         lengthHours: 48.2,
         genre: ['Fantasy', 'Epic Fantasy', 'High Fantasy', 'War', 'Magic Systems', 'Mental Health'],
         description: 'The Assassin in White has killed the Alethi king. Now he awaits the weeping of the world.',
+        relatedBookIds: ['13', '49', '50', '57', '58', '59', '45', '46', '47', '9', '51', '52', '53', '54', '41', '42', '43', '44', '23', '55', '56', '38', '29'],
+        cardOverview: "48 hours of Stormlight. Bigger, better, and even more epic than The Way of Kings.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B00IN7Y5US?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00IN5WM0K?tag=thelongbookcl-20'
     },
@@ -680,6 +805,8 @@ export const baseBooks: Book[] = [
         lengthHours: 55.1,
         genre: ['Fantasy', 'Epic Fantasy', 'High Fantasy', 'War', 'Magic Systems', 'Political Intrigue'],
         description: 'Dalinar Kholin’s Alethi armies won a fleeting victory at a terrible cost: The enemy Parshendi summoned the violent Everstorm.',
+        relatedBookIds: ['13', '48', '50', '57', '58', '59', '45', '46', '47', '9', '51', '52', '53', '54', '41', '42', '43', '44', '23', '55', '56', '38', '29'],
+        cardOverview: "55 hours of Dalinar's past. A deep dive into the most fascinating character in the Cosmere.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B01N9YPONF?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B01N3B7RZC?tag=thelongbookcl-20'
     },
@@ -694,6 +821,8 @@ export const baseBooks: Book[] = [
         lengthHours: 57.4,
         genre: ['Fantasy', 'Epic Fantasy', 'High Fantasy', 'Science Fantasy', 'War', 'Mental Health'],
         description: 'After forming a coalition of human resistance against the enemy invasion, Dalinar Kholin and his Knights Radiant have spent a year fighting a protracted, brutal war.',
+        relatedBookIds: ['13', '48', '49', '57', '58', '59', '45', '46', '47', '9', '51', '52', '53', '54', '41', '42', '43', '44', '23', '55', '56', '38', '29'],
+        cardOverview: "57 hours of science and war. The most technical and magical entry in the Archive yet.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B082MM7CSY?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B082MLHB9M?tag=thelongbookcl-20'
     },
@@ -708,6 +837,8 @@ export const baseBooks: Book[] = [
         lengthHours: 37.3,
         genre: ['Fantasy', 'Epic Fantasy', 'Grimdark', 'Political Intrigue', 'War', 'Magic'],
         description: 'Time is out of joint. The summer of peace and plenty, ten years long, is drawing to a close, and the harsh, chill winter approaches like an angry beast.',
+        relatedBookIds: ['9', '52', '53', '54', '45', '46', '47', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '23', '55', '56', '38', '29'],
+        cardOverview: "37 hours of war. The Five Kings clash in the detailed sequel to Game of Thrones.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B005CB5ICW?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005C8AZVY?tag=thelongbookcl-20'
     },
@@ -722,6 +853,8 @@ export const baseBooks: Book[] = [
         lengthHours: 47.6,
         genre: ['Fantasy', 'Epic Fantasy', 'Grimdark', 'Political Intrigue', 'War', 'Tragedy'],
         description: 'The Seven Kingdoms are divided by revolt and blood feud. In the northern wastes, a horde of hungry, savage people steeped in the dark magic of the wilderness is poised to invade the Kingdom of the North.',
+        relatedBookIds: ['9', '51', '53', '54', '45', '46', '47', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '23', '55', '56', '38', '29'],
+        cardOverview: "47 hours of twists. The Red Wedding awaits in the series' most shocking volume.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B005G48XL8?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005CCQNH0?tag=thelongbookcl-20'
     },
@@ -736,6 +869,8 @@ export const baseBooks: Book[] = [
         lengthHours: 31.2,
         genre: ['Fantasy', 'Epic Fantasy', 'Grimdark', 'Political Intrigue', 'War', 'Religion'],
         description: 'It seems too good to be true. After centuries of bitter strife and fatal treachery, the seven powers dividing the land have decimated one another into an uneasy truce.',
+        relatedBookIds: ['9', '51', '52', '54', '45', '46', '47', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '23', '55', '56', '38', '29'],
+        cardOverview: "31 hours in the aftermath. A slower, political burn that expands the world.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B006MWM378?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B006MPV7BS?tag=thelongbookcl-20'
     },
@@ -750,6 +885,8 @@ export const baseBooks: Book[] = [
         lengthHours: 48.9,
         genre: ['Fantasy', 'Epic Fantasy', 'Grimdark', 'Political Intrigue', 'Dragons', 'Adventure'],
         description: 'In the aftermath of a colossal battle, the future of the Seven Kingdoms hangs in the balance.',
+        relatedBookIds: ['9', '51', '52', '53', '45', '46', '47', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '23', '55', '56', '38', '29'],
+        cardOverview: "49 hours returning to the North. Jon Snow faces his greatest challenge yet.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B005CB5HGY?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005C7QVY0?tag=thelongbookcl-20'
     },
@@ -764,6 +901,10 @@ export const baseBooks: Book[] = [
         lengthHours: 25.9,
         genre: ['Fantasy', 'High Fantasy', 'Dragons', 'Sapphic', 'Feminism', 'Political Intrigue'],
         description: 'A world divided. A queendom without an heir. An ancient enemy awakens.',
+        relatedBookIds: ['45', '46', '47', '9', '51', '52', '53', '54', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '23', '56', '38', '29'],
+        cardOverview: "A 26-hour standalone epic. Dragons, queens, and ancient enemies. No sequels required, just pure immersion.",
+        teaser: 'A massive, world-spanning standalone that feels like an entire trilogy in one volume. It rivals "Game of Thrones" in scope, featuring dragons, queens, and a world-saving quest. If you want a fantasy epic that actually has an ending, start here.',
+        teaserTitle: "The Standalone Giant",
         affiliateLink: 'https://www.amazon.co.uk/dp/B07NBX6QHV?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B07NBS2F36?tag=thelongbookcl-20'
     },
@@ -778,6 +919,10 @@ export const baseBooks: Book[] = [
         lengthHours: 21.6,
         genre: ['Fantasy', 'Dark Academia', 'Historical Fantasy', 'Anti-Colonialism', 'Magic', 'Linguistics'],
         description: 'Traduttore, traditore: An act of translation is always an act of betrayal.',
+        relatedBookIds: ['45', '46', '47', '9', '51', '52', '53', '54', '13', '48', '49', '50', '41', '42', '43', '44', '57', '58', '59', '23', '55', '38', '29'],
+        cardOverview: "21 hours of dark academia with consequences. A brutal, beautiful look at empire, translation, and magic.",
+        teaser: "If you love the aesthetic of Oxford but want a story that punches up at the power structures behind it, this is it. It features a magic system based on translation and etymology that feels incredibly smart. A brutal, beautiful look at empire and language.",
+        teaserTitle: "Dark Academia with Real Teeth",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0B3GKFF5S?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0B3G9JCKW?tag=thelongbookcl-20'
     },
@@ -792,6 +937,8 @@ export const baseBooks: Book[] = [
         lengthHours: 24.7,
         genre: ['Fantasy', 'High Fantasy', 'Heist', 'Magic Systems', 'Dystopian', 'Revolution'],
         description: 'For a thousand years the ash fell and no flowers bloomed. For a thousand years the Skaa slaved in misery and lived in fear.',
+        relatedBookIds: ['58', '59', '13', '48', '49', '50', '45', '46', '47', '9', '51', '52', '53', '54', '41', '42', '43', '44', '23', '55', '56', '38', '29'],
+        cardOverview: "25 hours to kill a god. The ultimate heist fantasy with a magic system like no other.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B004TASE4Q?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00557U2II?tag=thelongbookcl-20'
     },
@@ -806,6 +953,8 @@ export const baseBooks: Book[] = [
         lengthHours: 27.2,
         genre: ['Fantasy', 'High Fantasy', 'Political Intrigue', 'Magic Systems', 'War', 'Siege'],
         description: 'The impossible has been accomplished. The Lord Ruler – the man who held the world in his iron grip for a thousand years – is dead.',
+        relatedBookIds: ['57', '59', '13', '48', '49', '50', '45', '46', '47', '9', '51', '52', '53', '54', '41', '42', '43', '44', '23', '55', '56', '38', '29'],
+        cardOverview: "27 hours ruling a broken empire. The politics of chaos take center stage.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B004SUIL5O?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005NDCIAE?tag=thelongbookcl-20'
     },
@@ -820,6 +969,8 @@ export const baseBooks: Book[] = [
         lengthHours: 26.3,
         genre: ['Fantasy', 'High Fantasy', 'Epic Fantasy', 'Apocalyptic', 'Magic Systems', 'Theology'],
         description: 'Who is the Hero of Ages? To end the Final Empire and restore freedom, Vin killed the Lord Ruler.',
+        relatedBookIds: ['57', '58', '13', '48', '49', '50', '45', '46', '47', '9', '51', '52', '53', '54', '41', '42', '43', '44', '23', '55', '56', '38', '29'],
+        cardOverview: "26 hours of revelation. One of the most satisfying trilogy endings in fantasy history.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B004TASEWS?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005NDD43O?tag=thelongbookcl-20'
     },
@@ -834,6 +985,8 @@ export const baseBooks: Book[] = [
         lengthHours: 20.7,
         genre: ['Science Fiction', 'Space Opera', 'Literary Sci-Fi', 'Mystery', 'Time Travel', 'AI'],
         description: 'On the world called Hyperion, beyond the law of the Hegemony of Man, there waits the creature called the Shrike.',
+        relatedBookIds: ['61', '20', '68', '69', '63', '65', '66', '27', '64', '67', '8'],
+        cardOverview: "21 hours of tales. The Canterbury Tales in space, featuring the terrifying Shrike.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ2SS6?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B001OC2W04?tag=thelongbookcl-20'
     },
@@ -848,6 +1001,8 @@ export const baseBooks: Book[] = [
         lengthHours: 19.9,
         genre: ['Science Fiction', 'Space Opera', 'Philosophy', 'AI', 'Time Travel', 'Epic'],
         description: 'In the stunning continuation of the epic adventure begun in Hyperion, Simmons returns us to a far future resplendent with drama and invention.',
+        relatedBookIds: ['60', '20', '68', '69', '63', '65', '66', '27', '64', '67', '8'],
+        cardOverview: "20 hours of war. The stunning conclusion to the Hyperion cantos delivers on every promise.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SPV8VA?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B001OC2W0E?tag=thelongbookcl-20'
     },
@@ -874,6 +1029,8 @@ export const baseBooks: Book[] = [
         lengthHours: 41.4,
         genre: 'Science Fiction',
         description: 'In the far future, the Intersolar Commonwealth is under attack by the Primes, a hostile alien race.',
+        relatedBookIds: ['20', '68', '69', '60', '61', '65', '66', '27', '64', '67', '8'],
+        cardOverview: "41 hours of payoff. The explosive conclusion to the Commonwealth Saga wraps up every loose end.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0041T6398?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005ND8542?tag=thelongbookcl-20'
     },
@@ -888,6 +1045,8 @@ export const baseBooks: Book[] = [
         lengthHours: 20.9,
         genre: ['Science Fiction', 'Space Opera', 'Sci-Fi Mystery', 'Noir', 'Political', 'Horror'],
         description: 'Humanity has colonized the solar system - Mars, the Moon, the Asteroid Belt and beyond - but the stars are still out of our reach.',
+        relatedBookIds: ['20', '68', '69', '60', '61', '63', '65', '66', '27', '67', '8'],
+        cardOverview: "21 hours that launched The Expanse. Noir detective meets space opera in the best sci-fi series of the decade.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B00PABWMLO?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00P9W7LQA?tag=thelongbookcl-20'
     },
@@ -902,6 +1061,8 @@ export const baseBooks: Book[] = [
         lengthHours: 31.9,
         genre: ['Science Fiction', 'Hard Sci-Fi', 'Post-Apocalyptic', 'Space Survival', 'Genetics', 'Epic'],
         description: 'A catastrophic event renders the earth a ticking time bomb. In a feverish race against the inevitable, nations around the globe band together.',
+        relatedBookIds: ['27', '66', '20', '68', '69', '60', '61', '63', '64', '67', '8'],
+        cardOverview: "32 hours of survival. Hard sci-fi that spans 5,000 years, exploring how humanity rebuilds after the end.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B00VWIN35S?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00VVWBFM8?tag=thelongbookcl-20'
     },
@@ -916,6 +1077,8 @@ export const baseBooks: Book[] = [
         lengthHours: 32.8,
         genre: ['Science Fiction', 'Speculative Fiction', 'Philosophy', 'Mathematics', 'Alternative World', 'Monasticism'],
         description: 'In 1999, Neal Stephenson wrote Cryptonomicon, a novel about the "information age". In Anathem he gives us the "long now".',
+        relatedBookIds: ['27', '65', '20', '68', '69', '60', '61', '63', '64', '67', '8'],
+        cardOverview: "33 hours of ideas. Monks, math, and multiverse theory clash in Stephenson's most intellectual epic.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B086WNLRX5?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B086WNY826?tag=thelongbookcl-20'
     },
@@ -930,6 +1093,8 @@ export const baseBooks: Book[] = [
         lengthHours: 16.1,
         genre: ['Science Fiction', 'Philosophy', 'Satire', 'Religion', 'Classics', 'Counterculture'],
         description: 'Valentine Michael Smith is a human being raised on Mars, newly arrived on Earth.',
+        relatedBookIds: ['20', '68', '69', '60', '61', '63', '65', '66', '27', '64', '8'],
+        cardOverview: "16 hours challenging culture. Heinlein's counter-culture classic about a human raised on Mars.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B00AJQQMHK?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00AJEV7T0?tag=thelongbookcl-20'
     },
@@ -944,6 +1109,8 @@ export const baseBooks: Book[] = [
         lengthHours: 9.1,
         genre: ['Science Fiction', 'Space Opera', 'Political Intrigue', 'Philosophy', 'Tragedy', 'Religion'],
         description: 'Paul Atreides, now the Emperor of the Known Universe, possesses more power than a single man was ever meant to wield.',
+        relatedBookIds: ['20', '69', '60', '61', '63', '65', '66', '27', '64', '67', '8'],
+        cardOverview: "9 hours of consequences. A tighter, tragic coda to Dune that deconstructs the hero myth.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B004V86KWA?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B000WS9ZHY?tag=thelongbookcl-20'
     },
@@ -958,6 +1125,8 @@ export const baseBooks: Book[] = [
         lengthHours: 19.7,
         genre: ['Science Fiction', 'Space Opera', 'Ecology', 'Political Intrigue', 'Family Saga', 'Religion'],
         description: 'The Children of Dune are twin siblings Leto and Ghanima Atreides, whose father, the Emperor Paul Muad\'Dib, disappeared in the desert wastelands.',
+        relatedBookIds: ['20', '68', '60', '61', '63', '65', '66', '27', '64', '67', '8'],
+        cardOverview: "20 hours of evolution. The saga continues as the next generation of Atreides wrestle with destiny.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQDFGK?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0013O8X60?tag=thelongbookcl-20'
     },
@@ -972,6 +1141,8 @@ export const baseBooks: Book[] = [
         lengthHours: 24.4,
         genre: ['Classics', 'Adventure', 'Philosophical Fiction', 'Sea Story', 'Obsession', 'Nature'],
         description: 'Ishmael narrating the monomaniacal quest of Ahab, captain of the whaler Pequod, for revenge on the albino sperm whale Moby Dick.',
+        relatedBookIds: ['15', '75', '6', '19', '39', '71', '72', '73', '37', '74', '31', '10'],
+        cardOverview: "24 hours chasing the whale. It's more than an adventure; it's a meditation on obsession and nature.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B008QZAKDS?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B000OYDIVU?tag=thelongbookcl-20'
     },
@@ -986,6 +1157,8 @@ export const baseBooks: Book[] = [
         lengthHours: 18.7,
         genre: ['Classics', 'Bildungsroman', 'Victorian', 'Social Commentary', 'Romance', 'Mystery'],
         description: 'The story of the orphan Pip, writing his life from his early days of childhood until adulthood and trying to be a gentleman along the way.',
+        relatedBookIds: ['19', '39', '15', '75', '6', '72', '73', '37', '74', '70', '31', '10'],
+        cardOverview: "19 hours with Pip. Dickens' tightest plot explores class, ambition, and the lies we tell ourselves.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ1CJW?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005ZO8FGW?tag=thelongbookcl-20'
     },
@@ -1000,6 +1173,8 @@ export const baseBooks: Book[] = [
         lengthHours: 19.2,
         genre: ['Classics', 'Gothic Romance', 'Bildungsroman', 'Feminist', 'Mystery', 'Victorian'],
         description: 'Jane Eyre is a young orphan being raised by Mrs. Reed, her cruel, wealthy aunt.',
+        relatedBookIds: ['15', '75', '6', '19', '39', '71', '73', '37', '74', '70', '31', '10'],
+        cardOverview: "19 hours of gothic romance. Thandiwe Newton breathes new life into literature's most resilient heroine.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0D33S6NCJ?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B01COOQAPI?tag=thelongbookcl-20'
     },
@@ -1014,6 +1189,8 @@ export const baseBooks: Book[] = [
         lengthHours: 14.0,
         genre: ['Classics', 'Gothic', 'Tragedy', 'Romance', 'Family Saga', 'Revenge'],
         description: 'The story of the love between Heathcliff and Catherine Earnshaw which remains unresolved and destroys them and the people around them.',
+        relatedBookIds: ['15', '75', '6', '19', '39', '71', '72', '37', '74', '70', '31', '10'],
+        cardOverview: "14 hours on the moors. A dark, passionate story of obsession that refuses to be tamed.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0FZMD9N16?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B076PP94DP?tag=thelongbookcl-20'
     },
@@ -1028,6 +1205,8 @@ export const baseBooks: Book[] = [
         lengthHours: 31.4,
         genre: ['Classics', 'Satire', 'Historical Fiction', 'Social Commentary', 'Regency'],
         description: 'The novel follows the lives of Becky Sharp and Amelia Sedley amid their friends and families during and after the Napoleonic Wars.',
+        relatedBookIds: ['15', '75', '6', '19', '39', '71', '72', '73', '37', '70', '31', '10'],
+        cardOverview: "31 hours without a hero. A sharp, cynical satire of society that feels uncomfortably modern.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SPWQIY?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B001SB91TQ?tag=thelongbookcl-20'
     },
@@ -1042,6 +1221,8 @@ export const baseBooks: Book[] = [
         lengthHours: 19.0,
         genre: ['Classics', 'Historical Fiction', 'Gothic', 'Tragedy', 'Architecture', 'Social Commentary'],
         description: 'The story is set in Paris in 1482 during the reign of Louis XI.',
+        relatedBookIds: ['15', '6', '19', '39', '71', '72', '73', '37', '74', '70', '31', '10'],
+        cardOverview: "19 hours in medieval Paris. Hugo's architecture-obsessed tragedy is far darker than the Disney version.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B096KX16MW?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0000547BL?tag=thelongbookcl-20'
     },
@@ -1056,6 +1237,8 @@ export const baseBooks: Book[] = [
         lengthHours: 27.3,
         genre: ['Modernist', 'Literary Fiction', 'Experimental', 'Stream of Consciousness', 'Dublin', 'Classics'],
         description: 'Ulysses chronicles the appointments and encounters of Leopold Bloom in Dublin in the course of an ordinary day, 16 June 1904.',
+        relatedBookIds: ['5', '25', '26', '90', '96', '17', '24', '89', '78'],
+        cardOverview: "27 hours inside a single day. The Mount Everest of literature is surprisingly funny when heard aloud.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SPWRW4?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B001DNNASW?tag=thelongbookcl-20'
     },
@@ -1070,6 +1253,8 @@ export const baseBooks: Book[] = [
         lengthHours: 22.0,
         genre: ['Classics', 'Historical Fiction', 'Romance', 'Russian Lit', 'War', 'Revolution'],
         description: 'Doctor Zhivago is the story of the life and loves of a poet/physician during the turmoil of the Russian Revolution.',
+        relatedBookIds: ['22', '30', '28', '32'],
+        cardOverview: "22 hours of Russian soul. A sweeping romance set against the brutal backdrop of revolution.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B005BEHDVY?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005B51C74?tag=thelongbookcl-20'
     },
@@ -1084,6 +1269,8 @@ export const baseBooks: Book[] = [
         lengthHours: 35.3,
         genre: ['Classics', 'Philosophical Fiction', 'Modernist', 'Allegory', 'Health', 'Germany'],
         description: 'Hans Castorp visits his cousin in a sanatorium in Davos and stays for seven years.',
+        relatedBookIds: ['5', '25', '26', '90', '96', '17', '24', '89', '76'],
+        cardOverview: "35 hours on the mountain. A philosophical novel of ideas set in a pre-war sanitarium.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0BNNYM6KR?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B088FZL1JZ?tag=thelongbookcl-20'
     },
@@ -1098,6 +1285,8 @@ export const baseBooks: Book[] = [
         lengthHours: 18.6,
         genre: ['Biography', 'Art History', 'Science', 'Non-Fiction', 'Renaissance', 'Innovation'],
         description: 'Based on thousands of pages from Leonardo da Vinci\'s astonishing notebooks and new discoveries about his life and work.',
+        relatedBookIds: ['33', '82', '2', '4', '18', '34', '84', '85', '16', '35'],
+        cardOverview: "19 hours of genius. Isaacson uncovers the human side of history's greatest polymath.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B075ZG9NGL?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B075Z7YZBK?tag=thelongbookcl-20'
     },
@@ -1112,6 +1301,8 @@ export const baseBooks: Book[] = [
         lengthHours: 20.0,
         genre: ['Biography', 'American History', 'Politics', 'Non-Fiction', 'Science', 'Diplomacy'],
         description: 'In this colorful and intimate narrative, Isaacson provides the full sweep of Franklin\'s amazing life.',
+        relatedBookIds: ['33', '81', '2', '4', '18', '34', '84', '85', '16', '35'],
+        cardOverview: "20 hours with the first American. A warm, witty biography of the man who invented himself.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B008CPXDFY?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B004VLETYM?tag=thelongbookcl-20'
     },
@@ -1126,6 +1317,8 @@ export const baseBooks: Book[] = [
         lengthHours: 35.5,
         genre: ['Biography', 'Russian History', 'Politics', 'Non-Fiction', 'War', 'Modernization'],
         description: 'Against the monumental canvas of seventeenth- and eighteenth-century Europe and Russia unfolds the magnificent story of Peter the Great.',
+        relatedBookIds: ['85', '2', '4', '18', '34', '33', '81', '82', '16', '35'],
+        cardOverview: "35 hours modernizing Russia. The sweeping life of the Tsar who dragged his nation into the future.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0064P6HTS?tag=thelongbookclub-21'
     },
     {
@@ -1139,6 +1332,8 @@ export const baseBooks: Book[] = [
         lengthHours: 23.4,
         genre: ['Biography', 'Russian History', 'Politics', 'Non-Fiction', 'Royalty', 'Enlightenment'],
         description: 'The story of a German princess who became the Empress of all the Russias.',
+        relatedBookIds: ['84', '2', '4', '18', '34', '33', '81', '82', '16', '35'],
+        cardOverview: "23 hours on the throne. The gripping story of the German princess who conquered Russia.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0064P6HTS?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0064I14FM?tag=thelongbookcl-20'
     },
@@ -1153,6 +1348,10 @@ export const baseBooks: Book[] = [
         lengthHours: 25.5,
         genre: ['Classics', 'Family Saga', 'Historical Fiction', 'Biblical Retelling', 'Americana', 'Philosophy'],
         description: 'Set in the rich farmland of California\'s Salinas Valley, this sprawling and often brutal novel follows the intertwined destinies of two families.',
+        relatedBookIds: ['88'],
+        cardOverview: "Steinbeck's 25-hour magnum opus. A biblical allegory of good and evil set in the Salinas Valley.",
+        teaser: "Steinbeck's magnum opus. A biblical allegory set in the Salinas Valley that takes its time to rot and bloom. It is about the battle between good and evil, told with a patience that shorter books just can't muster.",
+        teaserTitle: "Steinbeck's Masterpiece",
         affiliateLink: 'https://www.amazon.co.uk/dp/B09N7P9M2K?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B09N7PZQRT?tag=thelongbookcl-20'
     },
@@ -1167,6 +1366,7 @@ export const baseBooks: Book[] = [
         lengthHours: 21.2,
         genre: ['Classics', 'Historical Fiction', 'Social Commentary', 'Great Depression', 'Americana', 'Tragedy'],
         description: 'The Joads are driven from their homestead in Oklahoma and forced to travel west to the promised land of California.',
+        relatedBookIds: ['87'],
         affiliateLink: 'https://www.amazon.co.uk/dp/B09N7R2B3S?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B09N7Q1H5N?tag=thelongbookcl-20'
     },
@@ -1181,6 +1381,7 @@ export const baseBooks: Book[] = [
         lengthHours: 21.0,
         genre: ['Contemporary Fiction', 'Coming of Age', 'Retelling', 'Appalachia', 'Social Commentary', 'Addiction'],
         description: 'The story of a boy born in Appalachia to a teenaged single mother in a single-wide trailer.',
+        relatedBookIds: ['5', '25', '26', '90', '96', '17', '24', '76', '78'],
         affiliateLink: 'https://www.amazon.co.uk/dp/B0B2X4K4FW?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0B2X423CV?tag=thelongbookcl-20'
     },
@@ -1195,6 +1396,7 @@ export const baseBooks: Book[] = [
         lengthHours: 26.3,
         genre: ['Historical Fiction', 'Comics', 'Jewish History', 'Literary Fiction', 'LGBTQ+', 'NYC'],
         description: 'Joe Kavalier, a young Jewish artist who has also been trained in the art of Houdini-esque escape, has just smuggled himself out of Nazi-occupied Prague.',
+        relatedBookIds: ['5', '25', '26', '96', '17', '24', '89', '76', '78'],
         affiliateLink: 'https://www.amazon.co.uk/dp/B008AXA4LY?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B008ARPKNW?tag=thelongbookcl-20'
     },
@@ -1209,6 +1411,7 @@ export const baseBooks: Book[] = [
         lengthHours: 39.25,
         genre: ['Literary Fiction', 'Mystery', 'Postmodernism', 'Crime', 'Philosophy', 'Horror'],
         description: 'Composed of five parts, 2666 is a novel of such power that it has transformed the way we understand literature.',
+        relatedBookIds: ['5', '25', '26', '90', '17', '24', '89', '76', '78'],
         affiliateLink: 'https://www.amazon.co.uk/dp/B0D81JXQBW?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0D81HSP37?tag=thelongbookcl-20'
     },
@@ -1222,6 +1425,9 @@ export const baseBooks: Book[] = [
         lengthHours: 26.2,
         genre: ['Contemporary Fiction', 'Family Drama', 'Tragicomedy', 'Irish Lit', 'Literary Fiction', 'Mystery'],
         description: 'The Barnes family in a small Irish town facing financial ruin and personal crises. Interweaves perspectives of four family members as they deal with secrets, past mistakes, and their dysfunctional present.',
+        cardOverview: "A 26-hour tragicomic saga. Funny, heartbreaking, and structurally brilliant. Worth every minute of your credit.",
+        teaser: 'A tragicomic saga of a wealthy Irish family in freefall that is worthy of every hour you invest. It’s funny, heartbreaking, and structurally brilliant. If you liked "The Corrections" or "Succession," this is your next obsession.',
+        teaserTitle: "The Dysfunction of the Year",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0BLCS77CW?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0BLC76F72?tag=thelongbookcl-20'
     },
@@ -1235,6 +1441,9 @@ export const baseBooks: Book[] = [
         lengthHours: 11.7,
         genre: ['Historical Fiction', 'Thriller', 'Spy Fiction', 'Politics', 'Physics', 'Russia'],
         description: 'An expansive historical epic of intrigue and espionage set in the early 20th century. Follows Dawn Rae Bjornberg (Aurora Artemyeva) from the American West to Russia, where she is trained as a spy.',
+        cardOverview: "Neal Stephenson turns his eye to espionage. A dense, detailed 12-hour dive into the dawn of the atomic age.",
+        teaser: "Neal Stephenson turns his eye to the Russian Revolution and early 20th-century espionage. It is dense, technical, and typically brilliant. Less sci-fi than his usual fare, but just as detailed. A deep dive into the dawn of the atomic age.",
+        teaserTitle: "Stephenson Does a Spy Thriller",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0D619DC6K?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0D5ZMQ4WF?tag=thelongbookcl-20'
     },
@@ -1248,6 +1457,9 @@ export const baseBooks: Book[] = [
         lengthHours: 17.4,
         genre: ['Fantasy', 'Magical Realism', 'Literary Fiction', 'Metaphysical', 'Mystery', 'Romance'],
         description: 'A love story and quest narrative following a protagonist searching for an imaginary city where his true love resides. Explores lost love, memory, and the boundary between reality and imagination.',
+        cardOverview: "Murakami returns with a 17-hour dreamscape. A perfect, warm blanket of a listen for long winter nights.",
+        teaser: "Murakami returns to his roots with a dreamlike journey into a walled city. It feels like a remix of his greatest hits: libraries, jazz, cats, and metaphysical yearning. If you are a fan, it is a warm blanket; if you are new, it is a perfect entry point.",
+        teaserTitle: "Classic Murakami Dreamscape",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CWP8K8NY?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CWP7W8NV?tag=thelongbookcl-20'
     },
@@ -1261,6 +1473,9 @@ export const baseBooks: Book[] = [
         lengthHours: 22.9,
         genre: ['Contemporary Fiction', 'Social Satire', 'London', 'Crime', 'Literary Fiction', 'Class'],
         description: 'A state-of-the-nation novel centering on Campbell Flynn, a celebrity intellectual whose life unravels over an incendiary year in London. Explores class, race, money, and corruption.',
+        cardOverview: "A massive 23-hour chronicle of modern London. Tackles everything from aristocrats to drill rappers in one ambitious sweep.",
+        teaser: "A massive, immersive chronicle of modern London. It tackles everything from aristocrats to drill rappers, corruption to crypto. It is a big, loud, ambitious novel that tries to capture the entire chaotic spirit of 2025 Britain.",
+        teaserTitle: "The Great London Novel?",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CS3ZYJV8?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CS4ZHPJ5?tag=thelongbookcl-20'
     },
@@ -1274,6 +1489,8 @@ export const baseBooks: Book[] = [
         lengthHours: 17.9,
         genre: ['Non-Fiction', 'History', 'Technology', 'AI', 'Philosophy', 'Future'],
         description: 'Explores deeply how information networks have shaped our world from the Stone Age to AI, and how we are currently facing an existential threat from non-human intelligence.',
+        cardOverview: "Essential 18-hour reading for the AI era. Harari traces information networks from the Stone Age to our uncertain future.",
+        teaserTitle: "Sapiens for the AI Age",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CSYYMZKP?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CSYYCJ9K?tag=thelongbookcl-20'
     },
@@ -1287,6 +1504,9 @@ export const baseBooks: Book[] = [
         lengthHours: 62.8,
         genre: ['Fantasy', 'Epic Fantasy', 'High Fantasy', 'War', 'Magic Systems', 'Cosmere'],
         description: 'The conclusion to the first half of The Stormlight Archive. Dalinar Kholin challenges Odium to a contest of champions to decide the fate of Roshar.',
+        cardOverview: "The definition of Epic Fantasy. A colossal 63-hour finale to the first Stormlight arc. The payoff you have been waiting for.",
+        teaser: "The massive conclusion to the first arc of The Stormlight Archive. If you have stuck with Kaladin and Dalinar this far, this is the payoff. A 60-hour avalanche of answers, battles, and heartbreak.",
+        teaserTitle: "The Stormlight Era Finale",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CQDF5PP6?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CQD8T35J?tag=thelongbookcl-20'
     },
@@ -1300,6 +1520,7 @@ export const baseBooks: Book[] = [
         lengthHours: 53.5,
         genre: ['Historical Fiction', 'Adventure', 'War', 'Politics', 'Japan', 'Samurai'],
         description: 'A sweeping epic set in 1600 feudal Japan. English pilot John Blackthorne is shipwrecked and rises to become a samurai and key player in the rise of the Shogun.',
+        teaserTitle: "The Book Behind the Phenomenon",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CRM21VRN?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CRMBF73W?tag=thelongbookcl-20'
     },
@@ -1326,6 +1547,9 @@ export const baseBooks: Book[] = [
         lengthHours: 31.3,
         genre: ['Historical Fiction', 'Family Saga', 'Medical Fiction', 'India', 'Literary Fiction', 'Multi-generational'],
         description: 'A sweeping multigenerational saga set in Kerala, South India. Follows a family afflicted by a "Condition" where in every generation, at least one person dies by drowning.',
+        cardOverview: "A sweeping 31-hour masterpiece. Narrated by the author himself, this multigenerational saga flows like a river through time.",
+        teaser: "A sweeping journey that justifies every minute of its runtime. It flows like a river through time, exploring a family cursed by water in Kerala, South India. It is warm, tragic, and beautifully narrated by the author himself.",
+        teaserTitle: "The 2025 Literary Masterpiece",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0BVDPD31S?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0BVDNPQ1V?tag=thelongbookcl-20'
     },
@@ -1339,6 +1563,9 @@ export const baseBooks: Book[] = [
         lengthHours: 48.1,
         genre: ['Memoir', 'Biography', 'Entertainment', 'Music', 'Hollywood', 'Non-Fiction'],
         description: 'The long-awaited memoir by Barbra Streisand, recounting her six-decade career, childhood in Brooklyn, and personal life. Narrated by the author herself.',
+        cardOverview: "48 hours with a living legend. Yes, she reads it all herself. It feels less like a book and more like a weekend at her house.",
+        teaser: "Yes, it is 48 hours long. Yes, she reads it all herself. It is arguably the greatest celebrity memoir ever produced: chatty, meticulous, and completely unfiltered. It feels less like a book and more like spending a weekend in Barbra's living room.",
+        teaserTitle: "48 Hours with a Living Legend",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0BV6YLFGV?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0BV6WQC9L?tag=thelongbookcl-20'
     },
@@ -1352,6 +1579,9 @@ export const baseBooks: Book[] = [
         lengthHours: 36.25,
         genre: ['Fantasy', 'Dark Fantasy', 'Romance', 'Dystopian', 'Magic', 'Fanfiction Roots'],
         description: 'A riveting dark fantasy debut about a promising alchemist who must protect her lost history and preserve her former self while unearthing the secrets of her prison and captor.',
+        cardOverview: "A 36-hour dark fantasy sensation. Brutal, high-stakes romance set in a war-torn world. A viral hit for a reason.",
+        teaser: "The dark fantasy sensation that started as a viral story. This is a brutal, high-stakes romance set in a war-torn world where alchemy is the ultimate weapon. A long-form deep dive that flies by.",
+        teaserTitle: "The Viral Fantasy Sensation",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0DT78JY9L?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0DT78HWGS?tag=thelongbookcl-20'
     },
@@ -1366,6 +1596,9 @@ export const baseBooks: Book[] = [
         lengthHours: 22.1,
         genre: ['Dark Academia', 'Psychological Thriller', 'Literary Fiction', 'Mystery', 'Murder', 'College'],
         description: 'Under the influence of their charismatic classics professor, a group of clever, eccentric misfits at an elite New England college discover a way of thinking and living that is a world away from the humdrum existence of their contemporaries.',
+        cardOverview: "The 22-hour origin of Dark Academia. An intoxicating, psychological whydunnit set in an elite New England college.",
+        teaser: 'The undisputed Queen of Dark Academia. A group of Classics students at an elite college, a charismatic professor, and a murder that happens on page one. It’s not a whodunnit, it’s a "whydunnit"—and the answer is intoxicating.',
+        teaserTitle: "The Book That Started the Aesthetic",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0045F6IMK?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0045HJDVG?tag=thelongbookcl-20'
     },
@@ -1379,6 +1612,9 @@ export const baseBooks: Book[] = [
         lengthHours: 26.1,
         genre: ['Historical Fiction', 'Horror', 'Dark Academia', 'Vampires', 'Travel', 'Mystery'],
         description: 'A young woman discovers an ancient book and a cache of faded letters in her father\'s library, plunging her into a world that she never dreamed existed—a world where the presence of Vlad the Impaler is all too real.',
+        cardOverview: "A 26-hour hunt for the real Dracula. Atmospheric, scholarly, and full of creeping dread. Perfect for history buffs.",
+        teaser: "A global hunt for the real Dracula begins when a young woman finds a mysterious book in her father's library. This isn't a slasher; it's a slow-burn, atmospheric mystery that travels through the dusty archives and monasteries of Eastern Europe. Perfect for fans of history, folklore, and creeping dread.",
+        teaserTitle: "The Search for the Real Dracula",
         affiliateLink: 'https://www.amazon.co.uk/dp/B08QW793PC?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B08QWBDL83?tag=thelongbookcl-20'
     },
@@ -1392,6 +1628,9 @@ export const baseBooks: Book[] = [
         lengthHours: 24.0,
         genre: ['Fantasy', 'Urban Fantasy', 'Romance', 'Dark Academia', 'History', 'Witches'],
         description: 'Deep in the stacks of Oxford\'s Bodleian Library, young scholar Diana Bishop unwittingly calls up a bewitched alchemical manuscript in the course of her research.',
+        cardOverview: "24 hours of supernatural romance with a PhD. Vampires, witches, and historians clash in the Oxford libraries.",
+        teaser: "A witch who refuses to use magic and a 1,500-year-old vampire geneticist walk into the Bodleian Library. What follows is a romance that spans centuries and continents. It is brainy, romantic, and perfect for anyone who wants their supernatural romance with a PhD.",
+        teaserTitle: "Twilight for History Professors",
         affiliateLink: 'https://www.amazon.co.uk/dp/B004NU711Y?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005FIPMZK?tag=thelongbookcl-20'
     },
@@ -1405,6 +1644,8 @@ export const baseBooks: Book[] = [
         lengthHours: 28.3,
         genre: ['Fantasy', 'Romantasy', 'High Fantasy', 'Dragons', 'War', 'Magic School'],
         description: 'The second book in the Empyrean series. Everyone expected Violet Sorrengail to die during her first year at Basgiath War College—Violet included. But Threshing was only the first impossible test meant to weed out the weak-willed, the unworthy, and the unlucky.',
+        teaser: 'The 28-hour sequel that ups the stakes in every conceivable way. It is longer, darker, and even more addictive than "Fourth Wing." A breathless ride that demands a cancelled weekend.',
+        teaserTitle: "The Blockbuster Sequel",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0C9V499ND?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0C9V75P93?tag=thelongbookcl-20'
     },
@@ -1418,6 +1659,9 @@ export const baseBooks: Book[] = [
         lengthHours: 27.8,
         genre: ['Fantasy', 'Urban Fantasy', 'Romantasy', 'Mystery', 'Crime', 'Fallen Angels'],
         description: 'Bound by blood. Tempted by desire. Unleashed by destiny. Bryce Quinlan had the perfect life—working hard all day and partying all night—until a demon murdered her closest friends, leaving her bereft, wounded, and alone.',
+        cardOverview: "28 hours of urban fantasy on a grand scale. Murder, nightclubs, and magic in Maas's most mature work.",
+        teaser: "Imagine a high-fantasy world with cell phones and nightclubs, then drop a gritty murder mystery in the middle of it. This immersive urban fantasy takes its time building a world you won't want to leave. widely considered Maas's most mature work.",
+        teaserTitle: "Urban Fantasy on a Grand Scale",
         affiliateLink: 'https://www.amazon.co.uk/dp/B084P37J2B?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0D342BV2R?tag=thelongbookcl-20'
     },
@@ -1431,6 +1675,9 @@ export const baseBooks: Book[] = [
         lengthHours: 31.1,
         genre: ['Fantasy', 'Romantasy', 'High Fantasy', 'Dragons', 'Magic', 'Fae'],
         description: 'The land of Terre d\'Ange is a place of rigorous beauty and grace. It is a country where gods walk the earth. And it is a country where Phèdre nó Delaunay was sold into indentured servitude.',
+        cardOverview: "The original 31-hour spicy epic. Spycraft, alternate history, and lush romance. A monumental slow-burn.",
+        teaser: 'Before "Romantasy" was a hashtag, there was Phèdre nó Delaunay. This is a monumental feat of spycraft, alternate history, and romance. It is a lush, intelligent slow-burn that completely rewards your patience.',
+        teaserTitle: "The Original Spicy Epic",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0BVGMPG9V?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0BVG8RMYG?tag=thelongbookcl-20'
     },
@@ -1444,6 +1691,9 @@ export const baseBooks: Book[] = [
         lengthHours: 20.2,
         genre: 'Fantasy',
         description: 'A quote-worthy, enemies-to-lovers fantasy romance about a prickly assassin and a dragon rider.',
+        cardOverview: "A lyrical 20-hour debut. Elemental magic, dragons, and simmering romance. A cozy-yet-epic fantasy.",
+        teaser: "A lyrical long-form debut that feels like an instant classic. Elemental magic, dragons, and a romance that simmers for hundreds of pages. This is the new cozy-yet-epic fantasy you have been looking for.",
+        teaserTitle: "The New Cozy-Epic Hybrid",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CZ159XPK?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CZ14SS1Q?tag=thelongbookcl-20'
     },
@@ -1458,6 +1708,9 @@ export const baseBooks: Book[] = [
         lengthHours: 85.1,
         genre: ['Science Fiction', 'Space Opera', 'Science Fantasy', 'Comedy', 'Heist', 'Magic'],
         description: 'Carl Ramsey is an ex-earth military pilot turned con artist. His ship, the Mobius, is home to a ragtag crew of misfits and refugees. They\'ll take any job that pays, legal or otherwise.',
+        cardOverview: "85 hours. 16 missions. One credit. A massive space opera that is pure high-octane fun.",
+        teaser: "85 hours. 16 missions. One credit. If you miss the banter of Firefly or the chaos of Guardians of the Galaxy, this massive space opera is the cure. It is high-octane fun that never takes itself too seriously, making it the perfect palate cleanser between heavier listens.",
+        teaserTitle: "Firefly Meets Guardians of the Galaxy",
         affiliateLink: 'https://www.amazon.co.uk/dp/B079YWFX6B?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B079YYQNMM?tag=thelongbookcl-20'
     },
@@ -1471,6 +1724,9 @@ export const baseBooks: Book[] = [
         lengthHours: 126.6,
         genre: ['History', 'Classics', 'Non-Fiction', 'Rome', 'Ancient History', 'Politics'],
         description: 'The definitive history of the Roman Empire, from its height in the 2nd century AD to its fall in 1453. A masterpiece of historical writing.',
+        cardOverview: "The 126-hour mountain of history. Charts the inevitable crumble of the greatest empire.",
+        teaser: "This is the mountain top of historical writing. Covering 1300 years of history in 126 hours, Gibbon's masterpiece is surprisingly witty and relevant. It charts the slow, inevitable crumble of the greatest empire the world has ever known.",
+        teaserTitle: "The Ultimate History Lesson",
         affiliateLink: 'https://www.amazon.co.uk/dp/B00VY9VVBS?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00WHCB85K?tag=thelongbookcl-20'
     },
@@ -1484,6 +1740,9 @@ export const baseBooks: Book[] = [
         lengthHours: 65.9,
         genre: ['Fantasy', 'Epic Fantasy', 'Sword and Sorcery', 'Adventure', 'Buddy', 'Magic'],
         description: 'Dante Galand is young. Penniless. Alone. But devoted to learning the dark arts. As he opens a book of forbidden etheric power, he is attacked by the Nether.',
+        cardOverview: "65 hours of epic fantasy for one credit. A hidden gem that grows into a legendary bromance.",
+        teaser: 'For years, this has been the "hidden gem" of Audible credits. You get the complete trilogy—65+ hours of epic fantasy—for a single credit. It starts with two young friends and a book of dark magic, and grows into a legendary bromance that fans swear by.',
+        teaserTitle: "The Fantasy Value King",
         affiliateLink: 'https://www.amazon.co.uk/dp/B00W8Y1WY4?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00W8EBOHO?tag=thelongbookcl-20'
     },
@@ -1497,6 +1756,9 @@ export const baseBooks: Book[] = [
         lengthHours: 61.1,
         genre: ['Fantasy', 'LitRPG', 'Slice of Life', 'Cozy Fantasy', 'Portal Fantasy', 'Adventure'],
         description: 'Erin Solstice is an innkeeper. She\'s also an [Innkeeper]. It\'s a Class, and it comes with Skills. Ryoka Griffin is a runner. She\'s also a [Runner]. They are both from Earth, and they are both lost in a world of monsters and magic.',
+        cardOverview: "61 hours of cozy-yet-epic fantasy. Slice-of-life warmth meets high-stakes magic.",
+        teaser: 'Imagine if you woke up in a video game world, but instead of fighting dragons, you just wanted to run a really nice hotel. This 60-hour epic blends "slice of life" warmth with high-stakes fantasy. It is huge, heartwarming, and dangerously addictive.',
+        teaserTitle: "A Cozy (but Massive) LitRPG Phenomenon",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0892SMMMM?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0892T6Q4L?tag=thelongbookcl-20'
     },
@@ -1510,6 +1772,9 @@ export const baseBooks: Book[] = [
         lengthHours: 50.5,
         genre: ['Biography', 'History', 'War', 'Non-Fiction', 'Politics', 'UK'],
         description: 'The definitive biography of Winston Churchill, who was considered the greatest Briton of the 20th century.',
+        cardOverview: "50 hours that feel like a breeze. The definitive portrait of the man who saved the world.",
+        teaser: "There are a thousand books about Churchill, but this is the one. Roberts makes 50 hours feel like a breeze. It uses exclusive sources to paint the most complete picture of the man who saved the world (and knew it).",
+        teaserTitle: "The Definitive Portrait",
         affiliateLink: 'https://www.amazon.co.uk/dp/B07HB8TDDH?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B07HB7HYFZ?tag=thelongbookcl-20'
     },
@@ -1523,6 +1788,7 @@ export const baseBooks: Book[] = [
         lengthHours: 27.2,
         genre: ['Fantasy', 'Dark Fantasy', 'Grimdark', 'Vampires', 'Horror', 'Action'],
         description: 'From the New York Times bestselling author of the Nevernight Chronicle, Jay Kristoff, comes the first book of an astonishing new dark fantasy series. It has been twenty-seven long years since the last sunrise. For nearly three decades, vampires have waged war against humanity; building their eternal empire even as they tear down our own.',
+        cardOverview: "27 hours of interview with a vampire hunter. A dark, brutal fantasy that feels like The Witcher meets Interview with the Vampire.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B098KP7LLM?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B098KMY3XV?tag=thelongbookcl-20',
         narrator: 'Damian Lynch'
@@ -1537,6 +1803,9 @@ export const baseBooks: Book[] = [
         lengthHours: 34.7,
         genre: ['Fantasy', 'Dark Fantasy', 'Grimdark', 'Vampires', 'Horror', 'Action'],
         description: 'The epic conclusion to the internationally bestselling Empire of the Vampire series. Gabriel de León has saved the Grail, but at what cost? Now, he must face the final darkness and determine the price of the dawn.',
+        cardOverview: "The heavy-hitting 35-hour conclusion to the trilogy. Dark, stylish, and violent. A vampire epic with teeth.",
+        teaser: 'The epic, heavy-hitting conclusion to the Empire of the Vampire trilogy. Gabriel de León faces the final darkness in a story that makes "Interview with the Vampire" look like a bedtime story. Dark, violent, and incredibly stylish.',
+        teaserTitle: "The Heavy Metal Vampire Finale",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0DZJ46ZPB?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0DZJ5QLC6?tag=thelongbookcl-20',
         narrator: 'Damian Lynch, Shakira Shute'
@@ -1551,6 +1820,8 @@ export const baseBooks: Book[] = [
         lengthHours: 24.5,
         genre: ['Fantasy', 'Dark Romance', 'Romantasy', 'Urban Fantasy', 'Magic', 'Mystery'],
         description: "Now crowned queen of the Blood Court, Saeris Fane must confront political treachery and a spreading supernatural corruption. The stakes are higher and the magic deadlier in this explosive sequel.",
+        relatedBookIds: ['147'],
+        cardOverview: "24 hours of higher stakes. Saeris must confront political treachery and ancient magic as the Blood Court rises.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0FBSCF8N3?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0FBS7GCTV?tag=thelongbookcl-20',
         narrator: "Stella Bloom, Anthony Palmini",
@@ -1566,6 +1837,7 @@ export const baseBooks: Book[] = [
         lengthHours: 39.5,
         genre: ['Horror', 'Thriller', 'Supernatural', 'Psychic', 'Nazis', 'Mind Control'],
         description: "Three individuals discover they have the power to control human minds and have used this gift for decades to feed off the suffering of others. Now they are hunted.",
+        cardOverview: "39 hours of mind games. Psychic vampires manipulating history in a sprawling thriller.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B005S0YL7K?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005RZ7LN2?tag=thelongbookcl-20',
         narrator: "Tom Sellwood",
@@ -1581,6 +1853,8 @@ export const baseBooks: Book[] = [
         lengthHours: 199.4,
         genre: ['Classics', 'Victorian', 'Anthology', 'Historical Fiction', 'Social Commentary', 'Satire'],
         description: "A massive collection featuring the first six major works of Charles Dickens, including Oliver Twist, Nicholas Nickleby, The Old Curiosity Shop, and A Christmas Carol. This Audible Original production brings these timeless tales to life with a full cast of celebrated narrators.",
+        cardOverview: "199 hours. The first six major novels. The heavyweight champion of value per credit.",
+        teaserTitle: "The Best Value Credit on Audible?",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0DJDFLLFK?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0DJDGQ7TL?tag=thelongbookcl-20',
         narrator: "P. J. Ochlan, Bruno Roubicek",
@@ -1596,6 +1870,7 @@ export const baseBooks: Book[] = [
         lengthHours: 29.9,
         genre: ['Science Fiction', 'Hard Sci-Fi', 'Fan Sequel', 'Space Opera', 'Physics', 'Time'],
         description: "Visualizing the end of the universe, explicit dimensional warfare, and the fate of humanity millions of years in the future. This is the mind-bending conclusion to the Remembrance of Earth's Past trilogy.",
+        cardOverview: "30 hours at the end of the universe. The mind-bending conclusion that expands the scope to billions of years.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CFYJ7DGT?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CFYKH5D2?tag=thelongbookcl-20',
         narrator: "Jess Hong, Daniel York Loh, P.J. Ochlan",
@@ -1611,6 +1886,10 @@ export const baseBooks: Book[] = [
         lengthHours: 266.1,
         genre: ['Classics', 'Philosophy', 'Anthology', 'Russian Lit', 'Psychology', 'Religion'],
         description: "The ultimate compilation of the Russian master's work. Includes 15 novels (Crime and Punishment, The Brothers Karamazov, The Idiot), 18 novellas, short stories, and non-fiction. Narrated by a stellar cast including David Rintoul and Jonathan Keeble.",
+        relatedBookIds: ['145', '22', '15'],
+        cardOverview: "266 hours. The ultimate Russian collection. Longer than walking from London to Rome.",
+        teaser: "Just when we thought the Dickens collection was unbeatable, here comes Fyodor. Clocking in at a mind-bending 266 hours, this is currently one of the longest single-credit purchases in existence. To put that in perspective: according as Google Maps, it takes roughly 260 hours to walk from London to Rome. Verdict: The undisputed King of Value.",
+        teaserTitle: "Longer Than Walking Across Europe",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CPMD8H3G?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CPMCRD6C?tag=thelongbookcl-20',
         narrator: "David Rintoul, Jonathan Keeble, Malk Williams, Emma Gregory, Roger May, Ben Allen",
@@ -1626,6 +1905,7 @@ export const baseBooks: Book[] = [
         lengthHours: 37.6,
         genre: ['Fantasy', 'LitRPG', 'Slice of Life', 'Cozy Fantasy', 'Portal Fantasy', 'High Fantasy'],
         description: "Erin Solstice finds herself far from the inn in the city of Celum. Meanwhile, Lyonette is struggling to hold the inn together as the Goblin Lord's forces encroach. The world of Izril is changing, and new heroes like the blind Laken Godart must rise to meet the challenge.",
+        cardOverview: "37 hours expanding the world. Erin leaves the Inn, and the scope of the story explodes.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B08WHR2S6T?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B08WHGSDLL?tag=thelongbookcl-20',
         narrator: "Andrea Parsneau",
@@ -1641,6 +1921,9 @@ export const baseBooks: Book[] = [
         lengthHours: 22.03,
         genre: ['Fantasy', 'Romantasy', 'High Fantasy', 'Dragons', 'War', 'Magic'],
         description: "Twenty-year-old Violet Sorrengail was supposed to enter the Scribe Quadrant, living a quiet life among books and history. Now, the commanding general\u2014also known as her tough-as-talons mother\u2014has ordered Violet to join the hundreds of candidates striving to become the elite of Navarre: dragon riders.",
+        cardOverview: "22 hours of pure obsession. The phenomenon that redefined fantasy romance is the perfect weekend binge.",
+        teaser: "The 22-hour phenomenon that launched a thousand obsessions. Dragons, deadly trials, and simmering romance. It lives up to the hype—a perfect, addictive entry point into fantasy.",
+        teaserTitle: "The Gold Standard of Romantasy",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0BVDNXFX5?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0BVDJ293G?tag=thelongbookcl-20',
         narrator: "Stella Bloom, Anthony Palmini",
@@ -1671,6 +1954,7 @@ export const baseBooks: Book[] = [
         lengthHours: 27.7,
         genre: ['Fantasy', 'Urban Fantasy', 'Romantasy', 'Mystery', 'Paranormal', 'Fae'],
         description: "Bryce Quinlan and Hunt Athalar are trying to get back to normal\u2014they may have saved Crescent City, but with so much upheaval in their lives lately, they mostly want a chance to relax. Slow down. Figure out what the future holds.",
+        cardOverview: "A massive 27-hour sequel. Maas expands the world in this sprawling, character-rich blockbuster.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B09RZZQDRL?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0D3QR164F?tag=thelongbookcl-20',
         narrator: "Jasmin Walker, Justis Bolding, Teddy Hamilton, Rebecca Soler",
@@ -1686,6 +1970,7 @@ export const baseBooks: Book[] = [
         lengthHours: 22.7,
         genre: ['Spy Thriller', 'Espionage', 'Crime', 'Terrorism', 'Mystery', 'Action'],
         description: "A retired intelligence agent is pulled back into the shadows to stop a faceless terrorist known as the Saracen, who is planning an attack that could destroy the western world.",
+        cardOverview: "23 hours chasing the Saracen. The ultimate modern spy thriller that never lets up.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B00E67KWXI?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00E652E72?tag=thelongbookcl-20',
         narrator: "Ray Porter",
@@ -1715,6 +2000,7 @@ export const baseBooks: Book[] = [
         lengthHours: 23.87,
         genre: ['Fantasy', 'Romantasy', 'High Fantasy', 'Dragons', 'War', 'Magic'],
         description: "The third book in the Empyrean series. Violet Sorrengail knows that the true battle has only just begun. The stakes have never been higher, and she must find allies beyond the borders of Navarre to save everything she loves.",
+        cardOverview: "At nearly 24 hours, the stakes have never been higher. The longest entry in the Empyrean saga yet.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CZF79X5G?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CZF874CW?tag=thelongbookcl-20',
         narrator: "Jasmin Walker, Justis Bolding, Teddy Hamilton, Rebecca Soler",
@@ -1730,6 +2016,7 @@ export const baseBooks: Book[] = [
         lengthHours: 37.3,
         genre: ['Science Fiction', 'Space Opera', 'Hard Sci-Fi', 'War', 'Action', 'Thriller'],
         description: "The year is 2380. The Intersolar Commonwealth, a sphere of stars, contains more than six hundred worlds.",
+        cardOverview: "37 hours of space opera. The scope of this universe is breathtaking, setting the stage for Judas Unchained.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0041SYV5W?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005NDFK6S?tag=thelongbookcl-20',
         narrator: "Victor Bevine",
@@ -1745,6 +2032,8 @@ export const baseBooks: Book[] = [
         lengthHours: 20.7,
         genre: ['Fantasy', 'Dark Romance', 'Romantasy', 'Urban Fantasy', 'Magic', 'Fae'],
         description: "Saeris Fane inadvertently reopens a gateway between realms, transporting her to a land of ice and snow. There, she binds herself to Kingfisher, a Fae warrior with his own secrets, in this addictive enemies-to-lovers phenomenon.",
+        relatedBookIds: ['148'],
+        cardOverview: "20 hours of Fae & Alchemy. An addictive enemies-to-lovers phenomenon full of banter and blistering heat.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0DBJB1Q4L?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0DBJBFHGT?tag=thelongbookcl-20',
         narrator: "Stella Bloom, Anthony Palmini",
@@ -1760,6 +2049,7 @@ export const baseBooks: Book[] = [
         lengthHours: 38,
         genre: ['Techno-thriller', 'Action', 'Crime', 'MMORPG', 'Adventure', 'Global'],
         description: "A wealthy tech entrepreneur gets caught up in a global chase involving Russian mobsters, Islamic terrorists, and Chinese hackers after a ransomware virus infects his MMORPG.",
+        cardOverview: "38 hours of global chaos. A high-tech thriller involving MMORPGs, terrorists, and the Russian mob.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B005QBI6LS?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005Q20OBM?tag=thelongbookcl-20',
         narrator: "Michael Prichard",
@@ -1775,6 +2065,7 @@ export const baseBooks: Book[] = [
         lengthHours: 31.2,
         genre: ['Techno-thriller', 'War', 'Cold War', 'Military', 'Action', 'Alternate History'],
         description: "When Muslim fundamentalists destroy a vital Soviet oil complex, the USSR decides to seize the Persian Gulf. To prevent NATO from intervening, they launch a massive deception campaign that leads to World War III.",
+        cardOverview: "31 hours of WWIII. Clancy's tactical masterpiece imagines a conventional war in the 1980s.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B00I2TS9BS?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00I54G188?tag=thelongbookcl-20',
         narrator: "Christopher Ragland",
@@ -1790,6 +2081,7 @@ export const baseBooks: Book[] = [
         lengthHours: 34.3,
         genre: ['Horror', 'Post-Apocalyptic', 'Dark Fantasy', 'Science Fiction', 'Good vs Evil', 'Survival'],
         description: "Facing down an unprecedented malevolent force, Swan, a young girl with the ability to heal the earth, and an unlikely mix of survivors must traverse a nuclear wasteland to save humanity.",
+        cardOverview: '34 hours of nuclear horror. Often compared to "The Stand," but grittier and more magical.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00684FLDI?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0067VJ2DM?tag=thelongbookcl-20',
         narrator: "Damian Lynch, Shakira Shute",
@@ -1805,6 +2097,7 @@ export const baseBooks: Book[] = [
         lengthHours: 22.6,
         genre: ['Science Fiction', 'Hard Sci-Fi', 'Cosmic Horror', 'Sociology', 'Space Opera', 'Aliens'],
         description: "The Trisolaran fleet is on its way. In response, Earth forms the Wallfacer Project, granting four individuals near-infinite resources to design secret strategies hidden from the sophons that monitor all human communication.",
+        cardOverview: "23 hours of cosmic silence. The sequel introduces the terrifying Fermi Paradox solution that will haunt you.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CFYK53C1?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0BVW68DMG?tag=thelongbookcl-20',
         narrator: "Daniel York Loh, P.J. Ochlan, Bruno Roubicek",
@@ -1820,6 +2113,7 @@ export const baseBooks: Book[] = [
         lengthHours: 36.8,
         genre: ['Horror', 'Post-Apocalyptic', 'Science Fiction', 'Vampires', 'Survival', 'Epic'],
         description: "A government experiment goes wrong, unleashing a viral apocalypse of vampire-like beings. A century later, a colony of survivors must leave their sanctuary to save the world, guided by a girl who has been alive since it all began.",
+        cardOverview: "37 hours of the viral apocalypse. A literary blockbuster that spans a century of survival.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B003TXKQQ8?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005WJSSXU?tag=thelongbookcl-20',
         narrator: "Mel Foster, Laural Merlington",
@@ -1835,6 +2129,7 @@ export const baseBooks: Book[] = [
         lengthHours: 12.3,
         genre: ["Science Fiction", "Hard Sci-Fi", "Fan Sequel", "Space Opera", "Physics", "Time"],
         description: "Set in the universe of the Three-Body Problem, this authorized fan-sequel (paraquel) follows Yun Tianming's journey after the end of the original trilogy. It explores the mysteries of the Entities and the ultimate nature of the universe.",
+        cardOverview: "12 hours exploring the gaps. A fan-favorite expansion of the Three Body universe.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B07TD6S8SS?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B07THG2JCC?tag=thelongbookcl-20',
         narrator: "Daniel York Loh, P.J. Ochlan, Bruno Roubicek",
@@ -1850,6 +2145,7 @@ export const baseBooks: Book[] = [
         lengthHours: 28.5,
         genre: ['Horror', 'Historical Horror', 'Survival', 'Supernatural', 'Sea Story', 'History'],
         description: "The men on board the HMS Terror have every right to be scared: their ship is stuck in the Arctic ice, rations are low, and there is a thing out there in the dark that is stalking them. Based on the true story of the lost Franklin Expedition.",
+        cardOverview: "28 hours suspended in ice. A chilling mix of historical survival and supernatural horror.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B07BNSH1LY?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B07BNMN6CZ?tag=thelongbookcl-20',
         narrator: "Tom Stechschulte",
@@ -1865,6 +2161,7 @@ export const baseBooks: Book[] = [
         lengthHours: 13.4,
         genre: ['Science Fiction', 'Hard Sci-Fi', 'First Contact', 'Physics', 'China', 'Mystery'],
         description: "Set against the backdrop of China's Cultural Revolution, a secret military project sends signals into space to establish contact with aliens. An alien civilization on the brink of destruction captures the signal and plans to invade Earth.",
+        cardOverview: "13 hours of hard sci-fi. First contact like you've never seen it before, grounded in physics and history.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0BVWJ3X7B?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005NDFK6S?tag=thelongbookcl-20',
         narrator: "Malcolm Hillgartner",
@@ -1880,6 +2177,7 @@ export const baseBooks: Book[] = [
         lengthHours: 43.1,
         genre: ['Fantasy', 'LitRPG', 'Slice of Life', 'Cozy Fantasy', 'Portal Fantasy', 'Adventure'],
         description: "Two rival PhD students at Cambridge must descend into Hell to rescue their deceased thesis advisor in this dark academia fantasy that blends Dante\u2019s Inferno with academic satire.",
+        cardOverview: "43 hours opening the Inn. The start of the viral LitRPG phenomenon that changes how you see fantasy.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B07X4LZ3QC?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B07X3MVKQ7?tag=thelongbookcl-20',
         narrator: "Morag Sims, Will Watt",
@@ -1895,6 +2193,7 @@ export const baseBooks: Book[] = [
         lengthHours: 42.8,
         genre: ['Fantasy', 'LitRPG', 'Slice of Life', 'Cozy Fantasy', 'Portal Fantasy', 'Magic'],
         description: "Picking up the tale of Kvothe Kingkiller once again, we follow him into exile, into political intrigue, courtship, adventure, love and magic... and further along the path that has turned Kvothe, the mightiest magician of his age, a legend in his own time, into Kote, the unassuming pub landlord.",
+        cardOverview: "43 hours in exile. Kvothe's journey continues in this massive sequel to The Name of the Wind.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B007QDSAL0?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B007Q726XE?tag=thelongbookcl-20',
         narrator: "Andrea Parsneau",
@@ -1910,6 +2209,7 @@ export const baseBooks: Book[] = [
         lengthHours: 34.2,
         genre: ["Fantasy", "LitRPG", "Slice of Life", "Cozy Fantasy", "Portal Fantasy", "Magic"],
         description: "Winter has come to Innworld. Erin Solstice tries to bring the joy of Christmas to a world that has never heard of it, while Rags the Goblin heads north to face a new threat, and Ryoka Griffin meets the Deadly Flower of the North.",
+        cardOverview: "34 hours of winter. A massive, cozy Christmas special that turns into an epic battle.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B093QYS1F2?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B093QNBCGJ?tag=thelongbookcl-20',
         narrator: "Rupert Degas",
