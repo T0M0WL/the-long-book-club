@@ -34,7 +34,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/les-miserables.jpg',
         length: '60h',
         lengthHours: 60,
-        genre: ['Classic', 'Historical Fiction'],
+        genre: ['Classics', 'Historical Fiction', 'Social Commentary', 'Tragedy', 'France', 'War'],
         description: 'Introducing one of the most famous characters in literature, Jean Valjean—the noble peasant imprisoned for stealing a loaf of bread.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00WKWJW5A?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B07VT6WPNM?tag=thelongbookcl-20'
@@ -48,7 +48,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/it.jpg',
         length: '44h 57m',
         lengthHours: 44.9,
-        genre: ['Horror', 'Fantasy'],
+        genre: ['Horror', 'Thriller', 'Supernatural', 'Coming of Age', 'Small Town', 'Monsters'],
         description: 'The story follows the experiences of seven children as they are terrorized by an evil entity that exploits the fears of its victims to disguise itself while hunting its prey.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B01H0IF7MA?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B01H0IH01Q?tag=thelongbookcl-20'
@@ -62,7 +62,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/under-the-dome.jpg',
         length: '34h 24m',
         lengthHours: 34.4,
-        genre: 'Science Fiction',
+        genre: ['Science Fiction', 'Horror', 'Thriller', 'Dystopian', 'Small Town', 'Survival'],
         description: 'On an entirely normal, beautiful fall day in Chester\'s Mill, Maine, the town is inexplicably and suddenly sealed off from the rest of the world by an invisible force field.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0030MK9LU?tag=thelongbookclub-21'
     },
@@ -75,7 +75,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-way-of-kings.jpg',
         length: '45h 37m',
         lengthHours: 45.6,
-        genre: 'Fantasy',
+        genre: ['Fantasy', 'Epic Fantasy', 'High Fantasy', 'War', 'Magic Systems', 'Political Intrigue'],
         description: 'Roshar is a world of stone and storms. Uncanny tempests of incredible power sweep across the rocky terrain so frequently that they have shaped ecology and civilization alike.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0052TNVN2?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005EG4CYA?tag=thelongbookcl-20'
@@ -89,7 +89,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-power-broker.jpg',
         length: '66h 6m',
         lengthHours: 66.1,
-        genre: 'Biography',
+        genre: ['Biography', 'History', 'Politics', 'Non-Fiction', 'New York', 'Urban Planning'],
         description: 'The story of Robert Moses and the fall of New York. A masterpiece of modern reporting.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0DKG7DCG5?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0DKG75PBH?tag=thelongbookcl-20'
@@ -103,7 +103,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-stand.jpg',
         length: '47h 47m',
         lengthHours: 47.8,
-        genre: ['Horror', 'Fantasy'],
+        genre: ['Horror', 'Post-Apocalyptic', 'Science Fiction', 'Dark Fantasy', 'Survival', 'Good vs Evil'],
         description: 'A patient escapes from a biological testing facility, unknowingly carrying a deadly weapon: a mutated strain of super-flu that will wipe out 99 percent of the world\'s population within a few weeks.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B008MZT1V4?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B008MTA66E?tag=thelongbookcl-20'
@@ -117,7 +117,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/hamilton.jpg',
         length: '36h',
         lengthHours: 36,
-        genre: 'Biography',
+        genre: ['Biography', 'History', 'American History', 'Politics', 'Founding Fathers'],
         description: 'The biography that inspired the hit musical. A sweeping look at the life of Alexander Hamilton.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B077DS3W25?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B077D7S5DP?tag=thelongbookcl-20'
@@ -131,7 +131,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/infinite-jest.jpg',
         length: '56h 11m',
         lengthHours: 56.2,
-        genre: 'Fiction',
+        genre: ['Literary Fiction', 'Satire', 'Science Fiction', 'Tragicomedy', 'Experimental', 'Sports'],
         description: 'A gargantuan, mind-altering comedy about the Pursuit of Happiness in America.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B07L8KNKDG?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CZ4N145R?tag=thelongbookcl-20'
@@ -145,7 +145,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-count-of-monte-cristo.jpg',
         length: '52h 41m',
         lengthHours: 52.7,
-        genre: ['Classic', 'Adventure'],
+        genre: ['Classics', 'Historical Adventure', 'Revenge', 'Historical Fiction', 'France', 'Prison'],
         description: 'Thrown in prison for a crime he has not committed, Edmond Dantes is confined to the grim fortress of If. There he learns of a great hoard of treasure hidden on the Isle of Monte Cristo.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B008QZBHPI?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005GG1APM?tag=thelongbookcl-20'
@@ -159,7 +159,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/11-22-63.jpg',
         length: '30h 40m',
         lengthHours: 30.6,
-        genre: ['Thriller', 'Historical Fiction'],
+        genre: ['Science Fiction', 'Time Travel', 'Historical Fiction', 'Thriller', 'Romance', 'Mystery'],
         description: 'Life can turn on a dime—or miss it, but what if you could change it all?',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0064P650E?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0064I1KGA?tag=thelongbookcl-20'
@@ -173,7 +173,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/atlas-shrugged.jpg',
         length: '63h',
         lengthHours: 63,
-        genre: 'Fiction',
+        genre: ['Science Fiction', 'Philosophical Fiction', 'Mystery', 'Dystopian', 'Political', 'Objectivism'],
         description: 'Who is John Galt? When he says that he will stop the motor of the world, is he a destroyer or a liberator?',
         affiliateLink: 'https://www.amazon.co.uk/dp/B009T9SYQK?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B001MXQ7AQ?tag=thelongbookcl-20'
@@ -187,7 +187,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/a-game-of-thrones.jpg',
         length: '33h 46m',
         lengthHours: 33.7,
-        genre: 'Fantasy',
+        genre: ['Fantasy', 'Epic Fantasy', 'Grimdark', 'Political Intrigue', 'War', 'High Fantasy'],
         description: 'Summers span decades. Winter can last a lifetime. And the struggle for the Iron Throne has begun.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B005CB5HTG?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005C7QQ2M?tag=thelongbookcl-20'
@@ -201,7 +201,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/sherlock-holmes-the-definitive-collection.jpg',
         length: '71h 57m',
         lengthHours: 71.9,
-        genre: 'Classic',
+        genre: ['Mystery', 'Classics', 'Short Stories', 'Crime', 'Detective', 'Victorian'],
 
         description: 'Stephen Fry presents a complete and unabridged collection of the stories of Sherlock Holmes.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B06X3XG5Y6?tag=thelongbookclub-21',
@@ -216,7 +216,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/team-of-rivals.jpg',
         length: '41h 32m',
         lengthHours: 41.5,
-        genre: 'Biography',
+        genre: ['History', 'Biography', 'Politics', 'Civil War', 'Non-Fiction', 'Lincoln'],
         description: 'The monumental history of Abraham Lincoln and his cabinet. A masterpiece of political biography.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B093TBNFWK?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B093TC2K3D?tag=thelongbookcl-20'
@@ -230,7 +230,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/1q84.jpg',
         length: '46h 50m',
         lengthHours: 46.8,
-        genre: ['Fantasy', 'Literary Fiction'],
+        genre: ['Fantasy', 'Magical Realism', 'Dystopian', 'Literary Fiction', 'Mystery', 'Romance'],
         description: 'A young woman named Aomame follows a taxi driver\'s enigmatic suggestion and begins to notice puzzling discrepancies in the world around her.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0060MI0T0?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0060C2CEE?tag=thelongbookcl-20'
@@ -244,7 +244,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/grant.jpg',
         length: '48h',
         lengthHours: 48,
-        genre: 'Biography',
+        genre: ['Biography', 'History', 'American Civil War', 'Non-Fiction', 'Military'],
         description: 'The definitive biography of Ulysses S. Grant, confirming his stature as one of history\'s greatest generals and presidents.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B07WV5K96L?tag=thelongbookclub-21'
     },
@@ -257,7 +257,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/david-copperfield.jpg',
         length: '36h 30m',
         lengthHours: 36.5,
-        genre: 'Classic',
+        genre: ['Classics', 'Bildungsroman', 'Victorian', 'Historical Fiction', 'Social Commentary'],
         description: 'David Copperfield is the story of a young man\'s adventures on his journey from an unhappy and impoverished childhood to the discovery of his vocation as a successful novelist.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CQZ6P3K1?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0D4ZPDPGS?tag=thelongbookcl-20'
@@ -271,7 +271,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/dune.jpg',
         length: '21h 2m',
         lengthHours: 21.0,
-        genre: ['Science Fiction', 'Adventure'],
+        genre: ['Science Fiction', 'Space Opera', 'Philosophy', 'Ecology', 'Epic', 'Political Intrigue'],
         description: 'Set on the desert planet Arrakis, Dune is the story of the boy Paul Atreides, who would become the mysterious man known as Muad\'Dib. He would avenge the traitorous plot against his noble family.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ5UD6?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B000R34YKC?tag=thelongbookcl-20'
@@ -285,7 +285,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-pillars-of-the-earth.jpg',
         length: '40h 55m',
         lengthHours: 40.9,
-        genre: ['Historical Fiction', 'Adventure'],
+        genre: ['Historical Fiction', 'Historical Saga', 'Medieval History', 'Architecture', 'Religion', 'War'],
         description: 'A spellbinding epic tale of ambition, anarchy, and absolute power set against the sprawling medieval canvas of twelfth-century England.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0047VIL0O?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00852WNUU?tag=thelongbookcl-20'
@@ -299,7 +299,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/war-and-peace.jpg',
         length: '61h 8m',
         lengthHours: 61.1,
-        genre: ['Classic', 'Historical Fiction'],
+        genre: ['Classics', 'Historical Fiction', 'War', 'Philosophy', 'Romance', 'Russian Lit'],
         description: 'Tolstoy\'s epic masterpiece that intertwines the lives of private and public individuals during the time of the Napoleonic wars.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B095V1SM5H?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0007OB4TU?tag=thelongbookcl-20'
@@ -313,7 +313,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-name-of-the-wind.jpg',
         length: '28h',
         lengthHours: 28,
-        genre: 'Fantasy',
+        genre: ['Fantasy', 'Epic Fantasy', 'High Fantasy', 'Magic', 'Bildungsroman', 'Music'],
         description: 'I have stolen princesses back from sleeping barrow kings. I burned down the town of Trebon. I have spent the night with Felurian and left with both my sanity and my life.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B007HOLTHU?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B007HI3HUI?tag=thelongbookcl-20'
@@ -327,7 +327,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/shantaram.jpg',
         length: '43h',
         lengthHours: 43,
-        genre: ['Fiction', 'Adventure'],
+        genre: ['Literary Fiction', 'Adventure', 'Travel', 'Crime', 'India', 'Philosophy'],
         description: 'A novel of high adventure, deep love, and unforgettable characters, set in the underbelly of contemporary Bombay.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00KOIRNLW?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00KO77Z20?tag=thelongbookcl-20'
@@ -341,7 +341,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-goldfinch.jpg',
         length: '32h 24m',
         lengthHours: 32.4,
-        genre: 'Fiction',
+        genre: ['Literary Fiction', 'Coming of Age', 'Art History', 'Mystery', 'Contemporary', 'Tragedy'],
         description: 'A young New Yorker grieving his mother\'s death is pulled into a gritty underworld of art and wealth.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00FR6TIQE?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B08FD62LJM?tag=thelongbookcl-20'
@@ -355,7 +355,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/a-little-life.jpg',
         length: '32h 51m',
         lengthHours: 32.8,
-        genre: 'Fiction',
+        genre: ['Literary Fiction', 'Contemporary', 'Drama', 'Tragedy', 'LGBTQ+', 'Friendship'],
         description: 'A profound and powerful story of brotherly love and the limits of human endurance.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0DT7DB8KL?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0DT7F93TV?tag=thelongbookcl-20'
@@ -369,7 +369,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/cryptonomicon.jpg',
         length: '42h 53m',
         lengthHours: 42.9,
-        genre: ['Science Fiction', 'Historical Fiction'],
+        genre: ['Science Fiction', 'Historical Fiction', 'Techno-thriller', 'WWII', 'Cryptography', 'Adventure'],
         description: 'A tour de force of code-breaking, WWII espionage, and modern computing.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B086WMM52D?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B086WP1FW6?tag=thelongbookcl-20'
@@ -383,7 +383,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/crime-and-punishment.jpg',
         length: '26h 11m',
         lengthHours: 26.2,
-        genre: 'Classic',
+        genre: ['Classics', 'Psychological Thriller', 'Philosophy', 'Crime', 'Russian Lit', 'Redemption'],
         description: 'Raskolnikov, an impoverished student, formulates a plan to kill an unscrupulous pawnbroker for her cash.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B085F2N7KG?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B085F3LK3Z?tag=thelongbookcl-20'
@@ -397,7 +397,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/american-gods.jpg',
         length: '19h 40m',
         lengthHours: 19.7,
-        genre: 'Fantasy',
+        genre: ['Fantasy', 'Urban Fantasy', 'Mythology', 'Americana', 'Road Trip', 'Low Fantasy'],
         description: 'Shadow Moon is released from prison and recruited by the mysterious Mr. Wednesday.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0080HPAK0?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00807NRJQ?tag=thelongbookcl-20'
@@ -411,7 +411,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/anna-karenina.jpg',
         length: '35h 35m',
         lengthHours: 35.6,
-        genre: ['Classic', 'Literary Fiction'],
+        genre: ['Classics', 'Romance', 'Realism', 'Social Commentary', 'Russian Lit', 'Tragedy'],
         description: 'A complex novel of families, romance, and Russian society in the 19th century.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B01FN8BL6A?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B01FN887G2?tag=thelongbookcl-20'
@@ -425,7 +425,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/don-quixote.jpg',
         length: '39h 42m',
         lengthHours: 39.7,
-        genre: ['Classic', 'Adventure'],
+        genre: ['Classics', 'Satire', 'Adventure', 'Picaresque', 'Spain', 'Metafiction'],
         description: 'The adventures of a noble (but deluded) knight and his faithful squire, Sancho Panza.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B083JK2J89?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0DFR4LCJM?tag=thelongbookcl-20'
@@ -439,7 +439,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-brothers-karamazov.jpg',
         length: '37h 5m',
         lengthHours: 37.1,
-        genre: ['Classic', 'Literary Fiction'],
+        genre: ['Classics', 'Philosophical Fiction', 'Family Saga', 'Mystery', 'Russian Lit', 'Theology'],
         description: 'A passionate philosophical novel that enters deeply into the ethical debates of God, free will, and morality.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B08YRWH6V3?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CKM2R2KF?tag=thelongbookcl-20'
@@ -453,7 +453,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/steve-jobs.jpg',
         length: '25h 18m',
         lengthHours: 25.3,
-        genre: 'Biography',
+        genre: ['Biography', 'Technology', 'Business', 'Non-Fiction', 'Innovation'],
         description: 'The exclusive biography of Steve Jobs. Based on more than forty interviews with Jobs conducted over two years.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B005Z267BO?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005YUDQ4S?tag=thelongbookcl-20'
@@ -467,7 +467,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/titan.jpg',
         length: '35h',
         lengthHours: 35,
-        genre: 'Biography',
+        genre: ['Biography', 'History', 'Business', 'Non-Fiction', 'Gilded Age'],
         description: 'The Life of John D. Rockefeller, Sr. A detailed portrait of the ruthless industrialist and generous philanthropist.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00EE0TV20?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00EDSLSBK?tag=thelongbookcl-20'
@@ -481,7 +481,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-rise-and-fall-of-the-third-reich.jpg',
         length: '57h 11m',
         lengthHours: 57.2,
-        genre: ['History', 'Nonfiction'],
+        genre: ['History', 'World War II', 'Non-Fiction', 'Politics', 'Germany', 'Military History'],
         description: 'A history of Nazi Germany. One of the most important historical works of the 20th century.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B003W5VXPG?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B003X4R6GQ?tag=thelongbookcl-20'
@@ -495,7 +495,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/outlander.jpg',
         length: '32h 38m',
         lengthHours: 32.6,
-        genre: ['Historical Fiction', 'Fantasy'],
+        genre: ['Historical Fiction', 'Romance', 'Time Travel', 'Fantasy', 'Adventure', 'Scotland'],
         description: 'Claire Randall is a British combat nurse who is mysteriously swept back in time to 1743 Scotland.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B08JGG6H1C?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B08JFQFVC5?tag=thelongbookcl-20'
@@ -509,7 +509,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/middlemarch.jpg',
         length: '32h',
         lengthHours: 32,
-        genre: 'Classic',
+        genre: ['Classics', 'Realism', 'Victorian', 'Social Commentary', 'Romance', 'Politics'],
         description: 'A study of provincial life in the town of Middlemarch, exploring the status of women, the nature of marriage, and religion.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0030H21JS?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0030HF9E2?tag=thelongbookcl-20'
@@ -523,7 +523,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/jonathan-strange-and-mr-norrell.jpg',
         length: '32h 30m',
         lengthHours: 32.5,
-        genre: ['Fantasy', 'Historical Fiction'],
+        genre: ['Fantasy', 'Historical Fantasy', 'Alternative History', 'Magic', 'Victorian', 'Faerie'],
         description: 'In the midst of the Napoleonic Wars in 1806, most people believe magic to have long since disappeared from England - until the reclusive Mr Norrell reveals his powers.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0DFCVV8LB?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0DFCZ16X2?tag=thelongbookcl-20'
@@ -537,7 +537,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/bleak-house.jpg',
         length: '35h',
         lengthHours: 35,
-        genre: 'Classic',
+        genre: ['Classics', 'Mystery', 'Legal Satire', 'Victorian', 'Social Commentary'],
         description: 'A satire of the English judicial system, centered on the endless legal case of Jarndyce and Jarndyce.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B079LPF5YN?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00005AAOV?tag=thelongbookcl-20'
@@ -551,7 +551,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/gone-with-the-wind.jpg',
         length: '49h 7m',
         lengthHours: 49.1,
-        genre: ['Historical Fiction', 'Classic'],
+        genre: ['Historical Fiction', 'Romance', 'Civil War', 'Southern Gothic', 'Classics', 'War'],
         description: 'The epic tale of Scarlett O\'Hara and the American South during the Civil War and Reconstruction.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B082FPX77Y?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0DW1LX95D?tag=thelongbookcl-20'
@@ -566,7 +566,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-eye-of-the-world.jpg',
         length: '29h 57m',
         lengthHours: 29.9,
-        genre: 'Fantasy',
+        genre: ['Fantasy', 'Epic Fantasy', 'High Fantasy', 'Adventure', 'Magic', 'Coming of Age'],
         description: 'The Wheel of Time turns. Ages come and go, leaving memories that become legend. Legend fades to myth, and even myth is long forgotten when the Age that gave it birth comes again.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ946A?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00026WUO6?tag=thelongbookcl-20'
@@ -580,7 +580,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-great-hunt.jpg',
         length: '26h 34m',
         lengthHours: 26.5,
-        genre: 'Fantasy',
+        genre: ['Fantasy', 'Epic Fantasy', 'High Fantasy', 'Adventure', 'Magic', 'Political Intrigue'],
         description: 'The hunt creates the hunter. The chase creates the pursuer. The Shadow continues to rise in this second volume of the epic Wheel of Time series.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ4T38?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00026WUOG?tag=thelongbookcl-20'
@@ -594,7 +594,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-dragon-reborn.jpg',
         length: '26h 4m',
         lengthHours: 26.1,
-        genre: 'Fantasy',
+        genre: ['Fantasy', 'Epic Fantasy', 'High Fantasy', 'Magic', 'Adventure', 'Prophecy'],
         description: 'Rand al\'Thor is the Dragon Reborn, but he does not yet know how to wield the One Power. He must strike at the Dark One\'s fortress, Sky Valley.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ1O0O?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0006IU3BC?tag=thelongbookcl-20'
@@ -608,7 +608,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-shadow-rising.jpg',
         length: '40h 57m',
         lengthHours: 40.9,
-        genre: 'Fantasy',
+        genre: ['Fantasy', 'Epic Fantasy', 'High Fantasy', 'World Building', 'Politics', 'History'],
         description: 'The seals of Shayol Ghul are weakening. The Dark One is reaching out. The Shadow is rising to cover the world.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ5ZMC?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0006IU3BM?tag=thelongbookcl-20'
@@ -622,7 +622,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-fellowship-of-the-ring.jpg',
         length: '19h 7m',
         lengthHours: 19.1,
-        genre: 'Fantasy',
+        genre: ['Fantasy', 'Epic Fantasy', 'High Fantasy', 'Adventure', 'Classics', 'Quest'],
         description: 'One Ring to rule them all, One Ring to find them, One Ring to bring them all and in the darkness bind them.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQAXZG?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B098T84Y1N?tag=thelongbookcl-20'
@@ -636,7 +636,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-two-towers.jpg',
         length: '16h 44m',
         lengthHours: 16.7,
-        genre: 'Fantasy',
+        genre: ['Fantasy', 'Epic Fantasy', 'High Fantasy', 'Adventure', 'War', 'Classics'],
         description: 'The Fellowship is scattered. Some are preparing for war against the Dark Lord. Some are fighting the treachery of the wizard Saruman.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQD0P6?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B098T8CFMD?tag=thelongbookcl-20'
@@ -650,7 +650,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-return-of-the-king.jpg',
         length: '18h 12m',
         lengthHours: 18.2,
-        genre: 'Fantasy',
+        genre: ['Fantasy', 'Epic Fantasy', 'High Fantasy', 'Adventure', 'War', 'Classics'],
         description: 'The armies of the Dark Lord are massing as his evil shadow spreads even wider. Men, Dwarves, Elves and Ents unite forces to do battle against the Dark.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ47B2?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B098T8RGF4?tag=thelongbookcl-20'
@@ -664,7 +664,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/words-of-radiance.jpg',
         length: '48h 14m',
         lengthHours: 48.2,
-        genre: 'Fantasy',
+        genre: ['Fantasy', 'Epic Fantasy', 'High Fantasy', 'War', 'Magic Systems', 'Mental Health'],
         description: 'The Assassin in White has killed the Alethi king. Now he awaits the weeping of the world.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00IN7Y5US?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00IN5WM0K?tag=thelongbookcl-20'
@@ -678,7 +678,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/oathbringer.jpg',
         length: '55h 5m',
         lengthHours: 55.1,
-        genre: 'Fantasy',
+        genre: ['Fantasy', 'Epic Fantasy', 'High Fantasy', 'War', 'Magic Systems', 'Political Intrigue'],
         description: 'Dalinar Kholin’s Alethi armies won a fleeting victory at a terrible cost: The enemy Parshendi summoned the violent Everstorm.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B01N9YPONF?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B01N3B7RZC?tag=thelongbookcl-20'
@@ -692,7 +692,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/rhythm-of-war.jpg',
         length: '57h 26m',
         lengthHours: 57.4,
-        genre: 'Fantasy',
+        genre: ['Fantasy', 'Epic Fantasy', 'High Fantasy', 'Science Fantasy', 'War', 'Mental Health'],
         description: 'After forming a coalition of human resistance against the enemy invasion, Dalinar Kholin and his Knights Radiant have spent a year fighting a protracted, brutal war.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B082MM7CSY?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B082MLHB9M?tag=thelongbookcl-20'
@@ -706,7 +706,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/a-clash-of-kings.jpg',
         length: '37h 16m',
         lengthHours: 37.3,
-        genre: 'Fantasy',
+        genre: ['Fantasy', 'Epic Fantasy', 'Grimdark', 'Political Intrigue', 'War', 'Magic'],
         description: 'Time is out of joint. The summer of peace and plenty, ten years long, is drawing to a close, and the harsh, chill winter approaches like an angry beast.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B005CB5ICW?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005C8AZVY?tag=thelongbookcl-20'
@@ -720,7 +720,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/a-storm-of-swords.jpg',
         length: '47h 34m',
         lengthHours: 47.6,
-        genre: 'Fantasy',
+        genre: ['Fantasy', 'Epic Fantasy', 'Grimdark', 'Political Intrigue', 'War', 'Tragedy'],
         description: 'The Seven Kingdoms are divided by revolt and blood feud. In the northern wastes, a horde of hungry, savage people steeped in the dark magic of the wilderness is poised to invade the Kingdom of the North.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B005G48XL8?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005CCQNH0?tag=thelongbookcl-20'
@@ -734,7 +734,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/a-feast-for-crows.jpg',
         length: '31h 10m',
         lengthHours: 31.2,
-        genre: 'Fantasy',
+        genre: ['Fantasy', 'Epic Fantasy', 'Grimdark', 'Political Intrigue', 'War', 'Religion'],
         description: 'It seems too good to be true. After centuries of bitter strife and fatal treachery, the seven powers dividing the land have decimated one another into an uneasy truce.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B006MWM378?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B006MPV7BS?tag=thelongbookcl-20'
@@ -748,7 +748,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/a-dance-with-dragons.jpg',
         length: '48h 55m',
         lengthHours: 48.9,
-        genre: 'Fantasy',
+        genre: ['Fantasy', 'Epic Fantasy', 'Grimdark', 'Political Intrigue', 'Dragons', 'Adventure'],
         description: 'In the aftermath of a colossal battle, the future of the Seven Kingdoms hangs in the balance.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B005CB5HGY?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005C7QVY0?tag=thelongbookcl-20'
@@ -762,7 +762,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-priory-of-the-orange-tree.jpg',
         length: '25h 52m',
         lengthHours: 25.9,
-        genre: 'Fantasy',
+        genre: ['Fantasy', 'High Fantasy', 'Dragons', 'Sapphic', 'Feminism', 'Political Intrigue'],
         description: 'A world divided. A queendom without an heir. An ancient enemy awakens.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B07NBX6QHV?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B07NBS2F36?tag=thelongbookcl-20'
@@ -776,7 +776,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/babel.jpg',
         length: '21h 38m',
         lengthHours: 21.6,
-        genre: ['Fantasy', 'Dark Academia'],
+        genre: ['Fantasy', 'Dark Academia', 'Historical Fantasy', 'Anti-Colonialism', 'Magic', 'Linguistics'],
         description: 'Traduttore, traditore: An act of translation is always an act of betrayal.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0B3GKFF5S?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0B3G9JCKW?tag=thelongbookcl-20'
@@ -790,7 +790,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-final-empire.jpg',
         length: '24h 39m',
         lengthHours: 24.7,
-        genre: 'Fantasy',
+        genre: ['Fantasy', 'High Fantasy', 'Heist', 'Magic Systems', 'Dystopian', 'Revolution'],
         description: 'For a thousand years the ash fell and no flowers bloomed. For a thousand years the Skaa slaved in misery and lived in fear.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B004TASE4Q?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00557U2II?tag=thelongbookcl-20'
@@ -804,7 +804,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-well-of-ascension.jpg',
         length: '27h 14m',
         lengthHours: 27.2,
-        genre: 'Fantasy',
+        genre: ['Fantasy', 'High Fantasy', 'Political Intrigue', 'Magic Systems', 'War', 'Siege'],
         description: 'The impossible has been accomplished. The Lord Ruler – the man who held the world in his iron grip for a thousand years – is dead.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B004SUIL5O?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005NDCIAE?tag=thelongbookcl-20'
@@ -818,7 +818,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-hero-of-ages.jpg',
         length: '26h 18m',
         lengthHours: 26.3,
-        genre: 'Fantasy',
+        genre: ['Fantasy', 'High Fantasy', 'Epic Fantasy', 'Apocalyptic', 'Magic Systems', 'Theology'],
         description: 'Who is the Hero of Ages? To end the Final Empire and restore freedom, Vin killed the Lord Ruler.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B004TASEWS?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005NDD43O?tag=thelongbookcl-20'
@@ -832,7 +832,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/hyperion.jpg',
         length: '20h 44m',
         lengthHours: 20.7,
-        genre: 'Science Fiction',
+        genre: ['Science Fiction', 'Space Opera', 'Literary Sci-Fi', 'Mystery', 'Time Travel', 'AI'],
         description: 'On the world called Hyperion, beyond the law of the Hegemony of Man, there waits the creature called the Shrike.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ2SS6?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B001OC2W04?tag=thelongbookcl-20'
@@ -846,7 +846,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-fall-of-hyperion.jpg',
         length: '19h 54m',
         lengthHours: 19.9,
-        genre: 'Science Fiction',
+        genre: ['Science Fiction', 'Space Opera', 'Philosophy', 'AI', 'Time Travel', 'Epic'],
         description: 'In the stunning continuation of the epic adventure begun in Hyperion, Simmons returns us to a far future resplendent with drama and invention.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SPV8VA?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B001OC2W0E?tag=thelongbookcl-20'
@@ -886,7 +886,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/leviathan-wakes.jpg',
         length: '20h 56m',
         lengthHours: 20.9,
-        genre: 'Science Fiction',
+        genre: ['Science Fiction', 'Space Opera', 'Sci-Fi Mystery', 'Noir', 'Political', 'Horror'],
         description: 'Humanity has colonized the solar system - Mars, the Moon, the Asteroid Belt and beyond - but the stars are still out of our reach.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00PABWMLO?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00P9W7LQA?tag=thelongbookcl-20'
@@ -900,7 +900,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/seveneves.jpg',
         length: '31h 55m',
         lengthHours: 31.9,
-        genre: 'Science Fiction',
+        genre: ['Science Fiction', 'Hard Sci-Fi', 'Post-Apocalyptic', 'Space Survival', 'Genetics', 'Epic'],
         description: 'A catastrophic event renders the earth a ticking time bomb. In a feverish race against the inevitable, nations around the globe band together.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00VWIN35S?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00VVWBFM8?tag=thelongbookcl-20'
@@ -914,7 +914,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/anathem.jpg',
         length: '32h 45m',
         lengthHours: 32.8,
-        genre: 'Science Fiction',
+        genre: ['Science Fiction', 'Speculative Fiction', 'Philosophy', 'Mathematics', 'Alternative World', 'Monasticism'],
         description: 'In 1999, Neal Stephenson wrote Cryptonomicon, a novel about the "information age". In Anathem he gives us the "long now".',
         affiliateLink: 'https://www.amazon.co.uk/dp/B086WNLRX5?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B086WNY826?tag=thelongbookcl-20'
@@ -928,7 +928,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/stranger-in-a-strange-land.jpg',
         length: '16h 3m',
         lengthHours: 16.1,
-        genre: 'Science Fiction',
+        genre: ['Science Fiction', 'Philosophy', 'Satire', 'Religion', 'Classics', 'Counterculture'],
         description: 'Valentine Michael Smith is a human being raised on Mars, newly arrived on Earth.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00AJQQMHK?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00AJEV7T0?tag=thelongbookcl-20'
@@ -942,7 +942,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/dune-messiah.jpg',
         length: '9h 7m',
         lengthHours: 9.1,
-        genre: 'Science Fiction',
+        genre: ['Science Fiction', 'Space Opera', 'Political Intrigue', 'Philosophy', 'Tragedy', 'Religion'],
         description: 'Paul Atreides, now the Emperor of the Known Universe, possesses more power than a single man was ever meant to wield.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B004V86KWA?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B000WS9ZHY?tag=thelongbookcl-20'
@@ -956,7 +956,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/children-of-dune.jpg',
         length: '19h 42m',
         lengthHours: 19.7,
-        genre: 'Science Fiction',
+        genre: ['Science Fiction', 'Space Opera', 'Ecology', 'Political Intrigue', 'Family Saga', 'Religion'],
         description: 'The Children of Dune are twin siblings Leto and Ghanima Atreides, whose father, the Emperor Paul Muad\'Dib, disappeared in the desert wastelands.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQDFGK?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0013O8X60?tag=thelongbookcl-20'
@@ -970,7 +970,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/moby-dick.jpg',
         length: '24h 23m',
         lengthHours: 24.4,
-        genre: ['Classic', 'Adventure'],
+        genre: ['Classics', 'Adventure', 'Philosophical Fiction', 'Sea Story', 'Obsession', 'Nature'],
         description: 'Ishmael narrating the monomaniacal quest of Ahab, captain of the whaler Pequod, for revenge on the albino sperm whale Moby Dick.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B008QZAKDS?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B000OYDIVU?tag=thelongbookcl-20'
@@ -984,7 +984,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/great-expectations.jpg',
         length: '18h 44m',
         lengthHours: 18.7,
-        genre: 'Classic',
+        genre: ['Classics', 'Bildungsroman', 'Victorian', 'Social Commentary', 'Romance', 'Mystery'],
         description: 'The story of the orphan Pip, writing his life from his early days of childhood until adulthood and trying to be a gentleman along the way.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ1CJW?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005ZO8FGW?tag=thelongbookcl-20'
@@ -998,7 +998,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/jane-eyre.jpg',
         length: '19h 11m',
         lengthHours: 19.2,
-        genre: 'Classic',
+        genre: ['Classics', 'Gothic Romance', 'Bildungsroman', 'Feminist', 'Mystery', 'Victorian'],
         description: 'Jane Eyre is a young orphan being raised by Mrs. Reed, her cruel, wealthy aunt.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0D33S6NCJ?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B01COOQAPI?tag=thelongbookcl-20'
@@ -1012,7 +1012,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/wuthering-heights.jpg',
         length: '14h 2m',
         lengthHours: 14.0,
-        genre: 'Classic',
+        genre: ['Classics', 'Gothic', 'Tragedy', 'Romance', 'Family Saga', 'Revenge'],
         description: 'The story of the love between Heathcliff and Catherine Earnshaw which remains unresolved and destroys them and the people around them.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0FZMD9N16?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B076PP94DP?tag=thelongbookcl-20'
@@ -1026,7 +1026,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/vanity-fair.jpg',
         length: '31h 22m',
         lengthHours: 31.4,
-        genre: 'Classic',
+        genre: ['Classics', 'Satire', 'Historical Fiction', 'Social Commentary', 'Regency'],
         description: 'The novel follows the lives of Becky Sharp and Amelia Sedley amid their friends and families during and after the Napoleonic Wars.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SPWQIY?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B001SB91TQ?tag=thelongbookcl-20'
@@ -1040,7 +1040,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-hunchback-of-notre-dame.jpg',
         length: '19h 2m',
         lengthHours: 19.0,
-        genre: ['Classic', 'Historical Fiction'],
+        genre: ['Classics', 'Historical Fiction', 'Gothic', 'Tragedy', 'Architecture', 'Social Commentary'],
         description: 'The story is set in Paris in 1482 during the reign of Louis XI.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B096KX16MW?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0000547BL?tag=thelongbookcl-20'
@@ -1054,7 +1054,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/ulysses.jpg',
         length: '27h 15m',
         lengthHours: 27.3,
-        genre: 'Classic',
+        genre: ['Modernist', 'Literary Fiction', 'Experimental', 'Stream of Consciousness', 'Dublin', 'Classics'],
         description: 'Ulysses chronicles the appointments and encounters of Leopold Bloom in Dublin in the course of an ordinary day, 16 June 1904.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SPWRW4?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B001DNNASW?tag=thelongbookcl-20'
@@ -1068,7 +1068,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/doctor-zhivago.jpg',
         length: '21h 56m',
         lengthHours: 22.0,
-        genre: ['Classic', 'Historical Fiction'],
+        genre: ['Classics', 'Historical Fiction', 'Romance', 'Russian Lit', 'War', 'Revolution'],
         description: 'Doctor Zhivago is the story of the life and loves of a poet/physician during the turmoil of the Russian Revolution.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B005BEHDVY?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005B51C74?tag=thelongbookcl-20'
@@ -1082,7 +1082,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-magic-mountain.jpg',
         length: '35h 15m',
         lengthHours: 35.3,
-        genre: 'Classic',
+        genre: ['Classics', 'Philosophical Fiction', 'Modernist', 'Allegory', 'Health', 'Germany'],
         description: 'Hans Castorp visits his cousin in a sanatorium in Davos and stays for seven years.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0BNNYM6KR?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B088FZL1JZ?tag=thelongbookcl-20'
@@ -1096,7 +1096,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/leonardo-da-vinci.jpg',
         length: '18h 35m',
         lengthHours: 18.6,
-        genre: 'Biography',
+        genre: ['Biography', 'Art History', 'Science', 'Non-Fiction', 'Renaissance', 'Innovation'],
         description: 'Based on thousands of pages from Leonardo da Vinci\'s astonishing notebooks and new discoveries about his life and work.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B075ZG9NGL?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B075Z7YZBK?tag=thelongbookcl-20'
@@ -1110,7 +1110,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/benjamin-franklin.jpg',
         length: '20h 3m',
         lengthHours: 20.0,
-        genre: 'Biography',
+        genre: ['Biography', 'American History', 'Politics', 'Non-Fiction', 'Science', 'Diplomacy'],
         description: 'In this colorful and intimate narrative, Isaacson provides the full sweep of Franklin\'s amazing life.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B008CPXDFY?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B004VLETYM?tag=thelongbookcl-20'
@@ -1124,7 +1124,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/peter-the-great.jpg',
         length: '35h 27m',
         lengthHours: 35.5,
-        genre: 'Biography',
+        genre: ['Biography', 'Russian History', 'Politics', 'Non-Fiction', 'War', 'Modernization'],
         description: 'Against the monumental canvas of seventeenth- and eighteenth-century Europe and Russia unfolds the magnificent story of Peter the Great.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0064P6HTS?tag=thelongbookclub-21'
     },
@@ -1137,7 +1137,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/catherine-the-great.jpg',
         length: '23h 24m',
         lengthHours: 23.4,
-        genre: 'Biography',
+        genre: ['Biography', 'Russian History', 'Politics', 'Non-Fiction', 'Royalty', 'Enlightenment'],
         description: 'The story of a German princess who became the Empress of all the Russias.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0064P6HTS?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0064I14FM?tag=thelongbookcl-20'
@@ -1151,7 +1151,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/east-of-eden.jpg',
         length: '25h 32m',
         lengthHours: 25.5,
-        genre: ['Fiction', 'Literary Fiction'],
+        genre: ['Classics', 'Family Saga', 'Historical Fiction', 'Biblical Retelling', 'Americana', 'Philosophy'],
         description: 'Set in the rich farmland of California\'s Salinas Valley, this sprawling and often brutal novel follows the intertwined destinies of two families.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B09N7P9M2K?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B09N7PZQRT?tag=thelongbookcl-20'
@@ -1165,7 +1165,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-grapes-of-wrath.jpg',
         length: '21h 10m',
         lengthHours: 21.2,
-        genre: 'Fiction',
+        genre: ['Classics', 'Historical Fiction', 'Social Commentary', 'Great Depression', 'Americana', 'Tragedy'],
         description: 'The Joads are driven from their homestead in Oklahoma and forced to travel west to the promised land of California.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B09N7R2B3S?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B09N7Q1H5N?tag=thelongbookcl-20'
@@ -1179,7 +1179,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/demon-copperhead.jpg',
         length: '21h 3m',
         lengthHours: 21.0,
-        genre: 'Fiction',
+        genre: ['Contemporary Fiction', 'Coming of Age', 'Retelling', 'Appalachia', 'Social Commentary', 'Addiction'],
         description: 'The story of a boy born in Appalachia to a teenaged single mother in a single-wide trailer.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0B2X4K4FW?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0B2X423CV?tag=thelongbookcl-20'
@@ -1193,7 +1193,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-amazing-adventures-of-kavalier-and-clay.jpg',
         length: '26h 15m',
         lengthHours: 26.3,
-        genre: ['Fiction', 'Historical Fiction'],
+        genre: ['Historical Fiction', 'Comics', 'Jewish History', 'Literary Fiction', 'LGBTQ+', 'NYC'],
         description: 'Joe Kavalier, a young Jewish artist who has also been trained in the art of Houdini-esque escape, has just smuggled himself out of Nazi-occupied Prague.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B008AXA4LY?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B008ARPKNW?tag=thelongbookcl-20'
@@ -1207,7 +1207,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/2666.jpg',
         length: '39h 15m',
         lengthHours: 39.25,
-        genre: 'Fiction',
+        genre: ['Literary Fiction', 'Mystery', 'Postmodernism', 'Crime', 'Philosophy', 'Horror'],
         description: 'Composed of five parts, 2666 is a novel of such power that it has transformed the way we understand literature.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0D81JXQBW?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0D81HSP37?tag=thelongbookcl-20'
@@ -1220,7 +1220,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-bee-sting-paul-murray.jpg',
         length: '26h 10m',
         lengthHours: 26.2,
-        genre: ['Literary Fiction', 'Fiction'],
+        genre: ['Contemporary Fiction', 'Family Drama', 'Tragicomedy', 'Irish Lit', 'Literary Fiction', 'Mystery'],
         description: 'The Barnes family in a small Irish town facing financial ruin and personal crises. Interweaves perspectives of four family members as they deal with secrets, past mistakes, and their dysfunctional present.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0BLCS77CW?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0BLC76F72?tag=thelongbookcl-20'
@@ -1233,7 +1233,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/polostan-neal-stephenson.jpg',
         length: '11h 41m',
         lengthHours: 11.7,
-        genre: 'Historical Fiction',
+        genre: ['Historical Fiction', 'Thriller', 'Spy Fiction', 'Politics', 'Physics', 'Russia'],
         description: 'An expansive historical epic of intrigue and espionage set in the early 20th century. Follows Dawn Rae Bjornberg (Aurora Artemyeva) from the American West to Russia, where she is trained as a spy.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0D619DC6K?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0D5ZMQ4WF?tag=thelongbookcl-20'
@@ -1246,7 +1246,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-city-and-its-uncertain-walls-haruki-murakami.jpg',
         length: '17h 26m',
         lengthHours: 17.4,
-        genre: 'Literary Fiction',
+        genre: ['Fantasy', 'Magical Realism', 'Literary Fiction', 'Metaphysical', 'Mystery', 'Romance'],
         description: 'A love story and quest narrative following a protagonist searching for an imaginary city where his true love resides. Explores lost love, memory, and the boundary between reality and imagination.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CWP8K8NY?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CWP7W8NV?tag=thelongbookcl-20'
@@ -1259,7 +1259,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/caledonian-road-andrew-ohagan.jpg',
         length: '22h 51m',
         lengthHours: 22.9,
-        genre: ['Literary Fiction', 'Fiction'],
+        genre: ['Contemporary Fiction', 'Social Satire', 'London', 'Crime', 'Literary Fiction', 'Class'],
         description: 'A state-of-the-nation novel centering on Campbell Flynn, a celebrity intellectual whose life unravels over an incendiary year in London. Explores class, race, money, and corruption.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CS3ZYJV8?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CS4ZHPJ5?tag=thelongbookcl-20'
@@ -1272,7 +1272,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/nexus-yuval-noah-harari.jpg',
         length: '17h 52m',
         lengthHours: 17.9,
-        genre: 'Nonfiction',
+        genre: ['Non-Fiction', 'History', 'Technology', 'AI', 'Philosophy', 'Future'],
         description: 'Explores deeply how information networks have shaped our world from the Stone Age to AI, and how we are currently facing an existential threat from non-human intelligence.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CSYYMZKP?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CSYYCJ9K?tag=thelongbookcl-20'
@@ -1285,7 +1285,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/wind-and-truth-brandon-sanderson.jpg',
         length: '62h 48m',
         lengthHours: 62.8,
-        genre: 'Fantasy',
+        genre: ['Fantasy', 'Epic Fantasy', 'High Fantasy', 'War', 'Magic Systems', 'Cosmere'],
         description: 'The conclusion to the first half of The Stormlight Archive. Dalinar Kholin challenges Odium to a contest of champions to decide the fate of Roshar.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CQDF5PP6?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CQD8T35J?tag=thelongbookcl-20'
@@ -1298,7 +1298,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/shogun-james-clavell.jpg',
         length: '53h 33m',
         lengthHours: 53.5,
-        genre: ['Historical Fiction', 'Adventure'],
+        genre: ['Historical Fiction', 'Adventure', 'War', 'Politics', 'Japan', 'Samurai'],
         description: 'A sweeping epic set in 1600 feudal Japan. English pilot John Blackthorne is shipwrecked and rises to become a samurai and key player in the rise of the Shogun.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CRM21VRN?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CRMBF73W?tag=thelongbookcl-20'
@@ -1311,7 +1311,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/empire-of-the-damned-jay-kristoff.jpg',
         length: '31h 34m',
         lengthHours: 31.6,
-        genre: 'Fantasy',
+        genre: ['Fantasy', 'Dark Fantasy', 'Grimdark', 'Vampires', 'Horror', 'Action'],
         description: 'Gabriel de León, the last Silversaint, continues his journey to end the eternal night. A dark and gritty tale of vampires, faith, and political intrigue.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0C6R9GNJW?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0C6RB4R3K?tag=thelongbookcl-20'
@@ -1324,7 +1324,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-covenant-of-water-abraham-verghese.jpg',
         length: '31h 16m',
         lengthHours: 31.3,
-        genre: ['Historical Fiction', 'Literary Fiction'],
+        genre: ['Historical Fiction', 'Family Saga', 'Medical Fiction', 'India', 'Literary Fiction', 'Multi-generational'],
         description: 'A sweeping multigenerational saga set in Kerala, South India. Follows a family afflicted by a "Condition" where in every generation, at least one person dies by drowning.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0BVDPD31S?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0BVDNPQ1V?tag=thelongbookcl-20'
@@ -1337,7 +1337,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/my-name-is-barbra-barbra-streisand.jpg',
         length: '48h 7m',
         lengthHours: 48.1,
-        genre: 'Biography',
+        genre: ['Memoir', 'Biography', 'Entertainment', 'Music', 'Hollywood', 'Non-Fiction'],
         description: 'The long-awaited memoir by Barbra Streisand, recounting her six-decade career, childhood in Brooklyn, and personal life. Narrated by the author herself.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0BV6YLFGV?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0BV6WQC9L?tag=thelongbookcl-20'
@@ -1350,7 +1350,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/alchemised.jpg',
         length: '36h 15m',
         lengthHours: 36.25,
-        genre: 'Fantasy',
+        genre: ['Fantasy', 'Dark Fantasy', 'Romance', 'Dystopian', 'Magic', 'Fanfiction Roots'],
         description: 'A riveting dark fantasy debut about a promising alchemist who must protect her lost history and preserve her former self while unearthing the secrets of her prison and captor.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0DT78JY9L?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0DT78HWGS?tag=thelongbookcl-20'
@@ -1364,7 +1364,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-secret-history.jpg',
         length: '22h 4m',
         lengthHours: 22.1,
-        genre: ['Dark Academia', 'Thriller'],
+        genre: ['Dark Academia', 'Psychological Thriller', 'Literary Fiction', 'Mystery', 'Murder', 'College'],
         description: 'Under the influence of their charismatic classics professor, a group of clever, eccentric misfits at an elite New England college discover a way of thinking and living that is a world away from the humdrum existence of their contemporaries.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0045F6IMK?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0045HJDVG?tag=thelongbookcl-20'
@@ -1377,7 +1377,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-historian.jpg',
         length: '26h 5m',
         lengthHours: 26.1,
-        genre: ['Dark Academia', 'Historical Fiction'],
+        genre: ['Historical Fiction', 'Horror', 'Dark Academia', 'Vampires', 'Travel', 'Mystery'],
         description: 'A young woman discovers an ancient book and a cache of faded letters in her father\'s library, plunging her into a world that she never dreamed existed—a world where the presence of Vlad the Impaler is all too real.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B08QW793PC?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B08QWBDL83?tag=thelongbookcl-20'
@@ -1390,7 +1390,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/a-discovery-of-witches.jpg',
         length: '23h 59m',
         lengthHours: 24.0,
-        genre: ['Fantasy', 'Dark Academia'],
+        genre: ['Fantasy', 'Urban Fantasy', 'Romance', 'Dark Academia', 'History', 'Witches'],
         description: 'Deep in the stacks of Oxford\'s Bodleian Library, young scholar Diana Bishop unwittingly calls up a bewitched alchemical manuscript in the course of her research.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B004NU711Y?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005FIPMZK?tag=thelongbookcl-20'
@@ -1403,7 +1403,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/iron-flame.jpg',
         length: '28h 16m',
         lengthHours: 28.3,
-        genre: 'Fantasy',
+        genre: ['Fantasy', 'Romantasy', 'High Fantasy', 'Dragons', 'War', 'Magic School'],
         description: 'The second book in the Empyrean series. Everyone expected Violet Sorrengail to die during her first year at Basgiath War College—Violet included. But Threshing was only the first impossible test meant to weed out the weak-willed, the unworthy, and the unlucky.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0C9V499ND?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0C9V75P93?tag=thelongbookcl-20'
@@ -1416,7 +1416,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/house-of-earth-and-blood.jpg',
         length: '27h 50m',
         lengthHours: 27.8,
-        genre: 'Fantasy',
+        genre: ['Fantasy', 'Urban Fantasy', 'Romantasy', 'Mystery', 'Crime', 'Fallen Angels'],
         description: 'Bound by blood. Tempted by desire. Unleashed by destiny. Bryce Quinlan had the perfect life—working hard all day and partying all night—until a demon murdered her closest friends, leaving her bereft, wounded, and alone.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B084P37J2B?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0D342BV2R?tag=thelongbookcl-20'
@@ -1429,7 +1429,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/kushiels-dart.jpg',
         length: '31h 5m',
         lengthHours: 31.1,
-        genre: 'Fantasy',
+        genre: ['Fantasy', 'Romantasy', 'High Fantasy', 'Dragons', 'Magic', 'Fae'],
         description: 'The land of Terre d\'Ange is a place of rigorous beauty and grace. It is a country where gods walk the earth. And it is a country where Phèdre nó Delaunay was sold into indentured servitude.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0BVGMPG9V?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0BVG8RMYG?tag=thelongbookcl-20'
@@ -1456,7 +1456,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/galaxy-outlaws.jpg',
         length: '85h 6m',
         lengthHours: 85.1,
-        genre: ['Science Fiction', 'Adventure'],
+        genre: ['Science Fiction', 'Space Opera', 'Science Fantasy', 'Comedy', 'Heist', 'Magic'],
         description: 'Carl Ramsey is an ex-earth military pilot turned con artist. His ship, the Mobius, is home to a ragtag crew of misfits and refugees. They\'ll take any job that pays, legal or otherwise.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B079YWFX6B?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B079YYQNMM?tag=thelongbookcl-20'
@@ -1469,7 +1469,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-decline-and-fall-of-the-roman-empire.jpg',
         length: '126h 37m',
         lengthHours: 126.6,
-        genre: ['History', 'Nonfiction'],
+        genre: ['History', 'Classics', 'Non-Fiction', 'Rome', 'Ancient History', 'Politics'],
         description: 'The definitive history of the Roman Empire, from its height in the 2nd century AD to its fall in 1453. A masterpiece of historical writing.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00VY9VVBS?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00WHCB85K?tag=thelongbookcl-20'
@@ -1482,7 +1482,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-cycle-of-arawn.jpg',
         length: '65h 54m',
         lengthHours: 65.9,
-        genre: 'Fantasy',
+        genre: ['Fantasy', 'Epic Fantasy', 'Sword and Sorcery', 'Adventure', 'Buddy', 'Magic'],
         description: 'Dante Galand is young. Penniless. Alone. But devoted to learning the dark arts. As he opens a book of forbidden etheric power, he is attacked by the Nether.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00W8Y1WY4?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00W8EBOHO?tag=thelongbookcl-20'
@@ -1495,7 +1495,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-wandering-inn-book-2.jpg',
         length: '61h 4m',
         lengthHours: 61.1,
-        genre: 'Fantasy',
+        genre: ['Fantasy', 'LitRPG', 'Slice of Life', 'Cozy Fantasy', 'Portal Fantasy', 'Adventure'],
         description: 'Erin Solstice is an innkeeper. She\'s also an [Innkeeper]. It\'s a Class, and it comes with Skills. Ryoka Griffin is a runner. She\'s also a [Runner]. They are both from Earth, and they are both lost in a world of monsters and magic.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0892SMMMM?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0892T6Q4L?tag=thelongbookcl-20'
@@ -1508,7 +1508,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/churchill-walking-with-destiny.jpg',
         length: '50h 28m',
         lengthHours: 50.5,
-        genre: 'Biography',
+        genre: ['Biography', 'History', 'War', 'Non-Fiction', 'Politics', 'UK'],
         description: 'The definitive biography of Winston Churchill, who was considered the greatest Briton of the 20th century.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B07HB8TDDH?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B07HB7HYFZ?tag=thelongbookcl-20'
@@ -1521,7 +1521,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/empire-of-the-vampire.jpg',
         length: '27h 10m',
         lengthHours: 27.2,
-        genre: 'Fantasy',
+        genre: ['Fantasy', 'Dark Fantasy', 'Grimdark', 'Vampires', 'Horror', 'Action'],
         description: 'From the New York Times bestselling author of the Nevernight Chronicle, Jay Kristoff, comes the first book of an astonishing new dark fantasy series. It has been twenty-seven long years since the last sunrise. For nearly three decades, vampires have waged war against humanity; building their eternal empire even as they tear down our own.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B098KP7LLM?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B098KMY3XV?tag=thelongbookcl-20',
@@ -1535,7 +1535,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/empire-of-the-dawn.jpg',
         length: '34h 41m',
         lengthHours: 34.7,
-        genre: 'Fantasy',
+        genre: ['Fantasy', 'Dark Fantasy', 'Grimdark', 'Vampires', 'Horror', 'Action'],
         description: 'The epic conclusion to the internationally bestselling Empire of the Vampire series. Gabriel de León has saved the Grail, but at what cost? Now, he must face the final darkness and determine the price of the dawn.',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0DZJ46ZPB?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0DZJ5QLC6?tag=thelongbookcl-20',
@@ -1549,7 +1549,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/brimstone.jpg',
         length: '24h 30m',
         lengthHours: 24.5,
-        genre: ["Fantasy", "Dark Romance", "Romantasy", "Urban Fantasy", "Magic", "Mystery"],
+        genre: ['Fantasy', 'Dark Romance', 'Romantasy', 'Urban Fantasy', 'Magic', 'Mystery'],
         description: "Now crowned queen of the Blood Court, Saeris Fane must confront political treachery and a spreading supernatural corruption. The stakes are higher and the magic deadlier in this explosive sequel.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0FBSCF8N3?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0FBS7GCTV?tag=thelongbookcl-20',
@@ -1564,7 +1564,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/carrion-comfort.jpg',
         length: '39h 27m',
         lengthHours: 39.5,
-        genre: ["Horror", "Thriller", "Supernatural", "Psychic", "Nazis", "Mind Control"],
+        genre: ['Horror', 'Thriller', 'Supernatural', 'Psychic', 'Nazis', 'Mind Control'],
         description: "Three individuals discover they have the power to control human minds and have used this gift for decades to feed off the suffering of others. Now they are hunted.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B005S0YL7K?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005RZ7LN2?tag=thelongbookcl-20',
@@ -1579,7 +1579,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/complete-dickens-part-one.jpg',
         length: '199h 26m',
         lengthHours: 199.4,
-        genre: ["Classics", "Victorian", "Anthology", "Historical Fiction", "Social Commentary", "Satire"],
+        genre: ['Classics', 'Victorian', 'Anthology', 'Historical Fiction', 'Social Commentary', 'Satire'],
         description: "A massive collection featuring the first six major works of Charles Dickens, including Oliver Twist, Nicholas Nickleby, The Old Curiosity Shop, and A Christmas Carol. This Audible Original production brings these timeless tales to life with a full cast of celebrated narrators.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0DJDFLLFK?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0DJDGQ7TL?tag=thelongbookcl-20',
@@ -1594,7 +1594,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/deaths-end.jpg',
         length: '29h 59m',
         lengthHours: 29.9,
-        genre: ["Science Fiction", "Hard Sci-Fi", "Fan Sequel", "Space Opera", "Physics", "Time"],
+        genre: ['Science Fiction', 'Hard Sci-Fi', 'Fan Sequel', 'Space Opera', 'Physics', 'Time'],
         description: "Visualizing the end of the universe, explicit dimensional warfare, and the fate of humanity millions of years in the future. This is the mind-bending conclusion to the Remembrance of Earth's Past trilogy.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CFYJ7DGT?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CFYKH5D2?tag=thelongbookcl-20',
@@ -1609,7 +1609,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/dostoyevsky-complete-collection.jpg',
         length: '266h 4m',
         lengthHours: 266.1,
-        genre: ["Classics", "Philosophy", "Anthology", "Russian Lit", "Psychology", "Religion"],
+        genre: ['Classics', 'Philosophy', 'Anthology', 'Russian Lit', 'Psychology', 'Religion'],
         description: "The ultimate compilation of the Russian master's work. Includes 15 novels (Crime and Punishment, The Brothers Karamazov, The Idiot), 18 novellas, short stories, and non-fiction. Narrated by a stellar cast including David Rintoul and Jonathan Keeble.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CPMD8H3G?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CPMCRD6C?tag=thelongbookcl-20',
@@ -1624,7 +1624,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/flowers-of-esthelm.jpg',
         length: '37h 37m',
         lengthHours: 37.6,
-        genre: ["Fantasy", "LitRPG", "Slice of Life", "Cozy Fantasy", "Portal Fantasy", "High Fantasy"],
+        genre: ['Fantasy', 'LitRPG', 'Slice of Life', 'Cozy Fantasy', 'Portal Fantasy', 'High Fantasy'],
         description: "Erin Solstice finds herself far from the inn in the city of Celum. Meanwhile, Lyonette is struggling to hold the inn together as the Goblin Lord's forces encroach. The world of Izril is changing, and new heroes like the blind Laken Godart must rise to meet the challenge.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B08WHR2S6T?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B08WHGSDLL?tag=thelongbookcl-20',
@@ -1639,7 +1639,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/fourth-wing.jpg',
         length: '22h 2m',
         lengthHours: 22.03,
-        genre: ["Fantasy", "Romantasy", "High Fantasy", "Dragons", "War", "Magic"],
+        genre: ['Fantasy', 'Romantasy', 'High Fantasy', 'Dragons', 'War', 'Magic'],
         description: "Twenty-year-old Violet Sorrengail was supposed to enter the Scribe Quadrant, living a quiet life among books and history. Now, the commanding general\u2014also known as her tough-as-talons mother\u2014has ordered Violet to join the hundreds of candidates striving to become the elite of Navarre: dragon riders.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0BVDNXFX5?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0BVDJ293G?tag=thelongbookcl-20',
@@ -1654,7 +1654,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/house-of-flame-and-shadow.jpg',
         length: '29h 42m',
         lengthHours: 29.7,
-        genre: ["Fantasy", "Urban Fantasy", "Romantasy", "Crossover", "Paranormal", "Fae"],
+        genre: ['Fantasy', 'Urban Fantasy', 'Romantasy', 'Crossover', 'Paranormal', 'Fae'],
         description: "The stunning third book in the sexy, action-packed Crescent City series, following the global bestsellers House of Earth and Blood and House of Sky and Breath. Bryce Quinlan never expected to see a world other than Midgard, but now that she has, all she wants is to get back.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CN1JMJ8X?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0DJN1CZKC?tag=thelongbookcl-20',
@@ -1669,7 +1669,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/house-of-sky-and-breath.jpg',
         length: '27h 42m',
         lengthHours: 27.7,
-        genre: ["Fantasy", "Urban Fantasy", "Romantasy", "Mystery", "Paranormal", "Fae"],
+        genre: ['Fantasy', 'Urban Fantasy', 'Romantasy', 'Mystery', 'Paranormal', 'Fae'],
         description: "Bryce Quinlan and Hunt Athalar are trying to get back to normal\u2014they may have saved Crescent City, but with so much upheaval in their lives lately, they mostly want a chance to relax. Slow down. Figure out what the future holds.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B09RZZQDRL?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0D3QR164F?tag=thelongbookcl-20',
@@ -1684,7 +1684,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/i-am-pilgrim.jpg',
         length: '22h 40m',
         lengthHours: 22.7,
-        genre: ["Spy Thriller", "Espionage", "Crime", "Terrorism", "Mystery", "Action"],
+        genre: ['Spy Thriller', 'Espionage', 'Crime', 'Terrorism', 'Mystery', 'Action'],
         description: "A retired intelligence agent is pulled back into the shadows to stop a faceless terrorist known as the Saracen, who is planning an attack that could destroy the western world.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B00E67KWXI?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00E652E72?tag=thelongbookcl-20',
@@ -1699,7 +1699,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/katabasis.jpg',
         length: '18h 33m',
         lengthHours: 18.55,
-        genre: ["Fantasy", "Dark Academia", "Mythology", "Literary Fiction", "Adventure"],
+        genre: ['Fantasy', 'Dark Academia', 'Mythology', 'Literary Fiction', 'Adventure'],
         description: "Two rival PhD students at Cambridge must descend into Hell to rescue their deceased thesis advisor in this dark academia fantasy that blends Dante\u2019s Inferno with academic satire.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CYTD95YH?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CYTD8DGP?tag=thelongbookcl-20',
@@ -1713,7 +1713,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/onyx-storm.jpg',
         length: '23h 52m',
         lengthHours: 23.87,
-        genre: ["Fantasy", "Romantasy", "High Fantasy", "Dragons", "War", "Magic"],
+        genre: ['Fantasy', 'Romantasy', 'High Fantasy', 'Dragons', 'War', 'Magic'],
         description: "The third book in the Empyrean series. Violet Sorrengail knows that the true battle has only just begun. The stakes have never been higher, and she must find allies beyond the borders of Navarre to save everything she loves.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CZF79X5G?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CZF874CW?tag=thelongbookcl-20',
@@ -1728,7 +1728,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/pandoras-star.jpg',
         length: '37h 16m',
         lengthHours: 37.3,
-        genre: ["Science Fiction", "Space Opera", "Hard Sci-Fi", "War", "Action", "Thriller"],
+        genre: ['Science Fiction', 'Space Opera', 'Hard Sci-Fi', 'War', 'Action', 'Thriller'],
         description: "The year is 2380. The Intersolar Commonwealth, a sphere of stars, contains more than six hundred worlds.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0041SYV5W?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005NDFK6S?tag=thelongbookcl-20',
@@ -1743,7 +1743,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/quicksilver.jpg',
         length: '20h 41m',
         lengthHours: 20.7,
-        genre: ["Fantasy", "Dark Romance", "Romantasy", "Urban Fantasy", "Magic", "Fae"],
+        genre: ['Fantasy', 'Dark Romance', 'Romantasy', 'Urban Fantasy', 'Magic', 'Fae'],
         description: "Saeris Fane inadvertently reopens a gateway between realms, transporting her to a land of ice and snow. There, she binds herself to Kingfisher, a Fae warrior with his own secrets, in this addictive enemies-to-lovers phenomenon.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0DBJB1Q4L?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0DBJBFHGT?tag=thelongbookcl-20',
@@ -1758,7 +1758,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/reamde.jpg',
         length: '38h',
         lengthHours: 38,
-        genre: ["Techno-thriller", "Action", "Crime", "MMORPG", "Adventure", "Global"],
+        genre: ['Techno-thriller', 'Action', 'Crime', 'MMORPG', 'Adventure', 'Global'],
         description: "A wealthy tech entrepreneur gets caught up in a global chase involving Russian mobsters, Islamic terrorists, and Chinese hackers after a ransomware virus infects his MMORPG.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B005QBI6LS?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005Q20OBM?tag=thelongbookcl-20',
@@ -1773,7 +1773,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/red-storm-rising.jpg',
         length: '31h 12m',
         lengthHours: 31.2,
-        genre: ["Techno-thriller", "War", "Cold War", "Military", "Action", "Alternate History"],
+        genre: ['Techno-thriller', 'War', 'Cold War', 'Military', 'Action', 'Alternate History'],
         description: "When Muslim fundamentalists destroy a vital Soviet oil complex, the USSR decides to seize the Persian Gulf. To prevent NATO from intervening, they launch a massive deception campaign that leads to World War III.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B00I2TS9BS?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00I54G188?tag=thelongbookcl-20',
@@ -1788,7 +1788,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/swan-song.jpg',
         length: '34h 19m',
         lengthHours: 34.3,
-        genre: ["Horror", "Post-Apocalyptic", "Dark Fantasy", "Science Fiction", "Good vs Evil", "Survival"],
+        genre: ['Horror', 'Post-Apocalyptic', 'Dark Fantasy', 'Science Fiction', 'Good vs Evil', 'Survival'],
         description: "Facing down an unprecedented malevolent force, Swan, a young girl with the ability to heal the earth, and an unlikely mix of survivors must traverse a nuclear wasteland to save humanity.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B00684FLDI?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0067VJ2DM?tag=thelongbookcl-20',
@@ -1803,7 +1803,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-dark-forest.jpg',
         length: '22h 36m',
         lengthHours: 22.6,
-        genre: ["Science Fiction", "Hard Sci-Fi", "Cosmic Horror", "Sociology", "Space Opera", "Aliens"],
+        genre: ['Science Fiction', 'Hard Sci-Fi', 'Cosmic Horror', 'Sociology', 'Space Opera', 'Aliens'],
         description: "The Trisolaran fleet is on its way. In response, Earth forms the Wallfacer Project, granting four individuals near-infinite resources to design secret strategies hidden from the sophons that monitor all human communication.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CFYK53C1?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0BVW68DMG?tag=thelongbookcl-20',
@@ -1818,7 +1818,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-passage.jpg',
         length: '36h 49m',
         lengthHours: 36.8,
-        genre: ["Horror", "Post-Apocalyptic", "Science Fiction", "Vampires", "Survival", "Epic"],
+        genre: ['Horror', 'Post-Apocalyptic', 'Science Fiction', 'Vampires', 'Survival', 'Epic'],
         description: "A government experiment goes wrong, unleashing a viral apocalypse of vampire-like beings. A century later, a colony of survivors must leave their sanctuary to save the world, guided by a girl who has been alive since it all began.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B003TXKQQ8?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005WJSSXU?tag=thelongbookcl-20',
@@ -1848,7 +1848,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-terror.jpg',
         length: '28h 28m',
         lengthHours: 28.5,
-        genre: ["Horror", "Historical Horror", "Survival", "Supernatural", "Sea Story", "History"],
+        genre: ['Horror', 'Historical Horror', 'Survival', 'Supernatural', 'Sea Story', 'History'],
         description: "The men on board the HMS Terror have every right to be scared: their ship is stuck in the Arctic ice, rations are low, and there is a thing out there in the dark that is stalking them. Based on the true story of the lost Franklin Expedition.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B07BNSH1LY?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B07BNMN6CZ?tag=thelongbookcl-20',
@@ -1863,7 +1863,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/three-body-problem.jpg',
         length: '13h 24m',
         lengthHours: 13.4,
-        genre: ["Science Fiction", "Hard Sci-Fi", "First Contact", "Physics", "China", "Mystery"],
+        genre: ['Science Fiction', 'Hard Sci-Fi', 'First Contact', 'Physics', 'China', 'Mystery'],
         description: "Set against the backdrop of China's Cultural Revolution, a secret military project sends signals into space to establish contact with aliens. An alien civilization on the brink of destruction captures the signal and plans to invade Earth.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B0BVWJ3X7B?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005NDFK6S?tag=thelongbookcl-20',
@@ -1878,7 +1878,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-wandering-inn-book-1.jpg',
         length: '43h 10m',
         lengthHours: 43.1,
-        genre: ["Fantasy", "LitRPG", "Slice of Life", "Cozy Fantasy", "Portal Fantasy", "Adventure"],
+        genre: ['Fantasy', 'LitRPG', 'Slice of Life', 'Cozy Fantasy', 'Portal Fantasy', 'Adventure'],
         description: "Two rival PhD students at Cambridge must descend into Hell to rescue their deceased thesis advisor in this dark academia fantasy that blends Dante\u2019s Inferno with academic satire.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B07X4LZ3QC?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B07X3MVKQ7?tag=thelongbookcl-20',
@@ -1893,7 +1893,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-wise-mans-fear.jpg',
         length: '42h 49m',
         lengthHours: 42.8,
-        genre: ["Fantasy", "LitRPG", "Slice of Life", "Cozy Fantasy", "Portal Fantasy", "Magic"],
+        genre: ['Fantasy', 'LitRPG', 'Slice of Life', 'Cozy Fantasy', 'Portal Fantasy', 'Magic'],
         description: "Picking up the tale of Kvothe Kingkiller once again, we follow him into exile, into political intrigue, courtship, adventure, love and magic... and further along the path that has turned Kvothe, the mightiest magician of his age, a legend in his own time, into Kote, the unassuming pub landlord.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B007QDSAL0?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B007Q726XE?tag=thelongbookcl-20',
