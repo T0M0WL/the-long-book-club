@@ -85,7 +85,15 @@ function App() {
                 <Route path="/thank-you" element={<ThankYou />} />
                 <Route path="/collections" element={<Collections />} />
                 <Route path="/collections/:slug" element={<CollectionDetail />} />
-                <Route path="/generator" element={<BookCurator />} />
+                
+                {/* Admin/Generator Routes - Hidden in Production */}
+                {import.meta.env.DEV && (
+                  <>
+                    <Route path="/generator" element={<BookCurator />} />
+                    <Route path="/journal-generator" element={<JournalGenerator />} />
+                  </>
+                )}
+
 
 
                 <Route path="/about" element={<About />} />
@@ -95,7 +103,7 @@ function App() {
                 {/* Journal Routes */}
                 <Route path="/journal" element={<Journal />} />
                 <Route path="/journal/:slug" element={<JournalPost />} />
-                <Route path="/journal-generator" element={<JournalGenerator />} />
+
                 
                 {/* Social Hub Links Page */}
                 <Route path="/links" element={<Links />} />

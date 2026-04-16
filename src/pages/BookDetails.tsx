@@ -331,7 +331,8 @@ export const BookDetails = () => {
                                 fontFamily: 'var(--font-body)',
                                 maxWidth: '60ch',
                                 textAlign: 'left',
-                                alignSelf: 'flex-start'
+                                whiteSpace: 'pre-wrap',
+                                wordBreak: 'break-word'
                             }}
                                 dangerouslySetInnerHTML={{ __html: review?.curatorNote || book.curatorNote || '' }}
                             />
@@ -437,17 +438,27 @@ export const BookDetails = () => {
                     ? book.relatedBookIds.map(id => books.find(b => b.id === id)).filter(Boolean)
                     : [];
 
-                // 2. If no manual IDs, generate recommendations
+                // 2. If no manual IDs, generate smarter recommendations based on genre overlap
                 if (relatedBooks.length === 0) {
-                    // Strategy: Match by Author first, then Genre
-                    const byAuthor = books.filter(b => b.author === book.author && b.id !== book.id);
-                    const byGenre = books.filter(b => b.genre === book.genre && b.id !== book.id);
-
-                    // Combine and deduplicate
-                    const combined = [...byAuthor, ...byGenre];
-                    const uniqueMap = new Map();
-                    combined.forEach(b => uniqueMap.set(b.id, b));
-                    relatedBooks = Array.from(uniqueMap.values());
+                    const currentGenres = Array.isArray(book.genre) ? book.genre : [book.genre];
+                    
+                    relatedBooks = books
+                        .filter(b => b.id !== book.id)
+                        .map(b => {
+                            const otherGenres = Array.isArray(b.genre) ? b.genre : [b.genre];
+                            const overlap = otherGenres.filter(g => currentGenres.includes(g));
+                            
+                            // Scoring:
+                            // - Exact Author match is very strong
+                            // - Each shared genre adds points
+                            let score = overlap.length;
+                            if (b.author === book.author) score += 10; 
+                            
+                            return { book: b, score };
+                        })
+                        .filter(item => item.score > 0)
+                        .sort((a, b) => b.score - a.score)
+                        .map(item => item.book);
                 }
 
                 // 3. Render if we have recommendations OR a linked collection

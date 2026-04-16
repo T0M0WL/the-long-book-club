@@ -3,11 +3,14 @@ import { books, genres as existingGenres } from '../data/books';
 import { SEO } from '../components/SEO';
 
 export const BookCurator = () => {
+    // --- App Mode State ---
+    const [mode, setMode] = useState<'create' | 'edit'>('create');
+    const [selectedBookSlug, setSelectedBookSlug] = useState('');
+
     // --- Book Metadata State ---
     const [title, setTitle] = useState('');
     const [author, setAuthor] = useState('');
     const [lengthStr, setLengthStr] = useState('');
-    const [description, setDescription] = useState('');
     const [selectedGenres, setSelectedGenres] = useState<string[]>([]);
     
     const [affiliateLink, setAffiliateLink] = useState('');
@@ -42,6 +45,54 @@ export const BookCurator = () => {
         }, 0);
         setNextId((maxId + 1).toString());
     }, []);
+
+    // Handle Edit Mode Population
+    useEffect(() => {
+        if (mode === 'edit' && selectedBookSlug) {
+            const book = books.find(b => b.slug === selectedBookSlug);
+            if (book) {
+                setTitle(book.title || '');
+                setAuthor(book.author || '');
+                setLengthStr(book.length || '');
+                setSelectedGenres(Array.isArray(book.genre) ? book.genre : (book.genre ? [book.genre] : []));
+                
+                // Extract ASIN from affiliateLink
+                const extractAsin = (link?: string) => {
+                    if (!link) return '';
+                    const match = link.match(/dp\/([A-Z0-9]+)/i);
+                    return match ? match[1] : link;
+                };
+                
+                setAffiliateLink(extractAsin(book.affiliateLink));
+                setAffiliateLinkUS(extractAsin(book.affiliateLinkUS));
+                
+                setCardOverview(book.cardOverview || '');
+                setTeaserTitle(book.teaserTitle || '');
+                setTeaser(book.teaser || '');
+                setCoverUrl(book.coverUrl || '');
+                
+                setCuratorTitle(book.curatorTitle || '');
+                setCuratorNote(book.curatorNote || '');
+                setNarrator(book.narrator || '');
+                setSoundCheck(book.soundCheck || '');
+            }
+        } else if (mode === 'create') {
+            setTitle('');
+            setAuthor('');
+            setLengthStr('');
+            setSelectedGenres([]);
+            setAffiliateLink('');
+            setAffiliateLinkUS('');
+            setCardOverview('');
+            setTeaserTitle('');
+            setTeaser('');
+            setCuratorTitle('');
+            setCuratorNote('');
+            setNarrator('');
+            setSoundCheck('');
+            setCoverImageBase64('');
+        }
+    }, [mode, selectedBookSlug]);
 
     // Auto-generate slug and coverUrl based on title
     useEffect(() => {
@@ -159,7 +210,9 @@ export const BookCurator = () => {
                     slug: slug,
                     baseBookSnippet: generateBaseBookCode(),
                     reviewSnippet: generateReviewCode(),
-                    coverImageBase64: coverImageBase64
+                    coverImageBase64: coverImageBase64,
+                    isEdit: mode === 'edit',
+                    originalSlug: mode === 'edit' ? selectedBookSlug : null
                 })
             });
             const data = await res.json();
@@ -191,8 +244,39 @@ export const BookCurator = () => {
             <SEO title="Book Curator Mega-Tool" />
             <h1 style={{ marginBottom: '1rem', color: 'var(--color-brand-forrest)' }}>Book Curator Mega-Tool</h1>
             <p style={{ marginBottom: '2rem', fontSize: '1.1rem' }}>
-                Fill out the details below to add a new book to the database. This acts as both the Book Adder and Review Generator.
+                Fill out the details below to add a new book or edit an existing one.
             </p>
+
+            {/* MODE TOGGLE */}
+            <div style={{...sectionStyle, display: 'flex', gap: '1rem', alignItems: 'center', background: '#eef8f1'}}>
+                <div style={{ display: 'flex', gap: '0.5rem' }}>
+                    <button 
+                        onClick={() => setMode('create')}
+                        style={{ padding: '0.5rem 1rem', background: mode === 'create' ? 'var(--color-brand-forrest)' : '#ccc', color: 'white', borderRadius: '4px', border: 'none', cursor: 'pointer', fontWeight: 'bold' }}>
+                        ✨ Add New Book
+                    </button>
+                    <button 
+                        onClick={() => setMode('edit')}
+                        style={{ padding: '0.5rem 1rem', background: mode === 'edit' ? 'var(--color-brand-coral)' : '#ccc', color: 'white', borderRadius: '4px', border: 'none', cursor: 'pointer', fontWeight: 'bold' }}>
+                        ✏️ Edit Existing Book
+                    </button>
+                </div>
+                
+                {mode === 'edit' && (
+                    <div style={{ flex: 1, marginLeft: '1rem' }}>
+                        <select 
+                            value={selectedBookSlug} 
+                            onChange={(e) => setSelectedBookSlug(e.target.value)}
+                            style={{ width: '100%', padding: '0.5rem', fontSize: '1rem', borderRadius: '4px', border: '1px solid #ccc' }}
+                        >
+                            <option value="">-- Select a book to edit --</option>
+                            {[...books].sort((a,b) => a.title.localeCompare(b.title)).map(b => (
+                                <option key={b.slug} value={b.slug}>{b.title} by {b.author}</option>
+                            ))}
+                        </select>
+                    </div>
+                )}
+            </div>
 
             {/* SECTION 1: METADATA */}
             <div style={sectionStyle}>
@@ -246,9 +330,6 @@ export const BookCurator = () => {
                         </button>
                     ))}
                 </div>
-
-                <label style={labelStyle}>Publisher Description <span style={{fontWeight: 'normal', color: '#666', fontSize: '0.85rem'}}>(Hidden: Strictly used for SEO metadata & schema tags. Visually overwritten by your custom text)</span></label>
-                <textarea rows={4} value={description} onChange={e => setDescription(e.target.value)} placeholder="..." style={inputStyle}></textarea>
 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                     <div>
@@ -314,7 +395,7 @@ export const BookCurator = () => {
                         transition: 'all 0.3s'
                     }}
                 >
-                    {saveSuccess || '💾 Save Entire Book to Project Files'}
+                    {saveSuccess || (mode === 'edit' ? '💾 Update Existing Book' : '💾 Save New Book')}
                 </button>
             </div>
         </div>

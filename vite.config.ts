@@ -18,7 +18,7 @@ const saveBookDataPlugin = () => {
                     
                     req.on('end', () => {
                         try {
-                            const { bookTitle, baseBookSnippet, reviewSnippet, coverImageBase64, slug } = JSON.parse(body);
+                            const { bookTitle, baseBookSnippet, reviewSnippet, coverImageBase64, slug, isEdit, originalSlug } = JSON.parse(body);
                             
                             // 1. Save Cover Image
                             if (coverImageBase64 && slug) {
@@ -57,14 +57,27 @@ const saveBookDataPlugin = () => {
                                 const booksPath = path.resolve(process.cwd(), 'src/data/books.ts');
                                 let booksContent = fs.readFileSync(booksPath, 'utf8');
                                 
-                                // We are looking for the closing bracket of `baseBooks` array
-                                // "    }\n];"
-                                const endOfArrayRegex = /[ \t]*\}\s*\n\];/;
-                                if (endOfArrayRegex.test(booksContent)) {
-                                    booksContent = booksContent.replace(endOfArrayRegex, `    },\n    {\n${baseBookSnippet}\n    }\n];`);
-                                    fs.writeFileSync(booksPath, booksContent, 'utf8');
+                                if (isEdit && originalSlug) {
+                                    // Find the existing block for originalSlug and replace it perfectly
+                                    // Note: we use RegExp to match from `{... slug: 'originalSlug' ... }`
+                                    const escapedOriginalSlug = originalSlug.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                                    const replaceRegex = new RegExp(`^[ \\t]*\\{[\\s\\S]*?slug:\\s*(?:["']|\\b)${escapedOriginalSlug}(?:["']|\\b)[\\s\\S]*?\\}[ \\t]*,?`, 'm');
+                                    if (replaceRegex.test(booksContent)) {
+                                        booksContent = booksContent.replace(replaceRegex, `    {\n${baseBookSnippet}\n    },\n`);
+                                        fs.writeFileSync(booksPath, booksContent, 'utf8');
+                                    } else {
+                                         throw new Error(`Could not find the original block for slug: ${originalSlug} in books.ts`);
+                                    }
                                 } else {
-                                    throw new Error("Could not find concluding '];' for baseBooks array in books.ts.");
+                                    // We are looking for the closing bracket of `baseBooks` array
+                                    // "    }\n];"
+                                    const endOfArrayRegex = /\n\s*\}\s*\n\];/;
+                                    if (endOfArrayRegex.test(booksContent)) {
+                                        booksContent = booksContent.replace(endOfArrayRegex, `    },\n    {\n${baseBookSnippet}\n    }\n];`);
+                                        fs.writeFileSync(booksPath, booksContent, 'utf8');
+                                    } else {
+                                        throw new Error("Could not find concluding '];' for baseBooks array in books.ts.");
+                                    }
                                 }
                             }
 

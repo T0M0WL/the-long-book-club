@@ -42,7 +42,7 @@ export const collections: Collection[] = [
         slug: 'longest-ever',
         coverUrl: '/covers/galaxy-outlaws.jpg',
         description: 'For those who want maximum value for their credit. These behemoths are all over 60 hours long—some spanning over 100 hours! Best served with a long commute.',
-        bookIds: ['146', '145', '115', '116', '10', '117', '118'], // Dostoyevsky (266h), Dickens (199h), plus Galaxy, mess hall etc
+        bookIds: ['149', '146', '145', '115', '116', '10', '117', '118'], // Mark Twain (280h), Dostoyevsky (266h), Dickens (199h), plus Galaxy, mess hall etc
         topGraphic: '/assets/Collections-Cards-Gfx/cc2-best-longbooks-top-gfx.gif' // Updated
     },
     {

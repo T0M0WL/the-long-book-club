@@ -14,9 +14,7 @@ const staticRoutes = [
     { url: '/collections/', changefreq: 'weekly', priority: 0.9 },
     { url: '/journal/', changefreq: 'weekly', priority: 0.9 }, // Added Journal index
     { url: '/about/', changefreq: 'monthly', priority: 0.7 },
-    { url: '/generator/', changefreq: 'monthly', priority: 0.7 },
-    { url: '/privacy/', changefreq: 'yearly', priority: 0.5 },
-    { url: '/thank-you/', changefreq: 'yearly', priority: 0.3 }
+    { url: '/privacy/', changefreq: 'yearly', priority: 0.5 }
 ];
 
 function generateSitemap() {
