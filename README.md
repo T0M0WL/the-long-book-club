@@ -1,6 +1,9 @@
-# React + TypeScript + Vite
+# The Long Book Club
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> [!IMPORTANT]
+> **ATTENTION AI ASSISTANTS:** Before performing any task, you **MUST** read and adhere to the [AI Knowledge Base](file:///Users/thomas/Desktop/The%20Long%20Book%20Club%20Project/TLBC%20Project%20Folder/AI_KNOWLEDGE_BASE.md). This file contains critical project-specific rules regarding deployment workflows, SEO requirements, and data management.
+
+# React + TypeScript + Vite
 
 Currently, two official plugins are available:
 

@@ -97,4 +97,23 @@ We upgraded the build process to inject unique, visible content into the HTML be
 
 ---
 
+## 🏗️ SEO Recovery Phase 2: Hub Enrichment & Redirects - *April 20, 2026*
+
+Following a "Failed" validation status in GSC for hub pages and legacy numeric URLs, a second wave of technical SEO was implemented.
+
+### **The Problem:**
+1.  **Thin Hubs:** Pages like `/collections/` and `/journal/` were too lightweight (under 30 words), triggering "Thin Content" flags.
+2.  **Legacy URL Collision:** Google was testing the fix using old ID-based URLs (`/book/81`) which landed on the empty base template instead of content-rich pages.
+
+### **The Solution:**
+- **Dynamic Hub Injection:** Upgraded `prerender.cjs` to dynamically read `collections.ts` and `journal.ts` at build time. It now injects full lists of curated collections and journal excerpts into the static HTML body.
+- **Automated Redirect Map:** Implemented a new section in the build process that generates a `.htaccess` file with `Redirect 301` rules for every book (mapping numeric IDs to slugs).
+- **SEO Resilience:** Every page on the site now serves substantial, unique visible content to crawlers, even if JS fails or the URL is a legacy one.
+
+### **Results:**
+- ✅ **Thickened Hubs:** `/collections/`, `/journal/`, and `/long-book-finder/` now serve 300+ words of directory content.
+- ✅ **301 Redirection:** ~300 legacy redirect rules implemented to consolidate link equity.
+
+---
+
 *This log is intended for the Curator, Thomas. Keep building, keep reading.* 📚✨

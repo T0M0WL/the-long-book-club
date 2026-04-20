@@ -261,25 +261,115 @@ async function prerender() {
     });
     console.log(`✅ Prerendered ${gCount} "Thick" genre pages.`);
 
-    // --- Simple Prerender for standard routes (About, Finder, Collections etc.) ---
+    // --- Static Hub Prerendering (Enriched) ---
     const staticPages = [
-        { slug: 'about', title: 'About | The Long Book Club', desc: 'About our mission to find the most epic audiobooks.' },
-        { slug: 'privacy', title: 'Privacy Policy | The Long Book Club', desc: 'Privacy policy.' },
-        { slug: 'long-book-finder', title: 'Long Audiobook Finder | The Long Book Club', desc: 'Filter 20+ hour epic audiobooks.' },
-        { slug: 'collections', title: 'Curated Collections | The Long Book Club', desc: 'Hand-picked lists of the best long audiobooks.' }
+        { slug: 'about', title: 'About | The Long Book Club', desc: 'About our mission to find the most epic audiobooks over 20 hours long.' },
+        { slug: 'privacy', title: 'Privacy Policy | The Long Book Club', desc: 'Privacy policy for The Long Book Club.' },
+        { slug: 'long-book-finder', title: 'Long Audiobook Finder | The Long Book Club', desc: 'Filter and discover 20+ hour epic audiobooks by length, author, and genre.' },
+        { slug: 'collections', title: 'Curated Collections | The Long Book Club', desc: 'Explore hand-picked lists of the best long-form audiobooks, from Epic Fantasy to Non-Fiction Titans.' },
+        { slug: 'journal', title: 'The Long Book Club Journal', desc: 'Latest insights, guides, and strategic listening tips for long-form audiobook fans.' }
     ];
 
+    // Helper to extract all blocks from a file
+    function extractAllBlocks(content) {
+        return content.split(/(?:\s*\{)/gm).slice(1).map(b => b.split(/^\s*\}/gm)[0]);
+    }
+
+    const collectionsContent = fs.existsSync(COLLECTIONS_FILE) ? fs.readFileSync(COLLECTIONS_FILE, 'utf-8') : '';
+    const journalContent = fs.existsSync(JOURNAL_FILE) ? fs.readFileSync(JOURNAL_FILE, 'utf-8') : '';
+
     for (const page of staticPages) {
+        let bodyContent = `<div id="no-js-content" style="max-width: 800px; margin: 0 auto; padding: 20px; font-family: sans-serif;"><h1>${escapeHtml(page.title)}</h1><p>${escapeHtml(page.desc)}</p>`;
+
+        if (page.slug === 'collections' && collectionsContent) {
+            bodyContent += '<h2>Our Curated Lists</h2><ul>';
+            const cBlocks = extractAllBlocks(collectionsContent);
+            for (const b of cBlocks) {
+                const cTitle = extractField(b, 'title');
+                const cDesc = extractField(b, 'description');
+                const cSlug = extractField(b, 'slug');
+                if (cTitle && cSlug) {
+                    bodyContent += `<li><strong><a href="/collections/${cSlug}">${escapeHtml(cTitle)}</a></strong>: ${escapeHtml(cDesc)}</li>`;
+                }
+            }
+            bodyContent += '</ul>';
+        } else if (page.slug === 'journal' && journalContent) {
+            bodyContent += '<h2>Latest Insights & Guides</h2><ul>';
+            const jBlocks = extractAllBlocks(journalContent);
+            for (const b of jBlocks) {
+                const jTitle = extractField(b, 'title');
+                const jExcerpt = extractField(b, 'excerpt');
+                const jSlug = extractField(b, 'slug');
+                if (jTitle && jSlug) {
+                    bodyContent += `<li><strong><a href="/journal/${jSlug}">${escapeHtml(jTitle)}</a></strong>: ${escapeHtml(jExcerpt)}</li>`;
+                }
+            }
+            bodyContent += '</ul>';
+        } else if (page.slug === 'long-book-finder') {
+            bodyContent += '<h2>Top Long Audiobooks</h2><p>Our library contains over 130 epic audiobooks. Some of our favorites include:</p><ul>';
+            // Just take first 10 for thickening
+            const firstTen = extractAllBlocks(booksContent).slice(0, 10);
+            for (const b of firstTen) {
+                const bTitle = extractField(b, 'title');
+                const bAuthor = extractField(b, 'author');
+                const bSlug = extractField(b, 'slug');
+                if (bTitle && bSlug) {
+                    bodyContent += `<li><a href="/book/${bSlug}">${escapeHtml(bTitle)}</a> by ${escapeHtml(bAuthor)}</li>`;
+                }
+            }
+            bodyContent += '</ul>';
+        }
+
+        bodyContent += '</div>';
+
         let html = template;
         html = html.replace(/<title>.*?<\/title>/, `<title>${escapeHtml(page.title)}</title>`);
         html = html.replace(/<meta name="description" content="[^"]+" \/>/, `<meta name="description" content="${escapeHtml(page.desc)}" />`);
-        html = html.replace('<!-- SEO_CONTENT_HOLDER -->', `<div id="no-js-content" style="padding: 20px;"><h1>${escapeHtml(page.title)}</h1><p>${escapeHtml(page.desc)}</p></div>`);
+        html = html.replace('<!-- SEO_CONTENT_HOLDER -->', bodyContent);
         
         const outDir = path.join(DIST_DIR, page.slug);
         if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
         fs.writeFileSync(path.join(outDir, 'index.html'), html);
     }
-    console.log(`✅ Prerendered ${staticPages.length} static pages.`);
+    console.log(`✅ Prerendered ${staticPages.length} "Thick" hub pages.`);
+
+    // --- Legacy Redirect Map Generation (.htaccess) ---
+    console.log('🔗 Generating Legacy Redirect Map for .htaccess...');
+    let redirectRules = '\n# --- ID to Slug Legacy Redirects (Generated) ---\n';
+    const allBookBlocks = extractAllBlocks(booksContent);
+    for (const block of allBookBlocks) {
+        const id = extractField(block, 'id');
+        const slug = extractField(block, 'slug');
+        if (id && slug) {
+            // Support both /book/ID and /book/ID/ (trailing slash)
+            redirectRules += `Redirect 301 /book/${id} /book/${slug}/\n`;
+            redirectRules += `Redirect 301 /book/${id}/ /book/${slug}/\n`;
+        }
+    }
+
+    const dotHtmlTemplate = `
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  
+  ${redirectRules}
+
+  # Standard SPA Fallback
+  RewriteRule ^index\\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
+`;
+
+    fs.writeFileSync(path.join(DIST_DIR, '.htaccess'), dotHtmlTemplate);
+    fs.writeFileSync(path.join(__dirname, '../public/.htaccess'), dotHtmlTemplate);
+    
+    // Convenience copy for user upload (non-hidden)
+    fs.writeFileSync(path.join(DIST_DIR, 'htaccess.txt'), dotHtmlTemplate);
+    fs.writeFileSync(path.join(__dirname, '../public/htaccess.txt'), dotHtmlTemplate);
+    
+    console.log('✅ Generated .htaccess and htaccess.txt with legacy redirect map.');
 }
 
 prerender();
