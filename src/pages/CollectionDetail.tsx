@@ -8,6 +8,22 @@ import { Hero } from '../components/Hero';
 import { useSetHeaderTheme } from '../context/HeaderContext';
 import { getRoundedHours } from '../utils/formatLength';
 
+const BASE_WIDTH = 88;
+const BASE_HEIGHT = 63;
+
+const getBalancedDims = (slug: string) => {
+    const nudges: Record<string, number> = {
+        'romantasy': 1.1,
+        'dark-academia': 0.95,
+        'long-life-stories': 0.85
+    };
+    const scale = nudges[slug] || 1.0;
+    return {
+        width: `${BASE_WIDTH * scale}px`,
+        height: `${BASE_HEIGHT * scale}px`
+    };
+};
+
 export const CollectionDetail = () => {
     const { slug } = useParams<{ slug: string }>();
     const collection = collections.find(c => c.slug === slug);
@@ -77,18 +93,28 @@ export const CollectionDetail = () => {
                     <>
                         <Hero
                             backgroundImage="/assets/collections-hero-images/LongBookClub-Forrest-Hero-Image-01.gif"
-                            topGraphic="/assets/collections-hero-images/best-of-2025-icon.svg"
+                            topGraphic="/assets/collections-hero-images/Collections Icons SVGs/best-of-2025-icon.svg"
+                            topGraphicDimensions={getBalancedDims('best-long-books-2025')}
                             title="Best Long Books of 2025"
                             subtitle="A curated selection of the most immersive and standout long-form audiobooks released or celebrated in 2025."
+                            sectionHeight="auto"
+                            sectionMinHeight="600px"
+                            sectionPadding="11rem 1rem 8rem 1rem"
+                            contentPaddingTop="0"
+                            titleFontSize="4.5rem"
+                            titleLineHeight={1.05}
+                            titleOpacity={0.88}
+                            subtitleFontSize="1.4rem"
+                            subtitleLineHeight={1.6}
                             useDynamicColor={false}
                             titleColor="white"
                             subtitleColor="white"
-                            showCornerGraphics={false} // Removed for cleaner look
-                            overlayOpacity={0} // Matches Collections page
+                            showCornerGraphics={false}
+                            overlayOpacity={0}
                             topGraphicBlendMode="overlay"
                             topGraphicFilter="brightness(0) invert(1)"
                             topGraphicOpacity={0.9}
-                            contentBlendMode="overlay" // Matches Collections page
+                            contentBlendMode="overlay"
                             chevronBlendMode="overlay"
                         />
                     </>
@@ -96,10 +122,18 @@ export const CollectionDetail = () => {
                     <>
                         <Hero
                             backgroundImage="/assets/collections-hero-images/LongBookClub-Collections-background-01.jpg"
-                            topGraphic="/assets/collections-hero-images/romantasy-icon.svg"
-                            topGraphicDimensions={{ height: 'clamp(128px, 25.5vw, 195px)' }} // ~1.5x size
+                            topGraphic="/assets/collections-hero-images/Collections Icons SVGs/best-long-romantasy.svg"
+                            topGraphicDimensions={getBalancedDims('romantasy')}
                             title="Epic Romantasy Long Listens"
-                            titleFontSize="clamp(5.8rem, 13.6vmin, 9.4rem)" // Reduced by 15%
+                            sectionHeight="auto"
+                            sectionMinHeight="600px"
+                            sectionPadding="11rem 1rem 8rem 1rem"
+                            contentPaddingTop="0"
+                            titleFontSize="4.5rem"
+                            titleLineHeight={1.05}
+                            titleOpacity={0.88}
+                            subtitleFontSize="1.4rem"
+                            subtitleLineHeight={1.6}
                             subtitle={collection.description}
                             useDynamicColor={false}
                             titleColor="white"
@@ -119,14 +153,23 @@ export const CollectionDetail = () => {
                     <>
                         <Hero
                             backgroundImage="/assets/collections-hero-images/LongBookClub-Slate-Hero-Image-01.gif"
-                            topGraphic="/assets/collections-hero-images/academia-collection-icon.svg"
+                            topGraphic="/assets/collections-hero-images/Collections Icons SVGs/Best-long-dark-academia-icon.svg"
+                            topGraphicDimensions={getBalancedDims('dark-academia')}
                             title="Long, Dark Academia Listens"
-                            titleFontSize="clamp(5.8rem, 13.5vmin, 9.5rem)"
+                            sectionHeight="auto"
+                            sectionMinHeight="600px"
+                            sectionPadding="11rem 1rem 8rem 1rem"
+                            contentPaddingTop="0"
+                            titleFontSize="4.5rem"
+                            titleLineHeight={1.05}
+                            titleOpacity={0.88}
+                            subtitleFontSize="1.4rem"
+                            subtitleLineHeight={1.6}
                             subtitle={collection.description}
                             useDynamicColor={false}
                             titleColor="white"
-                            subtitleColor="rgba(203, 214, 171, 0.5)" // Sage at 50% opacity
-                            separatorColor="rgba(203, 214, 171, 0.5)" // Sage at 50% opacity
+                            subtitleColor="rgba(203, 214, 171, 0.5)"
+                            separatorColor="rgba(203, 214, 171, 0.5)"
                             showCornerGraphics={false}
                             overlayOpacity={0}
                             topGraphicBlendMode="overlay"
@@ -143,10 +186,19 @@ export const CollectionDetail = () => {
                     <>
                         <Hero
                             backgroundImage="/assets/collections-hero-images/LongBookClub-Sage-Hero-Image-01.gif"
-                            topGraphic="/assets/collections-hero-images/longest-ever-audiobooks-icon.svg"
+                            topGraphic="/assets/collections-hero-images/Collections Icons SVGs/best-longest-ever-audiobooks.svg"
+                            topGraphicDimensions={getBalancedDims('longest-ever')}
                             topGraphicColor="var(--color-brand-forrest)"
                             title="The Longest Ever Audiobooks (60+ Hours)"
-                            titleFontSize="clamp(5.1rem, 12vmin, 8.25rem)" // Reduced by 25%
+                            sectionHeight="auto"
+                            sectionMinHeight="600px"
+                            sectionPadding="11rem 1rem 8rem 1rem"
+                            contentPaddingTop="0"
+                            titleFontSize="4.5rem"
+                            titleLineHeight={1.05}
+                            titleOpacity={0.88}
+                            subtitleFontSize="1.4rem"
+                            subtitleLineHeight={1.6}
                             subtitle={collection.description}
                             useDynamicColor={false}
                             titleColor="rgba(44, 81, 67, 0.8)"
@@ -168,8 +220,18 @@ export const CollectionDetail = () => {
                     <>
                         <Hero
                             backgroundImage="/assets/collections-hero-images/LongBookClub-Forrest-Hero-Image-01.gif"
-                            topGraphic="/assets/collections-hero-images/long-life-icon.svg"
+                            topGraphic="/assets/collections-hero-images/Collections Icons SVGs/long-life-stories.svg"
+                            topGraphicDimensions={getBalancedDims('long-life-stories')}
                             title="Long Life Stories"
+                            sectionHeight="auto"
+                            sectionMinHeight="600px"
+                            sectionPadding="11rem 1rem 8rem 1rem"
+                            contentPaddingTop="0"
+                            titleFontSize="4.5rem"
+                            titleLineHeight={1.05}
+                            titleOpacity={0.88}
+                            subtitleFontSize="1.4rem"
+                            subtitleLineHeight={1.6}
                             subtitle={collection.description}
                             useDynamicColor={false}
                             titleColor="white"
@@ -187,14 +249,23 @@ export const CollectionDetail = () => {
                     <>
                         <Hero
                             backgroundImage="/assets/collections-hero-images/LongBookClub-Slate-Hero-Image-01.gif"
-                            topGraphic="/assets/collections-hero-images/bucket-list-icon.svg"
+                            topGraphic="/assets/collections-hero-images/Collections Icons SVGs/bucket-list-icon.svg"
+                            topGraphicDimensions={getBalancedDims('bucket-list')}
                             title="Bucket List Long Listens"
-                            titleFontSize="clamp(5.8rem, 13.5vmin, 9.5rem)"
+                            sectionHeight="auto"
+                            sectionMinHeight="600px"
+                            sectionPadding="11rem 1rem 8rem 1rem"
+                            contentPaddingTop="0"
+                            titleFontSize="4.5rem"
+                            titleLineHeight={1.05}
+                            titleOpacity={0.88}
+                            subtitleFontSize="1.4rem"
+                            subtitleLineHeight={1.6}
                             subtitle={collection.description}
                             useDynamicColor={false}
                             titleColor="white"
-                            subtitleColor="rgba(203, 214, 171, 0.5)" // Sage at 50% opacity
-                            separatorColor="rgba(203, 214, 171, 0.5)" // Sage at 50% opacity
+                            subtitleColor="rgba(203, 214, 171, 0.5)"
+                            separatorColor="rgba(203, 214, 171, 0.5)"
                             showCornerGraphics={false}
                             overlayOpacity={0}
                             topGraphicBlendMode="overlay"

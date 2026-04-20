@@ -125,9 +125,9 @@ export const Journal = () => {
 
                     {/* Top Graphic */}
                     <div style={{
-                        width: '50px',
+                        width: '79px',
                         maxWidth: '90vw',
-                        height: '50px',
+                        height: '57px',
                         backgroundColor: 'var(--color-brand-forrest)',
                         maskImage: 'url("/assets/journal-icon.svg")',
                         WebkitMaskImage: 'url("/assets/journal-icon.svg")',

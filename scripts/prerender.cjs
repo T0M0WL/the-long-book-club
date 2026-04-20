@@ -353,6 +353,10 @@ async function prerender() {
   RewriteBase /
   
   ${redirectRules}
+  
+  # --- Genre Redirects (Manual) ---
+  Redirect 301 /genre/nonfiction /genre/non-fiction/
+  Redirect 301 /genre/nonfiction/ /genre/non-fiction/
 
   # Standard SPA Fallback
   RewriteRule ^index\\.html$ - [L]

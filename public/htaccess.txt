@@ -276,6 +276,10 @@ Redirect 301 /book/124/ /book/winter-solstice-the-wandering-inn-book-4-pirateaba
 Redirect 301 /book/149 /book/the-mark-twain-complete-collection-mark-twain/
 Redirect 301 /book/149/ /book/the-mark-twain-complete-collection-mark-twain/
 
+  
+  # --- Genre Redirects (Manual) ---
+  Redirect 301 /genre/nonfiction /genre/non-fiction/
+  Redirect 301 /genre/nonfiction/ /genre/non-fiction/
 
   # Standard SPA Fallback
   RewriteRule ^index\.html$ - [L]

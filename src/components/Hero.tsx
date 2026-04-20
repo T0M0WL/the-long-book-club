@@ -22,6 +22,7 @@ interface HeroProps {
     separatorColor?: string;
     useDynamicColor?: boolean;
     titleFontSize?: string;
+    subtitleFontSize?: string;
     topGraphicDimensions?: { width?: string; height?: string };
     topGraphicColor?: string;
     contentPaddingTop?: string;
@@ -61,6 +62,7 @@ export const Hero = ({
     separatorColor,
     useDynamicColor = false,
     titleFontSize,
+    subtitleFontSize,
     topGraphicDimensions,
     topGraphicColor,
     contentPaddingTop = 'clamp(45px, 10vh, 85px)',
@@ -339,6 +341,7 @@ export const Hero = ({
                                 width: topGraphicDimensions?.width ?? 'auto',
                                 height: topGraphicDimensions?.height ?? 'clamp(76px, 15.3vw, 117px)',
                                 maxWidth: '100%',
+                                objectFit: 'contain',
                                 mixBlendMode: topGraphicBlendMode,
                                 opacity: topGraphicOpacity,
                                 filter: topGraphicFilter,
@@ -381,7 +384,7 @@ export const Hero = ({
                 )}
 
                 <p className="hero-subtitle" style={{
-                    fontSize: '1.4rem',
+                    fontSize: subtitleFontSize ?? '1.4rem',
                     color: effectiveSubtitleColor,
                     transition: 'color 0.5s ease',
                     maxWidth: '660px',

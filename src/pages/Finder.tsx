@@ -201,9 +201,9 @@ export const Finder = () => {
 
                     {/* Top Graphic */}
                     <div style={{
-                        width: '50px',
+                        width: '79px',
                         maxWidth: '90vw',
-                        height: '50px',
+                        height: '57px',
                         backgroundColor: 'var(--color-brand-coral)',
                         maskImage: 'url("/assets/mag-gfx.svg")',
                         WebkitMaskImage: 'url("/assets/mag-gfx.svg")',

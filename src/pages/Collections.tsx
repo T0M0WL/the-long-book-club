@@ -28,7 +28,7 @@ export const Collections = () => {
                 subtitle="Searching for a trending micro-genre or the longest audiobooks ever? Try these hand-picked collections as inspiration for your next long listen."
                 showCornerGraphics={false}
                 topGraphic="/assets/collections-hero-images/collections-graphic.svg"
-                topGraphicDimensions={{ width: '103px', height: '50px' }}
+                topGraphicDimensions={{ width: '120px', height: '85px' }}
                 sectionHeight="auto"
                 sectionMinHeight="600px"
                 sectionPadding="11rem 1rem 8rem 1rem"
@@ -41,7 +41,7 @@ export const Collections = () => {
                 contentBlendMode="overlay"
                 titleBlendMode="overlay"
                 subtitleBlendMode="overlay"
-                topGraphicBlendMode="overlay"
+                topGraphicBlendMode="normal"
                 chevronBlendMode="overlay"
                 overlayOpacity={0}
             />
