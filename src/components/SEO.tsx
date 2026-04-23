@@ -23,7 +23,7 @@ export const SEO = ({ title, description, image, canonical, type = 'website', sc
 
     const defaultTitle = 'The Long Book Club';
     const defaultDescription = 'Curated long audiobooks for deep listening. We help you find the best 20+ hour books to maximize your credits.';
-    const defaultImage = '/assets/social-share.jpg';
+    const defaultImage = '/assets/social-share-2.jpg';
 
     const fullTitle = title && title !== defaultTitle ? `${title} | The Long Book Club` : defaultTitle;
 

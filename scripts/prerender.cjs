@@ -103,7 +103,7 @@ async function prerender() {
             const title = extractField(cleanBlock, 'title') || 'The Long Book Club';
             const author = extractField(cleanBlock, 'author');
             const bookDesc = extractField(cleanBlock, 'description', false);
-            const coverUrl = extractField(cleanBlock, 'coverUrl') || '/assets/social-share.jpg';
+            const coverUrl = extractField(cleanBlock, 'coverUrl') || '/assets/social-share-2.jpg';
             const narrator = extractField(cleanBlock, 'narrator');
             const length = extractField(cleanBlock, 'length');
             const genreRaw = extractField(cleanBlock, 'genre') || 'Fiction';
@@ -188,7 +188,7 @@ async function prerender() {
             const excerpt = extractField(cleanBlock, 'excerpt');
             const author = extractField(cleanBlock, 'author') || 'The Long Book Club';
             const date = extractField(cleanBlock, 'date');
-            const coverUrl = extractField(cleanBlock, 'coverUrl') || '/assets/social-share.jpg';
+            const coverUrl = extractField(cleanBlock, 'coverUrl') || '/assets/social-share-2.jpg';
 
             const absoluteUrl = BASE_URL + '/journal/' + slug + '/';
             const absoluteCoverUrl = coverUrl.startsWith('http') ? coverUrl : BASE_URL + coverUrl;
@@ -357,6 +357,8 @@ async function prerender() {
   # --- Genre Redirects (Manual) ---
   Redirect 301 /genre/nonfiction /genre/non-fiction/
   Redirect 301 /genre/nonfiction/ /genre/non-fiction/
+  Redirect 301 /genre/contemporary /genre/contemporary-fiction/
+  Redirect 301 /genre/contemporary/ /genre/contemporary-fiction/
 
   # Standard SPA Fallback
   RewriteRule ^index\\.html$ - [L]

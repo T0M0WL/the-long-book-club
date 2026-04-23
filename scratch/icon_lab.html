@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TLBC Icon Alignment Lab</title>
+    <style>
+        body { 
+            background: #eae8da; 
+            font-family: sans-serif; 
+            padding: 50px; 
+            color: #2c5143;
+        }
+        h1 { margin-bottom: 50px; text-align: center; font-weight: 300; }
+        .lab-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+            gap: 40px; 
+            align-items: end;
+            justify-items: center;
+        }
+        .icon-card { 
+            background: rgba(255,255,255,0.3); 
+            padding: 30px; 
+            border-radius: 12px;
+            text-align: center;
+            width: 100%;
+            border: 1px solid rgba(44, 81, 67, 0.1);
+        }
+        .icon-container {
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: brightness(0) saturate(100%) invert(26%) sepia(13%) saturate(1989%) hue-rotate(106deg) brightness(96%) contrast(92%); /* Forced Forrest Color */
+        }
+        .label { font-size: 0.9rem; opacity: 0.8; font-weight: 600; }
+        .meta { font-size: 0.75rem; opacity: 0.5; margin-top: 5px; }
+    </style>
+</head>
+<body>
+    <h1>TLBC Optical Weight Lab</h1>
+    <div class="lab-grid">
+        <div class="icon-card">
+            <div class="icon-container"><img src="../public/assets/mag-gfx.svg"></div>
+            <div class="label">Long Book Finder</div>
+            <div class="meta">Square-ish / Focal Symbol</div>
+        </div>
+        <div class="icon-card">
+            <div class="icon-container"><img src="../public/assets/journal-icon.svg"></div>
+            <div class="label">Journal</div>
+            <div class="meta">Vertical / Pen Symbol</div>
+        </div>
+        <div class="icon-card">
+            <div class="icon-container"><img src="../public/assets/collections-hero-images/collections-graphic.svg"></div>
+            <div class="label">Collections Hub</div>
+            <div class="meta">Wide / Detailed Book Stack</div>
+        </div>
+        <div class="icon-card">
+            <div class="icon-container"><img src="../public/assets/collections-hero-images/Collections Icons SVGs/best-of-2025-icon.svg"></div>
+            <div class="label">Best of 2025</div>
+            <div class="meta">Square / Detailed Badge</div>
+        </div>
+        <div class="icon-card">
+            <div class="icon-container"><img src="../public/assets/collections-hero-images/Collections Icons SVGs/best-long-romantasy.svg"></div>
+            <div class="label">Romantasy</div>
+            <div class="meta">Square / Focal Heart</div>
+        </div>
+        <div class="icon-card">
+            <div class="icon-container"><img src="../public/assets/collections-hero-images/Collections Icons SVGs/Best-long-dark-academia-icon.svg"></div>
+            <div class="label">Dark Academia</div>
+            <div class="meta">Square / Architectural</div>
+        </div>
+        <div class="icon-card">
+            <div class="icon-container"><img src="../public/assets/collections-hero-images/Collections Icons SVGs/best-longest-ever-audiobooks.svg"></div>
+            <div class="label">Longest Ever</div>
+            <div class="meta">Tall / Hourglass</div>
+        </div>
+        <div class="icon-card">
+            <div class="icon-container"><img src="../public/assets/collections-hero-images/Collections Icons SVGs/long-life-stories.svg"></div>
+            <div class="label">Long Life Stories</div>
+            <div class="meta">Wide / Infinity Symbol</div>
+        </div>
+        <div class="icon-card">
+            <div class="icon-container"><img src="../public/assets/collections-hero-images/Collections Icons SVGs/bucket-list-icon.svg"></div>
+            <div class="label">Bucket List</div>
+            <div class="meta">Wide / Checkmark</div>
+        </div>
+    </div>
+</body>
+</html>
