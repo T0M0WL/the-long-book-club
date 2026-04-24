@@ -32,10 +32,10 @@ export const CollectionDetail = () => {
     // Determine Theme based on Collection (Hero Image Brightness)
     let themeColor = 'var(--color-brand-forrest)'; // Default (Dark Text for Light Heros)
 
-    if (['best-long-books-2025', 'romantasy'].includes(slug || '')) {
+    if (['romantasy'].includes(slug || '')) {
         themeColor = 'var(--color-brand-cloud)'; // White for Dark Heros
-    } else if (['bucket-list', 'dark-academia', 'long-life-stories'].includes(slug || '')) {
-        themeColor = 'var(--color-brand-sage)'; // Sage for Bucket List, Dark Academia, Long Life
+    } else if (['bucket-list', 'dark-academia', 'long-life-stories', 'best-long-books-2025'].includes(slug || '')) {
+        themeColor = 'var(--color-brand-sage)'; // Sage for Bucket List, Dark Academia, Long Life, Best of 2025
     }
 
     // Determine Active Link Text Color based on spec
@@ -103,19 +103,23 @@ export const CollectionDetail = () => {
                             contentPaddingTop="0"
                             titleFontSize="4.5rem"
                             titleLineHeight={1.05}
-                            titleOpacity={0.88}
                             subtitleFontSize="1.4rem"
                             subtitleLineHeight={1.6}
                             useDynamicColor={false}
-                            titleColor="white"
-                            subtitleColor="white"
+                            titleColor="var(--color-brand-sage)"
+                            subtitleColor="var(--color-brand-sage)"
+                            separatorColor="var(--color-brand-sage)"
                             showCornerGraphics={false}
                             overlayOpacity={0}
-                            topGraphicBlendMode="overlay"
-                            topGraphicFilter="brightness(0) invert(1)"
+                            topGraphicColor="var(--color-brand-sage)"
+                            topGraphicBlendMode="normal"
+                            topGraphicFilter="none"
                             topGraphicOpacity={0.9}
-                            contentBlendMode="overlay"
-                            chevronBlendMode="overlay"
+                            contentBlendMode="normal"
+                            titleBlendMode="normal"
+                            titleOpacity={1}
+                            chevronColor="var(--color-brand-sage)"
+                            chevronOpacity={0.5}
                         />
                     </>
                 ) : collection.slug === 'romantasy' ? (
@@ -162,22 +166,22 @@ export const CollectionDetail = () => {
                             contentPaddingTop="0"
                             titleFontSize="4.5rem"
                             titleLineHeight={1.05}
-                            titleOpacity={0.88}
                             subtitleFontSize="1.4rem"
                             subtitleLineHeight={1.6}
                             subtitle={collection.description}
                             useDynamicColor={false}
-                            titleColor="white"
                             subtitleColor="rgba(203, 214, 171, 0.5)"
                             separatorColor="rgba(203, 214, 171, 0.5)"
                             showCornerGraphics={false}
                             overlayOpacity={0}
-                            topGraphicBlendMode="overlay"
-                            topGraphicFilter="brightness(0) invert(1)"
+                            topGraphicColor="rgba(203, 214, 171, 0.5)"
+                            topGraphicBlendMode="normal"
+                            topGraphicFilter="none"
                             topGraphicOpacity={0.9}
                             contentBlendMode="normal"
-                            titleBlendMode="overlay"
-                            subtitleBlendMode="normal"
+                            titleColor="rgba(203, 214, 171, 0.5)"
+                            titleBlendMode="normal"
+                            titleOpacity={1}
                             chevronColor="var(--color-brand-sage)"
                             chevronOpacity={0.5}
                         />
@@ -229,20 +233,24 @@ export const CollectionDetail = () => {
                             contentPaddingTop="0"
                             titleFontSize="4.5rem"
                             titleLineHeight={1.05}
-                            titleOpacity={0.88}
                             subtitleFontSize="1.4rem"
                             subtitleLineHeight={1.6}
                             subtitle={collection.description}
                             useDynamicColor={false}
-                            titleColor="white"
-                            subtitleColor="white"
+                            titleColor="var(--color-brand-sage)"
+                            subtitleColor="var(--color-brand-sage)"
+                            separatorColor="var(--color-brand-sage)"
                             showCornerGraphics={false}
                             overlayOpacity={0}
-                            topGraphicBlendMode="overlay"
-                            topGraphicFilter="brightness(0) invert(1)"
+                            topGraphicColor="var(--color-brand-sage)"
+                            topGraphicBlendMode="normal"
+                            topGraphicFilter="none"
                             topGraphicOpacity={0.9}
-                            contentBlendMode="overlay"
-                            chevronBlendMode="overlay"
+                            contentBlendMode="normal"
+                            titleBlendMode="normal"
+                            titleOpacity={1}
+                            chevronColor="var(--color-brand-sage)"
+                            chevronOpacity={0.5}
                         />
                     </>
                 ) : collection.slug === 'bucket-list' ? (
@@ -258,22 +266,22 @@ export const CollectionDetail = () => {
                             contentPaddingTop="0"
                             titleFontSize="4.5rem"
                             titleLineHeight={1.05}
-                            titleOpacity={0.88}
                             subtitleFontSize="1.4rem"
                             subtitleLineHeight={1.6}
                             subtitle={collection.description}
                             useDynamicColor={false}
-                            titleColor="white"
                             subtitleColor="rgba(203, 214, 171, 0.5)"
                             separatorColor="rgba(203, 214, 171, 0.5)"
                             showCornerGraphics={false}
                             overlayOpacity={0}
-                            topGraphicBlendMode="overlay"
-                            topGraphicFilter="brightness(0) invert(1)"
+                            topGraphicColor="rgba(203, 214, 171, 0.5)"
+                            topGraphicBlendMode="normal"
+                            topGraphicFilter="none"
                             topGraphicOpacity={0.9}
                             contentBlendMode="normal"
-                            titleBlendMode="overlay"
-                            subtitleBlendMode="normal"
+                            titleColor="rgba(203, 214, 171, 0.5)"
+                            titleBlendMode="normal"
+                            titleOpacity={1}
                             chevronColor="var(--color-brand-sage)"
                             chevronOpacity={0.5}
                         />

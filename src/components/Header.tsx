@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { FaInstagram, FaTiktok, FaYoutube } from 'react-icons/fa6';
 
 import { StickyHeader } from './StickyHeader';
 import { useHeaderContext } from '../context/HeaderContext';
@@ -161,7 +162,7 @@ export const Header = () => {
                 height: '100%',
                 backgroundColor: 'color-mix(in srgb, var(--color-brand-slate), black 20%)',
                 color: 'var(--color-brand-cloud)',
-                zIndex: 100,
+                zIndex: 100000,
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
@@ -245,6 +246,34 @@ export const Header = () => {
                             )}
                         </div>
                     ))}
+
+                    {/* Divider for Social Section */}
+                    <div style={{
+                        width: '40px',
+                        height: '2px',
+                        backgroundColor: 'var(--color-brand-coral)',
+                        marginTop: '1.5rem',
+                        opacity: 0.5
+                    }} />
+                    
+                    {/* Social Links in Nav Overlay */}
+                    <div style={{
+                        display: 'flex',
+                        gap: '2rem',
+                        marginTop: '2rem',
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}>
+                        <a href="https://www.instagram.com/thelongbookclub" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-brand-coral)', fontSize: '2rem', transition: 'color 0.3s, transform 0.3s' }} onMouseEnter={e => { e.currentTarget.style.color = 'var(--color-brand-sage)'; e.currentTarget.style.transform = 'scale(1.1)'; }} onMouseLeave={e => { e.currentTarget.style.color = 'var(--color-brand-coral)'; e.currentTarget.style.transform = 'scale(1)'; }}>
+                            <FaInstagram />
+                        </a>
+                        <a href="https://www.tiktok.com/@thelongbookclub" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-brand-coral)', fontSize: '2rem', transition: 'color 0.3s, transform 0.3s' }} onMouseEnter={e => { e.currentTarget.style.color = 'var(--color-brand-sage)'; e.currentTarget.style.transform = 'scale(1.1)'; }} onMouseLeave={e => { e.currentTarget.style.color = 'var(--color-brand-coral)'; e.currentTarget.style.transform = 'scale(1)'; }}>
+                            <FaTiktok />
+                        </a>
+                        <a href="https://www.youtube.com/@TheLongBookClub" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-brand-coral)', fontSize: '2rem', transition: 'color 0.3s, transform 0.3s' }} onMouseEnter={e => { e.currentTarget.style.color = 'var(--color-brand-sage)'; e.currentTarget.style.transform = 'scale(1.1)'; }} onMouseLeave={e => { e.currentTarget.style.color = 'var(--color-brand-coral)'; e.currentTarget.style.transform = 'scale(1)'; }}>
+                            <FaYoutube />
+                        </a>
+                    </div>
                 </nav>
 
 

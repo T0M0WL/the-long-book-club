@@ -2,6 +2,7 @@ import { SEO } from '../components/SEO';
 import { useHeaderContext } from '../context/HeaderContext';
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { FaInstagram, FaTiktok, FaYoutube } from 'react-icons/fa6';
 import { journalPosts } from '../data/journal';
 
 export const Journal = () => {
@@ -325,6 +326,45 @@ export const Journal = () => {
                             </div>
                         </Link>
                     ))}
+                </div>
+
+                {/* Social Community Call to Action */}
+                <div style={{
+                    marginTop: '6rem',
+                    textAlign: 'center',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    gap: '1.5rem'
+                }}>
+                    <h3 style={{
+                        fontFamily: 'var(--font-serif-accent)',
+                        fontSize: '2rem',
+                        color: 'var(--color-brand-forrest)',
+                        margin: 0,
+                        fontWeight: 400
+                    }}>Join the conversation</h3>
+                    <p style={{
+                        color: 'var(--color-brand-slate)',
+                        fontFamily: 'var(--font-body)',
+                        fontSize: '1.1rem',
+                        maxWidth: '400px',
+                        margin: '0 auto',
+                        opacity: 0.8
+                    }}>
+                        Connect with us for more deep dives, audiobook trends, and community discussions.
+                    </p>
+                    <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center', margin: '1rem 0' }}>
+                        <a href="https://www.instagram.com/thelongbookclub" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-brand-forrest)', fontSize: '2.5rem', transition: 'color 0.3s, transform 0.3s' }} onMouseEnter={e => { e.currentTarget.style.color = 'var(--color-brand-coral)'; e.currentTarget.style.transform = 'scale(1.1)'; }} onMouseLeave={e => { e.currentTarget.style.color = 'var(--color-brand-forrest)'; e.currentTarget.style.transform = 'scale(1)'; }}>
+                            <FaInstagram />
+                        </a>
+                        <a href="https://www.tiktok.com/@thelongbookclub" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-brand-forrest)', fontSize: '2.5rem', transition: 'color 0.3s, transform 0.3s' }} onMouseEnter={e => { e.currentTarget.style.color = 'var(--color-brand-coral)'; e.currentTarget.style.transform = 'scale(1.1)'; }} onMouseLeave={e => { e.currentTarget.style.color = 'var(--color-brand-forrest)'; e.currentTarget.style.transform = 'scale(1)'; }}>
+                            <FaTiktok />
+                        </a>
+                        <a href="https://www.youtube.com/@TheLongBookClub" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-brand-forrest)', fontSize: '2.5rem', transition: 'color 0.3s, transform 0.3s' }} onMouseEnter={e => { e.currentTarget.style.color = 'var(--color-brand-coral)'; e.currentTarget.style.transform = 'scale(1.1)'; }} onMouseLeave={e => { e.currentTarget.style.color = 'var(--color-brand-forrest)'; e.currentTarget.style.transform = 'scale(1)'; }}>
+                            <FaYoutube />
+                        </a>
+                    </div>
                 </div>
             </main>
         </div>

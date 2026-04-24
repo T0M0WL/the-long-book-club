@@ -4,6 +4,7 @@ import { useHeaderContext } from '../context/HeaderContext';
 import { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkBreaks from 'remark-breaks';
+import { FaInstagram, FaTiktok, FaYoutube } from 'react-icons/fa6';
 import { journalPosts } from '../data/journal';
 import { books } from '../data/books';
 import Breadcrumbs from '../components/Breadcrumbs';
@@ -274,6 +275,25 @@ export const JournalPost = () => {
                         flexDirection: 'column',
                         textAlign: 'left'
                     }}>
+                        {/* Social Links ABOVE Sidebar */}
+                        <div style={{
+                            display: 'flex',
+                            gap: '1.5rem',
+                            marginBottom: '1.5rem',
+                            justifyContent: 'flex-start',
+                            alignItems: 'center'
+                        }}>
+                            <a href="https://www.instagram.com/thelongbookclub" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-brand-forrest)', fontSize: '1.5rem', transition: 'color 0.3s, transform 0.3s' }} onMouseEnter={e => { e.currentTarget.style.color = 'var(--color-brand-coral)'; e.currentTarget.style.transform = 'scale(1.1)'; }} onMouseLeave={e => { e.currentTarget.style.color = 'var(--color-brand-forrest)'; e.currentTarget.style.transform = 'scale(1)'; }}>
+                                <FaInstagram />
+                            </a>
+                            <a href="https://www.tiktok.com/@thelongbookclub" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-brand-forrest)', fontSize: '1.5rem', transition: 'color 0.3s, transform 0.3s' }} onMouseEnter={e => { e.currentTarget.style.color = 'var(--color-brand-coral)'; e.currentTarget.style.transform = 'scale(1.1)'; }} onMouseLeave={e => { e.currentTarget.style.color = 'var(--color-brand-forrest)'; e.currentTarget.style.transform = 'scale(1)'; }}>
+                                <FaTiktok />
+                            </a>
+                            <a href="https://www.youtube.com/@TheLongBookClub" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-brand-forrest)', fontSize: '1.5rem', transition: 'color 0.3s, transform 0.3s' }} onMouseEnter={e => { e.currentTarget.style.color = 'var(--color-brand-coral)'; e.currentTarget.style.transform = 'scale(1.1)'; }} onMouseLeave={e => { e.currentTarget.style.color = 'var(--color-brand-forrest)'; e.currentTarget.style.transform = 'scale(1)'; }}>
+                                <FaYoutube />
+                            </a>
+                        </div>
+
                         {/* Top Curve */}
                         <img
                             src="/assets/Collections-Cards-Gfx/collectionsCard_bottom-Curve.svg"

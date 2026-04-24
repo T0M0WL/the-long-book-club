@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaInstagram, FaTiktok, FaYoutube } from 'react-icons/fa6';
 import { Newsletter } from './Newsletter';
 
 export const Footer: React.FC = () => {
@@ -34,6 +35,24 @@ export const Footer: React.FC = () => {
                         WebkitMaskPosition: 'center',
                         marginBottom: '2rem'
                     }} />
+
+                    {/* Social Links */}
+                    <div style={{
+                        display: 'flex',
+                        gap: '1.5rem',
+                        marginBottom: '2rem',
+                        justifyContent: 'center'
+                    }}>
+                        <a href="https://www.instagram.com/thelongbookclub" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-brand-cloud)', fontSize: '1.5rem', transition: 'color 0.3s, transform 0.3s' }} onMouseEnter={e => { e.currentTarget.style.color = 'var(--color-brand-forrest)'; e.currentTarget.style.transform = 'scale(1.1)'; }} onMouseLeave={e => { e.currentTarget.style.color = 'var(--color-brand-cloud)'; e.currentTarget.style.transform = 'scale(1)'; }}>
+                            <FaInstagram />
+                        </a>
+                        <a href="https://www.tiktok.com/@thelongbookclub" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-brand-cloud)', fontSize: '1.5rem', transition: 'color 0.3s, transform 0.3s' }} onMouseEnter={e => { e.currentTarget.style.color = 'var(--color-brand-forrest)'; e.currentTarget.style.transform = 'scale(1.1)'; }} onMouseLeave={e => { e.currentTarget.style.color = 'var(--color-brand-cloud)'; e.currentTarget.style.transform = 'scale(1)'; }}>
+                            <FaTiktok />
+                        </a>
+                        <a href="https://www.youtube.com/@TheLongBookClub" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-brand-cloud)', fontSize: '1.5rem', transition: 'color 0.3s, transform 0.3s' }} onMouseEnter={e => { e.currentTarget.style.color = 'var(--color-brand-forrest)'; e.currentTarget.style.transform = 'scale(1.1)'; }} onMouseLeave={e => { e.currentTarget.style.color = 'var(--color-brand-cloud)'; e.currentTarget.style.transform = 'scale(1)'; }}>
+                            <FaYoutube />
+                        </a>
+                    </div>
 
                     <p style={{ marginBottom: '1.5rem', opacity: 0.9 }}>
                         &copy; {new Date().getFullYear()} All rights reserved. | <a href="/privacy" style={{ color: 'inherit', textDecoration: 'underline' }}>Privacy Policy</a>

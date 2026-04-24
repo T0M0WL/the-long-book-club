@@ -103,10 +103,33 @@ function generateSitemap() {
         }
     } catch (err) {
         console.error('   ❌ Error reading journal file:', err);
-        // Don't exit, just continue
     }
 
-    // 4. Build XML
+    // 4. Read Collection Pages
+    try {
+        const COLLECTIONS_FILE_PATH = path.join(__dirname, '../src/data/collections.ts');
+        if (fs.existsSync(COLLECTIONS_FILE_PATH)) {
+            const collectionsContent = fs.readFileSync(COLLECTIONS_FILE_PATH, 'utf8');
+            const cSlugRegex = /slug:\s*['"]([^'"]+)['"]/g;
+
+            let cMatch;
+            let cCount = 0;
+
+            while ((cMatch = cSlugRegex.exec(collectionsContent)) !== null) {
+                urls.push({
+                    url: `/collections/${cMatch[1]}/`,
+                    changefreq: 'weekly',
+                    priority: 0.9
+                });
+                cCount++;
+            }
+            console.log(`   Found ${cCount} collection pages.`);
+        }
+    } catch (err) {
+        console.error('   ❌ Error reading collections file:', err);
+    }
+
+    // 5. Build XML
     const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map(route => `  <url>

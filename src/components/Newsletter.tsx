@@ -39,23 +39,25 @@ export const Newsletter = () => {
                 }} />
             </div>
 
-            {/* TOP MASK (Rotated 180deg to curve into the content) */}
+            {/* TOP MASK (Branded Book Spine Curve) */}
             <div style={{
                 position: 'absolute',
                 top: -1.5, // Sub-pixel nudge
                 left: 0,
                 width: '100%',
-                height: 'clamp(20px, 5vw, 60px)',
+                height: '60px',
                 zIndex: 15,
                 pointerEvents: 'none',
                 backgroundColor: 'var(--color-bg)',
                 backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('/paper-texture.png')`,
                 backgroundRepeat: 'repeat',
-                maskImage: `url("data:image/svg+xml,%3Csvg id='Layer_1' xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 595.28 30.38' preserveAspectRatio='none'%3E%3Cpath d='M392.5,0h0c-22.9,0-46.2,3.1-63.9,8.5-9.1,2.7-16.2,5.9-21.2,9.5-5.1,3.6-7.7,7.3-7.8,11.1h-2c0,0-2,0-2,0-.1-3.8-2.7-7.5-7.8-11.1-5-3.5-12.2-6.7-21.2-9.5C248.9,3.1,225.7,0,202.9,0H0v30.38H595.13V0h-202.63'/%3E%3C/svg%3E")`,
-                WebkitMaskImage: `url("data:image/svg+xml,%3Csvg id='Layer_1' xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 595.28 30.38' preserveAspectRatio='none'%3E%3Cpath d='M392.5,0h0c-22.9,0-46.2,3.1-63.9,8.5-9.1,2.7-16.2,5.9-21.2,9.5-5.1,3.6-7.7,7.3-7.8,11.1h-2c0,0-2,0-2,0-.1-3.8-2.7-7.5-7.8-11.1-5-3.5-12.2-6.7-21.2-9.5C248.9,3.1,225.7,0,202.9,0H0v30.38H595.13V0h-202.63'/%3E%3C/svg%3E")`,
-                maskSize: '100% 100%',
-                WebkitMaskSize: '100% 100%',
-                transform: 'rotate(180deg) scaleY(1.05)', // Inverts the curve + tiny scale
+                maskImage: `url("/assets/homepage-banner-components/feature-curve.svg")`,
+                WebkitMaskImage: `url("/assets/homepage-banner-components/feature-curve.svg")`,
+                maskSize: '356px auto',
+                WebkitMaskSize: '356px auto',
+                maskRepeat: 'no-repeat',
+                maskPosition: 'center top',
+                transform: 'scaleY(1.05)', // Fix for 1px gap line
                 transformOrigin: 'top'
             }} />
 
@@ -65,20 +67,21 @@ export const Newsletter = () => {
                 bottom: -1.5, // Sub-pixel nudge
                 left: 0,
                 width: '100%',
-                height: 'clamp(20px, 5vw, 60px)',
-                zIndex: 10000, // Sit above global noise to match footer
+                height: '60px',
+                zIndex: 10000,
                 pointerEvents: 'none',
-                backgroundColor: 'var(--color-brand-coral)', // Baseline match
+                backgroundColor: 'var(--color-brand-coral)',
                 backgroundImage: "url('/assets/collections-hero-images/LongBookClub-Collections-background-01.gif')",
                 backgroundSize: 'cover',
                 backgroundPosition: 'bottom center',
-                // No texture here, just solid coral to merge with footer
-                maskImage: `url("data:image/svg+xml,%3Csvg id='Layer_1' xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 595.28 30.38' preserveAspectRatio='none'%3E%3Cpath d='M392.5,0h0c-22.9,0-46.2,3.1-63.9,8.5-9.1,2.7-16.2,5.9-21.2,9.5-5.1,3.6-7.7,7.3-7.8,11.1h-2c0,0-2,0-2,0-.1-3.8-2.7-7.5-7.8-11.1-5-3.5-12.2-6.7-21.2-9.5C248.9,3.1,225.7,0,202.9,0H0v30.38H595.13V0h-202.63'/%3E%3C/svg%3E")`,
-                WebkitMaskImage: `url("data:image/svg+xml,%3Csvg id='Layer_1' xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 595.28 30.38' preserveAspectRatio='none'%3E%3Cpath d='M392.5,0h0c-22.9,0-46.2,3.1-63.9,8.5-9.1,2.7-16.2,5.9-21.2,9.5-5.1,3.6-7.7,7.3-7.8,11.1h-2c0,0-2,0-2,0-.1-3.8-2.7-7.5-7.8-11.1-5-3.5-12.2-6.7-21.2-9.5C248.9,3.1,225.7,0,202.9,0H0v30.38H595.13V0h-202.63'/%3E%3C/svg%3E")`,
-                maskSize: '100% 100%',
-                WebkitMaskSize: '100% 100%',
-                transform: 'scaleY(1.05)',
-                transformOrigin: 'bottom'
+                maskImage: `url("/assets/homepage-banner-components/feature-curve.svg")`,
+                WebkitMaskImage: `url("/assets/homepage-banner-components/feature-curve.svg")`,
+                maskSize: '356px auto',
+                WebkitMaskSize: '356px auto',
+                maskRepeat: 'no-repeat',
+                maskPosition: 'center bottom',
+                transform: 'rotate(180deg) scaleY(1.05)', // Fix for 1px gap line
+                transformOrigin: 'center'
             }} />
 
             {/* Content Container */}

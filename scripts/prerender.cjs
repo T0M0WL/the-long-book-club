@@ -332,6 +332,71 @@ async function prerender() {
         fs.writeFileSync(path.join(outDir, 'index.html'), html);
     }
     console.log(`✅ Prerendered ${staticPages.length} "Thick" hub pages.`);
+    
+    // --- Collection Detail Prerendering (Enriched) ---
+    if (collectionsContent) {
+        const cBlocks = extractAllBlocks(collectionsContent);
+        let cdCount = 0;
+        for (const block of cBlocks) {
+            const slug = extractField(block, 'slug');
+            if (!slug) continue;
+
+            const title = extractField(block, 'title');
+            const desc = extractField(block, 'description');
+            const bookIdsRaw = extractField(block, 'bookIds', false); // Get raw string like "['97', '98']"
+            const coverUrl = extractField(block, 'coverUrl') || '/assets/social-share-2.jpg';
+
+            const absoluteUrl = BASE_URL + '/collections/' + slug + '/';
+            const absoluteCoverUrl = coverUrl.startsWith('http') ? coverUrl : BASE_URL + coverUrl;
+
+            // Simple parse of book IDs from the string
+            const bookIds = bookIdsRaw ? bookIdsRaw.replace(/[\[\]'"]/g, '').split(',').map(id => id.trim()) : [];
+            
+            // Build the list of books for injection
+            let bookListHtml = '<ul>';
+            for (const id of bookIds) {
+                // Find book in booksContent (very basic search)
+                const bookBlockRegex = new RegExp(`id:\\s*['"]${id}['"]([\\s\\S]*?)\\}`, 'm');
+                const bMatch = booksContent.match(bookBlockRegex);
+                if (bMatch) {
+                    const bTitle = extractField(bMatch[1], 'title');
+                    const bSlug = extractField(bMatch[1], 'slug');
+                    if (bTitle && bSlug) {
+                        bookListHtml += `<li><a href="/book/${bSlug}">${escapeHtml(bTitle)}</a></li>`;
+                    }
+                }
+            }
+            bookListHtml += '</ul>';
+
+            const bodyContent = `
+                <div id="no-js-content" style="max-width: 800px; margin: 0 auto; padding: 20px; font-family: sans-serif;">
+                    <h1>${escapeHtml(title)}</h1>
+                    <p>${escapeHtml(desc)}</p>
+                    <hr />
+                    <h2>Books in this Collection</h2>
+                    ${bookListHtml}
+                </div>
+            `;
+
+            let html = template;
+            html = html.replace(/<title>.*?<\/title>/, `<title>${escapeHtml(title)} | The Long Book Club Collections</title>`);
+            html = html.replace(/<meta name="description" content="[^"]+" \/>/, `<meta name="description" content="${escapeHtml(desc)}" />`);
+            // OG tags
+            html = html.replace(/<meta property="og:title" content="[^"]+" \/>/, `<meta property="og:title" content="${escapeHtml(title)}" />`);
+            html = html.replace(/<meta property="og:description" content="[^"]+" \/>/, `<meta property="og:description" content="${escapeHtml(desc)}" />`);
+            html = html.replace(/<meta property="og:image" content="[^"]+" \/>/, `<meta property="og:image" content="${absoluteCoverUrl}" />`);
+            html = html.replace(/<meta property="og:url" content="[^"]+" \/>/, `<meta property="og:url" content="${absoluteUrl}" />`);
+            html = html.replace(/<link rel="canonical" href="[^"]+" \/>/, `<link rel="canonical" href="${absoluteUrl}" />`);
+
+            html = html.replace('<!-- SEO_CONTENT_HOLDER -->', bodyContent);
+            
+            const outDir = path.join(DIST_DIR, 'collections', slug);
+            if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
+            fs.writeFileSync(path.join(outDir, 'index.html'), html);
+            cdCount++;
+        }
+        console.log(`✅ Prerendered ${cdCount} "Thick" collection detail pages.`);
+    }
 
     // --- Legacy Redirect Map Generation (.htaccess) ---
     console.log('🔗 Generating Legacy Redirect Map for .htaccess...');
