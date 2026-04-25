@@ -213,25 +213,7 @@ export const FilterBar = ({
             }}>
                 <button
                     onClick={() => onGenreChange('All')}
-                    onMouseEnter={(e) => {
-                        if (selectedGenre !== 'All') e.currentTarget.style.background = '#cc563b'; // 20% darker coral
-                    }}
-                    onMouseLeave={(e) => {
-                        if (selectedGenre !== 'All') e.currentTarget.style.background = 'var(--color-brand-coral)';
-                    }}
-                    style={{
-                        background: selectedGenre === 'All' ? 'var(--color-brand-forrest)' : 'var(--color-brand-coral)',
-                        color: 'var(--color-brand-cloud)', // User Update: Cloud
-                        border: 'none',
-                        borderRadius: '2rem',
-                        padding: '0.75rem 1.5rem', // Slightly smaller padding for better density
-                        fontSize: 'clamp(1rem, 2vw, 1.25rem)', // Scaled down slightly
-                        fontFamily: 'var(--font-serif-accent)', // User Switch: Fraunces
-                        fontWeight: 400, // Regular weight
-                        cursor: 'pointer',
-                        transition: 'background 0.2s',
-                        boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
-                    }}
+                    className={`filter-button ${selectedGenre === 'All' ? 'active' : ''}`}
                 >
                     All Genres
                 </button>
@@ -241,25 +223,7 @@ export const FilterBar = ({
                     <button
                         key={genre}
                         onClick={() => onGenreChange(selectedGenre === genre ? 'All' : genre)}
-                        onMouseEnter={(e) => {
-                            if (selectedGenre !== genre) e.currentTarget.style.background = '#cc563b';
-                        }}
-                        onMouseLeave={(e) => {
-                            if (selectedGenre !== genre) e.currentTarget.style.background = 'var(--color-brand-coral)';
-                        }}
-                        style={{
-                            background: selectedGenre === genre ? 'var(--color-brand-forrest)' : 'var(--color-brand-coral)',
-                            color: 'var(--color-brand-cloud)',
-                            border: 'none',
-                            padding: '0.75rem 1.5rem',
-                            borderRadius: '2rem',
-                            cursor: 'pointer',
-                            fontSize: 'clamp(1rem, 2vw, 1.25rem)',
-                            fontFamily: 'var(--font-serif-accent)',
-                            fontWeight: 400,
-                            transition: 'all 0.2s',
-                            boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
-                        }}
+                        className={`filter-button ${selectedGenre === genre ? 'active' : ''}`}
                     >
                         {genre}
                     </button>
@@ -270,26 +234,8 @@ export const FilterBar = ({
                     <button
                         key={genre}
                         onClick={() => onGenreChange(selectedGenre === genre ? 'All' : genre)}
-                        onMouseEnter={(e) => {
-                            if (selectedGenre !== genre) e.currentTarget.style.background = '#cc563b';
-                        }}
-                        onMouseLeave={(e) => {
-                            if (selectedGenre !== genre) e.currentTarget.style.background = 'var(--color-brand-coral)';
-                        }}
-                        style={{
-                            background: selectedGenre === genre ? 'var(--color-brand-forrest)' : 'var(--color-brand-coral)',
-                            color: 'var(--color-brand-cloud)',
-                            border: 'none',
-                            padding: '0.75rem 1.5rem',
-                            borderRadius: '2rem',
-                            cursor: 'pointer',
-                            fontSize: 'clamp(1rem, 2vw, 1.25rem)',
-                            fontFamily: 'var(--font-serif-accent)',
-                            fontWeight: 400,
-                            transition: 'background 0.2s',
-                            boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-                            animation: 'fadeIn 0.3s ease-out'
-                        }}
+                        className={`filter-button ${selectedGenre === genre ? 'active' : ''}`}
+                        style={{ animation: 'fadeIn 0.3s ease-out' }}
                     >
                         {genre}
                     </button>
@@ -298,29 +244,7 @@ export const FilterBar = ({
                 {/* Show More/Less Toggle */}
                 <button
                     onClick={() => setIsExpanded(!isExpanded)}
-                    style={{
-                        background: 'transparent',
-                        color: 'var(--color-brand-forrest)',
-                        border: '2px solid var(--color-brand-forrest)',
-                        padding: '0.75rem 1.5rem',
-                        borderRadius: '2rem',
-                        cursor: 'pointer',
-                        fontSize: 'clamp(1rem, 2vw, 1.25rem)',
-                        fontFamily: 'var(--font-serif-accent)',
-                        fontWeight: 600,
-                        transition: 'all 0.2s',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '0.5rem'
-                    }}
-                    onMouseEnter={e => {
-                        e.currentTarget.style.background = 'var(--color-brand-forrest)';
-                        e.currentTarget.style.color = 'var(--color-brand-cloud)';
-                    }}
-                    onMouseLeave={e => {
-                        e.currentTarget.style.background = 'transparent';
-                        e.currentTarget.style.color = 'var(--color-brand-forrest)';
-                    }}
+                    className="toggle-button"
                 >
                     {isExpanded ? 'Show Less -' : 'Show More +'}
                 </button>
@@ -418,31 +342,8 @@ export const FilterBar = ({
                     {(selectedGenre !== 'All' || minLength > 10 || sortBy !== 'default' || searchTerm !== '') && (
                         <button
                             onClick={onClearAll}
-                            style={{
-                                background: 'var(--color-brand-coral)',
-                                color: 'var(--color-brand-cloud)',
-                                border: 'none',
-                                padding: '1rem 2rem',
-                                borderRadius: '3rem',
-                                fontSize: 'clamp(1rem, 2vw, 1.2rem)',
-                                fontFamily: 'var(--font-serif-accent)',
-                                fontWeight: 400,
-                                cursor: 'pointer',
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '0.75rem',
-                                boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
-                                height: 'fit-content',
-                                animation: 'fadeIn 0.3s ease-out'
-                            }}
-                            onMouseEnter={e => {
-                                e.currentTarget.style.transform = 'translateY(-2px)';
-                                e.currentTarget.style.boxShadow = '0 6px 8px rgba(0,0,0,0.15)';
-                            }}
-                            onMouseLeave={e => {
-                                e.currentTarget.style.transform = 'translateY(0)';
-                                e.currentTarget.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
-                            }}
+                            className="clear-button"
+                            style={{ animation: 'fadeIn 0.3s ease-out' }}
                         >
                             <FaTimes size={16} />
                             Clear Filters

@@ -138,17 +138,7 @@ export const Links = () => {
               fontWeight: 600,
               borderRadius: '50px',
               textAlign: 'center',
-              transition: 'transform 0.2s, background-color 0.2s',
-              marginTop: '0.5rem'
-            }} className="nav-interactive"
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = 'var(--color-brand-slate)';
-              e.currentTarget.style.color = 'var(--color-bg)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'transparent';
-              e.currentTarget.style.color = 'var(--color-brand-slate)';
-            }}>
+            }} className="nav-interactive links-outline-button">
               Browse All Curated Collections
             </Link>
 

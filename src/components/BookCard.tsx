@@ -11,22 +11,17 @@ interface BookCardProps {
 
 export const BookCard = ({ book, navigationState }: BookCardProps) => {
     return (
-        <article style={{
-            backgroundColor: 'var(--color-surface)',
-            borderRadius: '0',
-            overflow: 'hidden',
-            display: 'flex',
-            flexDirection: 'column',
-            transition: 'transform 0.2s',
-            border: '1px solid rgba(255,255,255,0.05)',
-            height: '100%',
-            position: 'relative'
-        }}
-            onMouseEnter={e => {
-                e.currentTarget.style.transform = 'translateY(-4px)';
-            }}
-            onMouseLeave={e => {
-                e.currentTarget.style.transform = 'translateY(0)';
+        <article
+            className="book-card"
+            style={{
+                backgroundColor: 'var(--color-surface)',
+                borderRadius: '0',
+                overflow: 'hidden',
+                display: 'flex',
+                flexDirection: 'column',
+                border: '1px solid rgba(255,255,255,0.05)',
+                height: '100%',
+                position: 'relative'
             }}
         >
             <Link
@@ -120,26 +115,19 @@ export const BookCard = ({ book, navigationState }: BookCardProps) => {
                 <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: '0.25rem', marginBottom: '1rem' }}>
                     {(Array.isArray(book.genre) ? book.genre : [book.genre]).slice(0, 3).map((g, i) => (
                         <Link key={i} to={`/genre/${slugify(g)}`} style={{ textDecoration: 'none' }}>
-                            <div style={{
-                                fontSize: '0.75rem',
-                                color: 'var(--color-brand-cloud)',
-                                backgroundColor: 'var(--color-brand-forrest)',
-                                padding: '0.25rem 0.75rem',
-                                borderRadius: '1rem',
-                                textTransform: 'uppercase',
-                                letterSpacing: '0.05em',
-                                fontWeight: 700,
-                                fontFamily: 'Inter, sans-serif',
-                                display: 'inline-block', // Ensure it behaves like a button
-                                transition: 'background-color 0.2s', // Hover effect setup
-                            }}
-                                onMouseEnter={e => {
-                                    e.currentTarget.style.backgroundColor = '#2a4a3d';
-                                    e.currentTarget.style.color = 'var(--color-brand-coral-light)';
-                                }}
-                                onMouseLeave={e => {
-                                    e.currentTarget.style.backgroundColor = 'var(--color-brand-forrest)';
-                                    e.currentTarget.style.color = 'var(--color-brand-cloud)';
+                            <div
+                                className="genre-tag"
+                                style={{
+                                    fontSize: '0.75rem',
+                                    color: 'var(--color-brand-cloud)',
+                                    backgroundColor: 'var(--color-brand-forrest)',
+                                    padding: '0.25rem 0.75rem',
+                                    borderRadius: '1rem',
+                                    textTransform: 'uppercase',
+                                    letterSpacing: '0.05em',
+                                    fontWeight: 700,
+                                    fontFamily: 'Inter, sans-serif',
+                                    display: 'inline-block'
                                 }}
                             >
                                 {g}
@@ -166,6 +154,7 @@ export const BookCard = ({ book, navigationState }: BookCardProps) => {
                     <Link
                         to={`/book/${book.slug || book.id}`}
                         state={navigationState}
+                        className="book-card-action"
                         style={{
                             display: 'flex',
                             alignItems: 'center',
@@ -183,8 +172,6 @@ export const BookCard = ({ book, navigationState }: BookCardProps) => {
                             letterSpacing: '0',
                             textTransform: 'none'
                         }}
-                        onMouseEnter={e => e.currentTarget.style.backgroundColor = 'var(--color-primary-hover)'}
-                        onMouseLeave={e => e.currentTarget.style.backgroundColor = 'var(--color-brand-coral)'}
                     >
                         Read Full Review <span style={{ fontSize: '1.1em', lineHeight: 1, fontFamily: 'var(--font-body)' }}>&rarr;</span>
                     </Link>

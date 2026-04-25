@@ -274,10 +274,11 @@ a:hover {
   will-change: transform;
 }
 
-.nav-interactive:hover {
-  transform: scale(1.08);
-  /* Subtle but noticeable scale up */
-  opacity: 0.9;
+@media (hover: hover) {
+  .nav-interactive:hover {
+    transform: scale(1.08);
+    opacity: 0.9;
+  }
 }
 
 /* Nav Text Link Hover (Brightness Glow) */
@@ -285,9 +286,10 @@ a:hover {
   transition: filter 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
-.nav-text-hover:hover {
-  filter: brightness(1.3);
-  /* gently brighten whatever color it is */
+@media (hover: hover) {
+  .nav-text-hover:hover {
+    filter: brightness(1.3);
+  }
 }
 
 /* Specific Journal Card Hover (Subtle Scale) */
@@ -296,10 +298,11 @@ a:hover {
   will-change: transform;
 }
 
-.journal-card-hover:hover {
-  transform: scale(1.02);
-  /* Much more subtle than 1.08 */
-  opacity: 0.95;
+@media (hover: hover) {
+  .journal-card-hover:hover {
+    transform: scale(1.02);
+    opacity: 0.95;
+  }
 }
 /* --- About Page & Contact Form Responsive Overrides --- */
 
@@ -342,3 +345,147 @@ a:hover {
     margin-top: 3rem !important;
   }
 }
+
+/* Filter Button Touch Safety */
+.filter-button {
+  background: var(--color-brand-coral);
+  color: var(--color-brand-cloud);
+  border: none;
+  border-radius: 2rem;
+  padding: 0.75rem 1.5rem;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-family: var(--font-serif-accent);
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.filter-button.active {
+  background: var(--color-brand-forrest) !important;
+}
+
+@media (hover: hover) {
+  .filter-button:hover {
+    background: #cc563b; /* 20% darker coral */
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  }
+  
+  .filter-button.active:hover {
+    background: var(--color-brand-forrest) !important;
+    transform: none;
+  }
+}
+
+.filter-button:active {
+  transform: scale(0.96);
+}
+
+.toggle-button {
+  background: transparent;
+  color: var(--color-brand-forrest);
+  border: 2px solid var(--color-brand-forrest);
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-family: var(--font-serif-accent);
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) {
+  .toggle-button:hover {
+    background: var(--color-brand-forrest);
+    color: var(--color-brand-cloud);
+  }
+}
+
+.toggle-button:active {
+  transform: scale(0.98);
+}
+
+.clear-button {
+  background: var(--color-brand-coral);
+  color: var(--color-brand-cloud);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 3rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-family: var(--font-serif-accent);
+  font-weight: 400;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  height: fit-content;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) {
+  .clear-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+  }
+}
+
+.clear-button:active {
+  transform: scale(0.96);
+}
+
+/* Book Card & Genre Tag Touch Safety */
+.book-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) {
+  .book-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1) !important;
+  }
+}
+
+.genre-tag {
+  transition: all 0.2s ease !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) {
+  .genre-tag:hover {
+    background-color: #2a4a3d !important;
+    color: var(--color-brand-coral-light) !important;
+    transform: translateY(-1px);
+  }
+}
+
+.book-card-action {
+  transition: background-color 0.2s ease !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) {
+  .book-card-action:hover {
+    background-color: var(--color-primary-hover) !important;
+  }
+}
+
+.links-outline-button {
+  transition: all 0.2s ease;
+}
+
+@media (hover: hover) {
+  .links-outline-button:hover {
+    background-color: var(--color-brand-slate) !important;
+    color: var(--color-bg) !important;
+  }
+}
+
