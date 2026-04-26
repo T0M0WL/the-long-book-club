@@ -74,7 +74,7 @@ export const Home = () => {
                 titleFontSize="clamp(2.5rem, 5vw, 4rem)"
                 titleColor="#dbd7bc"
                 separatorColor="#dbd7bc"
-                subtitle="The Long Book Club finds you the longest, most immersive audiobooks. We are the definitive resource for long-form listening, curated to get you maximum entertainment from every single Audible credit."
+                subtitle="The Long Book Club finds you the longest, most immersive audiobooks. We are the definitive resource for long-form listening, curated to get you maximum entertainment from every single Audiobook credit or purchase."
                 subtitleColor="#dbd7bc"
                 chevronColor="#dbd7bc"
                 chevronOpacity={1}
