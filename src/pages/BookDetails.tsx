@@ -323,6 +323,18 @@ export const BookDetails = () => {
                             }}>
                                 {review?.curatorTitle || book.curatorTitle || "Why this is the best long audiobook for your credit"}
                             </h2>
+
+                            {/* SoundCheck Feature Card - New High Position */}
+                            {review?.soundCheck && review?.narrator && (
+                                <SoundCheckCard
+                                    narrator={review.narrator}
+                                    soundCheckText={review.soundCheck}
+                                    affiliateLinkUK={book.affiliateLink}
+                                    affiliateLinkUS={book.affiliateLinkUS}
+                                    audioPreviewUrl={book.audioPreviewUrl}
+                                />
+                            )}
+
                             <p className="curator-note-content" style={{
                                 fontSize: '1.15rem',
                                 lineHeight: 1.7,
@@ -339,16 +351,7 @@ export const BookDetails = () => {
 
 
 
-                            {/* SoundCheck Feature Card (Test Position for Les Mis) */}
-                            {book.slug === 'les-misrables-victor-hugo' && review?.soundCheck && review?.narrator && (
-                                <SoundCheckCard
-                                    narrator={review.narrator}
-                                    soundCheckText={review.soundCheck}
-                                    affiliateLinkUK={book.affiliateLink}
-                                    affiliateLinkUS={book.affiliateLinkUS}
-                                    audioPreviewUrl={book.audioPreviewUrl}
-                                />
-                            )}
+
 
                             {/* Divider */}
 
@@ -360,16 +363,7 @@ export const BookDetails = () => {
                         <></>
                     )}
 
-                    {/* SoundCheck Feature Card (Original Position - Hidden for Les Mis test) */}
-                    {book.slug !== 'les-misrables-victor-hugo' && review?.soundCheck && review?.narrator && (
-                        <SoundCheckCard
-                            narrator={review.narrator}
-                            soundCheckText={review.soundCheck}
-                            affiliateLinkUK={book.affiliateLink}
-                            affiliateLinkUS={book.affiliateLinkUS}
-                            audioPreviewUrl={book.audioPreviewUrl}
-                        />
-                    )}
+
 
 
                 </div>

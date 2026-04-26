@@ -39,8 +39,8 @@ export const baseBooks: Book[] = [
         title: 'Les Misérables',
         author: 'Victor Hugo',
         coverUrl: '/covers/les-miserables.jpg',
-        length: '60h',
-        lengthHours: 60,
+        length: '67h',
+        lengthHours: 67,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/b9/1a/de/b91ade9e-73c5-9554-84b3-d7e4524c6020/mzaf_9273887908918755072.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00WKWJW5A?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B07VT6WPNM?tag=thelongbookcl-20'
