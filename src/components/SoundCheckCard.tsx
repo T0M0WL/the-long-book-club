@@ -23,14 +23,14 @@ const SoundCheckCard: React.FC<SoundCheckCardProps> = ({
         <div style={{
             backgroundColor: 'rgba(255, 255, 255, 0.5)',
             borderRadius: '1.5rem',
-            padding: '2.5rem 2rem', // Matched with calculators
+            padding: '2.5rem 2rem', // Keeping matched padding
             marginTop: '0',
             width: '100%',
             maxWidth: '100%',
             marginBottom: '3.75rem',
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'center' // Center content to match calculators
+            alignItems: 'flex-start' // Back to left align
         }}>
             {/* Title */}
             <h3 style={{
@@ -38,9 +38,9 @@ const SoundCheckCard: React.FC<SoundCheckCardProps> = ({
                 fontWeight: 400, // Regular
                 color: 'var(--color-brand-coral)',
                 fontSize: '28px',
-                margin: '0 0 1.5rem 0', // Matched with calculators
+                margin: '0 0 1.5rem 0', // Keeping matched margin
                 lineHeight: 1.1,
-                textAlign: 'center'
+                textAlign: 'left'
             }}>
                 Narrator Soundcheck
             </h3>
@@ -52,7 +52,7 @@ const SoundCheckCard: React.FC<SoundCheckCardProps> = ({
                 color: 'var(--color-brand-forrest)',
                 fontWeight: 700,
                 marginBottom: '1.5rem',
-                textAlign: 'center'
+                textAlign: 'left'
             }}>
                 Narrator: {narrator}
             </p>
@@ -67,7 +67,7 @@ const SoundCheckCard: React.FC<SoundCheckCardProps> = ({
                         color: 'var(--color-brand-forrest)',
                         opacity: 0.7,
                         marginTop: '0.25rem',
-                        textAlign: 'center',
+                        textAlign: 'left',
                         fontStyle: 'italic'
                     }}>
                         Apple Books preview. Narration may vary.
@@ -83,8 +83,8 @@ const SoundCheckCard: React.FC<SoundCheckCardProps> = ({
                 color: 'var(--color-brand-forrest)', // Switch to forrest for better visibility on centered layout
                 marginBottom: '2rem',
                 opacity: 0.9,
-                textAlign: 'center',
-                maxWidth: '700px' // Keep it readable
+                textAlign: 'left',
+                maxWidth: '100%' 
             }} dangerouslySetInnerHTML={{ __html: soundCheckText }} />
 
             {/* Footer Links */}
@@ -93,7 +93,7 @@ const SoundCheckCard: React.FC<SoundCheckCardProps> = ({
                 flexWrap: 'wrap',
                 gap: '2rem',
                 alignItems: 'center',
-                justifyContent: 'center', // Center the flags
+                justifyContent: 'flex-start', // Back to left
                 marginTop: 'auto',
                 width: '100%'
             }}>
