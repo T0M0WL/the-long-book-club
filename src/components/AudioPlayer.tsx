@@ -79,8 +79,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src }) => {
             borderRadius: '50px',
             gap: '15px',
             marginBottom: '0.5rem',
-            width: '100%',
-            maxWidth: '500px'
+            width: '100%'
         }}>
             <audio 
                 ref={audioRef} 

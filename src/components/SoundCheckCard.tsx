@@ -23,7 +23,7 @@ const SoundCheckCard: React.FC<SoundCheckCardProps> = ({
         <div style={{
             backgroundColor: 'rgba(255, 255, 255, 0.5)',
             borderRadius: '1.5rem',
-            padding: '2.5rem 2rem', // Keeping matched padding
+            padding: '2.5rem', // Symmetrical 2.5rem on all sides
             marginTop: '0',
             width: '100%',
             maxWidth: '100%',
