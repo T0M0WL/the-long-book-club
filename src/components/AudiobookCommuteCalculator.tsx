@@ -134,7 +134,7 @@ const AudiobookCommuteCalculator: React.FC<Props> = ({ initialBookLength }) => {
                 <div style={{ transform: 'translateY(15px)' }}>
                     <div style={{
                         fontFamily: 'var(--font-serif-accent)',
-                        color: '#fff',
+                        color: 'var(--color-brand-cloud)',
                         fontSize: '32px',
                         lineHeight: 1.1,
                         marginBottom: '0.5rem',
@@ -145,7 +145,7 @@ const AudiobookCommuteCalculator: React.FC<Props> = ({ initialBookLength }) => {
                     </div>
                     <div style={{
                         fontFamily: 'Inter, sans-serif',
-                        color: '#fff',
+                        color: 'var(--color-brand-cloud)',
                         fontSize: '11px',
                         fontWeight: 700,
                         textTransform: 'lowercase'

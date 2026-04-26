@@ -94,7 +94,7 @@ const AudiobookValueCalculator: React.FC<Props> = ({ initialBookLength }) => {
                 <div style={{ transform: 'translateY(15px)' }}>
                     <div style={{
                         fontFamily: 'var(--font-serif-accent)',
-                        color: '#fff',
+                        color: 'var(--color-brand-cloud)',
                         fontSize: '36px',
                         lineHeight: 1.1,
                         marginBottom: '0.2rem',
@@ -105,7 +105,7 @@ const AudiobookValueCalculator: React.FC<Props> = ({ initialBookLength }) => {
                     </div>
                     <div style={{
                         fontFamily: 'var(--font-serif-accent)',
-                        color: '#fff',
+                        color: 'var(--color-brand-cloud)',
                         fontSize: '1.5rem',
                         lineHeight: 1.1,
                         marginBottom: '0.8rem',
@@ -116,7 +116,7 @@ const AudiobookValueCalculator: React.FC<Props> = ({ initialBookLength }) => {
                     </div>
                     <div style={{
                         fontFamily: 'Inter, sans-serif',
-                        color: '#fff',
+                        color: 'var(--color-brand-cloud)',
                         fontSize: '11px',
                         fontWeight: 700,
                         textTransform: 'lowercase'
@@ -181,7 +181,7 @@ const AudiobookValueCalculator: React.FC<Props> = ({ initialBookLength }) => {
                             border: 'none',
                             borderRadius: '1.5rem',
                             backgroundColor: currency === 'GBP' ? 'var(--color-brand-coral)' : 'transparent',
-                            color: currency === 'GBP' ? '#fff' : 'var(--color-brand-forrest)',
+                            color: currency === 'GBP' ? 'var(--color-brand-cloud)' : 'var(--color-brand-forrest)',
                             fontWeight: 700,
                             fontSize: '13px',
                             cursor: 'pointer',
@@ -202,7 +202,7 @@ const AudiobookValueCalculator: React.FC<Props> = ({ initialBookLength }) => {
                             border: 'none',
                             borderRadius: '1.5rem',
                             backgroundColor: currency === 'USD' ? 'var(--color-brand-coral)' : 'transparent',
-                            color: currency === 'USD' ? '#fff' : 'var(--color-brand-forrest)',
+                            color: currency === 'USD' ? 'var(--color-brand-cloud)' : 'var(--color-brand-forrest)',
                             fontWeight: 700,
                             fontSize: '13px',
                             cursor: 'pointer',
