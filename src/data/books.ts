@@ -22,6 +22,7 @@ export interface Book {
     cardOverview?: string;  // Max 120 chars. Book card excerpt on Home Page
     teaser?: string;        // SEO summary paragraph on Collection Pages
     teaserTitle?: string;   // H4 headline on Collection Pages
+    audioPreviewUrl?: string; // Direct link to iTunes .m4a preview
 }
 
 export const baseBooks: Book[] = [
@@ -40,6 +41,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/les-miserables.jpg',
         length: '60h',
         lengthHours: 60,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/b9/1a/de/b91ade9e-73c5-9554-84b3-d7e4524c6020/mzaf_9273887908918755072.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00WKWJW5A?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B07VT6WPNM?tag=thelongbookcl-20'
     },
@@ -56,6 +58,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/it.jpg',
         length: '44h 57m',
         lengthHours: 44.9,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/21/22/2e/21222ed6-d382-9b62-1a57-59b55add5d3e/mzaf_5794367686370882688.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B01H0IF7MA?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B01H0IH01Q?tag=thelongbookcl-20'
     },
@@ -72,6 +75,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/under-the-dome.jpg',
         length: '34h 24m',
         lengthHours: 34.4,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/8d/61/f0/8d61f064-7a64-a33c-0829-5a9f7c1bbd65/mzaf_8485178707659402672.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0030MK9LU?tag=thelongbookclub-21'
     },
     {
@@ -86,6 +90,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-way-of-kings.jpg',
         length: '45h 37m',
         lengthHours: 45.6,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/dd/b2/69/ddb2695f-0ced-413f-9928-74cf742d0331/mzaf_12813721420181694724.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0052TNVN2?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005EG4CYA?tag=thelongbookcl-20'
     },
@@ -104,6 +109,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-power-broker.jpg',
         length: '66h 6m',
         lengthHours: 66.1,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/85/4e/00/854e00f4-417a-91d2-1217-2c8eb0a5423d/mzaf_15560665113102225144.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0DKG7DCG5?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0DKG75PBH?tag=thelongbookcl-20'
     },
@@ -120,6 +126,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-stand.jpg',
         length: '47h 47m',
         lengthHours: 47.8,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/14/0d/f5/140df50e-11d9-4e9a-cb70-6bbb2eeff521/mzaf_15126501118333606540.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B008MZT1V4?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B008MTA66E?tag=thelongbookcl-20'
     },
@@ -137,6 +144,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/hamilton.jpg',
         length: '36h',
         lengthHours: 36,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/45/83/82/458382f3-ef5c-2aab-86f7-1ff98e5624b5/mzaf_3609138064636561819.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B077DS3W25?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B077D7S5DP?tag=thelongbookcl-20'
     },
@@ -153,6 +161,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/infinite-jest.jpg',
         length: '56h 11m',
         lengthHours: 56.2,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/c9/79/03/c9790398-83b9-305a-6332-2e5c6add4d1e/mzaf_11655280249488081073.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B07L8KNKDG?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CZ4N145R?tag=thelongbookcl-20'
     },
@@ -171,6 +180,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-count-of-monte-cristo.jpg',
         length: '52h 41m',
         lengthHours: 52.7,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/4e/dc/60/4edc60c9-4e26-cece-b4f1-b62f64048d0c/mzaf_4067438748408383557.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B008QZBHPI?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005GG1APM?tag=thelongbookcl-20'
     },
@@ -187,6 +197,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/11-22-63.jpg',
         length: '30h 40m',
         lengthHours: 30.6,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/b9/5c/a7/b95ca765-0dbb-13ed-734d-9c7179747607/mzaf_6300578996500299024.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0064P650E?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0064I1KGA?tag=thelongbookcl-20'
     },
@@ -203,6 +214,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/atlas-shrugged.jpg',
         length: '63h',
         lengthHours: 63,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/0d/8b/5d/0d8b5d5c-ee73-36e2-65a9-1bc36a06c998/mzaf_6005547672321744936.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B009T9SYQK?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B001MXQ7AQ?tag=thelongbookcl-20'
     },
@@ -218,6 +230,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/a-game-of-thrones.jpg',
         length: '33h 46m',
         lengthHours: 33.7,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/d7/6d/33/d76d33cf-4e60-8df2-d7b8-fb42f842c192/mzaf_13748739641784907894.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B005CB5HTG?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005C7QQ2M?tag=thelongbookcl-20'
     },
@@ -236,6 +249,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/sherlock-holmes-the-definitive-collection.jpg',
         length: '71h 57m',
         lengthHours: 71.9,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/f4/c0/fb/f4c0fbe6-5a22-920c-29d5-8a408659fe8d/mzaf_16581054446197328165.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B06X3XG5Y6?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B06VWQTBZ9?tag=thelongbookcl-20'
     },
@@ -253,6 +267,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/team-of-rivals.jpg',
         length: '41h 32m',
         lengthHours: 41.5,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/e2/19/05/e21905d5-6b70-3f79-71aa-1698f0aa829a/mzaf_10431971150638567311.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B093TBNFWK?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B093TC2K3D?tag=thelongbookcl-20'
     },
@@ -269,6 +284,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/1q84.jpg',
         length: '46h 50m',
         lengthHours: 46.8,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/ae/70/7d/ae707d09-a123-7a80-0b3f-bba1799cd278/mzaf_8410126721836552824.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0060MI0T0?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0060C2CEE?tag=thelongbookcl-20'
     },
@@ -287,6 +303,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/grant.jpg',
         length: '48h',
         lengthHours: 48,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/d6/d8/ee/d6d8ee23-81c1-5720-de06-3b600f9280eb/mzaf_16352189105378998065.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B07WV5K96L?tag=thelongbookclub-21'
     },
     {
@@ -302,6 +319,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/david-copperfield.jpg',
         length: '36h 30m',
         lengthHours: 36.5,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/01/57/68/015768e6-2f1b-8ddb-de4c-dbf37b4f8851/mzaf_4811225600664457042.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CQZ6P3K1?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0D4ZPDPGS?tag=thelongbookcl-20'
     },
@@ -317,6 +335,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/dune.jpg',
         length: '21h 2m',
         lengthHours: 21.0,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/fd/ea/d6/fdead65e-da84-0f3f-e39f-5ed24449f0dc/mzaf_11448145514866941022.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ5UD6?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B000R34YKC?tag=thelongbookcl-20'
     },
@@ -333,6 +352,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-pillars-of-the-earth.jpg',
         length: '40h 55m',
         lengthHours: 40.9,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/d3/4a/33/d34a3380-f2b2-0df8-10ff-790646a7eb9f/mzaf_3774321569086053168.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0047VIL0O?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00852WNUU?tag=thelongbookcl-20'
     },
@@ -350,6 +370,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/war-and-peace.jpg',
         length: '61h 8m',
         lengthHours: 61.1,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/f5/a4/c3/f5a4c376-6186-f36a-b1ca-e41459768d9c/mzaf_9248618469781292960.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B095V1SM5H?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0007OB4TU?tag=thelongbookcl-20'
     },
@@ -366,6 +387,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-name-of-the-wind.jpg',
         length: '28h',
         lengthHours: 28,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/81/90/d7/8190d72e-6dce-449d-2b19-bd9a7d531968/mzaf_3069503212726646595.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B007HOLTHU?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B007HI3HUI?tag=thelongbookcl-20'
     },
@@ -382,6 +404,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/shantaram.jpg',
         length: '43h',
         lengthHours: 43,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/71/f4/d8/71f4d845-780b-e169-c848-4ed221507aec/mzaf_8444323563716463862.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00KOIRNLW?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00KO77Z20?tag=thelongbookcl-20'
     },
@@ -398,6 +421,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-goldfinch.jpg',
         length: '32h 24m',
         lengthHours: 32.4,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/9e/a8/14/9ea8149a-6fe3-897e-fc64-1e1bee0e47be/mzaf_8242801013099168245.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00FR6TIQE?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B08FD62LJM?tag=thelongbookcl-20'
     },
@@ -414,6 +438,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/a-little-life.jpg',
         length: '32h 51m',
         lengthHours: 32.8,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/16/76/b3/1676b3de-fedb-fd51-3937-60cb64866f94/mzaf_6919683659466378006.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0DT7DB8KL?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0DT7F93TV?tag=thelongbookcl-20'
     },
@@ -430,6 +455,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/cryptonomicon.jpg',
         length: '42h 53m',
         lengthHours: 42.9,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview124/v4/08/c6/2e/08c62e0c-92e8-df1f-8b1c-71e7348cf423/mzaf_14480495241225050272.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B086WMM52D?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B086WP1FW6?tag=thelongbookcl-20'
     },
@@ -446,6 +472,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/crime-and-punishment.jpg',
         length: '26h 11m',
         lengthHours: 26.2,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/35/df/67/35df67c0-e3b4-0bc9-b2db-c29a28c1d884/mzaf_2032438321289673543.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B085F2N7KG?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B085F3LK3Z?tag=thelongbookcl-20'
     },
@@ -462,6 +489,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/american-gods.jpg',
         length: '19h 40m',
         lengthHours: 19.7,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/e6/fa/96/e6fa964f-c0d3-6dd1-f9c1-560e9f99b92e/mzaf_16913652427996396178.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0080HPAK0?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00807NRJQ?tag=thelongbookcl-20'
     },
@@ -480,6 +508,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/anna-karenina.jpg',
         length: '35h 35m',
         lengthHours: 35.6,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/c3/f9/fc/c3f9fc72-ce29-2aa4-bfde-9a1cd10640b8/mzaf_5965937948791464249.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B01FN8BL6A?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B01FN887G2?tag=thelongbookcl-20'
     },
@@ -497,6 +526,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/don-quixote.jpg',
         length: '39h 42m',
         lengthHours: 39.7,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/40/f9/01/40f901b3-df26-0d80-139c-c1b20ca4a66f/mzaf_14045838716120408598.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B083JK2J89?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0DFR4LCJM?tag=thelongbookcl-20'
     },
@@ -514,6 +544,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-brothers-karamazov.jpg',
         length: '37h 5m',
         lengthHours: 37.1,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/17/46/98/1746989a-514b-ca2b-0339-6d7808580f8e/mzaf_4130982328908551703.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B08YRWH6V3?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CKM2R2KF?tag=thelongbookcl-20'
     },
@@ -531,6 +562,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/steve-jobs.jpg',
         length: '25h 18m',
         lengthHours: 25.3,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/d9/6c/5b/d96c5b8c-ffe5-6e8f-6a58-ba1c01d89b16/mzaf_7023720496549827358.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B005Z267BO?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005YUDQ4S?tag=thelongbookcl-20'
     },
@@ -548,6 +580,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/titan.jpg',
         length: '35h',
         lengthHours: 35,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/83/df/c1/83dfc1c6-8466-a40f-0c7f-5857601e9617/mzaf_3167046353980221662.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00EE0TV20?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00EDSLSBK?tag=thelongbookcl-20'
     },
@@ -564,6 +597,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-rise-and-fall-of-the-third-reich.jpg',
         length: '57h 11m',
         lengthHours: 57.2,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/68/d9/c4/68d9c4cf-9a88-687d-65d5-e19018d2d697/mzaf_494166566963245039.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B003W5VXPG?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B003X4R6GQ?tag=thelongbookcl-20'
     },
@@ -580,6 +614,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/outlander.jpg',
         length: '32h 38m',
         lengthHours: 32.6,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/a1/83/1f/a1831f64-ed35-9a0e-67d6-8af2a9aa5ecc/mzaf_1641244748718287721.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B08JGG6H1C?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B08JFQFVC5?tag=thelongbookcl-20'
     },
@@ -597,6 +632,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/middlemarch.jpg',
         length: '32h',
         lengthHours: 32,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/45/6e/1f/456e1fc0-8196-4ee5-a7b4-992033801d06/mzaf_1701284773614696823.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0030H21JS?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0030HF9E2?tag=thelongbookcl-20'
     },
@@ -614,6 +650,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/jonathan-strange-and-mr-norrell.jpg',
         length: '32h 30m',
         lengthHours: 32.5,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/f9/7b/fc/f97bfca0-2cd2-740d-e81b-633b85386204/mzaf_3045623345974591382.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0DFCVV8LB?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0DFCZ16X2?tag=thelongbookcl-20'
     },
@@ -630,6 +667,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/bleak-house.jpg',
         length: '35h',
         lengthHours: 35,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/8b/d3/97/8bd397b3-6893-d593-1c3b-1d7da03f59e1/mzaf_16166418906475762578.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B079LPF5YN?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00005AAOV?tag=thelongbookcl-20'
     },
@@ -647,6 +685,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/gone-with-the-wind.jpg',
         length: '49h 7m',
         lengthHours: 49.1,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/d5/70/c6/d570c6f0-f531-3387-bb36-0fad83e0b962/mzaf_10125018454835714435.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B082FPX77Y?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0DW1LX95D?tag=thelongbookcl-20'
     },
@@ -663,6 +702,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-eye-of-the-world.jpg',
         length: '29h 57m',
         lengthHours: 29.9,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/b4/25/13/b4251313-3486-bdab-bf90-0aedf07d1716/mzaf_2346617799939928376.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ946A?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00026WUO6?tag=thelongbookcl-20'
     },
@@ -678,6 +718,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-great-hunt.jpg',
         length: '26h 34m',
         lengthHours: 26.5,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/83/3a/55/833a55c9-8f53-05e6-82d1-fab19d6bfbf5/mzaf_4996045549731128865.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ4T38?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00026WUOG?tag=thelongbookcl-20'
     },
@@ -693,6 +734,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-dragon-reborn.jpg',
         length: '26h 4m',
         lengthHours: 26.1,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/4d/d8/04/4dd804c6-0825-81fa-0a28-d774a275f98b/mzaf_3364512216417826492.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ1O0O?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0006IU3BC?tag=thelongbookcl-20'
     },
@@ -708,6 +750,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-shadow-rising.jpg',
         length: '40h 57m',
         lengthHours: 40.9,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/d1/1b/be/d11bbedc-04bd-872e-4443-36a728ce8a7b/mzaf_2753439743484771633.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ5ZMC?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0006IU3BM?tag=thelongbookcl-20'
     },
@@ -725,6 +768,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-fellowship-of-the-ring.jpg',
         length: '19h 7m',
         lengthHours: 19.1,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/4b/21/e4/4b21e45d-0290-4a51-8dbb-bb5a5663f0f6/mzaf_5533151572874896967.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQAXZG?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B098T84Y1N?tag=thelongbookcl-20'
     },
@@ -741,6 +785,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-two-towers.jpg',
         length: '16h 44m',
         lengthHours: 16.7,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/3e/69/86/3e69862b-3ca1-775f-1249-5b8b653c5866/mzaf_1378806943683512665.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQD0P6?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B098T8CFMD?tag=thelongbookcl-20'
     },
@@ -757,6 +802,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-return-of-the-king.jpg',
         length: '18h 12m',
         lengthHours: 18.2,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/4e/39/3e/4e393eee-e7d4-92c4-e021-feb8e28e76bd/mzaf_14803890863408848206.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ47B2?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B098T8RGF4?tag=thelongbookcl-20'
     },
@@ -773,6 +819,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/words-of-radiance.jpg',
         length: '48h 14m',
         lengthHours: 48.2,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/93/bc/fe/93bcfe46-4fa0-738a-f732-f58ee0542bf3/mzaf_9740551205995790063.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00IN7Y5US?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00IN5WM0K?tag=thelongbookcl-20'
     },
@@ -789,6 +836,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/oathbringer.jpg',
         length: '55h 5m',
         lengthHours: 55.1,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/18/0b/13/180b13b8-c79e-8e09-0b60-c139d100004c/mzaf_13846528246034085638.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B01N9YPONF?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B01N3B7RZC?tag=thelongbookcl-20'
     },
@@ -805,6 +853,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/rhythm-of-war.jpg',
         length: '57h 26m',
         lengthHours: 57.4,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/f7/1d/48/f71d4812-014f-7ecc-431b-51e3213ce5e5/mzaf_760511967081470317.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B082MM7CSY?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B082MLHB9M?tag=thelongbookcl-20'
     },
@@ -820,6 +869,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/a-clash-of-kings.jpg',
         length: '37h 16m',
         lengthHours: 37.3,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/1e/a5/01/1ea501ca-bbc8-080e-384c-6c290a0a73c1/mzaf_13540044308213405838.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B005CB5ICW?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005C8AZVY?tag=thelongbookcl-20'
     },
@@ -835,6 +885,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/a-storm-of-swords.jpg',
         length: '47h 34m',
         lengthHours: 47.6,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/31/ad/b0/31adb078-7f64-7bf2-118f-8c7bede3eace/mzaf_13139329186647675839.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B005G48XL8?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005CCQNH0?tag=thelongbookcl-20'
     },
@@ -850,6 +901,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/a-feast-for-crows.jpg',
         length: '31h 10m',
         lengthHours: 31.2,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/83/ca/20/83ca2067-5180-fdd2-1822-f7302b9e1980/mzaf_3646773819721379271.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B006MWM378?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B006MPV7BS?tag=thelongbookcl-20'
     },
@@ -865,6 +917,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/a-dance-with-dragons.jpg',
         length: '48h 55m',
         lengthHours: 48.9,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/b1/b9/1b/b1b91b72-5c05-2d5a-c1e1-987317d3e73b/mzaf_3187619766526049022.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B005CB5HGY?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005C7QVY0?tag=thelongbookcl-20'
     },
@@ -882,6 +935,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-priory-of-the-orange-tree.jpg',
         length: '25h 52m',
         lengthHours: 25.9,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/b7/58/e9/b758e9ae-b399-b0a3-c9ef-9943bfff0300/mzaf_535277980980685518.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B07NBX6QHV?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B07NBS2F36?tag=thelongbookcl-20'
     },
@@ -899,6 +953,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/babel.jpg',
         length: '21h 38m',
         lengthHours: 21.6,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/1b/ce/db/1bcedbe7-4c1b-d262-96a3-a2ae3c22ced0/mzaf_3810357748163867461.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0B3GKFF5S?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0B3G9JCKW?tag=thelongbookcl-20'
     },
@@ -915,6 +970,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-final-empire.jpg',
         length: '24h 39m',
         lengthHours: 24.7,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/dd/b2/69/ddb2695f-0ced-413f-9928-74cf742d0331/mzaf_12813721420181694724.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B004TASE4Q?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00557U2II?tag=thelongbookcl-20'
     },
@@ -931,6 +987,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-well-of-ascension.jpg',
         length: '27h 14m',
         lengthHours: 27.2,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/56/ec/a1/56eca1e4-6b88-a2ef-aaf5-78db4269cca4/mzaf_14009387184959991315.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B004SUIL5O?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005NDCIAE?tag=thelongbookcl-20'
     },
@@ -947,6 +1004,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-hero-of-ages.jpg',
         length: '26h 18m',
         lengthHours: 26.3,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/62/69/c0/6269c017-1aa1-fbda-93f7-361b3480c8ef/mzaf_17216280075483748046.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B004TASEWS?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005NDD43O?tag=thelongbookcl-20'
     },
@@ -963,6 +1021,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/hyperion.jpg',
         length: '20h 44m',
         lengthHours: 20.7,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/3e/e0/ef/3ee0ef7a-c37b-01c6-655b-0208b4d46cd7/mzaf_9877886029112800569.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ2SS6?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B001OC2W04?tag=thelongbookcl-20'
     },
@@ -979,6 +1038,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-fall-of-hyperion.jpg',
         length: '19h 54m',
         lengthHours: 19.9,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ee/d2/c9/eed2c9d4-bf9c-60c5-cde4-577fec32d15b/mzaf_11192331393826853025.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SPV8VA?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B001OC2W0E?tag=thelongbookcl-20'
     },
@@ -995,6 +1055,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/judas-unchained.jpg',
         length: '41h 22m',
         lengthHours: 41.4,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/ef/ca/b5/efcab517-c9e9-1b43-a819-75030f7ff68d/mzaf_4701766184006568977.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0041T6398?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005ND8542?tag=thelongbookcl-20'
     },
@@ -1011,6 +1072,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/leviathan-wakes.jpg',
         length: '20h 56m',
         lengthHours: 20.9,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/f5/ac/b2/f5acb22a-ef3c-e968-0e41-1745bc99c521/mzaf_8736814558430183086.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00PABWMLO?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00P9W7LQA?tag=thelongbookcl-20'
     },
@@ -1027,6 +1089,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/seveneves.jpg',
         length: '31h 55m',
         lengthHours: 31.9,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/ad/dc/98/addc9822-e777-a423-8ad1-cc577f4602c7/mzaf_545679671069720514.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00VWIN35S?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00VVWBFM8?tag=thelongbookcl-20'
     },
@@ -1043,6 +1106,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/anathem.jpg',
         length: '32h 45m',
         lengthHours: 32.8,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview114/v4/bd/43/03/bd430312-1c1b-6c86-bbf3-931d7e28a13f/mzaf_1955815729652333539.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B086WNLRX5?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B086WNY826?tag=thelongbookcl-20'
     },
@@ -1059,6 +1123,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/stranger-in-a-strange-land.jpg',
         length: '16h 3m',
         lengthHours: 16.1,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/91/8a/8b/918a8bcf-3cf1-37f0-8e9b-81ee01909d9e/mzaf_10287465475757473060.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00AJQQMHK?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00AJEV7T0?tag=thelongbookcl-20'
     },
@@ -1075,6 +1140,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/dune-messiah.jpg',
         length: '9h 7m',
         lengthHours: 9.1,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/c4/71/a1/c471a199-1d4d-fe26-044a-813a0df98b53/mzaf_5683226480505680627.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B004V86KWA?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B000WS9ZHY?tag=thelongbookcl-20'
     },
@@ -1091,6 +1157,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/children-of-dune.jpg',
         length: '19h 42m',
         lengthHours: 19.7,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/67/93/68/679368e7-c278-f60c-d4c7-e65d517af5e7/mzaf_15299391317597732353.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQDFGK?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0013O8X60?tag=thelongbookcl-20'
     },
@@ -1107,6 +1174,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/moby-dick.jpg',
         length: '24h 23m',
         lengthHours: 24.4,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/72/5c/e6/725ce6ca-acc3-7ed5-ecc7-1eeefae458bb/mzaf_16509191075982302702.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B008QZAKDS?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B000OYDIVU?tag=thelongbookcl-20'
     },
@@ -1123,6 +1191,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/great-expectations.jpg',
         length: '18h 44m',
         lengthHours: 18.7,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/96/69/50/96695032-1d03-f7e8-696b-c7d24c17fbdc/mzaf_7672831159449881205.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ1CJW?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005ZO8FGW?tag=thelongbookcl-20'
     },
@@ -1139,6 +1208,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/jane-eyre.jpg',
         length: '19h 11m',
         lengthHours: 19.2,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/49/4d/da/494dda38-0acd-73e1-9805-4dc7ffe289f4/mzaf_5887076213446936746.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0D33S6NCJ?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B01COOQAPI?tag=thelongbookcl-20'
     },
@@ -1155,6 +1225,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/wuthering-heights.jpg',
         length: '14h 2m',
         lengthHours: 14.0,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/e1/34/9f/e1349f00-7a6a-55a5-2d3e-57097f9c01aa/mzaf_9439175988194665612.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0FZMD9N16?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B076PP94DP?tag=thelongbookcl-20'
     },
@@ -1171,6 +1242,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/vanity-fair.jpg',
         length: '31h 22m',
         lengthHours: 31.4,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/a0/7f/50/a07f502f-191b-7e43-c36c-2885c4a77b94/mzaf_14809687502517637946.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SPWQIY?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B001SB91TQ?tag=thelongbookcl-20'
     },
@@ -1187,6 +1259,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-hunchback-of-notre-dame.jpg',
         length: '19h 2m',
         lengthHours: 19.0,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/a3/0e/c0/a30ec0cc-dc09-1d57-7543-b980ae68aac4/mzaf_4554487617779099880.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B096KX16MW?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0000547BL?tag=thelongbookcl-20'
     },
@@ -1203,6 +1276,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/ulysses.jpg',
         length: '27h 15m',
         lengthHours: 27.3,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/a2/7c/89/a27c89d5-8159-3d44-d465-8900c36cf7de/mzaf_10537920865015696957.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SPWRW4?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B001DNNASW?tag=thelongbookcl-20'
     },
@@ -1219,6 +1293,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/doctor-zhivago.jpg',
         length: '21h 56m',
         lengthHours: 22.0,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/2c/1b/9c/2c1b9c85-ca86-a8b1-074e-24b6b9b73ce8/mzaf_8285862614785977592.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B005BEHDVY?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005B51C74?tag=thelongbookcl-20'
     },
@@ -1235,6 +1310,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-magic-mountain.jpg',
         length: '35h 15m',
         lengthHours: 35.3,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/a0/68/b8/a068b8c2-c1ae-5808-baa6-35d9b5e7b25e/mzaf_13151845036813998588.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0BNNYM6KR?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B088FZL1JZ?tag=thelongbookcl-20'
     },
@@ -1251,6 +1327,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/leonardo-da-vinci.jpg',
         length: '18h 35m',
         lengthHours: 18.6,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/06/86/7a/06867a54-e284-9e6d-3d22-df4970bbad4a/mzaf_3372974286450059350.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B075ZG9NGL?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B075Z7YZBK?tag=thelongbookcl-20'
     },
@@ -1267,6 +1344,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/benjamin-franklin.jpg',
         length: '20h 3m',
         lengthHours: 20.0,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/49/01/91/490191db-827c-7be5-7aaf-ef2b93295ea3/mzaf_8330189465901251674.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B008CPXDFY?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B004VLETYM?tag=thelongbookcl-20'
     },
@@ -1283,6 +1361,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/peter-the-great.jpg',
         length: '35h 27m',
         lengthHours: 35.5,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/23/73/aa/2373aa3a-c541-1e37-085a-73fa1fbe374b/mzaf_5796402387985315587.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0064P6HTS?tag=thelongbookclub-21'
     },
     {
@@ -1298,6 +1377,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/catherine-the-great.jpg',
         length: '23h 24m',
         lengthHours: 23.4,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/cc/d5/46/ccd546d0-a063-bd27-2ca2-937c69f4aa3f/mzaf_4307045000950398964.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0064P6HTS?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0064I14FM?tag=thelongbookcl-20'
     },
@@ -1315,6 +1395,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/east-of-eden.jpg',
         length: '25h 32m',
         lengthHours: 25.5,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/72/1f/2a/721f2a9b-9f3a-64d4-0572-d38519641ffd/mzaf_496763193569306123.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B09N7P9M2K?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B09N7PZQRT?tag=thelongbookcl-20'
     },
@@ -1330,6 +1411,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-grapes-of-wrath.jpg',
         length: '21h 10m',
         lengthHours: 21.2,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/d1/ef/50/d1ef502a-33d2-c1ba-7d71-877f446075cf/mzaf_5184040607990856630.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B09N7R2B3S?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B09N7Q1H5N?tag=thelongbookcl-20'
     },
@@ -1345,6 +1427,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/demon-copperhead.jpg',
         length: '21h 3m',
         lengthHours: 21.0,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/bb/0a/0d/bb0a0d05-16ae-ebe9-d942-6205d4a7e92a/mzaf_12385358963772711678.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0B2X4K4FW?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0B2X423CV?tag=thelongbookcl-20'
     },
@@ -1360,6 +1443,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-amazing-adventures-of-kavalier-and-clay.jpg',
         length: '26h 15m',
         lengthHours: 26.3,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/0c/a0/96/0ca09675-f65f-d490-cb8e-31526a7e17cc/mzaf_1413443538030555461.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B008AXA4LY?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B008ARPKNW?tag=thelongbookcl-20'
     },
@@ -1375,6 +1459,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/2666.jpg',
         length: '39h 15m',
         lengthHours: 39.25,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/01/ce/da/01ceda52-4838-9768-da21-7b83ecbb64bc/mzaf_1590179199091872828.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0D81JXQBW?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0D81HSP37?tag=thelongbookcl-20'
     },
@@ -1391,6 +1476,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-bee-sting-paul-murray.jpg',
         length: '26h 10m',
         lengthHours: 26.2,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/d8/3d/f9/d83df99e-e011-4869-6711-21f49f38f740/mzaf_6233262451839466100.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0BLCS77CW?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0BLC76F72?tag=thelongbookcl-20'
     },
@@ -1407,6 +1493,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/polostan-neal-stephenson.jpg',
         length: '11h 41m',
         lengthHours: 11.7,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/bf/5d/60/bf5d60b7-8bdb-5439-0b29-597941a0ec57/mzaf_9013426635111582556.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0D619DC6K?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0D5ZMQ4WF?tag=thelongbookcl-20'
     },
@@ -1423,6 +1510,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-city-and-its-uncertain-walls-haruki-murakami.jpg',
         length: '17h 26m',
         lengthHours: 17.4,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/bc/8f/c8/bc8fc864-825c-ce4b-71a2-c5b90dc57ec5/mzaf_17662341947169272701.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CWP8K8NY?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CWP7W8NV?tag=thelongbookcl-20'
     },
@@ -1439,6 +1527,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/caledonian-road-andrew-ohagan.jpg',
         length: '22h 51m',
         lengthHours: 22.9,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/d2/db/d1/d2dbd1f7-d086-121f-d0be-1f60d376c10e/mzaf_12748102774674108956.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CS3ZYJV8?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CS4ZHPJ5?tag=thelongbookcl-20'
     },
@@ -1454,6 +1543,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/nexus-yuval-noah-harari.jpg',
         length: '17h 52m',
         lengthHours: 17.9,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/46/82/83/4682835f-7863-581a-c9fb-3dd3766fe4d4/mzaf_2440452268968331716.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CSYYMZKP?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CSYYCJ9K?tag=thelongbookcl-20'
     },
@@ -1470,6 +1560,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/wind-and-truth-brandon-sanderson.jpg',
         length: '62h 48m',
         lengthHours: 62.8,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b9/b6/16/b9b616cb-bf52-9dcb-632e-e0927df924c5/mzaf_4322007759363313717.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CQDF5PP6?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CQD8T35J?tag=thelongbookcl-20'
     },
@@ -1484,6 +1575,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/shogun-james-clavell.jpg',
         length: '53h 33m',
         lengthHours: 53.5,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b8/1e/81/b81e816d-c740-3042-06ec-71b6cf68222b/mzaf_9868070335173370743.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CRM21VRN?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CRMBF73W?tag=thelongbookcl-20'
     },
@@ -1497,6 +1589,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/empire-of-the-damned-jay-kristoff.jpg',
         length: '31h 34m',
         lengthHours: 31.6,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/59/3b/bd/593bbd43-affa-bad0-9279-ea2ff55d0f24/mzaf_13439784939226604801.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0C6R9GNJW?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0C6RB4R3K?tag=thelongbookcl-20'
     },
@@ -1513,6 +1606,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-covenant-of-water-abraham-verghese.jpg',
         length: '31h 16m',
         lengthHours: 31.3,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/30/a7/46/30a746a1-4811-fcfe-91ef-e937ea7b7f41/mzaf_17599370564458980674.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0BVDPD31S?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0BVDNPQ1V?tag=thelongbookcl-20'
     },
@@ -1529,6 +1623,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/my-name-is-barbra-barbra-streisand.jpg',
         length: '48h 7m',
         lengthHours: 48.1,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/a7/fe/1c/a7fe1ced-51bd-c2e7-496b-0b9b238b15e1/mzaf_839987854357904195.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0BV6YLFGV?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0BV6WQC9L?tag=thelongbookcl-20'
     },
@@ -1545,6 +1640,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/alchemised.jpg',
         length: '36h 15m',
         lengthHours: 36.25,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/81/87/ff/8187ffef-e248-4826-384f-23e5bd95ef67/mzaf_2695307531743430771.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0DT78JY9L?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0DT78HWGS?tag=thelongbookcl-20'
     },
@@ -1563,6 +1659,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-secret-history.jpg',
         length: '22h 4m',
         lengthHours: 22.1,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/a5/7a/0c/a57a0c0e-975b-2072-6706-537629186dea/mzaf_5070056783317987195.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0045F6IMK?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0045HJDVG?tag=thelongbookcl-20'
     },
@@ -1579,6 +1676,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-historian.jpg',
         length: '26h 5m',
         lengthHours: 26.1,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/46/5d/c1/465dc144-336a-5d4f-19b7-814c79f1b725/mzaf_13200096458222195849.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B08QW793PC?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B08QWBDL83?tag=thelongbookcl-20'
     },
@@ -1595,6 +1693,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/a-discovery-of-witches.jpg',
         length: '23h 59m',
         lengthHours: 24.0,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/86/30/2f/86302ff2-3519-952e-a773-a7ecbc45c298/mzaf_17637254002353696736.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B004NU711Y?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005FIPMZK?tag=thelongbookcl-20'
     },
@@ -1610,6 +1709,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/iron-flame.jpg',
         length: '28h 16m',
         lengthHours: 28.3,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/94/30/6b/94306bc3-557c-c6e1-cfcf-9abc8ff94b61/mzaf_10788463320288580104.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0C9V499ND?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0C9V75P93?tag=thelongbookcl-20'
     },
@@ -1626,6 +1726,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/house-of-earth-and-blood.jpg',
         length: '27h 50m',
         lengthHours: 27.8,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/dd/93/68/dd936867-1a9c-c1a7-8033-9f4a9bd68741/mzaf_420188651838964860.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B084P37J2B?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0D342BV2R?tag=thelongbookcl-20'
     },
@@ -1643,6 +1744,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/kushiels-dart.jpg',
         length: '31h 5m',
         lengthHours: 31.1,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/c3/68/bf/c368bf25-4e4e-d4de-bb62-2e7ace338e3f/mzaf_4741964691016350201.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0BVGMPG9V?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0BVG8RMYG?tag=thelongbookcl-20'
     },
@@ -1659,6 +1761,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/when-the-moon-hatched.jpg',
         length: '20h 13m',
         lengthHours: 20.2,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c2/15/c1/c215c1dc-7e55-2129-6b71-589fe34192b2/mzaf_5704813202952608817.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CZ159XPK?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CZ14SS1Q?tag=thelongbookcl-20'
     },
@@ -1677,6 +1780,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/galaxy-outlaws.jpg',
         length: '85h 6m',
         lengthHours: 85.1,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/5f/0c/7c/5f0c7cb2-2d8d-a227-20f0-a07e0dffe7a3/mzaf_4547946666657265073.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B079YWFX6B?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B079YYQNMM?tag=thelongbookcl-20'
     },
@@ -1693,6 +1797,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-decline-and-fall-of-the-roman-empire.jpg',
         length: '126h 37m',
         lengthHours: 126.6,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/49/a8/78/49a8781d-99fa-d2f4-87bc-b8d83bc1bca9/mzaf_1358920932817694968.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00VY9VVBS?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00WHCB85K?tag=thelongbookcl-20'
     },
@@ -1709,6 +1814,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-cycle-of-arawn.jpg',
         length: '65h 54m',
         lengthHours: 65.9,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview124/v4/2a/5d/ce/2a5dce2c-1ae6-633a-708f-a06dafa5fc5c/mzaf_17946209351429433612.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00W8Y1WY4?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00W8EBOHO?tag=thelongbookcl-20'
     },
@@ -1725,6 +1831,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-wandering-inn-book-2.jpg',
         length: '61h 4m',
         lengthHours: 61.1,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/f3/aa/b6/f3aab646-6257-920b-976b-81769592d510/mzaf_15137510525308668963.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0892SMMMM?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0892T6Q4L?tag=thelongbookcl-20'
     },
@@ -1741,6 +1848,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/churchill-walking-with-destiny.jpg',
         length: '50h 28m',
         lengthHours: 50.5,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/a0/17/ba/a017badf-00fd-6335-9160-774e6826cf2d/mzaf_12890650632808584599.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B07HB8TDDH?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B07HB7HYFZ?tag=thelongbookcl-20'
     },
@@ -1756,6 +1864,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/empire-of-the-vampire.jpg',
         length: '27h 10m',
         lengthHours: 27.2,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/47/db/46/47db46e7-7d13-0b49-c922-23c5f61bf6d0/mzaf_13511928640577941844.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B098KP7LLM?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B098KMY3XV?tag=thelongbookcl-20',
     },
@@ -1773,6 +1882,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/empire-of-the-dawn.jpg',
         length: '34h 41m',
         lengthHours: 34.7,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ca/f8/e8/caf8e8a3-15ea-ed72-8e13-5a9a2a301256/mzaf_16224915857683090374.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0DZJ46ZPB?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0DZJ5QLC6?tag=thelongbookcl-20',
     },
@@ -1791,6 +1901,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/brimstone.jpg',
         length: '24h 30m',
         lengthHours: 24.5,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/7c/e6/13/7ce61354-627a-2411-0d1d-30193c41aaa0/mzaf_7357418730217434986.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0FBSCF8N3?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0FBS7GCTV?tag=thelongbookcl-20',
     },
@@ -1806,6 +1917,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/carrion-comfort.jpg',
         length: '39h 27m',
         lengthHours: 39.5,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/c1/50/bc/c150bcb8-5161-2604-0bb0-bb805c241af9/mzaf_718590219733127103.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B005S0YL7K?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005RZ7LN2?tag=thelongbookcl-20',
     },
@@ -1822,6 +1934,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/complete-dickens-part-one.jpg',
         length: '199h 26m',
         lengthHours: 199.4,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e4/f4/23/e4f4238d-1169-70f1-9aa1-ab5dda170dc7/mzaf_1880748834215186516.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0DJDFLLFK?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0DJDGQ7TL?tag=thelongbookcl-20',
     },
@@ -1837,6 +1950,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/deaths-end.jpg',
         length: '29h 59m',
         lengthHours: 29.9,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview124/v4/69/a2/6a/69a26ab1-b1a9-113f-9f0e-872055e008f6/mzaf_9474257584757094666.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CFYJ7DGT?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CFYKH5D2?tag=thelongbookcl-20',
     },
@@ -1855,6 +1969,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/dostoyevsky-complete-collection.jpg',
         length: '266h 4m',
         lengthHours: 266.1,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/e7/0f/ef/e70fef4f-c8e1-c1fc-0f28-b6aeb825a0cf/mzaf_13190470479498095754.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CPMD8H3G?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CPMCRD6C?tag=thelongbookcl-20',
     },
@@ -1870,6 +1985,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/flowers-of-esthelm.jpg',
         length: '37h 37m',
         lengthHours: 37.6,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview124/v4/6c/63/98/6c639813-c547-99f6-6e6a-503b5ae6df48/mzaf_15631355827206028668.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B08WHR2S6T?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B08WHGSDLL?tag=thelongbookcl-20',
     },
@@ -1887,6 +2003,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/fourth-wing.jpg',
         length: '22h 2m',
         lengthHours: 22.03,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/97/fe/ff/97feff40-1f8b-cfd9-c6ca-133d8be69a31/mzaf_2631098075382121930.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0BVDNXFX5?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0BVDJ293G?tag=thelongbookcl-20',
     },
@@ -1903,6 +2020,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/house-of-flame-and-shadow.jpg',
         length: '29h 42m',
         lengthHours: 29.7,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/ff/1d/6c/ff1d6cd0-f4b6-880e-3949-fd25839ed157/mzaf_10680815499114415795.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CN1JMJ8X?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0DJN1CZKC?tag=thelongbookcl-20',
         cardOverview: "A massive 27-hour sequel. Maas expands the world in this sprawling, character-rich blockbuster."
@@ -1921,6 +2039,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/house-of-sky-and-breath.jpg',
         length: '27h 42m',
         lengthHours: 27.7,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/ca/43/b2/ca43b2e0-c871-290d-12d1-18782d793959/mzaf_17659422794596709694.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B09RZZQDRL?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0D3QR164F?tag=thelongbookcl-20',
     },
@@ -1936,6 +2055,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/i-am-pilgrim.jpg',
         length: '22h 40m',
         lengthHours: 22.7,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/35/57/66/35576693-3ad6-3321-0ed1-72b243bd1e34/mzaf_2914073332443956785.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00E67KWXI?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00E652E72?tag=thelongbookcl-20',
     },
@@ -1950,6 +2070,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/katabasis.jpg',
         length: '18h 33m',
         lengthHours: 18.55,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/21/2d/33/212d33fc-f797-4216-063e-739a2f3ed8e4/mzaf_1870623268567030153.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CYTD95YH?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CYTD8DGP?tag=thelongbookcl-20',
     },
@@ -1967,6 +2088,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/onyx-storm.jpg',
         length: '23h 52m',
         lengthHours: 23.87,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/1d/e7/25/1de7255c-deac-8850-0288-4e51ad304f11/mzaf_12578303137952599504.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CZF79X5G?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CZF874CW?tag=thelongbookcl-20',
     },
@@ -1982,6 +2104,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/pandoras-star.jpg',
         length: '37h 16m',
         lengthHours: 37.3,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/54/44/0c/54440c05-8dce-c333-b0fa-06b78704e13f/mzaf_15310668458089656201.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0041SYV5W?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005NDFK6S?tag=thelongbookcl-20',
     },
@@ -2000,6 +2123,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/quicksilver.jpg',
         length: '20h 41m',
         lengthHours: 20.7,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/f2/1f/45/f21f4503-0b54-7d8a-8aa8-3481adb38ad2/mzaf_5145146264065395483.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0DBJB1Q4L?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0DBJBFHGT?tag=thelongbookcl-20',
     },
@@ -2015,6 +2139,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/reamde.jpg',
         length: '38h',
         lengthHours: 38,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/ba/84/c9/ba84c939-d512-e0e2-fce6-a1df8b9bd1a5/mzaf_6726698043095802034.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B005QBI6LS?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005Q20OBM?tag=thelongbookcl-20',
     },
@@ -2030,6 +2155,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/red-storm-rising.jpg',
         length: '31h 12m',
         lengthHours: 31.2,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/ec/c9/61/ecc9619b-a052-5693-872b-13fc81049f0a/mzaf_6639800279962325763.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00I2TS9BS?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B00I54G188?tag=thelongbookcl-20',
     },
@@ -2045,6 +2171,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/swan-song.jpg',
         length: '34h 19m',
         lengthHours: 34.3,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/44/05/4b/44054b55-1b27-2bd1-636c-0931691a1f35/mzaf_7571670261636386290.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00684FLDI?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0067VJ2DM?tag=thelongbookcl-20',
     },
@@ -2060,6 +2187,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-dark-forest.jpg',
         length: '22h 36m',
         lengthHours: 22.6,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/03/01/07/03010791-4340-841e-e7e6-4d071891c243/mzaf_8368278246344199440.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CFYK53C1?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0BVW68DMG?tag=thelongbookcl-20',
     },
@@ -2075,6 +2203,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-passage.jpg',
         length: '36h 49m',
         lengthHours: 36.8,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/02/03/37/0203374e-68ec-eb29-df70-23f731fc5050/mzaf_1395886314835586371.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B003TXKQQ8?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005WJSSXU?tag=thelongbookcl-20',
     },
@@ -2090,6 +2219,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-redemption-of-time.jpg',
         length: '12h 17m',
         lengthHours: 12.3,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/2f/8d/2d/2f8d2d77-4f14-3128-0050-0f3f655f3ca0/mzaf_10360669029368662834.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B07TD6S8SS?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B07THG2JCC?tag=thelongbookcl-20',
     },
@@ -2105,6 +2235,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-terror.jpg',
         length: '28h 28m',
         lengthHours: 28.5,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/d6/87/bc/d687bc39-7670-0533-74bb-555ac5dd1cf8/mzaf_18249250901957733543.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B07BNSH1LY?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B07BNMN6CZ?tag=thelongbookcl-20',
     },
@@ -2120,6 +2251,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/three-body-problem.jpg',
         length: '13h 24m',
         lengthHours: 13.4,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/de/8e/f3/de8ef31e-afd2-4981-fdc9-77a17bbd1809/mzaf_18272327604325928808.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0BVWJ3X7B?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B005NDFK6S?tag=thelongbookcl-20',
     },
@@ -2135,6 +2267,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-wandering-inn-book-1.jpg',
         length: '43h 10m',
         lengthHours: 43.1,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c8/49/c4/c849c408-6255-6528-e9fb-7f406abe5c34/mzaf_4295061209433330897.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B07X4LZ3QC?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B07X3MVKQ7?tag=thelongbookcl-20',
     },
@@ -2150,6 +2283,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/the-wise-mans-fear.jpg',
         length: '42h 49m',
         lengthHours: 42.8,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/81/9c/01/819c0197-ae15-4c9d-366b-428824a8db6f/mzaf_4153961436389682026.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B007QDSAL0?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B007Q726XE?tag=thelongbookcl-20',
     },
@@ -2165,6 +2299,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/winter-solstice.jpg',
         length: '34h 14m',
         lengthHours: 34.2,
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/a4/24/51/a42451cf-4f3b-b825-8158-8ed128528499/mzaf_13443640183708048583.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B093QYS1F2?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B093QNBCGJ?tag=thelongbookcl-20',    },
     {
@@ -2176,6 +2311,7 @@ export const baseBooks: Book[] = [
         length: "280 hours and 21 minutes",
         lengthHours: 280.4,
         genre: ["Adventure", "American History", "Americana", "Classics", "Coming of Age", "Historical Adventure", "Historical Fiction", "Travel"],
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/8e/d1/fc/8ed1fc2c-c6a6-91d2-71ba-2cf46876f763/mzaf_9143985957611907840.std.aac.p.m4a',
         affiliateLink: "https://www.amazon.co.uk/dp/B0CPYRFKVV?tag=thelongbookclub-21",
         affiliateLinkUS: "https://www.amazon.com/dp/B0CPYSMDLK?tag=thelongbookcl-20",
         description: "Experience the definitive Mark Twain collection in this staggering 280-hour audiobook epic. Featuring every major novel and essay, this long listen offers incredible value and total immersion for your daily commute or a year of deep listening.",

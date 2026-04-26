@@ -1,17 +1,20 @@
 import React from 'react';
+import AudioPlayer from './AudioPlayer';
 
 interface SoundCheckCardProps {
     narrator: string;
     soundCheckText: string;
     affiliateLinkUK: string;
     affiliateLinkUS?: string;
+    audioPreviewUrl?: string;
 }
 
 const SoundCheckCard: React.FC<SoundCheckCardProps> = ({
     narrator,
     soundCheckText,
     affiliateLinkUK,
-    affiliateLinkUS
+    affiliateLinkUS,
+    audioPreviewUrl
 }) => {
     // If no text, don't render (shouldn't happen if validated, but safe)
     if (!soundCheckText) return null;
@@ -66,6 +69,24 @@ const SoundCheckCard: React.FC<SoundCheckCardProps> = ({
             }}>
                 Narrator: {narrator}
             </p>
+
+            {/* Audio Player Preview */}
+            {audioPreviewUrl && (
+                <div style={{ marginBottom: '1.5rem' }}>
+                    <AudioPlayer src={audioPreviewUrl} />
+                    <p style={{
+                        fontFamily: 'var(--font-body)',
+                        fontSize: '11px',
+                        color: 'var(--color-brand-forrest)',
+                        opacity: 0.7,
+                        marginTop: '0.25rem',
+                        textAlign: 'center',
+                        fontStyle: 'italic'
+                    }}>
+                        Apple Books preview. Narration may vary.
+                    </p>
+                </div>
+            )}
 
             {/* Review Text */}
             <p style={{

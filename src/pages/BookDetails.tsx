@@ -356,6 +356,7 @@ export const BookDetails = () => {
                             soundCheckText={review.soundCheck}
                             affiliateLinkUK={book.affiliateLink}
                             affiliateLinkUS={book.affiliateLinkUS}
+                            audioPreviewUrl={book.audioPreviewUrl}
                         />
                     )}
 
