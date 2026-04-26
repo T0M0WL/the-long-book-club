@@ -67,7 +67,7 @@ const SoundCheckCard: React.FC<SoundCheckCardProps> = ({
                         color: 'var(--color-brand-forrest)',
                         opacity: 0.7,
                         marginTop: '0.25rem',
-                        textAlign: 'left',
+                        textAlign: 'center',
                         fontStyle: 'italic'
                     }}>
                         Apple Books preview. Narration may vary.
