@@ -59,7 +59,7 @@ const SoundCheckCard: React.FC<SoundCheckCardProps> = ({
 
             {/* Audio Player Preview */}
             {audioPreviewUrl && (
-                <div style={{ marginBottom: '1.5rem' }}>
+                <div style={{ marginBottom: '1.5rem', width: '100%' }}>
                     <AudioPlayer src={audioPreviewUrl} />
                     <p style={{
                         fontFamily: 'var(--font-body)',
