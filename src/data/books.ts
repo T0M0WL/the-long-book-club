@@ -1575,7 +1575,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/shogun-james-clavell.jpg',
         length: '53h 33m',
         lengthHours: 53.5,
-        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b8/1e/81/b81e816d-c740-3042-06ec-71b6cf68222b/mzaf_9868070335173370743.std.aac.p.m4a',
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/b1/6c/39/b16c39ca-6694-fdc2-b990-afb02f95f62a/mzaf_11078736608923666866.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CRM21VRN?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CRMBF73W?tag=thelongbookcl-20'
     },
