@@ -339,6 +339,17 @@ export const BookDetails = () => {
 
 
 
+                            {/* SoundCheck Feature Card (Test Position for Les Mis) */}
+                            {book.slug === 'les-misrables-victor-hugo' && review?.soundCheck && review?.narrator && (
+                                <SoundCheckCard
+                                    narrator={review.narrator}
+                                    soundCheckText={review.soundCheck}
+                                    affiliateLinkUK={book.affiliateLink}
+                                    affiliateLinkUS={book.affiliateLinkUS}
+                                    audioPreviewUrl={book.audioPreviewUrl}
+                                />
+                            )}
+
                             {/* Divider */}
 
 
@@ -349,8 +360,8 @@ export const BookDetails = () => {
                         <></>
                     )}
 
-                    {/* SoundCheck Feature Card */}
-                    {review?.soundCheck && review?.narrator && (
+                    {/* SoundCheck Feature Card (Original Position - Hidden for Les Mis test) */}
+                    {book.slug !== 'les-misrables-victor-hugo' && review?.soundCheck && review?.narrator && (
                         <SoundCheckCard
                             narrator={review.narrator}
                             soundCheckText={review.soundCheck}
