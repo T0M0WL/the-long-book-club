@@ -1251,6 +1251,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://thelongbookclub.com/genre/romantasy/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thelongbookclub.com/genre/sapphic/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -1616,17 +1621,17 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/romantasy/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://thelongbookclub.com/genre/magic-school/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://thelongbookclub.com/genre/fallen-angels/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/genre/spycraft/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

@@ -33,7 +33,7 @@ export const collections: Collection[] = [
         slug: 'romantasy',
         coverUrl: '/covers/iron-flame.jpg',
         description: 'Where high fantasy meets high stakes romance. Dragons, fae, and ancient curses, all with a generous dose of enemies-to-lovers tension.',
-        bookIds: ['55', '127', '112', '113', '114'], // Priory, Fourth Wing, House of Earth and Blood, Kushiel, Moon Hatched
+        bookIds: ['55', '113', '127', '111', '128', '112', '129', '130', '114', '147', '148'], // Priory, Kushiel, Empyrean (3), Crescent City (3), Moon Hatched, Quicksilver/Brimstone
         topGraphic: '/assets/Collections-Cards-Gfx/cc2-romantasy-top-gfx.gif'
     },
     {
