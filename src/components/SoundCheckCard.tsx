@@ -29,23 +29,7 @@ const SoundCheckCard: React.FC<SoundCheckCardProps> = ({
             maxWidth: '100%',
             marginBottom: '3.75rem'
         }}>
-            {/* Top Graphic */}
-            {/* Top Graphic - Using Mask for robust coloring */}
-            <div style={{
-                marginBottom: '1rem',
-                width: '100%',
-                maxWidth: '400px',
-                aspectRatio: '2199 / 474', // Matches SVG viewBox 0 0 2198.9 474.3
-                backgroundColor: 'var(--color-brand-coral)',
-                maskImage: 'url(/assets/sound-check-graphic.svg)',
-                WebkitMaskImage: 'url(/assets/sound-check-graphic.svg)',
-                maskSize: 'contain',
-                WebkitMaskSize: 'contain',
-                maskRepeat: 'no-repeat',
-                WebkitMaskRepeat: 'no-repeat',
-                maskPosition: 'left center',
-                WebkitMaskPosition: 'left center'
-            }} />
+
 
             {/* Title */}
             <h3 style={{
