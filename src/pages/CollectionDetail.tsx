@@ -332,7 +332,7 @@ export const CollectionDetail = () => {
                             }}>
                                 {/* Top: Cover Image (Clickable) */}
                                 <Link
-                                    to={`/book/${book!.slug}`}
+                                    to={`/book/${book!.slug}/`}
                                     state={{ from: { label: collection.title, path: `/collections/${collection.slug}` } }}
                                     style={{ display: 'block', position: 'relative', textDecoration: 'none', color: 'inherit' }}
                                 >
@@ -414,7 +414,7 @@ export const CollectionDetail = () => {
                                         fontWeight: 700
                                     }}>
                                         <Link
-                                            to={`/book/${book!.slug}`}
+                                            to={`/book/${book!.slug}/`}
                                             state={{ from: { label: collection.title, path: `/collections/${collection.slug}` } }}
                                             style={{ textDecoration: 'none', color: 'inherit' }}
                                         >
@@ -431,7 +431,7 @@ export const CollectionDetail = () => {
                                         fontWeight: 400 // Regular
                                     }}>
                                         <Link
-                                            to={`/book/${book!.slug}`}
+                                            to={`/book/${book!.slug}/`}
                                             state={{ from: { label: collection.title, path: `/collections/${collection.slug}` } }}
                                             style={{ textDecoration: 'none', color: 'inherit' }}
                                         >
@@ -468,7 +468,7 @@ export const CollectionDetail = () => {
                                     {/* Read More Button */}
                                     <div style={{ marginTop: 'auto', width: '100%' }}> {/* Push to bottom and full width */}
                                         <Link
-                                            to={`/book/${book!.slug}`}
+                                            to={`/book/${book!.slug}/`}
                                             state={{ from: { label: collection.title, path: `/collections/${collection.slug}` } }}
                                             style={{
                                                 display: 'flex', // Changed to flex for centering

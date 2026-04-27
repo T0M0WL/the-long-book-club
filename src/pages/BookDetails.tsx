@@ -44,7 +44,7 @@ export const BookDetails = () => {
 
     // Redirect old ID-based URLs to new Slug-based URLs
     if (slug === book.id && book.slug && slug !== book.slug) {
-        return <Navigate to={`/book/${book.slug}`} replace />;
+        return <Navigate to={`/book/${book.slug}/`} replace />;
     }
 
     // Helper to convert "62h 48m" -> "PT62H48M" (ISO 8601)
@@ -261,7 +261,7 @@ export const BookDetails = () => {
                     {/* Genre Pill - Matched to BookCard */}
                     <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', alignItems: 'flex-start', gap: '0.5rem', marginBottom: '1.5rem' }}>
                         {(Array.isArray(book.genre) ? book.genre : [book.genre]).map((g, i) => (
-                            <Link key={i} to={`/genre/${slugify(g)}`} style={{ textDecoration: 'none' }}>
+                            <Link key={i} to={`/genre/${slugify(g)}/`} style={{ textDecoration: 'none' }}>
                                 <div style={{
                                     padding: '0.25rem 0.75rem',
                                     backgroundColor: 'var(--color-brand-forrest)',
@@ -492,7 +492,7 @@ export const BookDetails = () => {
                                 {/* Render Collection Card if it exists */}
                                 {linkedCollection && (
                                     <Link
-                                        to={`/collections/${linkedCollection.slug}`}
+                                        to={`/collections/${linkedCollection.slug}/`}
                                         style={{
                                             textDecoration: 'none',
                                             color: 'inherit',

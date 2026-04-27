@@ -93,7 +93,7 @@ export const JournalPost = () => {
                                 {book.author} • {book.length}
                             </p>
 
-                            <Link to={`/book/${book.slug}`} style={{
+                            <Link to={`/book/${book.slug}/`} style={{
                                 display: 'inline-block',
                                 color: 'var(--color-brand-coral)',
                                 fontWeight: 'bold',
@@ -330,7 +330,7 @@ export const JournalPost = () => {
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
                                 {otherPosts.length > 0 ? otherPosts.map((other, idx) => (
                                     <div key={other.id}>
-                                        <Link to={`/journal/${other.slug}`} style={{ textDecoration: 'none' }}>
+                                        <Link to={`/journal/${other.slug}/`} style={{ textDecoration: 'none' }}>
                                             {/* THUMBNAIL IN SIDEBAR (Optional, but nice) */}
                                             {other.coverUrl && (
                                                 <img

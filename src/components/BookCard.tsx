@@ -25,7 +25,7 @@ export const BookCard = ({ book, navigationState }: BookCardProps) => {
             }}
         >
             <Link
-                to={`/book/${book.slug || book.id}`}
+                to={`/book/${book.slug || book.id}/`}
                 state={navigationState}
                 style={{ display: 'block', position: 'relative', paddingTop: '100%', color: 'inherit' }}
             >
@@ -83,7 +83,7 @@ export const BookCard = ({ book, navigationState }: BookCardProps) => {
             <div style={{ padding: '1rem', paddingTop: '4.75rem', flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 {/* 1. Title */}
                 <Link
-                    to={`/book/${book.slug || book.id}`}
+                    to={`/book/${book.slug || book.id}/`}
                     state={navigationState}
                     style={{ textDecoration: 'none', color: 'inherit', width: '100%', textAlign: 'center' }}
                 >
@@ -114,7 +114,7 @@ export const BookCard = ({ book, navigationState }: BookCardProps) => {
 
                 <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: '0.25rem', marginBottom: '1rem' }}>
                     {(Array.isArray(book.genre) ? book.genre : [book.genre]).slice(0, 3).map((g, i) => (
-                        <Link key={i} to={`/genre/${slugify(g)}`} style={{ textDecoration: 'none' }}>
+                        <Link key={i} to={`/genre/${slugify(g)}/`} style={{ textDecoration: 'none' }}>
                             <div
                                 className="genre-tag"
                                 style={{
@@ -152,7 +152,7 @@ export const BookCard = ({ book, navigationState }: BookCardProps) => {
 
                 <div style={{ marginTop: 'auto', display: 'flex', flexDirection: 'column', gap: '0.5rem', width: '100%' }}>
                     <Link
-                        to={`/book/${book.slug || book.id}`}
+                        to={`/book/${book.slug || book.id}/`}
                         state={navigationState}
                         className="book-card-action"
                         style={{

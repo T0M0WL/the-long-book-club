@@ -229,7 +229,7 @@ export const Journal = () => {
                 }}>
                     {sortedPosts.map(post => (
                         <Link
-                            to={`/journal/${post.slug}`}
+                            to={`/journal/${post.slug}/`}
                             key={post.id}
                             style={{
                                 display: 'block',

@@ -9,7 +9,7 @@ interface CollectionCardProps {
 export const CollectionCard = ({ collection }: CollectionCardProps) => {
     return (
         <Link
-            to={`/collections/${collection.slug}`}
+            to={`/collections/${collection.slug}/`}
             style={{
                 textDecoration: 'none',
                 color: 'inherit',
