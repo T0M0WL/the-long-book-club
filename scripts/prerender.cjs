@@ -417,6 +417,12 @@ async function prerender() {
   RewriteEngine On
   RewriteBase /
   
+  # Force trailing slash on directories for SEO consistency and Prerender discovery
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_URI} !(.*)/$
+  RewriteCond %{REQUEST_URI} ^/(book|genre|collections|journal|links) [NC]
+  RewriteRule ^(.*)$ $1/ [L,R=301]
+
   ${redirectRules}
   
   # --- Genre Redirects (Manual) ---
@@ -426,6 +432,9 @@ async function prerender() {
   Redirect 301 /genre/contemporary/ /genre/contemporary-fiction/
 
   # Standard SPA Fallback
+  DirectoryIndex index.html
+  Options -MultiViews
+  
   RewriteRule ^index\\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
