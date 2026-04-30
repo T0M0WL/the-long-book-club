@@ -53,7 +53,7 @@ const NoiseOverlay = () => {
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
-  const isLinksPage = location.pathname === '/links';
+  const isLinksPage = location.pathname === '/links' || location.pathname === '/links/';
 
   return (
     <>

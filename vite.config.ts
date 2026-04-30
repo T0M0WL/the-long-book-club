@@ -36,7 +36,7 @@ const saveBookDataPlugin = () => {
                                 const reviewRegex = new RegExp(`^[ \\t]*(?:["'\`]?)` + escapedTitle + `(?:["'\`]?)\\s*:\\s*\\{[\\s\\S]*?\\},?`, 'm');
 
                                 if (reviewRegex.test(reviewContent)) {
-                                    reviewContent = reviewContent.replace(reviewRegex, reviewSnippet);
+                                    reviewContent = reviewContent.replace(reviewRegex, reviewSnippet + ',');
                                 } else {
                                     const lastBraceIndex = reviewContent.lastIndexOf('};');
                                     if (lastBraceIndex !== -1) {
@@ -61,7 +61,7 @@ const saveBookDataPlugin = () => {
                                     // Find the existing block for originalSlug and replace it perfectly
                                     // Note: we use RegExp to match from `{... slug: 'originalSlug' ... }`
                                     const escapedOriginalSlug = originalSlug.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-                                    const replaceRegex = new RegExp(`^[ \\t]*\\{[\\s\\S]*?slug:\\s*(?:["']|\\b)${escapedOriginalSlug}(?:["']|\\b)[\\s\\S]*?\\}[ \\t]*,?`, 'm');
+                                    const replaceRegex = new RegExp(`^[ \\t]*\\{(?:(?![ \\t]*\\{)[\\s\\S])*?slug:\\s*(?:["']|\\b)${escapedOriginalSlug}(?:["']|\\b)[\\s\\S]*?\\}[ \\t]*,?`, 'm');
                                     if (replaceRegex.test(booksContent)) {
                                         booksContent = booksContent.replace(replaceRegex, `    {\n${baseBookSnippet}\n    },\n`);
                                         fs.writeFileSync(booksPath, booksContent, 'utf8');

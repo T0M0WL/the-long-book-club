@@ -11,7 +11,10 @@ This file is the "Eternal Memory" for the project. **Any AI assistant working on
 - **Rule:** The build script (`scripts/prerender.cjs`) is configured to output **BOTH** `.htaccess` and `htaccess.txt`.
 - **Action:** The Curator (Thomas) uploads `htaccess.txt` to the Hostinger root and manually renames it to `.htaccess` on the server. Never remove this secondary output from the build script.
 
-### **2. Build and Dist**
+### **2. The Trailing Slash Protocol**
+- **Issue:** The Hostinger server forces a trailing slash (e.g., `/links` becomes `/links/`).
+- **Rule:** Any routing logic (like hiding the Header/Footer in `App.tsx`) MUST check for both the base path and the version with the trailing slash. 
+- **Rule:** The `prerender.cjs` script must output directories for all static pages to ensure the server finds the static `index.html` within the slashed path.
 - Always run `npm run build` (which triggers sitemap generation, Vite build, and "Thick" prerendering) before suggesting a deployment.
 
 ### **3. GitHub Synchronization**

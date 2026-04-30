@@ -267,7 +267,8 @@ async function prerender() {
         { slug: 'privacy', title: 'Privacy Policy | The Long Book Club', desc: 'Privacy policy for The Long Book Club.' },
         { slug: 'long-book-finder', title: 'Long Audiobook Finder | The Long Book Club', desc: 'Filter and discover 20+ hour epic audiobooks by length, author, and genre.' },
         { slug: 'collections', title: 'Curated Collections | The Long Book Club', desc: 'Explore hand-picked lists of the best long-form audiobooks, from Epic Fantasy to Non-Fiction Titans.' },
-        { slug: 'journal', title: 'The Long Book Club Journal', desc: 'Latest insights, guides, and strategic listening tips for long-form audiobook fans.' }
+        { slug: 'journal', title: 'The Long Book Club Journal', desc: 'Latest insights, guides, and strategic listening tips for long-form audiobook fans.' },
+        { slug: 'links', title: 'Social Hub | The Long Book Club', desc: 'Quick links to our latest social campaigns, book finder tool, and curated collections.' }
     ];
 
     // Helper to extract all blocks from a file

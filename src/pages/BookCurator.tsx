@@ -10,8 +10,12 @@ export const BookCurator = () => {
     // --- Book Metadata State ---
     const [title, setTitle] = useState('');
     const [author, setAuthor] = useState('');
+    const [originalId, setOriginalId] = useState('');
     const [lengthStr, setLengthStr] = useState('');
     const [selectedGenres, setSelectedGenres] = useState<string[]>([]);
+    const [description, setDescription] = useState('');
+    const [audioPreviewUrl, setAudioPreviewUrl] = useState('');
+    const [relatedBookIdsStr, setRelatedBookIdsStr] = useState('');
     
     const [affiliateLink, setAffiliateLink] = useState('');
     const [affiliateLinkUS, setAffiliateLinkUS] = useState('');
@@ -53,8 +57,12 @@ export const BookCurator = () => {
             if (book) {
                 setTitle(book.title || '');
                 setAuthor(book.author || '');
+                setOriginalId(book.id || '');
                 setLengthStr(book.length || '');
                 setSelectedGenres(Array.isArray(book.genre) ? book.genre : (book.genre ? [book.genre] : []));
+                setDescription(book.description || '');
+                setAudioPreviewUrl(book.audioPreviewUrl || '');
+                setRelatedBookIdsStr(book.relatedBookIds ? book.relatedBookIds.join(', ') : '');
                 
                 // Extract ASIN from affiliateLink
                 const extractAsin = (link?: string) => {
@@ -69,6 +77,7 @@ export const BookCurator = () => {
                 setCardOverview(book.cardOverview || '');
                 setTeaserTitle(book.teaserTitle || '');
                 setTeaser(book.teaser || '');
+                setSlug(book.slug || '');
                 setCoverUrl(book.coverUrl || '');
                 
                 setCuratorTitle(book.curatorTitle || '');
@@ -79,8 +88,12 @@ export const BookCurator = () => {
         } else if (mode === 'create') {
             setTitle('');
             setAuthor('');
+            setOriginalId('');
             setLengthStr('');
             setSelectedGenres([]);
+            setDescription('');
+            setAudioPreviewUrl('');
+            setRelatedBookIdsStr('');
             setAffiliateLink('');
             setAffiliateLinkUS('');
             setCardOverview('');
@@ -94,20 +107,22 @@ export const BookCurator = () => {
         }
     }, [mode, selectedBookSlug]);
 
-    // Auto-generate slug and coverUrl based on title
+    // Auto-generate slug and coverUrl based on title (ONLY IN CREATE MODE)
     useEffect(() => {
-        if (title) {
-            let generatedSlug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
-            if (author) {
-                generatedSlug += '-' + author.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+        if (mode === 'create') {
+            if (title) {
+                let generatedSlug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+                if (author) {
+                    generatedSlug += '-' + author.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+                }
+                setSlug(generatedSlug);
+                setCoverUrl(`/covers/${generatedSlug}.jpg`);
+            } else {
+                setSlug('');
+                setCoverUrl('');
             }
-            setSlug(generatedSlug);
-            setCoverUrl(`/covers/${generatedSlug}.jpg`);
-        } else {
-            setSlug('');
-            setCoverUrl('');
         }
-    }, [title, author]);
+    }, [title, author, mode]);
 
     // Auto-calculate length hours
     useEffect(() => {
@@ -129,6 +144,9 @@ export const BookCurator = () => {
             const reader = new FileReader();
             reader.onloadend = () => {
                 setCoverImageBase64(reader.result as string);
+                if (slug) {
+                    setCoverUrl(`/covers/${slug}.jpg`);
+                }
             };
             reader.readAsDataURL(file);
         }
@@ -146,7 +164,7 @@ export const BookCurator = () => {
         const safeString = (str: string) => JSON.stringify(str.trim());
         const lines = [];
         
-        lines.push(`        id: ${safeString(nextId)}`);
+        lines.push(`        id: ${safeString(originalId || nextId)}`);
         lines.push(`        slug: ${safeString(slug)}`);
         lines.push(`        title: ${safeString(title)}`);
         lines.push(`        author: ${safeString(author)}`);
@@ -156,6 +174,14 @@ export const BookCurator = () => {
         
         if (selectedGenres.length > 0) {
             lines.push(`        genre: [${selectedGenres.map(safeString).join(', ')}]`);
+        }
+        
+        if (description) lines.push(`        description: ${safeString(description)}`);
+        if (audioPreviewUrl) lines.push(`        audioPreviewUrl: ${safeString(audioPreviewUrl)}`);
+        
+        const parsedRelated = relatedBookIdsStr.split(',').map(s => s.trim()).filter(Boolean);
+        if (parsedRelated.length > 0) {
+            lines.push(`        relatedBookIds: [${parsedRelated.map(safeString).join(', ')}]`);
         }
         
         // Smart Affiliate Link Parser
@@ -292,6 +318,9 @@ export const BookCurator = () => {
                     </div>
                 </div>
 
+                <label style={labelStyle}>Description (Main Plot Summary) *</label>
+                <textarea rows={4} value={description} onChange={e => setDescription(e.target.value)} placeholder="Full back cover blurb or synopsis..." style={inputStyle}></textarea>
+
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', opacity: 0.7 }}>
                     <div><label style={labelStyle}>ID (Auto)</label><input type="text" readOnly value={nextId} style={{...inputStyle, background: '#eee'}} /></div>
                     <div><label style={labelStyle}>Slug (Auto)</label><input type="text" readOnly value={slug} style={{...inputStyle, background: '#eee'}} /></div>
@@ -339,6 +368,17 @@ export const BookCurator = () => {
                     <div>
                         <label style={labelStyle}>US ASIN <span style={{fontWeight: 'normal', color: '#666', fontSize: '0.85rem'}}>(or full link)</span></label>
                         <input type="text" value={affiliateLinkUS} onChange={e => setAffiliateLinkUS(e.target.value)} placeholder="e.g. B0FBS7GCTV" style={inputStyle} />
+                    </div>
+                </div>
+
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                    <div>
+                        <label style={labelStyle}>Audio Preview URL (.m4a)</label>
+                        <input type="text" value={audioPreviewUrl} onChange={e => setAudioPreviewUrl(e.target.value)} placeholder="iTunes m4a URL" style={inputStyle} />
+                    </div>
+                    <div>
+                        <label style={labelStyle}>Related Book IDs</label>
+                        <input type="text" value={relatedBookIdsStr} onChange={e => setRelatedBookIdsStr(e.target.value)} placeholder="e.g. 15, 23, 42" style={inputStyle} />
                     </div>
                 </div>
             </div>
