@@ -175,35 +175,6 @@ export const BookDetails = () => {
                     {/* CTAs Moved Here */}
                     <div className="audible-cta-container" style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', width: '100%', marginTop: '4rem' }}>
                         <div className="audible-buttons-wrapper" style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', width: '100%' }}>
-                            {book.affiliateLink && (
-                                <a
-                                    href={book.affiliateLink}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    style={{
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        gap: '0.5rem',
-                                        backgroundColor: 'var(--color-primary)',
-                                        color: '#fff',
-                                        padding: '1rem 1.5rem',
-                                        borderRadius: '2rem',
-                                        fontSize: '1rem',
-                                        fontWeight: 600,
-                                        textDecoration: 'none',
-                                        transition: 'background-color 0.2s',
-                                        width: '100%'
-                                    }}
-                                    onMouseEnter={e => e.currentTarget.style.backgroundColor = 'var(--color-primary-hover)'}
-                                    onMouseLeave={e => e.currentTarget.style.backgroundColor = 'var(--color-primary)'}
-                                >
-                                    <img src="/flags/uk.png" alt="UK" style={{ width: '24px', height: '24px', borderRadius: '50%', objectFit: 'cover', border: 'none' }} />
-                                    Listen on Audible UK
-                                    <img src="/audible-chevron.png" alt="" style={{ width: '21px', height: 'auto' }} />
-                                </a>
-                            )}
-
                             {book.affiliateLinkUS && (
                                 <a
                                     href={book.affiliateLinkUS}
@@ -229,6 +200,35 @@ export const BookDetails = () => {
                                 >
                                     <img src="/flags/us.png" alt="US" style={{ width: '24px', height: '24px', borderRadius: '50%', objectFit: 'cover', border: 'none' }} />
                                     Listen on Audible US
+                                    <img src="/audible-chevron.png" alt="" style={{ width: '21px', height: 'auto' }} />
+                                </a>
+                            )}
+
+                            {book.affiliateLink && (
+                                <a
+                                    href={book.affiliateLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        gap: '0.5rem',
+                                        backgroundColor: 'var(--color-primary)',
+                                        color: '#fff',
+                                        padding: '1rem 1.5rem',
+                                        borderRadius: '2rem',
+                                        fontSize: '1rem',
+                                        fontWeight: 600,
+                                        textDecoration: 'none',
+                                        transition: 'background-color 0.2s',
+                                        width: '100%'
+                                    }}
+                                    onMouseEnter={e => e.currentTarget.style.backgroundColor = 'var(--color-primary-hover)'}
+                                    onMouseLeave={e => e.currentTarget.style.backgroundColor = 'var(--color-primary)'}
+                                >
+                                    <img src="/flags/uk.png" alt="UK" style={{ width: '24px', height: '24px', borderRadius: '50%', objectFit: 'cover', border: 'none' }} />
+                                    Listen on Audible UK
                                     <img src="/audible-chevron.png" alt="" style={{ width: '21px', height: 'auto' }} />
                                 </a>
                             )}

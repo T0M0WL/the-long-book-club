@@ -97,35 +97,6 @@ const SoundCheckCard: React.FC<SoundCheckCardProps> = ({
                 marginTop: 'auto',
                 width: '100%'
             }}>
-                {/* UK Link */}
-                <a
-                    href={affiliateLinkUK}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '0.5rem',
-                        textDecoration: 'none',
-                        color: 'var(--color-brand-coral)',
-                        fontWeight: 600,
-                        fontSize: '0.9rem',
-                        fontFamily: 'var(--font-body)',
-                        borderBottom: '1px solid var(--color-brand-coral)' // Underline style
-                    }}
-                >
-                    <img
-                        src="/flags/uk.png"
-                        alt="UK"
-                        style={{ width: '20px', height: '20px', borderRadius: '50%', objectFit: 'cover' }}
-                    />
-                    Hear a sample UK
-                    {/* Play Triangle Icon */}
-                    <svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10 6L0 12L0 0L10 6Z" fill="currentColor" />
-                    </svg>
-                </a>
-
                 {/* US Link - Only show if available */}
                 {affiliateLinkUS && (
                     <a
@@ -155,6 +126,35 @@ const SoundCheckCard: React.FC<SoundCheckCardProps> = ({
                         </svg>
                     </a>
                 )}
+
+                {/* UK Link */}
+                <a
+                    href={affiliateLinkUK}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.5rem',
+                        textDecoration: 'none',
+                        color: 'var(--color-brand-coral)',
+                        fontWeight: 600,
+                        fontSize: '0.9rem',
+                        fontFamily: 'var(--font-body)',
+                        borderBottom: '1px solid var(--color-brand-coral)' // Underline style
+                    }}
+                >
+                    <img
+                        src="/flags/uk.png"
+                        alt="UK"
+                        style={{ width: '20px', height: '20px', borderRadius: '50%', objectFit: 'cover' }}
+                    />
+                    Hear a sample UK
+                    {/* Play Triangle Icon */}
+                    <svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 6L0 12L0 0L10 6Z" fill="currentColor" />
+                    </svg>
+                </a>
             </div>
         </div>
     );

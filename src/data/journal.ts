@@ -56,7 +56,7 @@ Ready to make your credit count? Here are the heavyweights.
 [Book: galaxy-outlaws-js-morin]
 
 
-85 hours is a massive commitment, but does the story actually drag? We analyze how the "episodic" structure turns this credit-killer into the ultimate binge-listen. [Read Review and Sound Check: Galaxy Outlaws](https://thelongbookclub.com/book/galaxy-outlaws-js-morin)
+85 hours is a massive commitment, but does the story actually drag? We analyze how the "episodic" structure turns this credit-killer into the ultimate binge-listen. [Read Review and Sound Check: Galaxy Outlaws](https://thelongbookclub.com/book/galaxy-outlaws-js-morin/)
 
 
 ### 2. The Fantasy Investment
@@ -64,21 +64,21 @@ Ready to make your credit count? Here are the heavyweights.
 [Book: the-cycle-of-arawn-edward-w-robertson]
 
 
-Can a fantasy epic survive on "buddy comedy" alone? Read why the chemistry between Dante and Blays makes this 66-hour trilogy fly by. [Read Review & Sound Check: The Cycle of Arawn](https://thelongbookclub.com/book/the-cycle-of-arawn-edward-w-robertson)
+Can a fantasy epic survive on "buddy comedy" alone? Read why the chemistry between Dante and Blays makes this 66-hour trilogy fly by. [Read Review & Sound Check: The Cycle of Arawn](https://thelongbookclub.com/book/the-cycle-of-arawn-edward-w-robertson/)
 
 ### 3. The "Total Novel" Challenge
 
 [Book: dostoyevsky-complete-collection]
 
 
-Is 266 hours of Russian philosophy a commute nightmare or a revelation? We explain why the "Total Novel" format makes these complex characters surprisingly accessible. [Read Review & Sound Check: Dostoyevsky Collection](https://thelongbookclub.com/book/dostoyevsky-complete-collection)
+Is 266 hours of Russian philosophy a commute nightmare or a revelation? We explain why the "Total Novel" format makes these complex characters surprisingly accessible. [Read Review & Sound Check: Dostoyevsky Collection](https://thelongbookclub.com/book/dostoyevsky-complete-collection/)
 
 ### 4. The Cozy Mystery Companion
 
 [Book: sherlock-holmes-the-definitive-collection-arthur-conan-doyle]
 
 
-Stephen Fry is a national treasure, but does his voice hold up for 72 hours? We break down the "Sound Check" on this definitive collection. [Read Review & Sound Check: Sherlock Holmes](https://thelongbookclub.com/book/sherlock-holmes-the-definitive-collection-arthur-conan-doyle)
+Stephen Fry is a national treasure, but does his voice hold up for 72 hours? We break down the "Sound Check" on this definitive collection. [Read Review & Sound Check: Sherlock Holmes](https://thelongbookclub.com/book/sherlock-holmes-the-definitive-collection-arthur-conan-doyle/)
 
 
 
@@ -136,20 +136,20 @@ For your first trial run (or your 99p deal), do not waste credits on 10-hour boo
 [Book: dostoyevsky-complete-collection]
 
 ### 1. The Fyodor Dostoyevsky Complete Collection (266 Hours).
-Including the big hitters Crime and Punishment, The Brothers Karamazov, and The Idiot. Value: ~£0.03 per hour of listening. Can this enormous collection really really keep you entertained for over 266 hours? [Read our full review here](https://thelongbookclub.com/book/dostoyevsky-complete-collection).
+Including the big hitters Crime and Punishment, The Brothers Karamazov, and The Idiot. Value: ~£0.03 per hour of listening. Can this enormous collection really really keep you entertained for over 266 hours? [Read our full review here](https://thelongbookclub.com/book/dostoyevsky-complete-collection/).
 
 
 
 [Book: complete-dickens-part-one]
 
 ### 2. The Complete Novels of Charles Dickens: Part One (199 Hours).
-From The Pickwick Papers to Oliver Twist, this collection is massive. Value: A masterclass in Victorian immersion. Dickens serialised these stories to keep readers hooked for months; But can the narrators deliver a compelling listing experience for 200 hours? [Read our full review here](https://thelongbookclub.com/book/complete-dickens-part-one).
+From The Pickwick Papers to Oliver Twist, this collection is massive. Value: A masterclass in Victorian immersion. Dickens serialised these stories to keep readers hooked for months; But can the narrators deliver a compelling listing experience for 200 hours? [Read our full review here](https://thelongbookclub.com/book/complete-dickens-part-one/).
 
 
 [Book: the-decline-and-fall-of-the-roman-empire-edward-gibbon]
 
 ### 3. The Decline and Fall of the Roman Empire (127 Hours).
-Edward Gibbon’s masterpiece. Few readers have completed this historical behemoth but does listening to it sweeten the pill? [Read our full review here](https://thelongbookclub.com/book/the-decline-and-fall-of-the-roman-empire-edward-gibbon).
+Edward Gibbon’s masterpiece. Few readers have completed this historical behemoth but does listening to it sweeten the pill? [Read our full review here](https://thelongbookclub.com/book/the-decline-and-fall-of-the-roman-empire-edward-gibbon/).
 
 
 
@@ -176,20 +176,20 @@ By the time you finish the Roman Empire, your Audible account has been dormant f
 [Book: galaxy-outlaws-js-morin]
 
 ### 1. Galaxy Outlaws: The Complete Black Ocean Mobius Missions (85 Hours).
-This is the longest Sci-Fi entry on our site. But is it a must-listen for fans of Firefly? [Check out our review here](https://thelongbookclub.com/book/galaxy-outlaws-js-morin).
+This is the longest Sci-Fi entry on our site. But is it a must-listen for fans of Firefly? [Check out our review here](https://thelongbookclub.com/book/galaxy-outlaws-js-morin/).
 
 
 [Book: sherlock-holmes-the-definitive-collection-arthur-conan-doyle]
 
 ### 2. Sherlock Holmes: The Definitive Collection (72 Hours).
-Arthur Conan Doyle’s complete works. Perfect for dipping in and out of the "back alleys" of Victorian London. But can Stephen Fry maintain engagement over 72 hours? [Read our full review here](https://thelongbookclub.com/book/sherlock-holmes-the-definitive-collection-arthur-conan-doyle).
+Arthur Conan Doyle’s complete works. Perfect for dipping in and out of the "back alleys" of Victorian London. But can Stephen Fry maintain engagement over 72 hours? [Read our full review here](https://thelongbookclub.com/book/sherlock-holmes-the-definitive-collection-arthur-conan-doyle/).
 
 
 
 [Book: the-cycle-of-arawn-edward-w-robertson]
 
 ### 3. The Cycle of Arawn: The Complete Trilogy (66 Hours).
-A massive fantasy epic but does it serve as a perfect entry point into long-form "Romantasy" or Epic Fantasy? [Read our full review here](https://thelongbookclub.com/book/the-cycle-of-arawn-edward-w-robertson).
+A massive fantasy epic but does it serve as a perfect entry point into long-form "Romantasy" or Epic Fantasy? [Read our full review here](https://thelongbookclub.com/book/the-cycle-of-arawn-edward-w-robertson/).
 
 
 ## The "Commute Calculator" (Round 2) 
@@ -214,12 +214,12 @@ You have just secured enough entertainment to walk **2,445 miles** or commute fo
 Ready to build your stash? Check out our full reviews and "Sound Checks" to make sure the narrators are to your taste before you commit:
 
 
-• [Read Review: The Fyodor Dostoyevsky Collection](https://thelongbookclub.com/book/dostoyevsky-complete-collection)
-• [Read Review: The Complete Novels of Charles Dickens](https://thelongbookclub.com/book/complete-dickens-part-one)
-• [Read Review: The Decline and Fall of the Roman Empire](https://thelongbookclub.com/book/the-decline-and-fall-of-the-roman-empire-edward-gibbon)
-• [Read Review: Galaxy Outlaws: The Complete Black Ocean Mobius Missions](https://thelongbookclub.com/book/galaxy-outlaws-js-morin)
-• [Read Review: Sherlock Holmes: The Definitive Collection](https://thelongbookclub.com/book/sherlock-holmes-the-definitive-collection-arthur-conan-doyle)
-• [Read Review: The Cycle of Arawn](https://thelongbookclub.com/book/the-cycle-of-arawn-edward-w-robertson)
+• [Read Review: The Fyodor Dostoyevsky Collection](https://thelongbookclub.com/book/dostoyevsky-complete-collection/)
+• [Read Review: The Complete Novels of Charles Dickens](https://thelongbookclub.com/book/complete-dickens-part-one/)
+• [Read Review: The Decline and Fall of the Roman Empire](https://thelongbookclub.com/book/the-decline-and-fall-of-the-roman-empire-edward-gibbon/)
+• [Read Review: Galaxy Outlaws: The Complete Black Ocean Mobius Missions](https://thelongbookclub.com/book/galaxy-outlaws-js-morin/)
+• [Read Review: Sherlock Holmes: The Definitive Collection](https://thelongbookclub.com/book/sherlock-holmes-the-definitive-collection-arthur-conan-doyle/)
+• [Read Review: The Cycle of Arawn](https://thelongbookclub.com/book/the-cycle-of-arawn-edward-w-robertson/)
 
 
 Load up your library now, and thank us later... much, much later.
@@ -275,26 +275,26 @@ If you are ready to commit to a relationship (and a narrator) for the long haul,
 [Book: outlander-diana-gabaldon]
 
 ### 1. The Gateway Drug: Outlander by Diana Gabaldon
-The classic of the genre. Is Davina Porter actually the best narrator in the Romantasy field? Does her 32-hour performance match the hype? [Read Review & Sound Check: Outlander](https://thelongbookclub.com/book/outlander-diana-gabaldon)
+The classic of the genre. Is Davina Porter actually the best narrator in the Romantasy field? Does her 32-hour performance match the hype? [Read Review & Sound Check: Outlander](https://thelongbookclub.com/book/outlander-diana-gabaldon/)
 
 
 [Book: fourth-wing-rebecca-yarros]
 
 ### 2. The Modern Blockbuster: The Empyrean Series by Rebecca Yarros
-Does the 21-hour runtime actually earn the "slow burn," or is it just bloat? Read why we think the length is this book's secret weapon. [Read Review & Sound Check: Fourth Wing](https://thelongbookclub.com/book/fourth-wing-rebecca-yarros)
+Does the 21-hour runtime actually earn the "slow burn," or is it just bloat? Read why we think the length is this book's secret weapon. [Read Review & Sound Check: Fourth Wing](https://thelongbookclub.com/book/fourth-wing-rebecca-yarros/)
 
 
 
 [Book: house-of-earth-and-blood-sarah-j-maas]
 
 ### 3. The Urban Epic: House of Earth and Blood (Crescent City) by Sarah J. Maas
-Why does the world-building take 20 hours to kick in? Find out why the emotional payoff in the finale is worth the wait. * [Read Review & Sound Check: House of Earth and Blood](https://thelongbookclub.com/book/house-of-earth-and-blood-sarah-j-maas)
+Why does the world-building take 20 hours to kick in? Find out why the emotional payoff in the finale is worth the wait. * [Read Review & Sound Check: House of Earth and Blood](https://thelongbookclub.com/book/house-of-earth-and-blood-sarah-j-maas/)
 
 
 [Book: the-priory-of-the-orange-tree-samantha-shannon]
 
 ### 4. The High Fantasy Heavyweight: The Priory of the Orange Tree by Samantha Shannon
-Can a 25-hour epic actually feel like a "warm hug"? We explain how the narration turns high-stakes fantasy into a cozy listening experience. [Read Review & Sound Check: The Priory of the Orange Tree](https://thelongbookclub.com/book/the-priory-of-the-orange-tree-samantha-shannon)
+Can a 25-hour epic actually feel like a "warm hug"? We explain how the narration turns high-stakes fantasy into a cozy listening experience. [Read Review & Sound Check: The Priory of the Orange Tree](https://thelongbookclub.com/book/the-priory-of-the-orange-tree-samantha-shannon/)
 
 
 
