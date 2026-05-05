@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { books, genres as existingGenres } from '../data/books';
+import { allCuratedGenres } from '../data/curatedGenres';
 import { SEO } from '../components/SEO';
 
 export const BookCurator = () => {
@@ -40,6 +41,33 @@ export const BookCurator = () => {
     const [nextId, setNextId] = useState('');
     const [lengthHours, setLengthHours] = useState<number>(0);
     const [coverUrl, setCoverUrl] = useState('');
+
+    const handleCreateNewBook = () => {
+        setMode('create');
+        setSelectedBookSlug('');
+        setTitle('');
+        setAuthor('');
+        setOriginalId('');
+        setLengthStr('');
+        setSelectedGenres([]);
+        setDescription('');
+        setAudioPreviewUrl('');
+        setRelatedBookIdsStr('');
+        setAffiliateLink('');
+        setAffiliateLinkUS('');
+        setCardOverview('');
+        setTeaserTitle('');
+        setTeaser('');
+        setCoverImageBase64('');
+        setCuratorTitle('');
+        setCuratorNote('');
+        setNarrator('');
+        setSoundCheck('');
+        setSaveSuccess('');
+        setSlug('');
+        setLengthHours(0);
+        setCoverUrl('');
+    };
 
     // Init the next available ID
     useEffect(() => {
@@ -277,7 +305,7 @@ export const BookCurator = () => {
             <div style={{...sectionStyle, display: 'flex', gap: '1rem', alignItems: 'center', background: '#eef8f1'}}>
                 <div style={{ display: 'flex', gap: '0.5rem' }}>
                     <button 
-                        onClick={() => setMode('create')}
+                        onClick={handleCreateNewBook}
                         style={{ padding: '0.5rem 1rem', background: mode === 'create' ? 'var(--color-brand-forrest)' : '#ccc', color: 'white', borderRadius: '4px', border: 'none', cursor: 'pointer', fontWeight: 'bold' }}>
                         ✨ Add New Book
                     </button>
@@ -341,7 +369,7 @@ export const BookCurator = () => {
 
                 <label style={labelStyle}>Genres</label>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.5rem' }}>
-                    {existingGenres.map(g => (
+                    {Array.from(new Set([...allCuratedGenres, ...existingGenres])).sort().map(g => (
                         <button 
                             key={g} 
                             onClick={() => toggleGenre(g)}

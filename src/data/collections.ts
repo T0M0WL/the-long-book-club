@@ -10,6 +10,15 @@ export interface Collection {
 
 export const collections: Collection[] = [
     {
+        id: 'graphic-audio',
+        title: 'Epic Graphic Audio Listens',
+        slug: 'graphic-audio',
+        coverUrl: '/covers/harry-potter-and-the-philosopher-s-stone-j-k-rowling.jpg',
+        description: 'Experience audiobooks like movies for your ears. Our curated collection of the best, most immersive cinematic audio productions featuring full casts, sound effects, and scoring.',
+        bookIds: ['20', '152', '10', '115', '117', '29', '153', '154', '156', '150', '151', '155'],
+        topGraphic: '/assets/Collections-Cards-Gfx/cc2-cinematic-top-gfx.gif'
+    },
+    {
         id: '1',
         slug: 'best-long-books-2025',
         title: 'The Best Long Books from 2025',

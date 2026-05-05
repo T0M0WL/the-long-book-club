@@ -13,12 +13,15 @@ export const primaryGenres = [
 ];
 
 export const secondaryGenres = [
-    'Cozy Fantasy',
+    'Cinematic Audio',
     'Coming of Age',
+    'Cozy Fantasy',
     'Dark Academia',
     'Dystopian',
     'Epic Fantasy',
     'Family Saga',
+    'Full-Cast',
+    'Graphic Audio',
     'Grimdark',
     'Hard Sci-Fi',
     'High Fantasy',

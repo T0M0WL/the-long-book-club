@@ -69,5 +69,20 @@ export const genreData: GenreMeta[] = [
         "genre": "Thriller",
         "metaTitle": "Long Thriller Audiobooks: Suspense & Mystery | TLBC",
         "intro": "Suspense that builds for hours. Discover long thriller and mystery audiobooks with twisting plots that keep you guessing until the end."
+    },
+    {
+        "genre": "Cinematic Audio",
+        "metaTitle": "Best Cinematic Audiobooks & Soundscapes | TLBC",
+        "intro": "Experience audiobooks like movies for your ears. Our curated collection of the longest, most immersive cinematic audio productions featuring sound effects and scoring."
+    },
+    {
+        "genre": "Full-Cast",
+        "metaTitle": "Long Full-Cast Audiobooks & Dramas | TLBC",
+        "intro": "Why settle for one narrator? Dive into massive, multi-voice epics with our curated selection of the best long full-cast audiobooks."
+    },
+    {
+        "genre": "Graphic Audio",
+        "metaTitle": "Long Graphic Audio Books: A Movie in Your Mind | TLBC",
+        "intro": "Experience the ultimate in audio entertainment. These long Graphic Audio productions combine full casts, cinematic scoring, and sound effects for an unforgettable listen."
     }
 ];
