@@ -15,7 +15,7 @@ export const collections: Collection[] = [
         slug: 'graphic-audio',
         coverUrl: '/covers/harry-potter-and-the-philosopher-s-stone-j-k-rowling.jpg',
         description: 'Experience audiobooks like movies for your ears. Our curated collection of the best, most immersive cinematic audio productions featuring full casts, sound effects, and scoring.',
-        bookIds: ['20', '152', '10', '115', '117', '29', '153', '154', '156', '150', '151', '155'],
+        bookIds: ['20', '152', '157', '115', '158', '29', '153', '154', '156', '150', '151', '155'],
         topGraphic: '/assets/Collections-Cards-Gfx/cc2-cinematic-top-gfx.gif'
     },
     {

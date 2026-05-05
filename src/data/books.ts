@@ -2449,7 +2449,39 @@ export const baseBooks: Book[] = [
         teaserTitle: "Masterful Dark Fantasy in Graphic Audio",
         teaser: "Unlock the mysteries of a haunted family estate in this Cinematic Audio Experience. As a highlight of Full Cast Audiobooks 2026, this production combines Immersive Soundscapes with top-tier acting to deliver a dark fantasy epic that captures every shadow and secret of Keyhouse.",
         cardOverview: "Discover the secrets of Keyhouse in this full-cast dramatisation. A thirteen-hour cinematic journey through grief and terror featuring an all-star voice ensemble.",
-        narrator: "Haley Joel Osment, Tatiana Maslany, Kate Mulgrew,"
+        narrator: "Haley Joel Osment, Tatiana Maslany, Kate Mulgrew,"    },
+    {
+        id: "157",
+        slug: "the-sandman-neil-gaiman",
+        title: "The Sandman",
+        author: "Neil Gaiman",
+        coverUrl: "/covers/the-sandman-neil-gaiman.jpg",
+        length: "11h 2m",
+        lengthHours: 11,
+        genre: ["Cinematic Audio", "Fantasy", "Full-Cast", "Adventure", "Classics", "Mythology", "Religion", "Magic", "Coming of Age", "Epic Fantasy", "Dark Fantasy"],
+        description: "The full-cast version of the Sandman Act 1. Morpheus, the King of Dreams, is captured for decades. Upon escaping, he must recover his lost tools of power to rebuild his decaying realm.",
+        affiliateLink: "https://www.amazon.co.uk/dp/B086WQ63LK?tag=thelongbookclub-21",
+        affiliateLinkUS: "https://www.amazon.com/dp/B086WQ7J62?tag=thelongbookcl-20",
+        teaserTitle: "The Peak of Full-Cast Dark Fantasy",
+        teaser: "Neil Gaiman’s legendary graphic novel comes to life through breathtaking sound design and a world-class full-cast line up. This is the ultimate example of cinematic audio, offering an immersive experience that rivals the grandest film productions while maintaining the literary depth of the original source material.",
+        cardOverview: "After a century of imprisonment, the Lord of Dreams embarks on a dark odyssey to reclaim his kingdom in this star-studded, cinematic, full-cast masterpiece.",
+        narrator: "Riz Ahmed, Kat Dennings, Taron Egerton, Neil Gaiman, James McAvoy, Samantha Morton, Bebe Neuwirth, Andy Serkis, Michael Sheen"    },
+    {
+        id: "158",
+        slug: "the-complete-chronicles-of-narnia-the-classic-bbc-radio-4-full-cast-dramatisations-c-s-lewis",
+        title: "The Complete Chronicles of Narnia: The Classic BBC Radio 4 Full-Cast Dramatisations",
+        author: "C. S. Lewis",
+        coverUrl: "/covers/the-complete-chronicles-of-narnia-the-classic-bbc-radio-4-full-cast-dramatisations-c-s-lewis.jpg",
+        length: "15h 7m",
+        lengthHours: 15.1,
+        genre: ["Cinematic Audio", "Classics", "Fantasy", "Adventure", "Full-Cast", "Coming of Age", "Mythology", "Religion", "Magic", "Epic", "Royalty"],
+        description: "Four siblings discover a magical wardrobe leading to the frozen land of Narnia, where they must join the lion Aslan to defeat the White Witch.",
+        affiliateLink: "https://www.amazon.co.uk/dp/B00O3FSLA4?tag=thelongbookclub-21",
+        affiliateLinkUS: "https://www.amazon.com/dp/B00O3FDQP4?tag=thelongbookcl-20",
+        teaserTitle: "A Timeless Full-Cast Orchestral Epic",
+        teaser: "Rediscover the magic of Narnia through this definitive collection of BBC dramatisations. With professional sound design and a complete cast, it represents the gold standard for cinematic audio, inviting listeners to lose themselves in a world where every rustle of fur and clatter of swords feels real.",
+        cardOverview: "Step through the wardrobe into a complete, dramatised, cinematic journey through C.S. Lewis’s beloved world, brought to life with an iconic BBC full-cast and score.",
+        narrator: "Maurice Denham, Stephen Thorne, Rosemary Martin, Simeon Pearl, Rowena Snaith, Camilla Power, Henry Power, Neil Jeffrey, Abigail Docherty, James Graves, Martin Jarvis, Fiona Shaw, Michelle Wesson, Richard Puddifoot, Sylvester McCoy, Victoria Shalet, Marco Williamson, Bernard Cribbins, Paul Rhys, Timothy Spall, John Sessions"
     }
 ];
 
