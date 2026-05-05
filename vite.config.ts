@@ -33,18 +33,19 @@ const saveBookDataPlugin = () => {
                                 let reviewContent = fs.readFileSync(reviewsPath, 'utf8');
 
                                 const escapedTitle = bookTitle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-                                const reviewRegex = new RegExp(`^[ \\t]*(?:["'\`]?)` + escapedTitle + `(?:["'\`]?)\\s*:\\s*\\{[\\s\\S]*?\\},?`, 'm');
+                                const reviewRegex = new RegExp(`^[ \\t]*(?:["'\`]?)` + escapedTitle + `(?:["'\`]?)\\s*:\\s*\\{[\\s\\S]*?\\}\\s*,?`, 'm');
 
                                 if (reviewRegex.test(reviewContent)) {
-                                    reviewContent = reviewContent.replace(reviewRegex, reviewSnippet + ',');
+                                    reviewContent = reviewContent.replace(reviewRegex, () => reviewSnippet + ',\n');
                                 } else {
                                     const lastBraceIndex = reviewContent.lastIndexOf('};');
                                     if (lastBraceIndex !== -1) {
                                         // Ensure previous item has a comma
                                         const preBrace = reviewContent.slice(0, lastBraceIndex);
-                                        const hasTrailingComma = preBrace.trim().endsWith(',');
+                                        const preBraceTrimmed = preBrace.trimEnd();
+                                        const hasTrailingComma = preBraceTrimmed.endsWith(',');
                                         const comma = hasTrailingComma ? '' : ',';
-                                        reviewContent = preBrace + comma + '\n' + reviewSnippet + '\n' + reviewContent.slice(lastBraceIndex);
+                                        reviewContent = preBraceTrimmed + comma + '\n\n' + reviewSnippet + '\n' + reviewContent.slice(lastBraceIndex);
                                     } else {
                                         throw new Error("Could not find concluding '};' in reviews.ts. Please check file structure.");
                                     }

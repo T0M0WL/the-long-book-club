@@ -2349,7 +2349,9 @@ export const baseBooks: Book[] = [
         teaserTitle: "The Ultimate A-List Literary Collection",
         teaser: "Secure over 45 hours of world-class acting in this definitive collection. These full cast audiobooks 2026 bring Jane Austen's wit to life with a cinematic audio experience that makes every chapter feel like a prestige television event.",
         cardOverview: "The definitive Austen experience featuring forty-five hours of dramatised performance. Immerse yourself in the wit and romance of Regency England with an all-star cast.",
-        narrator: "Claire Foy, Gugu Mbatha-Raw , Billie Piper, Florence Pugh, Emma Thompson,"    },
+        narrator: "Claire Foy, Gugu Mbatha-Raw , Billie Piper, Florence Pugh, Emma Thompson,"
+    },
+
     {
         id: "150",
         slug: "battlefield-earth-l-ron-hubbard",
@@ -2401,7 +2403,11 @@ export const baseBooks: Book[] = [
         teaserTitle: "Free Cinematic Survival in the Dark",
         teaser: "Dive into the complete three-part saga of the eternal winter. Included with your subscription, this collection offers twenty-five hours of immersive soundscapes and full-cast action. It is the ultimate cinematic audio experience for fans of post-apocalyptic survival and high-stakes supernatural drama.",
         cardOverview: "The first of a three-part vampire apocalypse. Experience the full-cast, cinematic survival story as the last remnants of humanity fight back against the freezing dark",
-        narrator: "Holliday Grainger, Esme Creed-Miles, Liam Cunningham, David Gyasi, Bella Ramsey, Himesh Patel, Indira Varma, Freddy Carter, Caroline Ford, Chloe Pirrie, Sacha Dhawan, Ralph Ineson, Ellie Bamber, Danielle Galligan, Andrew Gower"    },
+        narrator: "Holliday Grainger, Esme Creed-Miles, Liam Cunningham, David Gyasi, Bella Ramsey, Himesh Patel, Indira Varma, Freddy Carter, Caroline Ford, Chloe Pirrie, Sacha Dhawan, Ralph Ineson, Ellie Bamber, Danielle Galligan, Andrew Gower"
+    },
+
+
+
     {
         id: "154",
         slug: "world-war-z-max-brooks",
@@ -2417,7 +2423,10 @@ export const baseBooks: Book[] = [
         teaserTitle: "An Unmatched All-Star Survival Account",
         teaser: "Experience the definitive zombie apocalypse through the voices of Hollywood legends. This dramatised audiobook stands alongside the work of Graphic Audio Titans, offering a cinematic audio experience that is widely considered one of the most essential full-cast productions ever made.",
         cardOverview: "The most famous full-cast production in audio history tells the story of the zombie war. A 14 hour multi-voice audiobook featuring global accounts of post-apocalyptic survival.",
-        narrator: "Christopher Ragland, Rupert Farley, Nigel Pilkington, Jennifer Woodward, David Thorpe, Adam Sims, Robert Slade"    },
+        narrator: "Christopher Ragland, Rupert Farley, Nigel Pilkington, Jennifer Woodward, David Thorpe, Adam Sims, Robert Slade"
+    },
+
+
     {
         id: "155",
         slug: "dracula-audible-edition-bram-stoker",
@@ -2469,7 +2478,7 @@ export const baseBooks: Book[] = [
     {
         id: "158",
         slug: "the-complete-chronicles-of-narnia-the-classic-bbc-radio-4-full-cast-dramatisations-c-s-lewis",
-        title: "The Complete Chronicles of Narnia: The Classic BBC Radio 4 Full-Cast Dramatisations",
+        title: "The Complete Chronicles of Narnia: The Classic BBC Full-Cast Dramatisations",
         author: "C. S. Lewis",
         coverUrl: "/covers/the-complete-chronicles-of-narnia-the-classic-bbc-radio-4-full-cast-dramatisations-c-s-lewis.jpg",
         length: "15h 7m",
@@ -2482,7 +2491,8 @@ export const baseBooks: Book[] = [
         teaser: "Rediscover the magic of Narnia through this definitive collection of BBC dramatisations. With professional sound design and a complete cast, it represents the gold standard for cinematic audio, inviting listeners to lose themselves in a world where every rustle of fur and clatter of swords feels real.",
         cardOverview: "Step through the wardrobe into a complete, dramatised, cinematic journey through C.S. Lewis’s beloved world, brought to life with an iconic BBC full-cast and score.",
         narrator: "Maurice Denham, Stephen Thorne, Rosemary Martin, Simeon Pearl, Rowena Snaith, Camilla Power, Henry Power, Neil Jeffrey, Abigail Docherty, James Graves, Martin Jarvis, Fiona Shaw, Michelle Wesson, Richard Puddifoot, Sylvester McCoy, Victoria Shalet, Marco Williamson, Bernard Cribbins, Paul Rhys, Timothy Spall, John Sessions"
-    }
+    },
+
 ];
 
 // Merge curator reviews from reviews.ts

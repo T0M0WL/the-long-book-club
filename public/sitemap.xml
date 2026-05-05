@@ -701,6 +701,51 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://thelongbookclub.com/book/the-jane-austen-collection-jane-austen/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/battlefield-earth-l-ron-hubbard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/harry-potter-and-the-philosopher-s-stone-j-k-rowling/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/impact-winter-travis-beacham/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/world-war-z-max-brooks/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/dracula-audible-edition-bram-stoker/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/locke-key-joe-hill/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/the-sandman-neil-gaiman/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/the-complete-chronicles-of-narnia-the-classic-bbc-radio-4-full-cast-dramatisations-c-s-lewis/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thelongbookclub.com/genre/classics/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -1101,6 +1146,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://thelongbookclub.com/genre/full-cast/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thelongbookclub.com/genre/urban-fantasy/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -1116,12 +1166,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/road-trip/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/low-fantasy/</loc>
+    <loc>https://thelongbookclub.com/genre/cinematic-audio/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1806,6 +1851,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://thelongbookclub.com/genre/graphic-audio/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thelongbookclub.com/journal/the-single-credit-survival-kit-audiobooks-that-last-an-entire-month/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -1817,6 +1867,11 @@
   </url>
   <url>
     <loc>https://thelongbookclub.com/journal/the-art-of-the-slow-burn-why-the-best-romantasy-requires-a-20-hour-commitment/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/collections/graphic-audio/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
