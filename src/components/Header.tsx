@@ -77,9 +77,9 @@ export const Header = () => {
                     transition: 'opacity 0.3s ease'
                 }}>
                     {[
-                        { id: 'finder', label: 'Long Book Finder', path: '/long-book-finder' },
-                        { id: 'collections', label: 'Collections', path: '/collections' },
-                        { id: 'journal', label: 'Journal', path: '/journal' }
+                        { id: 'finder', label: 'Long Book Finder', path: '/long-book-finder/' },
+                        { id: 'collections', label: 'Collections', path: '/collections/' },
+                        { id: 'journal', label: 'Journal', path: '/journal/' }
                     ].map(link => {
                         const isActive = theme.activeLink === link.id;
                         return (
@@ -206,10 +206,10 @@ export const Header = () => {
                 }}>
                     {[
                         { label: 'Home', path: '/' },
-                        { label: 'Long Book Finder', path: '/long-book-finder' },
-                        { label: 'Collections', path: '/collections' },
-                        { label: 'Journal', path: '/journal' },
-                        { label: 'About', path: '/about' }
+                        { label: 'Long Book Finder', path: '/long-book-finder/' },
+                        { label: 'Collections', path: '/collections/' },
+                        { label: 'Journal', path: '/journal/' },
+                        { label: 'About', path: '/about/' }
                     ].map((link, index, arr) => (
                         <div key={link.path} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
                             <Link

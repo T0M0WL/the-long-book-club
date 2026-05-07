@@ -8,11 +8,12 @@ const BOOKS_FILE_PATH = path.join(__dirname, '../src/data/books.ts');
 const JOURNAL_FILE_PATH = path.join(__dirname, '../src/data/journal.ts');
 const OUTPUT_FILE_PATH = path.join(__dirname, '../public/sitemap.xml');
 
-// Static Routes
 const staticRoutes = [
     { url: '/', changefreq: 'weekly', priority: 1.0 },
     { url: '/collections/', changefreq: 'weekly', priority: 0.9 },
-    { url: '/journal/', changefreq: 'weekly', priority: 0.9 }, // Added Journal index
+    { url: '/journal/', changefreq: 'weekly', priority: 0.9 },
+    { url: '/long-book-finder/', changefreq: 'weekly', priority: 0.9 },
+    { url: '/links/', changefreq: 'monthly', priority: 0.6 },
     { url: '/about/', changefreq: 'monthly', priority: 0.7 },
     { url: '/privacy/', changefreq: 'yearly', priority: 0.5 }
 ];
