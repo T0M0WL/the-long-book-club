@@ -106,6 +106,11 @@ export const StickyNewsletter = () => {
             <button
                 type="button"
                 onClick={handleClose}
+                onTouchEnd={(e) => {
+                    // Bulletproof iOS touch bypass
+                    e.preventDefault();
+                    handleClose();
+                }}
                 style={{
                     background: 'none',
                     border: 'none',

@@ -1,6 +1,7 @@
 import { primaryGenres, secondaryGenres } from '../data/curatedGenres';
 import { FaSearch, FaTimes } from 'react-icons/fa';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import type { TouchEvent as ReactTouchEvent } from 'react';
 
 interface FilterBarProps {
     selectedGenre: string;
@@ -27,6 +28,26 @@ export const FilterBar = ({
 }: FilterBarProps) => {
     // Local state for smooth sliding without constant URL updates
     const [localMinLength, setLocalMinLength] = useState(minLength);
+
+    // Mobile touch tracking refs
+    const touchStartX = useRef<number>(0);
+    const touchStartY = useRef<number>(0);
+
+    const handleTouchStart = (e: ReactTouchEvent) => {
+        touchStartX.current = e.touches[0].clientX;
+        touchStartY.current = e.touches[0].clientY;
+    };
+
+    const handleTouchEnd = (e: ReactTouchEvent, action: () => void) => {
+        const touchEndX = e.changedTouches[0].clientX;
+        const touchEndY = e.changedTouches[0].clientY;
+        
+        // If movement is less than 10 pixels, it's a tap, not a scroll
+        if (Math.abs(touchEndX - touchStartX.current) < 10 && Math.abs(touchEndY - touchStartY.current) < 10) {
+            e.preventDefault(); // Stop ghost click
+            action();
+        }
+    };
 
     // State for genre expansion - auto-expand if selected genre is secondary
     const [isExpanded, setIsExpanded] = useState(() => {
@@ -213,6 +234,8 @@ export const FilterBar = ({
             }}>
                 <button
                     onClick={() => onGenreChange('All')}
+                    onTouchStart={handleTouchStart}
+                    onTouchEnd={(e) => handleTouchEnd(e, () => onGenreChange('All'))}
                     className={`filter-button ${selectedGenre === 'All' ? 'active' : ''}`}
                 >
                     All Genres
@@ -223,6 +246,8 @@ export const FilterBar = ({
                     <button
                         key={genre}
                         onClick={() => onGenreChange(selectedGenre === genre ? 'All' : genre)}
+                        onTouchStart={handleTouchStart}
+                        onTouchEnd={(e) => handleTouchEnd(e, () => onGenreChange(selectedGenre === genre ? 'All' : genre))}
                         className={`filter-button ${selectedGenre === genre ? 'active' : ''}`}
                     >
                         {genre}
@@ -234,6 +259,8 @@ export const FilterBar = ({
                     <button
                         key={genre}
                         onClick={() => onGenreChange(selectedGenre === genre ? 'All' : genre)}
+                        onTouchStart={handleTouchStart}
+                        onTouchEnd={(e) => handleTouchEnd(e, () => onGenreChange(selectedGenre === genre ? 'All' : genre))}
                         className={`filter-button fade-in-element ${selectedGenre === genre ? 'active' : ''}`}
                     >
                         {genre}
@@ -243,6 +270,8 @@ export const FilterBar = ({
                 {/* Show More/Less Toggle */}
                 <button
                     onClick={() => setIsExpanded(!isExpanded)}
+                    onTouchStart={handleTouchStart}
+                    onTouchEnd={(e) => handleTouchEnd(e, () => setIsExpanded(!isExpanded))}
                     className="toggle-button"
                 >
                     {isExpanded ? 'Show Less -' : 'Show More +'}
