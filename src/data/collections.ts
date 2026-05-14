@@ -11,7 +11,7 @@ export interface Collection {
 export const collections: Collection[] = [
     {
         id: 'graphic-audio',
-        title: 'Epic Graphic Audio Listens',
+        title: 'The Best, Longest Cinematic Audiobooks (Full-Cast & Graphic Audio)',
         slug: 'graphic-audio',
         coverUrl: '/covers/harry-potter-and-the-philosopher-s-stone-j-k-rowling.jpg',
         description: 'Experience audiobooks like movies for your ears. Our curated collection of the best, most immersive cinematic audio productions featuring full casts, sound effects, and scoring.',
