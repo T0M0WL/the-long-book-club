@@ -2492,6 +2492,23 @@ export const baseBooks: Book[] = [
         cardOverview: "Step through the wardrobe into a complete, dramatised, cinematic journey through C.S. Lewis’s beloved world, brought to life with an iconic BBC full-cast and score.",
         narrator: "Maurice Denham, Stephen Thorne, Rosemary Martin, Simeon Pearl, Rowena Snaith, Camilla Power, Henry Power, Neil Jeffrey, Abigail Docherty, James Graves, Martin Jarvis, Fiona Shaw, Michelle Wesson, Richard Puddifoot, Sylvester McCoy, Victoria Shalet, Marco Williamson, Bernard Cribbins, Paul Rhys, Timothy Spall, John Sessions"
     },
+    {
+        id: "159",
+        slug: "this-kingdom-will-not-kill-me-maggie-the-undying-ilona-andrews",
+        title: "This Kingdom Will Not Kill Me: Maggie the Undying",
+        author: "Ilona Andrews",
+        coverUrl: "/covers/this-kingdom-will-not-kill-me-maggie-the-undying-ilona-andrews.jpg",
+        length: "21h 33m",
+        lengthHours: 21.6,
+        genre: ["Fantasy", "Portal Fantasy", "Epic Fantasy", "Romance", "Adventure", "Magic", "Romantasy", "Dark Romance", "Dystopian", "Mystery", "High Fantasy"],
+        description: "Maggie finds herself transported into the world of her favorite—but famously unfinished—dark fantasy series. Waking up in the gutters of Kair Toren, she discovers she cannot be killed. Armed with her encyclopedic knowledge of the plot, she must navigate a world of rival warlords and magic to save the kingdom from a cataclysmic war.",
+        affiliateLink: "https://www.amazon.co.uk/dp/B0BXZ4XJ53?tag=thelongbookclub-21",
+        affiliateLinkUS: "https://www.amazon.com/dp/B0BXZ4XJ53?tag=thelongbookcl-20",
+        teaserTitle: "A 22-Hour Masterclass in Portal Fantasy",
+        teaser: "Ilona Andrews delivers a tour de force in this opening volume of the Maggie the Undying series. The slow-burn approach allows the world of Kair Toren to feel visceral and gritty, while the meta-narrative deconstruction of 'book within a book' mechanics adds a layer of depth rarely seen in the genre.",
+        cardOverview: "An unparalleled value proposition for the discerning listener, offering 21 hours of gritty, visceral portal fantasy with a brilliant meta-narrative twist.",
+        narrator: "Kristen Sieh"
+    },
 
 ];
 

@@ -29,8 +29,13 @@ This file is the "Eternal Memory" for the project. **Any AI assistant working on
 - Every page (`/book/*`, `/genre/*`, `/collections/`, `/journal/`, etc.) MUST serve substantial, unique visible content in the initial HTML body inside the `<div id="root">`.
 - This is handled by `scripts/prerender.cjs`. If you modify the data structure in `src/data/`, you MUST update the extraction logic in the prerenderer.
 
-### **2. Sitemap Integrity**
-- The sitemap `scripts/generate-sitemap.cjs` must exclude internal utility routes like `/generator/` or `/thank-you/`.
+### **2. Sitemap & Hub Integrity**
+- **Rule:** The sitemap `scripts/generate-sitemap.cjs` must exclude internal utility routes like `/generator/`, but MUST include all public hub pages (e.g., `/long-book-finder/`, `/links/`).
+- **SEO Consistency Checklist (Run EVERY Build):**
+    1. **Check `Header.tsx`:** Do all navigation `path` strings end with a trailing slash?
+    2. **Check `generate-sitemap.cjs`:** Are all public hub pages listed in `staticRoutes`?
+    3. **Check `prerender.cjs`:** Is the `RewriteCond` in the `.htaccess` template updated to include any new public paths?
+    4. **Check `App.tsx`:** Does the Header/Footer visibility logic account for both the base and slashed version of any new paths?
 
 ---
 

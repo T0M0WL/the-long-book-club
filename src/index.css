@@ -360,6 +360,7 @@ a:hover {
   transition: all 0.2s ease;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 .filter-button.active {
@@ -398,6 +399,7 @@ a:hover {
   align-items: center;
   gap: 0.5rem;
   -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 @media (hover: hover) {
@@ -428,6 +430,11 @@ a:hover {
   height: fit-content;
   transition: all 0.2s ease;
   -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.fade-in-element {
+  animation: fadeIn 0.3s ease-out;
 }
 
 @media (hover: hover) {

@@ -299,6 +299,8 @@ Redirect 301 /book/157 /book/the-sandman-neil-gaiman/
 Redirect 301 /book/157/ /book/the-sandman-neil-gaiman/
 Redirect 301 /book/158 /book/the-complete-chronicles-of-narnia-the-classic-bbc-radio-4-full-cast-dramatisations-c-s-lewis/
 Redirect 301 /book/158/ /book/the-complete-chronicles-of-narnia-the-classic-bbc-radio-4-full-cast-dramatisations-c-s-lewis/
+Redirect 301 /book/159 /book/this-kingdom-will-not-kill-me-maggie-the-undying-ilona-andrews/
+Redirect 301 /book/159/ /book/this-kingdom-will-not-kill-me-maggie-the-undying-ilona-andrews/
 
   
   # --- Genre Redirects (Manual) ---

@@ -76,7 +76,52 @@ export const BookCurator = () => {
             return (!isNaN(num) && num > max) ? num : max;
         }, 0);
         setNextId((maxId + 1).toString());
+
+        // LOAD FROM LOCAL STORAGE
+        const savedData = localStorage.getItem('tlbc_curator_draft');
+        if (savedData) {
+            try {
+                const data = JSON.parse(savedData);
+                if (data.title) setTitle(data.title);
+                if (data.author) setAuthor(data.author);
+                if (data.originalId) setOriginalId(data.originalId);
+                if (data.lengthStr) setLengthStr(data.lengthStr);
+                if (data.selectedGenres) setSelectedGenres(data.selectedGenres);
+                if (data.description) setDescription(data.description);
+                if (data.audioPreviewUrl) setAudioPreviewUrl(data.audioPreviewUrl);
+                if (data.relatedBookIdsStr) setRelatedBookIdsStr(data.relatedBookIdsStr);
+                if (data.affiliateLink) setAffiliateLink(data.affiliateLink);
+                if (data.affiliateLinkUS) setAffiliateLinkUS(data.affiliateLinkUS);
+                if (data.cardOverview) setCardOverview(data.cardOverview);
+                if (data.teaserTitle) setTeaserTitle(data.teaserTitle);
+                if (data.teaser) setTeaser(data.teaser);
+                if (data.curatorTitle) setCuratorTitle(data.curatorTitle);
+                if (data.curatorNote) setCuratorNote(data.curatorNote);
+                if (data.narrator) setNarrator(data.narrator);
+                if (data.soundCheck) setSoundCheck(data.soundCheck);
+                if (data.mode) setMode(data.mode);
+                if (data.selectedBookSlug) setSelectedBookSlug(data.selectedBookSlug);
+            } catch (e) {
+                console.error("Failed to load draft from local storage", e);
+            }
+        }
     }, []);
+
+    // SAVE TO LOCAL STORAGE
+    useEffect(() => {
+        const draft = {
+            title, author, originalId, lengthStr, selectedGenres, description,
+            audioPreviewUrl, relatedBookIdsStr, affiliateLink, affiliateLinkUS,
+            cardOverview, teaserTitle, teaser, curatorTitle, curatorNote,
+            narrator, soundCheck, mode, selectedBookSlug
+        };
+        localStorage.setItem('tlbc_curator_draft', JSON.stringify(draft));
+    }, [
+        title, author, originalId, lengthStr, selectedGenres, description,
+        audioPreviewUrl, relatedBookIdsStr, affiliateLink, affiliateLinkUS,
+        cardOverview, teaserTitle, teaser, curatorTitle, curatorNote,
+        narrator, soundCheck, mode, selectedBookSlug
+    ]);
 
     // Handle Edit Mode Population
     useEffect(() => {
@@ -273,6 +318,7 @@ export const BookCurator = () => {
             
             if (res.ok && data.success) {
                 setSaveSuccess('✅ Saved to Project! (Refresh Vite if needed)');
+                localStorage.removeItem('tlbc_curator_draft'); // Clear draft on success
             } else {
                 setSaveSuccess('❌ Failed to save');
                 console.error(data.error);

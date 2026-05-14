@@ -234,8 +234,7 @@ export const FilterBar = ({
                     <button
                         key={genre}
                         onClick={() => onGenreChange(selectedGenre === genre ? 'All' : genre)}
-                        className={`filter-button ${selectedGenre === genre ? 'active' : ''}`}
-                        style={{ animation: 'fadeIn 0.3s ease-out' }}
+                        className={`filter-button fade-in-element ${selectedGenre === genre ? 'active' : ''}`}
                     >
                         {genre}
                     </button>
@@ -342,8 +341,7 @@ export const FilterBar = ({
                     {(selectedGenre !== 'All' || minLength > 10 || sortBy !== 'default' || searchTerm !== '') && (
                         <button
                             onClick={onClearAll}
-                            className="clear-button"
-                            style={{ animation: 'fadeIn 0.3s ease-out' }}
+                            className="clear-button fade-in-element"
                         >
                             <FaTimes size={16} />
                             Clear Filters

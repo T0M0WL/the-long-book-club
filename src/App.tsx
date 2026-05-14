@@ -44,7 +44,7 @@ const AnalyticsTracker = () => {
 };
 const NoiseOverlay = () => {
   const location = useLocation();
-  const isCollectionsPage = location.pathname === '/collections';
+  const isCollectionsPage = location.pathname === '/collections' || location.pathname === '/collections/';
 
   if (isCollectionsPage) return null;
 

@@ -72,7 +72,7 @@ const saveBookDataPlugin = () => {
                                 } else {
                                     // We are looking for the closing bracket of `baseBooks` array
                                     // "    }\n];"
-                                    const endOfArrayRegex = /\n\s*\}\s*\n\];/;
+                                    const endOfArrayRegex = /\n\s*\},?\s*[\s\n]*\];/;
                                     if (endOfArrayRegex.test(booksContent)) {
                                         booksContent = booksContent.replace(endOfArrayRegex, `    },\n    {\n${baseBookSnippet}\n    }\n];`);
                                         fs.writeFileSync(booksPath, booksContent, 'utf8');
