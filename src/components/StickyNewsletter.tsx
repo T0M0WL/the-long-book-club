@@ -103,16 +103,22 @@ export const StickyNewsletter = () => {
             `}</style>
 
             {/* 1. CLOSE BUTTON (Top spaced) */}
-            <div
+            <button
+                type="button"
                 onClick={handleClose}
                 style={{
+                    background: 'none',
+                    border: 'none',
+                    padding: '0',
                     cursor: 'pointer',
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
                     gap: '12px',
                     marginTop: '-5px', // Moved up ~10px
-                    marginBottom: '22px' // Reduced by 10px from 2rem
+                    marginBottom: '22px', // Reduced by 10px from 2rem
+                    touchAction: 'manipulation',
+                    WebkitTapHighlightColor: 'transparent'
                 }}
             >
                 <div style={{
@@ -137,7 +143,7 @@ export const StickyNewsletter = () => {
                 }}>
                     CLOSE
                 </span>
-            </div>
+            </button>
 
             {/* 2. HEADLINE */}
             <h3 style={{

@@ -357,7 +357,6 @@ a:hover {
   font-family: var(--font-serif-accent);
   font-weight: 400;
   cursor: pointer;
-  transition: all 0.2s ease;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
@@ -380,9 +379,6 @@ a:hover {
   }
 }
 
-.filter-button:active {
-  transform: scale(0.96);
-}
 
 .toggle-button {
   background: transparent;
@@ -394,7 +390,6 @@ a:hover {
   font-size: clamp(1rem, 2vw, 1.25rem);
   font-family: var(--font-serif-accent);
   font-weight: 600;
-  transition: all 0.2s ease;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -409,9 +404,6 @@ a:hover {
   }
 }
 
-.toggle-button:active {
-  transform: scale(0.98);
-}
 
 .clear-button {
   background: var(--color-brand-coral);
@@ -428,7 +420,6 @@ a:hover {
   gap: 0.75rem;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   height: fit-content;
-  transition: all 0.2s ease;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
 }
@@ -444,9 +435,6 @@ a:hover {
   }
 }
 
-.clear-button:active {
-  transform: scale(0.96);
-}
 
 /* Book Card & Genre Tag Touch Safety */
 .book-card {
