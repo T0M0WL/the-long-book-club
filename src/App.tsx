@@ -42,6 +42,7 @@ const AnalyticsTracker = () => {
 
   return null;
 };
+/*
 const NoiseOverlay = () => {
   const location = useLocation();
   const isCollectionsPage = location.pathname === '/collections' || location.pathname === '/collections/';
@@ -50,6 +51,7 @@ const NoiseOverlay = () => {
 
   return <div className="noise-overlay" />;
 };
+*/
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
@@ -60,7 +62,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
       <ScrollToTop />
       <AnalyticsTracker />
       <SEO />
-      <NoiseOverlay />
+      {/* <NoiseOverlay /> Temporarily removed to test iOS touch responsiveness */}
       {!isLinksPage && <Header />}
       <main>
         {children}

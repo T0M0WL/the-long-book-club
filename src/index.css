@@ -274,7 +274,7 @@ a:hover {
   will-change: transform;
 }
 
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   .nav-interactive:hover {
     transform: scale(1.08);
     opacity: 0.9;
@@ -286,7 +286,7 @@ a:hover {
   transition: filter 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   .nav-text-hover:hover {
     filter: brightness(1.3);
   }
@@ -298,7 +298,7 @@ a:hover {
   will-change: transform;
 }
 
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   .journal-card-hover:hover {
     transform: scale(1.02);
     opacity: 0.95;
@@ -366,7 +366,7 @@ a:hover {
   background: var(--color-brand-forrest) !important;
 }
 
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   .filter-button:hover {
     background: #cc563b; /* 20% darker coral */
     box-shadow: 0 4px 8px rgba(0,0,0,0.15);
@@ -395,7 +395,7 @@ a:hover {
   touch-action: manipulation;
 }
 
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   .toggle-button:hover {
     background: var(--color-brand-forrest);
     color: var(--color-brand-cloud);
@@ -426,7 +426,7 @@ a:hover {
   animation: fadeIn 0.3s ease-out;
 }
 
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   .clear-button:hover {
     box-shadow: 0 6px 8px rgba(0,0,0,0.15);
   }
@@ -439,7 +439,7 @@ a:hover {
   -webkit-tap-highlight-color: transparent;
 }
 
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   .book-card:hover {
     transform: translateY(-4px) !important;
     box-shadow: 0 12px 24px rgba(0,0,0,0.1) !important;
@@ -451,7 +451,7 @@ a:hover {
   -webkit-tap-highlight-color: transparent;
 }
 
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   .genre-tag:hover {
     background-color: #2a4a3d !important;
     color: var(--color-brand-coral-light) !important;
