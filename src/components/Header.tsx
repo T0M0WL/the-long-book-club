@@ -140,7 +140,9 @@ export const Header = () => {
                         justifyContent: 'center',
                         pointerEvents: isMenuOpen ? 'none' : 'auto', // Disable when open (let close button underneath work)
                         opacity: isMenuOpen ? 0 : 1, // Hide when open
-                        transition: 'opacity 0.3s ease'
+                        transition: 'opacity 0.3s ease',
+                        touchAction: 'manipulation',
+                        WebkitTapHighlightColor: 'transparent'
                     }}
                     aria-label="Open Menu"
                 >
@@ -184,7 +186,9 @@ export const Header = () => {
                         border: 'none',
                         color: 'var(--color-brand-coral)', // Updated to Coral
                         cursor: 'pointer',
-                        padding: '0.5rem'
+                        padding: '0.5rem',
+                        touchAction: 'manipulation',
+                        WebkitTapHighlightColor: 'transparent'
                     }}
                     aria-label="Close Menu"
                 >
