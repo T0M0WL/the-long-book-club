@@ -369,13 +369,11 @@ a:hover {
 @media (hover: hover) {
   .filter-button:hover {
     background: #cc563b; /* 20% darker coral */
-    transform: translateY(-1px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.15);
   }
   
   .filter-button.active:hover {
     background: var(--color-brand-forrest) !important;
-    transform: none;
   }
 }
 
@@ -430,7 +428,6 @@ a:hover {
 
 @media (hover: hover) {
   .clear-button:hover {
-    transform: translateY(-2px);
     box-shadow: 0 6px 8px rgba(0,0,0,0.15);
   }
 }
@@ -458,7 +455,6 @@ a:hover {
   .genre-tag:hover {
     background-color: #2a4a3d !important;
     color: var(--color-brand-coral-light) !important;
-    transform: translateY(-1px);
   }
 }
 

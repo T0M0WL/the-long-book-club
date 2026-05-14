@@ -109,14 +109,14 @@ export const StickyNewsletter = () => {
                 style={{
                     background: 'none',
                     border: 'none',
-                    padding: '0',
+                    padding: '24px', // MASSIVE invisible hit area
                     cursor: 'pointer',
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
                     gap: '12px',
-                    marginTop: '-5px', // Moved up ~10px
-                    marginBottom: '22px', // Reduced by 10px from 2rem
+                    marginTop: '-29px', // Offset for the 24px padding + original 5px
+                    marginBottom: '-2px', // Offset for the 24px padding + original 22px
                     touchAction: 'manipulation',
                     WebkitTapHighlightColor: 'transparent'
                 }}
