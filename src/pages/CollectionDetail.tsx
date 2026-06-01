@@ -82,7 +82,7 @@ export const CollectionDetail = () => {
             <SEO
                 title={collection.title}
                 description={collection.description}
-                canonical={`https://thelongbookclub.com/collections/${collection.slug}`}
+                canonical={`https://thelongbookclub.com/collections/${collection.slug}/`}
                 image={collection.coverUrl}
                 themeColor={currentThemeColor}
             />

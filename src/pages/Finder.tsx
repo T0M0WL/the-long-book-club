@@ -114,7 +114,7 @@ export const Finder = () => {
             <SEO
                 title="Long Book Finder Tool | TLBC"
                 description="Filter, sort, and search our entire catalog of long audiobooks. Find your next 20+ hour listen by genre, length, or narrator."
-                canonical="https://thelongbookclub.com/long-book-finder"
+                canonical="https://thelongbookclub.com/long-book-finder/"
                 themeColor="#eae8da"
             />
 

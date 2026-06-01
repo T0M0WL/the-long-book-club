@@ -57,7 +57,7 @@ export const Home = () => {
             <SEO
                 title="Curated Epic Audiobooks"
                 description="Discover the best long audiobooks to maximize your monthly credits. Curated selection of 40+ hour epics across all genres."
-                canonical="https://thelongbookclub.com"
+                canonical="https://thelongbookclub.com/"
                 schema={websiteSchema}
             />
             <Hero

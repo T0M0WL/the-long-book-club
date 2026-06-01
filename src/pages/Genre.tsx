@@ -92,7 +92,7 @@ export const Genre = () => {
             <SEO
                 title={pageTitle}
                 description={seoDescription}
-                canonical={`https://thelongbookclub.com/genre/${slug}`}
+                canonical={`https://thelongbookclub.com/genre/${slug}/`}
                 themeColor="#eae8da"
             />
 

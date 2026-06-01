@@ -418,10 +418,14 @@ async function prerender() {
   RewriteEngine On
   RewriteBase /
   
+  # Force non-www domain canonicalization
+  RewriteCond %{HTTP_HOST} ^www\.(.+) [NC]
+  RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+  
   # Force trailing slash on directories for SEO consistency and Prerender discovery
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_URI} !(.*)/$
-  RewriteCond %{REQUEST_URI} ^/(book|genre|collections|journal|links|long-book-finder|about) [NC]
+  RewriteCond %{REQUEST_URI} ^/(book|genre|collections|journal|links|long-book-finder|about|privacy) [NC]
   RewriteRule ^(.*)$ $1/ [L,R=301]
 
   ${redirectRules}

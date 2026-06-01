@@ -100,7 +100,7 @@ export const BookDetails = () => {
                 title={`${book.title} by ${book.author}`}
                 description={seoDesc}
                 image={book.coverUrl}
-                canonical={`https://thelongbookclub.com/book/${book.slug}`}
+                canonical={`https://thelongbookclub.com/book/${book.slug}/`}
                 type="book"
                 schema={structuredData}
             />

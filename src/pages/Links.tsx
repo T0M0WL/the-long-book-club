@@ -175,7 +175,7 @@ export const Links = () => {
             </Link>
 
             {/* Featured Collection */}
-            <a href="https://www.thelongbookclub.com/collections/longest-ever" style={{
+            <a href="https://thelongbookclub.com/collections/longest-ever/" style={{
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',

@@ -17,9 +17,14 @@ export const SEO = ({ title, description, image, canonical, type = 'website', sc
 
     // Dynamic canonical: Use provided or constructing from current path
     const pathname = location.pathname;
-    // Standardize: no trailing slash unless root
-    const cleanPath = pathname === '/' ? '/' : pathname.replace(/\/$/, '');
-    const url = canonical || `${baseUrl}${cleanPath}`;
+    // Standardize: ensure trailing slash on directory paths
+    const cleanPath = pathname.endsWith('/') ? pathname : `${pathname}/`;
+    
+    // Ensure the canonical URL has a trailing slash for Hostinger/SEO consistency
+    let url = canonical || `${baseUrl}${cleanPath}`;
+    if (!url.endsWith('/')) {
+        url += '/';
+    }
 
     const defaultTitle = 'The Long Book Club';
     const defaultDescription = 'Curated long audiobooks for deep listening. We help you find the best 20+ hour books to maximize your credits.';

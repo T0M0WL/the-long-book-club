@@ -55,7 +55,7 @@ export const Footer: React.FC = () => {
                     </div>
 
                     <p style={{ marginBottom: '1.5rem', opacity: 0.9 }}>
-                        &copy; {new Date().getFullYear()} All rights reserved. | <a href="/privacy" style={{ color: 'inherit', textDecoration: 'underline' }}>Privacy Policy</a>
+                        &copy; {new Date().getFullYear()} All rights reserved. | <a href="/privacy/" style={{ color: 'inherit', textDecoration: 'underline' }}>Privacy Policy</a>
                     </p>
 
                     {/* Amazon Associates Disclosure */}

@@ -224,7 +224,7 @@ Ready to build your stash? Check out our full reviews and "Sound Checks" to make
 
 Load up your library now, and thank us later... much, much later.
 
-Want to find more books over 50 hours? Use our [Long Book Finder](https://www.thelongbookclub.com/long-book-finder).
+Want to find more books over 50 hours? Use our [Long Book Finder](https://thelongbookclub.com/long-book-finder/).
 `,
     tags: ['Strategy', 'Audible', 'Longest Ever Audio Books'],
     coverUrl: '/assets/journal/Squeeze-value.gif',
@@ -307,7 +307,7 @@ If you use your monthly credits on standard 8-hour romance novels, you are payin
 You get dragons, you get magic, you get world-ending stakes, and yes, you get the romance. But most importantly, you get a story that lasts long enough for you to actually care.
 
 
-**Want to find more long-form love stories?** Use the [Long Book Finder Tool](https://www.thelongbookclub.com/long-book-finder) to filter by "Fantasy" and "20 hours+" to find your next obsession.
+**Want to find more long-form love stories?** Use the [Long Book Finder Tool](https://thelongbookclub.com/long-book-finder/) to filter by "Fantasy" and "20 hours+" to find your next obsession.
 `,
     tags: ['romantasy', 'value', 'guides'],
     coverUrl: '/assets/journal/romantasy-slow-burns.gif',

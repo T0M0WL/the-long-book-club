@@ -20,7 +20,7 @@ export const Collections = () => {
             <SEO
                 title="Curated Collections"
                 description="Explore our curated lists of the best long-form audiobooks."
-                canonical="https://thelongbookclub.com/collections"
+                canonical="https://thelongbookclub.com/collections/"
             />
             <Hero
                 backgroundImage="/assets/collections-hero-images/LongBookClub-Collections-background-01.gif"
