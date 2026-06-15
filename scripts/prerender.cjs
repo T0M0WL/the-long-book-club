@@ -208,6 +208,14 @@ async function prerender() {
             let html = template;
             html = html.replace(/<title>.*?<\/title>/, `<title>${escapeHtml(title)} | The Long Book Club Journal</title>`);
             html = html.replace(/<meta name="description" content="[^"]+" \/>/, `<meta name="description" content="${escapeHtml(excerpt)}" />`);
+            
+            // OG & Canonical tags
+            html = html.replace(/<meta property="og:title" content="[^"]+" \/>/, `<meta property="og:title" content="${escapeHtml(title)}" />`);
+            html = html.replace(/<meta property="og:description" content="[^"]+" \/>/, `<meta property="og:description" content="${escapeHtml(excerpt)}" />`);
+            html = html.replace(/<meta property="og:image" content="[^"]+" \/>/, `<meta property="og:image" content="${absoluteCoverUrl}" />`);
+            html = html.replace(/<meta property="og:url" content="[^"]+" \/>/, `<meta property="og:url" content="${absoluteUrl}" />`);
+            html = html.replace(/<link rel="canonical" href="[^"]+" \/>/, `<link rel="canonical" href="${absoluteUrl}" />`);
+
             html = html.replace('<!-- SEO_CONTENT_HOLDER -->', bodyContent);
             
             const outDir = path.join(DIST_DIR, 'journal', slug);
@@ -252,6 +260,16 @@ async function prerender() {
         let html = template;
         html = html.replace(/<title>.*?<\/title>/, `<title>${escapeHtml(meta.metaTitle)}</title>`);
         html = html.replace(/<meta name="description" content="[^"]+" \/>/, `<meta name="description" content="${escapeHtml(meta.intro)}" />`);
+        
+        const absoluteUrl = BASE_URL + '/genre/' + slug + '/';
+        const absoluteCoverUrl = BASE_URL + '/assets/social-share-2.jpg';
+        // OG & Canonical tags
+        html = html.replace(/<meta property="og:title" content="[^"]+" \/>/, `<meta property="og:title" content="${escapeHtml(meta.metaTitle)}" />`);
+        html = html.replace(/<meta property="og:description" content="[^"]+" \/>/, `<meta property="og:description" content="${escapeHtml(meta.intro)}" />`);
+        html = html.replace(/<meta property="og:image" content="[^"]+" \/>/, `<meta property="og:image" content="${absoluteCoverUrl}" />`);
+        html = html.replace(/<meta property="og:url" content="[^"]+" \/>/, `<meta property="og:url" content="${absoluteUrl}" />`);
+        html = html.replace(/<link rel="canonical" href="[^"]+" \/>/, `<link rel="canonical" href="${absoluteUrl}" />`);
+
         html = html.replace('<!-- SEO_CONTENT_HOLDER -->', bodyContent);
 
         const outDir = path.join(DIST_DIR, 'genre', slug);
@@ -326,6 +344,16 @@ async function prerender() {
         let html = template;
         html = html.replace(/<title>.*?<\/title>/, `<title>${escapeHtml(page.title)}</title>`);
         html = html.replace(/<meta name="description" content="[^"]+" \/>/, `<meta name="description" content="${escapeHtml(page.desc)}" />`);
+        
+        const absoluteUrl = BASE_URL + '/' + page.slug + '/';
+        const absoluteCoverUrl = BASE_URL + '/assets/social-share-2.jpg';
+        // OG & Canonical tags
+        html = html.replace(/<meta property="og:title" content="[^"]+" \/>/, `<meta property="og:title" content="${escapeHtml(page.title)}" />`);
+        html = html.replace(/<meta property="og:description" content="[^"]+" \/>/, `<meta property="og:description" content="${escapeHtml(page.desc)}" />`);
+        html = html.replace(/<meta property="og:image" content="[^"]+" \/>/, `<meta property="og:image" content="${absoluteCoverUrl}" />`);
+        html = html.replace(/<meta property="og:url" content="[^"]+" \/>/, `<meta property="og:url" content="${absoluteUrl}" />`);
+        html = html.replace(/<link rel="canonical" href="[^"]+" \/>/, `<link rel="canonical" href="${absoluteUrl}" />`);
+
         html = html.replace('<!-- SEO_CONTENT_HOLDER -->', bodyContent);
         
         const outDir = path.join(DIST_DIR, page.slug);
