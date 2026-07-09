@@ -35,7 +35,7 @@ export const JournalPost = () => {
             <div style={{ paddingTop: '150px', textAlign: 'center' }}>
                 <Helmet><title>Post Not Found</title></Helmet>
                 <h1>Post Not Found</h1>
-                <Link to="/journal">Return to Journal</Link>
+                <Link to="/journal/">Return to Journal</Link>
             </div>
         );
     }

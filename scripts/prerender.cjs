@@ -32,6 +32,29 @@ function extractField(content, fieldName, stripHtml = true) {
 }
 
 /**
+ * Parses both array and single string formats for the genre field.
+ */
+function extractGenre(block) {
+    const match = block.match(/genre:\s*(\[[^\]]+\]|'[^']+'|"[^"]+")/);
+    if (!match) return ['Fiction'];
+    const raw = match[1];
+    if (raw.startsWith('[')) {
+        return raw.replace(/[\[\]'"]/g, '').split(',').map(g => g.trim()).filter(Boolean);
+    } else {
+        return [raw.replace(/['"]/g, '').trim()];
+    }
+}
+
+/**
+ * Parses a standard string array from a TypeScript block.
+ */
+function extractArray(content, fieldName) {
+    const match = content.match(/bookIds:\s*\[([^\]]+)\]/m);
+    if (!match) return [];
+    return match[1].replace(/['"\s]/g, '').split(',').filter(Boolean);
+}
+
+/**
  * Simple HTML escape
  */
 function escapeHtml(text) {
@@ -88,90 +111,107 @@ async function prerender() {
     }
 
     // --- Book Prerendering ---
-    const startIndex = booksContent.indexOf('const baseBooks: Book[] = [');
-    if (startIndex !== -1) {
-        const arrayContent = booksContent.substring(startIndex);
-        // More robust splitting: matches { that are either at start of line OR preceded by a comma/bracket
+    const allBooks = [];
+    const booksStartIndex = booksContent.indexOf('const baseBooks: Book[] = [');
+    if (booksStartIndex !== -1) {
+        const arrayContent = booksContent.substring(booksStartIndex);
         const bookBlocks = arrayContent.split(/(?:\s*\{)/gm).slice(1);
-        let count = 0;
-
         for (const block of bookBlocks) {
             const cleanBlock = block.split(/^\s*\}/gm)[0];
             const slug = extractField(cleanBlock, 'slug');
             if (!slug) continue;
 
+            const id = extractField(cleanBlock, 'id');
             const title = extractField(cleanBlock, 'title') || 'The Long Book Club';
             const author = extractField(cleanBlock, 'author');
             const bookDesc = extractField(cleanBlock, 'description', false);
             const coverUrl = extractField(cleanBlock, 'coverUrl') || '/assets/social-share-2.jpg';
             const narrator = extractField(cleanBlock, 'narrator');
             const length = extractField(cleanBlock, 'length');
-            const genreRaw = extractField(cleanBlock, 'genre') || 'Fiction';
+            const genres = extractGenre(cleanBlock);
 
-            const review = reviewsMap.get(title);
-            let seoDescription = (review && review.curatorNote) ? review.curatorNote : (bookDesc || 'Curated long audiobooks.');
-            seoDescription = seoDescription.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
-            if (seoDescription.length > 250) seoDescription = seoDescription.substring(0, 247) + '...';
-
-            const absoluteCoverUrl = coverUrl.startsWith('http') ? coverUrl : BASE_URL + coverUrl;
-            const absoluteUrl = BASE_URL + '/book/' + slug + '/';
-
-            // Injection Content (Visible Body)
-            const bodyContent = `
-                <div id="no-js-content" style="max-width: 800px; margin: 0 auto; padding: 20px; font-family: sans-serif;">
-                    <h1>${escapeHtml(title)}</h1>
-                    <p><strong>Author:</strong> ${escapeHtml(author)} | <strong>Narrator:</strong> ${escapeHtml(narrator)}</p>
-                    <p><strong>Runtime:</strong> ${escapeHtml(length)} | <strong>Genre:</strong> ${escapeHtml(genreRaw)}</p>
-                    <hr />
-                    <div class="book-description">
-                        <h2>About this Audiobook</h2>
-                        <p>${escapeHtml(bookDesc)}</p>
-                    </div>
-                    ${review ? `
-                    <div class="curator-review" style="background: #f9f9f9; padding: 15px; border-radius: 8px; margin-top: 20px;">
-                        <h2>Our Curator's Review</h2>
-                        <p>${escapeHtml(review.curatorNote)}</p>
-                    </div>
-                    ` : ''}
-                </div>
-            `;
-
-            // JSON-LD
-            const jsonLd = {
-                "@context": "https://schema.org",
-                "@type": "Book",
-                "name": title,
-                "author": { "@type": "Person", "name": author },
-                "description": seoDescription,
-                "image": absoluteCoverUrl,
-                "genre": genreRaw,
-                "readBy": { "@type": "Person", "name": narrator },
-                "url": absoluteUrl
-            };
-
-            let html = template;
-            html = html.replace(/<title>.*?<\/title>/, `<title>${escapeHtml(title)} | The Long Book Club</title>`);
-            html = html.replace(/<meta name="description" content="[^"]+" \/>/, `<meta name="description" content="${escapeHtml(seoDescription)}" />`);
-            // OG tags
-            html = html.replace(/<meta property="og:title" content="[^"]+" \/>/, `<meta property="og:title" content="${escapeHtml(title)}" />`);
-            html = html.replace(/<meta property="og:description" content="[^"]+" \/>/, `<meta property="og:description" content="${escapeHtml(seoDescription)}" />`);
-            html = html.replace(/<meta property="og:image" content="[^"]+" \/>/, `<meta property="og:image" content="${absoluteCoverUrl}" />`);
-            html = html.replace(/<meta property="og:url" content="[^"]+" \/>/, `<meta property="og:url" content="${absoluteUrl}" />`);
-            html = html.replace(/<link rel="canonical" href="[^"]+" \/>/, `<link rel="canonical" href="${absoluteUrl}" />`);
-
-            // Inject Body Content
-            html = html.replace('<!-- SEO_CONTENT_HOLDER -->', bodyContent);
-            
-            // Inject JSON-LD
-            html = html.replace('</head>', `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script></head>`);
-
-            const outDir = path.join(DIST_DIR, 'book', slug);
-            if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
-            fs.writeFileSync(path.join(outDir, 'index.html'), html);
-            count++;
+            allBooks.push({
+                id,
+                slug,
+                title,
+                author,
+                description: bookDesc,
+                coverUrl,
+                narrator,
+                length,
+                genres
+            });
         }
-        console.log(`✅ Prerendered ${count} "Thick" book pages.`);
     }
+
+    let bookCount = 0;
+    for (const book of allBooks) {
+        const { slug, title, author, description: bookDesc, coverUrl, narrator, length, genres } = book;
+        const genreRaw = genres.join(', ');
+
+        const review = reviewsMap.get(title);
+        let seoDescription = (review && review.curatorNote) ? review.curatorNote : (bookDesc || 'Curated long audiobooks.');
+        seoDescription = seoDescription.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+        if (seoDescription.length > 250) seoDescription = seoDescription.substring(0, 247) + '...';
+
+        const absoluteCoverUrl = coverUrl.startsWith('http') ? coverUrl : BASE_URL + coverUrl;
+        const absoluteUrl = BASE_URL + '/book/' + slug + '/';
+
+        // Injection Content (Visible Body)
+        const bodyContent = `
+            <div id="no-js-content" style="max-width: 800px; margin: 0 auto; padding: 20px; font-family: sans-serif;">
+                <h1>${escapeHtml(title)}</h1>
+                <p><strong>Author:</strong> ${escapeHtml(author)} | <strong>Narrator:</strong> ${escapeHtml(narrator)}</p>
+                <p><strong>Runtime:</strong> ${escapeHtml(length)} | <strong>Genre:</strong> ${escapeHtml(genreRaw)}</p>
+                <hr />
+                <div class="book-description">
+                    <h2>About this Audiobook</h2>
+                    <p>${escapeHtml(bookDesc)}</p>
+                </div>
+                ${review ? `
+                <div class="curator-review" style="background: #f9f9f9; padding: 15px; border-radius: 8px; margin-top: 20px;">
+                    <h2>Our Curator's Review</h2>
+                    <p>${escapeHtml(review.curatorNote)}</p>
+                </div>
+                ` : ''}
+            </div>
+        `;
+
+        // JSON-LD
+        const jsonLd = {
+            "@context": "https://schema.org",
+            "@type": "Book",
+            "name": title,
+            "author": { "@type": "Person", "name": author },
+            "description": seoDescription,
+            "image": absoluteCoverUrl,
+            "genre": genreRaw,
+            "readBy": { "@type": "Person", "name": narrator },
+            "url": absoluteUrl
+        };
+
+        let html = template;
+        html = html.replace(/<title>.*?<\/title>/, `<title>${escapeHtml(title)} | The Long Book Club</title>`);
+        html = html.replace(/<meta name="description" content="[^"]+" \/>/, `<meta name="description" content="${escapeHtml(seoDescription)}" />`);
+        // OG tags
+        html = html.replace(/<meta property="og:title" content="[^"]+" \/>/, `<meta property="og:title" content="${escapeHtml(title)}" />`);
+        html = html.replace(/<meta property="og:description" content="[^"]+" \/>/, `<meta property="og:description" content="${escapeHtml(seoDescription)}" />`);
+        html = html.replace(/<meta property="og:image" content="[^"]+" \/>/, `<meta property="og:image" content="${absoluteCoverUrl}" />`);
+        html = html.replace(/<meta property="og:url" content="[^"]+" \/>/, `<meta property="og:url" content="${absoluteUrl}" />`);
+        html = html.replace(/<link rel="canonical" href="[^"]+" \/>/, `<link rel="canonical" href="${absoluteUrl}" />`);
+
+        // Inject Body Content
+        html = html.replace('<!-- SEO_CONTENT_HOLDER -->', bodyContent);
+        
+        // Inject JSON-LD
+        html = html.replace('</head>', `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script></head>`);
+
+        const outDir = path.join(DIST_DIR, 'book', slug);
+        if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
+        fs.writeFileSync(path.join(outDir, 'index.html'), html);
+        bookCount++;
+    }
+    console.log(`✅ Prerendered ${bookCount} "Thick" book pages.`);
 
     // --- Journal Prerendering ---
     if (fs.existsSync(JOURNAL_FILE)) {
@@ -227,33 +267,40 @@ async function prerender() {
     }
 
     // --- Genre Prerendering ---
-    const uniqueGenres = new Set();
-    const genreRegex = /genre:\s*(\[[^\]]+\]|'[^']+'|"[^"]+")/g;
-    let genreMatch;
-    while ((genreMatch = genreRegex.exec(booksContent)) !== null) {
-        let raw = genreMatch[1];
-        if (raw.startsWith('[')) {
-            const parts = raw.replace(/[\[\]'"]/g, '').split(',');
-            parts.forEach(p => uniqueGenres.add(p.trim()));
-        } else {
-            uniqueGenres.add(raw.replace(/['"]/g, '').trim());
+    const genresMap = new Map();
+    for (const book of allBooks) {
+        for (const g of book.genres) {
+            if (!genresMap.has(g)) {
+                genresMap.set(g, []);
+            }
+            genresMap.get(g).push(book);
         }
     }
 
     const slugify = (text) => text.toString().toLowerCase().trim().replace(/\s+/g, '-').replace(/[^\w-]+/g, '').replace(/--+/g, '-');
     let gCount = 0;
-    uniqueGenres.forEach(genre => {
-        const slug = slugify(genre);
-        const meta = genreMetaMap.get(genre) || { 
-            metaTitle: `${genre} Audiobooks Over 20 Hours | The Long Book Club`,
-            intro: `Explore our selection of epic ${genre} audiobooks.` 
+    genresMap.forEach((booksInGenre, genreName) => {
+        const slug = slugify(genreName);
+        const meta = genreMetaMap.get(genreName) || { 
+            metaTitle: `${genreName} Audiobooks Over 20 Hours | The Long Book Club`,
+            intro: `Explore our selection of epic ${genreName} audiobooks.` 
         };
+
+        // Build the list of books in this genre
+        let booksListHtml = '<ul>';
+        for (const b of booksInGenre) {
+            booksListHtml += `<li><a href="/book/${b.slug}/">${escapeHtml(b.title)}</a> by ${escapeHtml(b.author)} (${escapeHtml(b.length)})</li>`;
+        }
+        booksListHtml += '</ul>';
 
         const bodyContent = `
             <div id="no-js-content" style="max-width: 800px; margin: 0 auto; padding: 20px; font-family: sans-serif;">
-                <h1>Best Long ${escapeHtml(genre)} Audiobooks</h1>
+                <h1>Best Long ${escapeHtml(genreName)} Audiobooks</h1>
                 <p>${escapeHtml(meta.intro)}</p>
-                <p>Welcome to our curated collection of the best and longest ${escapeHtml(genre)} audiobooks, all 20+ hours in length.</p>
+                <p>Welcome to our curated collection of the best and longest ${escapeHtml(genreName)} audiobooks, all 20+ hours in length.</p>
+                <hr />
+                <h2>Epic Audiobooks in this Genre</h2>
+                ${booksListHtml}
             </div>
         `;
 
@@ -308,7 +355,7 @@ async function prerender() {
                 const cDesc = extractField(b, 'description');
                 const cSlug = extractField(b, 'slug');
                 if (cTitle && cSlug) {
-                    bodyContent += `<li><strong><a href="/collections/${cSlug}">${escapeHtml(cTitle)}</a></strong>: ${escapeHtml(cDesc)}</li>`;
+                    bodyContent += `<li><strong><a href="/collections/${cSlug}/">${escapeHtml(cTitle)}</a></strong>: ${escapeHtml(cDesc)}</li>`;
                 }
             }
             bodyContent += '</ul>';
@@ -320,7 +367,7 @@ async function prerender() {
                 const jExcerpt = extractField(b, 'excerpt');
                 const jSlug = extractField(b, 'slug');
                 if (jTitle && jSlug) {
-                    bodyContent += `<li><strong><a href="/journal/${jSlug}">${escapeHtml(jTitle)}</a></strong>: ${escapeHtml(jExcerpt)}</li>`;
+                    bodyContent += `<li><strong><a href="/journal/${jSlug}/">${escapeHtml(jTitle)}</a></strong>: ${escapeHtml(jExcerpt)}</li>`;
                 }
             }
             bodyContent += '</ul>';
@@ -333,7 +380,7 @@ async function prerender() {
                 const bAuthor = extractField(b, 'author');
                 const bSlug = extractField(b, 'slug');
                 if (bTitle && bSlug) {
-                    bodyContent += `<li><a href="/book/${bSlug}">${escapeHtml(bTitle)}</a> by ${escapeHtml(bAuthor)}</li>`;
+                    bodyContent += `<li><a href="/book/${bSlug}/">${escapeHtml(bTitle)}</a> by ${escapeHtml(bAuthor)}</li>`;
                 }
             }
             bodyContent += '</ul>';
@@ -372,27 +419,19 @@ async function prerender() {
 
             const title = extractField(block, 'title');
             const desc = extractField(block, 'description');
-            const bookIdsRaw = extractField(block, 'bookIds', false); // Get raw string like "['97', '98']"
             const coverUrl = extractField(block, 'coverUrl') || '/assets/social-share-2.jpg';
 
             const absoluteUrl = BASE_URL + '/collections/' + slug + '/';
             const absoluteCoverUrl = coverUrl.startsWith('http') ? coverUrl : BASE_URL + coverUrl;
 
-            // Simple parse of book IDs from the string
-            const bookIds = bookIdsRaw ? bookIdsRaw.replace(/[\[\]'"]/g, '').split(',').map(id => id.trim()) : [];
+            const bookIds = extractArray(block, 'bookIds');
             
             // Build the list of books for injection
             let bookListHtml = '<ul>';
             for (const id of bookIds) {
-                // Find book in booksContent (very basic search)
-                const bookBlockRegex = new RegExp(`id:\\s*['"]${id}['"]([\\s\\S]*?)\\}`, 'm');
-                const bMatch = booksContent.match(bookBlockRegex);
-                if (bMatch) {
-                    const bTitle = extractField(bMatch[1], 'title');
-                    const bSlug = extractField(bMatch[1], 'slug');
-                    if (bTitle && bSlug) {
-                        bookListHtml += `<li><a href="/book/${bSlug}">${escapeHtml(bTitle)}</a></li>`;
-                    }
+                const book = allBooks.find(b => b.id === id);
+                if (book) {
+                    bookListHtml += `<li><a href="/book/${book.slug}/">${escapeHtml(book.title)}</a></li>`;
                 }
             }
             bookListHtml += '</ul>';

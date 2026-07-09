@@ -81,7 +81,7 @@ export const About = () => {
                 </p>
 
                 <p>
-                    I realised that if I wanted the best books with real value, I needed to make something that helped me find them easily. That is precisely what the <Link to="/long-book-finder" style={{ textDecoration: 'underline' }}>Long Book Finder Tool</Link> does, as well as the <Link to="/collections" style={{ textDecoration: 'underline' }}>Curated Collections</Link> and <Link to="/journal" style={{ textDecoration: 'underline' }}>Book Journal</Link> pages.
+                    I realised that if I wanted the best books with real value, I needed to make something that helped me find them easily. That is precisely what the <Link to="/long-book-finder/" style={{ textDecoration: 'underline' }}>Long Book Finder Tool</Link> does, as well as the <Link to="/collections/" style={{ textDecoration: 'underline' }}>Curated Collections</Link> and <Link to="/journal/" style={{ textDecoration: 'underline' }}>Book Journal</Link> pages.
                 </p>
 
                 <p>

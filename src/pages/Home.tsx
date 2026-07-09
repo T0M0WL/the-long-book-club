@@ -114,7 +114,7 @@ export const Home = () => {
                 <p style={{ fontFamily: 'var(--font-body)', color: 'var(--color-brand-slate)', lineHeight: 1.6, marginBottom: '2.5rem', fontSize: '0.95rem', maxWidth: '600px' }}>
                     This unique tool is designed to help you quickly find your next long-listen. Use the time-slider to sort by length, filter by genre or search by author and even narrator.
                 </p>
-                <Link to="/long-book-finder" style={{
+                <Link to="/long-book-finder/" style={{
                     backgroundColor: 'var(--color-brand-coral)',
                     color: '#fff',
                     textDecoration: 'none',
@@ -193,7 +193,7 @@ export const Home = () => {
                         <p style={{ fontFamily: 'var(--font-body)', color: 'var(--color-brand-slate)', lineHeight: 1.6, marginBottom: '2.5rem', flex: 1, fontSize: '0.95rem' }}>
                             From the longest ever audiobooks, to niche trending genres. Our long book Curated Collections help you find your next epic listen.
                         </p>
-                        <Link to="/collections" style={{
+                        <Link to="/collections/" style={{
                             backgroundColor: 'var(--color-brand-coral)',
                             color: '#fff',
                             textDecoration: 'none',
@@ -225,7 +225,7 @@ export const Home = () => {
                         <p style={{ fontFamily: 'var(--font-body)', color: 'var(--color-brand-slate)', lineHeight: 1.6, marginBottom: '2.5rem', flex: 1, fontSize: '0.95rem' }}>
                             Our Club Journals focus on Audiobook hacks, industry news and deep dives into trending sub-genres and trends.
                         </p>
-                        <Link to="/journal" style={{
+                        <Link to="/journal/" style={{
                             backgroundColor: 'var(--color-brand-coral)',
                             color: '#fff',
                             textDecoration: 'none',
@@ -320,7 +320,7 @@ export const Home = () => {
 
                 {/* View All Button */}
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <Link to="/collections" style={{
+                    <Link to="/collections/" style={{
                         backgroundColor: 'var(--color-brand-coral)',
                         color: 'var(--color-brand-cloud)',
                         textDecoration: 'none',

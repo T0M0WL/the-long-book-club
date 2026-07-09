@@ -155,7 +155,7 @@ export const Links = () => {
           <div style={{ display: 'flex', flexDirection: 'column', width: '100%', gap: '1rem' }}>
             
             {/* Primary Action */}
-            <Link to="/long-book-finder" style={{
+            <Link to="/long-book-finder/" style={{
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
@@ -195,7 +195,7 @@ export const Links = () => {
             </a>
 
             {/* Target Niche */}
-            <Link to="/collections/romantasy" style={{
+            <Link to="/collections/romantasy/" style={{
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
@@ -215,7 +215,7 @@ export const Links = () => {
             </Link>
 
             {/* Utility Links */}
-            <Link to="/collections" style={{
+            <Link to="/collections/" style={{
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',

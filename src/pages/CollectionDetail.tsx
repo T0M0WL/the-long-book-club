@@ -58,7 +58,7 @@ export const CollectionDetail = () => {
     });
 
     if (!collection) {
-        return <Navigate to="/collections" replace />;
+        return <Navigate to="/collections/" replace />;
     }
 
 
