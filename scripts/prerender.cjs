@@ -66,6 +66,19 @@ function escapeHtml(text) {
                .replace(/'/g, '&#039;');
 }
 
+/**
+ * Converts audiobook length string (e.g., "67h", "52h 41m") to ISO 8601 duration format (e.g., "PT67H", "PT52H41M").
+ */
+function convertLengthToIso8601(lengthStr) {
+    if (!lengthStr) return null;
+    const hoursMatch = lengthStr.match(/(\d+)\s*h/);
+    const minutesMatch = lengthStr.match(/(\d+)\s*m/);
+    let iso = 'PT';
+    if (hoursMatch) iso += `${hoursMatch[1]}H`;
+    if (minutesMatch) iso += `${minutesMatch[1]}M`;
+    return iso === 'PT' ? null : iso;
+}
+
 async function prerender() {
     console.log('🚀 Starting "Thick" Prerender for SEO Restoration...');
 
@@ -129,6 +142,8 @@ async function prerender() {
             const narrator = extractField(cleanBlock, 'narrator');
             const length = extractField(cleanBlock, 'length');
             const genres = extractGenre(cleanBlock);
+            const affiliateLink = extractField(cleanBlock, 'affiliateLink');
+            const affiliateLinkUS = extractField(cleanBlock, 'affiliateLinkUS');
 
             allBooks.push({
                 id,
@@ -139,14 +154,16 @@ async function prerender() {
                 coverUrl,
                 narrator,
                 length,
-                genres
+                genres,
+                affiliateLink,
+                affiliateLinkUS
             });
         }
     }
 
     let bookCount = 0;
     for (const book of allBooks) {
-        const { slug, title, author, description: bookDesc, coverUrl, narrator, length, genres } = book;
+        const { slug, title, author, description: bookDesc, coverUrl, narrator, length, genres, affiliateLink, affiliateLinkUS } = book;
         const genreRaw = genres.join(', ');
 
         const review = reviewsMap.get(title);
@@ -178,17 +195,59 @@ async function prerender() {
         `;
 
         // JSON-LD
+        const offers = [];
+        if (affiliateLink) {
+            offers.push({
+                "@type": "Offer",
+                "name": "Audible UK",
+                "url": affiliateLink,
+                "offeredBy": { "@type": "Organization", "name": "Audible" },
+                "price": "0.00",
+                "priceCurrency": "GBP",
+                "availability": "https://schema.org/InStock"
+            });
+        }
+        if (affiliateLinkUS) {
+            offers.push({
+                "@type": "Offer",
+                "name": "Audible US",
+                "url": affiliateLinkUS,
+                "offeredBy": { "@type": "Organization", "name": "Audible" },
+                "price": "0.00",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock"
+            });
+        }
+
         const jsonLd = {
             "@context": "https://schema.org",
-            "@type": "Book",
+            "@type": "Audiobook",
             "name": title,
             "author": { "@type": "Person", "name": author },
             "description": seoDescription,
             "image": absoluteCoverUrl,
-            "genre": genreRaw,
+            "genre": genres,
             "readBy": { "@type": "Person", "name": narrator },
             "url": absoluteUrl
         };
+
+        const duration = convertLengthToIso8601(length);
+        if (duration) jsonLd.duration = duration;
+        if (offers.length > 0) jsonLd.offers = offers;
+
+        if (review) {
+            jsonLd.review = {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "The Long Book Club Curator" },
+                "reviewBody": review.curatorNote.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim(),
+                "reviewRating": {
+                    "@type": "Rating",
+                    "bestRating": "5",
+                    "ratingValue": "5",
+                    "worstRating": "1"
+                }
+            };
+        }
 
         let html = template;
         html = html.replace(/<title>.*?<\/title>/, `<title>${escapeHtml(title)} | The Long Book Club</title>`);
