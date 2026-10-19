@@ -67,6 +67,56 @@ function escapeHtml(text) {
 }
 
 /**
+ * Ensures internal TLBC URLs always end with a trailing slash for Hostinger/Googlebot compatibility.
+ */
+function normalizeInternalUrl(url) {
+    if (!url) return '';
+    let clean = url.trim();
+    const isInternal = clean.startsWith('/') || clean.startsWith(BASE_URL);
+    if (isInternal && !clean.endsWith('/') && !clean.includes('?') && !clean.includes('#')) {
+        clean += '/';
+    }
+    return clean;
+}
+
+/**
+ * Safely formats review/journal body text into crawlable HTML paragraphs while preserving
+ * both HTML <a href="..."> links and Markdown [text](url) links as real <a> tags.
+ */
+function formatRichTextHtml(text) {
+    if (!text) return '';
+    const links = [];
+
+    // 1. Capture existing HTML <a href="...">label</a> tags
+    let processed = text.replace(/<a\s+[^>]*href=(?:\\?["'])([^"'\s\\]+)(?:\\?["'])[^>]*>([\s\S]*?)<\/a>/gi, (_, url, label) => {
+        const token = `%%TLBC_LINK_${links.length}%%`;
+        const cleanLabel = label.replace(/<[^>]*>/g, '').trim();
+        links.push(`<a href="${escapeHtml(normalizeInternalUrl(url))}">${escapeHtml(cleanLabel)}</a>`);
+        return token;
+    });
+
+    // 2. Capture Markdown [label](url) links
+    processed = processed.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label, url) => {
+        const token = `%%TLBC_LINK_${links.length}%%`;
+        links.push(`<a href="${escapeHtml(normalizeInternalUrl(url))}">${escapeHtml(label.trim())}</a>`);
+        return token;
+    });
+
+    // 3. Escape remaining text safely
+    processed = escapeHtml(processed);
+
+    // 4. Convert basic Markdown bold **text** to <strong>
+    processed = processed.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+
+    // 5. Restore crawlable <a> tags
+    links.forEach((htmlLink, idx) => {
+        processed = processed.replace(`%%TLBC_LINK_${idx}%%`, htmlLink);
+    });
+
+    return processed;
+}
+
+/**
  * Converts audiobook length string (e.g., "67h", "52h 41m") to ISO 8601 duration format (e.g., "PT67H", "PT52H41M").
  */
 function convertLengthToIso8601(lengthStr) {
@@ -102,6 +152,8 @@ async function prerender() {
             reviewsMap.set(title, {
                 curatorNote: extractField(block, 'curatorNote', false),
                 curatorTitle: extractField(block, 'curatorTitle'),
+                narrator: extractField(block, 'narrator'),
+                soundCheck: extractField(block, 'soundCheck', false),
                 longBookClubTake: extractField(block, 'longBookClubTake', false)
             });
         }
@@ -144,6 +196,9 @@ async function prerender() {
             const genres = extractGenre(cleanBlock);
             const affiliateLink = extractField(cleanBlock, 'affiliateLink');
             const affiliateLinkUS = extractField(cleanBlock, 'affiliateLinkUS');
+            const teaserTitle = extractField(cleanBlock, 'teaserTitle');
+            const teaser = extractField(cleanBlock, 'teaser');
+            const cardOverview = extractField(cleanBlock, 'cardOverview');
 
             allBooks.push({
                 id,
@@ -156,23 +211,31 @@ async function prerender() {
                 length,
                 genres,
                 affiliateLink,
-                affiliateLinkUS
+                affiliateLinkUS,
+                teaserTitle,
+                teaser,
+                cardOverview
             });
         }
     }
 
     let bookCount = 0;
     for (const book of allBooks) {
-        const { slug, title, author, description: bookDesc, coverUrl, narrator, length, genres, affiliateLink, affiliateLinkUS } = book;
+        const { slug, title, author, description: bookDesc, coverUrl, narrator: bookNarrator, length, genres, affiliateLink, affiliateLinkUS } = book;
         const genreRaw = genres.join(', ');
 
         const review = reviewsMap.get(title);
+        const narrator = (review && review.narrator) ? review.narrator : bookNarrator;
         let seoDescription = (review && review.curatorNote) ? review.curatorNote : (bookDesc || 'Curated long audiobooks.');
-        seoDescription = seoDescription.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+        seoDescription = seoDescription.replace(/<[^>]*>/g, ' ').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').replace(/\s+/g, ' ').trim();
         if (seoDescription.length > 250) seoDescription = seoDescription.substring(0, 247) + '...';
 
         const absoluteCoverUrl = coverUrl.startsWith('http') ? coverUrl : BASE_URL + coverUrl;
         const absoluteUrl = BASE_URL + '/book/' + slug + '/';
+
+        const formattedCuratorNote = (review && review.curatorNote)
+            ? review.curatorNote.split('\n\n').map(p => `<p>${formatRichTextHtml(p.trim())}</p>`).join('')
+            : '';
 
         // Injection Content (Visible Body)
         const bodyContent = `
@@ -183,13 +246,19 @@ async function prerender() {
                 <hr />
                 <div class="book-description">
                     <h2>About this Audiobook</h2>
-                    <p>${escapeHtml(bookDesc)}</p>
+                    <p>${formatRichTextHtml(bookDesc)}</p>
                 </div>
                 ${review ? `
                 <div class="curator-review" style="background: #f9f9f9; padding: 15px; border-radius: 8px; margin-top: 20px;">
-                    <h2>Our Curator's Review</h2>
-                    <p>${escapeHtml(review.curatorNote)}</p>
+                    <h2>${escapeHtml(review.curatorTitle || "Our Curator's Review")}</h2>
+                    ${formattedCuratorNote}
                 </div>
+                ${review.soundCheck ? `
+                <div class="narrator-soundcheck" style="background: #f4f4f4; padding: 15px; border-radius: 8px; margin-top: 20px;">
+                    <h3>Narrator Soundcheck: ${escapeHtml(narrator)}</h3>
+                    <p>${formatRichTextHtml(review.soundCheck)}</p>
+                </div>
+                ` : ''}
                 ` : ''}
             </div>
         `;
@@ -239,7 +308,7 @@ async function prerender() {
             jsonLd.review = {
                 "@type": "Review",
                 "author": { "@type": "Person", "name": "The Long Book Club Curator" },
-                "reviewBody": review.curatorNote.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim(),
+                "reviewBody": review.curatorNote.replace(/<[^>]*>/g, ' ').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').replace(/\s+/g, ' ').trim(),
                 "reviewRating": {
                     "@type": "Rating",
                     "bestRating": "5",
@@ -285,6 +354,7 @@ async function prerender() {
 
             const title = extractField(cleanBlock, 'title');
             const excerpt = extractField(cleanBlock, 'excerpt');
+            const fullContent = extractField(cleanBlock, 'content', false);
             const author = extractField(cleanBlock, 'author') || 'The Long Book Club';
             const date = extractField(cleanBlock, 'date');
             const coverUrl = extractField(cleanBlock, 'coverUrl') || '/assets/social-share-2.jpg';
@@ -292,15 +362,21 @@ async function prerender() {
             const absoluteUrl = BASE_URL + '/journal/' + slug + '/';
             const absoluteCoverUrl = coverUrl.startsWith('http') ? coverUrl : BASE_URL + coverUrl;
 
+            const formattedJournalBody = fullContent
+                ? fullContent.split('\n\n').map(p => `<p>${formatRichTextHtml(p.trim())}</p>`).join('')
+                : `<p>${formatRichTextHtml(excerpt)}</p>`;
+
             const bodyContent = `
                 <div id="no-js-content" style="max-width: 800px; margin: 0 auto; padding: 20px; font-family: sans-serif;">
                     <h1>${escapeHtml(title)}</h1>
                     <p><em>Published on ${escapeHtml(date)} by ${escapeHtml(author)}</em></p>
                     <hr />
                     <div class="journal-excerpt">
-                        <p>${escapeHtml(excerpt)}</p>
+                        <p><strong>${escapeHtml(excerpt)}</strong></p>
                     </div>
-                    <p>Read the full post at ${absoluteUrl}</p>
+                    <div class="journal-content">
+                        ${formattedJournalBody}
+                    </div>
                 </div>
             `;
 
@@ -348,7 +424,13 @@ async function prerender() {
         // Build the list of books in this genre
         let booksListHtml = '<ul>';
         for (const b of booksInGenre) {
-            booksListHtml += `<li><a href="/book/${b.slug}/">${escapeHtml(b.title)}</a> by ${escapeHtml(b.author)} (${escapeHtml(b.length)})</li>`;
+            const overviewText = b.cardOverview || b.teaser || b.description || '';
+            const overviewHtml = overviewText ? `<p>${escapeHtml(overviewText)}</p>` : '';
+            booksListHtml += `<li>
+                <h3><a href="/book/${b.slug}/">${escapeHtml(b.title)}</a> by ${escapeHtml(b.author)} (${escapeHtml(b.length)})</h3>
+                ${b.narrator ? `<p><strong>Narrated by:</strong> ${escapeHtml(b.narrator)}</p>` : ''}
+                ${overviewHtml}
+            </li>`;
         }
         booksListHtml += '</ul>';
 
@@ -490,7 +572,14 @@ async function prerender() {
             for (const id of bookIds) {
                 const book = allBooks.find(b => b.id === id);
                 if (book) {
-                    bookListHtml += `<li><a href="/book/${book.slug}/">${escapeHtml(book.title)}</a></li>`;
+                    const snippetTitle = book.teaserTitle ? `<h4>${escapeHtml(book.teaserTitle)}</h4>` : '';
+                    const snippetText = book.teaser || book.cardOverview || book.description || '';
+                    const snippetP = snippetText ? `<p>${escapeHtml(snippetText)}</p>` : '';
+                    bookListHtml += `<li>
+                        <h3><a href="/book/${book.slug}/">${escapeHtml(book.title)}</a> by ${escapeHtml(book.author)} (${escapeHtml(book.length)})</h3>
+                        ${snippetTitle}
+                        ${snippetP}
+                    </li>`;
                 }
             }
             bookListHtml += '</ul>';

@@ -276,8 +276,10 @@ export const baseBooks: Book[] = [
         affiliateLinkUS: 'https://www.amazon.com/dp/B093TC2K3D?tag=thelongbookcl-20'
     },
     {
-        relatedBookIds: ['5','25','26','90','96','24','89','76','78'],
+        relatedBookIds: ['99','161','160','162','163','164','165','5','25'],
         cardOverview: "47 hours of surreal mystery. Moonshine, assassins, and parallel worlds in Murakami's most ambitious work.",
+        teaserTitle: "Three Volumes, Two Moons, One Credit",
+        teaser: "Originally published as three separate volumes in Japan, Murakami’s magnum opus traps an assassin and a ghostwriter inside an alternate 1984 Tokyo with two moons in the sky. How do three different narrators sustain this hypnotic parallel-world mystery across nearly 47 hours without losing the thread?",
         narrator: "Allison Hiroto, Marc Vietor, Mark Boyett",
         genre: ['Fantasy','Magical Realism','Dystopian','Literary Fiction','Mystery','Romance'],
         description: "A young woman named Aomame follows a taxi driver's enigmatic suggestion and begins to notice puzzling discrepancies in the world around her.",
@@ -1414,6 +1416,7 @@ export const baseBooks: Book[] = [
     },
     {
         relatedBookIds: ['87'],
+        cardOverview: "21 hours on the Dust Bowl highway. Steinbeck's Great American Novel is even more devastating and urgent by ear.",
         narrator: "Dylan Baker",
         genre: ['Classics','Historical Fiction','Social Commentary','Great Depression','Americana','Tragedy'],
         description: "The Joads are driven from their homestead in Oklahoma and forced to travel west to the promised land of California.",
@@ -1430,6 +1433,7 @@ export const baseBooks: Book[] = [
     },
     {
         relatedBookIds: ['5','25','26','90','96','17','24','76','78'],
+        cardOverview: "21 hours of fierce Appalachian grit. A modern, Pulitzer-winning reimagining of David Copperfield.",
         narrator: "Charlie Thurston",
         genre: ['Contemporary Fiction','Coming of Age','Retelling','Appalachia','Social Commentary','Addiction'],
         description: "The story of a boy born in Appalachia to a teenaged single mother in a single-wide trailer.",
@@ -1446,6 +1450,7 @@ export const baseBooks: Book[] = [
     },
     {
         relatedBookIds: ['5','25','26','96','17','24','89','76','78'],
+        cardOverview: "26 hours of Golden Age comic books, escapism, and wartime New York. A Pulitzer-winning American epic.",
         narrator: "David Colacci",
         genre: ['Historical Fiction','Comics','Jewish History','Literary Fiction','LGBTQ+','NYC'],
         description: "Joe Kavalier, a young Jewish artist who has also been trained in the art of Houdini-esque escape, has just smuggled himself out of Nazi-occupied Prague.",
@@ -1462,6 +1467,7 @@ export const baseBooks: Book[] = [
     },
     {
         relatedBookIds: ['5','25','26','90','17','24','89','76','78'],
+        cardOverview: "39 hours of hypnotic literary mystery. Five interlocking novels that orbit the dark heart of the 20th century.",
         narrator: "John Lee, Armando Durán, G. Valmont Thomas, Scott Brick, Grover Gardner",
         genre: ['Literary Fiction','Mystery','Postmodernism','Crime','Philosophy','Horror'],
         description: "Composed of five parts, 2666 is a novel of such power that it has transformed the way we understand literature.",
@@ -1511,9 +1517,10 @@ export const baseBooks: Book[] = [
         affiliateLinkUS: 'https://www.amazon.com/dp/B0D5ZMQ4WF?tag=thelongbookcl-20'
     },
     {
+        relatedBookIds: ['17','161','160','162','163','164','165'],
         cardOverview: "Murakami returns with a 17-hour dreamscape. A perfect, warm blanket of a listen for long winter nights.",
-        teaser: "Murakami returns to his roots with a dreamlike journey into a walled city. It feels like a remix of his greatest hits: libraries, jazz, cats, and metaphysical yearning. If you are a fan, it is a warm blanket; if you are new, it is a perfect entry point.",
-        teaserTitle: "Classic Murakami Dreamscape",
+        teaserTitle: "The Dream Reader of the Walled City",
+        teaser: "A man surrenders his own shadow at the gates of an imaginary walled city to work as a 'Dream Reader' in a silent library. It is a seventeen-hour return to Murakami’s purest obsessions—but how does Brian Nishii’s hushed narration handle the split between two realities?",
         genre: ['Fantasy','Magical Realism','Literary Fiction','Metaphysical','Mystery','Romance'],
         description: "A love story and quest narrative following a protagonist searching for an imaginary city where his true love resides. Explores lost love, memory, and the boundary between reality and imagination.",
         id: '99',
@@ -1547,6 +1554,7 @@ export const baseBooks: Book[] = [
     {
         cardOverview: "Essential 18-hour reading for the AI era. Harari traces information networks from the Stone Age to our uncertain future.",
         teaserTitle: "Sapiens for the AI Age",
+        teaser: "Yuval Noah Harari returns with a sweeping 18-hour investigation into how information networks have built—and threatened—human civilization. From Stone Age storytelling to the rise of autonomous AI, it is essential, thought-provoking non-fiction.",
         genre: ['Non-Fiction','History','Technology','AI','Philosophy','Future'],
         description: "Explores deeply how information networks have shaped our world from the Stone Age to AI, and how we are currently facing an existential threat from non-human intelligence.",
         id: '101',
@@ -1578,7 +1586,9 @@ export const baseBooks: Book[] = [
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CQD8T35J?tag=thelongbookcl-20'
     },
     {
+        cardOverview: "54 hours in feudal Japan. The towering historical epic of samurai politics and survival behind the hit series.",
         teaserTitle: "The Book Behind the Phenomenon",
+        teaser: "If you loved the acclaimed television adaptation, the 54-hour audiobook offers a level of internal scheming and cultural immersion no screen could match. Ralph Lister's narration turns 1600 feudal Japan into a living, breathing chessboard.",
         genre: ['Historical Fiction','Adventure','War','Politics','Japan','Samurai'],
         description: "A sweeping epic set in 1600 feudal Japan. English pilot John Blackthorne is shipwrecked and rises to become a samurai and key player in the rise of the Shogun.",
         id: '103',
@@ -1593,6 +1603,7 @@ export const baseBooks: Book[] = [
         affiliateLinkUS: 'https://www.amazon.com/dp/B0CRMBF73W?tag=thelongbookcl-20'
     },
     {
+        cardOverview: "32 hours of gothic vampire grimdark. Brutal, cinematic, and relentless—a blood-soaked sequel that raises every stake.",
         genre: ['Fantasy','Dark Fantasy','Grimdark','Vampires','Horror','Action'],
         description: "Gabriel de León, the last Silversaint, continues his journey to end the eternal night. A dark and gritty tale of vampires, faith, and political intrigue.",
         id: '104',
@@ -1713,6 +1724,7 @@ export const baseBooks: Book[] = [
         affiliateLinkUS: 'https://www.amazon.com/dp/B005FIPMZK?tag=thelongbookcl-20'
     },
     {
+        cardOverview: "28 hours of high-stakes dragon warfare. Darker, longer, and even more addictive than Fourth Wing.",
         teaser: 'The 28-hour sequel that ups the stakes in every conceivable way. It is longer, darker, and even more addictive than "Fourth Wing." A breathless ride that demands a cancelled weekend.',
         teaserTitle: "The Blockbuster Sequel",
         genre: ['Fantasy','Romantasy','High Fantasy','Dragons','War','Magic School'],
@@ -1939,6 +1951,7 @@ export const baseBooks: Book[] = [
     {
         cardOverview: "199 hours. The first six major novels. The heavyweight champion of value per credit.",
         teaserTitle: "The Best Value Credit on Audible?",
+        teaser: "At nearly 200 hours for a single credit, this Audible Original anthology pairs Dickens's first six masterpieces with a rotating all-star British cast including Juliet Stevenson, Jason Isaacs, and Jonathan Keeble.",
         narrator: "Juliet Stevenson, Jason Isaacs, Jonathan Keeble, David Rintoul, Malk Williams, Ben Allen",
         genre: ['Classics','Victorian','Anthology','Historical Fiction','Social Commentary','Satire'],
         description: "A massive collection featuring the first six major works of Charles Dickens, including Oliver Twist, Nicholas Nickleby, The Old Curiosity Shop, and A Christmas Carol. This Audible Original production brings these timeless tales to life with a full cast of celebrated narrators.",
@@ -2075,6 +2088,7 @@ export const baseBooks: Book[] = [
     },
 
     {
+        cardOverview: "18 hours of dark academia in Hell. Two rival Cambridge PhDs descend into the underworld to rescue their advisor.",
         narrator: "Morag Sims, Will Watt",
         genre: ['Fantasy','Dark Academia','Mythology','Literary Fiction','Adventure'],
         description: "Two rival PhD students at Cambridge must descend into Hell to rescue their deceased thesis advisor in this dark academia fantasy that blends Dante’s Inferno with academic satire.",
@@ -2509,6 +2523,120 @@ export const baseBooks: Book[] = [
         cardOverview: "An unparalleled value proposition for the discerning listener, offering 21 hours of gritty, visceral portal fantasy with a brilliant meta-narrative twist.",
         narrator: "Kristen Sieh"
     },
+    {
+        id: "160",
+        slug: "one-hundred-years-of-solitude-gabriel-garcia-marquez",
+        title: "One Hundred Years of Solitude",
+        author: "Gabriel García Márquez",
+        coverUrl: "/covers/one-hundred-years-of-solitude-gabriel-garcia-marquez.jpg",
+        length: "17h 56m",
+        lengthHours: 17.9,
+        genre: ["Magical Realism", "Literary Fiction", "Classic", "Historical Fiction", "Family Saga", "Nobel Prize", "Latin American Literature", "Multi-generational"],
+        description: "The multi-generational story of the Buendía family, whose patriarch, José Arcadio Buendía, founded the mythical town of Macondo. Blending the supernatural with the ordinary, Márquez chronicles a century of miracles, rebellions, love affairs, and curses.",
+        cardOverview: "18 hours in mythical Macondo. Ben Onwukwe turns Márquez's Nobel Prize-winning family saga into an effortless fever dream.",
+        teaserTitle: "The Founding Myth of Magical Realism",
+        teaser: "Seven generations of the Buendía family share the same two names inside the isolated jungle town of Macondo—a notorious challenge on paper that causes many print readers to stall. Yet when spoken aloud over eighteen hours, something extraordinary happens to Márquez’s labyrinthine family tree...",
+        narrator: "Ben Onwukwe",
+        relatedBookIds: ["164", "162", "17", "161", "163", "105"],
+        audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/61/11/22/61112268-bda4-68cd-1dfa-7b597372c6db/mzaf_17768424690085941014.std.aac.p.m4a",
+        affiliateLink: "https://www.amazon.co.uk/dp/B0BGT4HXBF?tag=thelongbookcl-21",
+        affiliateLinkUS: "https://www.amazon.com/dp/B0BGSZ1DW2?tag=thelongbookcl-20"
+    },
+    {
+        id: "161",
+        slug: "the-wind-up-bird-chronicle-haruki-murakami",
+        title: "The Wind-Up Bird Chronicle",
+        author: "Haruki Murakami",
+        coverUrl: "/covers/the-wind-up-bird-chronicle-haruki-murakami.jpg",
+        length: "26h 11m",
+        lengthHours: 26.2,
+        genre: ["Magical Realism", "Literary Fiction", "Mystery", "Fantasy", "Surrealism", "Japanese Literature", "Metaphysical", "Historical Mystery"],
+        description: "In a Tokyo suburb, Toru Okada's search for his wife's missing cat leads him into a hidden realm beneath the city's placid surface, encountering psychic sisters, a dry well, and haunted veterans of the Manchurian campaign.",
+        cardOverview: "26 hours down the subterranean well. Missing cats, psychic sisters, and WWII secrets in Murakami's supreme masterpiece.",
+        teaserTitle: "Murakami’s 26-Hour Subterranean Labyrinth",
+        teaser: "It begins with a man boiling spaghetti in a quiet Tokyo kitchen and a phone call from a mysterious woman. Within hours, a search for a missing cat spirals into psychic mediums, the bottom of a dark well, and haunted memories of wartime Manchuria. Why do so many listeners consider this 26-hour puzzle his true masterpiece?",
+        narrator: "Rupert Degas",
+        relatedBookIds: ["17", "99", "160", "162", "163", "165"],
+        audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview114/v4/8d/46/cf/8d46cfc9-d931-15a6-db05-6e3e1778bb74/mzaf_3239806246224597725.std.aac.p.m4a",
+        affiliateLink: "https://www.amazon.co.uk/dp/B08DP1P2JS?tag=thelongbookcl-21",
+        affiliateLinkUS: "https://www.amazon.com/dp/B08DP27V4X?tag=thelongbookcl-20"
+    },
+    {
+        id: "162",
+        slug: "midnights-children-salman-rushdie",
+        title: "Midnight's Children",
+        author: "Salman Rushdie",
+        coverUrl: "/covers/midnights-children-salman-rushdie.jpg",
+        length: "25h 39m",
+        lengthHours: 25.7,
+        genre: ["Magical Realism", "Historical Fiction", "Literary Fiction", "Classic", "India", "Booker Prize", "Family Saga", "Political Satire"],
+        description: "Born at the exact stroke of midnight on August 15, 1947—the moment of India's independence—Saleem Sinai discovers he is telepathically linked to a thousand other children born in that same fateful hour, his life inextricably handcuffed to his nation's modern history.",
+        cardOverview: "26 hours of Booker-winning magic. Born at the stroke of Indian independence, one telepathic boy mirrors a nation's fate.",
+        teaserTitle: "The 'Booker of Bookers' Performed Aloud",
+        teaser: "Born at the exact stroke of midnight as India gains independence, Saleem Sinai discovers he can telepathically broadcast into the minds of 1,001 other children born in that same hour. Rushdie’s riotous, polyphonic prose was crowned the greatest Booker winner in history—and on audio, one vocal choice changes everything...",
+        narrator: "Homer Todiwala",
+        relatedBookIds: ["160", "164", "105", "93", "17", "161"],
+        audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/f7/04/2f/f7042fac-5293-ece4-97a2-8a8c73503972/mzaf_625481252914685307.std.aac.p.m4a",
+        affiliateLink: "https://www.amazon.co.uk/dp/B07FSW987Q?tag=thelongbookcl-21",
+        affiliateLinkUS: "https://www.amazon.com/dp/B07FSVQ5BM?tag=thelongbookcl-20"
+    },
+    {
+        id: "163",
+        slug: "the-shadow-of-the-wind-carlos-ruiz-zafon",
+        title: "The Shadow of the Wind",
+        author: "Carlos Ruiz Zafón",
+        coverUrl: "/covers/the-shadow-of-the-wind-carlos-ruiz-zafon.jpg",
+        length: "17h 13m",
+        lengthHours: 17.2,
+        genre: ["Magical Realism", "Historical Fiction", "Mystery", "Dark Academia", "Gothic", "Books About Books", "Barcelona", "Romance", "Thriller"],
+        description: "In 1945 Barcelona, young Daniel Sempere is taken by his antiquarian book-dealer father to the secret Cemetery of Forgotten Books, where he selects a rare novel by Julián Carax—unaware that a scarred stranger is burning every remaining copy in the world.",
+        cardOverview: "17 hours in 1945 Barcelona. A secret labyrinth of forgotten books, a faceless fire-starter, and a haunting Gothic mystery.",
+        teaserTitle: "Enter the Cemetery of Forgotten Books",
+        teaser: "In the mist-shrouded streets of 1945 Barcelona, a bookseller’s son pulls a single cursed novel from a labyrinthine secret library—only to discover a faceless man is burning every last copy in existence. It blends Gothic mystery with lush magical realism, anchored by an unforgettable supporting character...",
+        narrator: "Daniel Weyman",
+        relatedBookIds: ["109", "108", "38", "160", "164", "165"],
+        audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/86/74/7b/86747bc9-6b24-15d0-f157-1e09fc1f47e6/mzaf_119864995044323572.std.aac.p.m4a",
+        affiliateLink: "https://www.amazon.co.uk/dp/B005EM6Z26?tag=thelongbookcl-21",
+        affiliateLinkUS: "https://www.amazon.com/dp/B005ELYDY4?tag=thelongbookcl-20"
+    },
+    {
+        id: "164",
+        slug: "the-house-of-the-spirits-isabel-allende",
+        title: "The House of the Spirits",
+        author: "Isabel Allende",
+        coverUrl: "/covers/the-house-of-the-spirits-isabel-allende.jpg",
+        length: "18h 51m",
+        lengthHours: 18.9,
+        genre: ["Magical Realism", "Historical Fiction", "Literary Fiction", "Classic", "Family Saga", "Multi-generational", "Latin American Literature", "Romance"],
+        description: "The sweeping multigenerational chronicle of the Trueba family in an unnamed Latin American country, following the tyrannical patriarch Esteban and three generations of clairvoyant women—Clara, Blanca, and Alba—through decades of love, ghosts, and political upheaval.",
+        cardOverview: "19 hours of ghosts, clairvoyants, and revolution. Three generations of extraordinary women anchor Allende's masterpiece.",
+        teaserTitle: "Three Generations of Clairvoyants and Ghosts",
+        teaser: "Clara the Clairvoyant moves saltcellars with her mind, communes with spirits, and records the future in her notebooks while her tyrannical husband builds an empire. Spanning seventy years of love and revolution, this 19-hour saga shifts between two contrasting narrators for a very specific structural reason...",
+        narrator: "Marisol Ramirez, Thom Rivera",
+        relatedBookIds: ["160", "162", "105", "163", "165", "17"],
+        audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/32/78/d7/3278d72c-14f8-2bc0-6480-1ba429bc65e6/mzaf_79862219141171310.std.aac.p.m4a",
+        affiliateLink: "https://www.amazon.co.uk/dp/B0GQBDG9PX?tag=thelongbookcl-21",
+        affiliateLinkUS: "https://www.amazon.com/dp/B0GQBDFNNL?tag=thelongbookcl-20"
+    },
+    {
+        id: "165",
+        slug: "the-night-circus-erin-morgenstern",
+        title: "The Night Circus",
+        author: "Erin Morgenstern",
+        coverUrl: "/covers/the-night-circus-erin-morgenstern.jpg",
+        length: "13h 40m",
+        lengthHours: 13.7,
+        genre: ["Magical Realism", "Fantasy", "Romance", "Historical Fiction", "Circus", "Magic", "Victorian", "Atmospheric"],
+        description: "Le Cirque des Rêves arrives without warning and opens only at nightfall. Behind the scenes of its black-and-white striped tents, two young magicians, Celia and Marco, are locked in a fierce competition of imagination where only one can be left standing.",
+        cardOverview: "14 hours inside a monochrome circus of dreams. Jim Dale narrates a lush, high-stakes duel between two star-crossed illusionists.",
+        teaserTitle: "Step Inside the Circus that Opens at Nightfall",
+        teaser: "It arrives without warning, dressed entirely in black and white, and opens only at midnight. Behind the clockwork wonders of Le Cirque des Rêves, two young illusionists are locked in a lethal game they don't fully understand—brought to life by one of the most famous voices in audiobook history...",
+        narrator: "Jim Dale",
+        relatedBookIds: ["38", "163", "160", "17", "99", "110"],
+        audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview114/v4/e6/dd/b7/e6ddb7bd-f983-b080-e4f5-7949715efc41/mzaf_13575846925941856273.std.aac.p.m4a",
+        affiliateLink: "https://www.amazon.co.uk/dp/B005SG4UIO?tag=thelongbookcl-21",
+        affiliateLinkUS: "https://www.amazon.com/dp/B005O10N3Y?tag=thelongbookcl-20"
+    }
 
 ];
 

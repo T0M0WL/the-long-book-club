@@ -84,5 +84,10 @@ export const genreData: GenreMeta[] = [
         "genre": "Graphic Audio",
         "metaTitle": "Long Graphic Audio Books: A Movie in Your Mind | TLBC",
         "intro": "Experience the ultimate in audio entertainment. These long Graphic Audio productions combine full casts, cinematic scoring, and sound effects for an unforgettable listen."
+    },
+    {
+        "genre": "Magical Realism",
+        "metaTitle": "Best Long Magical Realism Audiobooks | The Long Book Club",
+        "intro": "Step into worlds where the impossible is woven seamlessly into everyday life. From Haruki Murakami to Gabriel García Márquez, explore the best long Magical Realism audiobooks."
     }
 ];

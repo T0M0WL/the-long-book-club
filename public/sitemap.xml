@@ -761,6 +761,36 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://thelongbookclub.com/book/one-hundred-years-of-solitude-gabriel-garcia-marquez/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/the-wind-up-bird-chronicle-haruki-murakami/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/midnights-children-salman-rushdie/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/the-shadow-of-the-wind-carlos-ruiz-zafon/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/the-house-of-the-spirits-isabel-allende/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/the-night-circus-erin-morgenstern/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thelongbookclub.com/genre/classics/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -1871,6 +1901,66 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://thelongbookclub.com/genre/classic/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/genre/nobel-prize/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/genre/latin-american-literature/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/genre/surrealism/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/genre/japanese-literature/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/genre/historical-mystery/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/genre/booker-prize/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/genre/political-satire/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/genre/books-about-books/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/genre/barcelona/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/genre/circus/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/genre/atmospheric/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thelongbookclub.com/journal/the-single-credit-survival-kit-audiobooks-that-last-an-entire-month/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -1882,6 +1972,11 @@
   </url>
   <url>
     <loc>https://thelongbookclub.com/journal/the-art-of-the-slow-burn-why-the-best-romantasy-requires-a-20-hour-commitment/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/collections/magical-realism/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>

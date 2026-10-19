@@ -42,7 +42,7 @@ export const CollectionDetail = () => {
     const getActiveLinkTextColor = (s: string | undefined) => {
         if (!s) return 'var(--color-brand-slate)';
         if (['romantasy', 'graphic-audio'].includes(s)) return 'var(--color-brand-coral)';
-        if (['longest-ever'].includes(s)) return 'var(--color-brand-sage)';
+        if (['longest-ever', 'magical-realism'].includes(s)) return 'var(--color-brand-sage)';
         if (['long-life-stories', 'bucket-list'].includes(s)) return 'var(--color-brand-forrest)';
         // Default for others (including dark-academia which uses Slate)
         return 'var(--color-brand-slate)';
@@ -315,6 +315,40 @@ export const CollectionDetail = () => {
                             titleOpacity={1}
                             chevronColor="var(--color-brand-sage)"
                             chevronOpacity={0.5}
+                        />
+                    </>
+                ) : collection.slug === 'magical-realism' ? (
+                    <>
+                        <Hero
+                            backgroundImage="/assets/collections-hero-images/LongBookClub-Sage-Hero-Image-01.gif"
+                            topGraphic="/assets/collections-hero-images/Collections Icons SVGs/magical-realism-icon.svg"
+                            topGraphicDimensions={getBalancedDims('magical-realism')}
+                            topGraphicColor="var(--color-brand-forrest)"
+                            title="Magical Realism Long Listens"
+                            sectionHeight="auto"
+                            sectionMinHeight="600px"
+                            sectionPadding="11rem 1rem 8rem 1rem"
+                            contentPaddingTop="0"
+                            titleFontSize="4.5rem"
+                            titleLineHeight={1.05}
+                            titleOpacity={0.88}
+                            subtitleFontSize="1.4rem"
+                            subtitleLineHeight={1.6}
+                            subtitle={collection.description}
+                            useDynamicColor={false}
+                            titleColor="rgba(44, 81, 67, 0.8)"
+                            subtitleColor="rgba(44, 81, 67, 0.8)"
+                            separatorColor="rgba(44, 81, 67, 0.8)"
+                            showCornerGraphics={false}
+                            overlayOpacity={0}
+                            topGraphicBlendMode="multiply"
+                            topGraphicOpacity={0.8}
+                            contentBlendMode="multiply"
+                            titleBlendMode="multiply"
+                            subtitleBlendMode="multiply"
+                            chevronColor="var(--color-brand-forrest)"
+                            chevronBlendMode="multiply"
+                            chevronOpacity={0.8}
                         />
                     </>
                 ) : (

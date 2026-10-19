@@ -94,7 +94,7 @@ That is enough content to listen for **one hour every single day for 16 months**
 Stop burning your credits on snacks. Start buying banquets.
 
 
-**Want to find more books that fit your specific commute?** Use our [Long Book Finder](https://thelongbookclub.com/long-book-finder) to filter by length (50h – 200h+) and genre to build your own survival kit.
+**Want to find more books that fit your specific commute?** Use our [Long Book Finder](https://thelongbookclub.com/long-book-finder/) to filter by length (50h – 200h+) and genre to build your own survival kit.
 `,
     tags: ['Value', 'Guides', 'Audible'],
     coverUrl: '/assets/journal/single-credit-survival-kit.gif',

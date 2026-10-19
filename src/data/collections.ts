@@ -5,10 +5,25 @@ export interface Collection {
     description: string;
     coverUrl: string; // Placeholder for now or re-use a book cover
     bookIds: string[];
-    topGraphic?: string; // New field for custom card header
+    topGraphic?: string; // Card header background graphic
+    iconSvg?: string; // Dynamic SVG icon overlaid on topGraphic
+    iconColor?: string; // Paired hex color for the SVG icon overlay
+    collectionNumber?: string; // e.g., '008'
 }
 
 export const collections: Collection[] = [
+    {
+        id: 'magical-realism',
+        title: 'Best Long Magical Realism Audiobooks: Immersive Fever Dreams',
+        slug: 'magical-realism',
+        coverUrl: '/covers/one-hundred-years-of-solitude-gabriel-garcia-marquez.jpg',
+        description: 'Step into worlds where the impossible is woven seamlessly into everyday life. From Haruki Murakami’s parallel Tokyos to Gabriel García Márquez’s mythical Macondo, these lush, multi-generational epics and surreal mysteries are even more hypnotic when performed aloud.',
+        bookIds: ['160', '17', '161', '162', '163', '99', '164', '165'],
+        topGraphic: '/assets/Collections-Cards-Gfx/Collection-Card-Top-Sage-Green.gif',
+        iconSvg: '/assets/collections-hero-images/Collections Icons SVGs/magical-realism-icon.svg',
+        iconColor: '#2c5143',
+        collectionNumber: '008'
+    },
     {
         id: 'graphic-audio',
         title: 'The Best, Longest Cinematic Audiobooks (Full-Cast & Graphic Audio)',

@@ -305,6 +305,18 @@ Redirect 301 /book/158 /book/the-complete-chronicles-of-narnia-the-classic-bbc-r
 Redirect 301 /book/158/ /book/the-complete-chronicles-of-narnia-the-classic-bbc-radio-4-full-cast-dramatisations-c-s-lewis/
 Redirect 301 /book/159 /book/this-kingdom-will-not-kill-me-maggie-the-undying-ilona-andrews/
 Redirect 301 /book/159/ /book/this-kingdom-will-not-kill-me-maggie-the-undying-ilona-andrews/
+Redirect 301 /book/160 /book/one-hundred-years-of-solitude-gabriel-garcia-marquez/
+Redirect 301 /book/160/ /book/one-hundred-years-of-solitude-gabriel-garcia-marquez/
+Redirect 301 /book/161 /book/the-wind-up-bird-chronicle-haruki-murakami/
+Redirect 301 /book/161/ /book/the-wind-up-bird-chronicle-haruki-murakami/
+Redirect 301 /book/162 /book/midnights-children-salman-rushdie/
+Redirect 301 /book/162/ /book/midnights-children-salman-rushdie/
+Redirect 301 /book/163 /book/the-shadow-of-the-wind-carlos-ruiz-zafon/
+Redirect 301 /book/163/ /book/the-shadow-of-the-wind-carlos-ruiz-zafon/
+Redirect 301 /book/164 /book/the-house-of-the-spirits-isabel-allende/
+Redirect 301 /book/164/ /book/the-house-of-the-spirits-isabel-allende/
+Redirect 301 /book/165 /book/the-night-circus-erin-morgenstern/
+Redirect 301 /book/165/ /book/the-night-circus-erin-morgenstern/
 
   
   # --- Genre Redirects (Manual) ---
