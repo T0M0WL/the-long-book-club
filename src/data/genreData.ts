@@ -89,5 +89,15 @@ export const genreData: GenreMeta[] = [
         "genre": "Magical Realism",
         "metaTitle": "Best Long Magical Realism Audiobooks | The Long Book Club",
         "intro": "Step into worlds where the impossible is woven seamlessly into everyday life. From Haruki Murakami to Gabriel García Márquez, explore the best long Magical Realism audiobooks."
+    },
+    {
+        "genre": "LitRPG",
+        "metaTitle": "Best Long LitRPG Audiobooks (10+ Hours) | The Long Book Club",
+        "intro": "Stat screens, dungeon crawls, and zero-to-godhood progression. Discover the best long LitRPG audiobooks that combine the depth of epic fantasy with the addictive leveling mechanics of video games."
+    },
+    {
+        "genre": "GameLit",
+        "metaTitle": "Best Long GameLit Audiobooks (10+ Hours) | The Long Book Club",
+        "intro": "Step inside full-dive virtual realities, tactical MMORPGs, and high-stakes survival games. Explore our curated long GameLit audiobooks delivering dozens of hours of pure escapism."
     }
 ];

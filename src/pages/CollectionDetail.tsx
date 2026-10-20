@@ -32,7 +32,7 @@ export const CollectionDetail = () => {
     // Determine Theme based on Collection (Hero Image Brightness)
     let themeColor = 'var(--color-brand-forrest)'; // Default (Dark Text for Light Heros)
 
-    if (['romantasy', 'graphic-audio'].includes(slug || '')) {
+    if (['romantasy', 'graphic-audio', 'litrpg-gamelit'].includes(slug || '')) {
         themeColor = 'var(--color-brand-cloud)'; // White for Dark Heros
     } else if (['bucket-list', 'dark-academia', 'long-life-stories', 'best-long-books-2025'].includes(slug || '')) {
         themeColor = 'var(--color-brand-sage)'; // Sage for Bucket List, Dark Academia, Long Life, Best of 2025
@@ -41,7 +41,7 @@ export const CollectionDetail = () => {
     // Determine Active Link Text Color based on spec
     const getActiveLinkTextColor = (s: string | undefined) => {
         if (!s) return 'var(--color-brand-slate)';
-        if (['romantasy', 'graphic-audio'].includes(s)) return 'var(--color-brand-coral)';
+        if (['romantasy', 'graphic-audio', 'litrpg-gamelit'].includes(s)) return 'var(--color-brand-coral)';
         if (['longest-ever', 'magical-realism'].includes(s)) return 'var(--color-brand-sage)';
         if (['long-life-stories', 'bucket-list'].includes(s)) return 'var(--color-brand-forrest)';
         // Default for others (including dark-academia which uses Slate)
@@ -349,6 +349,37 @@ export const CollectionDetail = () => {
                             chevronColor="var(--color-brand-forrest)"
                             chevronBlendMode="multiply"
                             chevronOpacity={0.8}
+                        />
+                    </>
+                ) : collection.slug === 'litrpg-gamelit' ? (
+                    <>
+                        <Hero
+                            backgroundImage="/assets/collections-hero-images/LongBookClub-Collections-background-01.jpg"
+                            topGraphic="/assets/collections-hero-images/Collections Icons SVGs/litrpg-icon.svg"
+                            topGraphicDimensions={getBalancedDims('litrpg-gamelit')}
+                            title="LitRPG & GameLit Long Listens"
+                            sectionHeight="auto"
+                            sectionMinHeight="600px"
+                            sectionPadding="11rem 1rem 8rem 1rem"
+                            contentPaddingTop="0"
+                            titleFontSize="4.5rem"
+                            titleLineHeight={1.05}
+                            titleOpacity={0.9}
+                            subtitleFontSize="1.4rem"
+                            subtitleLineHeight={1.6}
+                            subtitle={collection.description}
+                            useDynamicColor={false}
+                            titleColor="white"
+                            subtitleColor="white"
+                            showCornerGraphics={false}
+                            overlayOpacity={0}
+                            topGraphicBlendMode="overlay"
+                            topGraphicFilter="brightness(0) invert(1)"
+                            topGraphicOpacity={0.95}
+                            contentBlendMode="overlay"
+                            titleBlendMode="overlay"
+                            subtitleBlendMode="overlay"
+                            chevronBlendMode="overlay"
                         />
                     </>
                 ) : (

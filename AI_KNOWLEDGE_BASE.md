@@ -6,19 +6,25 @@ This file is the "Eternal Memory" for the project. **Any AI assistant working on
 
 ## 🚀 Deployment & Hostinger Workflow (CRITICAL)
 
-### **1. The .htaccess / htaccess.txt Hack**
-- **Issue:** macOS hides files starting with a dot (like `.htaccess`), making them easy to miss during upload.
-- **Rule:** The build script (`scripts/prerender.cjs`) is configured to output **BOTH** `.htaccess` and `htaccess.txt`.
-- **Action:** The Curator (Thomas) uploads `htaccess.txt` to the Hostinger root and manually renames it to `.htaccess` on the server. Never remove this secondary output from the build script.
+### **1. Automated GitHub-to-Hostinger Deployment (`main` + `deploy` Branches)**
+- **Architecture:**
+  - **`main` branch:** Source code (`src/`, `scripts/`, `public/`, `package.json`).
+  - **`deploy` branch:** Compiled static production build (`dist/` contents + `.htaccess` + all pre-rendered HTML routes + `sitemap.xml`).
+  - **Hostinger (`Advanced -> Git`):** Connected directly to `T0M0WL/the-long-book-club` on the **`deploy`** branch with **Auto-deployment** enabled (`public_html`).
+- **How to Deploy Live:**
+  1. Commit and push source code changes to `main` (`git add -A && git commit -m "..." && git push origin main`).
+  2. Run **`npm run deploy`** (which runs `npm run build` followed by `node scripts/deploy-branch.cjs` to push the built `dist/` folder directly to `origin/deploy`).
+  3. Hostinger automatically pulls the `deploy` branch into `public_html` within seconds—no manual File Manager upload or `.htaccess` renaming required.
+- **Legacy Fallback (`.htaccess` / `htaccess.txt`):** The build script (`scripts/prerender.cjs`) still outputs **BOTH** `.htaccess` and `htaccess.txt` inside `dist/`. Never remove this dual output from `scripts/prerender.cjs`.
 
 ### **2. The Trailing Slash Protocol**
 - **Issue:** The Hostinger server forces a trailing slash (e.g., `/links` becomes `/links/`).
 - **Rule:** Any routing logic (like hiding the Header/Footer in `App.tsx`) MUST check for both the base path and the version with the trailing slash. 
 - **Rule:** The `prerender.cjs` script must output directories for all static pages to ensure the server finds the static `index.html` within the slashed path.
-- Always run `npm run build` (which triggers sitemap generation, Vite build, and "Thick" prerendering) before suggesting a deployment.
+- Always run `npm run build` (or `npm run deploy`) before completing a deployment.
 
 ### **3. GitHub Synchronization**
-- **Rule:** Every session MUST end with a GitHub sync (`git add`, `git commit`, `git push`). Never leave a session without ensuring the remote repository is up to date with local changes.
+- **Rule:** Every session MUST end with both `main` (source) and `deploy` (built static files via `npm run deploy`) synchronized to GitHub. Never leave a session without ensuring the remote repository is up to date with local changes.
 
 ---
 

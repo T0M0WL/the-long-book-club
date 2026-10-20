@@ -13,6 +13,18 @@ export interface Collection {
 
 export const collections: Collection[] = [
     {
+        id: 'litrpg-gamelit',
+        title: 'Best Long LitRPG & GameLit Audiobooks: Level Up Your Listening',
+        slug: 'litrpg-gamelit',
+        coverUrl: '/covers/dungeon-crawler-carl-matt-dinniman.jpg',
+        description: 'Stat screens, dungeon crawls, snarky sentient weapons, and zero-to-godhood progression. LitRPG is the undisputed champion of Audible credit value—delivering 15 to 45+ hours of adrenaline-fuelled entertainment per credit, powered by the finest voice-acting talents in the industry.',
+        bookIds: ['166', '167', '122', '168', '169', '170', '171', '172'],
+        topGraphic: '/assets/Collections-Cards-Gfx/Collection-Card-Top-Coral-Red.gif',
+        iconSvg: '/assets/collections-hero-images/Collections Icons SVGs/litrpg-icon.svg',
+        iconColor: '#c0c39a',
+        collectionNumber: '009'
+    },
+    {
         id: 'magical-realism',
         title: 'Best Long Magical Realism Audiobooks: Immersive Fever Dreams',
         slug: 'magical-realism',
