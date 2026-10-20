@@ -3629,8 +3629,8 @@ export const baseBooks: Book[] = [
         soundCheck: "Sean Barrett’s performance as Jackson Lamb is one of the all-time great character voices in the audiobook medium. His sandpaper gravel, raspy wheezes, and venomous comedic timing give Lamb a repulsive physical presence that leaps straight through the headphones. Yet Barrett handles the larger cast with equal mastery, giving River Cartwright an earnest, wounded desperation and Diana Taverner an icy, aristocratic bureaucratic malice. His pacing during foot chases and shootouts through rainy London alleyways is impeccable, making ten hours fly by in a flash.",
         narrator: "Sean Barrett",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/bb/de/00/bbde002c-5247-cc7b-1a2f-861c9acceabd/mzaf_12821094610153530489.std.aac.p.m4a",
-        affiliateLink: "https://www.amazon.co.uk/dp/B000000000?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B000000000?tag=thelongbookcl-20"
+        affiliateLink: "https://www.amazon.co.uk/dp/B0CP4C6CJ1?tag=thelongbookcl-21",
+        affiliateLinkUS: "https://www.amazon.com/dp/B0CP4DNNLY?tag=thelongbookcl-20"
     },
     {
         id: "215",
@@ -3650,8 +3650,8 @@ export const baseBooks: Book[] = [
         soundCheck: "Michael Jayston gives a legendary vocal performance that has defined George Smiley for generations of listeners. Having played Peter Guillam in the iconic 1979 BBC television adaptation, Jayston possesses an instinctive understanding of le Carré’s rhythmic, subtle dialogue. His Smiley is quiet, courteous, and deceptively soft-spoken, yet infused with steel and profound melancholy. Jayston captures the aristocratic drawl of Bill Haydon, the greasy bluster of Percy Alleline, and the Hungarian cadence of Toby Esterhase with effortless theatrical mastery, making ten hours an unmissable auditory feast.",
         narrator: "Michael Jayston",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/e9/cb/f7/e9cbf765-2a74-d7d5-2764-e81db0165ad8/mzaf_12895543985855592668.std.aac.p.m4a",
-        affiliateLink: "https://www.amazon.co.uk/dp/B000000000?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B000000000?tag=thelongbookcl-20"
+        affiliateLink: "https://www.amazon.co.uk/dp/B0DM2LBLPC?tag=thelongbookcl-21",
+        affiliateLinkUS: "https://www.amazon.com/dp/B0DM2L9LKD?tag=thelongbookcl-20"
     },
     {
         id: "216",
@@ -3671,8 +3671,8 @@ export const baseBooks: Book[] = [
         soundCheck: "James Lailey captures the dry, sardonic personality of Bernard Samson with exceptional skill. Lailey balances Samson’s cynical, blue-collar British pragmatism against the pompous affectations of senior Whitehall desk-jockeys, giving their office turf-wars a delicious, barbed realism. His German accents—ranging from hardened Stasi interrogators to nervous East Berlin defectors—are crisp, authentic, and cleanly rendered. Lailey’s steady, unhurried pacing allows the mounting paranoia of a double-agent hunt to tighten like a noose across ten magnificent hours.",
         narrator: "James Lailey",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/f9/97/5c/f9975cee-eb9f-b725-4a3f-11ec66427beb/mzaf_5484562831365168146.std.aac.p.m4a",
-        affiliateLink: "https://www.amazon.co.uk/dp/B000000000?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B000000000?tag=thelongbookcl-20"
+        affiliateLink: "https://www.amazon.co.uk/dp/B094YNKTLY?tag=thelongbookcl-21",
+        affiliateLinkUS: "https://www.amazon.com/dp/B094YMWVGH?tag=thelongbookcl-20"
     },
     {
         id: "217",
@@ -3692,8 +3692,8 @@ export const baseBooks: Book[] = [
         soundCheck: "David Rintoul gives a chillingly precise, razor-sharp narration that suits Forsyth’s clinical prose to perfection. Rintoul’s commanding Scottish-tinged baritone carries an air of cold calculation, lending the Jackal an unnerving, polished charm that makes his sociopathic efficiency deeply hypnotic to hear aloud. Rintoul handles rapid dialogue transitions between French prefects, English passport forgers, and Belgian gunsmiths with effortless linguistic flair, sustaining relentless momentum and unbearable tension across eleven and a half electrifying hours.",
         narrator: "David Rintoul",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/39/32/94/39329440-ad8c-2633-b8a4-c586b875956f/mzaf_2526817828083285377.std.aac.p.m4a",
-        affiliateLink: "https://www.amazon.co.uk/dp/B000000000?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B000000000?tag=thelongbookcl-20"
+        affiliateLink: "https://www.amazon.co.uk/dp/B006OP93AI?tag=thelongbookcl-21",
+        affiliateLinkUS: "https://www.amazon.com/dp/B006OEVUZK?tag=thelongbookcl-20"
     },
     {
         id: "218",
@@ -3713,8 +3713,8 @@ export const baseBooks: Book[] = [
         soundCheck: "Graeme Malcolm provides a tense, atmospheric performance that brings the rain-drenched moors and isolated Scottish coastline vividly to life. Malcolm gives Faber a quiet, cultured demeanor that masks an icy sociopathy, making his sudden shifts into brutal violence intensely shocking. His Scottish accents for the islanders are rich and authentic, while his characterization of Lucy captures both heartbreaking vulnerability and fierce, desperate resolve. The pacing during the novel’s final storm-battered island siege is relentless, delivering a thrilling auditory experience from start to finish.",
         narrator: "Graeme Malcolm",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/74/22/58/742258ee-f3c8-b19a-8d4f-3eebe3c53113/mzaf_16394911769399261058.std.aac.p.m4a",
-        affiliateLink: "https://www.amazon.co.uk/dp/B000000000?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B000000000?tag=thelongbookcl-20"
+        affiliateLink: "https://www.amazon.co.uk/dp/B07BQ9DQ87?tag=thelongbookcl-21",
+        affiliateLinkUS: "https://www.amazon.com/dp/B07C97YT72?tag=thelongbookcl-20"
     },
     {
         id: "219",
@@ -3734,8 +3734,8 @@ export const baseBooks: Book[] = [
         soundCheck: "Rosamund Pike gives an astonishing, multi-layered performance that captures the complex emotional interiority of Boyd’s heroines. Pike navigates Eva’s Russian background with subtle, aristocratic inflections, conveying both the thrill of youthful tradecraft and the suffocating terror of discovery. Her English cadence for Ruth is grounded, natural, and sharp, while her aristocratic voicing of spymaster Lucas Romer exudes effortless, dangerous charm. Pike’s timing during the novel’s tense espionage operations in Maryland and New York is pitch-perfect, making nearly eleven hours of storytelling feel completely seamless.",
         narrator: "Rosamund Pike",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/fa/fa/66/fafa66b1-9af1-532c-923a-130351d36696/mzaf_9838277937205335134.std.aac.p.m4a",
-        affiliateLink: "https://www.amazon.co.uk/dp/B000000000?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B000000000?tag=thelongbookcl-20"
+        affiliateLink: "https://www.amazon.co.uk/dp/B002SQ7IEU?tag=thelongbookcl-21",
+        affiliateLinkUS: "https://www.amazon.com/dp/B000JCESY8?tag=thelongbookcl-20"
     },
     {
         id: "220",
@@ -3776,8 +3776,8 @@ export const baseBooks: Book[] = [
         soundCheck: "Michael Jayston delivers a staggering vocal tour de force that ranks among the greatest audio recordings ever produced. Carrying twenty-one hours of complex, shifting chronology, Jayston gives Magnus Pym a mesmerizing, melancholic intimacy, shifting effortlessly between the confessional diary of an aging runaway and the energetic innocence of a boy seduced by his father’s monstrous charisma. His portrayal of the con-man Rick Pym is booming, theatrical, and terrifyingly magnetic, providing an unforgettable listening experience that elevates le Carré's autobiographical masterpiece into high art.",
         narrator: "Michael Jayston",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/c5/46/98/c546982c-a9eb-e086-178a-4e0b2cf7d9be/mzaf_9282292865650099900.std.aac.p.m4a",
-        affiliateLink: "https://www.amazon.co.uk/dp/B000000000?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B000000000?tag=thelongbookcl-20"
+        affiliateLink: "https://www.amazon.co.uk/dp/B0DM2L2KP4?tag=thelongbookcl-21",
+        affiliateLinkUS: "https://www.amazon.com/dp/B004X48J66?tag=thelongbookcl-20"
     },
     {
         id: "222",
@@ -3797,8 +3797,8 @@ export const baseBooks: Book[] = [
         soundCheck: "Mark Bazeley gives a superb, compelling narration that drives Harris’s present-tense prose with tremendous urgency and authority. Bazeley captures Picquart’s stoic, aristocratic temperament with refined precision, allowing his growing moral outrage to surface with electrifying intensity as the high-level military conspiracy tightens around him. His handling of French names, military tribunals, and tense secret meetings in Parisian cafes is flawless and natural, ensuring that fifteen hours of dense counter-espionage investigation remain thoroughly gripping and crystal-clear throughout.",
         narrator: "Mark Bazeley",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/19/9c/aa/199caa34-b6d0-3e85-e1f5-b36bd6435476/mzaf_5883751472454977232.std.aac.p.m4a",
-        affiliateLink: "https://www.amazon.co.uk/dp/B000000000?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B000000000?tag=thelongbookcl-20"
+        affiliateLink: "https://www.amazon.co.uk/dp/B00FAI0GN8?tag=thelongbookcl-21",
+        affiliateLinkUS: "https://www.amazon.com/dp/B00FAVB8LE?tag=thelongbookcl-20"
     }
 ];
 
