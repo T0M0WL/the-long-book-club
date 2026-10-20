@@ -17,7 +17,7 @@ export const collections: Collection[] = [
         title: 'Best Long British Espionage & Cold War Thrillers: Moles, Traitors & Dead Drops',
         slug: 'british-espionage',
         coverUrl: '/covers/tinker-tailor-soldier-spy.jpg',
-        description: 'Damp London alleyways, cynical case officers, bureaucratic infighting, dead drops, and slow-burn counterintelligence. From George Smiley\'s quiet mole-hunts and Jackson Lamb\'s Slough House rejects to divided-city Berlin checkpoints, explore 10 monumental audiobooks spanning over 144 hours of peerless British tradecraft performed by legendary voices like Michael Jayston, Sean Barrett, Rosamund Pike, and Tim Pigott-Smith.',
+        description: 'Damp London alleyways, cynical case officers, bureaucratic infighting, dead drops, and slow-burn counterintelligence. From George Smiley\'s quiet mole-hunts and Jackson Lamb\'s Slough House rejects to divided-city Berlin checkpoints, explore 10 monumental audiobooks spanning nearly 125 hours of peerless British tradecraft performed by legendary voices like Michael Jayston, Sean Barrett, Rosamund Pike, and Tim Pigott-Smith.',
         bookIds: ['137', '214', '215', '216', '217', '218', '219', '220', '221', '222'],
         topGraphic: '/assets/Collections-Cards-Gfx/Collection-Card-Top-DarkGrey.gif',
         iconSvg: '/assets/collections-hero-images/Collections Icons SVGs/british-espionage-icon.svg',
