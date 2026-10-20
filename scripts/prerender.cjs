@@ -637,6 +637,10 @@ async function prerender() {
   RewriteCond %{HTTP_HOST} ^www\.(.+) [NC]
   RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
   
+  # Plural to Singular Canonical 301 Redirects
+  RewriteRule ^genres/(.*)$ /genre/$1 [R=301,L]
+  RewriteRule ^books/(.*)$ /book/$1 [R=301,L]
+
   # Force trailing slash on directories for SEO consistency and Prerender discovery
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_URI} !(.*)/$

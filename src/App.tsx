@@ -99,6 +99,7 @@ function App() {
 
                 <Route path="/about" element={<About />} />
                 <Route path="/genre/:slug" element={<Genre />} />
+                <Route path="/genres/:slug" element={<Genre />} />
                 <Route path="/long-book-finder" element={<Finder />} />
 
                 {/* Journal Routes */}
