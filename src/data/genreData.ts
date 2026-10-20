@@ -109,5 +109,10 @@ export const genreData: GenreMeta[] = [
         "genre": "Scandi Crime",
         "metaTitle": "Best Long Scandi Crime Audiobooks (10+ Hours) | The Long Book Club",
         "intro": "From locked-island family secrets in Sweden to claustrophobic cold cases in Copenhagen, Scandinavian crime fiction delivers peerless psychological depth and unrelenting suspense. Explore our curated long-form Scandi audiobooks performed by world-class narrators."
+    },
+    {
+        "genre": "Grimdark Fantasy",
+        "metaTitle": "Best Long Grimdark Fantasy Audiobooks (10+ Hours) | The Long Book Club",
+        "intro": "Blood-slicked battlefields, morally bankrupt antiheroes, razor-sharp wit, and uncompromising realism. Grimdark fantasy stripped away high fantasy chivalry to deliver raw, character-driven grit. Explore our curated selection of 10+ to 40+ hour audio epics performed by the finest narrators in the medium."
     }
 ];

@@ -347,6 +347,22 @@ Redirect 301 /book/179 /book/faceless-killers-henning-mankell/
 Redirect 301 /book/179/ /book/faceless-killers-henning-mankell/
 Redirect 301 /book/180 /book/im-travelling-alone-samuel-bjork/
 Redirect 301 /book/180/ /book/im-travelling-alone-samuel-bjork/
+Redirect 301 /book/181 /book/the-blade-itself-joe-abercrombie/
+Redirect 301 /book/181/ /book/the-blade-itself-joe-abercrombie/
+Redirect 301 /book/182 /book/the-lies-of-locke-lamora-scott-lynch/
+Redirect 301 /book/182/ /book/the-lies-of-locke-lamora-scott-lynch/
+Redirect 301 /book/183 /book/gardens-of-the-moon-steven-erikson/
+Redirect 301 /book/183/ /book/gardens-of-the-moon-steven-erikson/
+Redirect 301 /book/184 /book/the-black-company-glen-cook/
+Redirect 301 /book/184/ /book/the-black-company-glen-cook/
+Redirect 301 /book/185 /book/the-poppy-war-rf-kuang/
+Redirect 301 /book/185/ /book/the-poppy-war-rf-kuang/
+Redirect 301 /book/186 /book/promise-of-blood-brian-mcclellan/
+Redirect 301 /book/186/ /book/promise-of-blood-brian-mcclellan/
+Redirect 301 /book/187 /book/priest-of-bones-peter-mclean/
+Redirect 301 /book/187/ /book/priest-of-bones-peter-mclean/
+Redirect 301 /book/188 /book/red-sister-mark-lawrence/
+Redirect 301 /book/188/ /book/red-sister-mark-lawrence/
 
   
   # --- Genre Redirects (Manual) ---

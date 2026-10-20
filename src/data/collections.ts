@@ -13,6 +13,18 @@ export interface Collection {
 
 export const collections: Collection[] = [
     {
+        id: 'grimdark-fantasy',
+        title: 'Best Long Grimdark Fantasy Audiobooks: Blood, Mud & Moral Ambiguity',
+        slug: 'grimdark-fantasy',
+        coverUrl: '/covers/the-blade-itself-joe-abercrombie.jpg',
+        description: 'Blood-slicked battlefields, cynical mercenaries, razor-sharp con games, and flawed antiheroes who refuse to die. Grimdark fantasy stripped away high-fantasy chivalry to forge a visceral, morally ambiguous realism. These 8 definitive series-launch audiobooks deliver over 149 hours of unputdownable, credit-worthy epic audio performed by the industry’s greatest voice talents.',
+        bookIds: ['181', '182', '183', '184', '185', '186', '187', '188'],
+        topGraphic: '/assets/Collections-Cards-Gfx/Collection-Card-Top-Green.gif',
+        iconSvg: '/assets/collections-hero-images/Collections Icons SVGs/grimdark-fantasy-icon.svg',
+        iconColor: '#ed835e',
+        collectionNumber: '011'
+    },
+    {
         id: 'nordic-noir',
         title: 'Best Long Nordic Noir & Scandi Crime Audiobooks: Chilling Northern Mysteries',
         slug: 'nordic-noir',
