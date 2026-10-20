@@ -397,6 +397,40 @@ Redirect 301 /book/204 /book/ithaca/
 Redirect 301 /book/204/ /book/ithaca/
 Redirect 301 /book/205 /book/the-books-of-enoch/
 Redirect 301 /book/205/ /book/the-books-of-enoch/
+Redirect 301 /book/206 /book/red-rising/
+Redirect 301 /book/206/ /book/red-rising/
+Redirect 301 /book/207 /book/empire-of-silence/
+Redirect 301 /book/207/ /book/empire-of-silence/
+Redirect 301 /book/208 /book/a-memory-called-empire/
+Redirect 301 /book/208/ /book/a-memory-called-empire/
+Redirect 301 /book/209 /book/shards-of-earth/
+Redirect 301 /book/209/ /book/shards-of-earth/
+Redirect 301 /book/210 /book/the-player-of-games/
+Redirect 301 /book/210/ /book/the-player-of-games/
+Redirect 301 /book/211 /book/house-of-suns/
+Redirect 301 /book/211/ /book/house-of-suns/
+Redirect 301 /book/212 /book/ancillary-justice/
+Redirect 301 /book/212/ /book/ancillary-justice/
+Redirect 301 /book/213 /book/children-of-time/
+Redirect 301 /book/213/ /book/children-of-time/
+Redirect 301 /book/214 /book/slow-horses/
+Redirect 301 /book/214/ /book/slow-horses/
+Redirect 301 /book/215 /book/tinker-tailor-soldier-spy/
+Redirect 301 /book/215/ /book/tinker-tailor-soldier-spy/
+Redirect 301 /book/216 /book/berlin-game/
+Redirect 301 /book/216/ /book/berlin-game/
+Redirect 301 /book/217 /book/the-day-of-the-jackal/
+Redirect 301 /book/217/ /book/the-day-of-the-jackal/
+Redirect 301 /book/218 /book/eye-of-the-needle/
+Redirect 301 /book/218/ /book/eye-of-the-needle/
+Redirect 301 /book/219 /book/restless/
+Redirect 301 /book/219/ /book/restless/
+Redirect 301 /book/220 /book/the-human-factor/
+Redirect 301 /book/220/ /book/the-human-factor/
+Redirect 301 /book/221 /book/a-perfect-spy/
+Redirect 301 /book/221/ /book/a-perfect-spy/
+Redirect 301 /book/222 /book/an-officer-and-a-spy/
+Redirect 301 /book/222/ /book/an-officer-and-a-spy/
 
   
   # --- Genre Redirects (Manual) ---

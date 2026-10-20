@@ -134,5 +134,35 @@ export const genreData: GenreMeta[] = [
         "genre": "Ancient World",
         "metaTitle": "Best Long Ancient World Audiobooks | The Long Book Club",
         "intro": "Journey into antiquity with sprawling audiobooks set across ancient Greece, Troy, Vedic India, and the primordial Near East. Explore monumental epics that resurrect ancient civilizations in rich, audio-first detail."
+    },
+    {
+        "genre": "Space Opera",
+        "metaTitle": "Best Long Space Opera Audiobooks (10+ Hours) | The Long Book Club",
+        "intro": "Colossal starfleets, warring interstellar dynasties, sentient warships, and ancient cosmic mysteries. Explore our curated selection of 10+ to 37+ hour space opera audiobooks that deliver galaxy-spanning immersion and extraordinary credit value."
+    },
+    {
+        "genre": "Galactic Empire",
+        "metaTitle": "Best Long Galactic Empire Audiobooks | The Long Book Club",
+        "intro": "Vast interstellar regimes, imperial succession crises, courtly intrigues, and conquered star systems. Immerse yourself in epic science fiction audiobooks chronicling the rise, decadence, and fall of civilization-spanning galactic empires."
+    },
+    {
+        "genre": "British Espionage",
+        "metaTitle": "Best Long British Espionage Audiobooks (10+ Hours) | The Long Book Club",
+        "intro": "Damp London alleys, cynical case officers, bureaucratic infighting, and slow-burn counterintelligence. From George Smiley's quiet mole-hunts and Jackson Lamb's Slough House rejects to divided Berlin checkpoints, explore our curated long-form British espionage audiobooks performed by master voice artists."
+    },
+    {
+        "genre": "Espionage",
+        "metaTitle": "Best Long Espionage Audiobooks (10+ Hours) | The Long Book Club",
+        "intro": "Clandestine operations, double agents, high-stakes tradecraft, and global conspiracies. Immerse yourself in monumental 10+ to 25+ hour espionage audiobooks that capture the tension, paranoia, and moral ambiguity of international intelligence work."
+    },
+    {
+        "genre": "Cold War",
+        "metaTitle": "Best Long Cold War Thriller Audiobooks | The Long Book Club",
+        "intro": "Iron Curtain checkpoints, frozen Berlin safe houses, nuclear brinkmanship, and high-level defectors. Discover our handpicked selection of immersive Cold War thriller audiobooks that bring the quiet dread and ideological clashes of the twentieth century vividly to life."
+    },
+    {
+        "genre": "Spy Thriller",
+        "metaTitle": "Best Long Spy Thriller Audiobooks (10+ Hours) | The Long Book Club",
+        "intro": "Pulse-pounding manhunts, lethal assassins, deep-cover infiltrators, and classified dossiers. Explore gripping, credit-maximizing spy thriller audiobooks that combine razor-sharp procedural tradecraft with relentless international suspense."
     }
 ];

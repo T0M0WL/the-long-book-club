@@ -13,6 +13,30 @@ export interface Collection {
 
 export const collections: Collection[] = [
     {
+        id: 'british-espionage',
+        title: 'Best Long British Espionage & Cold War Thrillers: Moles, Traitors & Dead Drops',
+        slug: 'british-espionage',
+        coverUrl: '/covers/tinker-tailor-soldier-spy.jpg',
+        description: 'Damp London alleyways, cynical case officers, bureaucratic infighting, dead drops, and slow-burn counterintelligence. From George Smiley\'s quiet mole-hunts and Jackson Lamb\'s Slough House rejects to divided-city Berlin checkpoints, explore 10 monumental audiobooks spanning over 144 hours of peerless British tradecraft performed by legendary voices like Michael Jayston, Sean Barrett, Rosamund Pike, and Tim Pigott-Smith.',
+        bookIds: ['137', '214', '215', '216', '217', '218', '219', '220', '221', '222'],
+        topGraphic: '/assets/Collections-Cards-Gfx/Collection-Card-Top-DarkGrey.gif',
+        iconSvg: '/assets/collections-hero-images/Collections Icons SVGs/british-espionage-icon.svg',
+        iconColor: '#e56a4e',
+        collectionNumber: '015'
+    },
+    {
+        id: 'space-opera',
+        title: 'Best Long Space Opera & Galactic Empire Audiobooks: Starships, Dyson Spheres & Ancient Cosmic Threats',
+        slug: 'space-opera',
+        coverUrl: '/covers/leviathan-wakes.jpg',
+        description: 'Colossal starfleets, warring interstellar dynasties, sentient warships, and enigmatic alien artifacts. Space opera and galactic empire epics deliver the grandest canvas in science fiction. These 10 definitive audiobooks provide over 195 hours of awe-inspiring, credit-worthy listening performed by legendary narrators like Jefferson Mays, John Lee, Adjoa Andoh, and Tim Gerard Reynolds.',
+        bookIds: ['64', '62', '206', '207', '208', '209', '210', '211', '212', '213'],
+        topGraphic: '/assets/Collections-Cards-Gfx/Collection-Card-Top-Coral-Red.gif',
+        iconSvg: '/assets/collections-hero-images/Collections Icons SVGs/space-opera-icon.svg',
+        iconColor: '#c0c39a',
+        collectionNumber: '014'
+    },
+    {
         id: 'mythology-epics',
         title: 'Best Long Mythological Retellings & Ancient World Epics',
         slug: 'mythology-epics',
