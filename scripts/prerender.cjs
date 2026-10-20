@@ -645,6 +645,12 @@ async function prerender() {
 
   ${redirectRules}
   
+  # --- Book Alias Redirects (Manual) ---
+  Redirect 301 /book/project-hail-mary-andy-weir /book/project-hail-mary/
+  Redirect 301 /book/project-hail-mary-andy-weir/ /book/project-hail-mary/
+  Redirect 301 /books/project-hail-mary /book/project-hail-mary/
+  Redirect 301 /books/project-hail-mary/ /book/project-hail-mary/
+
   # --- Genre Redirects (Manual) ---
   Redirect 301 /genre/nonfiction /genre/non-fiction/
   Redirect 301 /genre/nonfiction/ /genre/non-fiction/

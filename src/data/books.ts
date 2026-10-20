@@ -2663,7 +2663,7 @@ export const baseBooks: Book[] = [
         teaserTitle: "The Apocalypse Will Be Televised: Boxers, Explosives, and a Persian Cat",
         teaser: "When Earth is collapsed into an eighteen-floor underground dungeon for galactic TV viewers, an ordinary guy in boxers and a talking show-cat named Princess Donut become an intergalactic sensation. It has exploded into the single most recommended audiobook on Reddit—so what makes Jeff Hays’ vocal performance so completely addictive?",
         narrator: "Jeff Hays",
-        relatedBookIds: ["122", "167", "171", "168", "169", "170"],
+        relatedBookIds: ["223", "122", "167", "171", "168", "169", "170"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b2/8b/8c/b28b8c9f-43e5-537b-a90c-5b741ed33b72/mzaf_17269727664169868612.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B08V8MF4P9?tag=thelongbookcl-21",
         affiliateLinkUS: "https://www.amazon.com/dp/B08V8877BY?tag=thelongbookcl-20"
@@ -3799,6 +3799,28 @@ export const baseBooks: Book[] = [
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/19/9c/aa/199caa34-b6d0-3e85-e1f5-b36bd6435476/mzaf_5883751472454977232.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B00FAI0GN8?tag=thelongbookcl-21",
         affiliateLinkUS: "https://www.amazon.com/dp/B00FAVB8LE?tag=thelongbookcl-20"
+    },
+    {
+        id: "223",
+        slug: "project-hail-mary",
+        title: "Project Hail Mary",
+        author: "Andy Weir",
+        coverUrl: "/covers/project-hail-mary.jpg",
+        length: "16h 10m",
+        lengthHours: 16.2,
+        genre: ["Science Fiction", "Space Survival", "Hard Sci-Fi", "Cinematic Audio", "First Contact", "Audiobook of the Year"],
+        description: "A lone surviving astronaut awakens with amnesia on an interstellar mission to save Earth from a star-eating organism, only to forge an extraordinary alliance with an unexpected alien engineer.",
+        cardOverview: "16 hours of interstellar survival. A lone astronaut and an alien engineer team up to save two stars from extinction.",
+        teaserTitle: "The Audie Award-Winning Triumph of Interstellar Survival and Cinematic Sound Design",
+        teaser: "Awakening alone in deep space with no memory of his own name, middle-school science teacher Ryland Grace discovers he is humanity's sole survivor on an interstellar gamble to stop an extinction-level solar crisis. But when an impossible alien starship appears alongside him, the production transforms into an auditory wonder of musical chords and interspecies chemistry. How does Ray Porter bridge the communication gap between two entirely distinct biologies?",
+        curatorTitle: "Andy Weir's Audie-Winning Masterpiece of Interstellar Problem Solving and Unforgettable Interspecies Chemistry",
+        curatorNote: "Ryland Grace awakens aboard the Hail Mary with complete amnesia, surrounded by two dead crewmates and millions of miles from Earth. Slowly piecing together his identity as a disgraced molecular biologist turned junior-high science teacher, Grace realizes he was drafted into an apocalyptic suicide mission: a microscopic space organism dubbed Astrophage is breeding across the sun's surface, cooling our star and dooming terrestrial life to global famine within decades. Traveling twelve light-years to the Tau Ceti system—the only nearby star mysteriously immune to the infection—Grace must conduct high-stakes experiments to isolate a cure, turning scientific inquiry, duct tape, and physics equations into breathless survival suspense.\n\nWhat elevates [Project Hail Mary](/book/project-hail-mary/) from a clever hard sci-fi thriller into one of the most celebrated audiobooks of the twenty-first century is its revolutionary auditory presentation. When Grace encounters the *Blip-A*, an alien vessel piloted by an arachnid-like engineer from 40 Eridani named Rocky, Andy Weir confronts the ultimate first-contact puzzle. Rather than relying on telepathy or universal translators, Rocky communicates through tonal chords and harmonic frequencies. Audible’s brilliant sound design synthesizes two-tone musical chords layered beneath Ray Porter’s vocal translations, creating an auditory language that feels utterly magical. The escalating camaraderie, mutual loyalty, and emotional warmth between Grace and Rocky rivals the beloved character chemistry found in [Dungeon Crawler Carl](/book/dungeon-crawler-carl-matt-dinniman/) and the deep-space wonder of [Children of Time](/book/children-of-time/), proving that genuine scientific optimism and interspecies love make for unforgettable listening.\n\nFor audiobook listeners seeking the absolute gold standard of credit value, [Project Hail Mary](/book/project-hail-mary/) is an essential, life-affirming listening experience that justifies your Audible subscription in a single stroke. Clocking in at sixteen hours and ten minutes, the production won the prestigious Audie Award for Audiobook of the Year for good reason: Ray Porter’s heartfelt, charismatic delivery combined with immersive acoustic engineering makes this an auditory masterpiece that cannot be replicated on the printed page. Whether you are a dedicated fan exploring our [Cinematic Audiobooks](/collections/graphic-audio/) or a newcomer searching for a triumphant, unputdownable space adventure, spending a credit on the *Hail Mary* delivers unbeatable entertainment, laugh-out-loud humor, and tears of profound joy.",
+        soundCheck: "Ray Porter delivers a career-defining, tour de force narration that earned Project Hail Mary the Audie Award for Audiobook of the Year. Porter infuses Ryland Grace with genuine vulnerability, infectious curiosity, and razor-sharp comedic timing that prevents heavy astrophysics exposition from ever feeling dry. Most remarkably, Audible Studios’ custom audio engineering integrates musical chords, layered harmonics, and subtle resonance for the alien engineer Rocky, creating an acoustic dialogue that feels deeply organic and emotionally profound across all sixteen hours of listening.",
+        narrator: "Ray Porter",
+        audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/08/fc/c0/08fcc020-f262-9080-4f25-c095ef6c0401/mzaf_16870466275505438925.std.aac.p.m4a",
+        relatedBookIds: ["166", "213", "64", "65", "154", "153", "62"],
+        affiliateLink: "https://www.amazon.co.uk/dp/B08G9SKSHR?tag=thelongbookcl-21",
+        affiliateLinkUS: "https://www.amazon.com/dp/B08GB58KD5?tag=thelongbookcl-20"
     }
 ];
 

@@ -1076,6 +1076,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://thelongbookclub.com/book/project-hail-mary/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thelongbookclub.com/genre/classics/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -2437,6 +2442,11 @@
   </url>
   <url>
     <loc>https://thelongbookclub.com/genre/conspiracy/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/genre/audiobook-of-the-year/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
