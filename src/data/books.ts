@@ -3096,8 +3096,8 @@ export const baseBooks: Book[] = [
         narrator: "Daniel Henning",
         relatedBookIds: ["190","191","192","193","194","195"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/ff/88/54/ff88547d-fc44-dc4c-7c08-04da0cf78663/mzaf_7306233140582522774.std.aac.p.m4a",
-        affiliateLink: "https://www.amazon.co.uk/dp/[ASIN]?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/[ASIN]?tag=thelongbookcl-20"
+        affiliateLink: "https://www.amazon.co.uk/dp/B098FX5V8C?tag=thelongbookcl-21",
+        affiliateLinkUS: "https://www.amazon.com/dp/B098FGQP6K?tag=thelongbookcl-20"
     },
     {
         id: "190",
@@ -3115,8 +3115,8 @@ export const baseBooks: Book[] = [
         narrator: "Niel Hellegers",
         relatedBookIds: ["189","191","192","193","194","196"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ce/22/0c/ce220c5c-7d9a-ba00-a4a3-7ceab2c10b2a/mzaf_10129712792695507328.std.aac.p.m4a",
-        affiliateLink: "https://www.amazon.co.uk/dp/[ASIN]?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/[ASIN]?tag=thelongbookcl-20"
+        affiliateLink: "https://www.amazon.co.uk/dp/B0G76QXJ74?tag=thelongbookcl-21",
+        affiliateLinkUS: "https://www.amazon.com/dp/B0G76BWCLL?tag=thelongbookcl-20"
     },
     {
         id: "191",
@@ -3134,8 +3134,8 @@ export const baseBooks: Book[] = [
         narrator: "Caitlin Davies",
         relatedBookIds: ["189","190","192","193","194","195"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/4a/01/a0/4a01a096-787d-81fe-d205-d142ea8ad7c8/mzaf_6122606822238472093.std.aac.p.m4a",
-        affiliateLink: "https://www.amazon.co.uk/dp/[ASIN]?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/[ASIN]?tag=thelongbookcl-20"
+        affiliateLink: "https://www.amazon.co.uk/dp/B0CNTSVPJY?tag=thelongbookcl-21",
+        affiliateLinkUS: "https://www.amazon.com/dp/B0CNTRPRCV?tag=thelongbookcl-20"
     },
     {
         id: "192",
@@ -3153,8 +3153,8 @@ export const baseBooks: Book[] = [
         narrator: "Travis Baldree",
         relatedBookIds: ["189","190","191","193","194","195"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/bf/b1/7a/bfb17a12-8889-cb48-b427-e43e34b9fae5/mzaf_6654274351336049969.std.aac.p.m4a",
-        affiliateLink: "https://www.amazon.co.uk/dp/[ASIN]?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/[ASIN]?tag=thelongbookcl-20"
+        affiliateLink: "https://www.amazon.co.uk/dp/B0B46TBQZ8?tag=thelongbookcl-21",
+        affiliateLinkUS: "https://www.amazon.com/dp/B0B46R6KQW?tag=thelongbookcl-20"
     },
     {
         id: "193",
@@ -3172,8 +3172,8 @@ export const baseBooks: Book[] = [
         narrator: "Kyle McCarley",
         relatedBookIds: ["189","190","191","192","194","196"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/ff/e1/e1/ffe1e19d-7df8-4395-6ff8-3cfc64391629/mzaf_10793666872772594639.std.aac.p.m4a",
-        affiliateLink: "https://www.amazon.co.uk/dp/[ASIN]?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/[ASIN]?tag=thelongbookcl-20"
+        affiliateLink: "https://www.amazon.co.uk/dp/B096BMZST1?tag=thelongbookcl-21",
+        affiliateLinkUS: "https://www.amazon.com/dp/B096BLCBDV?tag=thelongbookcl-20"
     },
     {
         id: "194",
@@ -3191,8 +3191,8 @@ export const baseBooks: Book[] = [
         narrator: "Kimberley Farr",
         relatedBookIds: ["189","190","191","192","193","195"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/bf/25/86/bf2586bf-3165-27a3-5c74-c36b42b93478/mzaf_6141381156828859187.std.aac.p.m4a",
-        affiliateLink: "https://www.amazon.co.uk/dp/[ASIN]?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/[ASIN]?tag=thelongbookcl-20"
+        affiliateLink: "https://www.amazon.co.uk/dp/B0CN1FWYWQ?tag=thelongbookcl-21",
+        affiliateLinkUS: "https://www.amazon.com/dp/B0CN1K9TS3?tag=thelongbookcl-20"
     },
     {
         id: "195",
@@ -3210,8 +3210,8 @@ export const baseBooks: Book[] = [
         narrator: "Michael Kramer",
         relatedBookIds: ["189","190","191","192","193","196"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/a9/38/20/a9382025-b461-9f93-0177-3e8a49baaa9f/mzaf_6283737637829871630.std.aac.p.m4a",
-        affiliateLink: "https://www.amazon.co.uk/dp/[ASIN]?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/[ASIN]?tag=thelongbookcl-20"
+        affiliateLink: "https://www.amazon.co.uk/dp/B0D18NZYJ4?tag=thelongbookcl-21",
+        affiliateLinkUS: "https://www.amazon.com/dp/B0D186R23L?tag=thelongbookcl-20"
     },
     {
         id: "196",
@@ -3229,8 +3229,8 @@ export const baseBooks: Book[] = [
         narrator: "Emily Ellet and Steve West",
         relatedBookIds: ["189","190","191","192","194","195"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/6b/63/12/6b6312ce-d3fc-7f41-0da1-d1316279f061/mzaf_10332881180415307323.std.aac.p.m4a",
-        affiliateLink: "https://www.amazon.co.uk/dp/[ASIN]?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/[ASIN]?tag=thelongbookcl-20"
+        affiliateLink: "https://www.amazon.co.uk/dp/B0BSS6VDSS?tag=thelongbookcl-21",
+        affiliateLinkUS: "https://www.amazon.com/dp/B0BSS4F5D2?tag=thelongbookcl-20"
     }
 
 ];
