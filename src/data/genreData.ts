@@ -124,5 +124,15 @@ export const genreData: GenreMeta[] = [
         "genre": "Slice of Life",
         "metaTitle": "Best Long Slice of Life Fantasy Audiobooks | The Long Book Club",
         "intro": "Delight in the quiet rhythms of everyday existence woven with subtle enchantments. From bureaucratic diplomacy and morning coffee routines to cottage jam-making, explore long-form slice-of-life audiobooks that celebrate ordinary moments of beauty, companionship, and warmth."
+    },
+    {
+        "genre": "Mythology",
+        "metaTitle": "Best Long Mythology Audiobooks (10+ Hours) | The Long Book Club",
+        "intro": "Immerse yourself in epic mythologies from classical Greece and Vedic legends to ancient Norse sagas and apocryphal lore. Discover sweeping audiobooks that breathe fresh, defiant life into ancient gods, heroes, and forgotten queens."
+    },
+    {
+        "genre": "Ancient World",
+        "metaTitle": "Best Long Ancient World Audiobooks | The Long Book Club",
+        "intro": "Journey into antiquity with sprawling audiobooks set across ancient Greece, Troy, Vedic India, and the primordial Near East. Explore monumental epics that resurrect ancient civilizations in rich, audio-first detail."
     }
 ];

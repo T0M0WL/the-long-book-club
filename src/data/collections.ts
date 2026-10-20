@@ -13,6 +13,18 @@ export interface Collection {
 
 export const collections: Collection[] = [
     {
+        id: 'mythology-epics',
+        title: 'Best Long Mythological Retellings & Ancient World Epics',
+        slug: 'mythology-epics',
+        coverUrl: '/covers/circe.jpg',
+        description: 'From Olympian halls and the blood-soaked beaches of Troy to ancient Vedic chariots and the primeval Watchers of Enoch. Explore 9 monumental, 10+ hour audiobooks that resurrect ancient mythology and pre-flood lore with fierce modern agency, philosophical depth, and world-class vocal performances.',
+        bookIds: ['197', '198', '199', '200', '201', '202', '203', '204', '205'],
+        topGraphic: '/assets/Collections-Cards-Gfx/Collection-Card-Top-Sage-Green.gif',
+        iconSvg: '/assets/collections-hero-images/Collections Icons SVGs/mythology-icon.svg',
+        iconColor: '#2c5143',
+        collectionNumber: '013'
+    },
+    {
         id: 'cozy-fantasy',
         title: 'Best Long Cozy Fantasy & Slice-of-Life Audiobooks: Warm Teacups, Low Stakes & Gentle Magic',
         slug: 'cozy-fantasy',
