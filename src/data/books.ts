@@ -3755,8 +3755,8 @@ export const baseBooks: Book[] = [
         soundCheck: "Tim Pigott-Smith delivers a tour de force of understated British acting, imbuing Maurice Castle with quiet gentleness, weary exhaustion, and deep moral integrity. Pigott-Smith’s aristocratic baritone is warm and civilized, perfectly capturing the polite, chilling cruelty of senior MI6 interrogators who order assassinations over dry martinis at London clubs. His characterizations of Sarah and the innocent, doomed Davis are handled with delicate empathy, ensuring that Greene’s poignant philosophical themes hit home with profound emotional power across ten and a half hours.",
         narrator: "Tim Pigott-Smith",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/03/c2/d3/03c2d308-a335-3c4f-9ec7-051c01d70ac8/mzaf_11794151402636206511.std.aac.p.m4a",
-        affiliateLink: "https://www.amazon.co.uk/dp/B000000000?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B000000000?tag=thelongbookcl-20"
+        affiliateLink: "https://www.amazon.co.uk/dp/B0DWG2VBWX?tag=thelongbookcl-21",
+        affiliateLinkUS: "https://www.amazon.com/s?k=The+Human+Factor+by+Graham+Greene&i=audible&tag=thelongbookcl-20"
     },
     {
         id: "221",
