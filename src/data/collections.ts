@@ -13,6 +13,18 @@ export interface Collection {
 
 export const collections: Collection[] = [
     {
+        id: 'nordic-noir',
+        title: 'Best Long Nordic Noir & Scandi Crime Audiobooks: Chilling Northern Mysteries',
+        slug: 'nordic-noir',
+        coverUrl: '/covers/the-girl-with-the-dragon-tattoo-stieg-larsson.jpg',
+        description: 'Sub-zero temperatures, isolated fjords, morally bruised detectives, and unflinching societal autopsies. Nordic Noir transformed modern crime fiction by marrying slow-burn procedural grit with bleak atmospheric immersion. These 8 definitive series-launch audiobooks deliver over 107 hours of bone-chilling, credit-worthy suspense performed by world-class narrators.',
+        bookIds: ['173', '174', '175', '176', '177', '178', '179', '180'],
+        topGraphic: '/assets/Collections-Cards-Gfx/Collection-Card-Top-DarkGrey.gif',
+        iconSvg: '/assets/collections-hero-images/Collections Icons SVGs/nordic-noir-icon.svg',
+        iconColor: '#e56a4e',
+        collectionNumber: '010'
+    },
+    {
         id: 'litrpg-gamelit',
         title: 'Best Long LitRPG & GameLit Audiobooks: Level Up Your Listening',
         slug: 'litrpg-gamelit',

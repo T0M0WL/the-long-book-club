@@ -99,5 +99,15 @@ export const genreData: GenreMeta[] = [
         "genre": "GameLit",
         "metaTitle": "Best Long GameLit Audiobooks (10+ Hours) | The Long Book Club",
         "intro": "Step inside full-dive virtual realities, tactical MMORPGs, and high-stakes survival games. Explore our curated long GameLit audiobooks delivering dozens of hours of pure escapism."
+    },
+    {
+        "genre": "Nordic Noir",
+        "metaTitle": "Best Long Nordic Noir & Scandi Crime Audiobooks | The Long Book Club",
+        "intro": "Bleak frozen landscapes, societal critique, flawed detectives, and bone-chilling procedural mysteries. Nordic Noir has redefined modern crime fiction by trading flashy Hollywood action for brooding psychological depth and atmospheric isolation. These extended 10+ hour audiobooks offer the ultimate immersive listening experience for cold winter nights."
+    },
+    {
+        "genre": "Scandi Crime",
+        "metaTitle": "Best Long Scandi Crime Audiobooks (10+ Hours) | The Long Book Club",
+        "intro": "From locked-island family secrets in Sweden to claustrophobic cold cases in Copenhagen, Scandinavian crime fiction delivers peerless psychological depth and unrelenting suspense. Explore our curated long-form Scandi audiobooks performed by world-class narrators."
     }
 ];
