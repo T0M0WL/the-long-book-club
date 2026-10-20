@@ -6,7 +6,7 @@ const booksPath = path.join(__dirname, '../src/data/books.ts');
 const booksContent = fs.readFileSync(booksPath, 'utf8');
 
 // 1. Extract existing books to get ID set
-const bookRegex = /\{\s*id:\s*'([^']+)',/g;
+const bookRegex = /\{\s*id:\s*['"]([^'"]+)['"],/g;
 const validIds = new Set();
 let match;
 
@@ -19,7 +19,7 @@ console.log(`Loaded ${validIds.size} valid Book IDs.`);
 // 2. Extract relatedBookIds and verify
 // refined regex to capture the array content
 // This assumes format: relatedBookIds: ['1', '2', ...],
-const relatedRegex = /id:\s*'([^']+)',[\s\S]*?relatedBookIds:\s*\[([^\]]*)\]/g;
+const relatedRegex = /id:\s*['"]([^'"]+)['"],[\s\S]*?relatedBookIds:\s*\[([^\]]*)\]/g;
 let issueCount = 0;
 
 while ((match = relatedRegex.exec(booksContent)) !== null) {
@@ -30,7 +30,7 @@ while ((match = relatedRegex.exec(booksContent)) !== null) {
     // content is like: '15', '75', '6'
     const cleanIds = relatedRaw
         .split(',')
-        .map(s => s.trim().replace(/'/g, ''))
+        .map(s => s.trim().replace(/['"]/g, ''))
         .filter(s => s.length > 0);
 
     cleanIds.forEach(relatedId => {

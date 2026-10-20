@@ -13,6 +13,18 @@ export interface Collection {
 
 export const collections: Collection[] = [
     {
+        id: 'cozy-fantasy',
+        title: 'Best Long Cozy Fantasy & Slice-of-Life Audiobooks: Warm Teacups, Low Stakes & Gentle Magic',
+        slug: 'cozy-fantasy',
+        coverUrl: '/covers/the-house-in-the-cerulean-sea-tj-klune.jpg',
+        description: 'Warm teacups, quiet cottage hearths, low-stakes comfort, and found-family sanctuaries. Cozy fantasy strips away world-ending apocalyptic stress in favor of seaside orphanages, artisanal bakeries, bureaucratic holidays, and gentle magic. These 8 definitive series-launch audiobooks deliver over 130 hours of soul-soothing, credit-worthy listening performed by award-winning voice talents.',
+        bookIds: ['189', '190', '191', '192', '193', '194', '195', '196'],
+        topGraphic: '/assets/Collections-Cards-Gfx/Collection-Card-Top-Purple.gif',
+        iconSvg: '/assets/collections-hero-images/Collections Icons SVGs/cozy-fantasy-icon.svg',
+        iconColor: '#bba08f',
+        collectionNumber: '012'
+    },
+    {
         id: 'grimdark-fantasy',
         title: 'Best Long Grimdark Fantasy Audiobooks: Blood, Mud & Moral Ambiguity',
         slug: 'grimdark-fantasy',

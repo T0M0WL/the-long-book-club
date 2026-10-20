@@ -114,5 +114,15 @@ export const genreData: GenreMeta[] = [
         "genre": "Grimdark Fantasy",
         "metaTitle": "Best Long Grimdark Fantasy Audiobooks (10+ Hours) | The Long Book Club",
         "intro": "Blood-slicked battlefields, morally bankrupt antiheroes, razor-sharp wit, and uncompromising realism. Grimdark fantasy stripped away high fantasy chivalry to deliver raw, character-driven grit. Explore our curated selection of 10+ to 40+ hour audio epics performed by the finest narrators in the medium."
+    },
+    {
+        "genre": "Cozy Fantasy",
+        "metaTitle": "Best Long Cozy Fantasy Audiobooks (10+ Hours) | The Long Book Club",
+        "intro": "Warm teacups, low-stakes comfort, found families, and gentle magic. Cozy fantasy strips away world-ending apocalyptic stress in favor of seaside bakeries, quiet tea shops, and deep character connections. Explore our curated selection of 10+ to 30+ hour comfort audiobooks perfect for unwinding and escaping daily stress."
+    },
+    {
+        "genre": "Slice of Life",
+        "metaTitle": "Best Long Slice of Life Fantasy Audiobooks | The Long Book Club",
+        "intro": "Delight in the quiet rhythms of everyday existence woven with subtle enchantments. From bureaucratic diplomacy and morning coffee routines to cottage jam-making, explore long-form slice-of-life audiobooks that celebrate ordinary moments of beauty, companionship, and warmth."
     }
 ];

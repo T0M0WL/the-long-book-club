@@ -42,7 +42,7 @@ export const CollectionDetail = () => {
     const getActiveLinkTextColor = (s: string | undefined) => {
         if (!s) return 'var(--color-brand-slate)';
         if (['romantasy', 'graphic-audio', 'litrpg-gamelit'].includes(s)) return 'var(--color-brand-coral)';
-        if (['longest-ever', 'magical-realism'].includes(s)) return 'var(--color-brand-sage)';
+        if (['longest-ever', 'magical-realism', 'cozy-fantasy'].includes(s)) return 'var(--color-brand-sage)';
         if (['long-life-stories', 'bucket-list', 'grimdark-fantasy'].includes(s)) return 'var(--color-brand-forrest)';
         // Default for others (including dark-academia and nordic-noir which use Slate)
         return 'var(--color-brand-slate)';
@@ -348,6 +348,39 @@ export const CollectionDetail = () => {
                             subtitleBlendMode="multiply"
                             chevronColor="var(--color-brand-forrest)"
                             chevronBlendMode="multiply"
+                            chevronOpacity={0.8}
+                        />
+                    </>
+                ) : collection.slug === 'cozy-fantasy' ? (
+                    <>
+                        <Hero
+                            backgroundImage="/assets/collections-hero-images/LongBookClub-Sage-Hero-Image-01.gif"
+                            topGraphic="/assets/collections-hero-images/Collections Icons SVGs/cozy-fantasy-icon.svg"
+                            topGraphicDimensions={getBalancedDims('cozy-fantasy')}
+                            title="Cozy Fantasy &amp; Slice of Life"
+                            sectionHeight="auto"
+                            sectionMinHeight="600px"
+                            sectionPadding="11rem 1rem 8rem 1rem"
+                            contentPaddingTop="0"
+                            titleFontSize="4.5rem"
+                            titleLineHeight={1.05}
+                            subtitleFontSize="1.4rem"
+                            subtitleLineHeight={1.6}
+                            subtitle={collection.description}
+                            useDynamicColor={false}
+                            titleColor="var(--color-brand-forrest)"
+                            subtitleColor="var(--color-brand-forrest)"
+                            separatorColor="var(--color-brand-forrest)"
+                            showCornerGraphics={false}
+                            overlayOpacity={0}
+                            topGraphicColor="var(--color-brand-forrest)"
+                            topGraphicBlendMode="normal"
+                            topGraphicFilter="none"
+                            topGraphicOpacity={0.9}
+                            contentBlendMode="normal"
+                            titleBlendMode="normal"
+                            titleOpacity={1}
+                            chevronColor="var(--color-brand-forrest)"
                             chevronOpacity={0.8}
                         />
                     </>
