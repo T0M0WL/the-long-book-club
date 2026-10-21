@@ -1101,11 +1101,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/france/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://thelongbookclub.com/genre/war/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -1131,12 +1126,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/small-town/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/monsters/</loc>
+    <loc>https://thelongbookclub.com/genre/cosmic-horror/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1206,11 +1196,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/urban-planning/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://thelongbookclub.com/genre/post-apocalyptic/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -1221,17 +1206,17 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/good-vs-evil/</loc>
+    <loc>https://thelongbookclub.com/genre/southern-gothic/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/genre/speculative-fiction/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://thelongbookclub.com/genre/american-history/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/founding-fathers/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1246,22 +1231,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/tragicomedy/</loc>
+    <loc>https://thelongbookclub.com/genre/postmodernism/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/experimental/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/sports/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/historical-adventure/</loc>
+    <loc>https://thelongbookclub.com/genre/modernist/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1271,7 +1246,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/prison/</loc>
+    <loc>https://thelongbookclub.com/genre/picaresque/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/genre/sea-story/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1291,6 +1271,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://thelongbookclub.com/genre/alternate-history/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thelongbookclub.com/genre/philosophical-fiction/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -1301,12 +1286,17 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/objectivism/</loc>
+    <loc>https://thelongbookclub.com/genre/philosophy/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://thelongbookclub.com/genre/grimdark/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/genre/court-intrigue/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1331,12 +1321,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/civil-war/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/lincoln/</loc>
+    <loc>https://thelongbookclub.com/genre/american-civil-war/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1346,7 +1331,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/american-civil-war/</loc>
+    <loc>https://thelongbookclub.com/genre/japanese-literature/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/genre/surrealism/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1366,32 +1356,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/philosophy/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://thelongbookclub.com/genre/ecology/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://thelongbookclub.com/genre/epic/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/historical-saga/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/medieval-history/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/architecture/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1411,7 +1381,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/music/</loc>
+    <loc>https://thelongbookclub.com/genre/dark-academia/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/genre/magic-school/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1431,17 +1406,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/art-history/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://thelongbookclub.com/genre/contemporary-fiction/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/drama/</loc>
+    <loc>https://thelongbookclub.com/genre/books-about-books/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1451,7 +1421,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/friendship/</loc>
+    <loc>https://thelongbookclub.com/genre/found-family/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/genre/family-drama/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1461,22 +1436,17 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/wwii/</loc>
+    <loc>https://thelongbookclub.com/genre/world-war-ii/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/cryptography/</loc>
+    <loc>https://thelongbookclub.com/genre/cyberpunk/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://thelongbookclub.com/genre/psychological-thriller/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/redemption/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1506,22 +1476,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/realism/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/picaresque/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/spain/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/metafiction/</loc>
+    <loc>https://thelongbookclub.com/genre/folklore/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1531,97 +1486,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/theology/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/technology/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/business/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/innovation/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/gilded-age/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/world-war-ii/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/germany/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/military-history/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/scotland/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://thelongbookclub.com/genre/historical-fantasy/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/alternative-history/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/faerie/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/legal-satire/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/southern-gothic/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/prophecy/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/world-building/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/quest/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/mental-health/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/science-fantasy/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1646,37 +1511,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/dark-academia/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/anti-colonialism/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/linguistics/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://thelongbookclub.com/genre/heist/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/revolution/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/siege/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/apocalyptic/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1687,6 +1522,11 @@
   </url>
   <url>
     <loc>https://thelongbookclub.com/genre/ai/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/genre/space-survival/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1706,67 +1546,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/noir/</loc>
+    <loc>https://thelongbookclub.com/genre/military-sci-fi/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/space-survival/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/genetics/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/speculative-fiction/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/mathematics/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/alternative-world/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/monasticism/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/counterculture/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/sea-story/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/obsession/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/nature/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/gothic-romance/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/feminist/</loc>
+    <loc>https://thelongbookclub.com/genre/first-contact/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1776,77 +1561,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/regency/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/modernist/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/stream-of-consciousness/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/dublin/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/allegory/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/health/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/science/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/renaissance/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/diplomacy/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/russian-history/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/modernization/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/royalty/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/enlightenment/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/biblical-retelling/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/great-depression/</loc>
+    <loc>https://thelongbookclub.com/genre/dark-romance/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1856,47 +1571,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/appalachia/</loc>
+    <loc>https://thelongbookclub.com/genre/latin-american-literature/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/addiction/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/comics/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/jewish-history/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/nyc/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/postmodernism/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/family-drama/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/irish-lit/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/spy-fiction/</loc>
+    <loc>https://thelongbookclub.com/genre/espionage/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1906,17 +1586,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/russia/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://thelongbookclub.com/genre/metaphysical/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/social-satire/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1926,37 +1596,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/class/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/future/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/cosmere/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/japan/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/samurai/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://thelongbookclub.com/genre/vampires/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/medical-fiction/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1966,52 +1606,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/memoir/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/entertainment/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/hollywood/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/fanfiction-roots/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/murder/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/college/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://thelongbookclub.com/genre/witches/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/magic-school/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/fallen-angels/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/spycraft/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -2026,22 +1621,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/rome/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://thelongbookclub.com/genre/ancient-history/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/sword-and-sorcery/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/buddy/</loc>
+    <loc>https://thelongbookclub.com/genre/sword-sorcery/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -2066,42 +1651,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://thelongbookclub.com/genre/isekai/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thelongbookclub.com/genre/uk/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/dark-romance/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/psychic/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/nazis/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/mind-control/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/anthology/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/psychology/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/crossover/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -2116,17 +1671,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/espionage/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://thelongbookclub.com/genre/spy-thriller/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/terrorism/</loc>
+    <loc>https://thelongbookclub.com/genre/suspense/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -2136,127 +1686,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/mmorpg/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/global/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/cold-war/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/alternate-history/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/cosmic-horror/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/sociology/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://thelongbookclub.com/genre/aliens/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/fan-sequel/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/time/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/historical-horror/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/first-contact/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/china/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/graphic-audio/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/classic/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/nobel-prize/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/latin-american-literature/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/surrealism/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/japanese-literature/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/historical-mystery/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/booker-prize/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/political-satire/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/books-about-books/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/barcelona/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/circus/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/atmospheric/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -2266,12 +1696,27 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/sci-fi/</loc>
+    <loc>https://thelongbookclub.com/genre/cold-war/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/isekai/</loc>
+    <loc>https://thelongbookclub.com/genre/graphic-audio/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/genre/fairy-tale/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/genre/classic/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/genre/sci-fi/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -2286,42 +1731,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/military-sci-fi/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/academy/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/vrmmo/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/cyberpunk/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://thelongbookclub.com/genre/nordic-noir/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/suspense/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/small-town-mystery/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/cozy-mystery/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -2336,42 +1746,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/genre/sword-sorcery/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://thelongbookclub.com/genre/low-fantasy/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://thelongbookclub.com/genre/military-fantasy/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/flintlock-fantasy/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/found-family/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/low-stakes/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/court-intrigue/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/fairy-tale/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -2387,66 +1767,6 @@
   </url>
   <url>
     <loc>https://thelongbookclub.com/genre/fiction/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/folklore/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/rebellion/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/alien/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/philosophical/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/evolutionary-sci-fi/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/berlin/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/paris/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/women-spies/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/oxford/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/autobiographical/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/conspiracy/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/genre/audiobook-of-the-year/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

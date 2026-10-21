@@ -164,5 +164,80 @@ export const genreData: GenreMeta[] = [
         "genre": "Spy Thriller",
         "metaTitle": "Best Long Spy Thriller Audiobooks (10+ Hours) | The Long Book Club",
         "intro": "Pulse-pounding manhunts, lethal assassins, deep-cover infiltrators, and classified dossiers. Explore gripping, credit-maximizing spy thriller audiobooks that combine razor-sharp procedural tradecraft with relentless international suspense."
+    },
+    {
+        "genre": "World War II",
+        "metaTitle": "Best Long World War II Audiobooks (20+ Hours) | The Long Book Club",
+        "intro": "Sweeping battlefields, wartime espionage, resistance movements, and monumental historical analyses. Explore our curated selection of 20+ to 60+ hour World War II audiobooks detailing the defining conflict of modern history."
+    },
+    {
+        "genre": "Post-Apocalyptic",
+        "metaTitle": "Best Long Post-Apocalyptic Audiobooks | The Long Book Club",
+        "intro": "Wastelands, pandemic survivors, crumbling civilizations, and the rebirth of humanity. Immerse yourself in monumental post-apocalyptic audio epics that test the absolute limits of human endurance and hope."
+    },
+    {
+        "genre": "Court Intrigue",
+        "metaTitle": "Best Long Court Intrigue & Political Fantasy Audiobooks | The Long Book Club",
+        "intro": "Whispered palace conspiracies, poisoned goblets, imperial power struggles, and razor-sharp political maneuvers. Discover long-form fantasy and historical epics where words and alliances cut deeper than swords."
+    },
+    {
+        "genre": "Cyberpunk",
+        "metaTitle": "Best Long Cyberpunk & Virtual Reality Audiobooks | The Long Book Club",
+        "intro": "Neon-drenched sprawls, rogue AIs, mega-corporations, and full-dive virtual realms. Explore high-tech, low-life sci-fi audiobooks that plunge listeners into gripping digital and dystopian frontiers."
+    },
+    {
+        "genre": "Books About Books",
+        "metaTitle": "Best Long Audiobooks for Book Lovers & Bibliophiles | The Long Book Club",
+        "intro": "Forgotten labyrinthine libraries, cursed manuscripts, literary obsessives, and bookshop sanctuaries. Delve into sweeping audiobooks that celebrate the magic, danger, and romance of the written word."
+    },
+    {
+        "genre": "Military Sci-Fi",
+        "metaTitle": "Best Long Military Sci-Fi Audiobooks (20+ Hours) | The Long Book Club",
+        "intro": "Armored shock troops, planetary bombardments, fleet tacticians, and grimy orbital warfare. Experience monumental military science fiction audiobooks engineered for maximum strategic depth and credit value."
+    },
+    {
+        "genre": "First Contact",
+        "metaTitle": "Best Long First Contact Sci-Fi Audiobooks | The Long Book Club",
+        "intro": "Cosmic signals, enigmatic alien intelligences, Fermi paradox dilemmas, and humanity's terrifying first encounters. Dive into massive, thought-provoking first contact audio epics."
+    },
+    {
+        "genre": "Space Survival",
+        "metaTitle": "Best Long Space Survival Audiobooks | The Long Book Club",
+        "intro": "Derelict ships, hostile alien ecosystems, solitary orbital engineers, and razor-thin margins of life support. Explore gripping long-form space survival audiobooks that keep you on the edge of your seat."
+    },
+    {
+        "genre": "Cosmic Horror",
+        "metaTitle": "Best Long Cosmic Horror Audiobooks | The Long Book Club",
+        "intro": "Ancient unfathomable deities, incomprehensible voids, creeping madness, and existential dread. Discover long-form cosmic horror audiobooks that linger long after the headphones come off."
+    },
+    {
+        "genre": "Magic School",
+        "metaTitle": "Best Long Magic School & Academy Audiobooks | The Long Book Club",
+        "intro": "Towering collegiate spires, dangerous arcane libraries, rigorous combat trials, and forbidden curricula. Immerse yourself in expansive magic school audiobooks full of wonder and dark mystery."
+    },
+    {
+        "genre": "Police Procedural",
+        "metaTitle": "Best Long Police Procedural Audiobooks | The Long Book Club",
+        "intro": "Forensic details, dogged detectives, precinct politics, and methodical criminal investigations. Explore gritty, true-to-life procedural audiobooks that reward patient, analytical listeners."
+    },
+    {
+        "genre": "Found Family",
+        "metaTitle": "Best Long Found Family Audiobooks | The Long Book Club",
+        "intro": "Misfits, outcasts, and kindred spirits who forge unbreakable bonds against all odds. Escape into heartwarming, character-driven audio epics centered on the families we choose."
+    },
+    {
+        "genre": "Hard Sci-Fi",
+        "metaTitle": "Best Long Hard Sci-Fi Audiobooks (20+ Hours) | The Long Book Club",
+        "intro": "Rigorous physics, orbital mechanics, evolutionary biology, and deep-time engineering. Explore scientifically grounded, brain-expanding hard sci-fi audiobooks with massive credit value."
+    },
+    {
+        "genre": "Gothic",
+        "metaTitle": "Best Long Gothic Fiction & Mystery Audiobooks | The Long Book Club",
+        "intro": "Decaying estates, windswept moors, ancestral curses, and brooding psychological terror. Immerse yourself in atmospheric, masterfully narrated long Gothic audiobooks."
+    },
+    {
+        "genre": "Time Travel",
+        "metaTitle": "Best Long Time Travel Audiobooks | The Long Book Club",
+        "intro": "Temporal paradoxes, historical displacement, butterfly effects, and the burden of changing destiny. Discover monumental long-form time travel audiobooks spanning centuries and eras."
     }
 ];

@@ -46,10 +46,8 @@ function generateSitemap() {
         console.log(`   Found ${bookCount} books.`);
 
         // 2. Genres
-        const uniqueGenres = new Set();
+        const genreCounts = new Map();
         // Regex to match genre: 'Value' OR genre: ['Value', 'Value']
-        // This is a simple approximation.
-        // It captures the content after genre: until the end of the line or comma
         const genreRegex = /genre:\s*(\[[^\]]+\]|'[^']+'|"[^"]+")/g;
 
         // Helper slugify (duplicated to avoid import issues in CJS)
@@ -62,21 +60,29 @@ function generateSitemap() {
             if (raw.startsWith('[')) {
                 // Array: ['A', 'B'] -> parse it safely-ish
                 const parts = raw.replace(/[\[\]'"]/g, '').split(',');
-                parts.forEach(p => uniqueGenres.add(p.trim()));
+                parts.forEach(p => {
+                    const g = p.trim();
+                    if (g) genreCounts.set(g, (genreCounts.get(g) || 0) + 1);
+                });
             } else {
-                // String: 'A'
-                uniqueGenres.add(raw.replace(/['"]/g, '').trim());
+                const g = raw.replace(/['"]/g, '').trim();
+                if (g) genreCounts.set(g, (genreCounts.get(g) || 0) + 1);
             }
         }
 
-        uniqueGenres.forEach(genre => {
-            urls.push({
-                url: `/genre/${slugify(genre)}/`,
-                changefreq: 'weekly',
-                priority: 0.8
-            });
+        // Only include genres with at least 2 books in sitemap to prevent thin content indexing
+        let includedGenreCount = 0;
+        genreCounts.forEach((count, genre) => {
+            if (count >= 2) {
+                urls.push({
+                    url: `/genre/${slugify(genre)}/`,
+                    changefreq: 'weekly',
+                    priority: 0.8
+                });
+                includedGenreCount++;
+            }
         });
-        console.log(`   Found ${uniqueGenres.size} unique genres.`);
+        console.log(`   Found ${genreCounts.size} unique genres (${includedGenreCount} with >= 2 books included in sitemap).`);
 
     } catch (err) {
         console.error('   ❌ Error reading books file:', err);

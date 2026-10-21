@@ -415,6 +415,9 @@ async function prerender() {
     const slugify = (text) => text.toString().toLowerCase().trim().replace(/\s+/g, '-').replace(/[^\w-]+/g, '').replace(/--+/g, '-');
     let gCount = 0;
     genresMap.forEach((booksInGenre, genreName) => {
+        // Only prerender genre pages with at least 2 books to prevent thin doorway pages
+        if (booksInGenre.length < 2) return;
+
         const slug = slugify(genreName);
         const meta = genreMetaMap.get(genreName) || { 
             metaTitle: `${genreName} Audiobooks Over 20 Hours | The Long Book Club`,
