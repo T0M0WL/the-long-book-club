@@ -348,6 +348,7 @@ export const BookDetails = () => {
                             }}
                                 dangerouslySetInnerHTML={{
                                     __html: (review?.curatorNote || book.curatorNote || '')
+                                        .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
                                         .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
                                 }}
                             />
