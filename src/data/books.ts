@@ -18,6 +18,7 @@ export interface Book {
     longBookClubTake?: string;
     soundCheck?: string;
     slug?: string;
+    series?: string;
     // Curator content fields
     cardOverview?: string;  // Max 120 chars. Book card excerpt on Home Page
     teaser?: string;        // SEO summary paragraph on Collection Pages
@@ -778,6 +779,7 @@ export const baseBooks: Book[] = [
         description: "One Ring to rule them all, One Ring to find them, One Ring to bring them all and in the darkness bind them.",
         id: '45',
         slug: 'the-fellowship-of-the-ring-jrr-tolkien',
+        series: "The Lord of the Rings",
         title: 'The Fellowship of the Ring',
         author: 'J.R.R. Tolkien',
         coverUrl: '/covers/the-fellowship-of-the-ring.jpg',
@@ -795,6 +797,7 @@ export const baseBooks: Book[] = [
         description: "The Fellowship is scattered. Some are preparing for war against the Dark Lord. Some are fighting the treachery of the wizard Saruman.",
         id: '46',
         slug: 'the-two-towers-jrr-tolkien',
+        series: "The Lord of the Rings",
         title: 'The Two Towers',
         author: 'J.R.R. Tolkien',
         coverUrl: '/covers/the-two-towers.jpg',
@@ -812,6 +815,7 @@ export const baseBooks: Book[] = [
         description: "The armies of the Dark Lord are massing as his evil shadow spreads even wider. Men, Dwarves, Elves and Ents unite forces to do battle against the Dark.",
         id: '47',
         slug: 'the-return-of-the-king-jrr-tolkien',
+        series: "The Lord of the Rings",
         title: 'The Return of the King',
         author: 'J.R.R. Tolkien',
         coverUrl: '/covers/the-return-of-the-king.jpg',
@@ -3821,12 +3825,174 @@ export const baseBooks: Book[] = [
     }
 ];
 
-// Merge curator reviews from reviews.ts
+export const seriesBySlug: Record<string, string> = {
+    // The Lord of the Rings
+    'the-fellowship-of-the-ring-jrr-tolkien': 'The Lord of the Rings',
+    'the-two-towers-jrr-tolkien': 'The Lord of the Rings',
+    'the-return-of-the-king-jrr-tolkien': 'The Lord of the Rings',
+
+    // The Stormlight Archive
+    'the-way-of-kings-brandon-sanderson': 'The Stormlight Archive',
+    'words-of-radiance-brandon-sanderson': 'The Stormlight Archive',
+    'oathbringer-brandon-sanderson': 'The Stormlight Archive',
+    'rhythm-of-war-brandon-sanderson': 'The Stormlight Archive',
+    'wind-and-truth-brandon-sanderson': 'The Stormlight Archive',
+
+    // A Song of Ice and Fire
+    'a-game-of-thrones-george-rr-martin': 'A Song of Ice and Fire',
+    'a-clash-of-kings-george-rr-martin': 'A Song of Ice and Fire',
+    'a-storm-of-swords-george-rr-martin': 'A Song of Ice and Fire',
+    'a-feast-for-crows-george-rr-martin': 'A Song of Ice and Fire',
+    'a-dance-with-dragons-george-rr-martin': 'A Song of Ice and Fire',
+
+    // Mistborn
+    'the-final-empire-brandon-sanderson': 'Mistborn',
+    'the-well-of-ascension-brandon-sanderson': 'Mistborn',
+    'the-hero-of-ages-brandon-sanderson': 'Mistborn',
+
+    // The Wheel of Time
+    'the-eye-of-the-world-robert-jordan': 'The Wheel of Time',
+    'the-great-hunt-robert-jordan': 'The Wheel of Time',
+    'the-dragon-reborn-robert-jordan': 'The Wheel of Time',
+    'the-shadow-rising-robert-jordan': 'The Wheel of Time',
+
+    // Kingsbridge
+    'the-pillars-of-the-earth-ken-follett': 'Kingsbridge',
+
+    // The Kingkiller Chronicle
+    'the-name-of-the-wind-patrick-rothfuss': 'The Kingkiller Chronicle',
+    'the-wise-mans-fear-patrick-rothfuss': 'The Kingkiller Chronicle',
+
+    // Dune
+    'dune-frank-herbert': 'Dune',
+    'dune-messiah-frank-herbert': 'Dune',
+    'children-of-dune-frank-herbert': 'Dune',
+
+    // Hyperion Cantos
+    'hyperion-dan-simmons': 'Hyperion Cantos',
+    'the-fall-of-hyperion-dan-simmons': 'Hyperion Cantos',
+
+    // Remembrance of Earth's Past / Three-Body
+    'the-three-body-problem-cixin-liu': "Remembrance of Earth's Past",
+    'the-dark-forest-cixin-liu': "Remembrance of Earth's Past",
+    'deaths-end-cixin-liu': "Remembrance of Earth's Past",
+    'the-redemption-of-time-baoshu': "Remembrance of Earth's Past",
+
+    // The Expanse
+    'leviathan-wakes-james-sa-corey': 'The Expanse',
+
+    // Commonwealth Saga
+    'pandoras-star-peter-f-hamilton': 'Commonwealth Saga',
+    'judas-unchained-peter-f-hamilton': 'Commonwealth Saga',
+
+    // The First Law
+    'the-blade-itself-joe-abercrombie': 'The First Law',
+
+    // Gentleman Bastard
+    'the-lies-of-locke-lamora-scott-lynch': 'Gentleman Bastard',
+
+    // Malazan Book of the Fallen
+    'gardens-of-the-moon-steven-erikson': 'Malazan Book of the Fallen',
+
+    // The Black Company
+    'the-black-company-glen-cook': 'The Black Company',
+
+    // The Poppy War Trilogy
+    'the-poppy-war-rf-kuang': 'The Poppy War Trilogy',
+
+    // The Powder Mage Trilogy
+    'promise-of-blood-brian-mcclellan': 'The Powder Mage Trilogy',
+
+    // War for the Rose Throne
+    'priest-of-bones-peter-mclean': 'War for the Rose Throne',
+
+    // Book of the Ancestor
+    'red-sister-mark-lawrence': 'Book of the Ancestor',
+
+    // The Cemetery of Forgotten Books
+    'the-shadow-of-the-wind-carlos-ruiz-zafon': 'The Cemetery of Forgotten Books',
+
+    // The Passage Trilogy
+    'the-passage-justin-cronin': 'The Passage Trilogy',
+
+    // Outlander
+    'outlander-diana-gabaldon': 'Outlander',
+
+    // Empire of the Vampire
+    'empire-of-the-vampire-jay-kristoff': 'Empire of the Vampire',
+    'empire-of-the-damned-jay-kristoff': 'Empire of the Vampire',
+    'empire-of-the-dawn-jay-kristoff': 'Empire of the Vampire',
+
+    // The Empyrean
+    'fourth-wing-rebecca-yarros': 'The Empyrean',
+    'iron-flame-rebecca-yarros': 'The Empyrean',
+    'onyx-storm-rebecca-yarros': 'The Empyrean',
+
+    // Crescent City
+    'house-of-earth-and-blood-sarah-j-maas': 'Crescent City',
+    'house-of-sky-and-breath-sarah-j-maas': 'Crescent City',
+    'house-of-flame-and-shadow-sarah-j-maas': 'Crescent City',
+
+    // The Wandering Inn
+    'the-wandering-inn-book-1-pirateaba': 'The Wandering Inn',
+    'the-wandering-inn-book-2-pirateaba': 'The Wandering Inn',
+    'flowers-of-esthelm-the-wandering-inn-book-3-pirateaba': 'The Wandering Inn',
+    'winter-solstice-the-wandering-inn-book-4-pirateaba': 'The Wandering Inn',
+
+    // Nordic Noir Series
+    'the-girl-with-the-dragon-tattoo-stieg-larsson': 'Millennium',
+    'mercy-jussi-adler-olsen': 'Department Q',
+    'the-hypnotist-lars-kepler': 'Joona Linna',
+    'the-ice-princess-camilla-lackberg': 'Fjällbacka',
+    'the-bat-jo-nesbo': 'Harry Hole',
+    'faceless-killers-henning-mankell': 'Kurt Wallander',
+    'im-travelling-alone-samuel-bjork': 'Munch & Krüger',
+
+    // LitRPG Series
+    'dungeon-crawler-carl-matt-dinniman': 'Dungeon Crawler Carl',
+    'he-who-fights-with-monsters-shirtaloon-travis-deverell': 'He Who Fights with Monsters',
+    'defiance-of-the-fall-jf-brink-thefirstdefier': 'Defiance of the Fall',
+    'the-primal-hunter-zogarth': 'The Primal Hunter',
+    'iron-prince-bryce-oconnor-luke-chmilenko': 'Warformed: Stormweaver',
+    'shadeslinger-kyle-kirrin': 'The Ripple System',
+    'awaken-online-catharsis-travis-bagwell': 'Awaken Online',
+
+    // Cozy / Fantasy Series
+    'the-house-in-the-cerulean-sea-tj-klune': 'Cerulean Chronicles',
+    'the-hands-of-the-emperor-victoria-goddard': 'Lays of the Hearth-Fire',
+    'legends-and-lattes-travis-baldree': 'Legends & Lattes',
+    'the-goblin-emperor-katherine-addison': 'The Chronicles of Osreth',
+    'cant-spell-treason-without-tea-rebecca-thorne': 'Tomes & Tea',
+    'between-ll-starling': 'The Chronicles of Between',
+
+    // History / Biography Series
+    'peter-the-great-robert-k-massie': 'The Romanov Biographies',
+    'catherine-the-great-robert-k-massie': 'The Romanov Biographies',
+
+    // Sci-Fi / Espionage Series
+    'the-priory-of-the-orange-tree': 'The Roots of Chaos',
+    'a-discovery-of-witches': 'All Souls',
+    'red-rising': 'Red Rising',
+    'empire-of-silence': 'Sun Eater',
+    'a-memory-called-empire': 'Teixcalaan',
+    'shards-of-earth': 'The Final Architecture',
+    'the-player-of-games': 'Culture',
+    'ancillary-justice': 'Imperial Radch',
+    'children-of-time': 'Children of Time',
+    'slow-horses': 'Slough House',
+    'tinker-tailor-soldier-spy': 'Karla Trilogy',
+    'berlin-game': 'Bernard Samson',
+    'harry-potter-and-the-philosopher-s-stone-j-k-rowling': 'Harry Potter'
+};
+
+// Merge curator reviews and series from reviews.ts / seriesBySlug
 export const books: Book[] = baseBooks.map(book => {
     const review = reviews[book.title];
+    const series = book.series || (book.slug ? seriesBySlug[book.slug] : undefined);
     return {
         ...book,
-        ...(review ? review : {})
+        ...(review ? review : {}),
+        ...(series ? { series } : {})
     };
 });
 

@@ -55,6 +55,8 @@ export const Finder = () => {
 
     // 3. Filtering Logic
     const filteredBooks = useMemo(() => {
+        const searchLower = searchTerm.toLowerCase().trim();
+
         const result = books.filter(book => {
             const matchesGenre = selectedGenre === 'All' ||
                 (Array.isArray(book.genre)
@@ -62,10 +64,34 @@ export const Finder = () => {
                     : book.genre === selectedGenre);
 
             const matchesLength = book.lengthHours >= minLength;
+
+            if (!searchLower) {
+                return matchesGenre && matchesLength;
+            }
+
+            const genreList = Array.isArray(book.genre) ? book.genre : [book.genre];
+            const narratorVal = book.narrator || '';
+            const seriesVal = book.series || '';
+
+            // Convenient series acronym / alias helpers
+            const isLotrAlias = (searchLower === 'lotr' || searchLower.includes('lord of the rings')) &&
+                (seriesVal.toLowerCase().includes('lord of the rings') || book.author.toLowerCase().includes('tolkien'));
+
+            const isAsoiafAlias = (searchLower === 'asoiaf' || searchLower.includes('game of thrones') || searchLower.includes('song of ice and fire')) &&
+                (seriesVal.toLowerCase().includes('song of ice and fire') || book.author.toLowerCase().includes('martin'));
+
+            const isThreeBodyAlias = (searchLower.includes('three-body') || searchLower.includes('three body')) &&
+                (seriesVal.toLowerCase().includes("remembrance of earth's past") || book.title.toLowerCase().includes('three-body'));
+
             const matchesSearch =
-                book.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                book.author.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                (book.narrator && book.narrator?.toLowerCase().includes(searchTerm.toLowerCase()));
+                book.title.toLowerCase().includes(searchLower) ||
+                book.author.toLowerCase().includes(searchLower) ||
+                narratorVal.toLowerCase().includes(searchLower) ||
+                seriesVal.toLowerCase().includes(searchLower) ||
+                genreList.some(g => g.toLowerCase().includes(searchLower)) ||
+                isLotrAlias ||
+                isAsoiafAlias ||
+                isThreeBodyAlias;
 
             return matchesGenre && matchesLength && matchesSearch;
         });

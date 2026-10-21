@@ -328,7 +328,7 @@ export const FilterBar = ({
                             justifyContent: 'center'
                         }}>
                             <FaSearch style={{ color: 'var(--color-brand-forrest)' }} />
-                            <span>Search by title, author or narrator...</span>
+                            <span>Search by title, author, series, narrator, or genre...</span>
                         </div>
                     )}
                 </div>
