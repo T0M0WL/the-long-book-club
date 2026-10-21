@@ -63,6 +63,18 @@ async function runReport(token, reportConfig) {
     return data;
 }
 
+const HOSTNAME_FILTER = {
+    notExpression: {
+        filter: {
+            fieldName: 'hostName',
+            stringFilter: {
+                matchType: 'EXACT',
+                value: 'localhost'
+            }
+        }
+    }
+};
+
 async function main() {
     const args = process.argv.slice(2);
     const days = args[0] ? parseInt(args[0], 10) : 30;
@@ -75,7 +87,8 @@ async function main() {
     const key = JSON.parse(fs.readFileSync(KEY_PATH, 'utf8'));
     const token = await getAccessToken(key);
 
-    console.log(`\n📊 The Long Book Club — Analytics Overview (Last ${days} Days)`);
+    console.log(`\n📊 The Long Book Club — Live Production Analytics (Last ${days} Days)`);
+    console.log(`(Filtered to exclude localhost development traffic)`);
     console.log(`======================================================================`);
 
     // 1. Overview Totals
@@ -86,7 +99,8 @@ async function main() {
             { name: 'screenPageViews' },
             { name: 'sessions' },
             { name: 'averageSessionDuration' }
-        ]
+        ],
+        dimensionFilter: HOSTNAME_FILTER
     });
 
     if (totalsReport.rows && totalsReport.rows.length > 0) {
@@ -110,6 +124,7 @@ async function main() {
             { name: 'activeUsers' },
             { name: 'averageSessionDuration' }
         ],
+        dimensionFilter: HOSTNAME_FILTER,
         orderBys: [{ metric: { metricName: 'screenPageViews' }, desc: true }],
         limit: 12
     });
@@ -135,6 +150,7 @@ async function main() {
             { name: 'sessions' },
             { name: 'activeUsers' }
         ],
+        dimensionFilter: HOSTNAME_FILTER,
         orderBys: [{ metric: { metricName: 'sessions' }, desc: true }],
         limit: 5
     });
@@ -158,6 +174,7 @@ async function main() {
             { name: 'activeUsers' },
             { name: 'screenPageViews' }
         ],
+        dimensionFilter: HOSTNAME_FILTER,
         orderBys: [{ metric: { metricName: 'activeUsers' }, desc: true }],
         limit: 5
     });

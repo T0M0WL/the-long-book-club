@@ -27,17 +27,24 @@ import { ScrollToTop } from './components/ScrollToTop';
 import { SEO } from './components/SEO';
 import { HeaderThemeProvider } from './context/HeaderContext';
 
-// Initialize GA4 with a placeholder ID
-// REPLACE 'G-XXXXXXXXXX' with your actual Measurement ID
-ReactGA.initialize('G-1XT8V4LVRG');
+// Initialize GA4 only on live production domain (excludes localhost dev)
+const isProduction = typeof window !== 'undefined' &&
+  window.location.hostname !== 'localhost' &&
+  window.location.hostname !== '127.0.0.1' &&
+  !window.location.hostname.endsWith('.local');
+
+if (isProduction) {
+  ReactGA.initialize('G-1XT8V4LVRG');
+}
 
 // Tracker component to handle page view events on route change
 const AnalyticsTracker = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Send pageview with a custom path
-    ReactGA.send({ hitType: "pageview", page: location.pathname + location.search });
+    if (isProduction) {
+      ReactGA.send({ hitType: "pageview", page: location.pathname + location.search });
+    }
   }, [location]);
 
   return null;
