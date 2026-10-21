@@ -24,7 +24,7 @@ Because each audiobook appears across multiple URLs on the website (and because 
 | :--- | :--- | :--- | :--- |
 | **Tier 1: Raw HTML Synopsis** | `description` | Pre-rendered static HTML (`#no-js-content` in `dist/book/:slug/index.html`) + JSON-LD Schema fallback | **1–2 sentences (~25–45 words).** A 100% original plot premise written in our voice so Googlebot crawls zero scraped publisher text. |
 | **Tier 2: Grid Card Punchline** | `cardOverview` | Homepage *Hall of Fame*, `/long-book-finder/`, `/genre/:slug/`, and *You Might Also Like* cards | **Strict max 120 characters (1–2 short sentences).** Punchy micro-hook that fits inside a 3-line grid card and drives clicks on *"Read Full Review →"*. |
-| **Tier 3: Collection Editorial Teaser** | `teaserTitle` + `teaser` | `/collections/:slug/` (both live React page and pre-rendered Collection HTML) | **`teaserTitle`: 5–10 words** (H4 sub-headline).<br>**`teaser`: 2–3 sentences (~40–70 words)** explaining *why* this book belongs in the collection and ending with a **Curiosity Gap** that compels clicks on *"Read Full Review + Soundcheck →"*. |
+| **Tier 3: Collection Editorial Teaser ("Lean Hook")** | `teaserTitle` + `teaser` | `/collections/:slug/` (both live React page and pre-rendered Collection HTML) | **`teaserTitle`: 4–8 words** (H4 sub-headline).<br>**`teaser`: Strictly 2 sentences (~35–45 words max).** Lean curiosity hook: Sentence 1 poses a sharp listening dilemma/question (narrator stamina, pacing, abridgment, runtime value); Sentence 2 provides a direct CTA to close the loop on `/book/:slug/`. Zero plot bloat. |
 | **Tier 4: Full Curator Review & Soundcheck** | `curatorTitle` + `curatorNote` + `soundCheck` | `/book/:slug/` (live React page, pre-rendered Book HTML, and `Review` JSON-LD Schema) | **`curatorTitle`: 6–12 words** (H2 review headline).<br>**`curatorNote`: 3 paragraphs (300+ words)** Bottom-of-Funnel conversion review.<br>**`soundCheck`: 1 paragraph (~70–110 words)** dedicated strictly to the narrator's vocal performance, pacing, accents, and audio production. |
 
 ---
@@ -68,9 +68,11 @@ For every new audiobook (must be **10+ hours minimum unabridged**, prioritizing 
 13. **`cardOverview`** *(string — Tier 2)*:
     - **Max 120 characters.** Ultra-concise 1–2 sentence hook for grid cards driving clicks to `/book/:slug/`.
 14. **`teaserTitle`** *(string — Tier 3 Headline)*:
-    - **5–10 words.** Engaging sub-headline for Collection pages (e.g., `"The Architecture of Ambition: Forty Hours in Kingsbridge"`).
-15. **`teaser`** *(string — Tier 3 Body — Middle-of-Funnel Curiosity Gap)*:
-    - **2–3 sentences (~40–70 words).** Editorial pitch tailored for Collection pages explaining why the book belongs on the list and ending with a **Curiosity Gap** (without giving away the final audio/credit verdict) so the reader clicks *"Read Full Review + Soundcheck →"*.
+    - **4–8 words.** Sharp, provocative sub-headline for Collection cards posing or hinting at the listening dilemma (e.g., `"22 Hours of Cat-and-Mouse Precision"` or `"Better Than the Screen Version?"`).
+15. **`teaser`** *(string — Tier 3 Body — The 35–45 Word "Lean Hook")*:
+    - **Strictly 2 sentences (~35–45 words max). ZERO plot summaries.** Designed for rapid mobile scanning and maximum curiosity:
+      - *Sentence 1 (The Dilemma/Question):* Poses a single, sharp question about narrator stamina, pacing burnout, complexity in audio, adaptation comparison, or credit value.
+      - *Sentence 2 (The Call-To-Action):* Directs the user to the dedicated book page to close the information gap (e.g., *"Read our full review and Soundcheck to see our verdict."*).
 
 ### D. Full Review Copy Tier 4 (`src/data/reviews.ts` — Bottom-of-Funnel Conversion Engine)
 16. **`curatorTitle`** *(string)*:
@@ -167,9 +169,9 @@ When prompting your Gemini Agent + NotebookLM to generate a new batch of books, 
 #### Tier 2: Grid Card Overview (`cardOverview` — STRICT MAX 120 CHARACTERS)
 > 
 
-#### Tier 3: Collection Teaser (`teaserTitle` + `teaser` — 2–3 sentences)
-- **Teaser Headline (`teaserTitle`)**: 
-- **Teaser Paragraph (`teaser`)**: 
+#### Tier 3: Collection Editorial Teaser (`teaserTitle` + `teaser` — Strict 2-Sentence Lean Hook, 35–45 words max)
+- **Teaser Headline (`teaserTitle` — 4–8 words)**: 
+- **Teaser Paragraph (`teaser` — 2 sentences: Sentence 1 Dilemma, Sentence 2 CTA)**: 
 
 #### Tier 4: Full Book Page Review (`reviews.ts`)
 - **Curator Review Headline (`curatorTitle`)**: 

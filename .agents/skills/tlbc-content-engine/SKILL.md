@@ -43,7 +43,7 @@ Every page on `thelongbookclub.com` plays a specific role in guiding visitors to
    - **Homepage & Long Book Finder (`/long-book-finder/`)**: Dynamic filtering tools whose cards (`BookCard.tsx`) route every click to `/book/:slug/` via the *"Read Full Review →"* button.
 2. **Middle of Funnel — "The Window Displays / SEO Honey Traps"**:
    - **Curated Collections (`/collections/:slug/`) & Niche Genres (`/genre/:slug/`)**: Rank for broad & niche discovery keywords (e.g., *"Best Long Magical Realism Audiobooks"*).
-   - **Curiosity Gap Rule:** Collection teasers (`teaserTitle` + `teaser`) sit directly above the **"Read Full Review + Soundcheck →"** button. They must explain *why* the book belongs in the collection and **open a curiosity loop** about the plot or audio performance **without giving away the final verdict**, compelling the user to click through to the book page.
+   - **Curiosity Gap Rule (Funnel Gateway, NOT Plot Endpoint):** Collection teasers (`teaserTitle` + `teaser`) sit directly above the **"Read Full Review + Soundcheck →"** button. Giving a complete plot synopsis satisfies curiosity prematurely and causes users to leave and search Audible directly. Instead, Tier 3 teasers must have **ZERO plot summaries** and open an irresistible **Information Gap / Zeigarnik Open Loop** about the *listening experience* (pacing, narrator stamina, runtime value, or edition pitfalls) while withholding the final verdict.
 3. **Bottom of Funnel — "The Product Boxes / Conversion Engine"**:
    - **Dedicated Book Pages (`/book/:slug/`)**: The final destination where affiliate conversions happen.
    - Houses the **300+ word `curatorNote`** (hard-sell editorial review that resolves the curiosity gap and justifies spending 1 Audible credit) and the signature **`soundCheck`** (narrator performance evaluation), right beside the prominent Audible US & UK CTA buttons and interactive Value/Commute calculators.
@@ -60,9 +60,18 @@ Every audiobook added to the site MUST have 4 completely distinct copy blocks (0
 2. **Tier 2 — `cardOverview` (`src/data/books.ts`)**:
    - **Strict maximum 120 characters (1–2 short sentences).**
    - *Purpose:* Displayed on `BookCard.tsx` across the Homepage *Hall of Fame*, `/long-book-finder/`, `/genre/:slug/`, and *You Might Also Like*. Must act as a punchy micro-hook that drives clicks on *"Read Full Review →"*.
-3. **Tier 3 — `teaserTitle` + `teaser` (`src/data/books.ts`)**:
-   - **`teaserTitle`:** 5–10 words (H4 sub-headline).
-   - **`teaser`:** 2–3 sentences (~40–70 words) explaining why this book fits the curated Collection, ending with a **Curiosity Gap** (e.g., posing an intriguing question about how the narrator handles the cast, or how a complex print structure translates to audio) so the reader clicks **"Read Full Review + Soundcheck →"** rather than bouncing.
+3. **Tier 3 — `teaserTitle` + `teaser` (`src/data/books.ts`) — The 35–45 Word "Lean Hook" (Strict 2-Sentence Cap)**:
+   - **Psychological Foundations**:
+     - *Loewenstein’s Information Gap Theory:* Plot summaries close cognitive gaps, letting users leave and buy on Audible directly. A listening-friction hook opens an information gap about audio quality, narration, or stamina that only the full review resolves.
+     - *Zeigarnik Effect (Open Loops):* Creating an unresolved tension around narrator fatigue or marathon pacing compels the reader to achieve closure by clicking through.
+   - **Strict Rules**:
+     - **ZERO Plot Summaries:** Never describe plot events, premise setup, or character backstories. Focus 100% on the **listening experience** and friction.
+     - **ZERO Concept Overload:** Do not stack 4–6 concepts into one card. Single out ONE primary dilemma for lightning-fast mobile scanning (low cognitive load, high information scent).
+     - **Word Count & Structure:** Strict 2-sentence cap, ~35–45 words max.
+   - **`teaserTitle`:** 4–8 words (H4 sub-headline framing the core listening dilemma or curiosity trigger, e.g., *"22 Hours of Cat-and-Mouse Precision"* or *"Better Than the Screen Version?"*).
+   - **`teaser`:** Strictly 2 punchy sentences (~35–45 words max) following the **Lean Curiosity Gap Formula**:
+     1. *Sentence 1 (The Dilemma / Listening Question):* Poses a single, sharp question about narrator stamina, pacing burnout, print-to-audio complexity, adaptation comparisons, or runtime value.
+     2. *Sentence 2 (The Call-To-Action):* Directs the user to the dedicated book page to close the cognitive loop (*"Read our full review and Soundcheck to see our verdict."*).
    - *Purpose:* Displayed on `/collections/:slug/` (`CollectionDetail.tsx` and pre-rendered Collection HTML).
 4. **Tier 4 — `curatorTitle` + `curatorNote` + `soundCheck` (`src/data/reviews.ts`)**:
    - **`curatorTitle`:** 6–12 words (H2 headline on `/book/:slug/`, distinct from `teaserTitle`).
