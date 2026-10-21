@@ -57,3 +57,11 @@ This file is the "Eternal Memory" for the project. **Any AI assistant working on
 - **Aesthetic:** Modern, premium, using the custom "Lora" and "Inter" typography.
 - **CSS:** Custom Vanilla CSS in `index.css`. Minimal dependencies.
 - **Interactive:** Hover states, micro-animations, and custom SVG dividers are key to the brand.
+
+---
+
+## 📣 Community Outreach & Reddit Strategy (Zero-Cringe)
+- **Playbook Location:** `docs/REDDIT_COMMUNITY_PLAYBOOK.md`
+- **Core Stance:** Thomas is an authentic book lover, curator, and designer—**not** an aggressive marketer. We never spam promo links or hard-sell.
+- **Primary Method:** The "Helpful Commenter" strategy on `r/audiobooks`, `r/audible`, `r/Fantasy`, and `r/suggestmeabook`. When users ask for long listens or credit recommendations, reply with 2–3 genuine title suggestions first, and link directly to the specific book review/soundcheck or collection rather than a generic homepage plug.
+- **Standalone Posts:** If making a top-level post, always provide 80% of the value in the post body (concrete titles, runtimes, narrator highlights), never use commercial/affiliate flairs, and ask a genuine discussion question to spark community engagement.
