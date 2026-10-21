@@ -239,5 +239,10 @@ export const genreData: GenreMeta[] = [
         "genre": "Time Travel",
         "metaTitle": "Best Long Time Travel Audiobooks | The Long Book Club",
         "intro": "Temporal paradoxes, historical displacement, butterfly effects, and the burden of changing destiny. Discover monumental long-form time travel audiobooks spanning centuries and eras."
+    },
+    {
+        "genre": "Sword and Sorcery",
+        "metaTitle": "Best Long Sword and Sorcery Audiobooks | The Long Book Club",
+        "intro": "Steel, sorcery, cunning rogues, and grim battlefields. Dive into gripping, adventure-packed sword and sorcery audiobooks with rich world-building and relentless momentum."
     }
 ];
