@@ -98,6 +98,9 @@ Every audiobook added to the site MUST have 4 completely distinct copy blocks (0
 3. Query the **UK iTunes Search API** (`https://itunes.apple.com/search?term=<Title+Author>&media=audiobook&country=GB`) via `read_url_content` to pull the exact UK edition's 30-second `previewUrl` (`audioPreviewUrl`) and high-res square cover art (`artworkUrl100` with `100x100bb.jpg` replaced by `600x600bb.jpg`).
 4. Once Thomas approves the covers and provides his UK/US Amazon links (note: `amazon.com` visited from a UK IP serves the UK/Commonwealth licensed edition under its `.com` ASIN, so both UK and US links often point to the same UK narrator/edition), download the `600x600bb.jpg` covers directly into `public/covers/<slug>.jpg` and wire `/covers/<slug>.jpg` into `src/data/books.ts` and `src/data/collections.ts`.
 
+### Collection Ordering & Additions Rule
+- **New Additions Always Feature First (Index 0):** When adding books to `collection.bookIds` in `src/data/collections.ts`, always place new additions at the **beginning of the array (`[newId, ...existingIds]`)**. This ensures returning visitors and readers immediately see the freshest releases/additions as the first item on collection pages, rather than scrolling to the bottom.
+
 ### Collection Card Top Graphics (5-Colour Cycle) & Heavy-Weight Material Icons
 - **5-Colour Card Top Graphic Cycle (`public/assets/Collections-Cards-Gfx/`):**
   Cycle through these 5 blank textured arch graphics in this exact order (and loop back to #1 once all 5 are used), pairing each with its exact `iconColor`:

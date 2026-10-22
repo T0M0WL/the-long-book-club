@@ -114,7 +114,7 @@ export const collections: Collection[] = [
         slug: 'graphic-audio',
         coverUrl: '/covers/harry-potter-and-the-philosopher-s-stone-j-k-rowling.jpg',
         description: 'Experience audiobooks like movies for your ears. Our curated collection of the best, most immersive cinematic audio productions featuring full casts, sound effects, and scoring.',
-        bookIds: ['20', '152', '157', '158', '29', '153', '154', '156', '150', '151', '155', '223', '224'],
+        bookIds: ['224', '20', '152', '157', '158', '29', '153', '154', '156', '150', '151', '155', '223'],
         topGraphic: '/assets/Collections-Cards-Gfx/cc2-cinematic-top-gfx.gif'
     },
     {
@@ -141,7 +141,7 @@ export const collections: Collection[] = [
         slug: 'romantasy',
         coverUrl: '/covers/iron-flame.jpg',
         description: 'Where high fantasy meets high stakes romance. Dragons, fae, and ancient curses, all with a generous dose of enemies-to-lovers tension.',
-        bookIds: ['159', '55', '113', '127', '111', '128', '112', '129', '130', '114', '147', '148', '224'], // Romantasy additions: This Kingdom, Priory, Kushiel, Empyrean (3), Crescent City (3), Moon Hatched, Quicksilver/Brimstone, ACOTAR 6
+        bookIds: ['224', '159', '55', '113', '127', '111', '128', '112', '129', '130', '114', '147', '148'], // ACOTAR 6, Romantasy additions: This Kingdom, Priory, Kushiel, Empyrean (3), Crescent City (3), Moon Hatched, Quicksilver/Brimstone
         topGraphic: '/assets/Collections-Cards-Gfx/cc2-romantasy-top-gfx.gif'
     },
     {
