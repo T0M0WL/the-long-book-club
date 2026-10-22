@@ -333,23 +333,25 @@ export const BookDetails = () => {
                 }}>
 
                     {/* Genre Pill - Matched to BookCard */}
-                    <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', alignItems: 'flex-start', gap: '0.5rem', marginBottom: '1.5rem' }}>
+                    <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', alignItems: 'flex-start', gap: '0.35rem', marginBottom: '1.15rem' }}>
                         {(Array.isArray(book.genre) ? book.genre : [book.genre]).map((g, i) => (
                             <Link key={i} to={`/genre/${slugify(g)}/`} style={{ textDecoration: 'none' }}>
-                                <div style={{
-                                    padding: '0.25rem 0.75rem',
-                                    backgroundColor: 'var(--color-brand-forrest)',
-                                    color: 'var(--color-brand-cloud)',
-                                    borderRadius: '1rem',
-                                    fontSize: '0.75rem',
-                                    fontFamily: 'Inter, sans-serif',
-                                    fontWeight: 700,
-                                    letterSpacing: '0.05em',
-                                    textTransform: 'uppercase',
-                                    display: 'inline-block',
-                                    transition: 'background-color 0.2s',
-                                    whiteSpace: 'nowrap' // Prevent breaking inside the pill
-                                }}
+                                <div
+                                    className="genre-tag"
+                                    style={{
+                                        padding: '0.18rem 0.55rem',
+                                        backgroundColor: 'var(--color-brand-forrest)',
+                                        color: 'var(--color-brand-cloud)',
+                                        borderRadius: '0.75rem',
+                                        fontSize: '0.625rem',
+                                        fontFamily: 'Inter, sans-serif',
+                                        fontWeight: 700,
+                                        letterSpacing: '0.04em',
+                                        textTransform: 'uppercase',
+                                        display: 'inline-block',
+                                        transition: 'background-color 0.2s',
+                                        whiteSpace: 'nowrap' // Prevent breaking inside the pill
+                                    }}
                                     onMouseEnter={e => {
                                         e.currentTarget.style.backgroundColor = '#2a4a3d';
                                         e.currentTarget.style.color = 'var(--color-brand-coral-light)';

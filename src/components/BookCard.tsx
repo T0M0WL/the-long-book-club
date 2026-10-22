@@ -118,13 +118,13 @@ export const BookCard = ({ book, navigationState }: BookCardProps) => {
                             <div
                                 className="genre-tag"
                                 style={{
-                                    fontSize: '0.75rem',
+                                    fontSize: '0.625rem',
                                     color: 'var(--color-brand-cloud)',
                                     backgroundColor: 'var(--color-brand-forrest)',
-                                    padding: '0.25rem 0.75rem',
-                                    borderRadius: '1rem',
+                                    padding: '0.18rem 0.55rem',
+                                    borderRadius: '0.75rem',
                                     textTransform: 'uppercase',
-                                    letterSpacing: '0.05em',
+                                    letterSpacing: '0.04em',
                                     fontWeight: 700,
                                     fontFamily: 'Inter, sans-serif',
                                     display: 'inline-block'
