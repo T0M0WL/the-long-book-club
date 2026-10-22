@@ -112,26 +112,29 @@ export const BookCard = ({ book, navigationState }: BookCardProps) => {
                 </p>
 
 
-                <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: '0.25rem', marginBottom: '1rem' }}>
+                <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', gap: '0.25rem', marginBottom: '1rem' }}>
                     {(Array.isArray(book.genre) ? book.genre : [book.genre]).slice(0, 3).map((g, i) => (
-                        <Link key={i} to={`/genre/${slugify(g)}/`} style={{ textDecoration: 'none' }}>
-                            <div
-                                className="genre-tag"
-                                style={{
-                                    fontSize: '0.625rem',
-                                    color: 'var(--color-brand-cloud)',
-                                    backgroundColor: 'var(--color-brand-forrest)',
-                                    padding: '0.18rem 0.55rem',
-                                    borderRadius: '0.75rem',
-                                    textTransform: 'uppercase',
-                                    letterSpacing: '0.04em',
-                                    fontWeight: 700,
-                                    fontFamily: 'Inter, sans-serif',
-                                    display: 'inline-block'
-                                }}
-                            >
-                                {g}
-                            </div>
+                        <Link
+                            key={i}
+                            to={`/genre/${slugify(g)}/`}
+                            className="genre-tag"
+                            style={{
+                                textDecoration: 'none',
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                lineHeight: 1,
+                                fontSize: '0.625rem',
+                                color: 'var(--color-brand-cloud)',
+                                backgroundColor: 'var(--color-brand-forrest)',
+                                padding: '0.22rem 0.55rem',
+                                borderRadius: '0.75rem',
+                                textTransform: 'uppercase',
+                                letterSpacing: '0.04em',
+                                fontWeight: 700,
+                                fontFamily: 'Inter, sans-serif'
+                            }}
+                        >
+                            {g}
                         </Link>
                     ))}
                 </div>

@@ -333,36 +333,39 @@ export const BookDetails = () => {
                 }}>
 
                     {/* Genre Pill - Matched to BookCard */}
-                    <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', alignItems: 'flex-start', gap: '0.35rem', marginBottom: '1.15rem' }}>
+                    <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', gap: '0.35rem', marginBottom: '1.15rem' }}>
                         {(Array.isArray(book.genre) ? book.genre : [book.genre]).map((g, i) => (
-                            <Link key={i} to={`/genre/${slugify(g)}/`} style={{ textDecoration: 'none' }}>
-                                <div
-                                    className="genre-tag"
-                                    style={{
-                                        padding: '0.18rem 0.55rem',
-                                        backgroundColor: 'var(--color-brand-forrest)',
-                                        color: 'var(--color-brand-cloud)',
-                                        borderRadius: '0.75rem',
-                                        fontSize: '0.625rem',
-                                        fontFamily: 'Inter, sans-serif',
-                                        fontWeight: 700,
-                                        letterSpacing: '0.04em',
-                                        textTransform: 'uppercase',
-                                        display: 'inline-block',
-                                        transition: 'background-color 0.2s',
-                                        whiteSpace: 'nowrap' // Prevent breaking inside the pill
-                                    }}
-                                    onMouseEnter={e => {
-                                        e.currentTarget.style.backgroundColor = '#2a4a3d';
-                                        e.currentTarget.style.color = 'var(--color-brand-coral-light)';
-                                    }}
-                                    onMouseLeave={e => {
-                                        e.currentTarget.style.backgroundColor = 'var(--color-brand-forrest)';
-                                        e.currentTarget.style.color = 'var(--color-brand-cloud)';
-                                    }}
-                                >
-                                    {g}
-                                </div>
+                            <Link
+                                key={i}
+                                to={`/genre/${slugify(g)}/`}
+                                className="genre-tag"
+                                style={{
+                                    textDecoration: 'none',
+                                    display: 'inline-flex',
+                                    alignItems: 'center',
+                                    lineHeight: 1,
+                                    padding: '0.22rem 0.55rem',
+                                    backgroundColor: 'var(--color-brand-forrest)',
+                                    color: 'var(--color-brand-cloud)',
+                                    borderRadius: '0.75rem',
+                                    fontSize: '0.625rem',
+                                    fontFamily: 'Inter, sans-serif',
+                                    fontWeight: 700,
+                                    letterSpacing: '0.04em',
+                                    textTransform: 'uppercase',
+                                    whiteSpace: 'nowrap',
+                                    transition: 'background-color 0.2s, color 0.2s'
+                                }}
+                                onMouseEnter={e => {
+                                    e.currentTarget.style.backgroundColor = '#2a4a3d';
+                                    e.currentTarget.style.color = 'var(--color-brand-coral-light)';
+                                }}
+                                onMouseLeave={e => {
+                                    e.currentTarget.style.backgroundColor = 'var(--color-brand-forrest)';
+                                    e.currentTarget.style.color = 'var(--color-brand-cloud)';
+                                }}
+                            >
+                                {g}
                             </Link>
                         ))}
                     </div>
