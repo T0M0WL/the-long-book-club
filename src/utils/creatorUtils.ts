@@ -19,9 +19,10 @@ export const cleanNarrators = (raw?: string): string[] => {
     if (!raw) return [];
     // Remove (UK), (US), (Unabridged), (GraphicAudio), (Anniversary...)
     let text = raw.replace(/\((UK|US|Unabridged|GraphicAudio|Anniversary[^\)]*)\)/gi, '');
-    // Replace slash and 'and' with comma
+    // Replace slash, 'and', and '&' with comma
     text = text.replace(/\s*\/\s*/g, ',');
     text = text.replace(/\s+and\s+/gi, ',');
+    text = text.replace(/\s*&\s*/g, ',');
     text = text.replace(/Full Cast\s*\(/gi, '').replace(/\)/g, '');
 
     const parts = text.split(',');

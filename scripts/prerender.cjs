@@ -505,6 +505,7 @@ async function prerender() {
         let text = raw.replace(/\((UK|US|Unabridged|GraphicAudio|Anniversary[^\)]*)\)/gi, '');
         text = text.replace(/\s*\/\s*/g, ',');
         text = text.replace(/\s+and\s+/gi, ',');
+        text = text.replace(/\s*&\s*/g, ',');
         text = text.replace(/Full Cast\s*\(/gi, '').replace(/\)/g, '');
         const parts = text.split(',');
         const results = [];
