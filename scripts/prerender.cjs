@@ -209,6 +209,11 @@ async function prerender() {
                 } catch (e) {}
             }
 
+            const lengthHoursMatch = cleanBlock.match(/lengthHours:\s*([0-9.]+)/);
+            const lengthHours = lengthHoursMatch ? parseFloat(lengthHoursMatch[1]) : 0;
+            const reviewNarrator = reviewsMap.get(title)?.narrator;
+            const effectiveNarrator = reviewNarrator || narrator;
+
             allBooks.push({
                 id,
                 slug,
@@ -216,8 +221,9 @@ async function prerender() {
                 author,
                 description: bookDesc,
                 coverUrl,
-                narrator,
+                narrator: effectiveNarrator,
                 length,
+                lengthHours,
                 genres,
                 affiliateLink,
                 affiliateLinkUS,
@@ -434,7 +440,7 @@ async function prerender() {
         }
     }
 
-    const slugify = (text) => text.toString().toLowerCase().trim().replace(/\s+/g, '-').replace(/[^\w-]+/g, '').replace(/--+/g, '-');
+    const slugify = (text) => text.toString().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim().replace(/\s+/g, '-').replace(/[^\w-]+/g, '').replace(/--+/g, '-');
     let gCount = 0;
     genresMap.forEach((booksInGenre, genreName) => {
         // Only prerender genre pages with at least 2 books to prevent thin doorway pages
@@ -493,11 +499,80 @@ async function prerender() {
     console.log(`✅ Prerendered ${gCount} "Thick" genre pages.`);
 
     // --- Static Hub Prerendering (Enriched) ---
+    // Helper to clean narrators
+    const cleanNarrators = (raw) => {
+        if (!raw) return [];
+        let text = raw.replace(/\((UK|US|Unabridged|GraphicAudio|Anniversary[^\)]*)\)/gi, '');
+        text = text.replace(/\s*\/\s*/g, ',');
+        text = text.replace(/\s+and\s+/gi, ',');
+        text = text.replace(/Full Cast\s*\(/gi, '').replace(/\)/g, '');
+        const parts = text.split(',');
+        const results = [];
+        for (const part of parts) {
+            const p = part.trim().replace(/\bet al\.?\b/gi, '').replace(/^Full Cast$/i, '').replace(/^[,\s]+|[,\s]+$/g, '');
+            if (p.length > 2 && !p.toLowerCase().includes('full cast') && !p.toLowerCase().includes('graphicaudio')) {
+                if (!results.includes(p)) results.push(p);
+            }
+        }
+        return results;
+    };
+
+    // Build Author Map & Narrator Map
+    const authorsMap = new Map();
+    const narratorsMap = new Map();
+
+    for (const book of allBooks) {
+        const author = book.author ? book.author.trim() : '';
+        if (author) {
+            if (!authorsMap.has(author)) authorsMap.set(author, []);
+            authorsMap.get(author).push(book);
+        }
+
+        const names = cleanNarrators(book.narrator);
+        for (const name of names) {
+            if (!narratorsMap.has(name)) narratorsMap.set(name, []);
+            const list = narratorsMap.get(name);
+            if (!list.some(existing => existing.id === book.id)) {
+                list.push(book);
+            }
+        }
+    }
+
+    const sortedAuthors = [];
+    authorsMap.forEach((booksInAuthor, name) => {
+        if (booksInAuthor.length >= 2) {
+            const totalHours = Math.round(booksInAuthor.reduce((acc, b) => acc + (b.lengthHours || 0), 0) * 10) / 10;
+            sortedAuthors.push({
+                name,
+                slug: slugify(name),
+                books: [...booksInAuthor].sort((a, b) => (b.lengthHours || 0) - (a.lengthHours || 0)),
+                totalHours
+            });
+        }
+    });
+    sortedAuthors.sort((a, b) => b.books.length !== a.books.length ? b.books.length - a.books.length : b.totalHours - a.totalHours);
+
+    const sortedNarrators = [];
+    narratorsMap.forEach((booksInNarrator, name) => {
+        if (booksInNarrator.length >= 2) {
+            const totalHours = Math.round(booksInNarrator.reduce((acc, b) => acc + (b.lengthHours || 0), 0) * 10) / 10;
+            sortedNarrators.push({
+                name,
+                slug: slugify(name),
+                books: [...booksInNarrator].sort((a, b) => (b.lengthHours || 0) - (a.lengthHours || 0)),
+                totalHours
+            });
+        }
+    });
+    sortedNarrators.sort((a, b) => b.books.length !== a.books.length ? b.books.length - a.books.length : b.totalHours - a.totalHours);
+
     const staticPages = [
         { slug: 'about', title: 'About | The Long Book Club', desc: 'About our mission to find the most epic audiobooks over 20 hours long.' },
         { slug: 'privacy', title: 'Privacy Policy | The Long Book Club', desc: 'Privacy policy for The Long Book Club.' },
         { slug: 'long-book-finder', title: 'Long Audiobook Finder | The Long Book Club', desc: 'Filter and discover 20+ hour epic audiobooks by length, author, and genre.' },
         { slug: 'collections', title: 'Curated Collections | The Long Book Club', desc: 'Explore hand-picked lists of the best long-form audiobooks, from Epic Fantasy to Non-Fiction Titans.' },
+        { slug: 'authors', title: 'Audiobook Authors | The Long Book Club', desc: 'Explore our directory of epic audiobook authors with 2 or more 20+ hour audiobooks in our curated catalog.' },
+        { slug: 'narrators', title: 'Audiobook Narrators | The Long Book Club', desc: 'Meet the legendary voice artists who bring our longest audiobooks to life. Explore narrators with 2 or more epic performances in our catalog.' },
         { slug: 'journal', title: 'The Long Book Club Journal', desc: 'Latest insights, guides, and strategic listening tips for long-form audiobook fans.' },
         { slug: 'links', title: 'Social Hub | The Long Book Club', desc: 'Quick links to our latest social campaigns, book finder tool, and curated collections.' }
     ];
@@ -523,6 +598,18 @@ async function prerender() {
                 if (cTitle && cSlug) {
                     bodyContent += `<li><strong><a href="/collections/${cSlug}/">${escapeHtml(cTitle)}</a></strong>: ${escapeHtml(cDesc)}</li>`;
                 }
+            }
+            bodyContent += '</ul>';
+        } else if (page.slug === 'authors') {
+            bodyContent += '<h2>Featured Authors</h2><p>Every author featured has two or more long-form audiobooks in our curated collection:</p><ul>';
+            for (const a of sortedAuthors) {
+                bodyContent += `<li><strong><a href="/author/${a.slug}/">${escapeHtml(a.name)}</a></strong>: ${a.books.length} Audiobooks (Over ${Math.floor(a.totalHours)} hours total)</li>`;
+            }
+            bodyContent += '</ul>';
+        } else if (page.slug === 'narrators') {
+            bodyContent += '<h2>Featured Narrators</h2><p>Every narrator featured has two or more epic audio performances in our curated collection:</p><ul>';
+            for (const n of sortedNarrators) {
+                bodyContent += `<li><strong><a href="/narrator/${n.slug}/">${escapeHtml(n.name)}</a></strong>: ${n.books.length} Audiobooks (Over ${Math.floor(n.totalHours)} hours total)</li>`;
             }
             bodyContent += '</ul>';
         } else if (page.slug === 'journal' && journalContent) {
@@ -574,6 +661,159 @@ async function prerender() {
         fs.writeFileSync(path.join(outDir, 'index.html'), html);
     }
     console.log(`✅ Prerendered ${staticPages.length} "Thick" hub pages.`);
+
+    // --- Author Detail Prerendering (Enriched) ---
+    let authorCount = 0;
+    sortedAuthors.forEach((author) => {
+        const slug = author.slug;
+        const metaTitle = `${author.name} Audiobooks Over 20 Hours | The Long Book Club`;
+        const metaDesc = `Discover the best, longest audiobooks by ${author.name}. Explore ${author.books.length} epic listens totaling over ${Math.floor(author.totalHours)} hours of immersive storytelling, complete with narration reviews and soundchecks.`;
+
+        let booksListHtml = '<ul>';
+        for (const b of author.books) {
+            const overviewText = b.cardOverview || b.teaser || b.description || '';
+            const overviewHtml = overviewText ? `<p>${escapeHtml(overviewText)}</p>` : '';
+            booksListHtml += `<li>
+                <h3><a href="/book/${b.slug}/">${escapeHtml(b.title)}</a> (${escapeHtml(b.length)})</h3>
+                ${b.narrator ? `<p><strong>Narrated by:</strong> ${escapeHtml(b.narrator)}</p>` : ''}
+                ${overviewHtml}
+            </li>`;
+        }
+        booksListHtml += '</ul>';
+
+        const bodyContent = `
+            <div id="no-js-content" style="max-width: 800px; margin: 0 auto; padding: 20px; font-family: sans-serif;">
+                <h1>${escapeHtml(author.name)} Audiobooks Over 20 Hours</h1>
+                <p><strong>${author.books.length} Audiobooks • Over ${Math.floor(author.totalHours)} Hours of Listening</strong></p>
+                <p>Every long-listen edition by ${escapeHtml(author.name)} in our collection, curated for expansive storytelling, deep worldbuilding, and maximum credit value.</p>
+                <hr />
+                <h2>Epic Audiobooks by ${escapeHtml(author.name)}</h2>
+                ${booksListHtml}
+            </div>
+        `;
+
+        const absoluteUrl = BASE_URL + '/author/' + slug + '/';
+        const absoluteCoverUrl = BASE_URL + '/assets/social-share-2.jpg';
+
+        const jsonLd = {
+            '@context': 'https://schema.org',
+            '@type': 'CollectionPage',
+            name: metaTitle,
+            description: metaDesc,
+            url: absoluteUrl,
+            about: {
+                '@type': 'Person',
+                name: author.name
+            },
+            mainEntity: {
+                '@type': 'ItemList',
+                numberOfItems: author.books.length,
+                itemListElement: author.books.map((b, idx) => ({
+                    '@type': 'ListItem',
+                    position: idx + 1,
+                    item: {
+                        '@type': 'Audiobook',
+                        name: b.title,
+                        author: { '@type': 'Person', name: author.name },
+                        url: `${BASE_URL}/book/${b.slug}/`
+                    }
+                }))
+            }
+        };
+
+        let html = template;
+        html = html.replace(/<title>.*?<\/title>/, `<title>${escapeHtml(metaTitle)}</title>`);
+        html = html.replace(/<meta name="description" content="[^"]+" \/>/, `<meta name="description" content="${escapeHtml(metaDesc)}" />`);
+        html = html.replace(/<meta property="og:title" content="[^"]+" \/>/, `<meta property="og:title" content="${escapeHtml(metaTitle)}" />`);
+        html = html.replace(/<meta property="og:description" content="[^"]+" \/>/, `<meta property="og:description" content="${escapeHtml(metaDesc)}" />`);
+        html = html.replace(/<meta property="og:image" content="[^"]+" \/>/, `<meta property="og:image" content="${absoluteCoverUrl}" />`);
+        html = html.replace(/<meta property="og:url" content="[^"]+" \/>/, `<meta property="og:url" content="${absoluteUrl}" />`);
+        html = html.replace(/<link rel="canonical" href="[^"]+" \/>/, `<link rel="canonical" href="${absoluteUrl}" />`);
+        html = html.replace('<!-- SEO_CONTENT_HOLDER -->', bodyContent);
+        html = html.replace('</head>', `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script></head>`);
+
+        const outDir = path.join(DIST_DIR, 'author', slug);
+        if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
+        fs.writeFileSync(path.join(outDir, 'index.html'), html);
+        authorCount++;
+    });
+    console.log(`✅ Prerendered ${authorCount} "Thick" author pages.`);
+
+    // --- Narrator Detail Prerendering (Enriched) ---
+    let narratorCount = 0;
+    sortedNarrators.forEach((narrator) => {
+        const slug = narrator.slug;
+        const metaTitle = `${narrator.name} Long Audiobooks & Narrations | The Long Book Club`;
+        const metaDesc = `Explore epic audiobooks narrated by ${narrator.name}. Discover ${narrator.books.length} immersive long listens totaling over ${Math.floor(narrator.totalHours)} hours of voice narration with verified soundchecks.`;
+
+        let booksListHtml = '<ul>';
+        for (const b of narrator.books) {
+            const overviewText = b.cardOverview || b.teaser || b.description || '';
+            const overviewHtml = overviewText ? `<p>${escapeHtml(overviewText)}</p>` : '';
+            booksListHtml += `<li>
+                <h3><a href="/book/${b.slug}/">${escapeHtml(b.title)}</a> by ${escapeHtml(b.author)} (${escapeHtml(b.length)})</h3>
+                ${overviewHtml}
+            </li>`;
+        }
+        booksListHtml += '</ul>';
+
+        const bodyContent = `
+            <div id="no-js-content" style="max-width: 800px; margin: 0 auto; padding: 20px; font-family: sans-serif;">
+                <h1>${escapeHtml(narrator.name)} Long Audiobooks & Narrations</h1>
+                <p><strong>${narrator.books.length} Epic Performances • Over ${Math.floor(narrator.totalHours)} Hours of Narration</strong></p>
+                <p>Masterful voice performances by ${escapeHtml(narrator.name)}. Experience marathon listening journeys brought to life with world-class vocal pacing, distinct character voices, and stamina.</p>
+                <hr />
+                <h2>Epic Audiobooks Narrated by ${escapeHtml(narrator.name)}</h2>
+                ${booksListHtml}
+            </div>
+        `;
+
+        const absoluteUrl = BASE_URL + '/narrator/' + slug + '/';
+        const absoluteCoverUrl = BASE_URL + '/assets/social-share-2.jpg';
+
+        const jsonLd = {
+            '@context': 'https://schema.org',
+            '@type': 'CollectionPage',
+            name: metaTitle,
+            description: metaDesc,
+            url: absoluteUrl,
+            about: {
+                '@type': 'Person',
+                name: narrator.name
+            },
+            mainEntity: {
+                '@type': 'ItemList',
+                numberOfItems: narrator.books.length,
+                itemListElement: narrator.books.map((b, idx) => ({
+                    '@type': 'ListItem',
+                    position: idx + 1,
+                    item: {
+                        '@type': 'Audiobook',
+                        name: b.title,
+                        readBy: { '@type': 'Person', name: narrator.name },
+                        url: `${BASE_URL}/book/${b.slug}/`
+                    }
+                }))
+            }
+        };
+
+        let html = template;
+        html = html.replace(/<title>.*?<\/title>/, `<title>${escapeHtml(metaTitle)}</title>`);
+        html = html.replace(/<meta name="description" content="[^"]+" \/>/, `<meta name="description" content="${escapeHtml(metaDesc)}" />`);
+        html = html.replace(/<meta property="og:title" content="[^"]+" \/>/, `<meta property="og:title" content="${escapeHtml(metaTitle)}" />`);
+        html = html.replace(/<meta property="og:description" content="[^"]+" \/>/, `<meta property="og:description" content="${escapeHtml(metaDesc)}" />`);
+        html = html.replace(/<meta property="og:image" content="[^"]+" \/>/, `<meta property="og:image" content="${absoluteCoverUrl}" />`);
+        html = html.replace(/<meta property="og:url" content="[^"]+" \/>/, `<meta property="og:url" content="${absoluteUrl}" />`);
+        html = html.replace(/<link rel="canonical" href="[^"]+" \/>/, `<link rel="canonical" href="${absoluteUrl}" />`);
+        html = html.replace('<!-- SEO_CONTENT_HOLDER -->', bodyContent);
+        html = html.replace('</head>', `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script></head>`);
+
+        const outDir = path.join(DIST_DIR, 'narrator', slug);
+        if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
+        fs.writeFileSync(path.join(outDir, 'index.html'), html);
+        narratorCount++;
+    });
+    console.log(`✅ Prerendered ${narratorCount} "Thick" narrator pages.`);
     
     // --- Collection Detail Prerendering (Enriched) ---
     if (collectionsContent) {

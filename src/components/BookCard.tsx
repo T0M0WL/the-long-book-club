@@ -3,6 +3,7 @@ import { getRoundedHours } from '../utils/formatLength';
 import { FaClock } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { slugify } from '../utils/slugify';
+import { isQualifyingAuthor } from '../utils/creatorUtils';
 
 interface BookCardProps {
     book: Book;
@@ -108,7 +109,22 @@ export const BookCard = ({ book, navigationState }: BookCardProps) => {
                     marginBottom: '1rem',
                     lineHeight: 1.2
                 }}>
-                    {book.author}
+                    {isQualifyingAuthor(book.author) ? (
+                        <Link
+                            to={`/author/${slugify(book.author)}/`}
+                            style={{
+                                color: 'inherit',
+                                textDecoration: 'none',
+                                transition: 'color 0.2s ease'
+                            }}
+                            onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--color-brand-coral)'; }}
+                            onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--color-brand-forrest)'; }}
+                        >
+                            {book.author}
+                        </Link>
+                    ) : (
+                        book.author
+                    )}
                 </p>
 
 

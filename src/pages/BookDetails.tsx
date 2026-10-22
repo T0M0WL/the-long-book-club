@@ -7,6 +7,7 @@ import { BookCard } from '../components/BookCard';
 import { FaClock } from 'react-icons/fa';
 import { SEO } from '../components/SEO'; // Use Global SEO Component
 import { slugify } from '../utils/slugify';
+import { isQualifyingAuthor } from '../utils/creatorUtils';
 import { useSetHeaderTheme } from '../context/HeaderContext';
 import { reviews } from '../data/reviews';
 import SoundCheckCard from '../components/SoundCheckCard';
@@ -385,7 +386,22 @@ export const BookDetails = () => {
                         color: 'var(--color-brand-forrest)',
                         marginBottom: '2.5rem'
                     }}>
-                        {book.author}
+                        {isQualifyingAuthor(book.author) ? (
+                            <Link
+                                to={`/author/${slugify(book.author)}/`}
+                                style={{
+                                    color: 'inherit',
+                                    textDecoration: 'none',
+                                    transition: 'color 0.2s ease'
+                                }}
+                                onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--color-brand-coral)'; }}
+                                onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--color-brand-forrest)'; }}
+                            >
+                                {book.author}
+                            </Link>
+                        ) : (
+                            book.author
+                        )}
                     </h2>
 
                     {/* Content Logic: Curator Note vs Publisher Summary */}

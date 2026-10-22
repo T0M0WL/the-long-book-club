@@ -54,6 +54,34 @@ export const Footer: React.FC = () => {
                         </a>
                     </div>
 
+                    {/* Top-Level Directory Navigation */}
+                    <nav
+                        aria-label="Footer Navigation"
+                        style={{
+                            display: 'flex',
+                            flexWrap: 'wrap',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            gap: 'clamp(0.75rem, 2.5vw, 1.5rem)',
+                            marginBottom: '2rem',
+                            fontFamily: 'Inter, sans-serif',
+                            fontSize: '0.85rem',
+                            fontWeight: 700,
+                            letterSpacing: '0.08em',
+                            textTransform: 'uppercase'
+                        }}
+                    >
+                        <a href="/collections/" style={{ color: 'var(--color-brand-cloud)', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={e => e.currentTarget.style.color = 'var(--color-brand-coral)'} onMouseLeave={e => e.currentTarget.style.color = 'var(--color-brand-cloud)'}>Collections</a>
+                        <span style={{ opacity: 0.4 }}>•</span>
+                        <a href="/authors/" style={{ color: 'var(--color-brand-cloud)', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={e => e.currentTarget.style.color = 'var(--color-brand-coral)'} onMouseLeave={e => e.currentTarget.style.color = 'var(--color-brand-cloud)'}>Authors</a>
+                        <span style={{ opacity: 0.4 }}>•</span>
+                        <a href="/narrators/" style={{ color: 'var(--color-brand-cloud)', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={e => e.currentTarget.style.color = 'var(--color-brand-coral)'} onMouseLeave={e => e.currentTarget.style.color = 'var(--color-brand-cloud)'}>Narrators</a>
+                        <span style={{ opacity: 0.4 }}>•</span>
+                        <a href="/long-book-finder/" style={{ color: 'var(--color-brand-cloud)', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={e => e.currentTarget.style.color = 'var(--color-brand-coral)'} onMouseLeave={e => e.currentTarget.style.color = 'var(--color-brand-cloud)'}>Finder</a>
+                        <span style={{ opacity: 0.4 }}>•</span>
+                        <a href="/journal/" style={{ color: 'var(--color-brand-cloud)', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={e => e.currentTarget.style.color = 'var(--color-brand-coral)'} onMouseLeave={e => e.currentTarget.style.color = 'var(--color-brand-cloud)'}>Journal</a>
+                    </nav>
+
                     <p style={{ marginBottom: '1.5rem', opacity: 0.9 }}>
                         &copy; {new Date().getFullYear()} All rights reserved. | <a href="/privacy/" style={{ color: 'inherit', textDecoration: 'underline' }}>Privacy Policy</a>
                     </p>

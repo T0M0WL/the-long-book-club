@@ -1,6 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import AudioPlayer from './AudioPlayer';
 import type { GraphicAudioPart } from '../data/books';
+import { slugify } from '../utils/slugify';
+import { isQualifyingNarrator, cleanNarrators } from '../utils/creatorUtils';
 
 interface SoundCheckCardProps {
     narrator: string;
@@ -11,6 +14,40 @@ interface SoundCheckCardProps {
     audioPreviewUrl?: string;
     graphicAudioParts?: GraphicAudioPart[];
 }
+
+const renderNarratorWithLinks = (rawNarrator: string) => {
+    const cleaned = cleanNarrators(rawNarrator);
+    if (cleaned.length === 0) return rawNarrator;
+
+    const qualifyingNames = cleaned.filter(name => isQualifyingNarrator(name));
+    if (qualifyingNames.length === 0) return rawNarrator;
+
+    const escaped = qualifyingNames.map(n => n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
+    const regex = new RegExp(`(${escaped})`, 'g');
+    const parts = rawNarrator.split(regex);
+
+    return parts.map((part, index) => {
+        if (qualifyingNames.includes(part)) {
+            return (
+                <Link
+                    key={index}
+                    to={`/narrator/${slugify(part)}/`}
+                    style={{
+                        color: 'inherit',
+                        textDecoration: 'none',
+                        transition: 'color 0.2s ease',
+                        borderBottom: '1px dotted var(--color-brand-forrest)'
+                    }}
+                    onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--color-brand-coral)'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--color-brand-forrest)'; }}
+                >
+                    {part}
+                </Link>
+            );
+        }
+        return part;
+    });
+};
 
 const SoundCheckCard: React.FC<SoundCheckCardProps> = ({
     narrator,
@@ -60,7 +97,7 @@ const SoundCheckCard: React.FC<SoundCheckCardProps> = ({
                 marginBottom: '1.5rem',
                 textAlign: 'left'
             }}>
-                Narrator: {narrator}
+                Narrator: {renderNarratorWithLinks(narrator)}
             </p>
 
             {/* Audio Player Preview */}

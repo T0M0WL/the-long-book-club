@@ -13,6 +13,10 @@ import { Finder } from './pages/Finder';
 import { Journal } from './pages/Journal';
 import { JournalPost } from './pages/JournalPost';
 import { JournalGenerator } from './pages/JournalGenerator';
+import { Authors } from './pages/Authors';
+import { AuthorDetail } from './pages/AuthorDetail';
+import { Narrators } from './pages/Narrators';
+import { NarratorDetail } from './pages/NarratorDetail';
 
 import { ThankYou } from './pages/ThankYou';
 import { Footer } from './components/Footer';
@@ -108,6 +112,16 @@ function App() {
                 <Route path="/genre/:slug" element={<Genre />} />
                 <Route path="/genres/:slug" element={<Genre />} />
                 <Route path="/long-book-finder" element={<Finder />} />
+
+                {/* Author Routes */}
+                <Route path="/authors" element={<Authors />} />
+                <Route path="/author/:slug" element={<AuthorDetail />} />
+                <Route path="/authors/:slug" element={<AuthorDetail />} />
+
+                {/* Narrator Routes */}
+                <Route path="/narrators" element={<Narrators />} />
+                <Route path="/narrator/:slug" element={<NarratorDetail />} />
+                <Route path="/narrators/:slug" element={<NarratorDetail />} />
 
                 {/* Journal Routes */}
                 <Route path="/journal" element={<Journal />} />

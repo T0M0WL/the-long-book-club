@@ -5,12 +5,15 @@ const path = require('path');
 // Configuration
 const BASE_URL = 'https://thelongbookclub.com';
 const BOOKS_FILE_PATH = path.join(__dirname, '../src/data/books.ts');
+const REVIEWS_FILE_PATH = path.join(__dirname, '../src/data/reviews.ts');
 const JOURNAL_FILE_PATH = path.join(__dirname, '../src/data/journal.ts');
 const OUTPUT_FILE_PATH = path.join(__dirname, '../public/sitemap.xml');
 
 const staticRoutes = [
     { url: '/', changefreq: 'weekly', priority: 1.0 },
     { url: '/collections/', changefreq: 'weekly', priority: 0.9 },
+    { url: '/authors/', changefreq: 'weekly', priority: 0.9 },
+    { url: '/narrators/', changefreq: 'weekly', priority: 0.9 },
     { url: '/journal/', changefreq: 'weekly', priority: 0.9 },
     { url: '/long-book-finder/', changefreq: 'weekly', priority: 0.9 },
     { url: '/links/', changefreq: 'monthly', priority: 0.6 },
@@ -51,7 +54,7 @@ function generateSitemap() {
         const genreRegex = /genre:\s*(\[[^\]]+\]|'[^']+'|"[^"]+")/g;
 
         // Helper slugify (duplicated to avoid import issues in CJS)
-        const slugify = (text) => text.toString().toLowerCase().trim().replace(/\s+/g, '-').replace(/[^\w-]+/g, '').replace(/--+/g, '-');
+        const slugify = (text) => text.toString().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim().replace(/\s+/g, '-').replace(/[^\w-]+/g, '').replace(/--+/g, '-');
 
         let genreMatch;
         while ((genreMatch = genreRegex.exec(booksContent)) !== null) {
@@ -83,6 +86,92 @@ function generateSitemap() {
             }
         });
         console.log(`   Found ${genreCounts.size} unique genres (${includedGenreCount} with >= 2 books included in sitemap).`);
+
+        // 3. Authors (with >= 2 books)
+        const authorCounts = new Map();
+        const authorRegex = /author:\s*['"]([^'"]+)['"]/g;
+        let authorMatch;
+        while ((authorMatch = authorRegex.exec(booksContent)) !== null) {
+            const a = authorMatch[1].trim();
+            if (a) authorCounts.set(a, (authorCounts.get(a) || 0) + 1);
+        }
+
+        let includedAuthorCount = 0;
+        authorCounts.forEach((count, author) => {
+            if (count >= 2) {
+                urls.push({
+                    url: `/author/${slugify(author)}/`,
+                    changefreq: 'weekly',
+                    priority: 0.8
+                });
+                includedAuthorCount++;
+            }
+        });
+        console.log(`   Found ${authorCounts.size} unique authors (${includedAuthorCount} with >= 2 books included in sitemap).`);
+
+        // 4. Narrators (with >= 2 books, taking reviews.ts into account)
+        const cleanNarrators = (raw) => {
+            if (!raw) return [];
+            let text = raw.replace(/\((UK|US|Unabridged|GraphicAudio|Anniversary[^\)]*)\)/gi, '');
+            text = text.replace(/\s*\/\s*/g, ',');
+            text = text.replace(/\s+and\s+/gi, ',');
+            text = text.replace(/Full Cast\s*\(/gi, '').replace(/\)/g, '');
+            const parts = text.split(',');
+            const results = [];
+            for (const part of parts) {
+                const p = part.trim().replace(/\bet al\.?\b/gi, '').replace(/^Full Cast$/i, '').replace(/^[,\s]+|[,\s]+$/g, '');
+                if (p.length > 2 && !p.toLowerCase().includes('full cast') && !p.toLowerCase().includes('graphicaudio')) {
+                    if (!results.includes(p)) results.push(p);
+                }
+            }
+            return results;
+        };
+
+        const reviewsMap = new Map();
+        if (fs.existsSync(REVIEWS_FILE_PATH)) {
+            const reviewsContent = fs.readFileSync(REVIEWS_FILE_PATH, 'utf8');
+            const rBlocks = reviewsContent.split(/^\s*["']([^"']+)["']\s*:\s*\{/gm).slice(1);
+            for (let i = 0; i < rBlocks.length; i += 2) {
+                const title = rBlocks[i];
+                const block = rBlocks[i + 1].split(/^\s*\}/gm)[0];
+                const nMatch = block.match(/narrator:\s*['"]([^'"]+)['"]/);
+                if (nMatch) {
+                    reviewsMap.set(title, nMatch[1]);
+                }
+            }
+        }
+
+        const bBlocks = booksContent.split(/(?:\s*\{)/gm).slice(1);
+        const narratorCounts = new Map();
+
+        for (const b of bBlocks) {
+            const cleanBlock = b.split(/^\s*\}/gm)[0];
+            const tMatch = cleanBlock.match(/title:\s*['"]([^'"]+)['"]/);
+            if (!tMatch) continue;
+            const title = tMatch[1];
+            const nMatch = cleanBlock.match(/narrator:\s*['"]([^'"]+)['"]/);
+            const bookNarrator = nMatch ? nMatch[1] : null;
+            const finalNarrator = reviewsMap.get(title) || bookNarrator;
+            if (finalNarrator) {
+                const names = cleanNarrators(finalNarrator);
+                names.forEach(name => {
+                    narratorCounts.set(name, (narratorCounts.get(name) || 0) + 1);
+                });
+            }
+        }
+
+        let includedNarratorCount = 0;
+        narratorCounts.forEach((count, narrator) => {
+            if (count >= 2) {
+                urls.push({
+                    url: `/narrator/${slugify(narrator)}/`,
+                    changefreq: 'weekly',
+                    priority: 0.8
+                });
+                includedNarratorCount++;
+            }
+        });
+        console.log(`   Found ${narratorCounts.size} unique narrators (${includedNarratorCount} with >= 2 books included in sitemap).`);
 
     } catch (err) {
         console.error('   ❌ Error reading books file:', err);
