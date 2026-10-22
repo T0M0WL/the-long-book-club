@@ -489,6 +489,22 @@ Redirect 301 /book/248 /book/life-reset-conquest-shemer-kuznits/
 Redirect 301 /book/248/ /book/life-reset-conquest-shemer-kuznits/
 Redirect 301 /book/249 /book/life-reset-salvation-shemer-kuznits/
 Redirect 301 /book/249/ /book/life-reset-salvation-shemer-kuznits/
+Redirect 301 /book/250 /book/the-winter-of-our-discontent-john-steinbeck/
+Redirect 301 /book/250/ /book/the-winter-of-our-discontent-john-steinbeck/
+Redirect 301 /book/251 /book/the-toilers-of-the-sea-victor-hugo/
+Redirect 301 /book/251/ /book/the-toilers-of-the-sea-victor-hugo/
+Redirect 301 /book/252 /book/the-man-who-laughs-victor-hugo/
+Redirect 301 /book/252/ /book/the-man-who-laughs-victor-hugo/
+Redirect 301 /book/253 /book/anansi-boys-neil-gaiman/
+Redirect 301 /book/253/ /book/anansi-boys-neil-gaiman/
+Redirect 301 /book/254 /book/neverwhere-neil-gaiman/
+Redirect 301 /book/254/ /book/neverwhere-neil-gaiman/
+Redirect 301 /book/255 /book/heroes-stephen-fry/
+Redirect 301 /book/255/ /book/heroes-stephen-fry/
+Redirect 301 /book/256 /book/jurassic-park-michael-crichton/
+Redirect 301 /book/256/ /book/jurassic-park-michael-crichton/
+Redirect 301 /book/257 /book/pillar-to-the-sky-william-r-forstchen/
+Redirect 301 /book/257/ /book/pillar-to-the-sky-william-r-forstchen/
 
   
   # --- Book Alias Redirects (Manual) ---
