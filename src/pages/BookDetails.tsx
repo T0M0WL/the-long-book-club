@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { useParams, Link, useLocation, Navigate } from 'react-router-dom';
 import { books } from '../data/books';
 import { getRoundedHours } from '../utils/formatLength';
@@ -14,6 +15,26 @@ import AudiobookCommuteCalculator from '../components/AudiobookCommuteCalculator
 import AudiobookValueCalculator from '../components/AudiobookValueCalculator';
 
 export const BookDetails = () => {
+    const [promoPrice, setPromoPrice] = useState('99p');
+
+    useEffect(() => {
+        try {
+            const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+            if (tz.startsWith('America/') || tz.startsWith('US/')) {
+                setPromoPrice('$0.99');
+            } else if (tz === 'Europe/London' || tz === 'Europe/Belfast') {
+                setPromoPrice('99p');
+            } else if (tz.startsWith('Europe/')) {
+                setPromoPrice('€0.99');
+            } else if (tz.startsWith('Canada/') || tz.startsWith('Australia/')) {
+                setPromoPrice('$0.99');
+            } else {
+                setPromoPrice('99p / $0.99');
+            }
+        } catch {
+            setPromoPrice('99p / $0.99');
+        }
+    }, []);
     useSetHeaderTheme({
         logoColor: 'var(--color-brand-coral)',
         textColor: 'var(--color-brand-coral)',
@@ -204,9 +225,38 @@ export const BookDetails = () => {
                             )}
                         </div>
 
-                        <p style={{ marginTop: '0.5rem', fontSize: '0.8rem', color: 'var(--color-brand-forrest)', fontWeight: 'bold', textAlign: 'center' }}>
-                            *A free trial is available for non members.
-                        </p>
+                        {/* Dynamic Regional Promo Box */}
+                        <div className="audible-promo-box" style={{
+                            marginTop: '0.65rem',
+                            padding: '0.65rem 0.85rem',
+                            backgroundColor: 'rgba(235, 104, 76, 0.08)',
+                            borderRadius: '0.75rem',
+                            border: '1px solid rgba(235, 104, 76, 0.22)',
+                            textAlign: 'center',
+                            width: '100%',
+                            boxSizing: 'border-box'
+                        }}>
+                            <p className="promo-title" style={{
+                                margin: 0,
+                                fontSize: '0.85rem',
+                                color: 'var(--color-brand-coral)',
+                                fontWeight: 700,
+                                fontFamily: 'var(--font-body)',
+                                lineHeight: 1.35
+                            }}>
+                                ✨ Special Offer: 3 Months for {promoPrice}/mo
+                            </p>
+                            <p className="promo-sub" style={{
+                                margin: '0.25rem 0 0 0',
+                                fontSize: '0.72rem',
+                                color: 'var(--color-brand-forrest)',
+                                opacity: 0.85,
+                                fontFamily: 'var(--font-body)',
+                                lineHeight: 1.3
+                            }}>
+                                Limited-time subscription deal · Free trial also available
+                            </p>
+                        </div>
                     </div>
 
                     {/* Audiobook Commute Calculator Widget */}
@@ -387,6 +437,20 @@ export const BookDetails = () => {
                     font-size: 0.65rem !important;
                     margin-top: 0 !important;
                     opacity: 0.8;
+                }
+
+                .audible-promo-box {
+                    padding: 0.35rem 0.5rem !important;
+                    margin-top: 0.25rem !important;
+                }
+
+                .audible-promo-box .promo-title {
+                    font-size: 0.75rem !important;
+                }
+
+                .audible-promo-box .promo-sub {
+                    font-size: 0.62rem !important;
+                    margin-top: 0.1rem !important;
                 }
                 
                 /* Add padding to body or main container to prevent occlusion at bottom */
