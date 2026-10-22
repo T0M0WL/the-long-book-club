@@ -102,7 +102,7 @@ const SoundCheckCard: React.FC<SoundCheckCardProps> = ({
                     <a
                         href={audibleLink}
                         target="_blank"
-                        rel="noopener noreferrer"
+                        rel="noopener noreferrer nofollow"
                         style={{
                             display: 'inline-flex',
                             alignItems: 'center',

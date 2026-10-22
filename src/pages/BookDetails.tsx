@@ -200,7 +200,7 @@ export const BookDetails = () => {
                                 <a
                                     href={book.affiliateLink}
                                     target="_blank"
-                                    rel="noopener noreferrer"
+                                    rel="noopener noreferrer nofollow"
                                     style={{
                                         display: 'flex',
                                         alignItems: 'center',
@@ -225,38 +225,58 @@ export const BookDetails = () => {
                             )}
                         </div>
 
-                        {/* Dynamic Regional Promo Box */}
-                        <div className="audible-promo-box" style={{
-                            marginTop: '0.65rem',
-                            padding: '0.65rem 0.85rem',
-                            backgroundColor: 'rgba(235, 104, 76, 0.08)',
-                            borderRadius: '0.75rem',
-                            border: '1px solid rgba(235, 104, 76, 0.22)',
-                            textAlign: 'center',
-                            width: '100%',
-                            boxSizing: 'border-box'
-                        }}>
-                            <p className="promo-title" style={{
-                                margin: 0,
-                                fontSize: '0.85rem',
-                                color: 'var(--color-brand-coral)',
-                                fontWeight: 700,
-                                fontFamily: 'var(--font-body)',
-                                lineHeight: 1.35
-                            }}>
-                                ✨ Special Offer: 3 Months for {promoPrice}/mo
-                            </p>
-                            <p className="promo-sub" style={{
-                                margin: '0.25rem 0 0 0',
-                                fontSize: '0.72rem',
-                                color: 'var(--color-brand-forrest)',
-                                opacity: 0.85,
-                                fontFamily: 'var(--font-body)',
-                                lineHeight: 1.3
-                            }}>
-                                Limited-time subscription deal · Free trial also available
-                            </p>
-                        </div>
+                        {/* Dynamic Regional Promo Box (Clickable CTA) */}
+                        {book.affiliateLink && (
+                            <a
+                                href={book.affiliateLink}
+                                target="_blank"
+                                rel="noopener noreferrer nofollow"
+                                className="audible-promo-box"
+                                style={{
+                                    marginTop: '0.65rem',
+                                    padding: '0.65rem 0.85rem',
+                                    backgroundColor: 'rgba(235, 104, 76, 0.08)',
+                                    borderRadius: '0.75rem',
+                                    border: '1px solid rgba(235, 104, 76, 0.22)',
+                                    textAlign: 'center',
+                                    width: '100%',
+                                    boxSizing: 'border-box',
+                                    display: 'block',
+                                    textDecoration: 'none',
+                                    transition: 'background-color 0.2s, border-color 0.2s',
+                                    cursor: 'pointer'
+                                }}
+                                onMouseEnter={e => {
+                                    e.currentTarget.style.backgroundColor = 'rgba(235, 104, 76, 0.14)';
+                                    e.currentTarget.style.borderColor = 'rgba(235, 104, 76, 0.38)';
+                                }}
+                                onMouseLeave={e => {
+                                    e.currentTarget.style.backgroundColor = 'rgba(235, 104, 76, 0.08)';
+                                    e.currentTarget.style.borderColor = 'rgba(235, 104, 76, 0.22)';
+                                }}
+                            >
+                                <p className="promo-title" style={{
+                                    margin: 0,
+                                    fontSize: '0.85rem',
+                                    color: 'var(--color-brand-coral)',
+                                    fontWeight: 700,
+                                    fontFamily: 'var(--font-body)',
+                                    lineHeight: 1.35
+                                }}>
+                                    ✨ Special Offer: 3 Months for {promoPrice}/mo →
+                                </p>
+                                <p className="promo-sub" style={{
+                                    margin: '0.25rem 0 0 0',
+                                    fontSize: '0.72rem',
+                                    color: 'var(--color-brand-forrest)',
+                                    opacity: 0.85,
+                                    fontFamily: 'var(--font-body)',
+                                    lineHeight: 1.3
+                                }}>
+                                    Limited-time subscription deal · Free trial also available
+                                </p>
+                            </a>
+                        )}
                     </div>
 
                     {/* Audiobook Commute Calculator Widget */}
