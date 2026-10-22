@@ -447,6 +447,22 @@ Redirect 301 /book/228 /book/a-court-of-silver-flames-sarah-j-maas/
 Redirect 301 /book/228/ /book/a-court-of-silver-flames-sarah-j-maas/
 Redirect 301 /book/224 /book/a-court-of-splintered-harmony-sarah-j-maas/
 Redirect 301 /book/224/ /book/a-court-of-splintered-harmony-sarah-j-maas/
+Redirect 301 /book/229 /book/world-without-end-ken-follett/
+Redirect 301 /book/229/ /book/world-without-end-ken-follett/
+Redirect 301 /book/230 /book/the-little-friend-donna-tartt/
+Redirect 301 /book/230/ /book/the-little-friend-donna-tartt/
+Redirect 301 /book/231 /book/the-reality-dysfunction-peter-f-hamilton/
+Redirect 301 /book/231/ /book/the-reality-dysfunction-peter-f-hamilton/
+Redirect 301 /book/232 /book/nicholas-and-alexandra-robert-k-massie/
+Redirect 301 /book/232/ /book/nicholas-and-alexandra-robert-k-massie/
+Redirect 301 /book/233 /book/the-idiot-fyodor-dostoevsky/
+Redirect 301 /book/233/ /book/the-idiot-fyodor-dostoevsky/
+Redirect 301 /book/234 /book/the-honourable-schoolboy-john-le-carre/
+Redirect 301 /book/234/ /book/the-honourable-schoolboy-john-le-carre/
+Redirect 301 /book/235 /book/eyes-of-the-void-adrian-tchaikovsky/
+Redirect 301 /book/235/ /book/eyes-of-the-void-adrian-tchaikovsky/
+Redirect 301 /book/236 /book/resurrection-leo-tolstoy/
+Redirect 301 /book/236/ /book/resurrection-leo-tolstoy/
 
   
   # --- Book Alias Redirects (Manual) ---
