@@ -257,6 +257,7 @@ async function prerender() {
                 <div class="narrator-soundcheck" style="background: #f4f4f4; padding: 15px; border-radius: 8px; margin-top: 20px;">
                     <h3>Narrator Soundcheck: ${escapeHtml(narrator)}</h3>
                     <p>${formatRichTextHtml(review.soundCheck)}</p>
+                    <p style="font-size: 0.85em; font-style: italic; opacity: 0.8; margin-top: 8px;">*Note: Narrators may differ across regional releases and audiobook editions.</p>
                 </div>
                 ` : ''}
                 ` : ''}
@@ -268,22 +269,11 @@ async function prerender() {
         if (affiliateLink) {
             offers.push({
                 "@type": "Offer",
-                "name": "Audible UK",
+                "name": "Audible",
                 "url": affiliateLink,
                 "offeredBy": { "@type": "Organization", "name": "Audible" },
                 "price": "0.00",
                 "priceCurrency": "GBP",
-                "availability": "https://schema.org/InStock"
-            });
-        }
-        if (affiliateLinkUS) {
-            offers.push({
-                "@type": "Offer",
-                "name": "Audible US",
-                "url": affiliateLinkUS,
-                "offeredBy": { "@type": "Organization", "name": "Audible" },
-                "price": "0.00",
-                "priceCurrency": "USD",
                 "availability": "https://schema.org/InStock"
             });
         }

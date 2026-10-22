@@ -175,35 +175,6 @@ export const BookDetails = () => {
                     {/* CTAs Moved Here */}
                     <div className="audible-cta-container" style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', width: '100%', marginTop: '4rem' }}>
                         <div className="audible-buttons-wrapper" style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', width: '100%' }}>
-                            {book.affiliateLinkUS && (
-                                <a
-                                    href={book.affiliateLinkUS}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    style={{
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        gap: '0.5rem',
-                                        backgroundColor: 'var(--color-primary)',
-                                        color: '#fff',
-                                        padding: '1rem 1.5rem',
-                                        borderRadius: '2rem',
-                                        fontSize: '1rem',
-                                        fontWeight: 600,
-                                        textDecoration: 'none',
-                                        transition: 'background-color 0.2s',
-                                        width: '100%'
-                                    }}
-                                    onMouseEnter={e => e.currentTarget.style.backgroundColor = 'var(--color-primary-hover)'}
-                                    onMouseLeave={e => e.currentTarget.style.backgroundColor = 'var(--color-primary)'}
-                                >
-                                    <img src="/flags/us.png" alt="US" style={{ width: '24px', height: '24px', borderRadius: '50%', objectFit: 'cover', border: 'none' }} />
-                                    Listen on Audible US
-                                    <img src="/audible-chevron.png" alt="" style={{ width: '21px', height: 'auto' }} />
-                                </a>
-                            )}
-
                             {book.affiliateLink && (
                                 <a
                                     href={book.affiliateLink}
@@ -218,7 +189,7 @@ export const BookDetails = () => {
                                         color: '#fff',
                                         padding: '1rem 1.5rem',
                                         borderRadius: '2rem',
-                                        fontSize: '1rem',
+                                        fontSize: '1.05rem',
                                         fontWeight: 600,
                                         textDecoration: 'none',
                                         transition: 'background-color 0.2s',
@@ -227,8 +198,7 @@ export const BookDetails = () => {
                                     onMouseEnter={e => e.currentTarget.style.backgroundColor = 'var(--color-primary-hover)'}
                                     onMouseLeave={e => e.currentTarget.style.backgroundColor = 'var(--color-primary)'}
                                 >
-                                    <img src="/flags/uk.png" alt="UK" style={{ width: '24px', height: '24px', borderRadius: '50%', objectFit: 'cover', border: 'none' }} />
-                                    Listen on Audible UK
+                                    Listen on Audible
                                     <img src="/audible-chevron.png" alt="" style={{ width: '21px', height: 'auto' }} />
                                 </a>
                             )}
@@ -330,7 +300,6 @@ export const BookDetails = () => {
                                     narrator={review.narrator}
                                     soundCheckText={review.soundCheck}
                                     affiliateLinkUK={book.affiliateLink}
-                                    affiliateLinkUS={book.affiliateLinkUS}
                                     audioPreviewUrl={book.audioPreviewUrl}
                                 />
                             )}
@@ -398,21 +367,19 @@ export const BookDetails = () => {
                 }
 
                 .audible-buttons-wrapper {
-                    flex-direction: row !important; /* Horizontal buttons */
-                    gap: 0.5rem !important;
+                    width: 100% !important;
                 }
 
                 .audible-buttons-wrapper > a {
-                    flex: 1;
-                    padding: 0.75rem 0.25rem !important; /* Tight padding */
-                    font-size: 0.8rem !important; /* Slightly larger than 0.75rem */
-                    width: auto !important;
-                    white-space: nowrap; /* Keep on one line */
+                    width: 100% !important;
+                    padding: 0.85rem 1.5rem !important;
+                    font-size: 0.95rem !important;
+                    justify-content: center !important;
                 }
 
                 .audible-buttons-wrapper > a img {
-                    height: 16px !important; /* Fixed height */
-                    width: auto !important; /* Maintain aspect ratio */
+                    height: 18px !important;
+                    width: auto !important;
                     object-fit: contain;
                 }
                 

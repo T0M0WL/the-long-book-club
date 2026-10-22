@@ -4,7 +4,8 @@ import AudioPlayer from './AudioPlayer';
 interface SoundCheckCardProps {
     narrator: string;
     soundCheckText: string;
-    affiliateLinkUK: string;
+    affiliateLinkUK?: string;
+    affiliateLink?: string;
     affiliateLinkUS?: string;
     audioPreviewUrl?: string;
 }
@@ -13,11 +14,13 @@ const SoundCheckCard: React.FC<SoundCheckCardProps> = ({
     narrator,
     soundCheckText,
     affiliateLinkUK,
-    affiliateLinkUS,
+    affiliateLink,
     audioPreviewUrl
 }) => {
     // If no text, don't render (shouldn't happen if validated, but safe)
     if (!soundCheckText) return null;
+
+    const audibleLink = affiliateLink || affiliateLinkUK;
 
     return (
         <div style={{
@@ -87,74 +90,52 @@ const SoundCheckCard: React.FC<SoundCheckCardProps> = ({
                 maxWidth: '100%' 
             }} dangerouslySetInnerHTML={{ __html: soundCheckText }} />
 
-            {/* Footer Links */}
+            {/* Footer Link & Regional Disclaimer */}
             <div style={{
                 display: 'flex',
-                flexWrap: 'wrap',
-                gap: '2rem',
-                alignItems: 'center',
-                justifyContent: 'flex-start', // Back to left
+                flexDirection: 'column',
+                gap: '0.75rem',
                 marginTop: 'auto',
                 width: '100%'
             }}>
-                {/* US Link - Only show if available */}
-                {affiliateLinkUS && (
+                {audibleLink && (
                     <a
-                        href={affiliateLinkUS}
+                        href={audibleLink}
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{
-                            display: 'flex',
+                            display: 'inline-flex',
                             alignItems: 'center',
                             gap: '0.5rem',
                             textDecoration: 'none',
                             color: 'var(--color-brand-coral)',
                             fontWeight: 600,
-                            fontSize: '0.9rem',
+                            fontSize: '0.95rem',
                             fontFamily: 'var(--font-body)',
-                            borderBottom: '1px solid var(--color-brand-coral)' // Underline style
+                            borderBottom: '1px solid var(--color-brand-coral)',
+                            width: 'fit-content'
                         }}
                     >
-                        <img
-                            src="/flags/us.png"
-                            alt="US"
-                            style={{ width: '20px', height: '20px', borderRadius: '50%', objectFit: 'cover' }}
-                        />
-                        Hear a sample US
+                        Listen on Audible
+                        {/* Play Triangle Icon */}
                         <svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M10 6L0 12L0 0L10 6Z" fill="currentColor" />
                         </svg>
                     </a>
                 )}
 
-                {/* UK Link */}
-                <a
-                    href={affiliateLinkUK}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '0.5rem',
-                        textDecoration: 'none',
-                        color: 'var(--color-brand-coral)',
-                        fontWeight: 600,
-                        fontSize: '0.9rem',
-                        fontFamily: 'var(--font-body)',
-                        borderBottom: '1px solid var(--color-brand-coral)' // Underline style
-                    }}
-                >
-                    <img
-                        src="/flags/uk.png"
-                        alt="UK"
-                        style={{ width: '20px', height: '20px', borderRadius: '50%', objectFit: 'cover' }}
-                    />
-                    Hear a sample UK
-                    {/* Play Triangle Icon */}
-                    <svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10 6L0 12L0 0L10 6Z" fill="currentColor" />
-                    </svg>
-                </a>
+                {/* Regional Narrator Disclaimer */}
+                <p style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '0.8rem',
+                    color: 'var(--color-brand-forrest)',
+                    opacity: 0.7,
+                    margin: '0.25rem 0 0 0',
+                    fontStyle: 'italic',
+                    lineHeight: 1.4
+                }}>
+                    *Note: Narrators may differ across regional releases and audiobook editions.
+                </p>
             </div>
         </div>
     );
