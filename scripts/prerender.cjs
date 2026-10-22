@@ -180,9 +180,9 @@ async function prerender() {
     const booksStartIndex = booksContent.indexOf('const baseBooks: Book[] = [');
     if (booksStartIndex !== -1) {
         const arrayContent = booksContent.substring(booksStartIndex);
-        const bookBlocks = arrayContent.split(/(?:\s*\{)/gm).slice(1);
+        const bookBlocks = arrayContent.split(/(?:\n    \{)/gm).slice(1);
         for (const block of bookBlocks) {
-            const cleanBlock = block.split(/^\s*\}/gm)[0];
+            const cleanBlock = block.split(/\n    \}/)[0];
             const slug = extractField(cleanBlock, 'slug');
             if (!slug) continue;
 
@@ -200,6 +200,15 @@ async function prerender() {
             const teaser = extractField(cleanBlock, 'teaser');
             const cardOverview = extractField(cleanBlock, 'cardOverview');
 
+            let graphicAudioParts = [];
+            const gaMatch = cleanBlock.match(/graphicAudioParts:\s*(\[\s*\{[\s\S]*?\}\s*\])(?=\s*,\s*relatedBookIds)/);
+            if (gaMatch) {
+                try {
+                    const fn = new Function(`return ${gaMatch[1]}`);
+                    graphicAudioParts = fn();
+                } catch (e) {}
+            }
+
             allBooks.push({
                 id,
                 slug,
@@ -214,14 +223,15 @@ async function prerender() {
                 affiliateLinkUS,
                 teaserTitle,
                 teaser,
-                cardOverview
+                cardOverview,
+                graphicAudioParts
             });
         }
     }
 
     let bookCount = 0;
     for (const book of allBooks) {
-        const { slug, title, author, description: bookDesc, coverUrl, narrator: bookNarrator, length, genres, affiliateLink, affiliateLinkUS } = book;
+        const { slug, title, author, description: bookDesc, coverUrl, narrator: bookNarrator, length, genres, affiliateLink, affiliateLinkUS, graphicAudioParts } = book;
         const genreRaw = genres.join(', ');
 
         const review = reviewsMap.get(title);
@@ -261,6 +271,15 @@ async function prerender() {
                 </div>
                 ` : ''}
                 ` : ''}
+                ${graphicAudioParts && graphicAudioParts.length > 0 ? `
+                <div class="graphic-audio-editions" style="background: #eef4f1; padding: 15px; border-radius: 8px; margin-top: 20px; border-left: 4px solid #2c5143;">
+                    <h3 style="margin-top: 0; color: #2c5143;">Graphic Audio Dramatized Editions</h3>
+                    <p style="margin-bottom: 8px;">Full-cast dramatizations with sound effects and cinematic scoring:</p>
+                    <ul style="margin: 0; padding-left: 20px;">
+                        ${graphicAudioParts.map(p => `<li><a href="${escapeHtml(p.affiliateLink)}" target="_blank" rel="noopener noreferrer nofollow">${escapeHtml(p.title)} on Audible</a></li>`).join('')}
+                    </ul>
+                </div>
+                ` : ''}
             </div>
         `;
 
@@ -276,6 +295,19 @@ async function prerender() {
                 "priceCurrency": "GBP",
                 "availability": "https://schema.org/InStock"
             });
+        }
+        if (graphicAudioParts && graphicAudioParts.length > 0) {
+            for (const part of graphicAudioParts) {
+                offers.push({
+                    "@type": "Offer",
+                    "name": `Audible (${part.title})`,
+                    "url": part.affiliateLink,
+                    "offeredBy": { "@type": "Organization", "name": "Audible" },
+                    "price": "0.00",
+                    "priceCurrency": "GBP",
+                    "availability": "https://schema.org/InStock"
+                });
+            }
         }
 
         const jsonLd = {

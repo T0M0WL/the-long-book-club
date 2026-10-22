@@ -1,5 +1,12 @@
 import { reviews } from './reviews';
 
+export interface GraphicAudioPart {
+    title: string;          // e.g. "Graphic Audio Version. Part 1"
+    shortLabel: string;     // e.g. "Part 1"
+    affiliateLink: string;
+    affiliateLinkUS?: string;
+}
+
 export interface Book {
     id: string;
     title: string;
@@ -24,6 +31,7 @@ export interface Book {
     teaser?: string;        // SEO summary paragraph on Collection Pages
     teaserTitle?: string;   // H4 headline on Collection Pages
     audioPreviewUrl?: string; // Direct link to iTunes .m4a preview
+    graphicAudioParts?: GraphicAudioPart[];
 }
 
 export const baseBooks: Book[] = [
@@ -3832,7 +3840,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/a-court-of-thorns-and-roses.jpg',
         length: '16h 07m',
         lengthHours: 16.1,
-        genre: ['Romantasy', 'Epic Fantasy', 'Fantasy', 'Fae', 'Romance'],
+        genre: ['Romantasy', 'Epic Fantasy', 'Fantasy', 'Fae', 'Romance', 'Graphic Audio'],
         description: "When nineteen-year-old huntress Feyre kills a wolf in the woods, a terrifying fae beast drags her across the wall to Prythian, where a lethal curse and an undeniable romance threaten to consume her mortal heart.",
         cardOverview: "16 hours of Beauty and the Beast reimagined with lethal fae trials and slow-burning, perilous romantic tension.",
         teaserTitle: "Can Solo Narration Capture Prythian's Deadly Magic?",
@@ -3840,6 +3848,20 @@ export const baseBooks: Book[] = [
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/53/72/b3/5372b3a3-8ff8-ab73-e176-cc3789281c19/mzaf_872507067909133583.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B07955KZ1V?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B07955KZ1V?tag=thelongbookcl-20',
+        graphicAudioParts: [
+            {
+                title: "Graphic Audio Version. Part 1",
+                shortLabel: "Part 1",
+                affiliateLink: "https://www.amazon.co.uk/dp/B09V5QM9V2?tag=thelongbookclub-21",
+                affiliateLinkUS: "https://www.amazon.com/dp/B09V5QM9V2?tag=thelongbookcl-20"
+            },
+            {
+                title: "Graphic Audio Version. Part 2",
+                shortLabel: "Part 2",
+                affiliateLink: "https://www.amazon.co.uk/dp/B09X68XLPD?tag=thelongbookclub-21",
+                affiliateLinkUS: "https://www.amazon.com/dp/B09X68XLPD?tag=thelongbookcl-20"
+            }
+        ],
         relatedBookIds: ['226', '227', '228', '224', '112', '127', '55', '159']
     },
     {
@@ -3851,7 +3873,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/a-court-of-mist-and-fury.jpg',
         length: '23h 05m',
         lengthHours: 23.1,
-        genre: ['Romantasy', 'Epic Fantasy', 'Fantasy', 'Fae', 'Romance'],
+        genre: ['Romantasy', 'Epic Fantasy', 'Fantasy', 'Fae', 'Romance', 'Graphic Audio'],
         description: "Suffering from post-traumatic nightmares after surviving Under the Mountain, Feyre is spirited away to the dazzling Night Court, discovering profound healing, revolutionary power, and an earth-shattering romantic bond.",
         cardOverview: "23 hours of enemies-to-lovers perfection. The crown jewel of modern Romantasy, Velaris magic, and Rhysand devotion.",
         teaserTitle: "Is This the Greatest Enemies-to-Lovers Romance in Audio?",
@@ -3859,6 +3881,20 @@ export const baseBooks: Book[] = [
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/50/38/88/503888c7-1d90-817c-b76c-cb44a802163f/mzaf_6391618622770249715.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B01DYNVTKO?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B01DYNVTKO?tag=thelongbookcl-20',
+        graphicAudioParts: [
+            {
+                title: "Graphic Audio Version. Part 1",
+                shortLabel: "Part 1",
+                affiliateLink: "https://www.amazon.co.uk/dp/B09YG25C7R?tag=thelongbookclub-21",
+                affiliateLinkUS: "https://www.amazon.com/dp/B09YG25C7R?tag=thelongbookcl-20"
+            },
+            {
+                title: "Graphic Audio Version. Part 2",
+                shortLabel: "Part 2",
+                affiliateLink: "https://www.amazon.co.uk/dp/B0B35BNTWF?tag=thelongbookclub-21",
+                affiliateLinkUS: "https://www.amazon.com/dp/B0B35BNTWF?tag=thelongbookcl-20"
+            }
+        ],
         relatedBookIds: ['225', '227', '228', '224', '112', '127', '111', '147']
     },
     {
@@ -3870,7 +3906,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/a-court-of-wings-and-ruin.jpg',
         length: '25h 08m',
         lengthHours: 25.1,
-        genre: ['Romantasy', 'Epic Fantasy', 'Fantasy', 'Fae', 'War'],
+        genre: ['Romantasy', 'Epic Fantasy', 'Fantasy', 'Fae', 'War', 'Graphic Audio'],
         description: "Operating as an undercover spy within the Spring Court, High Lady Feyre plays a deadly game of deceit before all-out continental war erupts against the King of Hybern to save Prythian from ruin.",
         cardOverview: "25 hours of espionage, High Lord summits, and fae warfare as the original ACOTAR trilogy reaches its epic climax.",
         teaserTitle: "Can Audio Deliver the Chaos of Continental Fae War?",
@@ -3878,6 +3914,26 @@ export const baseBooks: Book[] = [
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/90/db/2c/90db2c6b-9e9f-6e23-fc95-4f31bce5c7dc/mzaf_7757454148087473339.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0F6NXV98D?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0F6NXV98D?tag=thelongbookcl-20',
+        graphicAudioParts: [
+            {
+                title: "Graphic Audio Version. Part 1",
+                shortLabel: "Part 1",
+                affiliateLink: "https://www.amazon.co.uk/dp/B0B75VHFL3?tag=thelongbookclub-21",
+                affiliateLinkUS: "https://www.amazon.com/dp/B0B75VHFL3?tag=thelongbookcl-20"
+            },
+            {
+                title: "Graphic Audio Version. Part 2",
+                shortLabel: "Part 2",
+                affiliateLink: "https://www.amazon.co.uk/dp/B0BFTN5DV6?tag=thelongbookclub-21",
+                affiliateLinkUS: "https://www.amazon.com/dp/B0BFTN5DV6?tag=thelongbookcl-20"
+            },
+            {
+                title: "Graphic Audio Version. Part 3",
+                shortLabel: "Part 3",
+                affiliateLink: "https://www.amazon.co.uk/dp/B0BQ4KPPJ4?tag=thelongbookclub-21",
+                affiliateLinkUS: "https://www.amazon.com/dp/B0BQ4KPPJ4?tag=thelongbookcl-20"
+            }
+        ],
         relatedBookIds: ['226', '225', '228', '224', '130', '128', '55', '148']
     },
     {
@@ -3889,7 +3945,7 @@ export const baseBooks: Book[] = [
         coverUrl: '/covers/a-court-of-silver-flames.jpg',
         length: '21h 48m',
         lengthHours: 21.8,
-        genre: ['Romantasy', 'Epic Fantasy', 'Fantasy', 'Fae', 'Romance'],
+        genre: ['Romantasy', 'Epic Fantasy', 'Fantasy', 'Fae', 'Romance', 'Graphic Audio'],
         description: "Forced into isolation atop the House of Wind with battle-scarred Illyrian general Cassian, a prickly Nesta Archeron confronts deep grief, ancient Dread Trove artifacts, and an explosive, enemies-to-lovers passion.",
         cardOverview: "21 hours of raw vulnerability, Valkyrie sisterhood, and explosive spice as Nesta and Cassian clash and conquer.",
         teaserTitle: "Can Audio Soften Modern Fantasy's Most Divisive Heroine?",
@@ -3897,6 +3953,20 @@ export const baseBooks: Book[] = [
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/d5/62/e4/d562e452-22f0-23c8-5873-d1b84c5100c8/mzaf_16995195974349112367.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0F6NY52YF?tag=thelongbookclub-21',
         affiliateLinkUS: 'https://www.amazon.com/dp/B0F6NY52YF?tag=thelongbookcl-20',
+        graphicAudioParts: [
+            {
+                title: "Graphic Audio Version. Part 1",
+                shortLabel: "Part 1",
+                affiliateLink: "https://www.amazon.co.uk/dp/B0CDJDJWL7?tag=thelongbookclub-21",
+                affiliateLinkUS: "https://www.amazon.com/dp/B0CDJDJWL7?tag=thelongbookcl-20"
+            },
+            {
+                title: "Graphic Audio Version. Part 2",
+                shortLabel: "Part 2",
+                affiliateLink: "https://www.amazon.co.uk/dp/B0CLSFLYJB?tag=thelongbookclub-21",
+                affiliateLinkUS: "https://www.amazon.com/dp/B0CLSFLYJB?tag=thelongbookcl-20"
+            }
+        ],
         relatedBookIds: ['227', '226', '225', '224', '130', '127', '114', '147']
     },
     {

@@ -1,5 +1,6 @@
 import React from 'react';
 import AudioPlayer from './AudioPlayer';
+import type { GraphicAudioPart } from '../data/books';
 
 interface SoundCheckCardProps {
     narrator: string;
@@ -8,6 +9,7 @@ interface SoundCheckCardProps {
     affiliateLink?: string;
     affiliateLinkUS?: string;
     audioPreviewUrl?: string;
+    graphicAudioParts?: GraphicAudioPart[];
 }
 
 const SoundCheckCard: React.FC<SoundCheckCardProps> = ({
@@ -15,7 +17,8 @@ const SoundCheckCard: React.FC<SoundCheckCardProps> = ({
     soundCheckText,
     affiliateLinkUK,
     affiliateLink,
-    audioPreviewUrl
+    audioPreviewUrl,
+    graphicAudioParts
 }) => {
     // If no text, don't render (shouldn't happen if validated, but safe)
     if (!soundCheckText) return null;
@@ -98,31 +101,73 @@ const SoundCheckCard: React.FC<SoundCheckCardProps> = ({
                 marginTop: 'auto',
                 width: '100%'
             }}>
-                {audibleLink && (
-                    <a
-                        href={audibleLink}
-                        target="_blank"
-                        rel="noopener noreferrer nofollow"
-                        style={{
+                <div style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    alignItems: 'center',
+                    gap: '1rem 1.5rem'
+                }}>
+                    {audibleLink && (
+                        <a
+                            href={audibleLink}
+                            target="_blank"
+                            rel="noopener noreferrer nofollow"
+                            style={{
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '0.5rem',
+                                textDecoration: 'none',
+                                color: 'var(--color-brand-coral)',
+                                fontWeight: 600,
+                                fontSize: '0.95rem',
+                                fontFamily: 'var(--font-body)',
+                                borderBottom: '1px solid var(--color-brand-coral)',
+                                width: 'fit-content'
+                            }}
+                        >
+                            Listen on Audible
+                            {/* Play Triangle Icon */}
+                            <svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 6L0 12L0 0L10 6Z" fill="currentColor" />
+                            </svg>
+                        </a>
+                    )}
+
+                    {graphicAudioParts && graphicAudioParts.length > 0 && (
+                        <div style={{
                             display: 'inline-flex',
                             alignItems: 'center',
-                            gap: '0.5rem',
-                            textDecoration: 'none',
-                            color: 'var(--color-brand-coral)',
-                            fontWeight: 600,
+                            flexWrap: 'wrap',
+                            gap: '0.4rem',
                             fontSize: '0.95rem',
                             fontFamily: 'var(--font-body)',
-                            borderBottom: '1px solid var(--color-brand-coral)',
-                            width: 'fit-content'
-                        }}
-                    >
-                        Listen on Audible
-                        {/* Play Triangle Icon */}
-                        <svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10 6L0 12L0 0L10 6Z" fill="currentColor" />
-                        </svg>
-                    </a>
-                )}
+                            color: '#2c5143'
+                        }}>
+                            <span style={{ fontWeight: 600 }}>Graphic Audio Version:</span>
+                            {graphicAudioParts.map((part, idx) => (
+                                <React.Fragment key={idx}>
+                                    <a
+                                        href={part.affiliateLink}
+                                        target="_blank"
+                                        rel="noopener noreferrer nofollow"
+                                        style={{
+                                            color: '#2c5143',
+                                            fontWeight: 600,
+                                            textDecoration: 'none',
+                                            borderBottom: '1px solid #2c5143',
+                                            display: 'inline-flex',
+                                            alignItems: 'center',
+                                            gap: '0.2rem'
+                                        }}
+                                    >
+                                        {part.shortLabel} →
+                                    </a>
+                                    {idx < graphicAudioParts.length - 1 && <span style={{ opacity: 0.4 }}>|</span>}
+                                </React.Fragment>
+                            ))}
+                        </div>
+                    )}
+                </div>
 
                 {/* Regional Narrator Disclaimer */}
                 <p style={{

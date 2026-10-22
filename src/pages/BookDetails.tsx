@@ -223,6 +223,40 @@ export const BookDetails = () => {
                                     <img src="/audible-chevron.png" alt="" style={{ width: '21px', height: 'auto' }} />
                                 </a>
                             )}
+
+                            {book.graphicAudioParts && book.graphicAudioParts.map((part, index) => (
+                                <a
+                                    key={index}
+                                    href={part.affiliateLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer nofollow"
+                                    style={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        gap: '0.5rem',
+                                        backgroundColor: '#2c5143',
+                                        color: '#fff',
+                                        padding: '0.9rem 1.25rem',
+                                        borderRadius: '2rem',
+                                        fontSize: '0.95rem',
+                                        fontWeight: 600,
+                                        textDecoration: 'none',
+                                        transition: 'background-color 0.2s, transform 0.15s ease',
+                                        width: '100%',
+                                        boxSizing: 'border-box'
+                                    }}
+                                    onMouseEnter={e => {
+                                        e.currentTarget.style.backgroundColor = '#386554';
+                                    }}
+                                    onMouseLeave={e => {
+                                        e.currentTarget.style.backgroundColor = '#2c5143';
+                                    }}
+                                >
+                                    {part.title}
+                                    <img src="/audible-chevron.png" alt="" style={{ width: '19px', height: 'auto' }} />
+                                </a>
+                            ))}
                         </div>
 
                         {/* Dynamic Regional Promo Box (Clickable CTA) */}
@@ -371,6 +405,7 @@ export const BookDetails = () => {
                                     soundCheckText={review.soundCheck}
                                     affiliateLinkUK={book.affiliateLink}
                                     audioPreviewUrl={book.audioPreviewUrl}
+                                    graphicAudioParts={book.graphicAudioParts}
                                 />
                             )}
 
