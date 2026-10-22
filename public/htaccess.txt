@@ -437,6 +437,8 @@ Redirect 301 /book/222 /book/an-officer-and-a-spy/
 Redirect 301 /book/222/ /book/an-officer-and-a-spy/
 Redirect 301 /book/223 /book/project-hail-mary/
 Redirect 301 /book/223/ /book/project-hail-mary/
+Redirect 301 /book/224 /book/a-court-of-splintered-harmony-sarah-j-maas/
+Redirect 301 /book/224/ /book/a-court-of-splintered-harmony-sarah-j-maas/
 
   
   # --- Book Alias Redirects (Manual) ---

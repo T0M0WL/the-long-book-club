@@ -3822,10 +3822,29 @@ export const baseBooks: Book[] = [
         relatedBookIds: ["166", "213", "64", "65", "154", "153", "62"],
         affiliateLink: "https://www.amazon.co.uk/dp/B08G9SKSHR?tag=thelongbookcl-21",
         affiliateLinkUS: "https://www.amazon.com/dp/B08GB58KD5?tag=thelongbookcl-20"
+    },
+    {
+        id: '224',
+        slug: 'a-court-of-splintered-harmony-sarah-j-maas',
+        title: 'A Court of Splintered Harmony',
+        author: 'Sarah J. Maas',
+        narrator: 'Full Cast (GraphicAudio) / Elizabeth Evans',
+        coverUrl: '/covers/a-court-of-splintered-harmony.jpg',
+        length: '10h 00m',
+        lengthHours: 10.0,
+        genre: ['Romantasy', 'Fantasy', 'Graphic Audio', 'Adventure'],
+        description: "Sarah J. Maas returns to the mortal realm and Fae courts in this high-octane ACOTAR installment, chronicling the Night Court's frantic efforts to heal ancient fractures before Koschei the Deathless unleashes total devastation.",
+        cardOverview: "A pulse-pounding Night Court epic pitting the Valkyries against an ancient immortal threat across the continent.",
+        teaserTitle: "Full-Cast Spectacle or Solo Narration?",
+        teaser: "Can GraphicAudio's bombastic ten-hour sound design capture the intimate romantic friction of Prythian without drowning out character nuance? Read our full curator review and Soundcheck to see our verdict on both audio editions.",
+        relatedBookIds: ['112', '111', '113', '127', '128', '159'],
+        affiliateLink: 'https://www.amazon.co.uk/dp/B0HFQFF2M1?tag=thelongbookclub-21'
     }
 ];
 
 export const seriesBySlug: Record<string, string> = {
+    // A Court of Thorns and Roses
+    'a-court-of-splintered-harmony-sarah-j-maas': 'A Court of Thorns and Roses',
     // The Lord of the Rings
     'the-fellowship-of-the-ring-jrr-tolkien': 'The Lord of the Rings',
     'the-two-towers-jrr-tolkien': 'The Lord of the Rings',

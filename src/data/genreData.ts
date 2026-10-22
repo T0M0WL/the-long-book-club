@@ -244,5 +244,10 @@ export const genreData: GenreMeta[] = [
         "genre": "Sword and Sorcery",
         "metaTitle": "Best Long Sword and Sorcery Audiobooks | The Long Book Club",
         "intro": "Steel, sorcery, cunning rogues, and grim battlefields. Dive into gripping, adventure-packed sword and sorcery audiobooks with rich world-building and relentless momentum."
+    },
+    {
+        "genre": "Romantasy",
+        "metaTitle": "Best Long Romantasy Audiobooks (20+ Hours) | The Long Book Club",
+        "intro": "High stakes, dangerous magic, and scorching romantic tension. Dive into the finest, most immersive long romantasy audiobooks with slow-burn chemistry and sprawling world-building."
     }
 ];
