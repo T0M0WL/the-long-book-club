@@ -437,6 +437,14 @@ Redirect 301 /book/222 /book/an-officer-and-a-spy/
 Redirect 301 /book/222/ /book/an-officer-and-a-spy/
 Redirect 301 /book/223 /book/project-hail-mary/
 Redirect 301 /book/223/ /book/project-hail-mary/
+Redirect 301 /book/225 /book/a-court-of-thorns-and-roses-sarah-j-maas/
+Redirect 301 /book/225/ /book/a-court-of-thorns-and-roses-sarah-j-maas/
+Redirect 301 /book/226 /book/a-court-of-mist-and-fury-sarah-j-maas/
+Redirect 301 /book/226/ /book/a-court-of-mist-and-fury-sarah-j-maas/
+Redirect 301 /book/227 /book/a-court-of-wings-and-ruin-sarah-j-maas/
+Redirect 301 /book/227/ /book/a-court-of-wings-and-ruin-sarah-j-maas/
+Redirect 301 /book/228 /book/a-court-of-silver-flames-sarah-j-maas/
+Redirect 301 /book/228/ /book/a-court-of-silver-flames-sarah-j-maas/
 Redirect 301 /book/224 /book/a-court-of-splintered-harmony-sarah-j-maas/
 Redirect 301 /book/224/ /book/a-court-of-splintered-harmony-sarah-j-maas/
 

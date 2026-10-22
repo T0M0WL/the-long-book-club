@@ -1081,6 +1081,26 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://thelongbookclub.com/book/a-court-of-thorns-and-roses-sarah-j-maas/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/a-court-of-mist-and-fury-sarah-j-maas/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/a-court-of-wings-and-ruin-sarah-j-maas/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/a-court-of-silver-flames-sarah-j-maas/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thelongbookclub.com/book/a-court-of-splintered-harmony-sarah-j-maas/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
