@@ -523,6 +523,32 @@ Redirect 301 /book/265 /book/harry-potter-and-the-half-blood-prince-j-k-rowling/
 Redirect 301 /book/265/ /book/harry-potter-and-the-half-blood-prince-j-k-rowling/
 Redirect 301 /book/266 /book/harry-potter-and-the-deathly-hallows-j-k-rowling/
 Redirect 301 /book/266/ /book/harry-potter-and-the-deathly-hallows-j-k-rowling/
+Redirect 301 /book/267 /book/before-they-are-hanged-joe-abercrombie/
+Redirect 301 /book/267/ /book/before-they-are-hanged-joe-abercrombie/
+Redirect 301 /book/268 /book/last-argument-of-kings-joe-abercrombie/
+Redirect 301 /book/268/ /book/last-argument-of-kings-joe-abercrombie/
+Redirect 301 /book/269 /book/smileys-people-john-le-carre/
+Redirect 301 /book/269/ /book/smileys-people-john-le-carre/
+Redirect 301 /book/270 /book/lords-of-uncreation-adrian-tchaikovsky/
+Redirect 301 /book/270/ /book/lords-of-uncreation-adrian-tchaikovsky/
+Redirect 301 /book/271 /book/children-of-ruin-adrian-tchaikovsky/
+Redirect 301 /book/271/ /book/children-of-ruin-adrian-tchaikovsky/
+Redirect 301 /book/272 /book/children-of-memory-adrian-tchaikovsky/
+Redirect 301 /book/272/ /book/children-of-memory-adrian-tchaikovsky/
+Redirect 301 /book/273 /book/red-seas-under-red-skies-scott-lynch/
+Redirect 301 /book/273/ /book/red-seas-under-red-skies-scott-lynch/
+Redirect 301 /book/274 /book/the-republic-of-thieves-scott-lynch/
+Redirect 301 /book/274/ /book/the-republic-of-thieves-scott-lynch/
+Redirect 301 /book/275 /book/the-dragon-republic-rf-kuang/
+Redirect 301 /book/275/ /book/the-dragon-republic-rf-kuang/
+Redirect 301 /book/276 /book/the-burning-god-rf-kuang/
+Redirect 301 /book/276/ /book/the-burning-god-rf-kuang/
+Redirect 301 /book/277 /book/the-twelve-justin-cronin/
+Redirect 301 /book/277/ /book/the-twelve-justin-cronin/
+Redirect 301 /book/278 /book/the-city-of-mirrors-justin-cronin/
+Redirect 301 /book/278/ /book/the-city-of-mirrors-justin-cronin/
+Redirect 301 /book/279 /book/fire-and-song-bryce-oconnor-luke-chmilenko/
+Redirect 301 /book/279/ /book/fire-and-song-bryce-oconnor-luke-chmilenko/
 
   
   # --- Book Alias Redirects (Manual) ---

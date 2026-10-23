@@ -1306,6 +1306,71 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://thelongbookclub.com/book/before-they-are-hanged-joe-abercrombie/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/last-argument-of-kings-joe-abercrombie/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/smileys-people-john-le-carre/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/lords-of-uncreation-adrian-tchaikovsky/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/children-of-ruin-adrian-tchaikovsky/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/children-of-memory-adrian-tchaikovsky/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/red-seas-under-red-skies-scott-lynch/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/the-republic-of-thieves-scott-lynch/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/the-dragon-republic-rf-kuang/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/the-burning-god-rf-kuang/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/the-twelve-justin-cronin/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/the-city-of-mirrors-justin-cronin/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/fire-and-song-bryce-oconnor-luke-chmilenko/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thelongbookclub.com/genre/classics/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -2176,12 +2241,32 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://thelongbookclub.com/author/justin-cronin/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thelongbookclub.com/author/jk-rowling/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://thelongbookclub.com/author/matt-dinniman/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/author/bryce-o/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/author/joe-abercrombie/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/author/scott-lynch/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -2526,7 +2611,22 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://thelongbookclub.com/narrator/michael-page/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/narrator/emily-woo-zeller/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thelongbookclub.com/narrator/sophie-aldred/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/narrator/mel-hudson/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
