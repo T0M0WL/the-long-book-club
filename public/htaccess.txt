@@ -817,6 +817,26 @@ Redirect 301 /book/413 /book/the-neutronium-alchemist-peter-f-hamilton/
 Redirect 301 /book/413/ /book/the-neutronium-alchemist-peter-f-hamilton/
 Redirect 301 /book/414 /book/the-naked-god-peter-f-hamilton/
 Redirect 301 /book/414/ /book/the-naked-god-peter-f-hamilton/
+Redirect 301 /book/415 /book/a-little-hatred-joe-abercrombie/
+Redirect 301 /book/415/ /book/a-little-hatred-joe-abercrombie/
+Redirect 301 /book/416 /book/the-trouble-with-peace-joe-abercrombie/
+Redirect 301 /book/416/ /book/the-trouble-with-peace-joe-abercrombie/
+Redirect 301 /book/417 /book/the-wisdom-of-crowds-joe-abercrombie/
+Redirect 301 /book/417/ /book/the-wisdom-of-crowds-joe-abercrombie/
+Redirect 301 /book/418 /book/shadow-of-night-deborah-harkness/
+Redirect 301 /book/418/ /book/shadow-of-night-deborah-harkness/
+Redirect 301 /book/419 /book/the-book-of-life-deborah-harkness/
+Redirect 301 /book/419/ /book/the-book-of-life-deborah-harkness/
+Redirect 301 /book/420 /book/times-convert-deborah-harkness/
+Redirect 301 /book/420/ /book/times-convert-deborah-harkness/
+Redirect 301 /book/421 /book/the-black-bird-oracle-deborah-harkness/
+Redirect 301 /book/421/ /book/the-black-bird-oracle-deborah-harkness/
+Redirect 301 /book/422 /book/the-angels-game-carlos-ruiz-zafon/
+Redirect 301 /book/422/ /book/the-angels-game-carlos-ruiz-zafon/
+Redirect 301 /book/423 /book/the-prisoner-of-heaven-carlos-ruiz-zafon/
+Redirect 301 /book/423/ /book/the-prisoner-of-heaven-carlos-ruiz-zafon/
+Redirect 301 /book/424 /book/the-labyrinth-of-the-spirits-carlos-ruiz-zafon/
+Redirect 301 /book/424/ /book/the-labyrinth-of-the-spirits-carlos-ruiz-zafon/
 
   
   # --- Book Alias Redirects (Manual) ---
