@@ -511,6 +511,18 @@ Redirect 301 /book/259 /book/troy-stephen-fry/
 Redirect 301 /book/259/ /book/troy-stephen-fry/
 Redirect 301 /book/260 /book/odyssey-stephen-fry/
 Redirect 301 /book/260/ /book/odyssey-stephen-fry/
+Redirect 301 /book/261 /book/harry-potter-and-the-chamber-of-secrets-j-k-rowling/
+Redirect 301 /book/261/ /book/harry-potter-and-the-chamber-of-secrets-j-k-rowling/
+Redirect 301 /book/262 /book/harry-potter-and-the-prisoner-of-azkaban-j-k-rowling/
+Redirect 301 /book/262/ /book/harry-potter-and-the-prisoner-of-azkaban-j-k-rowling/
+Redirect 301 /book/263 /book/harry-potter-and-the-goblet-of-fire-j-k-rowling/
+Redirect 301 /book/263/ /book/harry-potter-and-the-goblet-of-fire-j-k-rowling/
+Redirect 301 /book/264 /book/harry-potter-and-the-order-of-the-phoenix-j-k-rowling/
+Redirect 301 /book/264/ /book/harry-potter-and-the-order-of-the-phoenix-j-k-rowling/
+Redirect 301 /book/265 /book/harry-potter-and-the-half-blood-prince-j-k-rowling/
+Redirect 301 /book/265/ /book/harry-potter-and-the-half-blood-prince-j-k-rowling/
+Redirect 301 /book/266 /book/harry-potter-and-the-deathly-hallows-j-k-rowling/
+Redirect 301 /book/266/ /book/harry-potter-and-the-deathly-hallows-j-k-rowling/
 
   
   # --- Book Alias Redirects (Manual) ---

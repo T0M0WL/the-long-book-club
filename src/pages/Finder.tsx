@@ -63,7 +63,7 @@ export const Finder = () => {
                     ? book.genre.includes(selectedGenre)
                     : book.genre === selectedGenre);
 
-            const matchesLength = book.lengthHours >= minLength;
+            const matchesLength = minLength <= 10 ? true : book.lengthHours >= minLength;
 
             if (!searchLower) {
                 return matchesGenre && matchesLength;

@@ -1276,6 +1276,36 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://thelongbookclub.com/book/harry-potter-and-the-chamber-of-secrets-j-k-rowling/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/harry-potter-and-the-prisoner-of-azkaban-j-k-rowling/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/harry-potter-and-the-goblet-of-fire-j-k-rowling/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/harry-potter-and-the-order-of-the-phoenix-j-k-rowling/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/harry-potter-and-the-half-blood-prince-j-k-rowling/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/harry-potter-and-the-deathly-hallows-j-k-rowling/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thelongbookclub.com/genre/classics/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -2146,6 +2176,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://thelongbookclub.com/author/jk-rowling/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thelongbookclub.com/author/matt-dinniman/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -2391,7 +2426,47 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://thelongbookclub.com/narrator/hugh-laurie/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/narrator/matthew-macfadyen/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thelongbookclub.com/narrator/riz-ahmed/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/narrator/michelle-gomez/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/narrator/cush-jumbo/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/narrator/frankie-treadaway/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/narrator/max-lester/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/narrator/arabella-stanton/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/narrator/mark-addy/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -2402,6 +2477,26 @@
   </url>
   <url>
     <loc>https://thelongbookclub.com/narrator/sacha-dhawan/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/narrator/nina-wadia/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/narrator/joel-fry/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/narrator/adeel-akhtar/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/narrator/tracy-ann-oberman/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
