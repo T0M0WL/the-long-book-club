@@ -677,6 +677,38 @@ Redirect 301 /book/342 /book/the-primal-hunter-14-zogarth/
 Redirect 301 /book/342/ /book/the-primal-hunter-14-zogarth/
 Redirect 301 /book/343 /book/the-primal-hunter-15-zogarth/
 Redirect 301 /book/343/ /book/the-primal-hunter-15-zogarth/
+Redirect 301 /book/344 /book/defiance-of-the-fall-2-jf-brink-thefirstdefier/
+Redirect 301 /book/344/ /book/defiance-of-the-fall-2-jf-brink-thefirstdefier/
+Redirect 301 /book/345 /book/defiance-of-the-fall-3-jf-brink-thefirstdefier/
+Redirect 301 /book/345/ /book/defiance-of-the-fall-3-jf-brink-thefirstdefier/
+Redirect 301 /book/346 /book/defiance-of-the-fall-4-jf-brink-thefirstdefier/
+Redirect 301 /book/346/ /book/defiance-of-the-fall-4-jf-brink-thefirstdefier/
+Redirect 301 /book/347 /book/defiance-of-the-fall-5-jf-brink-thefirstdefier/
+Redirect 301 /book/347/ /book/defiance-of-the-fall-5-jf-brink-thefirstdefier/
+Redirect 301 /book/348 /book/defiance-of-the-fall-6-jf-brink-thefirstdefier/
+Redirect 301 /book/348/ /book/defiance-of-the-fall-6-jf-brink-thefirstdefier/
+Redirect 301 /book/349 /book/defiance-of-the-fall-7-jf-brink-thefirstdefier/
+Redirect 301 /book/349/ /book/defiance-of-the-fall-7-jf-brink-thefirstdefier/
+Redirect 301 /book/350 /book/defiance-of-the-fall-8-jf-brink-thefirstdefier/
+Redirect 301 /book/350/ /book/defiance-of-the-fall-8-jf-brink-thefirstdefier/
+Redirect 301 /book/351 /book/defiance-of-the-fall-9-jf-brink-thefirstdefier/
+Redirect 301 /book/351/ /book/defiance-of-the-fall-9-jf-brink-thefirstdefier/
+Redirect 301 /book/352 /book/defiance-of-the-fall-10-jf-brink-thefirstdefier/
+Redirect 301 /book/352/ /book/defiance-of-the-fall-10-jf-brink-thefirstdefier/
+Redirect 301 /book/353 /book/defiance-of-the-fall-11-jf-brink-thefirstdefier/
+Redirect 301 /book/353/ /book/defiance-of-the-fall-11-jf-brink-thefirstdefier/
+Redirect 301 /book/354 /book/defiance-of-the-fall-12-jf-brink-thefirstdefier/
+Redirect 301 /book/354/ /book/defiance-of-the-fall-12-jf-brink-thefirstdefier/
+Redirect 301 /book/355 /book/defiance-of-the-fall-13-jf-brink-thefirstdefier/
+Redirect 301 /book/355/ /book/defiance-of-the-fall-13-jf-brink-thefirstdefier/
+Redirect 301 /book/356 /book/defiance-of-the-fall-14-jf-brink-thefirstdefier/
+Redirect 301 /book/356/ /book/defiance-of-the-fall-14-jf-brink-thefirstdefier/
+Redirect 301 /book/357 /book/defiance-of-the-fall-15-jf-brink-thefirstdefier/
+Redirect 301 /book/357/ /book/defiance-of-the-fall-15-jf-brink-thefirstdefier/
+Redirect 301 /book/358 /book/defiance-of-the-fall-16-jf-brink-thefirstdefier/
+Redirect 301 /book/358/ /book/defiance-of-the-fall-16-jf-brink-thefirstdefier/
+Redirect 301 /book/359 /book/defiance-of-the-fall-17-jf-brink-thefirstdefier/
+Redirect 301 /book/359/ /book/defiance-of-the-fall-17-jf-brink-thefirstdefier/
 
   
   # --- Book Alias Redirects (Manual) ---
