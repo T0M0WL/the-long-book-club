@@ -593,6 +593,38 @@ Redirect 301 /book/300 /book/tiamats-wrath-james-sa-corey/
 Redirect 301 /book/300/ /book/tiamats-wrath-james-sa-corey/
 Redirect 301 /book/301 /book/leviathan-falls-james-sa-corey/
 Redirect 301 /book/301/ /book/leviathan-falls-james-sa-corey/
+Redirect 301 /book/302 /book/god-emperor-of-dune-frank-herbert/
+Redirect 301 /book/302/ /book/god-emperor-of-dune-frank-herbert/
+Redirect 301 /book/303 /book/heretics-of-dune-frank-herbert/
+Redirect 301 /book/303/ /book/heretics-of-dune-frank-herbert/
+Redirect 301 /book/304 /book/chapterhouse-dune-frank-herbert/
+Redirect 301 /book/304/ /book/chapterhouse-dune-frank-herbert/
+Redirect 301 /book/305 /book/best-served-cold-joe-abercrombie/
+Redirect 301 /book/305/ /book/best-served-cold-joe-abercrombie/
+Redirect 301 /book/306 /book/the-heroes-joe-abercrombie/
+Redirect 301 /book/306/ /book/the-heroes-joe-abercrombie/
+Redirect 301 /book/307 /book/red-country-joe-abercrombie/
+Redirect 301 /book/307/ /book/red-country-joe-abercrombie/
+Redirect 301 /book/308 /book/the-crimson-campaign-brian-mcclellan/
+Redirect 301 /book/308/ /book/the-crimson-campaign-brian-mcclellan/
+Redirect 301 /book/309 /book/the-autumn-republic-brian-mcclellan/
+Redirect 301 /book/309/ /book/the-autumn-republic-brian-mcclellan/
+Redirect 301 /book/310 /book/the-girl-who-played-with-fire-stieg-larsson/
+Redirect 301 /book/310/ /book/the-girl-who-played-with-fire-stieg-larsson/
+Redirect 301 /book/311 /book/the-girl-who-kicked-the-hornets-nest-stieg-larsson/
+Redirect 301 /book/311/ /book/the-girl-who-kicked-the-hornets-nest-stieg-larsson/
+Redirect 301 /book/312 /book/the-girl-in-the-spiders-web-david-lagercrantz/
+Redirect 301 /book/312/ /book/the-girl-in-the-spiders-web-david-lagercrantz/
+Redirect 301 /book/313 /book/the-girl-who-takes-an-eye-for-an-eye-david-lagercrantz/
+Redirect 301 /book/313/ /book/the-girl-who-takes-an-eye-for-an-eye-david-lagercrantz/
+Redirect 301 /book/314 /book/the-girl-who-lived-twice-david-lagercrantz/
+Redirect 301 /book/314/ /book/the-girl-who-lived-twice-david-lagercrantz/
+Redirect 301 /book/315 /book/the-girl-in-the-eagles-talons-karin-smirnoff/
+Redirect 301 /book/315/ /book/the-girl-in-the-eagles-talons-karin-smirnoff/
+Redirect 301 /book/316 /book/the-girl-with-ice-in-her-veins-karin-smirnoff/
+Redirect 301 /book/316/ /book/the-girl-with-ice-in-her-veins-karin-smirnoff/
+Redirect 301 /book/317 /book/bookshops-and-bonedust-travis-baldree/
+Redirect 301 /book/317/ /book/bookshops-and-bonedust-travis-baldree/
 
   
   # --- Book Alias Redirects (Manual) ---
