@@ -1991,11 +1991,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelongbookclub.com/book/the-lost-world-michael-crichton/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://thelongbookclub.com/book/endymion-dan-simmons/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -3102,11 +3097,6 @@
   </url>
   <url>
     <loc>https://thelongbookclub.com/author/shemer-kuznits/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thelongbookclub.com/author/michael-crichton/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

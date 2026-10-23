@@ -797,8 +797,6 @@ Redirect 301 /book/402 /book/a-pirates-life-for-tea-rebecca-thorne/
 Redirect 301 /book/402/ /book/a-pirates-life-for-tea-rebecca-thorne/
 Redirect 301 /book/403 /book/at-the-feet-of-the-sun-victoria-goddard/
 Redirect 301 /book/403/ /book/at-the-feet-of-the-sun-victoria-goddard/
-Redirect 301 /book/404 /book/the-lost-world-michael-crichton/
-Redirect 301 /book/404/ /book/the-lost-world-michael-crichton/
 Redirect 301 /book/405 /book/endymion-dan-simmons/
 Redirect 301 /book/405/ /book/endymion-dan-simmons/
 Redirect 301 /book/406 /book/the-rise-of-endymion-dan-simmons/

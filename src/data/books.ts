@@ -4526,7 +4526,7 @@ export const baseBooks: Book[] = [
         teaser: "Can Scott Brick\u2019s tense, procedural narration make Crichton\u2019s genetic thriller feel even more terrifying than Spielberg\u2019s cinematic masterpiece? Read our full review and Soundcheck to see our verdict.",
         narrator: "Scott Brick",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/de/5d/2d/de5d2d17-268a-3eed-e189-d0c515ef3822/mzaf_8300171163661841423.std.aac.p.m4a",
-        relatedBookIds: ["62", "64", "154", "166", "223", "404"],
+        relatedBookIds: ["62", "64", "154", "166", "223"],
         affiliateLink: "https://www.amazon.co.uk/dp/B00U8GUFAG?tag=thelongbookcl-21",
         affiliateLinkUS: "https://www.amazon.com/dp/B00U7UVOTY?tag=thelongbookcl-20"
     },
@@ -7323,26 +7323,6 @@ export const baseBooks: Book[] = [
         series: "Lays of the Hearth-Fire"
     },
     {
-        id: "404",
-        slug: "the-lost-world-michael-crichton",
-        title: "The Lost World",
-        author: "Michael Crichton",
-        narrator: "Scott Brick",
-        coverUrl: "/covers/the-lost-world-michael-crichton.jpg",
-        length: "15h 16m",
-        lengthHours: 15.3,
-        genre: ["Sci-Fi","Technothriller","Horror","Action","Adventure","Classics","Speculative Fiction","Dinosaurs"],
-        description: "Six years after the Isla Nublar disaster, chaos theorist Ian Malcolm investigates rumors of a surviving dinosaur breeding facility on Isla Sorna.",
-        cardOverview: "15 hours of pulse-pounding prehistoric terror. Ian Malcolm braves dinosaur-infested Site B with Scott Brick.",
-        teaserTitle: "What Really Survived on InGen's Secret Site B?",
-        teaser: "When chaos theorist Ian Malcolm discovers that InGen's catastrophic dinosaur experiments secretly continued on a secondary Costa Rican island, can a small scientific expedition survive Isla Sorna? Read our full review and Soundcheck to see why Scott Brick's narration elevates Michael Crichton's sequel into pure technothriller gold.",
-        audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/0a/c6/6f/0ac66f1d-c27f-dc06-89b9-dfe3792c1e0f/mzaf_13968995020893344241.std.aac.p.m4a",
-        affiliateLink: "https://www.amazon.co.uk/dp/B00W7F3HSC?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B00W7F3HSC?tag=thelongbookcl-20",
-        relatedBookIds: ["256","154","223","62"],
-        series: "Jurassic Park"
-    },
-    {
         id: "405",
         slug: "endymion-dan-simmons",
         title: "Endymion: Hyperion Cantos, Book 3",
@@ -7899,7 +7879,6 @@ export const seriesBySlug: Record<string, string> = {
     'a-desolation-called-peace-arkady-martine': "Teixcalaan",
     'a-pirates-life-for-tea-rebecca-thorne': "Tomes & Tea",
     'at-the-feet-of-the-sun-victoria-goddard': "Lays of the Hearth-Fire",
-    'the-lost-world-michael-crichton': "Jurassic Park",
     'endymion-dan-simmons': "Hyperion Cantos",
     'the-rise-of-endymion-dan-simmons': "Hyperion Cantos",
     'grey-sister-mark-lawrence': "Book of the Ancestor",
