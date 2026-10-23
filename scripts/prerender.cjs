@@ -145,10 +145,11 @@ async function prerender() {
     // 1. Parse Reviews into a Map
     const reviewsMap = new Map();
     if (reviewsContent) {
-        const rBlocks = reviewsContent.split(/^\s*["']([^"']+)["']\s*:\s*\{/gm).slice(1);
-        for (let i = 0; i < rBlocks.length; i += 2) {
-            const title = rBlocks[i];
-            const block = rBlocks[i + 1].split(/^\s*\}/gm)[0];
+        const reviewRegex = /^\s*(?:"([^"\r\n]+)"|'([^'\r\n]+)')\s*:\s*\{([\s\S]*?)(?=^\s*(?:"[^"\r\n]+"|'[^'\r\n]+')\s*:\s*\{|^\s*\};\s*$)/gm;
+        let match;
+        while ((match = reviewRegex.exec(reviewsContent)) !== null) {
+            const title = match[1] || match[2];
+            const block = match[3];
             reviewsMap.set(title, {
                 curatorNote: extractField(block, 'curatorNote', false),
                 curatorTitle: extractField(block, 'curatorTitle'),

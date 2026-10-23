@@ -507,6 +507,10 @@ Redirect 301 /book/257 /book/pillar-to-the-sky-william-r-forstchen/
 Redirect 301 /book/257/ /book/pillar-to-the-sky-william-r-forstchen/
 Redirect 301 /book/258 /book/a-parade-of-horribles-matt-dinniman/
 Redirect 301 /book/258/ /book/a-parade-of-horribles-matt-dinniman/
+Redirect 301 /book/259 /book/troy-stephen-fry/
+Redirect 301 /book/259/ /book/troy-stephen-fry/
+Redirect 301 /book/260 /book/odyssey-stephen-fry/
+Redirect 301 /book/260/ /book/odyssey-stephen-fry/
 
   
   # --- Book Alias Redirects (Manual) ---

@@ -3299,6 +3299,7 @@ export const baseBooks: Book[] = [
 ,
     {
         id: "199",
+        relatedBookIds: ["255", "259", "260", "10", "66", "67", "21", "11", "174"],
         slug: "mythos",
         title: "Mythos",
         author: "Stephen Fry",
@@ -3311,7 +3312,7 @@ export const baseBooks: Book[] = [
         teaserTitle: "Masterclass in Wit or Over-The-Top Lecture?",
         teaser: "Stephen Fry transforms ancient Greek creation myths into theatrical comedy, but does his conversational, rambling wit sustain momentum across fifteen hours? Read our full review and Soundcheck to see if this humorous retelling earns a permanent spot in your library.",
         curatorTitle: "The Gods of Mount Olympus Reimagined with Theatrical Wit and Erudite Charm",
-        curatorNote: "Stephen Fry’s *Mythos* is a triumph of accessible, erudite, and outrageously entertaining classical storytelling. Rather than approaching the ancient Greek creation myths with dry academic reverence or pedantic footnotes, Fry treats the Olympians as an extraordinarily dysfunctional, immensely powerful aristocratic family whose rivalries, illicit affairs, and vengeful tantrums shaped Western civilization. Beginning at the literal genesis of existence—the emergence of Gaia and Uranus from the primordial soup of Chaos—Fry guides the listener through the terrifying Titanomachy, the golden age of Cronus, and Zeus’s audacious coup to claim the throne of heaven, detailing every divine transformation with theatrical gusto.\n\nWhat makes this fifteen-hour audio journey so utterly exceptional is Fry’s infectious delight in language, classical etymology, and timeless psychological insight. He constantly connects ancient Hellenic lore to our everyday modern vocabulary, demonstrating how words like *tantalise*, *echo*, *mercurial*, *narcissist*, *nemesis*, and *chaos* rooted directly into the fertile, blood-soaked soil of Mount Olympus. The foundational tales of Prometheus stealing celestial fire to elevate shivering mankind, Pandora lifting the fateful lid of her jar, and Apollo pursuing Daphne through the laurel groves are told with dramatic flair, balancing genuinely poignant tragedy with sparkling, theatrical drawing-room comedy that keeps the listener engaged across every chapter. Fry never talks down to his audience; instead, he invites us into an ongoing cultural conversation spanning three millennia.\n\nFor audiobook listeners seeking maximum credit mileage, *Mythos* provides over fifteen hours of peerless educational entertainment that flies by at astonishing speed. Fry’s legendary vocal charisma turns what could have been a confusing catalogue of mythical genealogies into an exhilarating, bingeable adventure through classical [History](/genre/history/) and [Ancient World](/genre/ancient-world/) folklore. Whether you are an audiobook veteran revisiting old legends or a newcomer looking for the definitive, accessible gateway into the Greek pantheon, Fry delivers a masterclass in performance and scholarship that represents extraordinary credit value for any collection.",
+        curatorNote: "Stephen Fry’s *Mythos* is a triumph of accessible, erudite, and outrageously entertaining classical storytelling. Rather than approaching the ancient Greek creation myths with dry academic reverence or pedantic footnotes, Fry treats the Olympians as an extraordinarily dysfunctional, immensely powerful aristocratic family whose rivalries, illicit affairs, and vengeful tantrums shaped Western civilization. Beginning at the literal genesis of existence—the emergence of Gaia and Uranus from the primordial soup of Chaos—Fry guides the listener through the terrifying Titanomachy, the golden age of Cronus, and Zeus’s audacious coup to claim the throne of heaven, detailing every divine transformation with theatrical gusto.\n\nWhat makes this fifteen-hour audio journey so utterly exceptional is Fry’s infectious delight in language, classical etymology, and timeless psychological insight. He constantly connects ancient Hellenic lore to our everyday modern vocabulary, demonstrating how words like *tantalise*, *echo*, *mercurial*, *narcissist*, *nemesis*, and *chaos* rooted directly into the fertile, blood-soaked soil of Mount Olympus. The foundational tales of Prometheus stealing celestial fire to elevate shivering mankind, Pandora lifting the fateful lid of her jar, and Apollo pursuing Daphne through the laurel groves are told with dramatic flair, balancing genuinely poignant tragedy with sparkling, theatrical drawing-room comedy that keeps the listener engaged across every chapter. Fry never talks down to his audience; instead, he invites us into an ongoing cultural conversation spanning three millennia.\n\nFor audiobook listeners seeking maximum credit mileage, *Mythos* provides over fifteen hours of peerless educational entertainment that flies by at astonishing speed. Fry’s legendary vocal charisma turns what could have been a confusing catalogue of mythical genealogies into an exhilarating, bingeable adventure through classical [History](/genre/history/) and [Ancient World](/genre/ancient-world/) folklore. Whether you are an audiobook veteran revisiting old legends or a newcomer looking for the definitive, accessible gateway into the Greek pantheon, Fry delivers a masterclass in performance and scholarship that represents extraordinary credit value for any collection, laying the foundation for [Heroes](/book/heroes-stephen-fry/) and the great conflicts to come.\n\n**Stephen Fry's Greek Myths Reading Order:**\n• [Mythos](/book/mythos/) (Book 1 – 15h 25m)\n• [Heroes](/book/heroes-stephen-fry/) (Book 2 – 15h 10m)\n• [Troy](/book/troy-stephen-fry/) (Book 3 – 11h 10m)\n• [Odyssey](/book/odyssey-stephen-fry/) (Book 4 – 10h 36m)",
         soundCheck: "Stephen Fry narrating his own prose is a masterclass in vocal theatricality, warmth, and wit. He glides effortlessly between academic authority, conversational intimacy, and laugh-out-loud satirical observation. Fry gives every deity—from the booming, paranoid sky-god Zeus to the scheming, sharp-tongued Hera and the mischievous Hermes—a distinct, memorable personality. His delivery makes ancient cosmologies feel as engaging as an after-dinner conversation with the finest raconteur in Britain across fifteen magnificent hours.",
         narrator: "Stephen Fry",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/54/29/3a/54293ae2-30fd-280a-d756-eaff6391eb12/mzaf_3173291034293181526.std.aac.p.m4a",
@@ -4500,7 +4501,7 @@ export const baseBooks: Book[] = [
         teaser: "Can a fifteen-hour chronicle of classical quests and monster battles match the effortless comedic warmth of Stephen Fry\u2019s creation myths? Read our full review and Soundcheck to see our verdict.",
         narrator: "Stephen Fry",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/af/f5/50/aff5503b-b1f8-13e9-294c-3520d741bb73/mzaf_14295368550057121224.std.aac.p.m4a",
-        relatedBookIds: ["199", "10", "66", "67", "21"],
+        relatedBookIds: ["199", "259", "260", "10", "66", "67", "21", "11"],
         affiliateLink: "https://www.amazon.co.uk/dp/B07H8K15BN?tag=thelongbookcl-21",
         affiliateLinkUS: "https://www.amazon.com/dp/B07H8K15BN?tag=thelongbookcl-20"
     },
@@ -4559,6 +4560,42 @@ export const baseBooks: Book[] = [
         affiliateLinkUS: "https://www.amazon.com/dp/B0FXY4L5F6?tag=thelongbookcl-20",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ef/35/39/ef35398b-4177-9061-0b70-f4a5e29d2161/mzaf_3990318577399221769.std.aac.p.m4a",
         relatedBookIds: ["166", "237", "238", "239", "240", "241", "242", "167", "168", "169", "244", "243"]
+    },
+    {
+        id: "259",
+        slug: "troy-stephen-fry",
+        title: "Troy: Stephen Fry's Greek Myths, Book 3",
+        author: "Stephen Fry",
+        narrator: "Stephen Fry",
+        coverUrl: "/covers/troy-stephen-fry.jpg",
+        length: "11h 10m",
+        lengthHours: 11.2,
+        genre: ["Mythology", "Classics", "History", "Ancient History", "Greek Mythology", "Folklore", "War", "Tragedy"],
+        description: "Stephen Fry retells the legendary siege of Troy with erudite wit and theatrical grandeur, chronicling the love of Helen and Paris, the wrath of Achilles, and the cunning ruse of the Wooden Horse.",
+        cardOverview: "The legendary ten-year siege of Troy retold with sparkling wit and tragedy. 11 hours of Stephen Fry in audio.",
+        teaserTitle: "Can Fry Balance Comedy and Homeric Tragedy?",
+        teaser: "Can Stephen Fry’s characteristically lighthearted drawing-room wit navigate the devastating bloodshed and catastrophic hubris of the Trojan War without trivializing Homeric grief? Read our full review and Soundcheck to see our verdict.",
+        affiliateLink: "https://www.amazon.co.uk/dp/B088TRT7WN?tag=thelongbookcl-21",
+        audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/9f/5b/1b/9f5b1b80-3c6a-86f9-da2a-b7dfa0a1ec20/mzaf_15460470490534195575.std.aac.p.m4a",
+        relatedBookIds: ["199", "255", "260", "10", "66", "67", "21", "11", "174"]
+    },
+    {
+        id: "260",
+        slug: "odyssey-stephen-fry",
+        title: "Odyssey: Stephen Fry's Greek Myths, Book 4",
+        author: "Stephen Fry",
+        narrator: "Stephen Fry",
+        coverUrl: "/covers/odyssey-stephen-fry.jpg",
+        length: "10h 36m",
+        lengthHours: 10.6,
+        genre: ["Mythology", "Classics", "History", "Ancient History", "Greek Mythology", "Adventure", "Folklore"],
+        description: "Stephen Fry concludes his acclaimed Greek mythology sequence with Odysseus's perilous ten-year voyage home from Troy, facing cyclopes, sirens, sea monsters, and vengeful gods to reclaim his throne in Ithaca.",
+        cardOverview: "Odysseus’s perilous voyage home to Ithaca. 10.5 hours of monster clashes, siren calls, and Stephen Fry’s wit in audio.",
+        teaserTitle: "Does Fry Deliver a Triumphant Mythic Finale?",
+        teaser: "Can Stephen Fry’s intimate fireside delivery capture the terrifying supernatural dread of Homer’s seafaring voyage while sustaining pacing across ten continuous hours? Read our full review and Soundcheck to see our verdict.",
+        affiliateLink: "https://www.amazon.co.uk/dp/B0CZP6CN2Y?tag=thelongbookcl-21",
+        audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/08/15/c1/0815c110-ed86-cbd0-6d26-2637c9f911c9/mzaf_13976501948253433773.std.aac.p.m4a",
+        relatedBookIds: ["199", "255", "259", "21", "67", "10", "66", "11", "174"]
     },
 ];
 
@@ -4749,7 +4786,11 @@ export const seriesBySlug: Record<string, string> = {
     'life-reset-salvation-shemer-kuznits': 'New Era Online',
 
     // Mythology and Sci-Fi Series
-    'heroes-stephen-fry': "Stephen Fry's Great Mythology",
+    // Stephen Fry's Greek Myths Series
+    'mythos': "Stephen Fry's Greek Myths",
+    'heroes-stephen-fry': "Stephen Fry's Greek Myths",
+    'troy-stephen-fry': "Stephen Fry's Greek Myths",
+    'odyssey-stephen-fry': "Stephen Fry's Greek Myths",
     'jurassic-park-michael-crichton': 'Jurassic Park',
 };
 
