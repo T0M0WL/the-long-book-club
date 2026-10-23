@@ -4253,7 +4253,7 @@ export const baseBooks: Book[] = [
         teaser: "Can a colossal twenty-eight-hour production balance hundreds of warring factions and tragic casualties without collapsing under its own weight? Read our full review and Soundcheck to see our verdict.",
         narrator: "Jeff Hays",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/42/f3/7e/42f37ee9-db16-9412-c833-96aeb858e0bb/mzaf_7525993683814899240.std.aac.p.m4a",
-        relatedBookIds: ["166", "240", "241", "243", "167", "170"],
+        relatedBookIds: ["166", "240", "241", "243", "167", "170", "258"],
         affiliateLink: "https://www.amazon.co.uk/dp/B0DK22T2HW?tag=thelongbookcl-21",
         affiliateLinkUS: "https://www.amazon.com/dp/B0DK22T2HW?tag=thelongbookcl-20"
     },
@@ -4542,6 +4542,24 @@ export const baseBooks: Book[] = [
         affiliateLink: "https://www.amazon.co.uk/dp/B00HZZTA4A?tag=thelongbookcl-21",
         affiliateLinkUS: "https://www.amazon.com/dp/B00HZZTA4A?tag=thelongbookcl-20"
     },
+    {
+        id: "258",
+        slug: "a-parade-of-horribles-matt-dinniman",
+        title: "A Parade of Horribles: Dungeon Crawler Carl, Book 8",
+        author: "Matt Dinniman",
+        coverUrl: "/covers/a-parade-of-horribles-matt-dinniman.jpg",
+        length: "20h 27m",
+        lengthHours: 20.5,
+        genre: ["LitRPG", "GameLit", "Dark Comedy", "Post-Apocalyptic", "Science Fiction", "Action", "Adventure"],
+        description: "Trapped on the dungeon's deceptive tenth-floor racing gauntlet amid galactic upheaval, Carl and Princess Donut must outmaneuver deadly vehicular tracks and ominous AI glitches before an apocalyptic eleventh-floor spectacle begins.",
+        cardOverview: "The deadly tenth-floor races begin. 20.5 hours of demolition derby chaos and clandestine rebellion in audio.",
+        teaserTitle: "Can Audio Maintain 20 Hours of High-Speed Chaos?",
+        teaser: "Can Jeff Hays sustain his lightning-fast comedic timing and kinetic intensity across twenty hours of relentless, vehicular demolition combat without vocal exhaustion? Read our full review and Soundcheck to see our verdict.",
+        affiliateLink: "https://www.amazon.co.uk/dp/B0FXY4L5F6?tag=thelongbookcl-21",
+        affiliateLinkUS: "https://www.amazon.com/dp/B0FXY4L5F6?tag=thelongbookcl-20",
+        audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ef/35/39/ef35398b-4177-9061-0b70-f4a5e29d2161/mzaf_3990318577399221769.std.aac.p.m4a",
+        relatedBookIds: ["166", "237", "238", "239", "240", "241", "242", "167", "168", "169", "244", "243"]
+    },
 ];
 
 export const seriesBySlug: Record<string, string> = {
@@ -4721,6 +4739,7 @@ export const seriesBySlug: Record<string, string> = {
     'the-butchers-masquerade-matt-dinniman': 'Dungeon Crawler Carl',
     'the-eye-of-the-bedlam-bride-matt-dinniman': 'Dungeon Crawler Carl',
     'this-inevitable-ruin-matt-dinniman': 'Dungeon Crawler Carl',
+    'a-parade-of-horribles-matt-dinniman': 'Dungeon Crawler Carl',
     'chrysalis-books-1-3-rinoz': 'Chrysalis',
     'life-reset-shemer-kuznits': 'New Era Online',
     'life-reset-evp-shemer-kuznits': 'New Era Online',

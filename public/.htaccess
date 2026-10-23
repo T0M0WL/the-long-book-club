@@ -505,6 +505,8 @@ Redirect 301 /book/256 /book/jurassic-park-michael-crichton/
 Redirect 301 /book/256/ /book/jurassic-park-michael-crichton/
 Redirect 301 /book/257 /book/pillar-to-the-sky-william-r-forstchen/
 Redirect 301 /book/257/ /book/pillar-to-the-sky-william-r-forstchen/
+Redirect 301 /book/258 /book/a-parade-of-horribles-matt-dinniman/
+Redirect 301 /book/258/ /book/a-parade-of-horribles-matt-dinniman/
 
   
   # --- Book Alias Redirects (Manual) ---
