@@ -769,6 +769,24 @@ Redirect 301 /book/388 /book/lady-of-fire-the-wandering-inn-book-17-pirateaba/
 Redirect 301 /book/388/ /book/lady-of-fire-the-wandering-inn-book-17-pirateaba/
 Redirect 301 /book/389 /book/archmages-ire-the-wandering-inn-book-18-pirateaba/
 Redirect 301 /book/389/ /book/archmages-ire-the-wandering-inn-book-18-pirateaba/
+Redirect 301 /book/390 /book/dead-lions-mick-herron/
+Redirect 301 /book/390/ /book/dead-lions-mick-herron/
+Redirect 301 /book/391 /book/real-tigers-mick-herron/
+Redirect 301 /book/391/ /book/real-tigers-mick-herron/
+Redirect 301 /book/392 /book/spook-street-mick-herron/
+Redirect 301 /book/392/ /book/spook-street-mick-herron/
+Redirect 301 /book/393 /book/london-rules-mick-herron/
+Redirect 301 /book/393/ /book/london-rules-mick-herron/
+Redirect 301 /book/394 /book/joe-country-mick-herron/
+Redirect 301 /book/394/ /book/joe-country-mick-herron/
+Redirect 301 /book/395 /book/slough-house-mick-herron/
+Redirect 301 /book/395/ /book/slough-house-mick-herron/
+Redirect 301 /book/396 /book/bad-actors-mick-herron/
+Redirect 301 /book/396/ /book/bad-actors-mick-herron/
+Redirect 301 /book/397 /book/clown-town-mick-herron/
+Redirect 301 /book/397/ /book/clown-town-mick-herron/
+Redirect 301 /book/398 /book/the-secret-hours-mick-herron/
+Redirect 301 /book/398/ /book/the-secret-hours-mick-herron/
 
   
   # --- Book Alias Redirects (Manual) ---
