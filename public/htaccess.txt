@@ -709,6 +709,16 @@ Redirect 301 /book/358 /book/defiance-of-the-fall-16-jf-brink-thefirstdefier/
 Redirect 301 /book/358/ /book/defiance-of-the-fall-16-jf-brink-thefirstdefier/
 Redirect 301 /book/359 /book/defiance-of-the-fall-17-jf-brink-thefirstdefier/
 Redirect 301 /book/359/ /book/defiance-of-the-fall-17-jf-brink-thefirstdefier/
+Redirect 301 /book/360 /book/black-sand-baron-kyle-kirrin/
+Redirect 301 /book/360/ /book/black-sand-baron-kyle-kirrin/
+Redirect 301 /book/361 /book/gilded-ghost-kyle-kirrin/
+Redirect 301 /book/361/ /book/gilded-ghost-kyle-kirrin/
+Redirect 301 /book/362 /book/shattersoul-kyle-kirrin/
+Redirect 301 /book/362/ /book/shattersoul-kyle-kirrin/
+Redirect 301 /book/363 /book/emperors-end-kyle-kirrin/
+Redirect 301 /book/363/ /book/emperors-end-kyle-kirrin/
+Redirect 301 /book/364 /book/lunatics-landing-kyle-kirrin/
+Redirect 301 /book/364/ /book/lunatics-landing-kyle-kirrin/
 
   
   # --- Book Alias Redirects (Manual) ---

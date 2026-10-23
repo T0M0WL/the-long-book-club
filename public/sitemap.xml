@@ -1771,6 +1771,31 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://thelongbookclub.com/book/black-sand-baron-kyle-kirrin/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/gilded-ghost-kyle-kirrin/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/shattersoul-kyle-kirrin/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/emperors-end-kyle-kirrin/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/lunatics-landing-kyle-kirrin/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thelongbookclub.com/genre/classics/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -2692,6 +2717,11 @@
   </url>
   <url>
     <loc>https://thelongbookclub.com/author/bryce-o/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/author/kyle-kirrin/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
