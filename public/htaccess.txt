@@ -719,6 +719,28 @@ Redirect 301 /book/363 /book/emperors-end-kyle-kirrin/
 Redirect 301 /book/363/ /book/emperors-end-kyle-kirrin/
 Redirect 301 /book/364 /book/lunatics-landing-kyle-kirrin/
 Redirect 301 /book/364/ /book/lunatics-landing-kyle-kirrin/
+Redirect 301 /book/365 /book/the-fires-of-heaven-robert-jordan/
+Redirect 301 /book/365/ /book/the-fires-of-heaven-robert-jordan/
+Redirect 301 /book/366 /book/lord-of-chaos-robert-jordan/
+Redirect 301 /book/366/ /book/lord-of-chaos-robert-jordan/
+Redirect 301 /book/367 /book/a-crown-of-swords-robert-jordan/
+Redirect 301 /book/367/ /book/a-crown-of-swords-robert-jordan/
+Redirect 301 /book/368 /book/the-path-of-daggers-robert-jordan/
+Redirect 301 /book/368/ /book/the-path-of-daggers-robert-jordan/
+Redirect 301 /book/369 /book/winters-heart-robert-jordan/
+Redirect 301 /book/369/ /book/winters-heart-robert-jordan/
+Redirect 301 /book/370 /book/crossroads-of-twilight-robert-jordan/
+Redirect 301 /book/370/ /book/crossroads-of-twilight-robert-jordan/
+Redirect 301 /book/371 /book/knife-of-dreams-robert-jordan/
+Redirect 301 /book/371/ /book/knife-of-dreams-robert-jordan/
+Redirect 301 /book/372 /book/the-gathering-storm-robert-jordan-brandon-sanderson/
+Redirect 301 /book/372/ /book/the-gathering-storm-robert-jordan-brandon-sanderson/
+Redirect 301 /book/373 /book/towers-of-midnight-robert-jordan-brandon-sanderson/
+Redirect 301 /book/373/ /book/towers-of-midnight-robert-jordan-brandon-sanderson/
+Redirect 301 /book/374 /book/a-memory-of-light-robert-jordan-brandon-sanderson/
+Redirect 301 /book/374/ /book/a-memory-of-light-robert-jordan-brandon-sanderson/
+Redirect 301 /book/375 /book/new-spring-robert-jordan/
+Redirect 301 /book/375/ /book/new-spring-robert-jordan/
 
   
   # --- Book Alias Redirects (Manual) ---
