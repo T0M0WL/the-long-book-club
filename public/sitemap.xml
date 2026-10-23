@@ -1561,6 +1561,66 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://thelongbookclub.com/book/he-who-fights-with-monsters-2-shirtaloon-travis-deverell/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/he-who-fights-with-monsters-3-shirtaloon-travis-deverell/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/he-who-fights-with-monsters-4-shirtaloon-travis-deverell/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/he-who-fights-with-monsters-5-shirtaloon-travis-deverell/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/he-who-fights-with-monsters-6-shirtaloon-travis-deverell/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/he-who-fights-with-monsters-7-shirtaloon-travis-deverell/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/he-who-fights-with-monsters-8-shirtaloon-travis-deverell/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/he-who-fights-with-monsters-9-shirtaloon-travis-deverell/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/he-who-fights-with-monsters-10-shirtaloon-travis-deverell/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/he-who-fights-with-monsters-11-shirtaloon-travis-deverell/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/he-who-fights-with-monsters-12-shirtaloon-travis-deverell/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/he-who-fights-with-monsters-13-shirtaloon-travis-deverell/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thelongbookclub.com/genre/classics/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -2466,6 +2526,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://thelongbookclub.com/author/shirtaloon-travis-deverell/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thelongbookclub.com/author/bryce-o/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -2842,6 +2907,11 @@
   </url>
   <url>
     <loc>https://thelongbookclub.com/narrator/jeff-hays/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/narrator/heath-miller/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
