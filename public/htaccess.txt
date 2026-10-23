@@ -741,6 +741,34 @@ Redirect 301 /book/374 /book/a-memory-of-light-robert-jordan-brandon-sanderson/
 Redirect 301 /book/374/ /book/a-memory-of-light-robert-jordan-brandon-sanderson/
 Redirect 301 /book/375 /book/new-spring-robert-jordan/
 Redirect 301 /book/375/ /book/new-spring-robert-jordan/
+Redirect 301 /book/376 /book/the-last-light-the-wandering-inn-book-5-pirateaba/
+Redirect 301 /book/376/ /book/the-last-light-the-wandering-inn-book-5-pirateaba/
+Redirect 301 /book/377 /book/the-general-of-izril-the-wandering-inn-book-6-pirateaba/
+Redirect 301 /book/377/ /book/the-general-of-izril-the-wandering-inn-book-6-pirateaba/
+Redirect 301 /book/378 /book/rains-of-liscor-the-wandering-inn-book-7-pirateaba/
+Redirect 301 /book/378/ /book/rains-of-liscor-the-wandering-inn-book-7-pirateaba/
+Redirect 301 /book/379 /book/blood-of-liscor-the-wandering-inn-book-8-pirateaba/
+Redirect 301 /book/379/ /book/blood-of-liscor-the-wandering-inn-book-8-pirateaba/
+Redirect 301 /book/380 /book/tears-of-liscor-the-wandering-inn-book-9-pirateaba/
+Redirect 301 /book/380/ /book/tears-of-liscor-the-wandering-inn-book-9-pirateaba/
+Redirect 301 /book/381 /book/the-wind-runner-the-wandering-inn-book-10-pirateaba/
+Redirect 301 /book/381/ /book/the-wind-runner-the-wandering-inn-book-10-pirateaba/
+Redirect 301 /book/382 /book/the-titan-of-baleros-the-wandering-inn-book-11-pirateaba/
+Redirect 301 /book/382/ /book/the-titan-of-baleros-the-wandering-inn-book-11-pirateaba/
+Redirect 301 /book/383 /book/witch-of-webs-the-wandering-inn-book-12-pirateaba/
+Redirect 301 /book/383/ /book/witch-of-webs-the-wandering-inn-book-12-pirateaba/
+Redirect 301 /book/384 /book/the-empress-of-beasts-the-wandering-inn-book-13-pirateaba/
+Redirect 301 /book/384/ /book/the-empress-of-beasts-the-wandering-inn-book-13-pirateaba/
+Redirect 301 /book/385 /book/hells-wardens-the-wandering-inn-book-14-pirateaba/
+Redirect 301 /book/385/ /book/hells-wardens-the-wandering-inn-book-14-pirateaba/
+Redirect 301 /book/386 /book/garden-of-sanctuary-the-wandering-inn-book-15-pirateaba/
+Redirect 301 /book/386/ /book/garden-of-sanctuary-the-wandering-inn-book-15-pirateaba/
+Redirect 301 /book/387 /book/king-of-duels-the-wandering-inn-book-16-pirateaba/
+Redirect 301 /book/387/ /book/king-of-duels-the-wandering-inn-book-16-pirateaba/
+Redirect 301 /book/388 /book/lady-of-fire-the-wandering-inn-book-17-pirateaba/
+Redirect 301 /book/388/ /book/lady-of-fire-the-wandering-inn-book-17-pirateaba/
+Redirect 301 /book/389 /book/archmages-ire-the-wandering-inn-book-18-pirateaba/
+Redirect 301 /book/389/ /book/archmages-ire-the-wandering-inn-book-18-pirateaba/
 
   
   # --- Book Alias Redirects (Manual) ---
