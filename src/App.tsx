@@ -17,6 +17,8 @@ import { Authors } from './pages/Authors';
 import { AuthorDetail } from './pages/AuthorDetail';
 import { Narrators } from './pages/Narrators';
 import { NarratorDetail } from './pages/NarratorDetail';
+import { NarratorsLeaderboard } from './pages/NarratorsLeaderboard';
+import { NarratorStyleDetail } from './pages/NarratorStyleDetail';
 
 import { ThankYou } from './pages/ThankYou';
 import { Footer } from './components/Footer';
@@ -120,6 +122,10 @@ function App() {
 
                 {/* Narrator Routes */}
                 <Route path="/narrators" element={<Narrators />} />
+                <Route path="/narrators/leaderboard" element={<NarratorsLeaderboard />} />
+                <Route path="/narrator-leaderboard" element={<NarratorsLeaderboard />} />
+                <Route path="/narrator-styles/:styleSlug" element={<NarratorStyleDetail />} />
+                <Route path="/narrators/styles/:styleSlug" element={<NarratorStyleDetail />} />
                 <Route path="/narrator/:slug" element={<NarratorDetail />} />
                 <Route path="/narrators/:slug" element={<NarratorDetail />} />
 

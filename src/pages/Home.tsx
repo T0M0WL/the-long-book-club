@@ -7,6 +7,7 @@ import { SEO } from '../components/SEO';
 import { useSetHeaderTheme } from '../context/HeaderContext';
 import { SpineBanner } from '../components/SpineBanner';
 import { HallOfFameCarousel } from '../components/HallOfFameCarousel';
+import { LongBookLedger } from '../components/LongBookLedger';
 
 export const Home = () => {
     useSetHeaderTheme({
@@ -256,6 +257,9 @@ export const Home = () => {
             >
                 <HallOfFameCarousel />
             </SpineBanner>
+
+            {/* The Long Book Ledger (Audiobook News & Offers) */}
+            <LongBookLedger />
 
             {/* Featured Collections Section */}
             <div style={{

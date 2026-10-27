@@ -34,6 +34,7 @@ This file is the "Eternal Memory" for the project. **Any AI assistant working on
 - We do NOT use a "Thin" SPA shell.
 - Every page (`/book/*`, `/genre/*`, `/collections/`, `/journal/`, etc.) MUST serve substantial, unique visible content in the initial HTML body inside the `<div id="root">`.
 - This is handled by `scripts/prerender.cjs`. If you modify the data structure in `src/data/`, you MUST update the extraction logic in the prerenderer.
+- **Interactive Tools & Audio Discovery:** `scripts/prerender.cjs` injects a dedicated `.interactive-listening-tools` static description of the **Audiobook Commute Calculator** and **Credit Value Calculator** into `#no-js-content` for all books, as well as Schema.org `AudioObject` metadata for all books with `audioPreviewUrl`. This ensures Googlebot and AI search crawlers recognize our interactive tools and audio samples on first pass.
 
 ### **2. Sitemap & Hub Integrity**
 - **Rule:** The sitemap `scripts/generate-sitemap.cjs` must exclude internal utility routes like `/generator/`, but MUST include all public hub pages (e.g., `/long-book-finder/`, `/links/`).

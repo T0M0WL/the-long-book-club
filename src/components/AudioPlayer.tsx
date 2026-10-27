@@ -2,9 +2,10 @@ import React, { useState, useRef } from 'react';
 
 interface AudioPlayerProps {
     src: string;
+    compact?: boolean;
 }
 
-const AudioPlayer: React.FC<AudioPlayerProps> = ({ src }) => {
+const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, compact = false }) => {
     const audioRef = useRef<HTMLAudioElement>(null);
     const [isPlaying, setIsPlaying] = useState(false);
     const [progress, setProgress] = useState(0);
@@ -75,10 +76,10 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src }) => {
             display: 'flex',
             alignItems: 'center',
             backgroundColor: 'var(--color-brand-coral)', // Coral background
-            padding: '6px 20px 6px 6px', // 6px padding on top, bottom, and left for snug fit
+            padding: compact ? '5px 14px 5px 5px' : '6px 20px 6px 6px', // Snug fit
             borderRadius: '50px',
-            gap: '15px',
-            marginBottom: '0.5rem',
+            gap: compact ? '10px' : '15px',
+            marginBottom: compact ? '0' : '0.5rem',
             width: '100%'
         }}>
             <audio 
@@ -93,9 +94,10 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src }) => {
             {/* Play/Pause Button */}
             <button 
                 onClick={togglePlay}
+                aria-label={isPlaying ? 'Pause audio sample' : 'Play audio sample'}
                 style={{
-                    width: '44px', // Slightly larger to match proportion
-                    height: '44px',
+                    width: compact ? '32px' : '44px',
+                    height: compact ? '32px' : '44px',
                     borderRadius: '50%',
                     backgroundColor: 'var(--color-brand-cloud)', // Cloud background
                     color: 'var(--color-brand-coral)', // Coral icon
@@ -112,29 +114,31 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src }) => {
             >
                 {isPlaying ? (
                     // Pause Icon
-                    <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width={compact ? "11" : "14"} height={compact ? "13" : "16"} viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="2" y="2" width="4" height="12" fill="currentColor"/>
                         <rect x="8" y="2" width="4" height="12" fill="currentColor"/>
                     </svg>
                 ) : (
                     // Play Icon
-                    <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginLeft: '2px' }}>
+                    <svg width={compact ? "11" : "14"} height={compact ? "13" : "16"} viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginLeft: '2px' }}>
                         <path d="M12.5 8L2 14.5L2 1.5L12.5 8Z" fill="currentColor"/>
                     </svg>
                 )}
             </button>
 
-            {/* Time Current */}
-            <span style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '0.9rem',
-                color: 'var(--color-brand-cloud)', // Cloud text
-                fontWeight: 600,
-                minWidth: '35px',
-                textAlign: 'right'
-            }}>
-                {currentTime}
-            </span>
+            {/* Time Current (Full mode only) */}
+            {!compact && (
+                <span style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '0.9rem',
+                    color: 'var(--color-brand-cloud)', // Cloud text
+                    fontWeight: 600,
+                    minWidth: '35px',
+                    textAlign: 'right'
+                }}>
+                    {currentTime}
+                </span>
+            )}
 
             {/* Progress Bar Container */}
             <div style={{
@@ -142,8 +146,8 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src }) => {
                 display: 'flex',
                 alignItems: 'center',
                 position: 'relative',
-                height: '4px',
-                backgroundColor: 'rgba(255, 255, 255, 0.3)', // Translucent white/cloud
+                height: compact ? '3px' : '4px',
+                backgroundColor: 'rgba(255, 255, 255, 0.35)', // Translucent white/cloud
                 borderRadius: '2px',
                 cursor: 'pointer'
             }}>
@@ -181,8 +185,8 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src }) => {
                     left: `${progress}%`,
                     top: '50%',
                     transform: 'translate(-50%, -50%)',
-                    width: '12px',
-                    height: '12px',
+                    width: compact ? '10px' : '12px',
+                    height: compact ? '10px' : '12px',
                     backgroundColor: 'var(--color-brand-cloud)', // Cloud knob
                     borderRadius: '50%',
                     pointerEvents: 'none',
@@ -193,13 +197,14 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src }) => {
 
             {/* Time Duration */}
             <span style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '0.9rem',
+                fontFamily: compact ? 'var(--font-serif-accent)' : 'var(--font-body)',
+                fontSize: compact ? '0.82rem' : '0.9rem',
                 color: 'var(--color-brand-cloud)', // Cloud text
-                fontWeight: 600,
-                minWidth: '35px'
+                fontWeight: compact ? 500 : 600,
+                minWidth: compact ? '28px' : '35px',
+                textAlign: 'right'
             }}>
-                {duration}
+                {compact ? (isPlaying ? currentTime : (duration !== '0:00' ? duration : '0:30')) : duration}
             </span>
         </div>
     );

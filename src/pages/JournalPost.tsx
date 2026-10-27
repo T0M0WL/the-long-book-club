@@ -8,6 +8,7 @@ import { FaInstagram, FaTiktok, FaYoutube } from 'react-icons/fa6';
 import { journalPosts } from '../data/journal';
 import { books } from '../data/books';
 import Breadcrumbs from '../components/Breadcrumbs';
+import { AudiblePromoBanner } from '../components/AudiblePromoBanner';
 
 export const JournalPost = () => {
     const { slug } = useParams();
@@ -292,6 +293,11 @@ export const JournalPost = () => {
                             <a href="https://www.youtube.com/@TheLongBookClub" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-brand-forrest)', fontSize: '1.5rem', transition: 'color 0.3s, transform 0.3s' }} onMouseEnter={e => { e.currentTarget.style.color = 'var(--color-brand-coral)'; e.currentTarget.style.transform = 'scale(1.1)'; }} onMouseLeave={e => { e.currentTarget.style.color = 'var(--color-brand-forrest)'; e.currentTarget.style.transform = 'scale(1)'; }}>
                                 <FaYoutube />
                             </a>
+                        </div>
+
+                        {/* Audible Special Offer Promo Banner */}
+                        <div style={{ marginBottom: '2rem', width: '100%' }}>
+                            <AudiblePromoBanner />
                         </div>
 
                         {/* Top Curve */}

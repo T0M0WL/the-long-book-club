@@ -44,6 +44,11 @@ export const cleanNarrators = (raw?: string): string[] => {
             }
         }
     }
+    // If 4 or more narrators are credited, this is an ensemble cast / full-cast dramatization.
+    // We treat it as a Full Cast ensemble rather than generating individual solo narrator hubs.
+    if (results.length >= 4) {
+        return [];
+    }
     return results;
 };
 

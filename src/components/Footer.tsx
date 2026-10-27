@@ -71,19 +71,19 @@ export const Footer: React.FC = () => {
                             textTransform: 'uppercase'
                         }}
                     >
-                        <a href="/collections/" style={{ color: 'var(--color-brand-cloud)', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={e => e.currentTarget.style.color = 'var(--color-brand-coral)'} onMouseLeave={e => e.currentTarget.style.color = 'var(--color-brand-cloud)'}>Collections</a>
+                        <a href="/collections/" style={{ color: 'var(--color-brand-cloud)', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={e => e.currentTarget.style.color = 'var(--color-brand-forrest)'} onMouseLeave={e => e.currentTarget.style.color = 'var(--color-brand-cloud)'}>Collections</a>
                         <span style={{ opacity: 0.4 }}>•</span>
-                        <a href="/authors/" style={{ color: 'var(--color-brand-cloud)', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={e => e.currentTarget.style.color = 'var(--color-brand-coral)'} onMouseLeave={e => e.currentTarget.style.color = 'var(--color-brand-cloud)'}>Authors</a>
+                        <a href="/authors/" style={{ color: 'var(--color-brand-cloud)', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={e => e.currentTarget.style.color = 'var(--color-brand-forrest)'} onMouseLeave={e => e.currentTarget.style.color = 'var(--color-brand-cloud)'}>Authors</a>
                         <span style={{ opacity: 0.4 }}>•</span>
-                        <a href="/narrators/" style={{ color: 'var(--color-brand-cloud)', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={e => e.currentTarget.style.color = 'var(--color-brand-coral)'} onMouseLeave={e => e.currentTarget.style.color = 'var(--color-brand-cloud)'}>Narrators</a>
+                        <a href="/narrators/" style={{ color: 'var(--color-brand-cloud)', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={e => e.currentTarget.style.color = 'var(--color-brand-forrest)'} onMouseLeave={e => e.currentTarget.style.color = 'var(--color-brand-cloud)'}>Narrators</a>
                         <span style={{ opacity: 0.4 }}>•</span>
-                        <a href="/long-book-finder/" style={{ color: 'var(--color-brand-cloud)', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={e => e.currentTarget.style.color = 'var(--color-brand-coral)'} onMouseLeave={e => e.currentTarget.style.color = 'var(--color-brand-cloud)'}>Finder</a>
+                        <a href="/long-book-finder/" style={{ color: 'var(--color-brand-cloud)', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={e => e.currentTarget.style.color = 'var(--color-brand-forrest)'} onMouseLeave={e => e.currentTarget.style.color = 'var(--color-brand-cloud)'}>Finder</a>
                         <span style={{ opacity: 0.4 }}>•</span>
-                        <a href="/journal/" style={{ color: 'var(--color-brand-cloud)', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={e => e.currentTarget.style.color = 'var(--color-brand-coral)'} onMouseLeave={e => e.currentTarget.style.color = 'var(--color-brand-cloud)'}>Journal</a>
+                        <a href="/journal/" style={{ color: 'var(--color-brand-cloud)', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={e => e.currentTarget.style.color = 'var(--color-brand-forrest)'} onMouseLeave={e => e.currentTarget.style.color = 'var(--color-brand-cloud)'}>Journal</a>
                     </nav>
 
                     <p style={{ marginBottom: '1.5rem', opacity: 0.9 }}>
-                        &copy; {new Date().getFullYear()} All rights reserved. | <a href="/privacy/" style={{ color: 'inherit', textDecoration: 'underline' }}>Privacy Policy</a>
+                        &copy; {new Date().getFullYear()} All rights reserved. | <a href="/privacy/" style={{ color: 'inherit', textDecoration: 'underline', transition: 'color 0.2s' }} onMouseEnter={e => e.currentTarget.style.color = 'var(--color-brand-forrest)'} onMouseLeave={e => e.currentTarget.style.color = 'inherit'}>Privacy Policy</a>
                     </p>
 
                     {/* Amazon Associates Disclosure */}

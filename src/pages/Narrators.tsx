@@ -1,11 +1,13 @@
+import React from 'react';
 import { books } from '../data/books';
 import { CreatorCard } from '../components/CreatorCard';
+import { LeaderboardPromoCard } from '../components/LeaderboardPromoCard';
 import { SEO } from '../components/SEO';
 import { Hero } from '../components/Hero';
 import { getNarratorStats } from '../utils/creatorUtils';
 import { useSetHeaderTheme } from '../context/HeaderContext';
 
-export const Narrators = () => {
+export const Narrators: React.FC = () => {
     useSetHeaderTheme({
         logoColor: 'var(--color-brand-cloud)',
         textColor: 'var(--color-brand-cloud)',
@@ -38,6 +40,28 @@ export const Narrators = () => {
         }
     });
 
+    // Interleave LeaderboardPromoCard at position 2 in top row and every 10 narrators down the directory
+    const gridItems: React.ReactNode[] = [];
+    let promoIndex = 0;
+
+    narrators.forEach((narrator, index) => {
+        // Position 2 in top row (between 1st and 2nd narrator)
+        if (index === 1) {
+            promoIndex++;
+            gridItems.push(<LeaderboardPromoCard key={`leaderboard-promo-${promoIndex}`} />);
+        }
+
+        gridItems.push(
+            <CreatorCard key={narrator.slug} creator={narrator} type="narrator" />
+        );
+
+        // Repeat every 10 narrators thereafter
+        if (index > 1 && (index - 1) % 10 === 0 && index < narrators.length - 1) {
+            promoIndex++;
+            gridItems.push(<LeaderboardPromoCard key={`leaderboard-promo-${promoIndex}`} />);
+        }
+    });
+
     return (
         <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
             <SEO
@@ -51,8 +75,10 @@ export const Narrators = () => {
                 title={<>Audiobook <br /> Narrators</>}
                 subtitle="Meet the voices who bring our longest listening journeys to life. Explore voice artists with two or more epic narrations featured in our curated library."
                 showCornerGraphics={false}
-                topGraphic="/assets/collections-hero-images/collections-graphic.svg"
-                topGraphicDimensions={{ width: '120px', height: '85px' }}
+                topGraphic="/assets/Narrator-hub-Graphics/mic-badge.svg"
+                topGraphicDimensions={{ width: '68px', height: '84px' }}
+                topGraphicFilter="brightness(0) invert(1)"
+                topGraphicBlendMode="overlay"
                 sectionHeight="auto"
                 sectionMinHeight="600px"
                 sectionPadding="11rem 1rem 8rem 1rem"
@@ -65,7 +91,6 @@ export const Narrators = () => {
                 contentBlendMode="overlay"
                 titleBlendMode="overlay"
                 subtitleBlendMode="overlay"
-                topGraphicBlendMode="normal"
                 chevronBlendMode="overlay"
                 overlayOpacity={0}
             />
@@ -74,9 +99,7 @@ export const Narrators = () => {
                 <div id="scroll-target" style={{ scrollMarginTop: '2rem', height: 0 }} />
 
                 <div className="collections-grid">
-                    {narrators.map(narrator => (
-                        <CreatorCard key={narrator.slug} creator={narrator} type="narrator" />
-                    ))}
+                    {gridItems}
                 </div>
             </div>
         </div>

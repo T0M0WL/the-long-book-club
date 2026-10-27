@@ -107,7 +107,7 @@ body {
   margin: 0 auto;
   padding: 0 2rem 2rem 2rem;
   width: 100%;
-  overflow-x: hidden; /* Prevent container-level slip */
+  overflow-x: clip; /* Prevent horizontal slip without forcing overflow-y to clip top tooltips */
 }
 
 button {
@@ -208,6 +208,18 @@ a:hover {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
+}
+
+/* Creator Card Book Titles Clamped strictly to 5 lines */
+.creator-card-titles {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 5 !important;
+  line-clamp: 5 !important;
+  -webkit-box-orient: vertical !important;
+  box-orient: vertical !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  max-height: calc(1.05rem * 1.68 * 5) !important;
 }
 
 @keyframes fadeIn {
@@ -479,4 +491,139 @@ a:hover {
     color: var(--color-bg) !important;
   }
 }
+
+/* Narrator Hub Dashboard & Awards */
+.narrator-dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  width: 100%;
+  margin: 0 auto 3.5rem auto;
+}
+
+@media (max-width: 1120px) {
+  .narrator-dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .narrator-dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.narrator-dashboard-card {
+  background-color: #eeefeb;
+  border-radius: 1.5rem;
+  padding: 1.85rem 1.35rem;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  min-inline-size: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .narrator-dashboard-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(44, 81, 67, 0.08);
+  }
+}
+
+.narrator-badge-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+}
+
+.narrator-badge-shield {
+  width: 98px;
+  height: auto;
+  /* Alpha-contour drop shadow with light from top-left (+X right, +Y down) */
+  filter: drop-shadow(3px 5px 5px rgba(25, 45, 38, 0.26));
+}
+
+.narrator-badge-tooltip {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  width: 230px;
+  background-color: var(--color-brand-forrest);
+  color: var(--color-brand-cloud);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 400;
+  line-height: 1.4;
+  padding: 0.65rem 0.85rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  z-index: 30;
+  text-align: center;
+}
+
+.narrator-badge-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: var(--color-brand-forrest) transparent transparent transparent;
+}
+
+.narrator-badge-item:hover .narrator-badge-tooltip,
+.narrator-badge-item:focus .narrator-badge-tooltip,
+.narrator-badge-item:focus-within .narrator-badge-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.narrator-hero-bio a {
+  color: var(--color-brand-forrest);
+  text-decoration: underline;
+  text-decoration-color: var(--color-brand-forrest);
+  text-underline-offset: 3px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.narrator-hero-bio a:hover {
+  color: var(--color-brand-coral);
+  text-decoration-color: var(--color-brand-coral);
+}
+
+.narrator-coral-pill {
+  background-color: var(--color-brand-coral);
+  color: #ffffff !important;
+  font-family: var(--font-serif-accent);
+  font-style: italic;
+  border-radius: 2rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  border: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .narrator-coral-pill:hover {
+    background-color: var(--color-primary-hover);
+    color: #ffffff !important;
+    transform: translateY(-2px);
+  }
+}
+
 

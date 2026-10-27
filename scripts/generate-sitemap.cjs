@@ -14,6 +14,14 @@ const staticRoutes = [
     { url: '/collections/', changefreq: 'weekly', priority: 0.9 },
     { url: '/authors/', changefreq: 'weekly', priority: 0.9 },
     { url: '/narrators/', changefreq: 'weekly', priority: 0.9 },
+    { url: '/narrators/leaderboard/', changefreq: 'weekly', priority: 0.9 },
+    { url: '/narrator-styles/fireside-warmth/', changefreq: 'weekly', priority: 0.8 },
+    { url: '/narrator-styles/historical-gravitas/', changefreq: 'weekly', priority: 0.8 },
+    { url: '/narrator-styles/propulsive-momentum/', changefreq: 'weekly', priority: 0.8 },
+    { url: '/narrator-styles/character-chameleon/', changefreq: 'weekly', priority: 0.8 },
+    { url: '/narrator-styles/dual-pov-synergy/', changefreq: 'weekly', priority: 0.8 },
+    { url: '/narrator-styles/satirical-bite/', changefreq: 'weekly', priority: 0.8 },
+    { url: '/narrator-styles/dialect-immersion/', changefreq: 'weekly', priority: 0.8 },
     { url: '/journal/', changefreq: 'weekly', priority: 0.9 },
     { url: '/long-book-finder/', changefreq: 'weekly', priority: 0.9 },
     { url: '/links/', changefreq: 'monthly', priority: 0.6 },
@@ -125,6 +133,7 @@ function generateSitemap() {
                     if (!results.includes(p)) results.push(p);
                 }
             }
+            if (results.length >= 4) return [];
             return results;
         };
 

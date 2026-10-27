@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import type { CreatorItem } from '../utils/creatorUtils';
+import {
+    narratorData,
+    NARRATOR_BADGES,
+    getHighestMarathonBadge,
+    type NarratorBadgeDef,
+    type NarratorStyleBadgeId
+} from '../data/narratorData';
 
 interface CreatorCardProps {
     creator: CreatorItem;
@@ -8,14 +15,47 @@ interface CreatorCardProps {
 }
 
 export const CreatorCard: React.FC<CreatorCardProps> = ({ creator, type }) => {
+    const [isHovered, setIsHovered] = useState(false);
     const linkPath = `/${type}/${creator.slug}/`;
-    const labelSingular = type === 'author' ? 'Audiobook' : 'Performance';
-    const labelPlural = type === 'author' ? 'Audiobooks' : 'Performances';
-    const countLabel = `${creator.bookCount} ${creator.bookCount === 1 ? labelSingular : labelPlural}`;
-    const hoursLabel = `Over ${Math.floor(creator.totalHours)} hrs`;
+    
+    // Singular / Plural badge copy
+    const labelSingular = type === 'author' ? 'AUDIOBOOK' : 'PERFORMANCE';
+    const labelPlural = type === 'author' ? 'AUDIOBOOKS' : 'PERFORMANCES';
+    const countBadge = `${creator.bookCount} ${creator.bookCount === 1 ? labelSingular : labelPlural}`;
+    const hoursBadge = `OVER ${Math.floor(creator.totalHours)} HRS`;
 
     // Preview up to 3 book covers
     const previewCovers = creator.books.slice(0, 3);
+
+    // Profile & badges (for narrators: marathon endurance honor + vocal style hallmarks)
+    const profile = type === 'narrator' ? narratorData[creator.slug] : undefined;
+    const styleBadgeDefs = profile?.styleBadges
+        ? (profile.styleBadges as NarratorStyleBadgeId[])
+              .map(id => NARRATOR_BADGES[id])
+              .filter(Boolean)
+        : [];
+    const marathonBadge = type === 'narrator' ? getHighestMarathonBadge(creator.totalHours) : null;
+    const narratorBadges: NarratorBadgeDef[] = marathonBadge
+        ? [...styleBadgeDefs, marathonBadge]
+        : styleBadgeDefs;
+
+    // Curated Landmark Titles in Lora Italic (Max 3 so cards stay scannable, elegant, and balanced)
+    let displayTitles: string[] = [];
+    if (creator.books.length <= 3) {
+        displayTitles = creator.books.map(b => b.title);
+    } else {
+        if (profile?.topBookSlugs && profile.topBookSlugs.length > 0) {
+            displayTitles = profile.topBookSlugs
+                .map(slug => creator.books.find(b => b.slug === slug)?.title)
+                .filter(Boolean) as string[];
+        }
+        if (displayTitles.length < 3) {
+            const remaining = creator.books.filter(b => !displayTitles.includes(b.title));
+            displayTitles = [...displayTitles, ...remaining.slice(0, 3 - displayTitles.length).map(b => b.title)];
+        }
+        displayTitles = displayTitles.slice(0, 3);
+    }
+    const remainingCount = creator.books.length - displayTitles.length;
 
     return (
         <Link
@@ -23,50 +63,54 @@ export const CreatorCard: React.FC<CreatorCardProps> = ({ creator, type }) => {
             style={{
                 textDecoration: 'none',
                 color: 'inherit',
-                display: 'block',
+                display: 'flex',
+                flexDirection: 'column',
                 height: '100%',
-                marginBottom: '2rem'
+                marginBottom: '2rem',
+                paddingTop: '45px', // Creates headroom for the books to overlap above the card rectangle
+                boxSizing: 'border-box'
             }}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
         >
             <div
                 style={{
-                    backgroundColor: '#f2f1e7',
+                    position: 'relative',
+                    backgroundColor: '#edeeea',
                     borderRadius: '1.25rem',
-                    overflow: 'hidden',
-                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.06)',
                     border: '1px solid rgba(44, 81, 67, 0.08)',
-                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                    height: '100%',
+                    transform: isHovered ? 'translateY(-6px)' : 'translateY(0)',
+                    transition: 'transform 0.3s ease',
+                    flex: 1,
                     display: 'flex',
-                    flexDirection: 'column'
-                }}
-                onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-6px)';
-                    e.currentTarget.style.boxShadow = '0 12px 30px rgba(44, 81, 67, 0.15)';
-                }}
-                onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'translateY(0)';
-                    e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.06)';
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    padding: '0 1.75rem 2.25rem 1.75rem'
                 }}
             >
-                {/* Visual Cover Header */}
-                <div style={{
-                    padding: '2rem 1.5rem 1rem 1.5rem',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    backgroundColor: 'rgba(44, 81, 67, 0.04)',
-                    borderBottom: '1px solid rgba(44, 81, 67, 0.06)',
-                    position: 'relative',
-                    minHeight: '150px'
-                }}>
-                    <div style={{
+                {/* Floating Fanned Covers Overlapping the Top Edge */}
+                <div
+                    style={{
+                        position: 'relative',
+                        marginTop: '-45px', // Pops the books 45px outside the top edge of the card
+                        height: '92px',
+                        width: '100%',
                         display: 'flex',
                         justifyContent: 'center',
                         alignItems: 'center',
-                        position: 'relative',
-                        height: '120px'
-                    }}>
+                        marginBottom: '1.75rem',
+                        zIndex: 3
+                    }}
+                >
+                    <div
+                        style={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            position: 'relative',
+                            height: '92px'
+                        }}
+                    >
                         {previewCovers.map((book, idx) => {
                             // Fan out effect if multiple covers
                             const offset = previewCovers.length === 1 ? 0 : (idx - (previewCovers.length - 1) / 2) * 28;
@@ -80,12 +124,12 @@ export const CreatorCard: React.FC<CreatorCardProps> = ({ creator, type }) => {
                                     alt={book.title}
                                     loading="lazy"
                                     style={{
-                                        width: '80px',
-                                        height: '80px',
+                                        width: '86px',
+                                        height: '86px',
                                         objectFit: 'cover',
                                         borderRadius: '0.5rem',
-                                        boxShadow: '0 4px 10px rgba(0,0,0,0.25)',
-                                        border: '2px solid #f2f1e7',
+                                        boxShadow: '0 8px 20px rgba(0,0,0,0.22)',
+                                        border: '2px solid #ffffff',
                                         transform: `translateX(${offset}px) rotate(${rotation}deg)`,
                                         zIndex,
                                         position: previewCovers.length > 1 ? 'absolute' : 'relative',
@@ -97,107 +141,199 @@ export const CreatorCard: React.FC<CreatorCardProps> = ({ creator, type }) => {
                     </div>
                 </div>
 
-                {/* Card Content */}
-                <div style={{
-                    padding: '1.75rem 1.75rem 2rem 1.75rem',
-                    flex: 1,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    textAlign: 'center'
-                }}>
-                    {/* Badges */}
-                    <div style={{
+                {/* Creator Name */}
+                <h2
+                    style={{
+                        fontSize: '1.65rem',
+                        fontFamily: 'var(--font-serif-accent)',
+                        color: '#2c5143',
+                        fontWeight: 500,
+                        lineHeight: 1.2,
+                        margin: '0 0 1.25rem 0',
+                        textAlign: 'center'
+                    }}
+                >
+                    {creator.name}
+                </h2>
+
+                {/* Subtle Divider Line */}
+                <div
+                    style={{
+                        width: '48px',
+                        height: '1.5px',
+                        backgroundColor: '#2c5143',
+                        margin: '0 auto 1.5rem auto',
+                        opacity: 0.35
+                    }}
+                />
+
+                {/* Dark Green Badges */}
+                <div
+                    style={{
                         display: 'flex',
-                        gap: '0.4rem',
+                        gap: '0.5rem',
                         flexWrap: 'wrap',
                         justifyContent: 'center',
-                        marginBottom: '1rem'
-                    }}>
-                        <span style={{
+                        marginBottom: narratorBadges.length > 0 ? '1.85rem' : '2.15rem'
+                    }}
+                >
+                    <span
+                        style={{
                             fontSize: '0.68rem',
                             fontWeight: 700,
                             letterSpacing: '0.04em',
                             textTransform: 'uppercase',
                             fontFamily: 'Inter, sans-serif',
-                            backgroundColor: 'var(--color-brand-forrest)',
-                            color: 'var(--color-brand-cloud)',
-                            padding: '0.25rem 0.65rem',
-                            borderRadius: '1rem'
-                        }}>
-                            {countLabel}
-                        </span>
-                        <span style={{
+                            backgroundColor: '#2c5143',
+                            color: '#ffffff',
+                            padding: '0.3rem 0.75rem',
+                            borderRadius: '9999px',
+                            lineHeight: 1.2
+                        }}
+                    >
+                        {countBadge}
+                    </span>
+                    <span
+                        style={{
                             fontSize: '0.68rem',
                             fontWeight: 700,
                             letterSpacing: '0.04em',
                             textTransform: 'uppercase',
                             fontFamily: 'Inter, sans-serif',
-                            backgroundColor: 'rgba(44, 81, 67, 0.1)',
-                            color: 'var(--color-brand-forrest)',
-                            padding: '0.25rem 0.65rem',
-                            borderRadius: '1rem'
-                        }}>
-                            {hoursLabel}
-                        </span>
+                            backgroundColor: '#2c5143',
+                            color: '#ffffff',
+                            padding: '0.3rem 0.75rem',
+                            borderRadius: '9999px',
+                            lineHeight: 1.2
+                        }}
+                    >
+                        {hoursBadge}
+                    </span>
+                </div>
+
+                {/* Vocal & Marathon Badges Row (For Narrators - Enlarged Shields, No Background, 2-Line Labels) */}
+                {narratorBadges.length > 0 && (
+                    <div
+                        style={{
+                            display: 'flex',
+                            gap: '0.4rem',
+                            justifyContent: 'center',
+                            alignItems: 'flex-start',
+                            marginBottom: '1.85rem'
+                        }}
+                    >
+                        {narratorBadges.map(badge => {
+                            const lines = (badge.labelLines && badge.labelLines.length > 0)
+                                ? badge.labelLines
+                                : badge.name.split(' ');
+
+                            return (
+                                <div
+                                    key={badge.id}
+                                    style={{
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                        textAlign: 'center',
+                                        width: '66px'
+                                    }}
+                                >
+                                    <img
+                                        src={badge.imageUrl}
+                                        alt={badge.name}
+                                        style={{
+                                            width: '62px',
+                                            height: 'auto',
+                                            marginBottom: '0.4rem',
+                                            filter: 'drop-shadow(0 4px 8px rgba(25, 45, 38, 0.22))'
+                                        }}
+                                    />
+                                    <div
+                                        style={{
+                                            fontSize: '0.7rem',
+                                            fontWeight: 600,
+                                            color: '#2c5143',
+                                            lineHeight: 1.18,
+                                            fontFamily: 'Inter, sans-serif',
+                                            textAlign: 'center'
+                                        }}
+                                    >
+                                        {lines.map((line, lIdx) => (
+                                            <span key={lIdx} style={{ display: 'block' }}>
+                                                {line}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            );
+                        })}
                     </div>
+                )}
 
-                    {/* Creator Name */}
-                    <h2 style={{
-                        fontSize: '1.75rem',
-                        fontFamily: 'var(--font-serif-accent)',
-                        color: 'var(--color-brand-forrest)',
-                        fontWeight: 400,
-                        lineHeight: 1.15,
-                        marginBottom: '0.75rem'
-                    }}>
-                        {creator.name}
-                    </h2>
-
-                    {/* Subtle divider */}
-                    <div style={{
-                        width: '40px',
-                        height: '1px',
-                        backgroundColor: 'var(--color-brand-forrest)',
-                        margin: '0.5rem auto 1rem auto',
-                        opacity: 0.3
-                    }} />
-
-                    {/* Notable titles */}
-                    <p style={{
-                        fontSize: '0.9rem',
-                        color: 'var(--color-text-muted)',
-                        fontFamily: 'var(--font-body)',
-                        lineHeight: 1.45,
-                        marginBottom: '1.75rem',
+                {/* Notable Titles in Lora Italic (Curated Landmarks) */}
+                <div
+                    style={{
                         flex: 1,
-                        display: '-webkit-box',
-                        WebkitLineClamp: 2,
-                        WebkitBoxOrient: 'vertical',
-                        overflow: 'hidden'
-                    }}>
-                        {creator.books.map(b => b.title).join(' • ')}
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        justifyContent: 'flex-start',
+                        width: '100%',
+                        padding: '0 0.85rem',
+                        marginBottom: '1.85rem'
+                    }}
+                >
+                    <p
+                        className="creator-card-titles"
+                        style={{
+                            fontSize: '1.05rem',
+                            fontFamily: 'Lora, Georgia, serif',
+                            fontStyle: 'italic',
+                            color: '#2c5143',
+                            opacity: 0.85,
+                            lineHeight: 1.68,
+                            textAlign: 'center',
+                            margin: 0
+                        }}
+                    >
+                        {displayTitles.join(' • ')}
                     </p>
+                    {remainingCount > 0 && (
+                        <span
+                            style={{
+                                fontSize: '0.85rem',
+                                fontFamily: 'Lora, Georgia, serif',
+                                fontStyle: 'italic',
+                                color: '#2c5143',
+                                opacity: 0.6,
+                                marginTop: '0.5rem'
+                            }}
+                        >
+                            + {remainingCount} more in catalog
+                        </span>
+                    )}
+                </div>
 
-                    {/* Button */}
-                    <div style={{
-                        backgroundColor: 'var(--color-brand-coral)',
-                        color: 'white',
-                        padding: '0.65rem 1.6rem',
-                        borderRadius: '50px',
-                        fontSize: '0.85rem',
-                        fontWeight: 700,
-                        fontFamily: 'Inter, sans-serif',
-                        letterSpacing: '0.04em',
-                        textTransform: 'uppercase',
-                        boxShadow: '0 2px 6px rgba(237, 131, 94, 0.3)',
-                        transition: 'background-color 0.2s ease, transform 0.2s ease',
+                {/* Coral Pill Button with Lora Italic Text */}
+                <div
+                    style={{
+                        backgroundColor: isHovered ? '#e65e40' : '#fa7052',
+                        color: '#ffffff',
+                        padding: '0.65rem 1.85rem',
+                        borderRadius: '9999px',
+                        fontSize: '1.05rem',
+                        fontFamily: 'Lora, Georgia, serif',
+                        fontStyle: 'italic',
+                        fontWeight: 500,
+                        boxShadow: '0 2px 8px rgba(250, 112, 82, 0.25)',
                         display: 'inline-flex',
                         alignItems: 'center',
-                        gap: '0.4rem'
-                    }}>
-                        Explore Hub <span>→</span>
-                    </div>
+                        gap: '0.45rem',
+                        marginTop: 'auto',
+                        transition: 'background-color 0.2s ease, transform 0.2s ease'
+                    }}
+                >
+                    Explore Hub <span style={{ fontStyle: 'normal' }}>→</span>
                 </div>
             </div>
         </Link>

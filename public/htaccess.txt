@@ -875,6 +875,46 @@ Redirect 301 /book/442 /book/priest-of-crowns-peter-mclean/
 Redirect 301 /book/442/ /book/priest-of-crowns-peter-mclean/
 Redirect 301 /book/443 /book/paved-with-good-intentions-peter-mclean/
 Redirect 301 /book/443/ /book/paved-with-good-intentions-peter-mclean/
+Redirect 301 /book/444 /book/the-romanovs-1613-1918-simon-sebag-montefiore/
+Redirect 301 /book/444/ /book/the-romanovs-1613-1918-simon-sebag-montefiore/
+Redirect 301 /book/445 /book/quicksilver-neal-stephenson/
+Redirect 301 /book/445/ /book/quicksilver-neal-stephenson/
+Redirect 301 /book/446 /book/in-the-lives-of-puppets-tj-klune/
+Redirect 301 /book/446/ /book/in-the-lives-of-puppets-tj-klune/
+Redirect 301 /book/447 /book/the-winter-king-bernard-cornwell/
+Redirect 301 /book/447/ /book/the-winter-king-bernard-cornwell/
+Redirect 301 /book/448 /book/the-bully-pulpit-doris-kearns-goodwin/
+Redirect 301 /book/448/ /book/the-bully-pulpit-doris-kearns-goodwin/
+Redirect 301 /book/449 /book/the-history-of-the-peloponnesian-war-thucydides/
+Redirect 301 /book/449/ /book/the-history-of-the-peloponnesian-war-thucydides/
+Redirect 301 /book/450 /book/monster-hunter-international-larry-correia/
+Redirect 301 /book/450/ /book/monster-hunter-international-larry-correia/
+Redirect 301 /book/451 /book/the-space-between-worlds-micaiah-johnson/
+Redirect 301 /book/451/ /book/the-space-between-worlds-micaiah-johnson/
+Redirect 301 /book/452 /book/flash-boys-michael-lewis/
+Redirect 301 /book/452/ /book/flash-boys-michael-lewis/
+Redirect 301 /book/453 /book/the-three-musketeers-alexandre-dumas/
+Redirect 301 /book/453/ /book/the-three-musketeers-alexandre-dumas/
+Redirect 301 /book/454 /book/the-grace-of-kings-ken-liu/
+Redirect 301 /book/454/ /book/the-grace-of-kings-ken-liu/
+Redirect 301 /book/455 /book/the-wall-of-storms-ken-liu/
+Redirect 301 /book/455/ /book/the-wall-of-storms-ken-liu/
+Redirect 301 /book/456 /book/the-veiled-throne-ken-liu/
+Redirect 301 /book/456/ /book/the-veiled-throne-ken-liu/
+Redirect 301 /book/457 /book/speaking-bones-ken-liu/
+Redirect 301 /book/457/ /book/speaking-bones-ken-liu/
+Redirect 301 /book/458 /book/the-shadow-of-what-was-lost-james-islington/
+Redirect 301 /book/458/ /book/the-shadow-of-what-was-lost-james-islington/
+Redirect 301 /book/459 /book/an-echo-of-things-to-come-james-islington/
+Redirect 301 /book/459/ /book/an-echo-of-things-to-come-james-islington/
+Redirect 301 /book/460 /book/the-light-of-all-that-falls-james-islington/
+Redirect 301 /book/460/ /book/the-light-of-all-that-falls-james-islington/
+Redirect 301 /book/461 /book/arcanum-unbounded-the-cosmere-collection-brandon-sanderson/
+Redirect 301 /book/461/ /book/arcanum-unbounded-the-cosmere-collection-brandon-sanderson/
+Redirect 301 /book/462 /book/edens-rise-the-empire-under-the-mountains-oe-bruening/
+Redirect 301 /book/462/ /book/edens-rise-the-empire-under-the-mountains-oe-bruening/
+Redirect 301 /book/463 /book/a-history-of-fascism-1914-1945-stanley-g-payne/
+Redirect 301 /book/463/ /book/a-history-of-fascism-1914-1945-stanley-g-payne/
 
   
   # --- Book Alias Redirects (Manual) ---

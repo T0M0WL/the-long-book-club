@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { useParams, Link, useLocation, Navigate } from 'react-router-dom';
 import { books } from '../data/books';
 import { getRoundedHours } from '../utils/formatLength';
@@ -14,28 +13,9 @@ import SoundCheckCard from '../components/SoundCheckCard';
 import Breadcrumbs from '../components/Breadcrumbs';
 import AudiobookCommuteCalculator from '../components/AudiobookCommuteCalculator';
 import AudiobookValueCalculator from '../components/AudiobookValueCalculator';
+import { AudiblePromoBanner } from '../components/AudiblePromoBanner';
 
 export const BookDetails = () => {
-    const [promoPrice, setPromoPrice] = useState('99p');
-
-    useEffect(() => {
-        try {
-            const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
-            if (tz.startsWith('America/') || tz.startsWith('US/')) {
-                setPromoPrice('$0.99');
-            } else if (tz === 'Europe/London' || tz === 'Europe/Belfast') {
-                setPromoPrice('99p');
-            } else if (tz.startsWith('Europe/')) {
-                setPromoPrice('€0.99');
-            } else if (tz.startsWith('Canada/') || tz.startsWith('Australia/')) {
-                setPromoPrice('$0.99');
-            } else {
-                setPromoPrice('99p / $0.99');
-            }
-        } catch {
-            setPromoPrice('99p / $0.99');
-        }
-    }, []);
     useSetHeaderTheme({
         logoColor: 'var(--color-brand-coral)',
         textColor: 'var(--color-brand-coral)',
@@ -195,7 +175,7 @@ export const BookDetails = () => {
                     </div>
 
                     {/* CTAs Moved Here */}
-                    <div className="audible-cta-container" style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', width: '100%', marginTop: '4rem' }}>
+                    <div className="audible-cta-container" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', width: '100%', marginTop: '4rem' }}>
                         <div className="audible-buttons-wrapper" style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', width: '100%' }}>
                             {book.affiliateLink && (
                                 <a
@@ -260,62 +240,14 @@ export const BookDetails = () => {
                             ))}
                         </div>
 
-                        {/* Dynamic Regional Promo Box (Clickable CTA) */}
+                        {/* Audible Special Offer Promo Banner */}
                         {book.affiliateLink && (
-                            <a
-                                href={book.affiliateLink}
-                                target="_blank"
-                                rel="noopener noreferrer nofollow"
-                                className="audible-promo-box"
-                                style={{
-                                    marginTop: '0.65rem',
-                                    padding: '0.65rem 0.85rem',
-                                    backgroundColor: 'rgba(235, 104, 76, 0.08)',
-                                    borderRadius: '0.75rem',
-                                    border: '1px solid rgba(235, 104, 76, 0.22)',
-                                    textAlign: 'center',
-                                    width: '100%',
-                                    boxSizing: 'border-box',
-                                    display: 'block',
-                                    textDecoration: 'none',
-                                    transition: 'background-color 0.2s, border-color 0.2s',
-                                    cursor: 'pointer'
-                                }}
-                                onMouseEnter={e => {
-                                    e.currentTarget.style.backgroundColor = 'rgba(235, 104, 76, 0.14)';
-                                    e.currentTarget.style.borderColor = 'rgba(235, 104, 76, 0.38)';
-                                }}
-                                onMouseLeave={e => {
-                                    e.currentTarget.style.backgroundColor = 'rgba(235, 104, 76, 0.08)';
-                                    e.currentTarget.style.borderColor = 'rgba(235, 104, 76, 0.22)';
-                                }}
-                            >
-                                <p className="promo-title" style={{
-                                    margin: 0,
-                                    fontSize: '0.85rem',
-                                    color: 'var(--color-brand-coral)',
-                                    fontWeight: 700,
-                                    fontFamily: 'var(--font-body)',
-                                    lineHeight: 1.35
-                                }}>
-                                    ✨ Special Offer: 3 Months for {promoPrice}/mo →
-                                </p>
-                                <p className="promo-sub" style={{
-                                    margin: '0.25rem 0 0 0',
-                                    fontSize: '0.72rem',
-                                    color: 'var(--color-brand-forrest)',
-                                    opacity: 0.85,
-                                    fontFamily: 'var(--font-body)',
-                                    lineHeight: 1.3
-                                }}>
-                                    Limited-time subscription deal · Free trial also available
-                                </p>
-                            </a>
+                            <AudiblePromoBanner affiliateLink={book.affiliateLink} />
                         )}
                     </div>
 
                     {/* Audiobook Commute Calculator Widget */}
-                    <div style={{ marginTop: '2rem', width: '100%' }}>
+                    <div style={{ marginTop: book.affiliateLink ? '1rem' : '2rem', width: '100%' }}>
                         <AudiobookCommuteCalculator initialBookLength={book.length} />
                     </div>
 

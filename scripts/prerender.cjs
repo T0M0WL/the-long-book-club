@@ -200,6 +200,7 @@ async function prerender() {
             const teaserTitle = extractField(cleanBlock, 'teaserTitle');
             const teaser = extractField(cleanBlock, 'teaser');
             const cardOverview = extractField(cleanBlock, 'cardOverview');
+            const audioPreviewUrl = extractField(cleanBlock, 'audioPreviewUrl');
 
             let graphicAudioParts = [];
             const gaMatch = cleanBlock.match(/graphicAudioParts:\s*(\[\s*\{[\s\S]*?\}\s*\])(?=\s*,\s*relatedBookIds)/);
@@ -231,14 +232,15 @@ async function prerender() {
                 teaserTitle,
                 teaser,
                 cardOverview,
-                graphicAudioParts
+                graphicAudioParts,
+                audioPreviewUrl
             });
         }
     }
 
     let bookCount = 0;
     for (const book of allBooks) {
-        const { slug, title, author, description: bookDesc, coverUrl, narrator: bookNarrator, length, genres, affiliateLink, affiliateLinkUS, graphicAudioParts } = book;
+        const { slug, title, author, description: bookDesc, coverUrl, narrator: bookNarrator, length, genres, affiliateLink, affiliateLinkUS, graphicAudioParts, audioPreviewUrl } = book;
         const genreRaw = genres.join(', ');
 
         const review = reviewsMap.get(title);
@@ -287,6 +289,10 @@ async function prerender() {
                     </ul>
                 </div>
                 ` : ''}
+                <div class="interactive-listening-tools" style="background: #fafaf6; padding: 15px; border-radius: 8px; margin-top: 20px; border: 1px solid #e2dec9;">
+                    <h3 style="margin-top: 0; color: #2c5143;">Interactive Listening Tools</h3>
+                    <p style="margin-bottom: 0;">This page features our interactive <strong>Audiobook Commute Calculator</strong> (calculating commute weeks based on daily travel time) and <strong>Credit Value Calculator</strong> (cost-per-hour credit breakdown for ${escapeHtml(length)} of audio), alongside verified narrator soundchecks${audioPreviewUrl ? ' and audio sample previews' : ''}.</p>
+                </div>
             </div>
         `;
 
@@ -332,6 +338,14 @@ async function prerender() {
         const duration = convertLengthToIso8601(length);
         if (duration) jsonLd.duration = duration;
         if (offers.length > 0) jsonLd.offers = offers;
+        if (audioPreviewUrl) {
+            jsonLd.audio = {
+                "@type": "AudioObject",
+                "name": `${title} (Narrator Audio Sample)`,
+                "contentUrl": audioPreviewUrl,
+                "encodingFormat": "audio/mp4"
+            };
+        }
 
         if (review) {
             jsonLd.review = {
@@ -516,6 +530,7 @@ async function prerender() {
                 if (!results.includes(p)) results.push(p);
             }
         }
+        if (results.length >= 4) return [];
         return results;
     };
 
@@ -575,6 +590,14 @@ async function prerender() {
         { slug: 'collections', title: 'Curated Collections | The Long Book Club', desc: 'Explore hand-picked lists of the best long-form audiobooks, from Epic Fantasy to Non-Fiction Titans.' },
         { slug: 'authors', title: 'Audiobook Authors | The Long Book Club', desc: 'Explore our directory of epic audiobook authors with 2 or more 20+ hour audiobooks in our curated catalog.' },
         { slug: 'narrators', title: 'Audiobook Narrators | The Long Book Club', desc: 'Meet the legendary voice artists who bring our longest audiobooks to life. Explore narrators with 2 or more epic performances in our catalog.' },
+        { slug: 'narrators/leaderboard', title: 'Audiobook Narrators Leaderboard: Ranked by Marathon Hours | The Long Book Club', desc: 'Explore all 66 qualifying audiobook narrators ranked by continuous listening runtime. Celebrating 9,700+ hours of masterclass audio storytelling.' },
+        { slug: 'narrator-styles/fireside-warmth', title: 'Fireside Warmth: Comforting & Cozy Audiobook Narrators | The Long Book Club', desc: 'Discover the warmest, most comforting audiobook narrators in long-form literature. Explore epic audiobooks narrated with intimate fireside warmth.' },
+        { slug: 'narrator-styles/historical-gravitas', title: 'Historical Gravitas: Epic & Authoritative Audiobook Narrators | The Long Book Club', desc: 'Explore the most authoritative, classically commanding voice actors in historical fiction, feudal fantasy, and timeless literary epics.' },
+        { slug: 'narrator-styles/propulsive-momentum', title: 'Propulsive Momentum: High-Energy & Action Audiobook Narrators | The Long Book Club', desc: 'Find high-octane, breathless audiobooks driven by relentless narrative momentum. Discover voice artists who command massive action and sci-fi epics.' },
+        { slug: 'narrator-styles/character-chameleon', title: 'Character Chameleon: Multi-Voice Ensemble Audiobook Narrators | The Long Book Club', desc: 'Meet the greatest vocal chameleons in audiobook narration. Voice artists who inhabit dozens of distinct accents, ages, and creatures in a single epic.' },
+        { slug: 'narrator-styles/dual-pov-synergy', title: 'Dual-POV Energy: Best Multi-Narrator Fantasy & Romance Audiobooks | The Long Book Club', desc: 'Explore sensationally popular dual-narrated audiobooks featuring sizzling romantic tension, alternating chapters, and powerhouse vocal duos.' },
+        { slug: 'narrator-styles/satirical-bite', title: 'Satirical Bite: Witty, Dry & Comedic Audiobook Narrators | The Long Book Club', desc: 'Experience dry British wit, sardonic irony, and comedic audiobooks narrated by masters of deadpan delivery and razor-sharp satire.' },
+        { slug: 'narrator-styles/dialect-immersion', title: 'Dialect Immersion: Authentic Regional & International Audiobook Accents | The Long Book Club', desc: 'Discover audiobook narrators renowned for authentic regional dialects, cultural fidelity, and linguistics across massive world-spanning casts.' },
         { slug: 'journal', title: 'The Long Book Club Journal', desc: 'Latest insights, guides, and strategic listening tips for long-form audiobook fans.' },
         { slug: 'links', title: 'Social Hub | The Long Book Club', desc: 'Quick links to our latest social campaigns, book finder tool, and curated collections.' }
     ];
@@ -741,12 +764,48 @@ async function prerender() {
     });
     console.log(`✅ Prerendered ${authorCount} "Thick" author pages.`);
 
-    // --- Narrator Detail Prerendering (Enriched) ---
+    // --- Narrator Detail Prerendering (Enriched with Dashboard & Hallmarks) ---
+    const NARRATOR_DATA_FILE = path.join(__dirname, '../src/data/narratorData.ts');
+    const narratorDataContent = fs.existsSync(NARRATOR_DATA_FILE) ? fs.readFileSync(NARRATOR_DATA_FILE, 'utf-8') : '';
+    const narratorProfilesMap = new Map();
+    if (narratorDataContent) {
+        const nBlocks = narratorDataContent.split(/\n    '([a-z0-9-]+)':\s*\{/g);
+        for (let i = 1; i < nBlocks.length; i += 2) {
+            const nSlug = nBlocks[i];
+            const nBody = nBlocks[i + 1] || '';
+            const heroBioRaw = extractField(nBody, 'heroBio', false);
+            const heroBioPlain = extractField(nBody, 'heroBio', true)?.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1');
+            const vocalSummary = extractField(nBody, 'vocalHallmarksSummary', true);
+            const referenceUrl = extractField(nBody, 'referenceUrl', true);
+            const quoteText = extractField(nBody, 'quote', true);
+            const quoteBookTitle = extractField(nBody, 'bookTitle', true);
+            const quoteBookSlug = extractField(nBody, 'bookSlug', true);
+            const kwMatch = nBody.match(/vocalHallmarksKeywords:\s*\[([\s\S]*?)\]/);
+            const vocalKeywords = kwMatch
+                ? kwMatch[1].replace(/['"\n\r]/g, '').split(',').map(s => s.trim()).filter(Boolean)
+                : [];
+            narratorProfilesMap.set(nSlug, {
+                heroBioRaw,
+                heroBioPlain,
+                vocalSummary,
+                vocalKeywords,
+                referenceUrl,
+                quoteText,
+                quoteBookTitle,
+                quoteBookSlug
+            });
+        }
+    }
+
     let narratorCount = 0;
     sortedNarrators.forEach((narrator) => {
         const slug = narrator.slug;
+        const prof = narratorProfilesMap.get(slug);
+        const roundedHours = Math.floor(narrator.totalHours);
         const metaTitle = `${narrator.name} Long Audiobooks & Narrations | The Long Book Club`;
-        const metaDesc = `Explore epic audiobooks narrated by ${narrator.name}. Discover ${narrator.books.length} immersive long listens totaling over ${Math.floor(narrator.totalHours)} hours of voice narration with verified soundchecks.`;
+        const metaDesc = prof?.heroBioPlain
+            ? `${prof.heroBioPlain} Explore ${narrator.books.length} epic audiobooks narrated by ${narrator.name} totaling over ${roundedHours} hours.`
+            : `Explore epic audiobooks narrated by ${narrator.name}. Discover ${narrator.books.length} immersive long listens totaling over ${roundedHours} hours of voice narration with verified soundchecks.`;
 
         let booksListHtml = '<ul>';
         for (const b of narrator.books) {
@@ -759,11 +818,31 @@ async function prerender() {
         }
         booksListHtml += '</ul>';
 
+        const heroBioHtml = prof?.heroBioRaw
+            ? formatRichTextHtml(prof.heroBioRaw)
+            : `<p>Masterful voice performances by ${escapeHtml(narrator.name)}. Experience marathon listening journeys brought to life with world-class vocal pacing, distinct character voices, and stamina.</p>`;
+
+        const longestBook = narrator.books[0];
+        const longestHtml = longestBook
+            ? `<p><strong>Longest Continuous Performance:</strong> <a href="/book/${longestBook.slug}/">${escapeHtml(longestBook.title)}</a> by ${escapeHtml(longestBook.author)} (${escapeHtml(longestBook.length)})</p>`
+            : '';
+
+        const hallmarksHtml = prof?.vocalSummary
+            ? `<section><h2>Vocal Hallmarks: ${escapeHtml(prof.vocalKeywords.join(' '))}</h2><p>${escapeHtml(prof.vocalSummary)}</p></section>`
+            : '';
+
+        const archiveQuoteHtml = prof?.quoteText && prof?.quoteBookSlug
+            ? `<blockquote>"${escapeHtml(prof.quoteText)}" — From <a href="/book/${prof.quoteBookSlug}/">${escapeHtml(prof.quoteBookTitle || '')}</a></blockquote>`
+            : '';
+
         const bodyContent = `
             <div id="no-js-content" style="max-width: 800px; margin: 0 auto; padding: 20px; font-family: sans-serif;">
                 <h1>${escapeHtml(narrator.name)} Long Audiobooks & Narrations</h1>
-                <p><strong>${narrator.books.length} Epic Performances • Over ${Math.floor(narrator.totalHours)} Hours of Narration</strong></p>
-                <p>Masterful voice performances by ${escapeHtml(narrator.name)}. Experience marathon listening journeys brought to life with world-class vocal pacing, distinct character voices, and stamina.</p>
+                <p><strong>${narrator.books.length} Epic Performances • Over ${roundedHours} Hours of Narration</strong></p>
+                ${heroBioHtml}
+                ${longestHtml}
+                ${hallmarksHtml}
+                ${archiveQuoteHtml}
                 <hr />
                 <h2>Epic Audiobooks Narrated by ${escapeHtml(narrator.name)}</h2>
                 ${booksListHtml}
@@ -781,7 +860,9 @@ async function prerender() {
             url: absoluteUrl,
             about: {
                 '@type': 'Person',
-                name: narrator.name
+                name: narrator.name,
+                ...(prof?.heroBioPlain ? { description: `${prof.heroBioPlain} ${prof.vocalSummary || ''}`.trim() } : {}),
+                ...(prof?.referenceUrl ? { sameAs: [prof.referenceUrl] } : {})
             },
             mainEntity: {
                 '@type': 'ItemList',

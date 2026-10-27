@@ -249,5 +249,10 @@ export const genreData: GenreMeta[] = [
         "genre": "Romantasy",
         "metaTitle": "Best Long Romantasy Audiobooks (20+ Hours) | The Long Book Club",
         "intro": "High stakes, dangerous magic, and scorching romantic tension. Dive into the finest, most immersive long romantasy audiobooks with slow-burn chemistry and sprawling world-building."
+    },
+    {
+        "genre": "Silkpunk",
+        "metaTitle": "Best Long Silkpunk Audiobooks (20+ Hours) | The Long Book Club",
+        "intro": "East Asian historical traditions meet ingenious organic engineering. Explore the best long silkpunk audiobooks featuring airships, battle kites, and philosophical rebellion across sweeping island empires."
     }
 ];
