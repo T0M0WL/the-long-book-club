@@ -12,6 +12,14 @@ This skill governs how Antigravity (and any spawned `research` or `self` sub-age
 
 ---
 
+## 🎯 The Core Editorial Philosophy: Subgenre Discovery & The Curation Moat
+
+- **Tastemaker Over Database:** Audible's native "sort by length" is famously flooded with public-domain dumps, AI audio, and filler. We do not compete as a crude length filter; we compete as **the premier curated magazine for immersive audiobooks**.
+- **The 10+ Hour Rule:** All featured audiobooks must be **10+ hours** (ensuring high return on a single Audible credit or token), but our true differentiator is **Editorial Taste, Subgenre Discovery, and Narrator Soundchecks**.
+- **Weekly Release Cadence:** The site targets publishing **one new curated subgenre collection / trending niche spotlight every week** (e.g. Silkpunk, Grimdark, Romantasy, Cozy Fantasy, LitRPG) with accompanying Journal deep-dives, establishing TLBC as the definitive tastemaker for audio trends.
+
+---
+
 ## 1. Reference Files in This Workspace
 
 Before drafting or integrating new content, consult:

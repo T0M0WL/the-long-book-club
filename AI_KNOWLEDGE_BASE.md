@@ -4,6 +4,19 @@ This file is the "Eternal Memory" for the project. **Any AI assistant working on
 
 ---
 
+## 🎯 Core Brand Mission & Positioning (The Curation Moat)
+
+- **The Problem We Solve:** Audible's native "sort by length" feature is notoriously broken—it buries listeners under 280-hour public domain dumps, Bible recordings, sleep tracks, and uncurated AI bloat, while offering zero subgenre fidelity or vocal quality assessments.
+- **Our True Identity:** The Long Book Club is **NOT** a raw database filter. We are **The Curated Tastemaker & Magazine for Immersive Audiobooks**.
+- **The 10+ Hour Rule:** Every book featured must be **at least 10+ hours** (ensuring high return on a single Audible credit or subscription token). However, length is merely the *qualifier*; our true product is **Editorial Taste, Subgenre Discovery, and Narrator Soundchecks**.
+- **The Moat:**
+  1. **Emerging & Niche Subgenre Leadership:** We champion fast-rising and underserved niches (Silkpunk, Progression Fantasy/LitRPG, Grimdark, Cozy Fantasy, Dark Academia, Nordic Noir) that traditional publishers and Audible's generic categories ignore.
+  2. **Narrator Soundchecks & Vocal Badges:** The web's only dedicated performance evaluations assessing narrator stamina, vocal styles, and audio production over 10–60+ hour marathons.
+  3. **Zero-Fluff Curation:** Every title in our catalog is hand-selected and verified for gripping pacing, deep world-building, and artistic immersion.
+- **Content Rhythm (Weekly Cadence):** The site publishes **one new curated collection / trending niche spotlight every week** alongside accompanying Journal deep-dives, establishing TLBC as the definitive, living index of modern audio trends.
+
+---
+
 ## 🚀 Deployment & Hostinger Workflow (CRITICAL)
 
 ### **1. Automated GitHub-to-Hostinger Deployment (`main` + `deploy` Branches)**

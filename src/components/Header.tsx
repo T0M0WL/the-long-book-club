@@ -70,7 +70,7 @@ export const Header = () => {
                 <nav className="desktop-nav" style={{
                     justifySelf: 'center',
                     display: 'none', // Hidden by default (mobile), shown via media query
-                    gap: '1rem',
+                    gap: '0.75rem',
                     alignItems: 'center',
                     pointerEvents: isMenuOpen ? 'none' : 'auto', // Disable clicks when menu open
                     opacity: isMenuOpen ? 0 : 1, // Hide when menu open
@@ -79,6 +79,7 @@ export const Header = () => {
                     {[
                         { id: 'finder', label: 'Long Book Finder', path: '/long-book-finder/' },
                         { id: 'collections', label: 'Collections', path: '/collections/' },
+                        { id: 'narrators', label: 'Narrators', path: '/narrators/' },
                         { id: 'journal', label: 'Journal', path: '/journal/' }
                     ].map(link => {
                         const isActive = theme.activeLink === link.id;
@@ -88,14 +89,14 @@ export const Header = () => {
                                 to={link.path}
                                 className="nav-text-hover"
                                 style={{
-                                    fontFamily: 'Lora, serif', // Spec: Lora
-                                    fontSize: '1.375rem', // Increased by 25% (was 1.1rem)
+                                    fontFamily: 'Lora, serif',
+                                    fontSize: 'clamp(1.1rem, 1.25vw, 1.25rem)',
                                     color: isActive ? theme.activeLinkText : theme.textColor,
                                     textDecoration: 'none',
-                                    padding: '0.5rem 1.5rem',
+                                    padding: '0.45rem 1.25rem',
                                     borderRadius: '50px', // Lozenge shape
                                     backgroundColor: isActive ? theme.activeLinkBg : 'transparent',
-                                    transition: 'background-color 0.3s ease, color 0.3s ease', // Specific transitions to allow class to handle transform
+                                    transition: 'background-color 0.3s ease, color 0.3s ease',
                                     fontWeight: isActive ? 600 : 400,
                                     whiteSpace: 'nowrap'
                                 }}
@@ -199,86 +200,411 @@ export const Header = () => {
                     </svg>
                 </button>
 
-                <nav style={{
+                {/* 3-Column Literary Editorial Index Takeover */}
+                <div style={{
+                    width: '100%',
+                    maxWidth: '1240px',
+                    margin: '0 auto',
+                    padding: 'clamp(3rem, 6vw, 4.5rem) clamp(1.5rem, 5vw, 3.5rem) clamp(2rem, 4vw, 3rem) clamp(1.5rem, 5vw, 3.5rem)',
+                    maxHeight: '94vh',
+                    overflowY: 'auto',
                     display: 'flex',
                     flexDirection: 'column',
-                    alignItems: 'center',
-                    gap: '1.5rem', // Reduced gap for dividers
-                    textAlign: 'center',
-                    width: '100%',
-                    maxWidth: '600px'
+                    justifyContent: 'space-between',
+                    boxSizing: 'border-box'
                 }}>
-                    {[
-                        { label: 'Home', path: '/' },
-                        { label: 'Long Book Finder', path: '/long-book-finder/' },
-                        { label: 'Collections', path: '/collections/' },
-                        { label: 'Journal', path: '/journal/' },
-                        { label: 'About', path: '/about/' }
-                    ].map((link, index, arr) => (
-                        <div key={link.path} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
-                            <Link
-                                to={link.path}
-                                onClick={() => setIsMenuOpen(false)}
-                                style={{
-                                    fontFamily: 'var(--font-heading)',
-                                    fontSize: 'clamp(3rem, 6vw, 5rem)', // Reduced by ~33%
-                                    color: 'var(--color-brand-coral)',
-                                    textDecoration: 'none',
-                                    transition: 'color 0.3s, transform 0.3s',
-                                    lineHeight: 1
-                                }}
-                                onMouseEnter={e => {
-                                    e.currentTarget.style.color = 'var(--color-brand-sage)';
-                                    e.currentTarget.style.transform = 'scale(1.05)';
-                                }}
-                                onMouseLeave={e => {
-                                    e.currentTarget.style.color = 'var(--color-brand-coral)';
-                                    e.currentTarget.style.transform = 'scale(1)';
-                                }}
-                            >
-                                {link.label}
-                            </Link>
-                            {/* Divider (except after last item) */}
-                            {index < arr.length - 1 && (
-                                <div style={{
-                                    width: '40px',
-                                    height: '2px',
-                                    backgroundColor: 'var(--color-brand-coral)',
-                                    marginTop: '1.5rem',
-                                    opacity: 0.5
-                                }} />
-                            )}
-                        </div>
-                    ))}
-
-                    {/* Divider for Social Section */}
-                    <div style={{
-                        width: '40px',
-                        height: '2px',
-                        backgroundColor: 'var(--color-brand-coral)',
-                        marginTop: '1.5rem',
-                        opacity: 0.5
-                    }} />
-                    
-                    {/* Social Links in Nav Overlay */}
+                    {/* Header Strip inside Overlay */}
                     <div style={{
                         display: 'flex',
-                        gap: '2rem',
-                        marginTop: '2rem',
-                        justifyContent: 'center',
-                        alignItems: 'center'
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        marginBottom: 'clamp(2rem, 3.5vw, 2.75rem)',
+                        borderBottom: '1px solid rgba(203, 214, 171, 0.2)',
+                        paddingBottom: '1rem'
                     }}>
-                        <a href="https://www.instagram.com/thelongbookclub" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-brand-coral)', fontSize: '2rem', transition: 'color 0.3s, transform 0.3s' }} onMouseEnter={e => { e.currentTarget.style.color = 'var(--color-brand-sage)'; e.currentTarget.style.transform = 'scale(1.1)'; }} onMouseLeave={e => { e.currentTarget.style.color = 'var(--color-brand-coral)'; e.currentTarget.style.transform = 'scale(1)'; }}>
-                            <FaInstagram />
-                        </a>
-                        <a href="https://www.tiktok.com/@thelongbookclub" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-brand-coral)', fontSize: '2rem', transition: 'color 0.3s, transform 0.3s' }} onMouseEnter={e => { e.currentTarget.style.color = 'var(--color-brand-sage)'; e.currentTarget.style.transform = 'scale(1.1)'; }} onMouseLeave={e => { e.currentTarget.style.color = 'var(--color-brand-coral)'; e.currentTarget.style.transform = 'scale(1)'; }}>
-                            <FaTiktok />
-                        </a>
-                        <a href="https://www.youtube.com/@TheLongBookClub" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-brand-coral)', fontSize: '2rem', transition: 'color 0.3s, transform 0.3s' }} onMouseEnter={e => { e.currentTarget.style.color = 'var(--color-brand-sage)'; e.currentTarget.style.transform = 'scale(1.1)'; }} onMouseLeave={e => { e.currentTarget.style.color = 'var(--color-brand-coral)'; e.currentTarget.style.transform = 'scale(1)'; }}>
-                            <FaYoutube />
-                        </a>
+                        <Link
+                            to="/"
+                            onClick={() => setIsMenuOpen(false)}
+                            style={{
+                                textDecoration: 'none',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '0.75rem'
+                            }}
+                        >
+                            <img src="/assets/lbc-fav.svg" alt="" style={{ height: '30px', width: 'auto' }} />
+                            <span style={{
+                                fontFamily: 'Inter, sans-serif',
+                                fontSize: '0.75rem',
+                                fontWeight: 800,
+                                letterSpacing: '0.2em',
+                                textTransform: 'uppercase',
+                                color: 'var(--color-brand-sage)'
+                            }}>
+                                The Long Book Club • Directory
+                            </span>
+                        </Link>
+                        <span className="menu-hide-on-mobile" style={{
+                            fontFamily: 'var(--font-serif-accent)',
+                            fontStyle: 'italic',
+                            fontSize: '0.9rem',
+                            color: 'rgba(234, 232, 218, 0.65)'
+                        }}>
+                            Curated 10+ Hour Audio Immersion
+                        </span>
                     </div>
-                </nav>
+
+                    {/* 3-Column Content Grid */}
+                    <div className="menu-columns-grid" style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(3, 1fr)',
+                        gap: 'clamp(2rem, 3.5vw, 3.5rem)',
+                        alignItems: 'start',
+                        textAlign: 'left'
+                    }}>
+                        {/* COLUMN 1: CURATED COLLECTIONS */}
+                        <div style={{ display: 'flex', flexDirection: 'column' }}>
+                            <div style={{
+                                fontFamily: 'Inter, sans-serif',
+                                fontSize: '0.75rem',
+                                fontWeight: 800,
+                                letterSpacing: '0.18em',
+                                textTransform: 'uppercase',
+                                color: 'var(--color-brand-coral)',
+                                marginBottom: '0.75rem'
+                            }}>
+                                01 / Curated Sagas
+                            </div>
+                            <Link
+                                to="/collections/"
+                                onClick={() => setIsMenuOpen(false)}
+                                className="menu-primary-link"
+                                style={{
+                                    fontFamily: 'var(--font-heading)',
+                                    fontSize: 'clamp(2rem, 2.5vw, 2.6rem)',
+                                    color: 'var(--color-brand-cloud)',
+                                    textDecoration: 'none',
+                                    lineHeight: 1.05,
+                                    marginBottom: '0.85rem',
+                                    transition: 'color 0.25s ease, transform 0.25s ease',
+                                    display: 'inline-block'
+                                }}
+                            >
+                                Curated Collections &rarr;
+                            </Link>
+                            <div style={{ width: '35px', height: '1px', backgroundColor: 'var(--color-brand-coral)', opacity: 0.5, marginBottom: '1.25rem' }} />
+
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+                                {[
+                                    { label: 'Silkpunk & Asian Fantasy', path: '/collections/silkpunk/' },
+                                    { label: 'British Espionage & Cold War', path: '/collections/british-espionage/' },
+                                    { label: 'Epic Romantasy Long Listens', path: '/collections/romantasy/' },
+                                    { label: 'Grimdark & Moral Ambiguity', path: '/collections/grimdark-fantasy/' },
+                                    { label: 'Cinematic Full-Cast Audio', path: '/collections/graphic-audio/' },
+                                    { label: 'The Longest Ever (60+ Hours)', path: '/collections/longest-ever/' },
+                                    { label: 'Explore All 16 Collections →', path: '/collections/', isSpecial: true }
+                                ].map(item => (
+                                    <Link
+                                        key={item.path}
+                                        to={item.path}
+                                        onClick={() => setIsMenuOpen(false)}
+                                        className="menu-sub-link"
+                                        style={{
+                                            fontFamily: 'var(--font-serif-accent)',
+                                            fontSize: item.isSpecial ? '0.95rem' : '1.05rem',
+                                            fontWeight: item.isSpecial ? 600 : 400,
+                                            fontStyle: item.isSpecial ? 'italic' : 'normal',
+                                            color: item.isSpecial ? 'var(--color-brand-coral)' : 'rgba(234, 232, 218, 0.85)',
+                                            textDecoration: 'none',
+                                            transition: 'color 0.2s ease, transform 0.2s ease',
+                                            lineHeight: 1.3
+                                        }}
+                                    >
+                                        {item.label}
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* COLUMN 2: LIBRARY & SUBGENRES */}
+                        <div style={{ display: 'flex', flexDirection: 'column' }}>
+                            <div style={{
+                                fontFamily: 'Inter, sans-serif',
+                                fontSize: '0.75rem',
+                                fontWeight: 800,
+                                letterSpacing: '0.18em',
+                                textTransform: 'uppercase',
+                                color: 'var(--color-brand-coral)',
+                                marginBottom: '0.75rem'
+                            }}>
+                                02 / Library & Niches
+                            </div>
+                            <Link
+                                to="/long-book-finder/"
+                                onClick={() => setIsMenuOpen(false)}
+                                className="menu-primary-link"
+                                style={{
+                                    fontFamily: 'var(--font-heading)',
+                                    fontSize: 'clamp(2rem, 2.5vw, 2.6rem)',
+                                    color: 'var(--color-brand-cloud)',
+                                    textDecoration: 'none',
+                                    lineHeight: 1.05,
+                                    marginBottom: '0.35rem',
+                                    transition: 'color 0.25s ease, transform 0.25s ease',
+                                    display: 'inline-block'
+                                }}
+                            >
+                                Long Book Finder &rarr;
+                            </Link>
+                            <span style={{ fontFamily: 'var(--font-serif-accent)', fontSize: '0.9rem', color: 'var(--color-brand-sage)', opacity: 0.85, marginBottom: '0.75rem' }}>
+                                Filter 450+ audiobooks by hours & tags
+                            </span>
+                            <div style={{ width: '35px', height: '1px', backgroundColor: 'var(--color-brand-coral)', opacity: 0.5, marginBottom: '1.25rem' }} />
+
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+                                {[
+                                    { label: 'Progression Fantasy & LitRPG', path: '/genre/progression-fantasy/' },
+                                    { label: 'Cozy Fantasy & Slice-of-Life', path: '/genre/cozy-fantasy/' },
+                                    { label: 'Space Opera & Galactic Empire', path: '/genre/space-opera/' },
+                                    { label: 'Dark Academia & Collegiate Gothic', path: '/genre/dark-academia/' },
+                                    { label: 'Nordic Noir & Scandi Procedurals', path: '/genre/nordic-noir/' },
+                                    { label: 'Historical Fiction Epics', path: '/genre/historical-fiction/' }
+                                ].map(item => (
+                                    <Link
+                                        key={item.path}
+                                        to={item.path}
+                                        onClick={() => setIsMenuOpen(false)}
+                                        className="menu-sub-link"
+                                        style={{
+                                            fontFamily: 'var(--font-serif-accent)',
+                                            fontSize: '1.05rem',
+                                            color: 'rgba(234, 232, 218, 0.85)',
+                                            textDecoration: 'none',
+                                            transition: 'color 0.2s ease, transform 0.2s ease',
+                                            lineHeight: 1.3
+                                        }}
+                                    >
+                                        {item.label}
+                                    </Link>
+                                ))}
+                            </div>
+
+                            {/* The Journal */}
+                            <div style={{ marginTop: '1.75rem', paddingTop: '1.25rem', borderTop: '1px dashed rgba(203, 214, 171, 0.25)' }}>
+                                <Link
+                                    to="/journal/"
+                                    onClick={() => setIsMenuOpen(false)}
+                                    className="menu-primary-link"
+                                    style={{
+                                        fontFamily: 'var(--font-heading)',
+                                        fontSize: '1.6rem',
+                                        color: 'var(--color-brand-cloud)',
+                                        textDecoration: 'none',
+                                        lineHeight: 1.1,
+                                        display: 'block',
+                                        marginBottom: '0.25rem',
+                                        transition: 'color 0.25s ease'
+                                    }}
+                                >
+                                    The Journal &rarr;
+                                </Link>
+                                <span style={{ fontFamily: 'var(--font-serif-accent)', fontSize: '0.85rem', color: 'rgba(234, 232, 218, 0.65)' }}>
+                                    Deep-dive essays, guides & listening stamina
+                                </span>
+                            </div>
+                        </div>
+
+                        {/* COLUMN 3: THE CREATORS */}
+                        <div style={{ display: 'flex', flexDirection: 'column' }}>
+                            <div style={{
+                                fontFamily: 'Inter, sans-serif',
+                                fontSize: '0.75rem',
+                                fontWeight: 800,
+                                letterSpacing: '0.18em',
+                                textTransform: 'uppercase',
+                                color: 'var(--color-brand-coral)',
+                                marginBottom: '0.75rem'
+                            }}>
+                                03 / The Creators
+                            </div>
+                            <Link
+                                to="/narrators/"
+                                onClick={() => setIsMenuOpen(false)}
+                                className="menu-primary-link"
+                                style={{
+                                    fontFamily: 'var(--font-heading)',
+                                    fontSize: 'clamp(2rem, 2.5vw, 2.6rem)',
+                                    color: 'var(--color-brand-cloud)',
+                                    textDecoration: 'none',
+                                    lineHeight: 1.05,
+                                    marginBottom: '0.35rem',
+                                    transition: 'color 0.25s ease, transform 0.25s ease',
+                                    display: 'inline-block'
+                                }}
+                            >
+                                Narrators Hub &rarr;
+                            </Link>
+                            <span style={{ fontFamily: 'var(--font-serif-accent)', fontSize: '0.9rem', color: 'var(--color-brand-sage)', opacity: 0.85, marginBottom: '0.75rem' }}>
+                                177 voice talents & verified Soundchecks
+                            </span>
+                            <div style={{ width: '35px', height: '1px', backgroundColor: 'var(--color-brand-coral)', opacity: 0.5, marginBottom: '1.25rem' }} />
+
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+                                {[
+                                    { label: '100+ Hour Hall of Fame Leaderboard', path: '/narrators/leaderboard/' },
+                                    { label: 'Browse by Vocal Style Badges', path: '/narrators/' },
+                                    { label: 'Gravelly & Authoritative Narrators', path: '/narrator-styles/gravelly-authoritative/' },
+                                    { label: 'Theatrical & Dynamic Performers', path: '/narrator-styles/theatrical-dynamic/' }
+                                ].map(item => (
+                                    <Link
+                                        key={item.label}
+                                        to={item.path}
+                                        onClick={() => setIsMenuOpen(false)}
+                                        className="menu-sub-link"
+                                        style={{
+                                            fontFamily: 'var(--font-serif-accent)',
+                                            fontSize: '1.05rem',
+                                            color: 'rgba(234, 232, 218, 0.85)',
+                                            textDecoration: 'none',
+                                            transition: 'color 0.2s ease, transform 0.2s ease',
+                                            lineHeight: 1.3
+                                        }}
+                                    >
+                                        {item.label}
+                                    </Link>
+                                ))}
+                            </div>
+
+                            {/* Authors Directory */}
+                            <div style={{ marginTop: '1.75rem', paddingTop: '1.25rem', borderTop: '1px dashed rgba(203, 214, 171, 0.25)' }}>
+                                <Link
+                                    to="/authors/"
+                                    onClick={() => setIsMenuOpen(false)}
+                                    className="menu-primary-link"
+                                    style={{
+                                        fontFamily: 'var(--font-heading)',
+                                        fontSize: '1.6rem',
+                                        color: 'var(--color-brand-cloud)',
+                                        textDecoration: 'none',
+                                        lineHeight: 1.1,
+                                        display: 'block',
+                                        marginBottom: '0.25rem',
+                                        transition: 'color 0.25s ease'
+                                    }}
+                                >
+                                    Authors Directory &rarr;
+                                </Link>
+                                <span style={{ fontFamily: 'var(--font-serif-accent)', fontSize: '0.85rem', color: 'rgba(234, 232, 218, 0.65)' }}>
+                                    166 master storytellers & epic worldbuilders
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Bottom Understated Footer Strip */}
+                    <div style={{
+                        marginTop: 'clamp(2rem, 3.5vw, 3rem)',
+                        paddingTop: '1.25rem',
+                        borderTop: '1px solid rgba(203, 214, 171, 0.2)',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        flexWrap: 'wrap',
+                        gap: '1rem',
+                        fontSize: '0.85rem',
+                        color: 'rgba(234, 232, 218, 0.6)'
+                    }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+                            <Link
+                                to="/"
+                                onClick={() => setIsMenuOpen(false)}
+                                style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }}
+                                onMouseEnter={e => e.currentTarget.style.color = 'var(--color-brand-coral)'}
+                                onMouseLeave={e => e.currentTarget.style.color = 'inherit'}
+                            >
+                                Home
+                            </Link>
+                            <span>•</span>
+                            <Link
+                                to="/about/"
+                                onClick={() => setIsMenuOpen(false)}
+                                style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }}
+                                onMouseEnter={e => e.currentTarget.style.color = 'var(--color-brand-coral)'}
+                                onMouseLeave={e => e.currentTarget.style.color = 'inherit'}
+                            >
+                                About The Club
+                            </Link>
+                            <span>•</span>
+                            <Link
+                                to="/privacy/"
+                                onClick={() => setIsMenuOpen(false)}
+                                style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }}
+                                onMouseEnter={e => e.currentTarget.style.color = 'var(--color-brand-coral)'}
+                                onMouseLeave={e => e.currentTarget.style.color = 'inherit'}
+                            >
+                                Privacy Policy
+                            </Link>
+                            <span>•</span>
+                            <span>&copy; {new Date().getFullYear()} The Long Book Club</span>
+                        </div>
+
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
+                            <a
+                                href="https://www.instagram.com/thelongbookclub"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ color: 'rgba(234, 232, 218, 0.6)', fontSize: '1.15rem', transition: 'color 0.2s, transform 0.2s' }}
+                                onMouseEnter={e => { e.currentTarget.style.color = 'var(--color-brand-coral)'; e.currentTarget.style.transform = 'scale(1.1)'; }}
+                                onMouseLeave={e => { e.currentTarget.style.color = 'rgba(234, 232, 218, 0.6)'; e.currentTarget.style.transform = 'scale(1)'; }}
+                                aria-label="Instagram"
+                            >
+                                <FaInstagram />
+                            </a>
+                            <a
+                                href="https://www.tiktok.com/@thelongbookclub"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ color: 'rgba(234, 232, 218, 0.6)', fontSize: '1.15rem', transition: 'color 0.2s, transform 0.2s' }}
+                                onMouseEnter={e => { e.currentTarget.style.color = 'var(--color-brand-coral)'; e.currentTarget.style.transform = 'scale(1.1)'; }}
+                                onMouseLeave={e => { e.currentTarget.style.color = 'rgba(234, 232, 218, 0.6)'; e.currentTarget.style.transform = 'scale(1)'; }}
+                                aria-label="TikTok"
+                            >
+                                <FaTiktok />
+                            </a>
+                            <a
+                                href="https://www.youtube.com/@TheLongBookClub"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ color: 'rgba(234, 232, 218, 0.6)', fontSize: '1.15rem', transition: 'color 0.2s, transform 0.2s' }}
+                                onMouseEnter={e => { e.currentTarget.style.color = 'var(--color-brand-coral)'; e.currentTarget.style.transform = 'scale(1.1)'; }}
+                                onMouseLeave={e => { e.currentTarget.style.color = 'rgba(234, 232, 218, 0.6)'; e.currentTarget.style.transform = 'scale(1)'; }}
+                                aria-label="YouTube"
+                            >
+                                <FaYoutube />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <style>{`
+                    .menu-primary-link:hover {
+                        color: var(--color-brand-sage) !important;
+                        transform: translateX(4px);
+                    }
+                    .menu-sub-link:hover {
+                        color: var(--color-brand-coral) !important;
+                        transform: translateX(4px);
+                    }
+                    @media (max-width: 880px) {
+                        .menu-columns-grid {
+                            grid-template-columns: 1fr !important;
+                            gap: 2.75rem !important;
+                        }
+                        .menu-hide-on-mobile {
+                            display: none !important;
+                        }
+                    }
+                `}</style>
 
 
 
