@@ -149,7 +149,7 @@ export const CollectionCard = ({ collection }: CollectionCardProps) => {
                         fontWeight: 400,
                         lineHeight: 1.1
                     }}>
-                        {collection.title}
+                        {collection.cardTitle || collection.title}
                     </h2>
 
                     {/* Divider Line */}
@@ -169,7 +169,7 @@ export const CollectionCard = ({ collection }: CollectionCardProps) => {
                         fontFamily: 'var(--font-body)',
                         flex: 1
                     }}>
-                        {collection.description}
+                        {collection.cardOverview || collection.description}
                     </p>
 
                     {/* Button - Orange Lozenge */}

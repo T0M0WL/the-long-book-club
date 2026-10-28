@@ -98,6 +98,23 @@ Every audiobook added to the site MUST have 4 completely distinct copy blocks (0
 3. Query the **UK iTunes Search API** (`https://itunes.apple.com/search?term=<Title+Author>&media=audiobook&country=GB`) via `read_url_content` to pull the exact UK edition's 30-second `previewUrl` (`audioPreviewUrl`) and high-res square cover art (`artworkUrl100` with `100x100bb.jpg` replaced by `600x600bb.jpg`).
 4. Once Thomas approves the covers and provides his UK/US Amazon links (note: `amazon.com` visited from a UK IP serves the UK/Commonwealth licensed edition under its `.com` ASIN, so both UK and US links often point to the same UK narrator/edition), download the `600x600bb.jpg` covers directly into `public/covers/<slug>.jpg` and wire `/covers/<slug>.jpg` into `src/data/books.ts` and `src/data/collections.ts`.
 
+### The 3-Tier Collection Content Framework (Anti-Duplicate Copy Standard)
+Every collection added or updated in `src/data/collections.ts` MUST adhere to this strict 3-tier content hierarchy to prevent duplicate content flags on Google and ensure uniform card heights across `/collections/`:
+1. **Title (`collection.title`) — Strict $\le 10$ Words:**
+   - Punchy, high-impact heading used for the page H1 and card title.
+2. **Card Overview (`collection.cardOverview`) — ~25 Words:**
+   - Displayed exclusively on `CollectionCard.tsx` in `/collections/`.
+   - Acts as an enticing browse-mode teaser that invites clicks while maintaining uniform card heights across grid rows.
+3. **Hero Subtitle (`collection.heroSubtitle`) — Strict $\le 25$ Words:**
+   - Displayed as the semantic `<h2>` in the edge-to-edge Hero on `/collections/:slug/`.
+   - High-value, SEO-optimized hook targeting search intent, matching the optimal 140–160 character meta description length for Google search snippets.
+4. **Editorial Intro (`collection.editorialIntro`) — Strict $\le 60$ Words:**
+   - Displayed in the dedicated **Curator's Briefing** section between the Hero and the 3-column book grid.
+   - Deep-dive into subgenre qualities, origin stories (e.g. Ken Liu coining silkpunk), signature audio characteristics, or unsung heroes.
+   - Embeds natural markdown internal links (e.g. `[Book Title](/book/slug/)`) formatted into crawlable HTML links for SEO entity clustering.
+5. **Editorial Heading (`collection.editorialHeading`, optional) — 2–5 Words:**
+   - Crisp eyebrow tag above the editorial intro (e.g., `"The Art of Organic Technology"`), defaulting to `"Curator's Briefing"`.
+
 ### Collection Ordering & Additions Rule
 - **New Additions Always Feature First (Index 0):** When adding books to `collection.bookIds` in `src/data/collections.ts`, always place new additions at the **beginning of the array (`[newId, ...existingIds]`)**. This ensures returning visitors and readers immediately see the freshest releases/additions as the first item on collection pages, rather than scrolling to the bottom.
 

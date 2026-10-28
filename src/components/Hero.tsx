@@ -34,6 +34,7 @@ interface HeroProps {
     sectionPadding?: string;
     titleLineHeight?: string | number;
     titleOpacity?: number;
+    subtitleAs?: 'h2' | 'p';
 }
 
 export const Hero = ({
@@ -74,6 +75,7 @@ export const Hero = ({
     sectionPadding,
     titleLineHeight,
     titleOpacity,
+    subtitleAs = 'h2',
     // Removed legacy logo props: compactLogo, showLogo
 }: HeroProps) => {
     const heroImageRef = useRef<HTMLImageElement>(null);
@@ -383,22 +385,43 @@ export const Hero = ({
                     }} />
                 )}
 
-                <p className="hero-subtitle" style={{
-                    fontSize: subtitleFontSize ?? '1.4rem',
-                    color: effectiveSubtitleColor,
-                    transition: 'color 0.5s ease',
-                    maxWidth: '660px',
-                    margin: '0 auto',
-                    marginTop: subtitleMarginTop,
-                    lineHeight: subtitleLineHeight ?? 1.6,
-                    fontFamily: 'var(--font-serif-accent)',
-                    mixBlendMode: subtitleBlendMode,
-                    textShadow: subtitleShadow,
-                    position: childPosition, // Promote if needed
-                    zIndex: childZIndex
-                }}>
-                    {subtitle}
-                </p>
+                {subtitleAs === 'h2' ? (
+                    <h2 className="hero-subtitle" style={{
+                        fontSize: subtitleFontSize ?? '1.4rem',
+                        fontWeight: 400,
+                        color: effectiveSubtitleColor,
+                        transition: 'color 0.5s ease',
+                        maxWidth: '660px',
+                        margin: '0 auto',
+                        marginTop: subtitleMarginTop,
+                        lineHeight: subtitleLineHeight ?? 1.6,
+                        fontFamily: 'var(--font-serif-accent)',
+                        mixBlendMode: subtitleBlendMode,
+                        textShadow: subtitleShadow,
+                        position: childPosition, // Promote if needed
+                        zIndex: childZIndex
+                    }}>
+                        {subtitle}
+                    </h2>
+                ) : (
+                    <p className="hero-subtitle" style={{
+                        fontSize: subtitleFontSize ?? '1.4rem',
+                        fontWeight: 400,
+                        color: effectiveSubtitleColor,
+                        transition: 'color 0.5s ease',
+                        maxWidth: '660px',
+                        margin: '0 auto',
+                        marginTop: subtitleMarginTop,
+                        lineHeight: subtitleLineHeight ?? 1.6,
+                        fontFamily: 'var(--font-serif-accent)',
+                        mixBlendMode: subtitleBlendMode,
+                        textShadow: subtitleShadow,
+                        position: childPosition, // Promote if needed
+                        zIndex: childZIndex
+                    }}>
+                        {subtitle}
+                    </p>
+                )}
 
                 <div
                     onClick={() => {

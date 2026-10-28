@@ -907,11 +907,17 @@ async function prerender() {
             if (!slug) continue;
 
             const title = extractField(block, 'title');
+            const cardOverview = extractField(block, 'cardOverview');
+            const heroSubtitle = extractField(block, 'heroSubtitle');
+            const editorialHeading = extractField(block, 'editorialHeading');
+            const editorialIntro = extractField(block, 'editorialIntro', false);
             const desc = extractField(block, 'description');
             const coverUrl = extractField(block, 'coverUrl') || '/assets/social-share-2.jpg';
 
             const absoluteUrl = BASE_URL + '/collections/' + slug + '/';
             const absoluteCoverUrl = coverUrl.startsWith('http') ? coverUrl : BASE_URL + coverUrl;
+            const effectiveSubtitle = heroSubtitle || desc || '';
+            const seoDescription = heroSubtitle || cardOverview || desc || '';
 
             const bookIds = extractArray(block, 'bookIds');
             
@@ -932,10 +938,18 @@ async function prerender() {
             }
             bookListHtml += '</ul>';
 
+            const briefingHtml = editorialIntro ? `
+                <div class="curator-briefing" style="margin: 20px 0; padding: 15px; background: #fafaf6; border-left: 3px solid #ed835e;">
+                    <h2>${escapeHtml(editorialHeading || "Curator's Briefing")}</h2>
+                    <p>${formatRichTextHtml(editorialIntro)}</p>
+                </div>
+            ` : '';
+
             const bodyContent = `
                 <div id="no-js-content" style="max-width: 800px; margin: 0 auto; padding: 20px; font-family: sans-serif;">
                     <h1>${escapeHtml(title)}</h1>
-                    <p>${escapeHtml(desc)}</p>
+                    ${effectiveSubtitle ? `<h2>${escapeHtml(effectiveSubtitle)}</h2>` : ''}
+                    ${briefingHtml}
                     <hr />
                     <h2>Books in this Collection</h2>
                     ${bookListHtml}
@@ -944,10 +958,10 @@ async function prerender() {
 
             let html = template;
             html = html.replace(/<title>.*?<\/title>/, `<title>${escapeHtml(title)} | The Long Book Club Collections</title>`);
-            html = html.replace(/<meta name="description" content="[^"]+" \/>/, `<meta name="description" content="${escapeHtml(desc)}" />`);
+            html = html.replace(/<meta name="description" content="[^"]+" \/>/, `<meta name="description" content="${escapeHtml(seoDescription)}" />`);
             // OG tags
             html = html.replace(/<meta property="og:title" content="[^"]+" \/>/, `<meta property="og:title" content="${escapeHtml(title)}" />`);
-            html = html.replace(/<meta property="og:description" content="[^"]+" \/>/, `<meta property="og:description" content="${escapeHtml(desc)}" />`);
+            html = html.replace(/<meta property="og:description" content="[^"]+" \/>/, `<meta property="og:description" content="${escapeHtml(seoDescription)}" />`);
             html = html.replace(/<meta property="og:image" content="[^"]+" \/>/, `<meta property="og:image" content="${absoluteCoverUrl}" />`);
             html = html.replace(/<meta property="og:url" content="[^"]+" \/>/, `<meta property="og:url" content="${absoluteUrl}" />`);
             html = html.replace(/<link rel="canonical" href="[^"]+" \/>/, `<link rel="canonical" href="${absoluteUrl}" />`);

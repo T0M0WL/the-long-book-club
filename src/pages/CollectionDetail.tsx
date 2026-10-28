@@ -81,7 +81,7 @@ export const CollectionDetail = () => {
         <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
             <SEO
                 title={collection.title}
-                description={collection.description}
+                description={collection.heroSubtitle || collection.cardOverview || collection.description}
                 canonical={`https://thelongbookclub.com/collections/${collection.slug}/`}
                 image={collection.coverUrl}
                 themeColor={currentThemeColor}
@@ -95,8 +95,8 @@ export const CollectionDetail = () => {
                             backgroundImage="/assets/collections-hero-images/LongBookClub-Forrest-Hero-Image-01.gif"
                             topGraphic="/assets/collections-hero-images/Collections Icons SVGs/best-of-2025-icon.svg"
                             topGraphicDimensions={getBalancedDims('best-long-books-2025')}
-                            title="Best Long Books of 2025"
-                            subtitle="A curated selection of the most immersive and standout long-form audiobooks released or celebrated in 2025."
+                            title={collection.title}
+                            subtitle={collection.heroSubtitle || collection.description}
                             sectionHeight="auto"
                             sectionMinHeight="600px"
                             sectionPadding="11rem 1rem 8rem 1rem"
@@ -138,7 +138,7 @@ export const CollectionDetail = () => {
                             titleOpacity={0.88}
                             subtitleFontSize="1.4rem"
                             subtitleLineHeight={1.6}
-                            subtitle={collection.description}
+                            subtitle={collection.heroSubtitle || collection.description}
                             useDynamicColor={false}
                             titleColor="white"
                             subtitleColor="white"
@@ -169,7 +169,7 @@ export const CollectionDetail = () => {
                             titleOpacity={0.88}
                             subtitleFontSize="1.4rem"
                             subtitleLineHeight={1.6}
-                            subtitle={collection.description}
+                            subtitle={collection.heroSubtitle || collection.description}
                             useDynamicColor={false}
                             titleColor="white"
                             subtitleColor="white"
@@ -199,7 +199,7 @@ export const CollectionDetail = () => {
                             titleLineHeight={1.05}
                             subtitleFontSize="1.4rem"
                             subtitleLineHeight={1.6}
-                            subtitle={collection.description}
+                            subtitle={collection.heroSubtitle || collection.description}
                             useDynamicColor={false}
                             subtitleColor="rgba(203, 214, 171, 0.5)"
                             separatorColor="rgba(203, 214, 171, 0.5)"
@@ -234,7 +234,7 @@ export const CollectionDetail = () => {
                             titleOpacity={0.88}
                             subtitleFontSize="1.4rem"
                             subtitleLineHeight={1.6}
-                            subtitle={collection.description}
+                            subtitle={collection.heroSubtitle || collection.description}
                             useDynamicColor={false}
                             titleColor="rgba(44, 81, 67, 0.8)"
                             subtitleColor="rgba(44, 81, 67, 0.8)"
@@ -266,7 +266,7 @@ export const CollectionDetail = () => {
                             titleLineHeight={1.05}
                             subtitleFontSize="1.4rem"
                             subtitleLineHeight={1.6}
-                            subtitle={collection.description}
+                            subtitle={collection.heroSubtitle || collection.description}
                             useDynamicColor={false}
                             titleColor="var(--color-brand-sage)"
                             subtitleColor="var(--color-brand-sage)"
@@ -299,7 +299,7 @@ export const CollectionDetail = () => {
                             titleLineHeight={1.05}
                             subtitleFontSize="1.4rem"
                             subtitleLineHeight={1.6}
-                            subtitle={collection.description}
+                            subtitle={collection.heroSubtitle || collection.description}
                             useDynamicColor={false}
                             subtitleColor="rgba(203, 214, 171, 0.5)"
                             separatorColor="rgba(203, 214, 171, 0.5)"
@@ -334,7 +334,7 @@ export const CollectionDetail = () => {
                             titleOpacity={0.88}
                             subtitleFontSize="1.4rem"
                             subtitleLineHeight={1.6}
-                            subtitle={collection.description}
+                            subtitle={collection.heroSubtitle || collection.description}
                             useDynamicColor={false}
                             titleColor="rgba(44, 81, 67, 0.8)"
                             subtitleColor="rgba(44, 81, 67, 0.8)"
@@ -366,7 +366,7 @@ export const CollectionDetail = () => {
                             titleLineHeight={1.05}
                             subtitleFontSize="1.4rem"
                             subtitleLineHeight={1.6}
-                            subtitle={collection.description}
+                            subtitle={collection.heroSubtitle || collection.description}
                             useDynamicColor={false}
                             titleColor="var(--color-brand-sage)"
                             subtitleColor="var(--color-brand-sage)"
@@ -399,7 +399,7 @@ export const CollectionDetail = () => {
                             titleLineHeight={1.05}
                             subtitleFontSize="1.4rem"
                             subtitleLineHeight={1.6}
-                            subtitle={collection.description}
+                            subtitle={collection.heroSubtitle || collection.description}
                             useDynamicColor={false}
                             subtitleColor="rgba(203, 214, 171, 0.5)"
                             separatorColor="rgba(203, 214, 171, 0.5)"
@@ -433,7 +433,7 @@ export const CollectionDetail = () => {
                             titleOpacity={0.9}
                             subtitleFontSize="1.4rem"
                             subtitleLineHeight={1.6}
-                            subtitle={collection.description}
+                            subtitle={collection.heroSubtitle || collection.description}
                             useDynamicColor={false}
                             titleColor="white"
                             subtitleColor="white"
@@ -463,7 +463,7 @@ export const CollectionDetail = () => {
                             titleLineHeight={1.05}
                             subtitleFontSize="1.4rem"
                             subtitleLineHeight={1.6}
-                            subtitle={collection.description}
+                            subtitle={collection.heroSubtitle || collection.description}
                             useDynamicColor={false}
                             titleColor="var(--color-brand-sage)"
                             subtitleColor="var(--color-brand-sage)"
@@ -496,7 +496,7 @@ export const CollectionDetail = () => {
                             titleLineHeight={1.05}
                             subtitleFontSize="1.4rem"
                             subtitleLineHeight={1.6}
-                            subtitle={collection.description}
+                            subtitle={collection.heroSubtitle || collection.description}
                             useDynamicColor={false}
                             titleColor="var(--color-brand-forrest)"
                             subtitleColor="var(--color-brand-forrest)"
@@ -529,7 +529,7 @@ export const CollectionDetail = () => {
                             titleLineHeight={1.05}
                             subtitleFontSize="1.4rem"
                             subtitleLineHeight={1.6}
-                            subtitle={collection.description}
+                            subtitle={collection.heroSubtitle || collection.description}
                             useDynamicColor={false}
                             titleColor="var(--color-brand-sage)"
                             subtitleColor="var(--color-brand-sage)"
@@ -562,7 +562,7 @@ export const CollectionDetail = () => {
                             titleLineHeight={1.05}
                             subtitleFontSize="1.4rem"
                             subtitleLineHeight={1.6}
-                            subtitle={collection.description}
+                            subtitle={collection.heroSubtitle || collection.description}
                             useDynamicColor={false}
                             subtitleColor="rgba(203, 214, 171, 0.5)"
                             separatorColor="rgba(203, 214, 171, 0.5)"
@@ -596,7 +596,7 @@ export const CollectionDetail = () => {
                             titleOpacity={0.9}
                             subtitleFontSize="1.4rem"
                             subtitleLineHeight={1.6}
-                            subtitle={collection.description}
+                            subtitle={collection.heroSubtitle || collection.description}
                             useDynamicColor={false}
                             titleColor="white"
                             subtitleColor="white"
@@ -629,7 +629,7 @@ export const CollectionDetail = () => {
                                 maxWidth: '750px',
                                 margin: '0 auto'
                             }}>
-                                {collection.description}
+                                {collection.heroSubtitle || collection.description}
                             </p>
                         </header>
                     </div>
@@ -638,6 +638,54 @@ export const CollectionDetail = () => {
 
             <div className="page-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', maxWidth: '1280px', padding: '0 2rem 6rem 2rem' }}>
                 <div id="scroll-target" style={{ scrollMarginTop: '2rem', height: 0 }} />
+
+                {/* Curator's Briefing / Editorial Intro */}
+                {collection.editorialIntro && (
+                    <section
+                        aria-label="Curator's Briefing"
+                        style={{
+                            maxWidth: '780px',
+                            margin: '0 auto',
+                            padding: '3.5rem 1rem 4rem 1rem',
+                            textAlign: 'center'
+                        }}
+                    >
+                        <div style={{
+                            display: 'inline-block',
+                            fontFamily: 'Inter, sans-serif',
+                            fontSize: '0.8rem',
+                            fontWeight: 800,
+                            letterSpacing: '0.16em',
+                            textTransform: 'uppercase',
+                            color: 'var(--color-brand-coral)',
+                            marginBottom: '0.75rem'
+                        }}>
+                            {collection.editorialHeading || "Curator's Briefing"}
+                        </div>
+                        <div style={{
+                            width: '45px',
+                            height: '2px',
+                            backgroundColor: 'var(--color-brand-forrest)',
+                            margin: '0 auto 1.5rem auto',
+                            opacity: 0.35
+                        }} />
+                        <p
+                            style={{
+                                fontFamily: 'var(--font-serif-accent)', // Lora
+                                fontSize: 'clamp(1.1rem, 2.2vw, 1.25rem)',
+                                lineHeight: 1.7,
+                                color: 'var(--color-brand-forrest)',
+                                margin: 0,
+                                fontWeight: 400
+                            }}
+                            dangerouslySetInnerHTML={{
+                                __html: collection.editorialIntro
+                                    .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+                                    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" style="color: var(--color-brand-coral); text-decoration: underline; text-underline-offset: 3px; font-weight: 500;">$1</a>')
+                            }}
+                        />
+                    </section>
+                )}
 
                 <div className="collection-grid" style={{
                     display: 'grid',

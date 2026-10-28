@@ -89,23 +89,33 @@ For every new audiobook (must be **10+ hours minimum unabridged**, prioritizing 
 
 ## 3. Element-by-Element Breakdown: Adding a New Collection
 
-Collections live in `src/data/collections.ts` and render at `/collections/:slug/`. Each Collection groups **4 to 8 books** around a compelling theme, mood, or listening scenario.
+Collections live in `src/data/collections.ts` and render at `/collections/:slug/`. Each Collection groups **4 to 12+ books** around a compelling theme, mood, or listening scenario.
+
+To prevent duplicate content flags on Google and keep card heights visually balanced across the directory, every Collection follows the **3-Tier Collection Content Framework**:
 
 1. **`id`** *(string)*:
-   - Sequential numeric string (e.g., `'8'`).
+   - Unique identifier (e.g., `'silkpunk'` or `'016'`).
 2. **`slug`** *(string)*:
-   - URL-safe keyword-rich slug (e.g., `best-litrpg-and-progression-fantasy-marathons`).
-3. **`title`** *(string)*:
-   - Collection H1 title (e.g., `Level Up Forever: The Ultimate LitRPG & Progression Fantasy Epics`).
-4. **`subtitle`** *(string)*:
-   - Short 2–4 word badge/category label (e.g., `Progression & LitRPG`).
-5. **`description`** *(string)*:
-   - **2–3 sentences (~45–75 words).** Used as both the Collection hero intro and the SEO `<meta name="description">` + static HTML intro.
-6. **`bookIds`** *(array of strings)*:
-   - Array of book IDs from `books.ts` (e.g., `['130', '131', '15', '126']`).
-   - *Rule:* Every book included in `bookIds` must have a populated `teaserTitle` and `teaser` in `books.ts`.
-7. **`coverUrl`** *(string)*:
-   - Path to the Collection's graphic/cover (e.g., `/assets/collection-[slug].webp`). *(See Project To-Do List regarding custom graphics vs. automated themes).*
+   - URL-safe keyword-rich slug (e.g., `'silkpunk'`).
+3. **`title`** *(string)* — **Strict $\le 10$ Words:**
+   - Punchy collection H1 title (e.g., `'Best Long Silkpunk & Asian Fantasy Audiobooks'`).
+4. **`cardOverview`** *(string)* — **~25 Words:**
+   - Displayed exclusively on `CollectionCard.tsx` on `/collections/`.
+   - Enticing browse-mode teaser that invites clicks while keeping all cards uniform in height.
+5. **`heroSubtitle`** *(string)* — **Strict $\le 25$ Words:**
+   - Displayed as the semantic `<h2>` in the edge-to-edge Hero on `/collections/:slug/`.
+   - High-value SEO hook confirming search intent, also used for the page `<meta name="description">` (140–160 chars).
+6. **`editorialHeading`** *(optional string)* — **2–5 Words:**
+   - Eyebrow tag above the editorial intro (e.g., `'The Art of Organic Technology'`), defaults to `'Curator's Briefing'`.
+7. **`editorialIntro`** *(string)* — **Strict $\le 60$ Words:**
+   - Displayed in the **Curator's Briefing** block directly between the Hero and the 3-column book grid.
+   - Deep-dive into subgenre qualities, origin stories, signature audio traits, or unsung heroes, with markdown links to books/creators (e.g., `[The Grace of Kings](/book/the-grace-of-kings-ken-liu/)`).
+8. **`bookIds`** *(array of strings)*:
+   - Array of book IDs from `books.ts`. New additions are always placed at index 0 (`[newId, ...existingIds]`).
+9. **`coverUrl`** *(string)*:
+   - Primary cover art used for social sharing and OpenGraph.
+10. **`topGraphic`**, **`iconSvg`**, **`iconColor`**, **`collectionNumber`** *(optional)*:
+    - 5-color cycle arch graphic, custom heavy-weight SVG icon, accent hex color, and 3-digit padded number (e.g., `'016'`).
 
 ---
 
