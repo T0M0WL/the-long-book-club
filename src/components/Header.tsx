@@ -282,7 +282,7 @@ export const Header = () => {
                                 style={{
                                     fontFamily: 'var(--font-serif-accent)',
                                     fontStyle: 'italic',
-                                    fontWeight: 500,
+                                    fontWeight: 400,
                                     fontSize: 'clamp(1.85rem, 2.3vw, 2.35rem)',
                                     color: 'var(--color-brand-cloud)',
                                     textDecoration: 'none',
@@ -354,7 +354,7 @@ export const Header = () => {
                                 style={{
                                     fontFamily: 'var(--font-serif-accent)',
                                     fontStyle: 'italic',
-                                    fontWeight: 500,
+                                    fontWeight: 400,
                                     fontSize: 'clamp(1.85rem, 2.3vw, 2.35rem)',
                                     color: 'var(--color-brand-cloud)',
                                     textDecoration: 'none',
@@ -414,7 +414,7 @@ export const Header = () => {
                                     style={{
                                         fontFamily: 'var(--font-serif-accent)',
                                         fontStyle: 'italic',
-                                        fontWeight: 500,
+                                        fontWeight: 400,
                                         fontSize: '1.5rem',
                                         color: 'var(--color-brand-cloud)',
                                         textDecoration: 'none',
@@ -458,7 +458,7 @@ export const Header = () => {
                                 style={{
                                     fontFamily: 'var(--font-serif-accent)',
                                     fontStyle: 'italic',
-                                    fontWeight: 500,
+                                    fontWeight: 400,
                                     fontSize: 'clamp(1.85rem, 2.3vw, 2.35rem)',
                                     color: 'var(--color-brand-cloud)',
                                     textDecoration: 'none',
@@ -516,7 +516,7 @@ export const Header = () => {
                                     style={{
                                         fontFamily: 'var(--font-serif-accent)',
                                         fontStyle: 'italic',
-                                        fontWeight: 500,
+                                        fontWeight: 400,
                                         fontSize: '1.5rem',
                                         color: 'var(--color-brand-cloud)',
                                         textDecoration: 'none',
