@@ -61,6 +61,8 @@ For every new audiobook (must be **10+ hours minimum unabridged**, prioritizing 
     - Format: `https://www.amazon.co.uk/dp/[UK_ASIN]?tag=thelongbookcl-21`
 11. **`affiliateLinkUS`** *(string — US Audible/Amazon)*:
     - Format: `https://www.amazon.com/dp/[US_ASIN]?tag=thelongbookcl-20` *(Note: US tag to be verified/updated once the new US Associates account is active).*
+11b. **`audioPreviewUrl`** *(string, optional but strongly recommended — Apple Books .m4a audio sample stream)*:
+    - Automatically retrieved and populated via `npm run sync:previews` (or `python3 scripts/sync-audio-previews.py --id <newId>`). Powers the interactive audio player preview inside the Narrator Soundcheck card on `/book/:slug/`.
 
 ### C. Book Copy Tiers 1–3 (`src/data/books.ts`)
 12. **`description`** *(string — Tier 1)*:

@@ -99,11 +99,12 @@ Every audiobook added to the site MUST have 4 completely distinct copy blocks (0
 3. Verify `cardOverview` is $\le 120$ characters.
 4. Confirm Thomas has provided (or left placeholders for) `coverUrl` (`/covers/[slug].webp`), `affiliateLink` (UK `?tag=thelongbookcl-21`), and `affiliateLinkUS` (US `?tag=thelongbookcl-20`).
 5. If any new niche genre tags are introduced in `book.genre`, add a matching `{ genre, metaTitle, intro }` entry in `src/data/genreData.ts`.
+6. **Sync Audio Previews:** Run `npm run sync:previews` (or `python3 scripts/sync-audio-previews.py --id <newId1,newId2>`) to query the Apple Books / iTunes Search API. This automatically discovers and injects verified `audioPreviewUrl` direct `.m4a` audio sample streams into `src/data/books.ts` so the Narrator Soundcheck audio player renders on the new book pages.
 
 ### Mode B: Autonomous Research & Drafting Inside Antigravity
 1. First inspect `src/data/books.ts` to get the current list of all existing book titles and IDs so you never propose a duplicate book.
 2. Spawn a `research` sub-agent (or use `search_web`) to identify trending **10+ hour** unabridged audiobooks (prioritizing the longest, highest-value listens available in each niche genre), verify exact UK/US Audible runtimes (`XXh YYm`), and confirm narrator names.
-3. Query the **UK iTunes Search API** (`https://itunes.apple.com/search?term=<Title+Author>&media=audiobook&country=GB`) via `read_url_content` to pull the exact UK edition's 30-second `previewUrl` (`audioPreviewUrl`) and high-res square cover art (`artworkUrl100` with `100x100bb.jpg` replaced by `600x600bb.jpg`).
+3. Query the **UK iTunes Search API** (`https://itunes.apple.com/search?term=<Title+Author>&media=audiobook&country=GB`) via `read_url_content` or run `npm run sync:previews` to pull the exact edition's 30-second `previewUrl` (`audioPreviewUrl`) and high-res square cover art (`artworkUrl100` with `100x100bb.jpg` replaced by `600x600bb.jpg`).
 4. Once Thomas approves the covers and provides his UK/US Amazon links (note: `amazon.com` visited from a UK IP serves the UK/Commonwealth licensed edition under its `.com` ASIN, so both UK and US links often point to the same UK narrator/edition), download the `600x600bb.jpg` covers directly into `public/covers/<slug>.jpg` and wire `/covers/<slug>.jpg` into `src/data/books.ts` and `src/data/collections.ts`.
 
 ### The 3-Tier Collection Content Framework (Anti-Duplicate Copy Standard)
@@ -144,11 +145,19 @@ Every collection added or updated in `src/data/collections.ts` MUST adhere to th
 
 After any edit to `src/data/books.ts`, `src/data/reviews.ts`, `src/data/collections.ts`, `src/data/genreData.ts`, or `src/data/journal.ts`:
 
-1. Run the full production build and pre-render pipeline:
+1. Ensure all new books have audio preview streams synced:
+   ```bash
+   npm run sync:previews
+   ```
+2. Verify related book IDs:
+   ```bash
+   npm run audit:related
+   ```
+3. Run the full production build and pre-render pipeline:
    ```bash
    npm run build
    ```
-2. Verify that:
+4. Verify that:
    - `scripts/generate-sitemap.cjs` updates `public/sitemap.xml` with trailing slashes on all URLs.
    - `tsc -b && vite build` succeeds with zero TypeScript errors.
    - `scripts/prerender.cjs` generates thick static HTML (`<div id="no-js-content">`) and JSON-LD schema for all Book, Collection, Genre, Hub, and Journal pages in `dist/`, plus `.htaccess` and `htaccess.txt`.
