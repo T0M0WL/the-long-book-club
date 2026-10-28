@@ -164,7 +164,7 @@ export const Header = () => {
                 width: '100%',
                 height: '100%',
                 backgroundColor: 'color-mix(in srgb, var(--color-brand-slate), black 20%)',
-                color: 'var(--color-brand-cloud)',
+                color: 'var(--color-brand-coral-light)',
                 zIndex: 100000,
                 display: 'flex',
                 flexDirection: 'column',
@@ -219,7 +219,7 @@ export const Header = () => {
                         alignItems: 'center',
                         justifyContent: 'space-between',
                         marginBottom: 'clamp(2rem, 3.5vw, 2.75rem)',
-                        borderBottom: '1px solid rgba(203, 214, 171, 0.2)',
+                        borderBottom: '1px solid rgba(255, 107, 74, 0.25)',
                         paddingBottom: '1rem'
                     }}>
                         <Link
@@ -239,7 +239,7 @@ export const Header = () => {
                                 fontWeight: 800,
                                 letterSpacing: '0.2em',
                                 textTransform: 'uppercase',
-                                color: 'var(--color-brand-sage)'
+                                color: 'var(--color-brand-coral)'
                             }}>
                                 The Long Book Club • Directory
                             </span>
@@ -248,7 +248,7 @@ export const Header = () => {
                             fontFamily: 'var(--font-serif-accent)',
                             fontStyle: 'italic',
                             fontSize: '0.9rem',
-                            color: 'rgba(234, 232, 218, 0.65)'
+                            color: 'rgba(255, 156, 133, 0.75)'
                         }}>
                             Curated 10+ Hour Audio Immersion
                         </span>
@@ -284,7 +284,7 @@ export const Header = () => {
                                     fontStyle: 'italic',
                                     fontWeight: 400,
                                     fontSize: 'clamp(1.85rem, 2.3vw, 2.35rem)',
-                                    color: 'var(--color-brand-cloud)',
+                                    color: 'var(--color-brand-coral)',
                                     textDecoration: 'none',
                                     lineHeight: 1.15,
                                     marginBottom: '0.85rem',
@@ -295,7 +295,7 @@ export const Header = () => {
                                 }}
                             >
                                 <span>Curated Collections</span>
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.7, flexShrink: 0, transition: 'transform 0.2s ease, opacity 0.2s ease' }}>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.75, flexShrink: 0, transition: 'transform 0.2s ease, opacity 0.2s ease' }}>
                                     <line x1="4" y1="12" x2="20" y2="12" />
                                     <polyline points="14 6 20 12 14 18" />
                                 </svg>
@@ -319,16 +319,18 @@ export const Header = () => {
                                         className="menu-sub-link"
                                         style={{
                                             fontFamily: 'var(--font-serif-accent)',
-                                            fontSize: item.isSpecial ? '0.95rem' : '1.05rem',
+                                            fontSize: item.isSpecial ? '0.95rem' : '1.02rem',
                                             fontWeight: item.isSpecial ? 600 : 400,
                                             fontStyle: item.isSpecial ? 'italic' : 'normal',
-                                            color: item.isSpecial ? 'var(--color-brand-coral)' : 'rgba(234, 232, 218, 0.85)',
+                                            color: item.isSpecial ? 'var(--color-brand-coral)' : 'var(--color-brand-coral-light)',
                                             textDecoration: 'none',
                                             transition: 'color 0.2s ease, transform 0.2s ease',
-                                            lineHeight: 1.3
+                                            lineHeight: 1.35,
+                                            display: 'block'
                                         }}
                                     >
-                                        {item.label}
+                                        <span className="menu-bullet" style={{ color: 'var(--color-brand-coral)', opacity: 0.75, fontSize: '0.85rem', marginRight: '0.45rem', display: 'inline-block', transition: 'color 0.2s ease, opacity 0.2s ease' }}>•</span>
+                                        <span>{item.label}</span>
                                     </Link>
                                 ))}
                             </div>
@@ -356,7 +358,7 @@ export const Header = () => {
                                     fontStyle: 'italic',
                                     fontWeight: 400,
                                     fontSize: 'clamp(1.85rem, 2.3vw, 2.35rem)',
-                                    color: 'var(--color-brand-cloud)',
+                                    color: 'var(--color-brand-coral)',
                                     textDecoration: 'none',
                                     lineHeight: 1.15,
                                     marginBottom: '0.35rem',
@@ -367,12 +369,12 @@ export const Header = () => {
                                 }}
                             >
                                 <span>Long Book Finder</span>
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.7, flexShrink: 0, transition: 'transform 0.2s ease, opacity 0.2s ease' }}>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.75, flexShrink: 0, transition: 'transform 0.2s ease, opacity 0.2s ease' }}>
                                     <line x1="4" y1="12" x2="20" y2="12" />
                                     <polyline points="14 6 20 12 14 18" />
                                 </svg>
                             </Link>
-                            <span style={{ fontFamily: 'var(--font-serif-accent)', fontSize: '0.9rem', color: 'var(--color-brand-sage)', opacity: 0.85, marginBottom: '0.75rem' }}>
+                            <span style={{ fontFamily: 'var(--font-serif-accent)', fontSize: '0.9rem', color: 'rgba(255, 156, 133, 0.8)', marginBottom: '0.75rem' }}>
                                 Filter 450+ audiobooks by hours & tags
                             </span>
                             <div style={{ width: '35px', height: '1px', backgroundColor: 'var(--color-brand-coral)', opacity: 0.5, marginBottom: '1.25rem' }} />
@@ -393,20 +395,22 @@ export const Header = () => {
                                         className="menu-sub-link"
                                         style={{
                                             fontFamily: 'var(--font-serif-accent)',
-                                            fontSize: '1.05rem',
-                                            color: 'rgba(234, 232, 218, 0.85)',
+                                            fontSize: '1.02rem',
+                                            color: 'var(--color-brand-coral-light)',
                                             textDecoration: 'none',
                                             transition: 'color 0.2s ease, transform 0.2s ease',
-                                            lineHeight: 1.3
+                                            lineHeight: 1.35,
+                                            display: 'block'
                                         }}
                                     >
-                                        {item.label}
+                                        <span className="menu-bullet" style={{ color: 'var(--color-brand-coral)', opacity: 0.75, fontSize: '0.85rem', marginRight: '0.45rem', display: 'inline-block', transition: 'color 0.2s ease, opacity 0.2s ease' }}>•</span>
+                                        <span>{item.label}</span>
                                     </Link>
                                 ))}
                             </div>
 
                             {/* The Journal */}
-                            <div style={{ marginTop: '1.75rem', paddingTop: '1.25rem', borderTop: '1px dashed rgba(203, 214, 171, 0.25)' }}>
+                            <div style={{ marginTop: '1.75rem', paddingTop: '1.25rem', borderTop: '1px dashed rgba(255, 107, 74, 0.25)' }}>
                                 <Link
                                     to="/journal/"
                                     onClick={() => setIsMenuOpen(false)}
@@ -416,7 +420,7 @@ export const Header = () => {
                                         fontStyle: 'italic',
                                         fontWeight: 400,
                                         fontSize: '1.5rem',
-                                        color: 'var(--color-brand-cloud)',
+                                        color: 'var(--color-brand-coral)',
                                         textDecoration: 'none',
                                         lineHeight: 1.2,
                                         display: 'inline-flex',
@@ -427,12 +431,12 @@ export const Header = () => {
                                     }}
                                 >
                                     <span>The Journal</span>
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.7, flexShrink: 0, transition: 'transform 0.2s ease, opacity 0.2s ease' }}>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.75, flexShrink: 0, transition: 'transform 0.2s ease, opacity 0.2s ease' }}>
                                         <line x1="4" y1="12" x2="20" y2="12" />
                                         <polyline points="14 6 20 12 14 18" />
                                     </svg>
                                 </Link>
-                                <span style={{ fontFamily: 'var(--font-serif-accent)', fontSize: '0.85rem', color: 'rgba(234, 232, 218, 0.65)' }}>
+                                <span style={{ fontFamily: 'var(--font-serif-accent)', fontSize: '0.85rem', color: 'rgba(255, 156, 133, 0.75)', display: 'block' }}>
                                     Deep-dive essays, guides & listening stamina
                                 </span>
                             </div>
@@ -460,7 +464,7 @@ export const Header = () => {
                                     fontStyle: 'italic',
                                     fontWeight: 400,
                                     fontSize: 'clamp(1.85rem, 2.3vw, 2.35rem)',
-                                    color: 'var(--color-brand-cloud)',
+                                    color: 'var(--color-brand-coral)',
                                     textDecoration: 'none',
                                     lineHeight: 1.15,
                                     marginBottom: '0.35rem',
@@ -471,12 +475,12 @@ export const Header = () => {
                                 }}
                             >
                                 <span>Narrators Hub</span>
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.7, flexShrink: 0, transition: 'transform 0.2s ease, opacity 0.2s ease' }}>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.75, flexShrink: 0, transition: 'transform 0.2s ease, opacity 0.2s ease' }}>
                                     <line x1="4" y1="12" x2="20" y2="12" />
                                     <polyline points="14 6 20 12 14 18" />
                                 </svg>
                             </Link>
-                            <span style={{ fontFamily: 'var(--font-serif-accent)', fontSize: '0.9rem', color: 'var(--color-brand-sage)', opacity: 0.85, marginBottom: '0.75rem' }}>
+                            <span style={{ fontFamily: 'var(--font-serif-accent)', fontSize: '0.9rem', color: 'rgba(255, 156, 133, 0.8)', marginBottom: '0.75rem' }}>
                                 177 voice talents & verified Soundchecks
                             </span>
                             <div style={{ width: '35px', height: '1px', backgroundColor: 'var(--color-brand-coral)', opacity: 0.5, marginBottom: '1.25rem' }} />
@@ -495,20 +499,22 @@ export const Header = () => {
                                         className="menu-sub-link"
                                         style={{
                                             fontFamily: 'var(--font-serif-accent)',
-                                            fontSize: '1.05rem',
-                                            color: 'rgba(234, 232, 218, 0.85)',
+                                            fontSize: '1.02rem',
+                                            color: 'var(--color-brand-coral-light)',
                                             textDecoration: 'none',
                                             transition: 'color 0.2s ease, transform 0.2s ease',
-                                            lineHeight: 1.3
+                                            lineHeight: 1.35,
+                                            display: 'block'
                                         }}
                                     >
-                                        {item.label}
+                                        <span className="menu-bullet" style={{ color: 'var(--color-brand-coral)', opacity: 0.75, fontSize: '0.85rem', marginRight: '0.45rem', display: 'inline-block', transition: 'color 0.2s ease, opacity 0.2s ease' }}>•</span>
+                                        <span>{item.label}</span>
                                     </Link>
                                 ))}
                             </div>
 
                             {/* Authors Directory */}
-                            <div style={{ marginTop: '1.75rem', paddingTop: '1.25rem', borderTop: '1px dashed rgba(203, 214, 171, 0.25)' }}>
+                            <div style={{ marginTop: '1.75rem', paddingTop: '1.25rem', borderTop: '1px dashed rgba(255, 107, 74, 0.25)' }}>
                                 <Link
                                     to="/authors/"
                                     onClick={() => setIsMenuOpen(false)}
@@ -518,7 +524,7 @@ export const Header = () => {
                                         fontStyle: 'italic',
                                         fontWeight: 400,
                                         fontSize: '1.5rem',
-                                        color: 'var(--color-brand-cloud)',
+                                        color: 'var(--color-brand-coral)',
                                         textDecoration: 'none',
                                         lineHeight: 1.2,
                                         display: 'inline-flex',
@@ -529,12 +535,12 @@ export const Header = () => {
                                     }}
                                 >
                                     <span>Authors Directory</span>
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.7, flexShrink: 0, transition: 'transform 0.2s ease, opacity 0.2s ease' }}>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.75, flexShrink: 0, transition: 'transform 0.2s ease, opacity 0.2s ease' }}>
                                         <line x1="4" y1="12" x2="20" y2="12" />
                                         <polyline points="14 6 20 12 14 18" />
                                     </svg>
                                 </Link>
-                                <span style={{ fontFamily: 'var(--font-serif-accent)', fontSize: '0.85rem', color: 'rgba(234, 232, 218, 0.65)' }}>
+                                <span style={{ fontFamily: 'var(--font-serif-accent)', fontSize: '0.85rem', color: 'rgba(255, 156, 133, 0.75)', display: 'block' }}>
                                     166 master storytellers & epic worldbuilders
                                 </span>
                             </div>
@@ -545,14 +551,14 @@ export const Header = () => {
                     <div style={{
                         marginTop: 'clamp(2rem, 3.5vw, 3rem)',
                         paddingTop: '1.25rem',
-                        borderTop: '1px solid rgba(203, 214, 171, 0.2)',
+                        borderTop: '1px solid rgba(255, 107, 74, 0.25)',
                         display: 'flex',
                         justifyContent: 'space-between',
                         alignItems: 'center',
                         flexWrap: 'wrap',
                         gap: '1rem',
                         fontSize: '0.85rem',
-                        color: 'rgba(234, 232, 218, 0.6)'
+                        color: 'rgba(255, 156, 133, 0.75)'
                     }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
                             <Link
@@ -564,7 +570,7 @@ export const Header = () => {
                             >
                                 Home
                             </Link>
-                            <span>•</span>
+                            <span style={{ color: 'rgba(255, 107, 74, 0.45)' }}>•</span>
                             <Link
                                 to="/about/"
                                 onClick={() => setIsMenuOpen(false)}
@@ -574,7 +580,7 @@ export const Header = () => {
                             >
                                 About The Club
                             </Link>
-                            <span>•</span>
+                            <span style={{ color: 'rgba(255, 107, 74, 0.45)' }}>•</span>
                             <Link
                                 to="/privacy/"
                                 onClick={() => setIsMenuOpen(false)}
@@ -584,7 +590,7 @@ export const Header = () => {
                             >
                                 Privacy Policy
                             </Link>
-                            <span>•</span>
+                            <span style={{ color: 'rgba(255, 107, 74, 0.45)' }}>•</span>
                             <span>&copy; {new Date().getFullYear()} The Long Book Club</span>
                         </div>
 
@@ -593,9 +599,9 @@ export const Header = () => {
                                 href="https://www.instagram.com/thelongbookclub"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                style={{ color: 'rgba(234, 232, 218, 0.6)', fontSize: '1.15rem', transition: 'color 0.2s, transform 0.2s' }}
+                                style={{ color: 'rgba(255, 156, 133, 0.75)', fontSize: '1.15rem', transition: 'color 0.2s, transform 0.2s' }}
                                 onMouseEnter={e => { e.currentTarget.style.color = 'var(--color-brand-coral)'; e.currentTarget.style.transform = 'scale(1.1)'; }}
-                                onMouseLeave={e => { e.currentTarget.style.color = 'rgba(234, 232, 218, 0.6)'; e.currentTarget.style.transform = 'scale(1)'; }}
+                                onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255, 156, 133, 0.75)'; e.currentTarget.style.transform = 'scale(1)'; }}
                                 aria-label="Instagram"
                             >
                                 <FaInstagram />
@@ -604,9 +610,9 @@ export const Header = () => {
                                 href="https://www.tiktok.com/@thelongbookclub"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                style={{ color: 'rgba(234, 232, 218, 0.6)', fontSize: '1.15rem', transition: 'color 0.2s, transform 0.2s' }}
+                                style={{ color: 'rgba(255, 156, 133, 0.75)', fontSize: '1.15rem', transition: 'color 0.2s, transform 0.2s' }}
                                 onMouseEnter={e => { e.currentTarget.style.color = 'var(--color-brand-coral)'; e.currentTarget.style.transform = 'scale(1.1)'; }}
-                                onMouseLeave={e => { e.currentTarget.style.color = 'rgba(234, 232, 218, 0.6)'; e.currentTarget.style.transform = 'scale(1)'; }}
+                                onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255, 156, 133, 0.75)'; e.currentTarget.style.transform = 'scale(1)'; }}
                                 aria-label="TikTok"
                             >
                                 <FaTiktok />
@@ -615,9 +621,9 @@ export const Header = () => {
                                 href="https://www.youtube.com/@TheLongBookClub"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                style={{ color: 'rgba(234, 232, 218, 0.6)', fontSize: '1.15rem', transition: 'color 0.2s, transform 0.2s' }}
+                                style={{ color: 'rgba(255, 156, 133, 0.75)', fontSize: '1.15rem', transition: 'color 0.2s, transform 0.2s' }}
                                 onMouseEnter={e => { e.currentTarget.style.color = 'var(--color-brand-coral)'; e.currentTarget.style.transform = 'scale(1.1)'; }}
-                                onMouseLeave={e => { e.currentTarget.style.color = 'rgba(234, 232, 218, 0.6)'; e.currentTarget.style.transform = 'scale(1)'; }}
+                                onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255, 156, 133, 0.75)'; e.currentTarget.style.transform = 'scale(1)'; }}
                                 aria-label="YouTube"
                             >
                                 <FaYoutube />
@@ -628,7 +634,7 @@ export const Header = () => {
 
                 <style>{`
                     .menu-primary-link:hover {
-                        color: var(--color-brand-sage) !important;
+                        color: #ffffff !important;
                         transform: translateX(4px);
                     }
                     .menu-primary-link:hover svg {
@@ -636,8 +642,12 @@ export const Header = () => {
                         transform: translateX(3px);
                     }
                     .menu-sub-link:hover {
-                        color: var(--color-brand-coral) !important;
+                        color: #ffffff !important;
                         transform: translateX(4px);
+                    }
+                    .menu-sub-link:hover .menu-bullet {
+                        color: #ffffff !important;
+                        opacity: 1 !important;
                     }
                     @media (max-width: 880px) {
                         .menu-columns-grid {
