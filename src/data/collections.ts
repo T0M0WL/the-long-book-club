@@ -13,6 +13,18 @@ export interface Collection {
 
 export const collections: Collection[] = [
     {
+        id: 'silkpunk',
+        title: 'Best Long Silkpunk Audiobooks: Bamboo Airships, Jade Magic & Reimagined Dynasties',
+        slug: 'silkpunk',
+        coverUrl: '/covers/the-grace-of-kings-ken-liu.jpg',
+        description: 'Bamboo airships, ox-sinew battle kites, bio-enhancing jade, and dynasties forged in rebellion. Coined by author Ken Liu, silkpunk blends East Asian historical antiquity with organic engineering and martial philosophy. Explore 6 monumental, credit-worthy audiobooks spanning over 112 hours of peerless speculative world-building performed by visionary narrators like Kevin Shen, Natalie Naudus, Andrew Kishino, and Andrew Tell.',
+        bookIds: ['454', '185', '464', '466', '467', '468'],
+        topGraphic: '/assets/Collections-Cards-Gfx/Collection-Card-Top-Green.gif',
+        iconSvg: '/assets/collections-hero-images/Collections Icons SVGs/silkpunk-icon.svg',
+        iconColor: '#ed835e',
+        collectionNumber: '016'
+    },
+    {
         id: 'british-espionage',
         title: 'Best Long British Espionage & Cold War Thrillers: Moles, Traitors & Dead Drops',
         slug: 'british-espionage',

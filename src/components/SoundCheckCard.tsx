@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import AudioPlayer from './AudioPlayer';
 import type { GraphicAudioPart } from '../data/books';
 import { slugify } from '../utils/slugify';
-import { isQualifyingNarrator, cleanNarrators, getNarratorStats } from '../utils/creatorUtils';
+import { isQualifyingNarrator, cleanNarrators } from '../utils/creatorUtils';
 import {
-    narratorData,
     NARRATOR_BADGES,
+    getNarratorVocalStyles,
     type NarratorStyleBadgeId
 } from '../data/narratorData';
 
@@ -77,38 +77,20 @@ const SoundCheckCard: React.FC<SoundCheckCardProps> = ({
 
     const audibleLink = affiliateLink || affiliateLinkUK;
 
-    // Look up qualifying narrators to display their earned awards badges
-    const allStats = useMemo(() => getNarratorStats(), []);
-    const qualifyingProfiles = useMemo(() => {
-        const cleaned = cleanNarrators(narrator);
-        return cleaned
-            .filter(name => isQualifyingNarrator(name))
-            .map(name => {
-                const slug = slugify(name);
-                const profile = narratorData[slug];
-                const stat = allStats.find(n => n.slug === slug);
-                return {
-                    name,
-                    slug,
-                    profile,
-                    totalHours: stat?.totalHours || 0
-                };
-            })
-            .filter(item => Boolean(item.profile));
-    }, [narrator, allStats]);
-
-    // Deduplicate badges across all qualifying narrators on this audiobook.
-    // NOTE: Marathon hour badges (e.g. 500-club) are intentionally omitted from book pages
-    // to prevent listeners from confusing narrator total career hours with book runtime.
-    // Only descriptive vocal style badges are displayed here.
+    // Look up vocal style badges for all narrators on this audiobook
+    // (Multi-book narrators display their curated badges; 1-book narrators display their dominant style from this SoundCheck)
     const uniqueBadges = useMemo<BadgeDisplayItem[]>(() => {
-        if (qualifyingProfiles.length === 0) return [];
+        const cleaned = cleanNarrators(narrator);
+        if (cleaned.length === 0) return [];
 
         const badgeMap = new Map<string, BadgeDisplayItem>();
 
-        // All unique vocal style badges earned by the qualifying narrators on this book
-        qualifyingProfiles.forEach(p => {
-            const styleIds = p.profile?.styleBadges || [];
+        cleaned.forEach(name => {
+            const styleIds = getNarratorVocalStyles(name, [{
+                narrator,
+                soundCheck: soundCheckText
+            }]);
+
             styleIds.forEach((id: NarratorStyleBadgeId) => {
                 const def = NARRATOR_BADGES[id];
                 if (def && !badgeMap.has(def.id)) {
@@ -130,7 +112,7 @@ const SoundCheckCard: React.FC<SoundCheckCardProps> = ({
         });
 
         return Array.from(badgeMap.values());
-    }, [qualifyingProfiles]);
+    }, [narrator, soundCheckText]);
 
     return (
         <div style={{

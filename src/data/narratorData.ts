@@ -1,3 +1,5 @@
+import { slugify } from '../utils/slugify';
+
 export type NarratorStyleBadgeId =
     | 'character-chameleon'
     | 'historical-gravitas'
@@ -226,6 +228,132 @@ export function getHighestMarathonBadge(totalHours: number): NarratorBadgeDef | 
 
 export function getNarratorsByStyle(styleId: NarratorStyleBadgeId): NarratorProfile[] {
     return Object.values(narratorData).filter(p => p.styleBadges.includes(styleId));
+}
+
+export const CURATED_SINGLE_STYLES: Record<string, NarratorStyleBadgeId> = {
+    'sean-pratt': 'satirical-bite',          // Infinite Jest - dry wit, ironic detachment
+    'robertson-dean': 'historical-gravitas', // The Power Broker - deep bass-baritone, moral authority
+    'raul-esparza': 'propulsive-momentum',   // Under the Dome - breathless, high-octane tension
+    'bill-homewood': 'historical-gravitas',  // Les Misérables - theatrical flair, gravitas
+    'humphrey-bower': 'dialect-immersion',   // Shantaram - masterclass Australian/Indian dialects
+    'joanne-froggatt': 'dialect-immersion',  // Wuthering Heights - authentic Yorkshire dialect
+    'david-timson': 'historical-gravitas',   // Decline and Fall of the Roman Empire - monumental classical authority
+    'steven-weber': 'character-chameleon',   // It - extraordinary vocal range for Pennywise and Derry cast
+    'craig-wasson': 'fireside-warmth',       // 11/22/63 - intimate, nostalgic, deeply empathetic
+    'david-pittu': 'character-chameleon',    // The Goldfinch - Audie-winning character distinctions (Boris, Hobie)
+    'anthony-heald': 'historical-gravitas',  // Crime and Punishment - psychological weight and Russian depth
+    'maggie-gyllenhaal': 'fireside-warmth',  // Anna Karenina - intimate, emotionally vulnerable warmth
+    'luke-thompson': 'historical-gravitas',  // The Brothers Karamazov - philosophical Russian gravitas
+    'maureen-obrien': 'fireside-warmth',     // Middlemarch - refined, comforting Victorian companionship
+    'miriam-margolyes': 'character-chameleon' // Bleak House - dazzling Dickensian caricature and character voices
+};
+
+const STYLE_KEYWORDS: Record<NarratorStyleBadgeId, string[]> = {
+    'dual-pov-synergy': [
+        'dual narration', 'dual pov', 'split pov', 'alternating pov', 'alternating chapter',
+        'trio', 'co-narrator', 'vocal chemistry', 'shared narration', 'full cast', 'ensemble cast', 'pairing'
+    ],
+    'dialect-immersion': [
+        'dialect', 'accent', 'brogue', 'drawl', 'regional', 'vernacular', 'slang',
+        'australian', 'irish', 'scottish', 'welsh', 'southern', 'cockney', 'yorkshire',
+        'caribbean', 'linguistic', 'cultural authenticity', 'inflection'
+    ],
+    'satirical-bite': [
+        'satir', 'sardonic', 'deadpan', 'irony', 'ironic', 'dry wit', 'humor', 'humour',
+        'wry', 'wit and', 'comedic', 'absurd', 'black comedy', 'parody', 'cynical', 'tongue-in-cheek'
+    ],
+    'propulsive-momentum': [
+        'propulsive', 'kinetic', 'high-octane', 'breathless', 'urgency',
+        'relentless', 'adrenaline', 'fast-paced', 'driving momentum',
+        'suspense', 'frenetic', 'breakneck', 'rollercoaster', 'blistering'
+    ],
+    'character-chameleon': [
+        'chameleon', 'dozens of distinct', 'distinct character voices', 'vocal range', 'elastic',
+        'multitude of voices', 'each character distinct', 'voice for every', 'character differentiation',
+        'character distinction', 'flawless vocal distinction', 'huge cast', 'sprawling cast of voices',
+        'characterization', 'caricature'
+    ],
+    'historical-gravitas': [
+        'gravitas', 'classical', 'aristocratic', 'stately', 'majesty', 'nobility', 'commanding',
+        'weight', 'monumental', 'oratorical', 'dignified', 'scholarly', 'epic scope', 'statesmanship',
+        'authoritative', 'formal', 'sonorous', 'bass-baritone'
+    ],
+    'fireside-warmth': [
+        'warm', 'warmth', 'fireside', 'cozy', 'comfort', 'intimate', 'gentle', 'reassuring',
+        'hearth', 'bedtime', 'armchair', 'soothing', 'companion', 'storyteller', 'unhurried',
+        'friendly', 'velvety', 'conversational', 'empathy', 'empathetic', 'heartfelt'
+    ]
+};
+
+export function getSingleNarratorDominantStyle(
+    narratorName: string,
+    book?: { title?: string; soundCheck?: string; narrator?: string; genre?: string | string[] }
+): NarratorStyleBadgeId {
+    const slug = slugify(narratorName);
+    if (CURATED_SINGLE_STYLES[slug]) {
+        return CURATED_SINGLE_STYLES[slug];
+    }
+
+    const sc = book?.soundCheck || '';
+    const lower = sc.toLowerCase();
+    const isMulti = (book?.narrator || '').includes(',') || (book?.narrator || '').includes('&') || (book?.narrator || '').includes(' and ');
+
+    const scores: Record<NarratorStyleBadgeId, number> = {
+        'dual-pov-synergy': 0,
+        'dialect-immersion': 0,
+        'satirical-bite': 0,
+        'propulsive-momentum': 0,
+        'character-chameleon': 0,
+        'historical-gravitas': 0,
+        'fireside-warmth': 0
+    };
+
+    if (isMulti) {
+        scores['dual-pov-synergy'] += 4;
+    }
+
+    for (const [style, keywords] of Object.entries(STYLE_KEYWORDS) as [NarratorStyleBadgeId, string[]][]) {
+        for (const kw of keywords) {
+            const matches = (lower.match(new RegExp('\\b' + kw, 'g')) || []).length;
+            scores[style] += matches * 2;
+        }
+    }
+
+    const sorted = (Object.entries(scores) as [NarratorStyleBadgeId, number][]).sort((a, b) => b[1] - a[1]);
+    if (sorted[0][1] > 0) {
+        return sorted[0][0];
+    }
+
+    // Fallback based on genre
+    const gList = Array.isArray(book?.genre) ? book.genre.join(' ') : (book?.genre || '');
+    const gLower = gList.toLowerCase();
+    if (gLower.includes('history') || gLower.includes('classic') || gLower.includes('war') || gLower.includes('biography')) {
+        return 'historical-gravitas';
+    }
+    if (gLower.includes('comedy') || gLower.includes('satire') || gLower.includes('humour') || gLower.includes('humor')) {
+        return 'satirical-bite';
+    }
+    if (gLower.includes('cozy') || gLower.includes('slice of life') || gLower.includes('romance')) {
+        return 'fireside-warmth';
+    }
+    return 'propulsive-momentum';
+}
+
+export function getNarratorVocalStyles(
+    narratorName: string,
+    books?: Array<{ title?: string; soundCheck?: string; narrator?: string; genre?: string | string[] }>
+): NarratorStyleBadgeId[] {
+    const slug = slugify(narratorName);
+    const profile = narratorData[slug];
+
+    // Multi-book narrators with curated profiles in narratorData retain their 2 style badges
+    if (profile?.styleBadges && profile.styleBadges.length > 0) {
+        return profile.styleBadges;
+    }
+
+    // Single-book narrators receive exactly ONE dominant style badge from their SoundCheck
+    const dominantStyle = getSingleNarratorDominantStyle(narratorName, books?.[0]);
+    return [dominantStyle];
 }
 
 export interface NarratorProfile {
@@ -2150,6 +2278,62 @@ export const narratorData: Record<string, NarratorProfile> = {
             'the-wall-of-storms-ken-liu',
             'the-veiled-throne-ken-liu',
             'speaking-bones-ken-liu'
+        ]
+    },
+    'andrew-kishino': {
+        slug: 'andrew-kishino',
+        name: 'Andrew Kishino',
+        heroBio: 'Acclaimed Japanese-Canadian actor and voice artist renowned for anchoring [Fonda Lee](/author/fonda-lee/)’s monumental Green Bone Saga, breathing gritty swagger and clan loyalty into the streets of Janloon.',
+        styleBadges: ['character-chameleon', 'propulsive-momentum'],
+        audibleUrl: 'https://www.amazon.co.uk/s?k=Andrew+Kishino&i=audible&tag=thelongbookclub-21',
+        referenceUrl: 'https://en.wikipedia.org/wiki/Andrew_Kishino',
+        referenceLabel: 'Andrew Kishino Wiki',
+        topGenres: ['Silkpunk', 'Urban Fantasy', 'Crime Saga', 'Martial Arts'],
+        vocalHallmarksKeywords: [
+            'Visceral',
+            'Swagger,',
+            'Gritty',
+            'Fidelity'
+        ],
+        vocalHallmarksSummary: 'Kishino brings ruthless clan violence and intimate brotherhood to life with kinetic intensity, authentic dialects, and flawless multi-character range.',
+        archiveQuote: {
+            quote: 'Andrew Kishino delivers a magnetic, gritty performance that captures the ruthless clan politics, brotherhood, and cinematic martial arts of Janloon with swagger.',
+            bookTitle: 'Jade City',
+            bookSlug: 'jade-city-fonda-lee'
+        },
+        soundcheckBookSlug: 'jade-city-fonda-lee',
+        topBookSlugs: [
+            'jade-city-fonda-lee',
+            'jade-war-fonda-lee',
+            'jade-legacy-fonda-lee'
+        ]
+    },
+    'natalie-naudus': {
+        slug: 'natalie-naudus',
+        name: 'Natalie Naudus',
+        heroBio: 'Award-winning voice talent acclaimed for her radiant, emotionally fearless narrations across [Shelley Parker-Chan](/author/shelley-parker-chan/)’s Radiant Emperor duology and [Xiran Jay Zhao](/author/xiran-jay-zhao/)’s [Iron Widow](/book/iron-widow-xiran-jay-zhao/).',
+        styleBadges: ['historical-gravitas', 'fireside-warmth'],
+        audibleUrl: 'https://www.amazon.co.uk/s?k=Natalie+Naudus&i=audible&tag=thelongbookclub-21',
+        referenceUrl: 'https://www.natAlienAudus.com/',
+        referenceLabel: 'Natalie Naudus Official',
+        topGenres: ['Silkpunk', 'Historical Fantasy', 'Queer Fiction', 'Sci-Fi'],
+        vocalHallmarksKeywords: [
+            'Radiant',
+            'Gravitas,',
+            'Emotional',
+            'Fierceness'
+        ],
+        vocalHallmarksSummary: 'Naudus weaves sweeping imperial ambition, intimate longing, and unyielding psychological fire with crystalline, heartbreaking acoustic clarity.',
+        archiveQuote: {
+            quote: 'Natalie Naudus commands Shelley Parker-Chan’s imperial saga with magnetic vulnerability, fierce ambition, and deeply felt emotional presence.',
+            bookTitle: 'She Who Became the Sun',
+            bookSlug: 'she-who-became-the-sun-shelley-parker-chan'
+        },
+        soundcheckBookSlug: 'she-who-became-the-sun-shelley-parker-chan',
+        topBookSlugs: [
+            'she-who-became-the-sun-shelley-parker-chan',
+            'he-who-drowned-the-world-shelley-parker-chan',
+            'iron-widow-xiran-jay-zhao'
         ]
     }
 };

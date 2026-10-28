@@ -56,7 +56,10 @@ export const cleanNarrators = (raw?: string): string[] => {
  * Returns all authors having at least CREATOR_THRESHOLD qualifying books in the catalog,
  * sorted by book count descending, then total listening hours descending.
  */
-export const getAuthorStats = (allBooks: Book[] = defaultBooks): CreatorItem[] => {
+export const getAuthorStats = (
+    allBooks: Book[] = defaultBooks,
+    minThreshold: number = CREATOR_THRESHOLD
+): CreatorItem[] => {
     const map = new Map<string, Book[]>();
 
     allBooks.forEach(b => {
@@ -71,7 +74,7 @@ export const getAuthorStats = (allBooks: Book[] = defaultBooks): CreatorItem[] =
     const items: CreatorItem[] = [];
 
     map.forEach((bookList, name) => {
-        if (bookList.length >= CREATOR_THRESHOLD) {
+        if (bookList.length >= minThreshold) {
             const totalHours = Math.round(
                 bookList.reduce((acc, b) => acc + (b.lengthHours || 0), 0) * 10
             ) / 10;
@@ -98,7 +101,10 @@ export const getAuthorStats = (allBooks: Book[] = defaultBooks): CreatorItem[] =
  * Returns all narrators having at least CREATOR_THRESHOLD qualifying books in the catalog,
  * sorted by book count descending, then total listening hours descending.
  */
-export const getNarratorStats = (allBooks: Book[] = defaultBooks): CreatorItem[] => {
+export const getNarratorStats = (
+    allBooks: Book[] = defaultBooks,
+    minThreshold: number = CREATOR_THRESHOLD
+): CreatorItem[] => {
     const map = new Map<string, Book[]>();
 
     allBooks.forEach(b => {
@@ -117,7 +123,7 @@ export const getNarratorStats = (allBooks: Book[] = defaultBooks): CreatorItem[]
     const items: CreatorItem[] = [];
 
     map.forEach((bookList, name) => {
-        if (bookList.length >= CREATOR_THRESHOLD) {
+        if (bookList.length >= minThreshold) {
             const totalHours = Math.round(
                 bookList.reduce((acc, b) => acc + (b.lengthHours || 0), 0) * 10
             ) / 10;
@@ -139,13 +145,21 @@ export const getNarratorStats = (allBooks: Book[] = defaultBooks): CreatorItem[]
     });
 };
 
-export const getAuthorBySlug = (slug: string, allBooks: Book[] = defaultBooks): CreatorItem | undefined => {
-    const authors = getAuthorStats(allBooks);
+export const getAuthorBySlug = (
+    slug: string,
+    allBooks: Book[] = defaultBooks,
+    minThreshold: number = CREATOR_THRESHOLD
+): CreatorItem | undefined => {
+    const authors = getAuthorStats(allBooks, minThreshold);
     return authors.find(a => a.slug === slug);
 };
 
-export const getNarratorBySlug = (slug: string, allBooks: Book[] = defaultBooks): CreatorItem | undefined => {
-    const narrators = getNarratorStats(allBooks);
+export const getNarratorBySlug = (
+    slug: string,
+    allBooks: Book[] = defaultBooks,
+    minThreshold: number = CREATOR_THRESHOLD
+): CreatorItem | undefined => {
+    const narrators = getNarratorStats(allBooks, minThreshold);
     return narrators.find(n => n.slug === slug);
 };
 

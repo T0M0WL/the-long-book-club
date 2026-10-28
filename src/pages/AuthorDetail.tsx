@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, Navigate } from 'react-router-dom';
 import { books } from '../data/books';
 import { BookGrid } from '../components/BookGrid';
 import { SEO } from '../components/SEO';
@@ -19,7 +19,12 @@ export const AuthorDetail = () => {
     const { slug } = useParams<{ slug: string }>();
     const heroImageRef = useRef<HTMLImageElement>(null);
 
-    const author = slug ? getAuthorBySlug(slug, books) : undefined;
+    const author = slug ? getAuthorBySlug(slug, books, 1) : undefined;
+
+    // Single-book authors automatically route to their individual book page
+    if (author && author.bookCount === 1 && author.books[0]?.slug) {
+        return <Navigate to={`/book/${author.books[0].slug}/`} replace />;
+    }
 
     // Scroll Effect for Hero Image
     useEffect(() => {
@@ -210,19 +215,7 @@ export const AuthorDetail = () => {
                         opacity: 0.6
                     }} />
 
-                    {/* Stats & Intro */}
-                    <p style={{
-                        fontFamily: 'Inter, sans-serif',
-                        fontSize: '0.95rem',
-                        fontWeight: 600,
-                        letterSpacing: '0.05em',
-                        textTransform: 'uppercase',
-                        color: 'var(--color-brand-coral)',
-                        marginBottom: '1rem'
-                    }}>
-                        {author.bookCount} Audiobooks • Over {Math.floor(author.totalHours)} Hours of Listening
-                    </p>
-
+                    {/* Intro */}
                     <p style={{
                         fontFamily: 'var(--font-serif-accent)',
                         fontSize: '1.35rem',
@@ -257,8 +250,34 @@ export const AuthorDetail = () => {
                 </div>
             </section>
 
-            <div className="page-container" id="author-content" style={{ paddingTop: '1rem' }}>
-                <BookGrid books={author.books} />
+            <div className="page-container" id="author-content" style={{ paddingTop: '2.5rem', scrollMarginTop: '2rem', textAlign: 'center' }}>
+                {/* Stats in 2 Lines, Double Size Lora Italic with Bold Italic Numbers */}
+                <p style={{
+                    fontFamily: 'var(--font-serif-accent), Lora, Georgia, serif',
+                    fontStyle: 'italic',
+                    fontWeight: 400,
+                    fontSize: 'clamp(1.25rem, 2.5vw, 1.6rem)',
+                    color: 'var(--color-brand-forrest)',
+                    margin: '0 auto 2rem auto',
+                    lineHeight: 1.35
+                }}>
+                    <span style={{ fontWeight: 700, fontStyle: 'italic' }}>{author.bookCount}</span> {author.bookCount === 1 ? 'audiobook' : 'audiobooks'}
+                    <br />
+                    Over <span style={{ fontWeight: 700, fontStyle: 'italic' }}>{Math.floor(author.totalHours)}</span> hours of listening
+                </p>
+
+                {/* Small horizontal divide line */}
+                <div style={{
+                    width: '50px',
+                    height: '1px',
+                    backgroundColor: 'var(--color-brand-forrest)',
+                    margin: '0 auto 3.5rem auto',
+                    opacity: 0.6
+                }} />
+
+                <div style={{ textAlign: 'left' }}>
+                    <BookGrid books={author.books} />
+                </div>
             </div>
         </div>
     );

@@ -915,6 +915,20 @@ Redirect 301 /book/462 /book/edens-rise-the-empire-under-the-mountains-oe-brueni
 Redirect 301 /book/462/ /book/edens-rise-the-empire-under-the-mountains-oe-bruening/
 Redirect 301 /book/463 /book/a-history-of-fascism-1914-1945-stanley-g-payne/
 Redirect 301 /book/463/ /book/a-history-of-fascism-1914-1945-stanley-g-payne/
+Redirect 301 /book/464 /book/she-who-became-the-sun-shelley-parker-chan/
+Redirect 301 /book/464/ /book/she-who-became-the-sun-shelley-parker-chan/
+Redirect 301 /book/465 /book/he-who-drowned-the-world-shelley-parker-chan/
+Redirect 301 /book/465/ /book/he-who-drowned-the-world-shelley-parker-chan/
+Redirect 301 /book/466 /book/iron-widow-xiran-jay-zhao/
+Redirect 301 /book/466/ /book/iron-widow-xiran-jay-zhao/
+Redirect 301 /book/467 /book/the-sword-of-kaigen-ml-wang/
+Redirect 301 /book/467/ /book/the-sword-of-kaigen-ml-wang/
+Redirect 301 /book/468 /book/jade-city-fonda-lee/
+Redirect 301 /book/468/ /book/jade-city-fonda-lee/
+Redirect 301 /book/469 /book/jade-war-fonda-lee/
+Redirect 301 /book/469/ /book/jade-war-fonda-lee/
+Redirect 301 /book/470 /book/jade-legacy-fonda-lee/
+Redirect 301 /book/470/ /book/jade-legacy-fonda-lee/
 
   
   # --- Book Alias Redirects (Manual) ---

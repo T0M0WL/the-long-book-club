@@ -5,8 +5,8 @@ import {
     narratorData,
     NARRATOR_BADGES,
     getHighestMarathonBadge,
-    type NarratorBadgeDef,
-    type NarratorStyleBadgeId
+    getNarratorVocalStyles,
+    type NarratorBadgeDef
 } from '../data/narratorData';
 
 interface CreatorCardProps {
@@ -16,7 +16,10 @@ interface CreatorCardProps {
 
 export const CreatorCard: React.FC<CreatorCardProps> = ({ creator, type }) => {
     const [isHovered, setIsHovered] = useState(false);
-    const linkPath = `/${type}/${creator.slug}/`;
+    const isSingleBook = creator.bookCount === 1 && creator.books.length > 0;
+    const linkPath = isSingleBook && creator.books[0]?.slug
+        ? `/book/${creator.books[0].slug}/`
+        : `/${type}/${creator.slug}/`;
     
     // Singular / Plural badge copy
     const labelSingular = type === 'author' ? 'AUDIOBOOK' : 'PERFORMANCE';
@@ -29,11 +32,8 @@ export const CreatorCard: React.FC<CreatorCardProps> = ({ creator, type }) => {
 
     // Profile & badges (for narrators: marathon endurance honor + vocal style hallmarks)
     const profile = type === 'narrator' ? narratorData[creator.slug] : undefined;
-    const styleBadgeDefs = profile?.styleBadges
-        ? (profile.styleBadges as NarratorStyleBadgeId[])
-              .map(id => NARRATOR_BADGES[id])
-              .filter(Boolean)
-        : [];
+    const styleIds = type === 'narrator' ? getNarratorVocalStyles(creator.name, creator.books) : [];
+    const styleBadgeDefs = styleIds.map(id => NARRATOR_BADGES[id]).filter(Boolean);
     const marathonBadge = type === 'narrator' ? getHighestMarathonBadge(creator.totalHours) : null;
     const narratorBadges: NarratorBadgeDef[] = marathonBadge
         ? [...styleBadgeDefs, marathonBadge]
@@ -333,7 +333,7 @@ export const CreatorCard: React.FC<CreatorCardProps> = ({ creator, type }) => {
                         transition: 'background-color 0.2s ease, transform 0.2s ease'
                     }}
                 >
-                    Explore Hub <span style={{ fontStyle: 'normal' }}>→</span>
+                    {isSingleBook ? 'View Audiobook' : 'Explore Hub'} <span style={{ fontStyle: 'normal' }}>→</span>
                 </div>
             </div>
         </Link>

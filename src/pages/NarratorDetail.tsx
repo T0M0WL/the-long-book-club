@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, Navigate } from 'react-router-dom';
 import { books, type Book } from '../data/books';
 import { reviews } from '../data/reviews';
 import { BookGrid } from '../components/BookGrid';
@@ -139,7 +139,12 @@ export const NarratorDetail = () => {
     const { slug } = useParams<{ slug: string }>();
     const heroImageRef = useRef<HTMLImageElement>(null);
 
-    const narrator = slug ? getNarratorBySlug(slug, books) : undefined;
+    const narrator = slug ? getNarratorBySlug(slug, books, 1) : undefined;
+
+    // Single-book narrators automatically route to their individual book page
+    if (narrator && narrator.bookCount === 1 && narrator.books[0]?.slug) {
+        return <Navigate to={`/book/${narrator.books[0].slug}/`} replace />;
+    }
 
     // Scroll Effect for Hero Image
     useEffect(() => {
