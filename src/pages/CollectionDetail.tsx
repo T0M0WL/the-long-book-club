@@ -644,9 +644,9 @@ export const CollectionDetail = () => {
                     <section
                         aria-label="Curator's Briefing"
                         style={{
-                            maxWidth: '780px',
+                            maxWidth: '650px',
                             margin: '0 auto',
-                            padding: '3.5rem 1rem 4rem 1rem',
+                            padding: 'clamp(3.5rem, 6vw, 4.75rem) 1rem clamp(3.5rem, 6vw, 4.75rem) 1rem',
                             textAlign: 'center'
                         }}
                     >
@@ -654,26 +654,26 @@ export const CollectionDetail = () => {
                             display: 'inline-block',
                             fontFamily: 'Inter, sans-serif',
                             fontSize: '0.8rem',
-                            fontWeight: 800,
-                            letterSpacing: '0.16em',
+                            fontWeight: 700,
+                            letterSpacing: '0.14em',
                             textTransform: 'uppercase',
-                            color: 'var(--color-brand-coral)',
-                            marginBottom: '0.75rem'
+                            color: 'var(--color-brand-forrest)',
+                            marginBottom: '1.25rem'
                         }}>
                             {collection.editorialHeading || "Curator's Briefing"}
                         </div>
                         <div style={{
-                            width: '45px',
-                            height: '2px',
+                            width: '42px',
+                            height: '1px',
                             backgroundColor: 'var(--color-brand-forrest)',
                             margin: '0 auto 1.5rem auto',
-                            opacity: 0.35
+                            opacity: 0.55
                         }} />
                         <p
                             style={{
                                 fontFamily: 'var(--font-serif-accent)', // Lora
-                                fontSize: 'clamp(1.1rem, 2.2vw, 1.25rem)',
-                                lineHeight: 1.7,
+                                fontSize: 'clamp(1.05rem, 1.8vw, 1.15rem)',
+                                lineHeight: 1.65,
                                 color: 'var(--color-brand-forrest)',
                                 margin: 0,
                                 fontWeight: 400
