@@ -1,14 +1,49 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FaInstagram, FaTiktok, FaYoutube } from 'react-icons/fa6';
 
 import { StickyHeader } from './StickyHeader';
 import { useHeaderContext } from '../context/HeaderContext';
+import { collections } from '../data/collections';
+import { books } from '../data/books';
 
 export const Header = () => {
     const { pathname } = useLocation();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { theme } = useHeaderContext();
+
+    // Dynamically calculate live counts for directory subheadings
+    const { totalCollections, totalBooksRounded, totalNarrators, totalAuthors } = useMemo(() => {
+        const collCount = collections.length;
+        const roundedBooks = `${Math.floor(books.length / 50) * 50}+`;
+        const authors = new Set<string>();
+        const narrators = new Set<string>();
+
+        books.forEach(b => {
+            if (b.author) {
+                b.author.split(/,|&| and /i).forEach(a => {
+                    const clean = a.trim();
+                    if (clean) authors.add(clean);
+                });
+            }
+            if (b.narrator) {
+                b.narrator.replace(/\((UK|US|Unabridged|GraphicAudio|Anniversary[^\)]*)\)/gi, '')
+                          .split(/,|\/| and |&/i).forEach(n => {
+                    const clean = n.trim().replace(/^Full Cast$/i, '').replace(/^[,\s]+|[,\s]+$/g, '');
+                    if (clean.length > 2 && !clean.toLowerCase().includes('full cast') && !clean.toLowerCase().includes('graphicaudio')) {
+                        narrators.add(clean);
+                    }
+                });
+            }
+        });
+
+        return {
+            totalCollections: collCount,
+            totalBooksRounded: roundedBooks,
+            totalNarrators: narrators.size || 177,
+            totalAuthors: authors.size || 166
+        };
+    }, []);
 
     // Close menu on route change
     useEffect(() => {
@@ -201,57 +236,76 @@ export const Header = () => {
                 </button>
 
                 {/* 3-Column Literary Editorial Index Takeover */}
-                <div style={{
-                    width: '100%',
-                    maxWidth: '1240px',
-                    margin: '0 auto',
-                    padding: 'clamp(3rem, 6vw, 4.5rem) clamp(1.5rem, 5vw, 3.5rem) clamp(2rem, 4vw, 3rem) clamp(1.5rem, 5vw, 3.5rem)',
-                    maxHeight: '94vh',
-                    overflowY: 'auto',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-between',
-                    boxSizing: 'border-box'
-                }}>
-                    {/* Header Strip inside Overlay */}
-                    <div style={{
+                <div
+                    className="menu-overlay-container"
+                    style={{
+                        width: '100%',
+                        maxWidth: '1240px',
+                        margin: '0 auto',
+                        padding: 'clamp(3rem, 5vw, 4.25rem) clamp(1.5rem, 5vw, 3.5rem) clamp(2rem, 3.5vw, 3rem) clamp(1.5rem, 5vw, 3.5rem)',
+                        maxHeight: '94vh',
+                        overflowY: 'auto',
                         display: 'flex',
-                        alignItems: 'center',
+                        flexDirection: 'column',
                         justifyContent: 'space-between',
-                        marginBottom: 'clamp(2rem, 3.5vw, 2.75rem)',
-                        borderBottom: '1px solid rgba(255, 107, 74, 0.25)',
-                        paddingBottom: '1rem'
-                    }}>
+                        boxSizing: 'border-box'
+                    }}
+                >
+                    {/* Top Centered Brand Block */}
+                    <div
+                        className="menu-brand-block"
+                        style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            textAlign: 'center',
+                            marginBottom: 'clamp(2rem, 3.5vw, 2.75rem)'
+                        }}
+                    >
                         <Link
                             to="/"
                             onClick={() => setIsMenuOpen(false)}
                             style={{
+                                display: 'inline-block',
                                 textDecoration: 'none',
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '0.75rem'
+                                marginBottom: 'clamp(1.5rem, 4.5vw, 4.5rem)', // Doubled space under logo on desktop
+                                transition: 'transform 0.25s ease'
+                            }}
+                            className="menu-logo-link"
+                        >
+                            <img
+                                src="/assets/lbc-logo-stack-coral.svg"
+                                alt="The Long Book Club"
+                                className="menu-logo-img"
+                                style={{
+                                    width: 'clamp(185px, 16vw, 220px)',
+                                    height: 'auto',
+                                    display: 'block',
+                                    margin: '0 auto'
+                                }}
+                            />
+                        </Link>
+                        <div
+                            className="menu-tagline"
+                            style={{
+                                fontFamily: 'Inter, sans-serif',
+                                fontSize: 'clamp(0.68rem, 0.8vw, 0.75rem)',
+                                fontWeight: 700,
+                                letterSpacing: '0.16em',
+                                textTransform: 'uppercase',
+                                color: 'var(--color-brand-coral)',
+                                opacity: 0.9,
+                                marginBottom: 'clamp(1.5rem, 2.5vw, 2.25rem)'
                             }}
                         >
-                            <img src="/assets/lbc-fav.svg" alt="" style={{ height: '30px', width: 'auto' }} />
-                            <span style={{
-                                fontFamily: 'Inter, sans-serif',
-                                fontSize: '0.75rem',
-                                fontWeight: 800,
-                                letterSpacing: '0.2em',
-                                textTransform: 'uppercase',
-                                color: 'var(--color-brand-coral)'
-                            }}>
-                                The Long Book Club • Directory
-                            </span>
-                        </Link>
-                        <span className="menu-hide-on-mobile" style={{
-                            fontFamily: 'var(--font-serif-accent)',
-                            fontStyle: 'italic',
-                            fontSize: '0.9rem',
-                            color: 'rgba(255, 156, 133, 0.75)'
-                        }}>
-                            Curated 10+ Hour Audio Immersion
-                        </span>
+                            THE LONG BOOK CLUB DIRECTORY • CURATED LONG-FORM AUDIOBOOK IMMERSION
+                        </div>
+                        <div style={{
+                            width: '100%',
+                            height: '1px',
+                            backgroundColor: 'var(--color-brand-coral)',
+                            opacity: 0.25
+                        }} />
                     </div>
 
                     {/* 3-Column Content Grid */}
@@ -266,12 +320,12 @@ export const Header = () => {
                         <div style={{ display: 'flex', flexDirection: 'column' }}>
                             <div style={{
                                 fontFamily: 'Inter, sans-serif',
-                                fontSize: '0.75rem',
+                                fontSize: '0.72rem',
                                 fontWeight: 800,
-                                letterSpacing: '0.18em',
+                                letterSpacing: '0.15em',
                                 textTransform: 'uppercase',
                                 color: 'var(--color-brand-coral)',
-                                marginBottom: '0.75rem'
+                                marginBottom: '0.85rem'
                             }}>
                                 01 / Curated Sagas
                             </div>
@@ -283,34 +337,44 @@ export const Header = () => {
                                     fontFamily: 'var(--font-serif-accent)',
                                     fontStyle: 'italic',
                                     fontWeight: 400,
-                                    fontSize: 'clamp(1.85rem, 2.3vw, 2.35rem)',
+                                    fontSize: 'clamp(2.7rem, 3.1vw, 3.6rem)', // 15% bigger
                                     color: 'var(--color-brand-coral)',
                                     textDecoration: 'none',
-                                    lineHeight: 1.15,
-                                    marginBottom: '0.85rem',
-                                    transition: 'color 0.25s ease, transform 0.25s ease',
-                                    display: 'inline-flex',
-                                    alignItems: 'center',
-                                    gap: '0.45rem'
+                                    lineHeight: 0.96,
+                                    letterSpacing: '-0.035em',
+                                    display: 'inline-block',
+                                    transition: 'color 0.25s ease, transform 0.25s ease'
                                 }}
                             >
-                                <span>Curated Collections</span>
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.75, flexShrink: 0, transition: 'transform 0.2s ease, opacity 0.2s ease' }}>
+                                <span>Curated<br />Collections</span>
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'inline-block', verticalAlign: '-1px', marginLeft: '0.45rem', opacity: 0.8, transition: 'transform 0.2s ease, opacity 0.2s ease' }}>
                                     <line x1="4" y1="12" x2="20" y2="12" />
                                     <polyline points="14 6 20 12 14 18" />
                                 </svg>
                             </Link>
-                            <div style={{ width: '35px', height: '1px', backgroundColor: 'var(--color-brand-coral)', opacity: 0.5, marginBottom: '1.25rem' }} />
+                            <span style={{
+                                fontFamily: 'var(--font-serif-accent)',
+                                fontStyle: 'italic',
+                                fontWeight: 400,
+                                fontSize: '0.82rem',
+                                color: 'var(--color-brand-coral)',
+                                opacity: 0.85,
+                                marginTop: '0.95rem', // More space under heading
+                                display: 'block'
+                            }}>
+                                {totalCollections} Collections of compelling curated themes
+                            </span>
+                            <div style={{ width: '100%', height: '1px', backgroundColor: 'var(--color-brand-coral)', opacity: 0.25, marginTop: '1.25rem', marginBottom: '1.25rem' }} />
 
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                                 {[
-                                    { label: 'Silkpunk & Asian Fantasy', path: '/collections/silkpunk/' },
-                                    { label: 'British Espionage & Cold War', path: '/collections/british-espionage/' },
-                                    { label: 'Epic Romantasy Long Listens', path: '/collections/romantasy/' },
-                                    { label: 'Grimdark & Moral Ambiguity', path: '/collections/grimdark-fantasy/' },
-                                    { label: 'Cinematic Full-Cast Audio', path: '/collections/graphic-audio/' },
-                                    { label: 'The Longest Ever (60+ Hours)', path: '/collections/longest-ever/' },
-                                    { label: 'Explore All 16 Collections →', path: '/collections/', isSpecial: true }
+                                    { label: `EXPLORE ALL ${totalCollections} COLLECTIONS →`, path: '/collections/', isSpecial: true },
+                                    { label: 'SILKPUNK & ASIAN FANTASY', path: '/collections/silkpunk/' },
+                                    { label: 'BRITISH ESPIONAGE & COLD WAR', path: '/collections/british-espionage/' },
+                                    { label: 'EPIC ROMANTASY LONG LISTENS', path: '/collections/romantasy/' },
+                                    { label: 'GRIMDARK & MORAL AMBIGUITY', path: '/collections/grimdark-fantasy/' },
+                                    { label: 'CINEMATIC FULL-CAST AUDIO', path: '/collections/graphic-audio/' },
+                                    { label: 'THE LONGEST EVER (60+ HOURS)', path: '/collections/longest-ever/' }
                                 ].map(item => (
                                     <Link
                                         key={item.path}
@@ -318,18 +382,21 @@ export const Header = () => {
                                         onClick={() => setIsMenuOpen(false)}
                                         className="menu-sub-link"
                                         style={{
-                                            fontFamily: 'var(--font-serif-accent)',
-                                            fontSize: item.isSpecial ? '0.95rem' : '1.02rem',
-                                            fontWeight: item.isSpecial ? 600 : 400,
-                                            fontStyle: item.isSpecial ? 'italic' : 'normal',
-                                            color: item.isSpecial ? 'var(--color-brand-coral)' : 'var(--color-brand-coral-light)',
+                                            fontFamily: 'Inter, sans-serif',
+                                            fontWeight: 700,
+                                            fontSize: '0.78rem',
+                                            letterSpacing: '0.08em',
+                                            textTransform: 'uppercase',
+                                            color: 'var(--color-brand-coral)',
                                             textDecoration: 'none',
                                             transition: 'color 0.2s ease, transform 0.2s ease',
-                                            lineHeight: 1.35,
-                                            display: 'block'
+                                            lineHeight: 1.4,
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            gap: '0.55rem'
                                         }}
                                     >
-                                        <span className="menu-bullet" style={{ color: 'var(--color-brand-coral)', opacity: 0.75, fontSize: '0.85rem', marginRight: '0.45rem', display: 'inline-block', transition: 'color 0.2s ease, opacity 0.2s ease' }}>•</span>
+                                        <span className="menu-bullet" style={{ color: 'var(--color-brand-coral)', fontSize: '0.85rem', flexShrink: 0, opacity: 0.9, transition: 'color 0.2s ease, opacity 0.2s ease' }}>•</span>
                                         <span>{item.label}</span>
                                     </Link>
                                 ))}
@@ -340,12 +407,12 @@ export const Header = () => {
                         <div style={{ display: 'flex', flexDirection: 'column' }}>
                             <div style={{
                                 fontFamily: 'Inter, sans-serif',
-                                fontSize: '0.75rem',
+                                fontSize: '0.72rem',
                                 fontWeight: 800,
-                                letterSpacing: '0.18em',
+                                letterSpacing: '0.15em',
                                 textTransform: 'uppercase',
                                 color: 'var(--color-brand-coral)',
-                                marginBottom: '0.75rem'
+                                marginBottom: '0.85rem'
                             }}>
                                 02 / Library & Niches
                             </div>
@@ -357,36 +424,44 @@ export const Header = () => {
                                     fontFamily: 'var(--font-serif-accent)',
                                     fontStyle: 'italic',
                                     fontWeight: 400,
-                                    fontSize: 'clamp(1.85rem, 2.3vw, 2.35rem)',
+                                    fontSize: 'clamp(2.7rem, 3.1vw, 3.6rem)', // 15% bigger
                                     color: 'var(--color-brand-coral)',
                                     textDecoration: 'none',
-                                    lineHeight: 1.15,
-                                    marginBottom: '0.35rem',
-                                    transition: 'color 0.25s ease, transform 0.25s ease',
-                                    display: 'inline-flex',
-                                    alignItems: 'center',
-                                    gap: '0.45rem'
+                                    lineHeight: 0.96,
+                                    letterSpacing: '-0.035em',
+                                    display: 'inline-block',
+                                    transition: 'color 0.25s ease, transform 0.25s ease'
                                 }}
                             >
-                                <span>Long Book Finder</span>
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.75, flexShrink: 0, transition: 'transform 0.2s ease, opacity 0.2s ease' }}>
+                                <span>Long Book<br />Finder</span>
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'inline-block', verticalAlign: '-1px', marginLeft: '0.45rem', opacity: 0.8, transition: 'transform 0.2s ease, opacity 0.2s ease' }}>
                                     <line x1="4" y1="12" x2="20" y2="12" />
                                     <polyline points="14 6 20 12 14 18" />
                                 </svg>
                             </Link>
-                            <span style={{ fontFamily: 'var(--font-serif-accent)', fontSize: '0.9rem', color: 'rgba(255, 156, 133, 0.8)', marginBottom: '0.75rem' }}>
-                                Filter 450+ audiobooks by hours & tags
+                            <span style={{
+                                fontFamily: 'var(--font-serif-accent)',
+                                fontStyle: 'italic',
+                                fontWeight: 400,
+                                fontSize: '0.82rem',
+                                color: 'var(--color-brand-coral)',
+                                opacity: 0.85,
+                                marginTop: '0.95rem', // More space under heading
+                                display: 'block'
+                            }}>
+                                Filter {totalBooksRounded} audiobooks by hours & tags
                             </span>
-                            <div style={{ width: '35px', height: '1px', backgroundColor: 'var(--color-brand-coral)', opacity: 0.5, marginBottom: '1.25rem' }} />
+                            <div style={{ width: '100%', height: '1px', backgroundColor: 'var(--color-brand-coral)', opacity: 0.25, marginTop: '1.25rem', marginBottom: '1.25rem' }} />
 
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                                 {[
-                                    { label: 'Progression Fantasy & LitRPG', path: '/genre/progression-fantasy/' },
-                                    { label: 'Cozy Fantasy & Slice-of-Life', path: '/genre/cozy-fantasy/' },
-                                    { label: 'Space Opera & Galactic Empire', path: '/genre/space-opera/' },
-                                    { label: 'Dark Academia & Collegiate Gothic', path: '/genre/dark-academia/' },
-                                    { label: 'Nordic Noir & Scandi Procedurals', path: '/genre/nordic-noir/' },
-                                    { label: 'Historical Fiction Epics', path: '/genre/historical-fiction/' }
+                                    { label: 'THE LONG BOOK FINDER TOOL HOME', path: '/long-book-finder/' },
+                                    { label: 'PROGRESSION FANTASY & LITRPG', path: '/genre/progression-fantasy/' },
+                                    { label: 'COZY FANTASY & SLICE-OF-LIFE', path: '/genre/cozy-fantasy/' },
+                                    { label: 'SPACE OPERA & GALACTIC EMPIRE', path: '/genre/space-opera/' },
+                                    { label: 'DARK ACADEMIA & COLLEGIATE GOTHIC', path: '/genre/dark-academia/' },
+                                    { label: 'NORDIC NOIR & SCANDI PROCEDURALS', path: '/genre/nordic-noir/' },
+                                    { label: 'HISTORICAL FICTION EPICS', path: '/genre/historical-fiction/' }
                                 ].map(item => (
                                     <Link
                                         key={item.path}
@@ -394,23 +469,29 @@ export const Header = () => {
                                         onClick={() => setIsMenuOpen(false)}
                                         className="menu-sub-link"
                                         style={{
-                                            fontFamily: 'var(--font-serif-accent)',
-                                            fontSize: '1.02rem',
-                                            color: 'var(--color-brand-coral-light)',
+                                            fontFamily: 'Inter, sans-serif',
+                                            fontWeight: 700,
+                                            fontSize: '0.78rem',
+                                            letterSpacing: '0.08em',
+                                            textTransform: 'uppercase',
+                                            color: 'var(--color-brand-coral)',
                                             textDecoration: 'none',
                                             transition: 'color 0.2s ease, transform 0.2s ease',
-                                            lineHeight: 1.35,
-                                            display: 'block'
+                                            lineHeight: 1.4,
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            gap: '0.55rem'
                                         }}
                                     >
-                                        <span className="menu-bullet" style={{ color: 'var(--color-brand-coral)', opacity: 0.75, fontSize: '0.85rem', marginRight: '0.45rem', display: 'inline-block', transition: 'color 0.2s ease, opacity 0.2s ease' }}>•</span>
+                                        <span className="menu-bullet" style={{ color: 'var(--color-brand-coral)', fontSize: '0.85rem', flexShrink: 0, opacity: 0.9, transition: 'color 0.2s ease, opacity 0.2s ease' }}>•</span>
                                         <span>{item.label}</span>
                                     </Link>
                                 ))}
                             </div>
 
                             {/* The Journal */}
-                            <div style={{ marginTop: '1.75rem', paddingTop: '1.25rem', borderTop: '1px dashed rgba(255, 107, 74, 0.25)' }}>
+                            <div style={{ width: '100%', height: '1px', backgroundColor: 'var(--color-brand-coral)', opacity: 0.25, marginTop: '1.5rem', marginBottom: '1.25rem' }} />
+                            <div>
                                 <Link
                                     to="/journal/"
                                     onClick={() => setIsMenuOpen(false)}
@@ -419,24 +500,31 @@ export const Header = () => {
                                         fontFamily: 'var(--font-serif-accent)',
                                         fontStyle: 'italic',
                                         fontWeight: 400,
-                                        fontSize: '1.5rem',
+                                        fontSize: 'clamp(1.65rem, 1.85vw, 2.05rem)',
                                         color: 'var(--color-brand-coral)',
                                         textDecoration: 'none',
-                                        lineHeight: 1.2,
-                                        display: 'inline-flex',
-                                        alignItems: 'center',
-                                        gap: '0.45rem',
-                                        marginBottom: '0.25rem',
+                                        lineHeight: 1.1,
+                                        letterSpacing: '-0.035em',
+                                        display: 'inline-block',
                                         transition: 'color 0.25s ease, transform 0.25s ease'
                                     }}
                                 >
                                     <span>The Journal</span>
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.75, flexShrink: 0, transition: 'transform 0.2s ease, opacity 0.2s ease' }}>
+                                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'inline-block', verticalAlign: '-1px', marginLeft: '0.45rem', opacity: 0.8, transition: 'transform 0.2s ease, opacity 0.2s ease' }}>
                                         <line x1="4" y1="12" x2="20" y2="12" />
                                         <polyline points="14 6 20 12 14 18" />
                                     </svg>
                                 </Link>
-                                <span style={{ fontFamily: 'var(--font-serif-accent)', fontSize: '0.85rem', color: 'rgba(255, 156, 133, 0.75)', display: 'block' }}>
+                                <span style={{
+                                    fontFamily: 'var(--font-serif-accent)',
+                                    fontStyle: 'italic',
+                                    fontWeight: 400,
+                                    fontSize: '0.82rem',
+                                    color: 'var(--color-brand-coral)',
+                                    opacity: 0.85,
+                                    marginTop: '0.35rem',
+                                    display: 'block'
+                                }}>
                                     Deep-dive essays, guides & listening stamina
                                 </span>
                             </div>
@@ -446,12 +534,12 @@ export const Header = () => {
                         <div style={{ display: 'flex', flexDirection: 'column' }}>
                             <div style={{
                                 fontFamily: 'Inter, sans-serif',
-                                fontSize: '0.75rem',
+                                fontSize: '0.72rem',
                                 fontWeight: 800,
-                                letterSpacing: '0.18em',
+                                letterSpacing: '0.15em',
                                 textTransform: 'uppercase',
                                 color: 'var(--color-brand-coral)',
-                                marginBottom: '0.75rem'
+                                marginBottom: '0.85rem'
                             }}>
                                 03 / The Creators
                             </div>
@@ -463,34 +551,41 @@ export const Header = () => {
                                     fontFamily: 'var(--font-serif-accent)',
                                     fontStyle: 'italic',
                                     fontWeight: 400,
-                                    fontSize: 'clamp(1.85rem, 2.3vw, 2.35rem)',
+                                    fontSize: 'clamp(2.7rem, 3.1vw, 3.6rem)', // 15% bigger
                                     color: 'var(--color-brand-coral)',
                                     textDecoration: 'none',
-                                    lineHeight: 1.15,
-                                    marginBottom: '0.35rem',
-                                    transition: 'color 0.25s ease, transform 0.25s ease',
-                                    display: 'inline-flex',
-                                    alignItems: 'center',
-                                    gap: '0.45rem'
+                                    lineHeight: 0.96,
+                                    letterSpacing: '-0.035em',
+                                    display: 'inline-block',
+                                    transition: 'color 0.25s ease, transform 0.25s ease'
                                 }}
                             >
-                                <span>Narrators Hub</span>
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.75, flexShrink: 0, transition: 'transform 0.2s ease, opacity 0.2s ease' }}>
+                                <span>Narrators<br />Hub</span>
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'inline-block', verticalAlign: '-1px', marginLeft: '0.45rem', opacity: 0.8, transition: 'transform 0.2s ease, opacity 0.2s ease' }}>
                                     <line x1="4" y1="12" x2="20" y2="12" />
                                     <polyline points="14 6 20 12 14 18" />
                                 </svg>
                             </Link>
-                            <span style={{ fontFamily: 'var(--font-serif-accent)', fontSize: '0.9rem', color: 'rgba(255, 156, 133, 0.8)', marginBottom: '0.75rem' }}>
-                                177 voice talents & verified Soundchecks
+                            <span style={{
+                                fontFamily: 'var(--font-serif-accent)',
+                                fontStyle: 'italic',
+                                fontWeight: 400,
+                                fontSize: '0.82rem',
+                                color: 'var(--color-brand-coral)',
+                                opacity: 0.85,
+                                marginTop: '0.95rem', // More space under heading
+                                display: 'block'
+                            }}>
+                                {totalNarrators} voice talents & verified Soundchecks
                             </span>
-                            <div style={{ width: '35px', height: '1px', backgroundColor: 'var(--color-brand-coral)', opacity: 0.5, marginBottom: '1.25rem' }} />
+                            <div style={{ width: '100%', height: '1px', backgroundColor: 'var(--color-brand-coral)', opacity: 0.25, marginTop: '1.25rem', marginBottom: '1.25rem' }} />
 
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                                 {[
-                                    { label: '100+ Hour Hall of Fame Leaderboard', path: '/narrators/leaderboard/' },
-                                    { label: 'Browse by Vocal Style Badges', path: '/narrators/' },
-                                    { label: 'Gravelly & Authoritative Narrators', path: '/narrator-styles/gravelly-authoritative/' },
-                                    { label: 'Theatrical & Dynamic Performers', path: '/narrator-styles/theatrical-dynamic/' }
+                                    { label: '100+ HOUR HALL OF FAME LEADERBOARD', path: '/narrators/leaderboard/' },
+                                    { label: 'BROWSE BY VOCAL STYLE BADGES', path: '/narrators/' },
+                                    { label: 'GRAVELLY & AUTHORITATIVE NARRATORS', path: '/narrator-styles/gravelly-authoritative/' },
+                                    { label: 'THEATRICAL & DYNAMIC PERFORMERS', path: '/narrator-styles/theatrical-dynamic/' }
                                 ].map(item => (
                                     <Link
                                         key={item.label}
@@ -498,23 +593,29 @@ export const Header = () => {
                                         onClick={() => setIsMenuOpen(false)}
                                         className="menu-sub-link"
                                         style={{
-                                            fontFamily: 'var(--font-serif-accent)',
-                                            fontSize: '1.02rem',
-                                            color: 'var(--color-brand-coral-light)',
+                                            fontFamily: 'Inter, sans-serif',
+                                            fontWeight: 700,
+                                            fontSize: '0.78rem',
+                                            letterSpacing: '0.08em',
+                                            textTransform: 'uppercase',
+                                            color: 'var(--color-brand-coral)',
                                             textDecoration: 'none',
                                             transition: 'color 0.2s ease, transform 0.2s ease',
-                                            lineHeight: 1.35,
-                                            display: 'block'
+                                            lineHeight: 1.4,
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            gap: '0.55rem'
                                         }}
                                     >
-                                        <span className="menu-bullet" style={{ color: 'var(--color-brand-coral)', opacity: 0.75, fontSize: '0.85rem', marginRight: '0.45rem', display: 'inline-block', transition: 'color 0.2s ease, opacity 0.2s ease' }}>•</span>
+                                        <span className="menu-bullet" style={{ color: 'var(--color-brand-coral)', fontSize: '0.85rem', flexShrink: 0, opacity: 0.9, transition: 'color 0.2s ease, opacity 0.2s ease' }}>•</span>
                                         <span>{item.label}</span>
                                     </Link>
                                 ))}
                             </div>
 
                             {/* Authors Directory */}
-                            <div style={{ marginTop: '1.75rem', paddingTop: '1.25rem', borderTop: '1px dashed rgba(255, 107, 74, 0.25)' }}>
+                            <div style={{ width: '100%', height: '1px', backgroundColor: 'var(--color-brand-coral)', opacity: 0.25, marginTop: '1.5rem', marginBottom: '1.25rem' }} />
+                            <div>
                                 <Link
                                     to="/authors/"
                                     onClick={() => setIsMenuOpen(false)}
@@ -523,33 +624,40 @@ export const Header = () => {
                                         fontFamily: 'var(--font-serif-accent)',
                                         fontStyle: 'italic',
                                         fontWeight: 400,
-                                        fontSize: '1.5rem',
+                                        fontSize: 'clamp(1.65rem, 1.85vw, 2.05rem)',
                                         color: 'var(--color-brand-coral)',
                                         textDecoration: 'none',
-                                        lineHeight: 1.2,
-                                        display: 'inline-flex',
-                                        alignItems: 'center',
-                                        gap: '0.45rem',
-                                        marginBottom: '0.25rem',
+                                        lineHeight: 1.1,
+                                        letterSpacing: '-0.035em',
+                                        display: 'inline-block',
                                         transition: 'color 0.25s ease, transform 0.25s ease'
                                     }}
                                 >
                                     <span>Authors Directory</span>
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.75, flexShrink: 0, transition: 'transform 0.2s ease, opacity 0.2s ease' }}>
+                                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'inline-block', verticalAlign: '-1px', marginLeft: '0.45rem', opacity: 0.8, transition: 'transform 0.2s ease, opacity 0.2s ease' }}>
                                         <line x1="4" y1="12" x2="20" y2="12" />
                                         <polyline points="14 6 20 12 14 18" />
                                     </svg>
                                 </Link>
-                                <span style={{ fontFamily: 'var(--font-serif-accent)', fontSize: '0.85rem', color: 'rgba(255, 156, 133, 0.75)', display: 'block' }}>
-                                    166 master storytellers & epic worldbuilders
+                                <span style={{
+                                    fontFamily: 'var(--font-serif-accent)',
+                                    fontStyle: 'italic',
+                                    fontWeight: 400,
+                                    fontSize: '0.82rem',
+                                    color: 'var(--color-brand-coral)',
+                                    opacity: 0.85,
+                                    marginTop: '0.35rem',
+                                    display: 'block'
+                                }}>
+                                    {totalAuthors} master storytellers & epic worldbuilders
                                 </span>
                             </div>
                         </div>
                     </div>
 
-                    {/* Bottom Understated Footer Strip */}
+                    {/* Bottom Understated Footer Strip - Left Links, Right Socials */}
                     <div style={{
-                        marginTop: 'clamp(2rem, 3.5vw, 3rem)',
+                        marginTop: 'clamp(2rem, 3.5vw, 3.5rem)',
                         paddingTop: '1.25rem',
                         borderTop: '1px solid rgba(255, 107, 74, 0.25)',
                         display: 'flex',
@@ -557,51 +665,60 @@ export const Header = () => {
                         alignItems: 'center',
                         flexWrap: 'wrap',
                         gap: '1rem',
-                        fontSize: '0.85rem',
-                        color: 'rgba(255, 156, 133, 0.75)'
+                        fontSize: '0.82rem',
+                        fontFamily: 'Inter, sans-serif',
+                        fontWeight: 400,
+                        color: 'var(--color-brand-coral)'
                     }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+                        {/* Links */}
+                        <div style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '0.85rem',
+                            flexWrap: 'wrap'
+                        }}>
                             <Link
                                 to="/"
                                 onClick={() => setIsMenuOpen(false)}
+                                className="menu-footer-link"
                                 style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }}
-                                onMouseEnter={e => e.currentTarget.style.color = 'var(--color-brand-coral)'}
-                                onMouseLeave={e => e.currentTarget.style.color = 'inherit'}
                             >
                                 Home
                             </Link>
-                            <span style={{ color: 'rgba(255, 107, 74, 0.45)' }}>•</span>
+                            <span style={{ color: 'var(--color-brand-coral)', opacity: 0.7 }}>•</span>
                             <Link
                                 to="/about/"
                                 onClick={() => setIsMenuOpen(false)}
+                                className="menu-footer-link"
                                 style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }}
-                                onMouseEnter={e => e.currentTarget.style.color = 'var(--color-brand-coral)'}
-                                onMouseLeave={e => e.currentTarget.style.color = 'inherit'}
                             >
                                 About The Club
                             </Link>
-                            <span style={{ color: 'rgba(255, 107, 74, 0.45)' }}>•</span>
+                            <span style={{ color: 'var(--color-brand-coral)', opacity: 0.7 }}>•</span>
                             <Link
                                 to="/privacy/"
                                 onClick={() => setIsMenuOpen(false)}
+                                className="menu-footer-link"
                                 style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }}
-                                onMouseEnter={e => e.currentTarget.style.color = 'var(--color-brand-coral)'}
-                                onMouseLeave={e => e.currentTarget.style.color = 'inherit'}
                             >
                                 Privacy Policy
                             </Link>
-                            <span style={{ color: 'rgba(255, 107, 74, 0.45)' }}>•</span>
+                            <span style={{ color: 'var(--color-brand-coral)', opacity: 0.7 }}>•</span>
                             <span>&copy; {new Date().getFullYear()} The Long Book Club</span>
                         </div>
 
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
+                        {/* Social Icons */}
+                        <div style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '1.25rem'
+                        }}>
                             <a
                                 href="https://www.instagram.com/thelongbookclub"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                style={{ color: 'rgba(255, 156, 133, 0.75)', fontSize: '1.15rem', transition: 'color 0.2s, transform 0.2s' }}
-                                onMouseEnter={e => { e.currentTarget.style.color = 'var(--color-brand-coral)'; e.currentTarget.style.transform = 'scale(1.1)'; }}
-                                onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255, 156, 133, 0.75)'; e.currentTarget.style.transform = 'scale(1)'; }}
+                                className="menu-social-link"
+                                style={{ color: 'var(--color-brand-coral)', fontSize: '1.15rem', transition: 'color 0.2s, transform 0.2s' }}
                                 aria-label="Instagram"
                             >
                                 <FaInstagram />
@@ -610,9 +727,8 @@ export const Header = () => {
                                 href="https://www.tiktok.com/@thelongbookclub"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                style={{ color: 'rgba(255, 156, 133, 0.75)', fontSize: '1.15rem', transition: 'color 0.2s, transform 0.2s' }}
-                                onMouseEnter={e => { e.currentTarget.style.color = 'var(--color-brand-coral)'; e.currentTarget.style.transform = 'scale(1.1)'; }}
-                                onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255, 156, 133, 0.75)'; e.currentTarget.style.transform = 'scale(1)'; }}
+                                className="menu-social-link"
+                                style={{ color: 'var(--color-brand-coral)', fontSize: '1.15rem', transition: 'color 0.2s, transform 0.2s' }}
                                 aria-label="TikTok"
                             >
                                 <FaTiktok />
@@ -621,9 +737,8 @@ export const Header = () => {
                                 href="https://www.youtube.com/@TheLongBookClub"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                style={{ color: 'rgba(255, 156, 133, 0.75)', fontSize: '1.15rem', transition: 'color 0.2s, transform 0.2s' }}
-                                onMouseEnter={e => { e.currentTarget.style.color = 'var(--color-brand-coral)'; e.currentTarget.style.transform = 'scale(1.1)'; }}
-                                onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255, 156, 133, 0.75)'; e.currentTarget.style.transform = 'scale(1)'; }}
+                                className="menu-social-link"
+                                style={{ color: 'var(--color-brand-coral)', fontSize: '1.15rem', transition: 'color 0.2s, transform 0.2s' }}
                                 aria-label="YouTube"
                             >
                                 <FaYoutube />
@@ -634,7 +749,7 @@ export const Header = () => {
 
                 <style>{`
                     .menu-primary-link:hover {
-                        color: #ffffff !important;
+                        color: var(--color-brand-cloud) !important;
                         transform: translateX(4px);
                     }
                     .menu-primary-link:hover svg {
@@ -642,20 +757,44 @@ export const Header = () => {
                         transform: translateX(3px);
                     }
                     .menu-sub-link:hover {
-                        color: #ffffff !important;
+                        color: var(--color-brand-cloud) !important;
                         transform: translateX(4px);
                     }
                     .menu-sub-link:hover .menu-bullet {
-                        color: #ffffff !important;
+                        color: var(--color-brand-cloud) !important;
                         opacity: 1 !important;
                     }
+                    .menu-footer-link:hover {
+                        color: var(--color-brand-cloud) !important;
+                    }
+                    .menu-social-link:hover {
+                        color: var(--color-brand-cloud) !important;
+                        transform: scale(1.18);
+                    }
+                    .menu-logo-link:hover {
+                        transform: scale(1.03);
+                    }
                     @media (max-width: 880px) {
+                        .menu-overlay-container {
+                            padding: 2.25rem 1.25rem 2rem 1.25rem !important;
+                        }
+                        .menu-brand-block {
+                            margin-bottom: 1.5rem !important;
+                        }
+                        .menu-logo-link {
+                            margin-bottom: 1.15rem !important;
+                        }
+                        .menu-logo-img {
+                            width: 140px !important;
+                        }
+                        .menu-tagline {
+                            margin-bottom: 1.15rem !important;
+                            font-size: 0.65rem !important;
+                            letter-spacing: 0.12em !important;
+                        }
                         .menu-columns-grid {
                             grid-template-columns: 1fr !important;
-                            gap: 2.75rem !important;
-                        }
-                        .menu-hide-on-mobile {
-                            display: none !important;
+                            gap: 2.25rem !important;
                         }
                     }
                 `}</style>
