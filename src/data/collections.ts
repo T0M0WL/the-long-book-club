@@ -18,6 +18,22 @@ export interface Collection {
 
 export const collections: Collection[] = [
     {
+        id: 'time-travel',
+        title: 'Best Long Time Travel Audiobooks: Time Loops and Alternate Histories',
+        slug: 'time-travel',
+        coverUrl: '/covers/11-22-63.jpg',
+        cardOverview: 'From recursive time loops and Cold War assassination rewinds to Scottish standing stones and medieval pandemics. Discover 169+ hours of time-bending audio fiction.',
+        heroSubtitle: 'Step into history, unravel causal paradoxes, and break free from recursive loops in audio’s most gripping, credit-maximizing temporal epics.',
+        editorialHeading: 'The Art of the Temporal Marathon',
+        editorialIntro: 'Time travel in audio is a high-wire act of pacing, momentum, and emotional consequence. Whether it’s Stephen King’s immersive 30-hour historical plunge in [11/22/63](/book/112263-stephen-king/), the intricate Groundhog-Day magical mastery of [Mother of Learning: Arc 1](/book/mother-of-learning-arc-1-domagoj-kurmaic/), or Claire North’s century-spanning Ouroboros espionage in [The First Fifteen Lives of Harry August](/book/the-first-fifteen-lives-of-harry-august-claire-north/), these sweeping listening experiences turn causal friction into addictive marathons. Narrated by titans like Craig Wasson, Peter Kenny, and Davina Porter, each title rewards your Audible credit with world-building that echoes across generations.',
+        description: 'From recursive time loops and Cold War assassination rewinds to Scottish standing stones and medieval pandemics. Discover 169+ hours of time-bending audio fiction.',
+        bookIds: ['7', '474', '472', '473', '36', '475', '471', '60'],
+        topGraphic: '/assets/Collections-Cards-Gfx/Collection-Card-Top-Purple.gif',
+        iconSvg: '/assets/collections-hero-images/Collections Icons SVGs/time-travel-icon.svg',
+        iconColor: '#bba08f',
+        collectionNumber: '017'
+    },
+    {
         id: 'silkpunk',
         title: 'Best Long Silkpunk & Asian Fantasy Audiobooks',
         slug: 'silkpunk',

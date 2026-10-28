@@ -929,6 +929,22 @@ Redirect 301 /book/469 /book/jade-war-fonda-lee/
 Redirect 301 /book/469/ /book/jade-war-fonda-lee/
 Redirect 301 /book/470 /book/jade-legacy-fonda-lee/
 Redirect 301 /book/470/ /book/jade-legacy-fonda-lee/
+Redirect 301 /book/471 /book/the-everlasting-alix-e-harrow/
+Redirect 301 /book/471/ /book/the-everlasting-alix-e-harrow/
+Redirect 301 /book/472 /book/the-ministry-of-time-kaliane-bradley/
+Redirect 301 /book/472/ /book/the-ministry-of-time-kaliane-bradley/
+Redirect 301 /book/473 /book/mother-of-learning-arc-1-domagoj-kurmaic/
+Redirect 301 /book/473/ /book/mother-of-learning-arc-1-domagoj-kurmaic/
+Redirect 301 /book/474 /book/the-first-fifteen-lives-of-harry-august-claire-north/
+Redirect 301 /book/474/ /book/the-first-fifteen-lives-of-harry-august-claire-north/
+Redirect 301 /book/475 /book/doomsday-book-connie-willis/
+Redirect 301 /book/475/ /book/doomsday-book-connie-willis/
+Redirect 301 /book/476 /book/mother-of-learning-arc-2-domagoj-kurmaic/
+Redirect 301 /book/476/ /book/mother-of-learning-arc-2-domagoj-kurmaic/
+Redirect 301 /book/477 /book/mother-of-learning-arc-3-domagoj-kurmaic/
+Redirect 301 /book/477/ /book/mother-of-learning-arc-3-domagoj-kurmaic/
+Redirect 301 /book/478 /book/mother-of-learning-arc-4-domagoj-kurmaic/
+Redirect 301 /book/478/ /book/mother-of-learning-arc-4-domagoj-kurmaic/
 
   
   # --- Book Alias Redirects (Manual) ---

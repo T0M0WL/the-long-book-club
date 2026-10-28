@@ -2335,5 +2335,34 @@ export const narratorData: Record<string, NarratorProfile> = {
             'he-who-drowned-the-world-shelley-parker-chan',
             'iron-widow-xiran-jay-zhao'
         ]
+    },
+    'jack-voraces': {
+        slug: 'jack-voraces',
+        name: 'Jack Voraces',
+        heroBio: 'A celebrated British voice actor and Audie Award nominee renowned for anchoring [Domagoj Kurmaić](/author/domagoj-kurmaic/)’s monumental 97-hour Mother of Learning time-loop epic with extraordinary character versatility and boundless vocal stamina.',
+        styleBadges: ['character-chameleon', 'propulsive-momentum'],
+        audibleUrl: 'https://www.amazon.co.uk/s?k=Jack+Voraces&i=audible&tag=thelongbookclub-21',
+        referenceUrl: 'https://www.jackvoraces.com/',
+        referenceLabel: 'Jack Voraces Official',
+        topGenres: ['Progression Fantasy', 'Time Travel', 'LitRPG', 'Magic Academy'],
+        vocalHallmarksKeywords: [
+            'Dynamic',
+            'Versatility,',
+            'Comedic',
+            'Timing'
+        ],
+        vocalHallmarksSummary: 'Voraces commands sprawling fantasy casts with rapid-fire comedic wit, distinct telepathic vocal modulation, and remarkable marathon stamina.',
+        archiveQuote: {
+            quote: 'Jack Voraces delivers a powerhouse, marathon performance that carries Domagoj Kurmaić’s expansive time-loop saga with breathtaking stamina and spot-on comedic timing.',
+            bookTitle: 'Mother of Learning: Arc 1',
+            bookSlug: 'mother-of-learning-arc-1-domagoj-kurmaic'
+        },
+        soundcheckBookSlug: 'mother-of-learning-arc-1-domagoj-kurmaic',
+        topBookSlugs: [
+            'mother-of-learning-arc-1-domagoj-kurmaic',
+            'mother-of-learning-arc-2-domagoj-kurmaic',
+            'mother-of-learning-arc-3-domagoj-kurmaic',
+            'mother-of-learning-arc-4-domagoj-kurmaic'
+        ]
     }
 };

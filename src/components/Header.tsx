@@ -369,6 +369,7 @@ export const Header = () => {
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                                 {[
                                     { label: `EXPLORE ALL ${totalCollections} COLLECTIONS →`, path: '/collections/', isSpecial: true },
+                                    { label: 'TIME TRAVEL & ALTERNATE HISTORIES', path: '/collections/time-travel/' },
                                     { label: 'SILKPUNK & ASIAN FANTASY', path: '/collections/silkpunk/' },
                                     { label: 'BRITISH ESPIONAGE & COLD WAR', path: '/collections/british-espionage/' },
                                     { label: 'EPIC ROMANTASY LONG LISTENS', path: '/collections/romantasy/' },
@@ -776,7 +777,7 @@ export const Header = () => {
                     }
                     @media (max-width: 880px) {
                         .menu-overlay-container {
-                            padding: 2.25rem 1.25rem 2rem 1.25rem !important;
+                            padding: 2.5rem 1.5rem 2.25rem clamp(2rem, 6vw, 2.75rem) !important;
                         }
                         .menu-brand-block {
                             margin-bottom: 1.5rem !important;

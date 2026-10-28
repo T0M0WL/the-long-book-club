@@ -34,8 +34,8 @@ export const CollectionDetail = () => {
 
     if (['romantasy', 'graphic-audio', 'litrpg-gamelit', 'space-opera'].includes(slug || '')) {
         themeColor = 'var(--color-brand-cloud)'; // White for Dark Heros
-    } else if (['bucket-list', 'dark-academia', 'long-life-stories', 'best-long-books-2025', 'nordic-noir', 'grimdark-fantasy', 'mythology-epics', 'british-espionage', 'silkpunk'].includes(slug || '')) {
-        themeColor = 'var(--color-brand-sage)'; // Sage for Bucket List, Dark Academia, Long Life, Best of 2025, Nordic Noir, Grimdark, Mythology, British Espionage, Silkpunk
+    } else if (['bucket-list', 'dark-academia', 'long-life-stories', 'best-long-books-2025', 'nordic-noir', 'grimdark-fantasy', 'mythology-epics', 'british-espionage', 'silkpunk', 'time-travel'].includes(slug || '')) {
+        themeColor = 'var(--color-brand-sage)'; // Sage for Bucket List, Dark Academia, Long Life, Best of 2025, Nordic Noir, Grimdark, Mythology, British Espionage, Silkpunk, Time Travel
     }
 
     // Determine Active Link Text Color based on spec
@@ -43,7 +43,7 @@ export const CollectionDetail = () => {
         if (!s) return 'var(--color-brand-slate)';
         if (['romantasy', 'graphic-audio', 'litrpg-gamelit', 'space-opera'].includes(s)) return 'var(--color-brand-coral)';
         if (['longest-ever', 'magical-realism', 'cozy-fantasy'].includes(s)) return 'var(--color-brand-sage)';
-        if (['long-life-stories', 'bucket-list', 'grimdark-fantasy', 'mythology-epics', 'silkpunk'].includes(s)) return 'var(--color-brand-forrest)';
+        if (['long-life-stories', 'bucket-list', 'grimdark-fantasy', 'mythology-epics', 'silkpunk', 'time-travel'].includes(s)) return 'var(--color-brand-forrest)';
         // Default for others (including dark-academia and nordic-noir which use Slate)
         return 'var(--color-brand-slate)';
     };
@@ -349,6 +349,39 @@ export const CollectionDetail = () => {
                             chevronColor="var(--color-brand-forrest)"
                             chevronBlendMode="multiply"
                             chevronOpacity={0.8}
+                        />
+                    </>
+                ) : collection.slug === 'time-travel' ? (
+                    <>
+                        <Hero
+                            backgroundImage="/assets/collections-hero-images/LongBookClub-Slate-Hero-Image-01.gif"
+                            topGraphic="/assets/collections-hero-images/Collections Icons SVGs/time-travel-icon.svg"
+                            topGraphicDimensions={getBalancedDims('time-travel')}
+                            title="Time Travel, Temporal Journeys &amp; Alternative Histories"
+                            sectionHeight="auto"
+                            sectionMinHeight="600px"
+                            sectionPadding="11rem 1rem 8rem 1rem"
+                            contentPaddingTop="0"
+                            titleFontSize="4.5rem"
+                            titleLineHeight={1.05}
+                            subtitleFontSize="1.4rem"
+                            subtitleLineHeight={1.6}
+                            subtitle={collection.heroSubtitle || collection.description}
+                            useDynamicColor={false}
+                            subtitleColor="rgba(203, 214, 171, 0.5)"
+                            separatorColor="rgba(203, 214, 171, 0.5)"
+                            showCornerGraphics={false}
+                            overlayOpacity={0}
+                            topGraphicColor="rgba(203, 214, 171, 0.5)"
+                            topGraphicBlendMode="normal"
+                            topGraphicFilter="none"
+                            topGraphicOpacity={0.9}
+                            contentBlendMode="normal"
+                            titleColor="rgba(203, 214, 171, 0.5)"
+                            titleBlendMode="normal"
+                            titleOpacity={1}
+                            chevronColor="var(--color-brand-sage)"
+                            chevronOpacity={0.5}
                         />
                     </>
                 ) : collection.slug === 'silkpunk' ? (
