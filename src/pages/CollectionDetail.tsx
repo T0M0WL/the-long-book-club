@@ -646,7 +646,10 @@ export const CollectionDetail = () => {
                         style={{
                             maxWidth: '650px',
                             margin: '0 auto',
-                            padding: 'clamp(3.5rem, 6vw, 4.75rem) 1rem clamp(3.5rem, 6vw, 4.75rem) 1rem',
+                            paddingTop: 0,
+                            paddingBottom: 'clamp(3rem, 5vw, 4.25rem)',
+                            paddingLeft: '1rem',
+                            paddingRight: '1rem',
                             textAlign: 'center'
                         }}
                     >
