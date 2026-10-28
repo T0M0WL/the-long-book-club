@@ -266,7 +266,7 @@ export const BookDetails = () => {
                 }}>
 
                     {/* Genre Pill - Matched to BookCard */}
-                    <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', gap: '0.35rem', marginBottom: '1.15rem' }}>
+                    <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', gap: '0.4rem', marginBottom: '1.25rem' }}>
                         {(Array.isArray(book.genre) ? book.genre : [book.genre]).map((g, i) => (
                             <Link
                                 key={i}
@@ -277,11 +277,11 @@ export const BookDetails = () => {
                                     display: 'inline-flex',
                                     alignItems: 'center',
                                     lineHeight: 1,
-                                    padding: '0.22rem 0.55rem',
-                                    backgroundColor: 'var(--color-brand-forrest)',
-                                    color: 'var(--color-brand-cloud)',
-                                    borderRadius: '0.75rem',
-                                    fontSize: '0.625rem',
+                                    padding: '0.48rem 0.75rem',
+                                    backgroundColor: 'var(--color-brand-coral)',
+                                    color: '#ffffff',
+                                    borderRadius: '50px',
+                                    fontSize: '0.65rem',
                                     fontFamily: 'Inter, sans-serif',
                                     fontWeight: 700,
                                     letterSpacing: '0.04em',
@@ -290,12 +290,12 @@ export const BookDetails = () => {
                                     transition: 'background-color 0.2s, color 0.2s'
                                 }}
                                 onMouseEnter={e => {
-                                    e.currentTarget.style.backgroundColor = '#2a4a3d';
-                                    e.currentTarget.style.color = 'var(--color-brand-coral-light)';
+                                    e.currentTarget.style.backgroundColor = 'var(--color-brand-forrest)';
+                                    e.currentTarget.style.color = '#ffffff';
                                 }}
                                 onMouseLeave={e => {
-                                    e.currentTarget.style.backgroundColor = 'var(--color-brand-forrest)';
-                                    e.currentTarget.style.color = 'var(--color-brand-cloud)';
+                                    e.currentTarget.style.backgroundColor = 'var(--color-brand-coral)';
+                                    e.currentTarget.style.color = '#ffffff';
                                 }}
                             >
                                 {g}
@@ -305,34 +305,40 @@ export const BookDetails = () => {
 
                     {/* Titles - Matched to BookCard */}
                     <h1 style={{
-                        fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                        fontSize: 'clamp(3rem, 4.8vw, 4.2rem)',
                         marginBottom: '0.5rem',
-                        lineHeight: 1.1,
-                        fontFamily: 'var(--font-serif-accent)', // Fraunces
-                        color: 'var(--color-brand-forrest)',
-                        fontWeight: 500
+                        lineHeight: 1.08,
+                        fontFamily: 'var(--font-serif-accent)', // Lora
+                        fontStyle: 'italic',
+                        fontWeight: 400,
+                        letterSpacing: '-0.03em',
+                        color: 'var(--color-brand-forrest)'
                     }}>
                         {book.title}
                     </h1>
                     <h2 style={{
                         color: 'var(--color-brand-forrest)',
-                        marginBottom: '2.5rem'
+                        marginBottom: '2.5rem',
+                        fontWeight: 700
                     }}>
                         {isQualifyingAuthor(book.author) ? (
                             <Link
                                 to={`/author/${slugify(book.author)}/`}
                                 style={{
-                                    color: 'inherit',
+                                    color: 'var(--color-brand-coral)',
+                                    fontWeight: 700,
                                     textDecoration: 'none',
                                     transition: 'color 0.2s ease'
                                 }}
-                                onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--color-brand-coral)'; }}
-                                onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--color-brand-forrest)'; }}
+                                onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--color-brand-forrest)'; }}
+                                onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--color-brand-coral)'; }}
                             >
                                 {book.author}
                             </Link>
                         ) : (
-                            book.author
+                            <span style={{ fontWeight: 700, color: 'var(--color-brand-forrest)' }}>
+                                {book.author}
+                            </span>
                         )}
                     </h2>
 
@@ -341,9 +347,11 @@ export const BookDetails = () => {
                         <>
                             {/* Curator's Note (SEO Hook) */}
                             <h2 style={{
+                                fontFamily: 'var(--font-serif-accent)', // Lora
+                                fontWeight: 400, // Lightest Lora regular
+                                fontStyle: 'normal',
                                 color: 'var(--color-brand-forrest)',
-                                marginBottom: '1.5rem',
-                                fontWeight: 700,
+                                marginBottom: '2.75rem', // Generous breathing room before Soundcheck
                                 alignSelf: 'flex-start',
                                 textAlign: 'left',
                                 width: '100%'

@@ -48,13 +48,19 @@ const renderNarratorWithLinks = (rawNarrator: string) => {
                     key={index}
                     to={`/narrator/${slugify(part)}/`}
                     style={{
-                        color: 'inherit',
+                        color: 'var(--color-brand-coral)',
                         textDecoration: 'none',
-                        transition: 'color 0.2s ease',
-                        borderBottom: '1px dotted var(--color-brand-forrest)'
+                        transition: 'color 0.2s ease, border-color 0.2s ease',
+                        borderBottom: '1px dotted var(--color-brand-coral)'
                     }}
-                    onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--color-brand-coral)'; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--color-brand-forrest)'; }}
+                    onMouseEnter={(e) => {
+                        e.currentTarget.style.color = 'var(--color-brand-forrest)';
+                        e.currentTarget.style.borderBottomColor = 'var(--color-brand-forrest)';
+                    }}
+                    onMouseLeave={(e) => {
+                        e.currentTarget.style.color = 'var(--color-brand-coral)';
+                        e.currentTarget.style.borderBottomColor = 'var(--color-brand-coral)';
+                    }}
                 >
                     {part}
                 </Link>
@@ -130,8 +136,10 @@ const SoundCheckCard: React.FC<SoundCheckCardProps> = ({
             {/* Title */}
             <h3 style={{
                 fontFamily: 'var(--font-serif-accent)', // Lora
-                fontWeight: 400,
-                color: 'var(--color-brand-coral)',
+                fontStyle: 'italic',
+                fontWeight: 400, // Lightest Lora italic
+                letterSpacing: '-0.02em',
+                color: 'var(--color-brand-forrest)',
                 fontSize: '28px',
                 margin: '0 0 1.25rem 0',
                 lineHeight: 1.1,
