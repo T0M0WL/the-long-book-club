@@ -280,17 +280,25 @@ export const Header = () => {
                                 onClick={() => setIsMenuOpen(false)}
                                 className="menu-primary-link"
                                 style={{
-                                    fontFamily: 'var(--font-heading)',
-                                    fontSize: 'clamp(2rem, 2.5vw, 2.6rem)',
+                                    fontFamily: 'var(--font-serif-accent)',
+                                    fontStyle: 'italic',
+                                    fontWeight: 500,
+                                    fontSize: 'clamp(1.85rem, 2.3vw, 2.35rem)',
                                     color: 'var(--color-brand-cloud)',
                                     textDecoration: 'none',
-                                    lineHeight: 1.05,
+                                    lineHeight: 1.15,
                                     marginBottom: '0.85rem',
                                     transition: 'color 0.25s ease, transform 0.25s ease',
-                                    display: 'inline-block'
+                                    display: 'inline-flex',
+                                    alignItems: 'center',
+                                    gap: '0.45rem'
                                 }}
                             >
-                                Curated Collections &rarr;
+                                <span>Curated Collections</span>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.7, flexShrink: 0, transition: 'transform 0.2s ease, opacity 0.2s ease' }}>
+                                    <line x1="4" y1="12" x2="20" y2="12" />
+                                    <polyline points="14 6 20 12 14 18" />
+                                </svg>
                             </Link>
                             <div style={{ width: '35px', height: '1px', backgroundColor: 'var(--color-brand-coral)', opacity: 0.5, marginBottom: '1.25rem' }} />
 
@@ -344,17 +352,25 @@ export const Header = () => {
                                 onClick={() => setIsMenuOpen(false)}
                                 className="menu-primary-link"
                                 style={{
-                                    fontFamily: 'var(--font-heading)',
-                                    fontSize: 'clamp(2rem, 2.5vw, 2.6rem)',
+                                    fontFamily: 'var(--font-serif-accent)',
+                                    fontStyle: 'italic',
+                                    fontWeight: 500,
+                                    fontSize: 'clamp(1.85rem, 2.3vw, 2.35rem)',
                                     color: 'var(--color-brand-cloud)',
                                     textDecoration: 'none',
-                                    lineHeight: 1.05,
+                                    lineHeight: 1.15,
                                     marginBottom: '0.35rem',
                                     transition: 'color 0.25s ease, transform 0.25s ease',
-                                    display: 'inline-block'
+                                    display: 'inline-flex',
+                                    alignItems: 'center',
+                                    gap: '0.45rem'
                                 }}
                             >
-                                Long Book Finder &rarr;
+                                <span>Long Book Finder</span>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.7, flexShrink: 0, transition: 'transform 0.2s ease, opacity 0.2s ease' }}>
+                                    <line x1="4" y1="12" x2="20" y2="12" />
+                                    <polyline points="14 6 20 12 14 18" />
+                                </svg>
                             </Link>
                             <span style={{ fontFamily: 'var(--font-serif-accent)', fontSize: '0.9rem', color: 'var(--color-brand-sage)', opacity: 0.85, marginBottom: '0.75rem' }}>
                                 Filter 450+ audiobooks by hours & tags
@@ -396,17 +412,25 @@ export const Header = () => {
                                     onClick={() => setIsMenuOpen(false)}
                                     className="menu-primary-link"
                                     style={{
-                                        fontFamily: 'var(--font-heading)',
-                                        fontSize: '1.6rem',
+                                        fontFamily: 'var(--font-serif-accent)',
+                                        fontStyle: 'italic',
+                                        fontWeight: 500,
+                                        fontSize: '1.5rem',
                                         color: 'var(--color-brand-cloud)',
                                         textDecoration: 'none',
-                                        lineHeight: 1.1,
-                                        display: 'block',
+                                        lineHeight: 1.2,
+                                        display: 'inline-flex',
+                                        alignItems: 'center',
+                                        gap: '0.45rem',
                                         marginBottom: '0.25rem',
-                                        transition: 'color 0.25s ease'
+                                        transition: 'color 0.25s ease, transform 0.25s ease'
                                     }}
                                 >
-                                    The Journal &rarr;
+                                    <span>The Journal</span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.7, flexShrink: 0, transition: 'transform 0.2s ease, opacity 0.2s ease' }}>
+                                        <line x1="4" y1="12" x2="20" y2="12" />
+                                        <polyline points="14 6 20 12 14 18" />
+                                    </svg>
                                 </Link>
                                 <span style={{ fontFamily: 'var(--font-serif-accent)', fontSize: '0.85rem', color: 'rgba(234, 232, 218, 0.65)' }}>
                                     Deep-dive essays, guides & listening stamina
@@ -432,17 +456,25 @@ export const Header = () => {
                                 onClick={() => setIsMenuOpen(false)}
                                 className="menu-primary-link"
                                 style={{
-                                    fontFamily: 'var(--font-heading)',
-                                    fontSize: 'clamp(2rem, 2.5vw, 2.6rem)',
+                                    fontFamily: 'var(--font-serif-accent)',
+                                    fontStyle: 'italic',
+                                    fontWeight: 500,
+                                    fontSize: 'clamp(1.85rem, 2.3vw, 2.35rem)',
                                     color: 'var(--color-brand-cloud)',
                                     textDecoration: 'none',
-                                    lineHeight: 1.05,
+                                    lineHeight: 1.15,
                                     marginBottom: '0.35rem',
                                     transition: 'color 0.25s ease, transform 0.25s ease',
-                                    display: 'inline-block'
+                                    display: 'inline-flex',
+                                    alignItems: 'center',
+                                    gap: '0.45rem'
                                 }}
                             >
-                                Narrators Hub &rarr;
+                                <span>Narrators Hub</span>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.7, flexShrink: 0, transition: 'transform 0.2s ease, opacity 0.2s ease' }}>
+                                    <line x1="4" y1="12" x2="20" y2="12" />
+                                    <polyline points="14 6 20 12 14 18" />
+                                </svg>
                             </Link>
                             <span style={{ fontFamily: 'var(--font-serif-accent)', fontSize: '0.9rem', color: 'var(--color-brand-sage)', opacity: 0.85, marginBottom: '0.75rem' }}>
                                 177 voice talents & verified Soundchecks
@@ -482,17 +514,25 @@ export const Header = () => {
                                     onClick={() => setIsMenuOpen(false)}
                                     className="menu-primary-link"
                                     style={{
-                                        fontFamily: 'var(--font-heading)',
-                                        fontSize: '1.6rem',
+                                        fontFamily: 'var(--font-serif-accent)',
+                                        fontStyle: 'italic',
+                                        fontWeight: 500,
+                                        fontSize: '1.5rem',
                                         color: 'var(--color-brand-cloud)',
                                         textDecoration: 'none',
-                                        lineHeight: 1.1,
-                                        display: 'block',
+                                        lineHeight: 1.2,
+                                        display: 'inline-flex',
+                                        alignItems: 'center',
+                                        gap: '0.45rem',
                                         marginBottom: '0.25rem',
-                                        transition: 'color 0.25s ease'
+                                        transition: 'color 0.25s ease, transform 0.25s ease'
                                     }}
                                 >
-                                    Authors Directory &rarr;
+                                    <span>Authors Directory</span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.7, flexShrink: 0, transition: 'transform 0.2s ease, opacity 0.2s ease' }}>
+                                        <line x1="4" y1="12" x2="20" y2="12" />
+                                        <polyline points="14 6 20 12 14 18" />
+                                    </svg>
                                 </Link>
                                 <span style={{ fontFamily: 'var(--font-serif-accent)', fontSize: '0.85rem', color: 'rgba(234, 232, 218, 0.65)' }}>
                                     166 master storytellers & epic worldbuilders
@@ -590,6 +630,10 @@ export const Header = () => {
                     .menu-primary-link:hover {
                         color: var(--color-brand-sage) !important;
                         transform: translateX(4px);
+                    }
+                    .menu-primary-link:hover svg {
+                        opacity: 1 !important;
+                        transform: translateX(3px);
                     }
                     .menu-sub-link:hover {
                         color: var(--color-brand-coral) !important;
