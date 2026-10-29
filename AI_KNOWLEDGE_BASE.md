@@ -135,3 +135,15 @@ Because each audiobook appears across multiple URLs on the website (and because 
 - **Core Stance:** Thomas is an authentic book lover, curator, and designer—**not** an aggressive marketer. We never spam promo links or hard-sell.
 - **Primary Method:** The "Helpful Commenter" strategy on `r/audiobooks`, `r/audible`, `r/Fantasy`, and `r/suggestmeabook`. When users ask for long listens or credit recommendations, reply with 2–3 genuine title suggestions first, and link directly to the specific book review/soundcheck or collection rather than a generic homepage plug.
 - **Standalone Posts:** If making a top-level post, always provide 80% of the value in the post body (concrete titles, runtimes, narrator highlights), never use commercial/affiliate flairs, and ask a genuine discussion question to spark community engagement.
+
+---
+
+## 📁 Gemini & NotebookLM Documentation Directory (`gemini-docs/`)
+
+All files used to instruct, train, and prompt external Gemini agents and NotebookLM are located in the [`gemini-docs/`](./gemini-docs/) directory:
+- **`TLBC_Gemini_Agent_Content_Spec.md`**: Master Strategy, Funnel & SOP (with full 463-book live inventory).
+- **`TLBC_Weekly_Agent_Prompt_Guide.md`**: Weekly alternating Monday research brief prompt.
+- **`TLBC_Full_Reviews_For_NotebookLM.md`**: 59 gold-standard reviews & journal posts for voice training.
+- **`TLBC_Complete_Catalog_For_Agent.md`**: Comprehensive catalog reference database.
+- **`TLBC_Collections_And_Journal_Directory.md`**: Index of all 17 live collections and journal articles.
+- See [`gemini-docs/README.md`](./gemini-docs/README.md) for full usage instructions.

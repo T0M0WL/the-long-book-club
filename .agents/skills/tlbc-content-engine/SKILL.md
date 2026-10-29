@@ -23,8 +23,8 @@ This skill governs how Antigravity (and any spawned `research` or `self` sub-age
 ## 1. Reference Files in This Workspace
 
 Before drafting or integrating new content, consult:
-- **Content Specification & Templates**: [TLBC_Gemini_Agent_Content_Spec.md](../../../TLBC_Gemini_Agent_Content_Spec.md)
-- **Brand Voice & Gold-Standard Reviews (59 Full Reviews + 3 Journal Posts)**: [TLBC_Full_Reviews_For_NotebookLM.md](../../../TLBC_Full_Reviews_For_NotebookLM.md)
+- **Content Specification & Templates**: [gemini-docs/TLBC_Gemini_Agent_Content_Spec.md](../../../gemini-docs/TLBC_Gemini_Agent_Content_Spec.md)
+- **Brand Voice & Gold-Standard Reviews (59 Full Reviews + 3 Journal Posts)**: [gemini-docs/TLBC_Full_Reviews_For_NotebookLM.md](../../../gemini-docs/TLBC_Full_Reviews_For_NotebookLM.md)
 - **Site Architecture & Deployment Rules**: [AI_KNOWLEDGE_BASE.md](../../../AI_KNOWLEDGE_BASE.md)
 - **Live Data Files**:
   - Books (`Tier 1–3 copy + metadata`): [src/data/books.ts](../../../src/data/books.ts)
