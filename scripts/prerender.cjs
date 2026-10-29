@@ -989,12 +989,21 @@ async function prerender() {
     }
 
     const dotHtmlTemplate = `
+<IfModule mod_headers.c>
+  # Enable open CORS for public crawler and metadata files (sitemap.xml, robots.txt, ai.txt)
+  <FilesMatch "\\.(xml|txt)$">
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, HEAD, OPTIONS"
+    Header set Access-Control-Allow-Headers "*"
+  </FilesMatch>
+</IfModule>
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
   
   # Force non-www domain canonicalization
-  RewriteCond %{HTTP_HOST} ^www\.(.+) [NC]
+  RewriteCond %{HTTP_HOST} ^www\\.(.+) [NC]
   RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
   
   # Plural to Singular Canonical 301 Redirects
@@ -1004,7 +1013,7 @@ async function prerender() {
   # Force trailing slash on directories for SEO consistency and Prerender discovery
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_URI} !(.*)/$
-  RewriteCond %{REQUEST_URI} ^/(book|genre|collections|journal|links|long-book-finder|about|privacy) [NC]
+  RewriteCond %{REQUEST_URI} ^/(book|genre|collections|journal|links|long-book-finder|about|privacy|authors|author|narrators|narrator|narrator-styles) [NC]
   RewriteRule ^(.*)$ $1/ [L,R=301]
 
   ${redirectRules}
