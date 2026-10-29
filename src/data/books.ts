@@ -4,7 +4,6 @@ export interface GraphicAudioPart {
     title: string;          // e.g. "Graphic Audio Version. Part 1"
     shortLabel: string;     // e.g. "Part 1"
     affiliateLink: string;
-    affiliateLinkUS?: string;
 }
 
 export interface Book {
@@ -19,7 +18,6 @@ export interface Book {
     curatorNote?: string; // "Why this is the best..." section
     curatorTitle?: string; // Optional: Overrides the default "Why this is the best..." header
     affiliateLink: string;
-    affiliateLinkUS?: string;
     relatedBookIds?: string[];
     narrator?: string;
     longBookClubTake?: string;
@@ -52,7 +50,6 @@ export const baseBooks: Book[] = [
         lengthHours: 67,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/b9/1a/de/b91ade9e-73c5-9554-84b3-d7e4524c6020/mzaf_9273887908918755072.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00WKWJW5A?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B07VT6WPNM?tag=thelongbookcl-20'
     },
     {
         id: "11",
@@ -67,7 +64,6 @@ export const baseBooks: Book[] = [
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/21/22/2e/21222ed6-d382-9b62-1a57-59b55add5d3e/mzaf_5794367686370882688.std.aac.p.m4a",
         relatedBookIds: ["3", "12", "7"],
         affiliateLink: "https://www.amazon.co.uk/dp/B01H0IF7MA?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B01H0IH01Q?tag=thelongbookcl-20",
         cardOverview: "45 hours of childhood trauma. The definitive horror epic that explores the fears we never outgrow.",
         narrator: "Steven Weber"
     },
@@ -101,7 +97,6 @@ export const baseBooks: Book[] = [
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/dd/b2/69/ddb2695f-0ced-413f-9928-74cf742d0331/mzaf_12813721420181694724.std.aac.p.m4a",
         relatedBookIds: ["48", "49", "50", "57", "58", "59", "45", "46", "47", "9", "51", "52", "53", "54", "41", "42", "43", "44", "23", "55", "56", "38", "29"],
         affiliateLink: "https://www.amazon.co.uk/dp/B0052TNVN2?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B005EG4CYA?tag=thelongbookcl-20",
         cardOverview: "45 hours of world-building. The start of the Stormlight Archive masterfully balances magic and character.",
         narrator: "Michael Kramer, Kate Reading"
     },
@@ -123,7 +118,6 @@ export const baseBooks: Book[] = [
         lengthHours: 66.1,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/85/4e/00/854e00f4-417a-91d2-1217-2c8eb0a5423d/mzaf_15560665113102225144.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0DKG7DCG5?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0DKG75PBH?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['11','12','7'],
@@ -140,7 +134,6 @@ export const baseBooks: Book[] = [
         lengthHours: 47.8,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/14/0d/f5/140df50e-11d9-4e9a-cb70-6bbb2eeff521/mzaf_15126501118333606540.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B008MZT1V4?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B008MTA66E?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['18','34','2','33','81','82','84','85','16','35'],
@@ -158,7 +151,6 @@ export const baseBooks: Book[] = [
         lengthHours: 36,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/45/83/82/458382f3-ef5c-2aab-86f7-1ff98e5624b5/mzaf_3609138064636561819.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B077DS3W25?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B077D7S5DP?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['25','26','90','96','17','24','89','76','78'],
@@ -175,7 +167,6 @@ export const baseBooks: Book[] = [
         lengthHours: 56.2,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/c9/79/03/c9790398-83b9-305a-6332-2e5c6add4d1e/mzaf_11655280249488081073.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B07L8KNKDG?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0CZ4N145R?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['15','75','19','39','71','72','73','37','74','70','31','10'],
@@ -194,7 +185,6 @@ export const baseBooks: Book[] = [
         lengthHours: 52.7,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/4e/dc/60/4edc60c9-4e26-cece-b4f1-b62f64048d0c/mzaf_4067438748408383557.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B008QZBHPI?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B005GG1APM?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['11','3','12'],
@@ -213,7 +203,6 @@ export const baseBooks: Book[] = [
         lengthHours: 30.6,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/b9/5c/a7/b95ca765-0dbb-13ed-734d-9c7179747607/mzaf_6300578996500299024.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0064P650E?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0064I1KGA?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['20','68','69','60','61','63','65','66','27','64','67'],
@@ -230,7 +219,6 @@ export const baseBooks: Book[] = [
         lengthHours: 63,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/0d/8b/5d/0d8b5d5c-ee73-36e2-65a9-1bc36a06c998/mzaf_6005547672321744936.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B009T9SYQK?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B001MXQ7AQ?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['51','52','53','54','45','46','47','13','48','49','50','41','42','43','44','57','58','59','23','55','56','38','29'],
@@ -246,7 +234,6 @@ export const baseBooks: Book[] = [
         lengthHours: 33.7,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/d7/6d/33/d76d33cf-4e60-8df2-d7b8-fb42f842c192/mzaf_13748739641784907894.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B005CB5HTG?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B005C7QQ2M?tag=thelongbookcl-20'
     },
     {
         id: "10",
@@ -261,7 +248,6 @@ export const baseBooks: Book[] = [
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/f4/c0/fb/f4c0fbe6-5a22-920c-29d5-8a408659fe8d/mzaf_16581054446197328165.std.aac.p.m4a",
         relatedBookIds: ["15", "75", "6", "19", "39", "71", "72", "73", "37", "74", "70", "31"],
         affiliateLink: "https://www.amazon.co.uk/dp/B06X3XG5Y6?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B06VWQTBZ9?tag=thelongbookcl-20",
         teaserTitle: "Does Stephen Fry Perfect the Entire Holmes Canon?",
         teaser: "Can Stephen Fry's warm, theatrical voice and personal introductions sustain seventy-two hours of Baker Street investigations without Baker Street fatigue setting in? Read our full review and Soundcheck to see our verdict.",
         cardOverview: "72 hours of the world's greatest detective stories. The entire canon, performed by Stephen Fry.",
@@ -284,7 +270,6 @@ export const baseBooks: Book[] = [
         lengthHours: 41.5,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/e2/19/05/e21905d5-6b70-3f79-71aa-1698f0aa829a/mzaf_10431971150638567311.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B093TBNFWK?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B093TC2K3D?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['99','161','160','162','163','164','165','5','25'],
@@ -303,7 +288,6 @@ export const baseBooks: Book[] = [
         lengthHours: 46.8,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/ae/70/7d/ae707d09-a123-7a80-0b3f-bba1799cd278/mzaf_8410126721836552824.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0060MI0T0?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0060C2CEE?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['4','34','2','33','81','82','84','85','16','35'],
@@ -338,7 +322,6 @@ export const baseBooks: Book[] = [
         lengthHours: 36.5,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/01/57/68/015768e6-2f1b-8ddb-de4c-dbf37b4f8851/mzaf_4811225600664457042.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CQZ6P3K1?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0D4ZPDPGS?tag=thelongbookcl-20'
     },
     {
         id: "20",
@@ -353,7 +336,6 @@ export const baseBooks: Book[] = [
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/fd/ea/d6/fdead65e-da84-0f3f-e39f-5ed24449f0dc/mzaf_11448145514866941022.std.aac.p.m4a",
         relatedBookIds: ["304", "303", "302", "68", "69", "60", "61", "63", "65", "66", "27", "64", "67", "8"],
         affiliateLink: "https://www.amazon.co.uk/dp/B002SQ5UD6?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B000R34YKC?tag=thelongbookcl-20",
         teaserTitle: "Full-Cast Immersion or Uneven Sound Effects?",
         teaser: "With alternating voice actors, ambient music, and sound effects across twenty-one hours, does this hybrid cinematic production enhance Frank Herbert’s desert epic or cause jarring distractions? Read our full review and Soundcheck to see our verdict before buying.",
         cardOverview: "21 hours on Arrakis. The sci-fi masterpiece that defined the genre, with a unique full-cast production.",
@@ -376,7 +358,6 @@ export const baseBooks: Book[] = [
         lengthHours: 40.9,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/d3/4a/33/d34a3380-f2b2-0df8-10ff-790646a7eb9f/mzaf_3774321569086053168.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0047VIL0O?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B00852WNUU?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['287', '286', '285', '30', '28', '32', '77'],
@@ -394,7 +375,6 @@ export const baseBooks: Book[] = [
         lengthHours: 61.1,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/f5/a4/c3/f5a4c376-6186-f36a-b1ca-e41459768d9c/mzaf_9248618469781292960.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B095V1SM5H?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0007OB4TU?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['45','46','47','9','51','52','53','54','13','48','49','50','41','42','43','44','57','58','59','55','56','38','29'],
@@ -411,7 +391,6 @@ export const baseBooks: Book[] = [
         lengthHours: 28,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/81/90/d7/8190d72e-6dce-449d-2b19-bd9a7d531968/mzaf_3069503212726646595.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B007HOLTHU?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B007HI3HUI?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['5','25','26','90','96','17','89','76','78'],
@@ -428,7 +407,6 @@ export const baseBooks: Book[] = [
         lengthHours: 43,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/71/f4/d8/71f4d845-780b-e169-c848-4ed221507aec/mzaf_8444323563716463862.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00KOIRNLW?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B00KO77Z20?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['5','26','90','96','17','24','89','76','78'],
@@ -445,7 +423,6 @@ export const baseBooks: Book[] = [
         lengthHours: 32.4,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/9e/a8/14/9ea8149a-6fe3-897e-fc64-1e1bee0e47be/mzaf_8242801013099168245.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00FR6TIQE?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B08FD62LJM?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['5','25','90','96','17','24','89','76','78'],
@@ -462,7 +439,6 @@ export const baseBooks: Book[] = [
         lengthHours: 32.8,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/16/76/b3/1676b3de-fedb-fd51-3937-60cb64866f94/mzaf_6919683659466378006.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0DT7DB8KL?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0DT7F93TV?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['65','66','20','68','69','60','61','63','64','67','8'],
@@ -479,7 +455,6 @@ export const baseBooks: Book[] = [
         lengthHours: 42.9,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview124/v4/08/c6/2e/08c62e0c-92e8-df1f-8b1c-71e7348cf423/mzaf_14480495241225050272.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B086WMM52D?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B086WP1FW6?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['32','22','30','77'],
@@ -496,7 +471,6 @@ export const baseBooks: Book[] = [
         lengthHours: 26.2,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/35/df/67/35df67c0-e3b4-0bc9-b2db-c29a28c1d884/mzaf_2032438321289673543.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B085F2N7KG?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B085F3LK3Z?tag=thelongbookcl-20'
     },
     {
         id: "29",
@@ -511,7 +485,6 @@ export const baseBooks: Book[] = [
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/e6/fa/96/e6fa964f-c0d3-6dd1-f9c1-560e9f99b92e/mzaf_16913652427996396178.std.aac.p.m4a",
         relatedBookIds: ["45", "46", "47", "9", "51", "52", "53", "54", "13", "48", "49", "50", "41", "42", "43", "44", "57", "58", "59", "23", "55", "56", "38"],
         affiliateLink: "https://www.amazon.co.uk/dp/B0080HPAK0?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B00807NRJQ?tag=thelongbookcl-20",
         teaserTitle: "Does an Ensemble Cast Outshine Neil Gaiman?",
         teaser: "Featuring dozens of actors voicing ancient gods in modern dive bars, does this multi-cast production balance dark Americana with clear pacing across twenty hours? Read our full review and Soundcheck to see how audio elevates this mythic road trip.",
         cardOverview: "Shadow Moon enters a hidden world where ancient myths live among us. Almost 20 hours of masterful full-cast, cinematic storytelling directed by the author himself.",
@@ -535,7 +508,6 @@ export const baseBooks: Book[] = [
         lengthHours: 35.6,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/c3/f9/fc/c3f9fc72-ce29-2aa4-bfde-9a1cd10640b8/mzaf_5965937948791464249.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B01FN8BL6A?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B01FN887G2?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['15','75','6','19','39','71','72','73','37','74','70','10'],
@@ -553,7 +525,6 @@ export const baseBooks: Book[] = [
         lengthHours: 39.7,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/40/f9/01/40f901b3-df26-0d80-139c-c1b20ca4a66f/mzaf_14045838716120408598.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B083JK2J89?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0DFR4LCJM?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['28','22','30','77'],
@@ -571,7 +542,6 @@ export const baseBooks: Book[] = [
         lengthHours: 37.1,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/17/46/98/1746989a-514b-ca2b-0339-6d7808580f8e/mzaf_4130982328908551703.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B08YRWH6V3?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0CKM2R2KF?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['81','82','2','4','18','34','84','85','16','35'],
@@ -590,7 +560,6 @@ export const baseBooks: Book[] = [
         lengthHours: 25.3,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/d9/6c/5b/d96c5b8c-ffe5-6e8f-6a58-ba1c01d89b16/mzaf_7023720496549827358.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B005Z267BO?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B005YUDQ4S?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['4','18','2','33','81','82','84','85','16','35'],
@@ -608,7 +577,6 @@ export const baseBooks: Book[] = [
         lengthHours: 35,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/83/df/c1/83dfc1c6-8466-a40f-0c7f-5857601e9617/mzaf_3167046353980221662.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00EE0TV20?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B00EDSLSBK?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['2','4','18','34','33','81','82','84','85','16'],
@@ -625,7 +593,6 @@ export const baseBooks: Book[] = [
         lengthHours: 57.2,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/68/d9/c4/68d9c4cf-9a88-687d-65d5-e19018d2d697/mzaf_494166566963245039.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B003W5VXPG?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B003X4R6GQ?tag=thelongbookcl-20'
     },
     {
         id: "36",
@@ -641,7 +608,6 @@ export const baseBooks: Book[] = [
         relatedBookIds: ["425", "426", "427", "428", "21", "40"],
         series: "Outlander",
         affiliateLink: "https://www.amazon.co.uk/dp/B08JGG6H1C?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B08JFQFVC5?tag=thelongbookcl-20",
         cardOverview: "32 hours in the Highlands. The romance that redefined the genre mixes history, time travel, and steam.",
         teaserTitle: "Does Davina Porter Perfect the Scottish Highlands?",
         teaser: "Can Davina Porter’s authentic Gaelic accents and thirty-two hours of historical drama sustain momentum without losing romantic tension? Read our full review and Soundcheck to see our verdict.",
@@ -664,7 +630,6 @@ export const baseBooks: Book[] = [
         lengthHours: 32,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/45/6e/1f/456e1fc0-8196-4ee5-a7b4-992033801d06/mzaf_1701284773614696823.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0030H21JS?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0030HF9E2?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['45','46','47','9','51','52','53','54','13','48','49','50','41','42','43','44','57','58','59','23','55','56','29'],
@@ -682,7 +647,6 @@ export const baseBooks: Book[] = [
         lengthHours: 32.5,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/f9/7b/fc/f97bfca0-2cd2-740d-e81b-633b85386204/mzaf_3045623345974591382.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0DFCVV8LB?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0DFCZ16X2?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['19','71','15','75','6','72','73','37','74','70','31','10'],
@@ -699,7 +663,6 @@ export const baseBooks: Book[] = [
         lengthHours: 35,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/8b/d3/97/8bd397b3-6893-d593-1c3b-1d7da03f59e1/mzaf_16166418906475762578.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B079LPF5YN?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B00005AAOV?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['21','36'],
@@ -717,7 +680,6 @@ export const baseBooks: Book[] = [
         lengthHours: 49.1,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/d5/70/c6/d570c6f0-f531-3387-bb36-0fad83e0b962/mzaf_10125018454835714435.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B082FPX77Y?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0DW1LX95D?tag=thelongbookcl-20'
     },
     // NEW BOOKS START HERE
     {
@@ -734,7 +696,6 @@ export const baseBooks: Book[] = [
         lengthHours: 29.9,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/b4/25/13/b4251313-3486-bdab-bf90-0aedf07d1716/mzaf_2346617799939928376.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ946A?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B00026WUO6?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ["375", "374", "373", "372", "371", "370", "369", "368", "367", "366", "365", "41", "43", "44", "45", "46", "47", "9", "51", "52", "53", "54", "13", "48", "49", "50", "57", "58", "59", "23", "55", "56", "38", "29"],
@@ -750,7 +711,6 @@ export const baseBooks: Book[] = [
         lengthHours: 26.5,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/83/3a/55/833a55c9-8f53-05e6-82d1-fab19d6bfbf5/mzaf_4996045549731128865.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ4T38?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B00026WUOG?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ["375", "374", "373", "372", "371", "370", "369", "368", "367", "366", "365", "41", "42", "44", "45", "46", "47", "9", "51", "52", "53", "54", "13", "48", "49", "50", "57", "58", "59", "23", "55", "56", "38", "29"],
@@ -766,7 +726,6 @@ export const baseBooks: Book[] = [
         lengthHours: 26.1,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/4d/d8/04/4dd804c6-0825-81fa-0a28-d774a275f98b/mzaf_3364512216417826492.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ1O0O?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0006IU3BC?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ["375", "374", "373", "372", "371", "370", "369", "368", "367", "366", "365", "41", "42", "43", "45", "46", "47", "9", "51", "52", "53", "54", "13", "48", "49", "50", "57", "58", "59", "23", "55", "56", "38", "29"],
@@ -782,7 +741,6 @@ export const baseBooks: Book[] = [
         lengthHours: 40.9,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/d1/1b/be/d11bbedc-04bd-872e-4443-36a728ce8a7b/mzaf_2753439743484771633.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ5ZMC?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0006IU3BM?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ["375", "374", "373", "372", "371", "370", "369", "368", "367", "366", "365", "46", "47", "9", "51", "52", "53", "54", "13", "48", "49", "50", "41", "42", "43", "44", "57", "58", "59", "23", "55", "56", "38", "29"],
@@ -801,7 +759,6 @@ export const baseBooks: Book[] = [
         lengthHours: 19.1,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/4b/21/e4/4b21e45d-0290-4a51-8dbb-bb5a5663f0f6/mzaf_5533151572874896967.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQAXZG?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B098T84Y1N?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['45','47','9','51','52','53','54','13','48','49','50','41','42','43','44','57','58','59','23','55','56','38','29'],
@@ -819,7 +776,6 @@ export const baseBooks: Book[] = [
         lengthHours: 16.7,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/3e/69/86/3e69862b-3ca1-775f-1249-5b8b653c5866/mzaf_1378806943683512665.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQD0P6?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B098T8CFMD?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['45','46','9','51','52','53','54','13','48','49','50','41','42','43','44','57','58','59','23','55','56','38','29'],
@@ -837,7 +793,6 @@ export const baseBooks: Book[] = [
         lengthHours: 18.2,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/4e/39/3e/4e393eee-e7d4-92c4-e021-feb8e28e76bd/mzaf_14803890863408848206.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ47B2?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B098T8RGF4?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['13','49','50','57','58','59','45','46','47','9','51','52','53','54','41','42','43','44','23','55','56','38','29'],
@@ -854,7 +809,6 @@ export const baseBooks: Book[] = [
         lengthHours: 48.2,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/93/bc/fe/93bcfe46-4fa0-738a-f732-f58ee0542bf3/mzaf_9740551205995790063.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00IN7Y5US?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B00IN5WM0K?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['13','48','50','57','58','59','45','46','47','9','51','52','53','54','41','42','43','44','23','55','56','38','29'],
@@ -871,7 +825,6 @@ export const baseBooks: Book[] = [
         lengthHours: 55.1,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/18/0b/13/180b13b8-c79e-8e09-0b60-c139d100004c/mzaf_13846528246034085638.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B01N9YPONF?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B01N3B7RZC?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['13','48','49','57','58','59','45','46','47','9','51','52','53','54','41','42','43','44','23','55','56','38','29'],
@@ -888,7 +841,6 @@ export const baseBooks: Book[] = [
         lengthHours: 57.4,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/f7/1d/48/f71d4812-014f-7ecc-431b-51e3213ce5e5/mzaf_760511967081470317.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B082MM7CSY?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B082MLHB9M?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['9','52','53','54','45','46','47','13','48','49','50','41','42','43','44','57','58','59','23','55','56','38','29'],
@@ -904,7 +856,6 @@ export const baseBooks: Book[] = [
         lengthHours: 37.3,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/1e/a5/01/1ea501ca-bbc8-080e-384c-6c290a0a73c1/mzaf_13540044308213405838.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B005CB5ICW?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B005C8AZVY?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['9','51','53','54','45','46','47','13','48','49','50','41','42','43','44','57','58','59','23','55','56','38','29'],
@@ -920,7 +871,6 @@ export const baseBooks: Book[] = [
         lengthHours: 47.6,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/31/ad/b0/31adb078-7f64-7bf2-118f-8c7bede3eace/mzaf_13139329186647675839.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B005G48XL8?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B005CCQNH0?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['9','51','52','54','45','46','47','13','48','49','50','41','42','43','44','57','58','59','23','55','56','38','29'],
@@ -936,7 +886,6 @@ export const baseBooks: Book[] = [
         lengthHours: 31.2,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/83/ca/20/83ca2067-5180-fdd2-1822-f7302b9e1980/mzaf_3646773819721379271.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B006MWM378?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B006MPV7BS?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['9','51','52','53','45','46','47','13','48','49','50','41','42','43','44','57','58','59','23','55','56','38','29'],
@@ -952,7 +901,6 @@ export const baseBooks: Book[] = [
         lengthHours: 48.9,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/b1/b9/1b/b1b91b72-5c05-2d5a-c1e1-987317d3e73b/mzaf_3187619766526049022.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B005CB5HGY?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B005C7QVY0?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['45','46','47','9','51','52','53','54','13','48','49','50','41','42','43','44','57','58','59','23','56','38','29'],
@@ -970,7 +918,6 @@ export const baseBooks: Book[] = [
         lengthHours: 25.9,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/b7/58/e9/b758e9ae-b399-b0a3-c9ef-9943bfff0300/mzaf_535277980980685518.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B07NBX6QHV?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B07NBS2F36?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['45','46','47','9','51','52','53','54','13','48','49','50','41','42','43','44','57','58','59','23','55','38','29'],
@@ -988,7 +935,6 @@ export const baseBooks: Book[] = [
         lengthHours: 21.6,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/1b/ce/db/1bcedbe7-4c1b-d262-96a3-a2ae3c22ced0/mzaf_3810357748163867461.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0B3GKFF5S?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0B3G9JCKW?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['58','59','433','434','435','436','13','48','49','50','45','46','47','9','51','52','53','54','41','42','43','44','23','55','56','38','29'],
@@ -1005,7 +951,6 @@ export const baseBooks: Book[] = [
         lengthHours: 24.7,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/dd/b2/69/ddb2695f-0ced-413f-9928-74cf742d0331/mzaf_12813721420181694724.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B004TASE4Q?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B00557U2II?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['57','59','433','434','435','436','13','48','49','50','45','46','47','9','51','52','53','54','41','42','43','44','23','55','56','38','29'],
@@ -1022,7 +967,6 @@ export const baseBooks: Book[] = [
         lengthHours: 27.2,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/56/ec/a1/56eca1e4-6b88-a2ef-aaf5-78db4269cca4/mzaf_14009387184959991315.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B004SUIL5O?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B005NDCIAE?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['57','58','433','434','435','436','13','48','49','50','45','46','47','9','51','52','53','54','41','42','43','44','23','55','56','38','29'],
@@ -1039,7 +983,6 @@ export const baseBooks: Book[] = [
         lengthHours: 26.3,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/62/69/c0/6269c017-1aa1-fbda-93f7-361b3480c8ef/mzaf_17216280075483748046.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B004TASEWS?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B005NDD43O?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['61','20','68','69','63','65','66','27','64','67','8'],
@@ -1058,7 +1001,6 @@ export const baseBooks: Book[] = [
         lengthHours: 20.7,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/3e/e0/ef/3ee0ef7a-c37b-01c6-655b-0208b4d46cd7/mzaf_9877886029112800569.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ2SS6?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B001OC2W04?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['60','20','68','69','63','65','66','27','64','67','8'],
@@ -1075,7 +1017,6 @@ export const baseBooks: Book[] = [
         lengthHours: 19.9,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ee/d2/c9/eed2c9d4-bf9c-60c5-cde4-577fec32d15b/mzaf_11192331393826853025.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SPV8VA?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B001OC2W0E?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['20','68','69','60','61','65','66','27','64','67','8'],
@@ -1092,7 +1033,6 @@ export const baseBooks: Book[] = [
         lengthHours: 41.4,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/ef/ca/b5/efcab517-c9e9-1b43-a819-75030f7ff68d/mzaf_4701766184006568977.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0041T6398?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B005ND8542?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['20','68','69','60','61','63','65','66','27','67','8'],
@@ -1111,7 +1051,6 @@ export const baseBooks: Book[] = [
         lengthHours: 19.1,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/f5/ac/b2/f5acb22a-ef3c-e968-0e41-1745bc99c521/mzaf_8736814558430183086.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00PABWMLO?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B00P9W7LQA?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['301', '300', '299', '298', '297', '296', '295', '294', '27', '66', '20', '68', '69', '60', '61', '63', '64', '67', '8'],
@@ -1128,7 +1067,6 @@ export const baseBooks: Book[] = [
         lengthHours: 31.9,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/ad/dc/98/addc9822-e777-a423-8ad1-cc577f4602c7/mzaf_545679671069720514.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00VWIN35S?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B00VVWBFM8?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['27','65','20','68','69','60','61','63','64','67','8'],
@@ -1145,7 +1083,6 @@ export const baseBooks: Book[] = [
         lengthHours: 32.8,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview114/v4/bd/43/03/bd430312-1c1b-6c86-bbf3-931d7e28a13f/mzaf_1955815729652333539.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B086WNLRX5?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B086WNY826?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['20','68','69','60','61','63','65','66','27','64','8'],
@@ -1162,7 +1099,6 @@ export const baseBooks: Book[] = [
         lengthHours: 16.1,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/91/8a/8b/918a8bcf-3cf1-37f0-8e9b-81ee01909d9e/mzaf_10287465475757473060.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00AJQQMHK?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B00AJEV7T0?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['20','69','60','61','63','65','66','27','64','67','8'],
@@ -1179,7 +1115,6 @@ export const baseBooks: Book[] = [
         lengthHours: 9.1,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/c4/71/a1/c471a199-1d4d-fe26-044a-813a0df98b53/mzaf_5683226480505680627.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B004V86KWA?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B000WS9ZHY?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['20','68','60','61','63','65','66','27','64','67','8'],
@@ -1196,7 +1131,6 @@ export const baseBooks: Book[] = [
         lengthHours: 19.7,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/67/93/68/679368e7-c278-f60c-d4c7-e65d517af5e7/mzaf_15299391317597732353.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQDFGK?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0013O8X60?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['15','75','6','19','39','71','72','73','37','74','31','10'],
@@ -1213,7 +1147,6 @@ export const baseBooks: Book[] = [
         lengthHours: 24.4,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/72/5c/e6/725ce6ca-acc3-7ed5-ecc7-1eeefae458bb/mzaf_16509191075982302702.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B008QZAKDS?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B000OYDIVU?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['19','39','15','75','6','72','73','37','74','70','31','10'],
@@ -1230,7 +1163,6 @@ export const baseBooks: Book[] = [
         lengthHours: 18.7,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/96/69/50/96695032-1d03-f7e8-696b-c7d24c17fbdc/mzaf_7672831159449881205.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SQ1CJW?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B005ZO8FGW?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['15','75','6','19','39','71','73','37','74','70','31','10'],
@@ -1247,7 +1179,6 @@ export const baseBooks: Book[] = [
         lengthHours: 19.2,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/49/4d/da/494dda38-0acd-73e1-9805-4dc7ffe289f4/mzaf_5887076213446936746.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0D33S6NCJ?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B01COOQAPI?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['15','75','6','19','39','71','72','37','74','70','31','10'],
@@ -1264,7 +1195,6 @@ export const baseBooks: Book[] = [
         lengthHours: 14.0,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/e1/34/9f/e1349f00-7a6a-55a5-2d3e-57097f9c01aa/mzaf_9439175988194665612.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0FZMD9N16?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B076PP94DP?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['15','75','6','19','39','71','72','73','37','70','31','10'],
@@ -1281,7 +1211,6 @@ export const baseBooks: Book[] = [
         lengthHours: 31.4,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/a0/7f/50/a07f502f-191b-7e43-c36c-2885c4a77b94/mzaf_14809687502517637946.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SPWQIY?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B001SB91TQ?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['15','6','19','39','71','72','73','37','74','70','31','10'],
@@ -1298,7 +1227,6 @@ export const baseBooks: Book[] = [
         lengthHours: 19.0,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/a3/0e/c0/a30ec0cc-dc09-1d57-7543-b980ae68aac4/mzaf_4554487617779099880.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B096KX16MW?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0000547BL?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['5','25','26','90','96','17','24','89','78'],
@@ -1315,7 +1243,6 @@ export const baseBooks: Book[] = [
         lengthHours: 27.3,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/a2/7c/89/a27c89d5-8159-3d44-d465-8900c36cf7de/mzaf_10537920865015696957.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B002SPWRW4?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B001DNNASW?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['22','30','28','32'],
@@ -1332,7 +1259,6 @@ export const baseBooks: Book[] = [
         lengthHours: 22.0,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/2c/1b/9c/2c1b9c85-ca86-a8b1-074e-24b6b9b73ce8/mzaf_8285862614785977592.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B005BEHDVY?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B005B51C74?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['5','25','26','90','96','17','24','89','76'],
@@ -1349,7 +1275,6 @@ export const baseBooks: Book[] = [
         lengthHours: 35.3,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/a0/68/b8/a068b8c2-c1ae-5808-baa6-35d9b5e7b25e/mzaf_13151845036813998588.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0BNNYM6KR?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B088FZL1JZ?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['33','82','2','4','18','34','84','85','16','35'],
@@ -1366,7 +1291,6 @@ export const baseBooks: Book[] = [
         lengthHours: 18.6,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/06/86/7a/06867a54-e284-9e6d-3d22-df4970bbad4a/mzaf_3372974286450059350.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B075ZG9NGL?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B075Z7YZBK?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['33','81','2','4','18','34','84','85','16','35'],
@@ -1383,7 +1307,6 @@ export const baseBooks: Book[] = [
         lengthHours: 20.0,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/49/01/91/490191db-827c-7be5-7aaf-ef2b93295ea3/mzaf_8330189465901251674.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B008CPXDFY?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B004VLETYM?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['85','2','4','18','34','33','81','82','16','35'],
@@ -1416,7 +1339,6 @@ export const baseBooks: Book[] = [
         lengthHours: 23.4,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/cc/d5/46/ccd546d0-a063-bd27-2ca2-937c69f4aa3f/mzaf_4307045000950398964.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0064P6HTS?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0064I14FM?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['88'],
@@ -1434,7 +1356,6 @@ export const baseBooks: Book[] = [
         lengthHours: 25.5,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/72/1f/2a/721f2a9b-9f3a-64d4-0572-d38519641ffd/mzaf_496763193569306123.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B09N7P9M2K?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B09N7PZQRT?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['87'],
@@ -1451,7 +1372,6 @@ export const baseBooks: Book[] = [
         lengthHours: 21.2,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/d1/ef/50/d1ef502a-33d2-c1ba-7d71-877f446075cf/mzaf_5184040607990856630.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B09N7R2B3S?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B09N7Q1H5N?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['5','25','26','90','96','17','24','76','78'],
@@ -1468,7 +1388,6 @@ export const baseBooks: Book[] = [
         lengthHours: 21.0,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/bb/0a/0d/bb0a0d05-16ae-ebe9-d942-6205d4a7e92a/mzaf_12385358963772711678.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0B2X4K4FW?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0B2X423CV?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['5','25','26','96','17','24','89','76','78'],
@@ -1485,7 +1404,6 @@ export const baseBooks: Book[] = [
         lengthHours: 26.3,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/0c/a0/96/0ca09675-f65f-d490-cb8e-31526a7e17cc/mzaf_1413443538030555461.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B008AXA4LY?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B008ARPKNW?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['5','25','26','90','17','24','89','76','78'],
@@ -1502,7 +1420,6 @@ export const baseBooks: Book[] = [
         lengthHours: 39.25,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/01/ce/da/01ceda52-4838-9768-da21-7b83ecbb64bc/mzaf_1590179199091872828.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0D81JXQBW?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0D81HSP37?tag=thelongbookcl-20'
     },
     {
         cardOverview: "A 26-hour tragicomic saga. Funny, heartbreaking, and structurally brilliant. Worth every minute of your credit.",
@@ -1519,7 +1436,6 @@ export const baseBooks: Book[] = [
         lengthHours: 26.2,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/d8/3d/f9/d83df99e-e011-4869-6711-21f49f38f740/mzaf_6233262451839466100.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0BLCS77CW?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0BLC76F72?tag=thelongbookcl-20'
     },
     {
         cardOverview: "Neal Stephenson turns his eye to espionage. A dense, detailed 12-hour dive into the dawn of the atomic age.",
@@ -1536,7 +1452,6 @@ export const baseBooks: Book[] = [
         lengthHours: 11.7,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/bf/5d/60/bf5d60b7-8bdb-5439-0b29-597941a0ec57/mzaf_9013426635111582556.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0D619DC6K?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0D5ZMQ4WF?tag=thelongbookcl-20'
     },
     {
         relatedBookIds: ['17','161','160','162','163','164','165'],
@@ -1554,7 +1469,6 @@ export const baseBooks: Book[] = [
         lengthHours: 17.4,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/bc/8f/c8/bc8fc864-825c-ce4b-71a2-c5b90dc57ec5/mzaf_17662341947169272701.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CWP8K8NY?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0CWP7W8NV?tag=thelongbookcl-20'
     },
     {
         cardOverview: "A massive 23-hour chronicle of modern London. Tackles everything from aristocrats to drill rappers in one ambitious sweep.",
@@ -1571,7 +1485,6 @@ export const baseBooks: Book[] = [
         lengthHours: 22.9,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/d2/db/d1/d2dbd1f7-d086-121f-d0be-1f60d376c10e/mzaf_12748102774674108956.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CS3ZYJV8?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0CS4ZHPJ5?tag=thelongbookcl-20'
     },
     {
         cardOverview: "Essential 18-hour reading for the AI era. Harari traces information networks from the Stone Age to our uncertain future.",
@@ -1588,7 +1501,6 @@ export const baseBooks: Book[] = [
         lengthHours: 17.9,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/46/82/83/4682835f-7863-581a-c9fb-3dd3766fe4d4/mzaf_2440452268968331716.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CSYYMZKP?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0CSYYCJ9K?tag=thelongbookcl-20'
     },
     {
         cardOverview: "The definition of Epic Fantasy. A colossal 63-hour finale to the first Stormlight arc. The payoff you have been waiting for.",
@@ -1605,7 +1517,6 @@ export const baseBooks: Book[] = [
         lengthHours: 62.8,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b9/b6/16/b9b616cb-bf52-9dcb-632e-e0927df924c5/mzaf_4322007759363313717.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CQDF5PP6?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0CQD8T35J?tag=thelongbookcl-20'
     },
     {
         cardOverview: "54 hours in feudal Japan. The towering historical epic of samurai politics and survival behind the hit series.",
@@ -1622,7 +1533,6 @@ export const baseBooks: Book[] = [
         lengthHours: 53.5,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/b1/6c/39/b16c39ca-6694-fdc2-b990-afb02f95f62a/mzaf_11078736608923666866.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CRM21VRN?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0CRMBF73W?tag=thelongbookcl-20'
     },
     {
         cardOverview: "32 hours of gothic vampire grimdark. Brutal, cinematic, and relentless—a blood-soaked sequel that raises every stake.",
@@ -1637,7 +1547,6 @@ export const baseBooks: Book[] = [
         lengthHours: 31.6,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/59/3b/bd/593bbd43-affa-bad0-9279-ea2ff55d0f24/mzaf_13439784939226604801.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0C6R9GNJW?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0C6RB4R3K?tag=thelongbookcl-20'
     },
     {
         cardOverview: "A sweeping 31-hour masterpiece. Narrated by the author himself, this multigenerational saga flows like a river through time.",
@@ -1654,7 +1563,6 @@ export const baseBooks: Book[] = [
         lengthHours: 31.3,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/30/a7/46/30a746a1-4811-fcfe-91ef-e937ea7b7f41/mzaf_17599370564458980674.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0BVDPD31S?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0BVDNPQ1V?tag=thelongbookcl-20'
     },
     {
         id: "106",
@@ -1668,7 +1576,6 @@ export const baseBooks: Book[] = [
         description: "The long-awaited memoir by Barbra Streisand, recounting her six-decade career, childhood in Brooklyn, and personal life. Narrated by the author herself.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/a7/fe/1c/a7fe1ced-51bd-c2e7-496b-0b9b238b15e1/mzaf_839987854357904195.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0BV6YLFGV?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0BV6WQC9L?tag=thelongbookcl-20",
         teaserTitle: "Is 48 Hours with Barbra Streisand Pure Magic?",
         teaser: "Does Barbra Streisand narrating her own 48-hour unfiltered memoir feel like an intimate private concert, or does monumental length test listener patience? Read our full review and Soundcheck to see our verdict.",
         cardOverview: "48 hours with a living legend. Yes, she reads it all herself. It feels less like a book and more like a weekend at her house.",
@@ -1690,7 +1597,6 @@ export const baseBooks: Book[] = [
         lengthHours: 36.25,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/81/87/ff/8187ffef-e248-4826-384f-23e5bd95ef67/mzaf_2695307531743430771.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0DT78JY9L?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0DT78HWGS?tag=thelongbookcl-20'
     },
     // DARK ACADEMIA & ROMANTASY ADDITIONS
     {
@@ -1709,7 +1615,6 @@ export const baseBooks: Book[] = [
         lengthHours: 22.1,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/a5/7a/0c/a57a0c0e-975b-2072-6706-537629186dea/mzaf_5070056783317987195.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0045F6IMK?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0045HJDVG?tag=thelongbookcl-20'
     },
     {
         cardOverview: "A 26-hour hunt for the real Dracula. Atmospheric, scholarly, and full of creeping dread. Perfect for history buffs.",
@@ -1726,7 +1631,6 @@ export const baseBooks: Book[] = [
         lengthHours: 26.1,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/46/5d/c1/465dc144-336a-5d4f-19b7-814c79f1b725/mzaf_13200096458222195849.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B08QW793PC?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B08QWBDL83?tag=thelongbookcl-20'
     },
     {
         cardOverview: "24 hours of supernatural romance with a PhD. Vampires, witches, and historians clash in the Oxford libraries.",
@@ -1743,10 +1647,9 @@ export const baseBooks: Book[] = [
         lengthHours: 24.0,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/86/30/2f/86302ff2-3519-952e-a773-a7ecbc45c298/mzaf_17637254002353696736.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B004NU711Y?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B005FIPMZK?tag=thelongbookcl-20'
-    ,
         series: 'All Souls',
-        relatedBookIds: ['418', '419', '420', '421', '55', '126']},
+        relatedBookIds: ['418', '419', '420', '421', '55', '126']
+    },
     {
         cardOverview: "28 hours of high-stakes dragon warfare. Darker, longer, and even more addictive than Fourth Wing.",
         teaserTitle: "Does 28 Hours of Dragon War Cause Listening Burnout?",
@@ -1762,7 +1665,6 @@ export const baseBooks: Book[] = [
         lengthHours: 28.3,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/94/30/6b/94306bc3-557c-c6e1-cfcf-9abc8ff94b61/mzaf_10788463320288580104.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0C9V499ND?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0C9V75P93?tag=thelongbookcl-20'
     },
     {
         cardOverview: "28 hours of urban fantasy on a grand scale. Murder, nightclubs, and magic in Maas's most mature work.",
@@ -1779,7 +1681,6 @@ export const baseBooks: Book[] = [
         lengthHours: 27.8,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/dd/93/68/dd936867-1a9c-c1a7-8033-9f4a9bd68741/mzaf_420188651838964860.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B084P37J2B?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0D342BV2R?tag=thelongbookcl-20'
     },
     {
         cardOverview: "The original 31-hour spicy epic. Spycraft, alternate history, and lush romance. A monumental slow-burn.",
@@ -1797,7 +1698,6 @@ export const baseBooks: Book[] = [
         lengthHours: 31.1,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/c3/68/bf/c368bf25-4e4e-d4de-bb62-2e7ace338e3f/mzaf_4741964691016350201.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0BVGMPG9V?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0BVG8RMYG?tag=thelongbookcl-20'
     },
     {
         cardOverview: "A lyrical 20-hour debut. Elemental magic, dragons, and simmering romance. A cozy-yet-epic fantasy.",
@@ -1814,7 +1714,6 @@ export const baseBooks: Book[] = [
         lengthHours: 20.2,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c2/15/c1/c215c1dc-7e55-2129-6b71-589fe34192b2/mzaf_5704813202952608817.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CZ159XPK?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0CZ14SS1Q?tag=thelongbookcl-20'
     },
     // LONGEST EVER COLLECTION ADDITIONS
     {
@@ -1833,7 +1732,6 @@ export const baseBooks: Book[] = [
         lengthHours: 85.1,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/5f/0c/7c/5f0c7cb2-2d8d-a227-20f0-a07e0dffe7a3/mzaf_4547946666657265073.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B079YWFX6B?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B079YYQNMM?tag=thelongbookcl-20'
     },
     {
         cardOverview: "The 126-hour mountain of history. Charts the inevitable crumble of the greatest empire.",
@@ -1851,7 +1749,6 @@ export const baseBooks: Book[] = [
         lengthHours: 126.6,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/49/a8/78/49a8781d-99fa-d2f4-87bc-b8d83bc1bca9/mzaf_1358920932817694968.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00VY9VVBS?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B00WHCB85K?tag=thelongbookcl-20'
     },
     {
         cardOverview: "65 hours of epic fantasy for one credit. A hidden gem that grows into a legendary bromance.",
@@ -1868,7 +1765,6 @@ export const baseBooks: Book[] = [
         lengthHours: 65.9,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview124/v4/2a/5d/ce/2a5dce2c-1ae6-633a-708f-a06dafa5fc5c/mzaf_17946209351429433612.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00W8Y1WY4?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B00W8EBOHO?tag=thelongbookcl-20'
     },
     {
         cardOverview: "61 hours of cozy-yet-epic fantasy. Slice-of-life warmth meets high-stakes magic.",
@@ -1885,7 +1781,6 @@ export const baseBooks: Book[] = [
         lengthHours: 61.1,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/f3/aa/b6/f3aab646-6257-920b-976b-81769592d510/mzaf_15137510525308668963.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0892SMMMM?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0892T6Q4L?tag=thelongbookcl-20'
     },
     {
         cardOverview: "50 hours that feel like a breeze. The definitive portrait of the man who saved the world.",
@@ -1902,7 +1797,6 @@ export const baseBooks: Book[] = [
         lengthHours: 50.5,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/a0/17/ba/a017badf-00fd-6335-9160-774e6826cf2d/mzaf_12890650632808584599.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B07HB8TDDH?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B07HB7HYFZ?tag=thelongbookcl-20'
     },
     {
         cardOverview: "27 hours of interview with a vampire hunter. A dark, brutal fantasy that feels like The Witcher meets Interview with the Vampire.",
@@ -1918,7 +1812,6 @@ export const baseBooks: Book[] = [
         lengthHours: 27.2,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/47/db/46/47db46e7-7d13-0b49-c922-23c5f61bf6d0/mzaf_13511928640577941844.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B098KP7LLM?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B098KMY3XV?tag=thelongbookcl-20',
     },
     {
         cardOverview: "The heavy-hitting 35-hour conclusion to the trilogy. Dark, stylish, and violent. A vampire epic with teeth.",
@@ -1936,7 +1829,6 @@ export const baseBooks: Book[] = [
         lengthHours: 34.7,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ca/f8/e8/caf8e8a3-15ea-ed72-8e13-5a9a2a301256/mzaf_16224915857683090374.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0DZJ46ZPB?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0DZJ5QLC6?tag=thelongbookcl-20',
     },
     {
         relatedBookIds: ["389", "388", "387", "386", "385", "384", "383", "382", "381", "380", "379", "378", "377", "376", "147"],
@@ -1955,7 +1847,6 @@ export const baseBooks: Book[] = [
         lengthHours: 24.5,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/7c/e6/13/7ce61354-627a-2411-0d1d-30193c41aaa0/mzaf_7357418730217434986.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0FBSCF8N3?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0FBS7GCTV?tag=thelongbookcl-20',
     },
     {
         cardOverview: "39 hours of mind games. Psychic vampires manipulating history in a sprawling thriller.",
@@ -1971,7 +1862,6 @@ export const baseBooks: Book[] = [
         lengthHours: 39.5,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/c1/50/bc/c150bcb8-5161-2604-0bb0-bb805c241af9/mzaf_718590219733127103.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B005S0YL7K?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B005RZ7LN2?tag=thelongbookcl-20',
     },
     {
         cardOverview: "199 hours. The first six major novels. The heavyweight champion of value per credit.",
@@ -1989,7 +1879,6 @@ export const baseBooks: Book[] = [
         lengthHours: 199.4,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e4/f4/23/e4f4238d-1169-70f1-9aa1-ab5dda170dc7/mzaf_1880748834215186516.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0DJDFLLFK?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0DJDGQ7TL?tag=thelongbookcl-20',
     },
     {
         cardOverview: "30 hours at the end of the universe. The mind-bending conclusion that expands the scope to billions of years.",
@@ -2005,7 +1894,6 @@ export const baseBooks: Book[] = [
         lengthHours: 29.9,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview124/v4/69/a2/6a/69a26ab1-b1a9-113f-9f0e-872055e008f6/mzaf_9474257584757094666.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CFYJ7DGT?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0CFYKH5D2?tag=thelongbookcl-20',
     },
     {
         relatedBookIds: ['145','22','15'],
@@ -2024,7 +1912,6 @@ export const baseBooks: Book[] = [
         lengthHours: 266.1,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/e7/0f/ef/e70fef4f-c8e1-c1fc-0f28-b6aeb825a0cf/mzaf_13190470479498095754.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CPMD8H3G?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0CPMCRD6C?tag=thelongbookcl-20',
     },
     {
         cardOverview: "37 hours expanding the world. Erin leaves the Inn, and the scope of the story explodes.",
@@ -2040,7 +1927,6 @@ export const baseBooks: Book[] = [
         lengthHours: 37.6,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview124/v4/6c/63/98/6c639813-c547-99f6-6e6a-503b5ae6df48/mzaf_15631355827206028668.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B08WHR2S6T?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B08WHGSDLL?tag=thelongbookcl-20',
     },
     {
         cardOverview: "22 hours of pure obsession. The phenomenon that redefined fantasy romance is the perfect weekend binge.",
@@ -2058,7 +1944,6 @@ export const baseBooks: Book[] = [
         lengthHours: 22.03,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/97/fe/ff/97feff40-1f8b-cfd9-c6ca-133d8be69a31/mzaf_2631098075382121930.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0BVDNXFX5?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0BVDJ293G?tag=thelongbookcl-20',
     },
     {
         narrator: "Elizabeth Evans",
@@ -2075,7 +1960,6 @@ export const baseBooks: Book[] = [
         lengthHours: 29.7,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/ff/1d/6c/ff1d6cd0-f4b6-880e-3949-fd25839ed157/mzaf_10680815499114415795.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CN1JMJ8X?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0DJN1CZKC?tag=thelongbookcl-20',
         cardOverview: "A massive 27-hour sequel. Maas expands the world in this sprawling, character-rich blockbuster."
     },
     {
@@ -2094,7 +1978,6 @@ export const baseBooks: Book[] = [
         lengthHours: 27.7,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/ca/43/b2/ca43b2e0-c871-290d-12d1-18782d793959/mzaf_17659422794596709694.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B09RZZQDRL?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0D3QR164F?tag=thelongbookcl-20',
     },
     {
         id: "137",
@@ -2106,7 +1989,6 @@ export const baseBooks: Book[] = [
         lengthHours: 22.7,
         genre: ['British Espionage', 'Espionage', 'Spy Thriller', 'Crime', 'Mystery', 'Suspense'],
         affiliateLink: "https://www.amazon.co.uk/dp/B00E67KWXI?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B00E652E72?tag=thelongbookcl-20",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/35/57/66/35576693-3ad6-3321-0ed1-72b243bd1e34/mzaf_2914073332443956785.std.aac.p.m4a",
         cardOverview: "23 hours chasing the Saracen. An elite forensic operative is pulled from retirement into a lethal global manhunt.",
         description: "A former head of a secret US intelligence unit is pulled from retirement into a lethal global manhunt to stop a fanatical terrorist biological strike.",
@@ -2129,7 +2011,6 @@ export const baseBooks: Book[] = [
         lengthHours: 18.55,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/21/2d/33/212d33fc-f797-4216-063e-739a2f3ed8e4/mzaf_1870623268567030153.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CYTD95YH?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0CYTD8DGP?tag=thelongbookcl-20',
     },
     {
         cardOverview: "At nearly 24 hours, the stakes have never been higher. The longest entry in the Empyrean saga yet.",
@@ -2147,7 +2028,6 @@ export const baseBooks: Book[] = [
         lengthHours: 23.87,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/1d/e7/25/1de7255c-deac-8850-0288-4e51ad304f11/mzaf_12578303137952599504.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CZF79X5G?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0CZF874CW?tag=thelongbookcl-20',
     },
     {
         cardOverview: "37 hours of maximalist space opera. Wormhole trains, mega-corporations, and the deadliest alien threat in sci-fi.",
@@ -2165,7 +2045,6 @@ export const baseBooks: Book[] = [
         lengthHours: 37.5,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/54/44/0c/54440c05-8dce-c333-b0fa-06b78704e13f/mzaf_15310668458089656201.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0041SYV5W?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B005NDFK6S?tag=thelongbookcl-20',
     },
     {
         relatedBookIds: ["389", "388", "387", "386", "385", "384", "383", "382", "381", "380", "379", "378", "377", "376", "148"],
@@ -2184,7 +2063,6 @@ export const baseBooks: Book[] = [
         lengthHours: 20.7,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/f2/1f/45/f21f4503-0b54-7d8a-8aa8-3481adb38ad2/mzaf_5145146264065395483.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0DBJB1Q4L?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0DBJBFHGT?tag=thelongbookcl-20',
     },
     {
         cardOverview: "38 hours of global chaos. A high-tech thriller involving MMORPGs, terrorists, and the Russian mob.",
@@ -2200,7 +2078,6 @@ export const baseBooks: Book[] = [
         lengthHours: 38,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/ba/84/c9/ba84c939-d512-e0e2-fce6-a1df8b9bd1a5/mzaf_6726698043095802034.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B005QBI6LS?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B005Q20OBM?tag=thelongbookcl-20',
     },
     {
         cardOverview: "31 hours of WWIII. Clancy's tactical masterpiece imagines a conventional war in the 1980s.",
@@ -2216,7 +2093,6 @@ export const baseBooks: Book[] = [
         lengthHours: 31.2,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/ec/c9/61/ecc9619b-a052-5693-872b-13fc81049f0a/mzaf_6639800279962325763.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00I2TS9BS?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B00I54G188?tag=thelongbookcl-20',
     },
     {
         cardOverview: '34 hours of nuclear horror. Often compared to "The Stand," but grittier and more magical.',
@@ -2232,7 +2108,6 @@ export const baseBooks: Book[] = [
         lengthHours: 34.3,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/44/05/4b/44054b55-1b27-2bd1-636c-0931691a1f35/mzaf_7571670261636386290.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00684FLDI?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0067VJ2DM?tag=thelongbookcl-20',
     },
     {
         cardOverview: "23 hours of cosmic silence. The sequel introduces the terrifying Fermi Paradox solution that will haunt you.",
@@ -2248,7 +2123,6 @@ export const baseBooks: Book[] = [
         lengthHours: 22.6,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/03/01/07/03010791-4340-841e-e7e6-4d071891c243/mzaf_8368278246344199440.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0CFYK53C1?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0BVW68DMG?tag=thelongbookcl-20',
     },
     {
         cardOverview: "37 hours of the viral apocalypse. A literary blockbuster that spans a century of survival.",
@@ -2264,7 +2138,6 @@ export const baseBooks: Book[] = [
         lengthHours: 36.8,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/02/03/37/0203374e-68ec-eb29-df70-23f731fc5050/mzaf_1395886314835586371.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B003TXKQQ8?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B005WJSSXU?tag=thelongbookcl-20',
     },
     {
         cardOverview: "12 hours exploring the gaps. A fan-favorite expansion of the Three Body universe.",
@@ -2280,7 +2153,6 @@ export const baseBooks: Book[] = [
         lengthHours: 12.3,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/2f/8d/2d/2f8d2d77-4f14-3128-0050-0f3f655f3ca0/mzaf_10360669029368662834.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B07TD6S8SS?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B07THG2JCC?tag=thelongbookcl-20',
     },
     {
         cardOverview: "28 hours suspended in ice. A chilling mix of historical survival and supernatural horror.",
@@ -2296,7 +2168,6 @@ export const baseBooks: Book[] = [
         lengthHours: 28.5,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/d6/87/bc/d687bc39-7670-0533-74bb-555ac5dd1cf8/mzaf_18249250901957733543.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B07BNSH1LY?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B07BNMN6CZ?tag=thelongbookcl-20',
     },
     {
         cardOverview: "13 hours of hard sci-fi. First contact like you've never seen it before, grounded in physics and history.",
@@ -2312,7 +2183,6 @@ export const baseBooks: Book[] = [
         lengthHours: 13.4,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/de/8e/f3/de8ef31e-afd2-4981-fdc9-77a17bbd1809/mzaf_18272327604325928808.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0BVWJ3X7B?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B005NDFK6S?tag=thelongbookcl-20',
     },
     {
         cardOverview: "43 hours opening the Inn. The start of the viral LitRPG phenomenon that changes how you see fantasy.",
@@ -2330,7 +2200,6 @@ export const baseBooks: Book[] = [
         teaserTitle: "43 Hours of Low-Stakes Innkeeping?",
         teaser: "Demanding a staggering forty-three hours for Book One alone, can Andrea Parsneau voice hundreds of distinct fantasy species without losing emotional momentum? Read our full review and Soundcheck to see why this mammoth slice-of-life listen is legendary.",
         affiliateLink: 'https://www.amazon.co.uk/dp/B07X4LZ3QC?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B07X3MVKQ7?tag=thelongbookcl-20',
     },
     {
         cardOverview: "43 hours in exile. Kvothe's journey continues in this massive sequel to The Name of the Wind.",
@@ -2346,7 +2215,6 @@ export const baseBooks: Book[] = [
         lengthHours: 42.8,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/81/9c/01/819c0197-ae15-4c9d-366b-428824a8db6f/mzaf_4153961436389682026.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B007QDSAL0?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B007Q726XE?tag=thelongbookcl-20',
     },
     {
         cardOverview: "34 hours of winter. A massive, cozy Christmas special that turns into an epic battle.",
@@ -2362,7 +2230,7 @@ export const baseBooks: Book[] = [
         lengthHours: 34.2,
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/a4/24/51/a42451cf-4f3b-b825-8158-8ed128528499/mzaf_13443640183708048583.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B093QYS1F2?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B093QNBCGJ?tag=thelongbookcl-20',    },
+    },
     {
         id: "149",
         slug: "the-mark-twain-complete-collection-mark-twain",
@@ -2374,7 +2242,6 @@ export const baseBooks: Book[] = [
         genre: ['Adventure', 'American History', 'Americana', 'Classics', 'Coming of Age', 'Historical Fiction', 'Travel', 'Picaresque'],
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/8e/d1/fc/8ed1fc2c-c6a6-91d2-71ba-2cf46876f763/mzaf_9143985957611907840.std.aac.p.m4a',
         affiliateLink: "https://www.amazon.co.uk/dp/B0CPYRFKVV?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0CPYSMDLK?tag=thelongbookcl-20",
         description: "Experience the definitive Mark Twain collection in this staggering 280-hour audiobook epic. Featuring every major novel and essay, this long listen offers incredible value and total immersion for your daily commute or a year of deep listening.",
         teaserTitle: "Can Anyone Actually Finish 280 Hours?",
         teaser: "Does this colossal 280-hour archive of Mark Twain's life work reward long-term listening endurance, or does multi-narrator inconsistency dilute the satirical bite? Read our full review and Soundcheck to see our verdict.",
@@ -2392,7 +2259,6 @@ export const baseBooks: Book[] = [
         description: "45 hours of Regency romance. This immersive cinematic audio experience ranks among the best Audible credits 2026. A definitive dramatised audiobooks collection.",
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/6a/5d/71/6a5d7124-e7c4-f2e4-6524-8f046dc6be80/mzaf_12908560800568411946.std.aac.p.m4a',
         affiliateLink: "https://www.amazon.co.uk/dp/B08JZGRNBX?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B08JY2T245?tag=thelongbookcl-20",
         teaserTitle: "45 Hours of All-Star Regency Drama",
         teaser: "Featuring Hollywood stars including Emma Thompson and Florence Pugh across forty-five hours, does this dramatised collection feel like an audio theatre triumph or an abridged compromise? Read our full review and Soundcheck to see why listeners adore it.",
         cardOverview: "The definitive Austen experience featuring forty-five hours of dramatised performance. Immerse yourself in the wit and romance of Regency England with an all-star cast.",
@@ -2411,7 +2277,6 @@ export const baseBooks: Book[] = [
         description: "Humankind’s last stand begins in this forty-six-hour epic. Follow Jonnie Goodboy Tyler as he leads a desperate rebellion against the alien Psychlos in a post-apocalyptic wasteland.",
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b9/d2/de/b9d2dea3-ffe7-b5c7-9642-26b0ccdedd20/mzaf_13084401305552114885.std.aac.p.m4a',
         affiliateLink: "https://www.amazon.co.uk/dp/B01D274V2U?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B01D2749JA?tag=thelongbookcl-20",
         teaserTitle: "46 Hours with a 65-Actor Cast",
         teaser: "Boasting thousands of sound effects and sixty-five actors across nearly forty-six hours, does this colossal sci-fi production deliver pure cinematic adrenaline or sensory overload? Read our full review and Soundcheck to see if this marathon justifies your credit.",
         cardOverview: "A massive forty-six-hour cinematic production featuring a sixty-five-actor cast. Join the resistance against alien invaders in this monumental dramatised audiobook experience.",
@@ -2429,7 +2294,6 @@ export const baseBooks: Book[] = [
         description: "A full-cast, cinematic version of the orphaned boy who discovers his magical heritage and attends Hogwarts School of Witchcraft and Wizardry. Harry's journey reboots in this high-production value rendition.",
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ca/d7/d0/cad7d027-3702-d88f-e9ab-24d8ee276664/mzaf_8856256190233979700.std.aac.p.m4a',
         affiliateLink: "https://www.amazon.co.uk/dp/B0F155M8K8?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0F14SX2V2?tag=thelongbookcl-20",
         teaserTitle: "Can Audio Compete with Childhood Nostalgia?",
         teaser: "Whether you grew up reading the books or watching the films, does hearing this iconic wizarding opener aloud capture genuine magic or feel overly familiar? Read our full review and Soundcheck to see how the vocal performance elevates this classic.",
         cardOverview: "The foundational journey into a world of magic, friendship, and danger. Experience the start of the global phenomenon through a spectacular, cinematic full-cast production.",
@@ -2450,7 +2314,6 @@ export const baseBooks: Book[] = [
         description: "A world plunged into eternal winter belongs to the vampires. Follow the human resistance in this full-cast, multi-part cinematic audio saga of survival and blood.",
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ff/e1/55/ffe15569-784b-54eb-6a0b-7a31545c3bdd/mzaf_13005671170681838185.std.aac.p.m4a',
         affiliateLink: "https://www.amazon.co.uk/dp/B09PSLWJNV?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B09PSPS2WD?tag=thelongbookcl-20",
         teaserTitle: "Vampire Audio Drama in the Freezing Dark",
         teaser: "Does a 5-hour immersive audio drama with binaural sound design and top British talent deliver more impact than a traditional 30-hour epic? Read our full review and Soundcheck to see our verdict.",
         cardOverview: "The first of a three-part vampire apocalypse. Experience the full-cast, cinematic survival story as the last remnants of humanity fight back against the freezing dark",
@@ -2471,7 +2334,6 @@ export const baseBooks: Book[] = [
         description: "An oral history of the zombie apocalypse told by the survivors. This 14-hour star-studded production captures the global collapse and eventual human victory.",
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/9c/9a/6d/9c9a6d09-f173-bb70-c641-84ce4cae2e7a/mzaf_1279410906790539979.std.aac.p.m4a',
         affiliateLink: "https://www.amazon.co.uk/dp/B00A72QHHQ?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B00A6YA5UA?tag=thelongbookcl-20",
         teaserTitle: "Hollywood Legends Voice the Zombie Apocalypse",
         teaser: "Can a star-studded, 40-actor full cast successfully turn an oral history into audio's most immersive survival documentary? Read our full review and Soundcheck to see our verdict.",
         cardOverview: "The most famous full-cast production in audio history tells the story of the zombie war. A 14 hour multi-voice audiobook featuring global accounts of post-apocalyptic survival.",
@@ -2491,7 +2353,6 @@ export const baseBooks: Book[] = [
         description: "Lawyer Jonathan Harker visits Count Dracula in Transylvania, unwittingly unleashing an ancient evil upon London in this full-cast, star-studded gothic masterpiece.",
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/e0/18/1c/e0181ca3-c21e-3b5a-f19e-38f0fc5d50e7/mzaf_11767853992741001347.std.aac.p.m4a',
         affiliateLink: "https://www.amazon.co.uk/dp/B007BEILYA?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B007B7GOYQ?tag=thelongbookcl-20",
         teaserTitle: "Tim Curry and Alan Cumming in Transylvania",
         teaser: "Does an A-list ensemble led by Alan Cumming and Tim Curry revitalize Bram Stoker's epistolary horror, or does full-cast dramatization drown out Victorian dread? Read our full review and Soundcheck to see our verdict.",
         cardOverview: "A definitive fifteen hour + performance of the classic vampire tale. Experience Stoker’s masterpiece through an all-star full-cast including Tim Curry and Alan Cumming.",
@@ -2508,7 +2369,6 @@ export const baseBooks: Book[] = [
         description: "After their father's murder, the Locke children move to Keyhouse, discovering magical keys and a sinister demon in this thirteen-hour, full-cast, cinematic audio epic.",
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/3f/10/11/3f1011fe-d439-9e7e-01e1-021d39c407cf/mzaf_5736085379395507507.std.aac.p.m4a',
         affiliateLink: "https://www.amazon.co.uk/dp/B00YI2LFIW?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B010PNSBYI?tag=thelongbookcl-20",
         teaserTitle: "Can a Graphic Novel Work in Audio?",
         teaser: "Can 13 hours of orchestral scoring and Foley sound design translate Joe Hill's visual comic book terror into pure auditory dread? Read our full review and Soundcheck to see our verdict.",
         cardOverview: "Discover the secrets of Keyhouse in this full-cast dramatisation. A thirteen-hour cinematic journey through grief and terror featuring an all-star voice ensemble.",
@@ -2524,7 +2384,6 @@ export const baseBooks: Book[] = [
         genre: ['Cinematic Audio', 'Fantasy', 'Full-Cast', 'Adventure', 'Classics', 'Mythology', 'Religion', 'Magic', 'Coming of Age', 'Epic Fantasy', 'Dark Fantasy', 'Cosmic Horror', 'Graphic Audio'],
         description: "The full-cast version of the Sandman Act 1. Morpheus, the King of Dreams, is captured for decades. Upon escaping, he must recover his lost tools of power to rebuild his decaying realm.",
         affiliateLink: "https://www.amazon.co.uk/dp/B086WQ63LK?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B086WQ7J62?tag=thelongbookcl-20",
         teaserTitle: "James McAvoy as the Lord of Dreams",
         teaser: "Does Dirk Maggs's cinematic audio adaptation of Neil Gaiman's graphic masterpiece live up to the hype, or does sensory overload overwhelm Morpheus's dark mythology? Read our full review and Soundcheck to see our verdict.",
         cardOverview: "After a century of imprisonment, the Lord of Dreams embarks on a dark odyssey to reclaim his kingdom in this star-studded, cinematic, full-cast masterpiece.",
@@ -2540,7 +2399,6 @@ export const baseBooks: Book[] = [
         genre: ['Cinematic Audio', 'Classics', 'Fantasy', 'Adventure', 'Full-Cast', 'Coming of Age', 'Mythology', 'Religion', 'Magic', 'Epic', 'Fairy Tale', 'Graphic Audio'],
         description: "Four siblings discover a magical wardrobe leading to the frozen land of Narnia, where they must join the lion Aslan to defeat the White Witch.",
         affiliateLink: "https://www.amazon.co.uk/dp/B00O3FSLA4?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B00O3FDQP4?tag=thelongbookcl-20",
         teaserTitle: "15 Hours of Orchestral BBC Radio Magic",
         teaser: "Does the legendary BBC Radio dramatization with classic orchestral scoring outshine a single narrator reading CS Lewis's seven fantasy classics? Read our full review and Soundcheck to see our verdict.",
         cardOverview: "Step through the wardrobe into a complete, dramatised, cinematic journey through C.S. Lewis’s beloved world, brought to life with an iconic BBC full-cast and score.",
@@ -2558,7 +2416,6 @@ export const baseBooks: Book[] = [
         description: "Maggie finds herself transported into the world of her favorite—but famously unfinished—dark fantasy series. Waking up in the gutters of Kair Toren, she discovers she cannot be killed. Armed with her encyclopedic knowledge of the plot, she must navigate a world of rival warlords and magic to save the kingdom from a cataclysmic war.",
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/8d/72/7a/8d727ac8-1f34-2e95-8250-eb5c1fd3188b/mzaf_390883122218604508.std.aac.p.m4a',
         affiliateLink: "https://www.amazon.co.uk/dp/B0BXZ4XJ53?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0BXZ4XJ53?tag=thelongbookcl-20",
         teaserTitle: "Can Gritty Portal Fantasy Justify 21 Hours?",
         teaser: "Does Kristen Sieh's layered narration sell this meta-narrative dark fantasy without turning its book-within-a-book gimmick into listening fatigue? Read our full review and Soundcheck to see our verdict.",
         cardOverview: "An unparalleled value proposition for the discerning listener, offering 21 hours of gritty, visceral portal fantasy with a brilliant meta-narrative twist.",
@@ -2581,7 +2438,6 @@ export const baseBooks: Book[] = [
         relatedBookIds: ["164", "162", "17", "161", "163", "105"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/61/11/22/61112268-bda4-68cd-1dfa-7b597372c6db/mzaf_17768424690085941014.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0BGT4HXBF?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0BGSZ1DW2?tag=thelongbookcl-20"
     },
     {
         id: "161",
@@ -2600,7 +2456,6 @@ export const baseBooks: Book[] = [
         relatedBookIds: ["17", "99", "160", "162", "163", "165"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview114/v4/8d/46/cf/8d46cfc9-d931-15a6-db05-6e3e1778bb74/mzaf_3239806246224597725.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B08DP1P2JS?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B08DP27V4X?tag=thelongbookcl-20"
     },
     {
         id: "162",
@@ -2619,7 +2474,6 @@ export const baseBooks: Book[] = [
         relatedBookIds: ["160", "164", "105", "24", "17", "161"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/f7/04/2f/f7042fac-5293-ece4-97a2-8a8c73503972/mzaf_625481252914685307.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B07FSW987Q?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B07FSVQ5BM?tag=thelongbookcl-20"
     },
     {
         id: "163",
@@ -2639,7 +2493,6 @@ export const baseBooks: Book[] = [
         series: "The Cemetery of Forgotten Books",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/86/74/7b/86747bc9-6b24-15d0-f157-1e09fc1f47e6/mzaf_119864995044323572.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B005EM6Z26?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B005ELYDY4?tag=thelongbookcl-20"
     },
     {
         id: "164",
@@ -2658,7 +2511,6 @@ export const baseBooks: Book[] = [
         relatedBookIds: ["160", "162", "105", "163", "165", "17"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/32/78/d7/3278d72c-14f8-2bc0-6480-1ba429bc65e6/mzaf_79862219141171310.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0GQBDG9PX?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0GQBDFNNL?tag=thelongbookcl-20"
     },
     {
         id: "165",
@@ -2677,7 +2529,6 @@ export const baseBooks: Book[] = [
         relatedBookIds: ["38", "163", "160", "17", "99", "110"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview114/v4/e6/dd/b7/e6ddb7bd-f983-b080-e4f5-7949715efc41/mzaf_13575846925941856273.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B005SG4UIO?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B005O10N3Y?tag=thelongbookcl-20"
     },
     {
         id: "166",
@@ -2696,7 +2547,6 @@ export const baseBooks: Book[] = [
         relatedBookIds: ["223", "122", "167", "171", "168", "169", "170"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b2/8b/8c/b28b8c9f-43e5-537b-a90c-5b741ed33b72/mzaf_17269727664169868612.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B08V8MF4P9?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B08V8877BY?tag=thelongbookcl-20"
     },
     {
         id: "167",
@@ -2715,7 +2565,6 @@ export const baseBooks: Book[] = [
         relatedBookIds: ["329", "328", "327", "326", "325", "324", "323", "322", "321", "320", "319", "318", "166", "122", "168", "169", "171", "172"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ca/6c/e2/ca6ce2a9-4d6a-0b85-9967-0648268344b5/mzaf_7692692550407077818.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B08V394KSD?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B08V3XQ7LK?tag=thelongbookcl-20"
     },
     {
         id: "168",
@@ -2734,7 +2583,6 @@ export const baseBooks: Book[] = [
         relatedBookIds: ["359", "358", "357", "356", "355", "354", "353", "352", "351", "350", "349", "348", "347", "346", "345", "344", "169", "166", "167", "170", "122", "172"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/d7/cf/0f/d7cf0f27-ef6d-1ee1-27fa-ace688c9c8b3/mzaf_4293062187819542510.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B094JYFZBK?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B094JZYWLG?tag=thelongbookcl-20"
     },
     {
         id: "169",
@@ -2753,7 +2601,6 @@ export const baseBooks: Book[] = [
         relatedBookIds: ["343", "342", "341", "340", "339", "338", "337", "336", "335", "334", "333", "332", "331", "330", "168", "166", "167", "171", "170", "122"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/98/11/4a/98114a16-e868-094c-5771-fb9df3b8ec28/mzaf_8557557250116492200.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B09MWMNTNC?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B09MWNZ94S?tag=thelongbookcl-20"
     },
     {
         id: "170",
@@ -2772,7 +2619,6 @@ export const baseBooks: Book[] = [
         relatedBookIds: ['279', '166', '168', '169', '167', '171', '172'],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/35/f3/d7/35f3d7e2-d9c5-edca-1ab1-099db635e41b/mzaf_9127337364892982729.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B08V3CJVPG?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B08V32FBGH?tag=thelongbookcl-20"
     },
     {
         id: "171",
@@ -2791,7 +2637,6 @@ export const baseBooks: Book[] = [
         relatedBookIds: ["364", "363", "362", "361", "360", "166", "167", "169", "172", "122", "170"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview124/v4/30/23/b9/3023b9e5-5231-0932-cf89-1863cb52ea48/mzaf_13264776284790728026.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B08V4WF6MR?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B08V4XCHFQ?tag=thelongbookcl-20"
     },
     {
         id: "172",
@@ -2810,7 +2655,6 @@ export const baseBooks: Book[] = [
         relatedBookIds: ["166", "167", "171", "168", "170", "122"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview114/v4/db/5b/9d/db5b9d42-5395-aa2e-585f-436a9c391bb4/mzaf_13471531387906569378.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B01L7UENW2?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B01L7UFUHE?tag=thelongbookcl-20"
     }
 
 ,
@@ -2831,7 +2675,6 @@ export const baseBooks: Book[] = [
         relatedBookIds: ["316", "315", "314", "313", "312", "311", "310", "174", "175", "176", "177", "178", "179", "180"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/86/fa/25/86fa2587-81f4-b083-9e0a-71e5b4ecd826/mzaf_1902165741962642458.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B002SQ6058?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B005GL3SLQ?tag=thelongbookcl-20"
     },
     {
         id: "174",
@@ -2850,7 +2693,6 @@ export const baseBooks: Book[] = [
         relatedBookIds: ["173", "175", "176", "178", "179", "180"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/bb/87/e4/bb87e4ec-dff1-db00-3d08-b15bb3841202/mzaf_16170643361666806221.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B008DHF516?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B005JFFETS?tag=thelongbookcl-20"
     },
     {
         id: "175",
@@ -2869,7 +2711,6 @@ export const baseBooks: Book[] = [
         relatedBookIds: ["173", "174", "176", "178", "179", "180"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/ee/f9/44/eef94459-8b59-c5e9-e8de-9f2d42d0a50c/mzaf_1483061396759588239.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B07H5MR8C8?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B07H5PDGSL?tag=thelongbookcl-20"
     },
     {
         id: "176",
@@ -2888,7 +2729,6 @@ export const baseBooks: Book[] = [
         relatedBookIds: ["173", "174", "175", "177", "178", "180"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/51/3d/f4/513df425-8350-d343-5391-bdeafd7d2098/mzaf_152318982592209297.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0093N97R2?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B07FKWFY9M?tag=thelongbookcl-20"
     },
     {
         id: "177",
@@ -2907,7 +2747,6 @@ export const baseBooks: Book[] = [
         relatedBookIds: ["173", "174", "176", "178", "179", "180"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/2d/6b/f3/2d6bf30a-e1d6-33a5-426a-9224335932d6/mzaf_12874575956828739403.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B00KZCAROC?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B00KZ1RE12?tag=thelongbookcl-20"
     },
     {
         id: "178",
@@ -2926,7 +2765,6 @@ export const baseBooks: Book[] = [
         relatedBookIds: ["173", "174", "175", "176", "179", "180"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/0e/a4/de/0ea4de0d-8de0-2222-b493-25e68bd7b66a/mzaf_1593305178545108339.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B009OXPCFM?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B009OXR8A4?tag=thelongbookcl-20"
     },
     {
         id: "179",
@@ -2945,7 +2783,6 @@ export const baseBooks: Book[] = [
         relatedBookIds: ["173", "174", "175", "176", "178", "180"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/56/13/00/561300bd-5aee-f4da-078a-1c838286463c/mzaf_11782165692077638829.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B004RPBWOC?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B005NDFVCQ?tag=thelongbookcl-20"
     },
     {
         id: "180",
@@ -2964,7 +2801,6 @@ export const baseBooks: Book[] = [
         relatedBookIds: ["173", "174", "175", "176", "178", "179"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/28/b9/a5/28b9a5b3-07d3-0955-05a8-629a64dfd087/mzaf_1786439201187720788.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B01609B756?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B01609A9QE?tag=thelongbookcl-20"
     }
 
 ,
@@ -2985,7 +2821,6 @@ export const baseBooks: Book[] = [
         relatedBookIds: ['415', '416', '417', '307', '306', '305', '268', '267', '182', '183'],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/bd/c8/e3/bdc8e355-ad2f-53b4-90d5-42ecab58958f/mzaf_13223217077266085063.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B003PC3X5E?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B003PCYEE8?tag=thelongbookcl-20"
     },
     {
         id: "182",
@@ -3004,7 +2839,6 @@ export const baseBooks: Book[] = [
         relatedBookIds: ['274', '273', '181', '183', '184', '186', '187', '188'],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/77/56/b4/7756b4ac-dcad-b032-b9bf-2a21b8b79ea8/mzaf_6568486364811724702.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B004K9D2XY?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B005ND6WLA?tag=thelongbookcl-20"
     },
     {
         id: "183",
@@ -3023,7 +2857,6 @@ export const baseBooks: Book[] = [
         relatedBookIds: ["181", "182", "184", "185", "186", "188"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/cf/d0/53/cfd053b9-d6cf-9562-1fda-e935ec5b1a47/mzaf_7562342285441093131.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B07K1JXNDN?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B07K1FKMT2?tag=thelongbookcl-20"
     },
     {
         id: "184",
@@ -3042,7 +2875,6 @@ export const baseBooks: Book[] = [
         relatedBookIds: ["181", "182", "183", "185", "186", "187"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/56/2b/d5/562bd52b-1564-281e-fccd-7c992b3db1e6/mzaf_7745365159084835410.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0H2CXP68T?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0H2CWWF8B?tag=thelongbookcl-20"
     },
     {
         id: "185",
@@ -3061,7 +2893,6 @@ export const baseBooks: Book[] = [
         relatedBookIds: ['276', '275', '181', '183', '184', '186', '187', '188'],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/e9/4e/34/e94e34ab-6acb-11c1-7482-023f35292615/mzaf_554599645715417128.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B07BQCZ6X3?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B07BQCZH4X?tag=thelongbookcl-20"
     },
     {
         id: "186",
@@ -3080,7 +2911,6 @@ export const baseBooks: Book[] = [
         relatedBookIds: ["309", "308", "181", "182", "184", "185", "187", "188"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/be/64/fd/be64fd25-b001-2b4a-e167-513b86c71231/mzaf_962855819248796388.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B00CDGKQMQ?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B00CDIGREA?tag=thelongbookcl-20"
     },
     {
         id: "187",
@@ -3099,7 +2929,6 @@ export const baseBooks: Book[] = [
         relatedBookIds: ["440", "441", "442", "443", "181", "305"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b1/3a/77/b13a77de-41b7-b945-4f2e-fcbac60160ff/mzaf_4236095483432196215.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B07DM7NBPD?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B07DM7Z7T1?tag=thelongbookcl-20"
     },
     {
         id: "188",
@@ -3118,7 +2947,6 @@ export const baseBooks: Book[] = [
         relatedBookIds: ["181", "182", "183", "185", "186", "187", "407", "408"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/75/17/8a/75178ab9-7510-538a-adff-5aed0a3c28db/mzaf_6343944090455928451.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B06XCLVTH3?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B06XCTF293?tag=thelongbookcl-20"
     },
     {
         id: "189",
@@ -3137,7 +2965,6 @@ export const baseBooks: Book[] = [
         relatedBookIds: ["190","191","192","193","194","195", "399"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/ff/88/54/ff88547d-fc44-dc4c-7c08-04da0cf78663/mzaf_7306233140582522774.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B098FX5V8C?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B098FGQP6K?tag=thelongbookcl-20"
     },
     {
         id: "190",
@@ -3156,7 +2983,6 @@ export const baseBooks: Book[] = [
         relatedBookIds: ["189","191","192","193","194","196", "403"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ce/22/0c/ce220c5c-7d9a-ba00-a4a3-7ceab2c10b2a/mzaf_10129712792695507328.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0G76QXJ74?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0G76BWCLL?tag=thelongbookcl-20"
     },
     {
         id: "191",
@@ -3175,7 +3001,6 @@ export const baseBooks: Book[] = [
         relatedBookIds: ["189","190","192","193","194","195"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/4a/01/a0/4a01a096-787d-81fe-d205-d142ea8ad7c8/mzaf_6122606822238472093.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0CNTSVPJY?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0CNTRPRCV?tag=thelongbookcl-20"
     },
     {
         id: "192",
@@ -3194,7 +3019,6 @@ export const baseBooks: Book[] = [
         relatedBookIds: ["317","189","190","191","193","194","195"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/bf/b1/7a/bfb17a12-8889-cb48-b427-e43e34b9fae5/mzaf_6654274351336049969.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0B46TBQZ8?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0B46R6KQW?tag=thelongbookcl-20"
     },
     {
         id: "193",
@@ -3213,7 +3037,6 @@ export const baseBooks: Book[] = [
         relatedBookIds: ["189","190","191","192","194","196"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/ff/e1/e1/ffe1e19d-7df8-4395-6ff8-3cfc64391629/mzaf_10793666872772594639.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B096BMZST1?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B096BLCBDV?tag=thelongbookcl-20"
     },
     {
         id: "194",
@@ -3232,7 +3055,6 @@ export const baseBooks: Book[] = [
         relatedBookIds: ["189","190","191","192","193","195", "402"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/bf/25/86/bf2586bf-3165-27a3-5c74-c36b42b93478/mzaf_6141381156828859187.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0CN1FWYWQ?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0CN1K9TS3?tag=thelongbookcl-20"
     },
     {
         id: "195",
@@ -3251,7 +3073,6 @@ export const baseBooks: Book[] = [
         relatedBookIds: ["189","190","191","192","193","196"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/a9/38/20/a9382025-b461-9f93-0177-3e8a49baaa9f/mzaf_6283737637829871630.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0D18NZYJ4?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0D186R23L?tag=thelongbookcl-20"
     },
     {
         id: "196",
@@ -3270,7 +3091,6 @@ export const baseBooks: Book[] = [
         relatedBookIds: ["189","190","191","192","194","195"],
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/6b/63/12/6b6312ce-d3fc-7f41-0da1-d1316279f061/mzaf_10332881180415307323.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0BSS6VDSS?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0BSS4F5D2?tag=thelongbookcl-20"
     }
 
 ,
@@ -3293,7 +3113,6 @@ export const baseBooks: Book[] = [
         narrator: "Perdita Weeks",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/5c/f8/01/5cf801ea-0a15-8afb-8b9e-5edc9796eacf/mzaf_15777638806620689785.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B07B3R92SP?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B07B3J5J9V?tag=thelongbookcl-20"
     }
 ,
     {
@@ -3315,7 +3134,6 @@ export const baseBooks: Book[] = [
         narrator: "Frazer Douglas",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/1a/7a/90/1a7a909a-1b48-f622-a377-3d11b51c7143/mzaf_10760009278298889246.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B099FGFJGL?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B099FHY9S9?tag=thelongbookcl-20"
     }
 ,
     {
@@ -3338,7 +3156,6 @@ export const baseBooks: Book[] = [
         narrator: "Stephen Fry",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/54/29/3a/54293ae2-30fd-280a-d756-eaff6391eb12/mzaf_3173291034293181526.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B071V69C7T?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0718X6ZZ2?tag=thelongbookcl-20"
     }
 ,
     {
@@ -3360,7 +3177,6 @@ export const baseBooks: Book[] = [
         narrator: "Karissa Vacker",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/b0/4a/cc/b04acc44-aef5-d46c-ba86-ced972507fce/mzaf_10421635366724801100.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0BD8CJJF9?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0BD8FBHNL?tag=thelongbookcl-20"
     }
 ,
     {
@@ -3382,7 +3198,6 @@ export const baseBooks: Book[] = [
         narrator: "Soneela Nankani",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/3a/93/d5/3a93d502-c19f-8945-90e7-cc9b96121f73/mzaf_4304127983851089261.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0B9T579DF?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0B9T7H6CY?tag=thelongbookcl-20"
     }
 ,
     {
@@ -3404,7 +3219,6 @@ export const baseBooks: Book[] = [
         narrator: "Natalie Haynes",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview124/v4/2d/80/66/2d806620-4c34-41b6-ffff-67f613c6f3d3/mzaf_9474899556099119744.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B07RXRYCTZ?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B07QSX8WS2?tag=thelongbookcl-20"
     }
 ,
     {
@@ -3426,7 +3240,6 @@ export const baseBooks: Book[] = [
         narrator: "Jayne Entwistle",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/9e/29/39/9e29390e-6eea-82f2-17dd-25bf81d6cba5/mzaf_12590271470725425861.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B08BT51VVJ?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B08BT816GT?tag=thelongbookcl-20"
     }
 ,
     {
@@ -3448,7 +3261,6 @@ export const baseBooks: Book[] = [
         narrator: "Catrin Walker-Booth",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/d1/39/b2/d139b273-d042-c2e6-a944-5f3f95f2a253/mzaf_13679687603510015275.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B09W33Z1PR?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B09W34P37X?tag=thelongbookcl-20"
     }
 ,
     {
@@ -3470,7 +3282,6 @@ export const baseBooks: Book[] = [
         narrator: "Dennis Logan",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/0c/27/ad/0c27ad42-a72c-6697-f82a-b077e0d58aea/mzaf_5034423357389710268.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B075LLTGG9?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B075LLZJS5?tag=thelongbookcl-20"
     }
 ,
     {
@@ -3492,7 +3303,6 @@ export const baseBooks: Book[] = [
         narrator: "Tim Gerard Reynolds",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/99/69/e0/9969e04e-748d-1805-905e-220202c7af13/mzaf_12928114902434950233.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B00I38HIYC?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B00I3PUCIY?tag=thelongbookcl-20"
     },
     {
         id: "207",
@@ -3513,7 +3323,6 @@ export const baseBooks: Book[] = [
         narrator: "Samuel Roukin",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/1a/00/8a/1a008a70-b782-1ba7-e3aa-033c7e822a06/mzaf_6647118380950480362.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B07BGZMYCD?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B07BGZ6CVR?tag=thelongbookcl-20"
     },
     {
         id: "208",
@@ -3535,7 +3344,6 @@ export const baseBooks: Book[] = [
         narrator: "Amy Landon",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/d8/15/4b/d8154bf1-d19d-32cc-3e6f-56ef8c516706/mzaf_5729504436301358118.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B07KJLDP6P?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B07KJQ6292?tag=thelongbookcl-20"
     },
     {
         id: "209",
@@ -3556,7 +3364,6 @@ export const baseBooks: Book[] = [
         narrator: "Sophie Aldred",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/cf/13/38/cf1338bf-912a-51b8-8ff7-3cf5794a3350/mzaf_14785288221962023499.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B08ZSYM37D?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B08ZSXJNCD?tag=thelongbookcl-20"
     },
     {
         id: "210",
@@ -3577,7 +3384,6 @@ export const baseBooks: Book[] = [
         narrator: "Peter Kenny",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/60/b2/06/60b206ca-4d23-ac84-02f0-d61d9ec83687/mzaf_4213900676301986515.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B004ETEF86?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B007NX8BLM?tag=thelongbookcl-20"
     },
     {
         id: "211",
@@ -3598,7 +3404,6 @@ export const baseBooks: Book[] = [
         narrator: "John Lee",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/9c/e9/a2/9ce9a2a8-2cc7-4988-6293-e70f3da38533/mzaf_1790592999000017226.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B002SQ9H08?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B002MVI14M?tag=thelongbookcl-20"
     },
     {
         id: "212",
@@ -3620,7 +3425,6 @@ export const baseBooks: Book[] = [
         narrator: "Adjoa Andoh",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/50/93/7c/50937c00-c4b8-23f4-46e3-7481f61b6bd4/mzaf_16540997017968930575.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B00LPS7RFC?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B07JMX3ND2?tag=thelongbookcl-20"
     },
     {
         id: "213",
@@ -3641,7 +3445,6 @@ export const baseBooks: Book[] = [
         narrator: "Mel Hudson",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/f8/1e/9c/f81e9c8a-fb52-9dca-702b-7e0e624e162d/mzaf_17314016914087512144.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B071CRJXYX?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B06ZXTHNSJ?tag=thelongbookcl-20"
     }
 ,
     {
@@ -3665,7 +3468,6 @@ export const baseBooks: Book[] = [
         narrator: "Sean Barrett",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/bb/de/00/bbde002c-5247-cc7b-1a2f-861c9acceabd/mzaf_12821094610153530489.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0CP4C6CJ1?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0CP4DNNLY?tag=thelongbookcl-20"
     },
     {
         id: "215",
@@ -3686,7 +3488,6 @@ export const baseBooks: Book[] = [
         narrator: "Simon Russell Beale",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/e9/cb/f7/e9cbf765-2a74-d7d5-2764-e81db0165ad8/mzaf_12895543985855592668.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0DM2LBLPC?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0DM2L9LKD?tag=thelongbookcl-20"
     },
     {
         id: "216",
@@ -3708,7 +3509,6 @@ export const baseBooks: Book[] = [
         narrator: "James Lailey",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/f9/97/5c/f9975cee-eb9f-b725-4a3f-11ec66427beb/mzaf_5484562831365168146.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B094YNKTLY?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B094YMWVGH?tag=thelongbookcl-20"
     },
     {
         id: "217",
@@ -3729,7 +3529,6 @@ export const baseBooks: Book[] = [
         narrator: "David Rintoul",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/39/32/94/39329440-ad8c-2633-b8a4-c586b875956f/mzaf_2526817828083285377.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B006OP93AI?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B006OEVUZK?tag=thelongbookcl-20"
     },
     {
         id: "218",
@@ -3750,7 +3549,6 @@ export const baseBooks: Book[] = [
         narrator: "Samuel West",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/74/22/58/742258ee-f3c8-b19a-8d4f-3eebe3c53113/mzaf_16394911769399261058.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B07BQ9DQ87?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B07C97YT72?tag=thelongbookcl-20"
     },
     {
         id: "219",
@@ -3771,7 +3569,6 @@ export const baseBooks: Book[] = [
         narrator: "Rosamund Pike",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/fa/fa/66/fafa66b1-9af1-532c-923a-130351d36696/mzaf_9838277937205335134.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B002SQ7IEU?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B000JCESY8?tag=thelongbookcl-20"
     },
     {
         id: "220",
@@ -3792,7 +3589,6 @@ export const baseBooks: Book[] = [
         narrator: "Tim Pigott-Smith",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/03/c2/d3/03c2d308-a335-3c4f-9ec7-051c01d70ac8/mzaf_11794151402636206511.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0DWG2VBWX?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/s?k=The+Human+Factor+by+Graham+Greene&i=audible&tag=thelongbookcl-20"
     },
     {
         id: "221",
@@ -3813,7 +3609,6 @@ export const baseBooks: Book[] = [
         narrator: "Rory Kinnear",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/c5/46/98/c546982c-a9eb-e086-178a-4e0b2cf7d9be/mzaf_9282292865650099900.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0DM2L2KP4?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B004X48J66?tag=thelongbookcl-20"
     },
     {
         id: "222",
@@ -3834,7 +3629,6 @@ export const baseBooks: Book[] = [
         narrator: "David Rintoul",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/19/9c/aa/199caa34-b6d0-3e85-e1f5-b36bd6435476/mzaf_5883751472454977232.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B00FAI0GN8?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B00FAVB8LE?tag=thelongbookcl-20"
     },
     {
         id: "223",
@@ -3856,7 +3650,6 @@ export const baseBooks: Book[] = [
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/08/fc/c0/08fcc020-f262-9080-4f25-c095ef6c0401/mzaf_16870466275505438925.std.aac.p.m4a",
         relatedBookIds: ['293', '292', '291', '290', '289', '288', '284', '283', '282', '281', '280', '269', '234', '272', '271', '270', '235', '166', '213', '64', '65', '154', '153', '62'],
         affiliateLink: "https://www.amazon.co.uk/dp/B08G9SKSHR?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B08GB58KD5?tag=thelongbookcl-20"
     },
     {
         id: '225',
@@ -3874,19 +3667,16 @@ export const baseBooks: Book[] = [
         teaser: "Does Jennifer Ikeda's classical theatrical delivery sustain sixteen hours of gritty mortal hunting before Feyre descends into the harrowing trials Under the Mountain? Read our full review and Soundcheck to see our verdict.",
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/53/72/b3/5372b3a3-8ff8-ab73-e176-cc3789281c19/mzaf_872507067909133583.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B07955KZ1V?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B07955KZ1V?tag=thelongbookcl-20',
         graphicAudioParts: [
             {
                 title: "Graphic Audio Version. Part 1",
                 shortLabel: "Part 1",
                 affiliateLink: "https://www.amazon.co.uk/dp/B09V5QM9V2?tag=thelongbookclub-21",
-                affiliateLinkUS: "https://www.amazon.com/dp/B09V5QM9V2?tag=thelongbookcl-20"
             },
             {
                 title: "Graphic Audio Version. Part 2",
                 shortLabel: "Part 2",
                 affiliateLink: "https://www.amazon.co.uk/dp/B09X68XLPD?tag=thelongbookclub-21",
-                affiliateLinkUS: "https://www.amazon.com/dp/B09X68XLPD?tag=thelongbookcl-20"
             }
         ],
         relatedBookIds: ['226', '227', '228', '224', '112', '127', '55', '159']
@@ -3907,19 +3697,16 @@ export const baseBooks: Book[] = [
         teaser: "Can twenty-three hours of intense emotional healing and slow-burning political intrigue sustain the most celebrated romance in modern fantasy literature without losing narrative steam? Read our full review and Soundcheck to see our verdict.",
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/50/38/88/503888c7-1d90-817c-b76c-cb44a802163f/mzaf_6391618622770249715.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B01DYNVTKO?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B01DYNVTKO?tag=thelongbookcl-20',
         graphicAudioParts: [
             {
                 title: "Graphic Audio Version. Part 1",
                 shortLabel: "Part 1",
                 affiliateLink: "https://www.amazon.co.uk/dp/B09YG25C7R?tag=thelongbookclub-21",
-                affiliateLinkUS: "https://www.amazon.com/dp/B09YG25C7R?tag=thelongbookcl-20"
             },
             {
                 title: "Graphic Audio Version. Part 2",
                 shortLabel: "Part 2",
                 affiliateLink: "https://www.amazon.co.uk/dp/B0B35BNTWF?tag=thelongbookclub-21",
-                affiliateLinkUS: "https://www.amazon.com/dp/B0B35BNTWF?tag=thelongbookcl-20"
             }
         ],
         relatedBookIds: ['225', '227', '228', '224', '112', '127', '111', '147']
@@ -3940,25 +3727,21 @@ export const baseBooks: Book[] = [
         teaser: "Does the twenty-five-hour runtime maintain its blistering pace as intimate court romance gives way to sprawling continental battles and desperate military alliances? Read our full review and Soundcheck to see our verdict.",
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/90/db/2c/90db2c6b-9e9f-6e23-fc95-4f31bce5c7dc/mzaf_7757454148087473339.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0F6NXV98D?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0F6NXV98D?tag=thelongbookcl-20',
         graphicAudioParts: [
             {
                 title: "Graphic Audio Version. Part 1",
                 shortLabel: "Part 1",
                 affiliateLink: "https://www.amazon.co.uk/dp/B0B75VHFL3?tag=thelongbookclub-21",
-                affiliateLinkUS: "https://www.amazon.com/dp/B0B75VHFL3?tag=thelongbookcl-20"
             },
             {
                 title: "Graphic Audio Version. Part 2",
                 shortLabel: "Part 2",
                 affiliateLink: "https://www.amazon.co.uk/dp/B0BFTN5DV6?tag=thelongbookclub-21",
-                affiliateLinkUS: "https://www.amazon.com/dp/B0BFTN5DV6?tag=thelongbookcl-20"
             },
             {
                 title: "Graphic Audio Version. Part 3",
                 shortLabel: "Part 3",
                 affiliateLink: "https://www.amazon.co.uk/dp/B0BQ4KPPJ4?tag=thelongbookclub-21",
-                affiliateLinkUS: "https://www.amazon.com/dp/B0BQ4KPPJ4?tag=thelongbookcl-20"
             }
         ],
         relatedBookIds: ['226', '225', '228', '224', '130', '128', '55', '148']
@@ -3979,19 +3762,16 @@ export const baseBooks: Book[] = [
         teaser: "Does listening to Nesta Archeron's caustic defenses aloud make her twenty-one-hour journey through physical torment, grief, and scorching Illyrian passion genuinely redemptive? Read our full review and Soundcheck to see our verdict.",
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/d5/62/e4/d562e452-22f0-23c8-5873-d1b84c5100c8/mzaf_16995195974349112367.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0F6NY52YF?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0F6NY52YF?tag=thelongbookcl-20',
         graphicAudioParts: [
             {
                 title: "Graphic Audio Version. Part 1",
                 shortLabel: "Part 1",
                 affiliateLink: "https://www.amazon.co.uk/dp/B0CDJDJWL7?tag=thelongbookclub-21",
-                affiliateLinkUS: "https://www.amazon.com/dp/B0CDJDJWL7?tag=thelongbookcl-20"
             },
             {
                 title: "Graphic Audio Version. Part 2",
                 shortLabel: "Part 2",
                 affiliateLink: "https://www.amazon.co.uk/dp/B0CLSFLYJB?tag=thelongbookclub-21",
-                affiliateLinkUS: "https://www.amazon.com/dp/B0CLSFLYJB?tag=thelongbookcl-20"
             }
         ],
         relatedBookIds: ['227', '226', '225', '224', '130', '127', '114', '147']
@@ -4013,13 +3793,11 @@ export const baseBooks: Book[] = [
         relatedBookIds: ['228', '227', '226', '225', '112', '130', '127', '159'],
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/5e/c1/03/5ec103a4-35f8-2176-4aed-8d2f59373513/mzaf_5432226401788602603.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0GR6JN1J5?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0GR6JN1J5?tag=thelongbookcl-20',
         graphicAudioParts: [
             {
                 title: "Dramatized Adaptation (Full Cast)",
                 shortLabel: "Dramatized",
                 affiliateLink: "https://www.amazon.co.uk/dp/B0HFQFF2M1?tag=thelongbookclub-21",
-                affiliateLinkUS: "https://www.amazon.com/dp/B0HFQFF2M1?tag=thelongbookcl-20"
             }
         ]
     },
@@ -4039,7 +3817,6 @@ export const baseBooks: Book[] = [
         narrator: "John Lee",
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/00/1f/63/001f63c6-6847-a6aa-2f2f-75f4924d6fd1/mzaf_12577335895571370348.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0047VIL2C?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0047VIL2C?tag=thelongbookcl-20',
         series: 'Kingsbridge',
         relatedBookIds: ['287', '286', '285', '21', '40', '15', '2', '3', '4', '6', '7', '18', '19', '23', '31']
     },
@@ -4059,7 +3836,6 @@ export const baseBooks: Book[] = [
         narrator: "Donna Tartt",
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/75/f9/c9/75f9c9e6-7d0f-dea1-b8ea-c25ff8b6558b/mzaf_368889372454742316.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B00V02BSCQ?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B00V02BSCQ?tag=thelongbookcl-20',
         relatedBookIds: ['75', '116', '81', '133', '164', '60', '126', '161', '11', '12', '16']
     },
     {
@@ -4078,7 +3854,6 @@ export const baseBooks: Book[] = [
         narrator: "John Lee",
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/3f/65/e9/3f65e979-c245-5f7f-9be0-a04b6c812d20/mzaf_3659444721968335115.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B01HH0EQKK?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B01HH0EQKK?tag=thelongbookcl-20',
         series: "The Night's Dawn Trilogy",
         relatedBookIds: ['111', '112', '209', '185', '214', '61', '84', '85', '141', '142', '60', '413', '414']
     },
@@ -4098,7 +3873,6 @@ export const baseBooks: Book[] = [
         narrator: "Orlando Wells",
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/53/b5/c3/53b5c387-d582-61ca-0e8d-4ba075c6ea50/mzaf_5346350760594162006.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0G6MVRK1K?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0G6MVRK1K?tag=thelongbookcl-20',
         series: 'The Romanov Biographies',
         relatedBookIds: ['120', '208', '64', '65', '66', '67', '68', '69', '2', '6']
     },
@@ -4118,7 +3892,6 @@ export const baseBooks: Book[] = [
         narrator: "Constantine Gregory",
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/ec/a1/1f/eca11f06-2562-bf07-8c6a-4ab0d1063ced/mzaf_5233308908474371364.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B01MTFXYGG?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B01MTFXYGG?tag=thelongbookcl-20',
         relatedBookIds: ['12', '31', '2', '6', '15', '70', '19', '10', '3']
     },
     {
@@ -4137,7 +3910,6 @@ export const baseBooks: Book[] = [
         narrator: "Simon Russell Beale",
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/04/c4/df/04c4dfe5-84dc-db91-d1e8-059a760f9956/mzaf_8103048331073929416.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0DQ9S2RJZ?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0DQ9S2RJZ?tag=thelongbookcl-20',
         series: 'Karla Trilogy',
         relatedBookIds: ['269', '215', '211', '186', '40', '213', '212', '96', '97', '173', '113']
     },
@@ -4157,7 +3929,6 @@ export const baseBooks: Book[] = [
         narrator: "Sophie Aldred",
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/93/07/e6/9307e6c0-875b-5624-a624-3bb621bf8c3b/mzaf_15583468006453744422.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B09LK4RWDM?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B09LK4RWDM?tag=thelongbookcl-20',
         series: 'The Final Architecture',
         relatedBookIds: ['270', '209', '214', '185', '111', '112', '84', '85', '61', '90', '147']
     },
@@ -4177,7 +3948,6 @@ export const baseBooks: Book[] = [
         narrator: "Malk Williams",
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview114/v4/f9/28/35/f9283579-84d2-900b-e025-d04a1ab024ea/mzaf_11414336583654978514.std.aac.p.m4a',
         affiliateLink: 'https://www.amazon.co.uk/dp/B0C4ZQ7SS4?tag=thelongbookclub-21',
-        affiliateLinkUS: 'https://www.amazon.com/dp/B0C4ZQ7SS4?tag=thelongbookcl-20',
         relatedBookIds: ['2', '6', '12', '31', '15', '70', '11', '3', '10']
     },
     {
@@ -4197,7 +3967,6 @@ export const baseBooks: Book[] = [
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/2e/74/8e/2e748ee8-ecde-28d5-11eb-4e14f905e7d3/mzaf_10558769066176789328.std.aac.p.m4a",
         relatedBookIds: ["166", "238", "239", "240", "167", "168"],
         affiliateLink: "https://www.amazon.co.uk/dp/B09347NHLG?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B09347NHLG?tag=thelongbookcl-20"
     },
     {
         id: "238",
@@ -4216,7 +3985,6 @@ export const baseBooks: Book[] = [
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/5f/41/b0/5f41b059-8814-230a-9b47-bba6923b68f6/mzaf_9469341470279753679.std.aac.p.m4a",
         relatedBookIds: ["166", "237", "239", "240", "167", "171"],
         affiliateLink: "https://www.amazon.co.uk/dp/B094XRB2ND?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B094XRB2ND?tag=thelongbookcl-20"
     },
     {
         id: "239",
@@ -4235,7 +4003,6 @@ export const baseBooks: Book[] = [
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/b5/0b/31/b50b312d-95c4-636c-8d61-5bbab81df7db/mzaf_493106387047107082.std.aac.p.m4a",
         relatedBookIds: ["166", "238", "240", "241", "168", "169"],
         affiliateLink: "https://www.amazon.co.uk/dp/B09GD1QTXK?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B09GD1QTXK?tag=thelongbookcl-20"
     },
     {
         id: "240",
@@ -4254,7 +4021,6 @@ export const baseBooks: Book[] = [
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/f3/3e/54/f33e54db-03a5-1f22-b18a-3c631441e8fd/mzaf_5973291519214846026.std.aac.p.m4a",
         relatedBookIds: ["166", "239", "241", "242", "167", "170"],
         affiliateLink: "https://www.amazon.co.uk/dp/B09ZJ7TGQC?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B09ZJ7TGQC?tag=thelongbookcl-20"
     },
     {
         id: "241",
@@ -4273,7 +4039,6 @@ export const baseBooks: Book[] = [
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/28/ed/5b/28ed5be3-eca1-d684-1cd4-0f4e698518dd/mzaf_7521572529870709803.std.aac.p.m4a",
         relatedBookIds: ["166", "240", "242", "243", "168", "169"],
         affiliateLink: "https://www.amazon.co.uk/dp/B0CDXSGK9B?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0CDXSGK9B?tag=thelongbookcl-20"
     },
     {
         id: "242",
@@ -4292,7 +4057,6 @@ export const baseBooks: Book[] = [
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/42/f3/7e/42f37ee9-db16-9412-c833-96aeb858e0bb/mzaf_7525993683814899240.std.aac.p.m4a",
         relatedBookIds: ["166", "240", "241", "243", "167", "170", "258"],
         affiliateLink: "https://www.amazon.co.uk/dp/B0DK22T2HW?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0DK22T2HW?tag=thelongbookcl-20"
     },
     {
         id: "243",
@@ -4311,7 +4075,6 @@ export const baseBooks: Book[] = [
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/87/08/c5/8708c540-ce72-b262-d736-31180dd6ae45/mzaf_7975543243810663368.std.aac.p.m4a",
         relatedBookIds: ["166", "180", "167", "168", "169", "244"],
         affiliateLink: "https://www.amazon.co.uk/dp/B0CS3TFTM4?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0CS3TFTM4?tag=thelongbookcl-20"
     },
     {
         id: "244",
@@ -4330,7 +4093,6 @@ export const baseBooks: Book[] = [
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/da/a9/aa/daa9aa81-bd94-34e8-e73e-45985e8ae14c/mzaf_8459401280647849127.std.aac.p.m4a",
         relatedBookIds: ["166", "245", "246", "167", "168", "243"],
         affiliateLink: "https://www.amazon.co.uk/dp/B0FXYF62ZX?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B076DL3RNK?tag=thelongbookcl-20"
     },
     {
         id: "245",
@@ -4349,7 +4111,6 @@ export const baseBooks: Book[] = [
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/63/e4/36/63e436d4-bd6a-3199-c4ce-c59943c77cb7/mzaf_14337505001272005550.std.aac.p.m4a",
         relatedBookIds: ["244", "246", "247", "166", "167", "171"],
         affiliateLink: "https://www.amazon.co.uk/dp/B0FY3SWHJ4?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B07BNW1F3K?tag=thelongbookcl-20"
     },
     {
         id: "246",
@@ -4368,7 +4129,6 @@ export const baseBooks: Book[] = [
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/20/a9/28/20a92879-0095-719a-6f69-df70056b8ad2/mzaf_4677532159304239732.std.aac.p.m4a",
         relatedBookIds: ["244", "245", "247", "248", "166", "168"],
         affiliateLink: "https://www.amazon.co.uk/dp/B0FY3TKTZL?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B07K6VDCSW?tag=thelongbookcl-20"
     },
     {
         id: "247",
@@ -4387,7 +4147,6 @@ export const baseBooks: Book[] = [
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview124/v4/67/45/1a/67451aea-be7f-1250-feeb-955adc22c061/mzaf_568288659532708338.std.aac.p.m4a",
         relatedBookIds: ["244", "245", "246", "248", "166", "170"],
         affiliateLink: "https://www.amazon.co.uk/dp/B08DFDXP2S?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B08DFBMSH6?tag=thelongbookcl-20"
     },
     {
         id: "248",
@@ -4406,7 +4165,6 @@ export const baseBooks: Book[] = [
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview124/v4/7f/eb/96/7feb96c8-58b5-3d17-1ee8-636aa968b716/mzaf_16250642494117962391.std.aac.p.m4a",
         relatedBookIds: ["244", "246", "247", "249", "166", "169"],
         affiliateLink: "https://www.amazon.co.uk/dp/B08S581WZF?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B08S53D7W9?tag=thelongbookcl-20"
     },
     {
         id: "249",
@@ -4425,7 +4183,6 @@ export const baseBooks: Book[] = [
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/d3/3b/5d/d33b5d19-a586-7622-bcaf-e9509ba5c8c4/mzaf_8567671133995995652.std.aac.p.m4a",
         relatedBookIds: ["244", "247", "248", "166", "167", "168"],
         affiliateLink: "https://www.amazon.co.uk/dp/B097DD8DY2?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B097DG4T8W?tag=thelongbookcl-20"
     },
     {
         id: "250",
@@ -4444,7 +4201,6 @@ export const baseBooks: Book[] = [
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview124/v4/1e/62/63/1e6263d3-bed9-80c1-9968-8ea2c4447fb2/mzaf_4463184144236502352.std.aac.p.m4a",
         relatedBookIds: ["4", "22", "31", "33", "15"],
         affiliateLink: "https://www.amazon.co.uk/dp/B08HM6FTPD?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B08HM6FTPD?tag=thelongbookcl-20"
     },
     {
         id: "251",
@@ -4463,7 +4219,6 @@ export const baseBooks: Book[] = [
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d0/bd/61/d0bd6191-5c2a-77b9-f53d-87f297e35364/mzaf_17543841403330433681.std.aac.p.m4a",
         relatedBookIds: ["7", "18", "252", "6", "12"],
         affiliateLink: "https://www.amazon.co.uk/dp/B0H4LQCSTC?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0H4LQCSTC?tag=thelongbookcl-20"
     },
     {
         id: "252",
@@ -4482,7 +4237,6 @@ export const baseBooks: Book[] = [
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/37/de/b6/37deb638-1d7f-2224-b47f-eb1b99e89168/mzaf_17321249070113347157.std.aac.p.m4a",
         relatedBookIds: ["7", "18", "251", "6", "12"],
         affiliateLink: "https://www.amazon.co.uk/dp/B0BK5FR664?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0BK5FR664?tag=thelongbookcl-20"
     },
     {
         id: "253",
@@ -4501,7 +4255,6 @@ export const baseBooks: Book[] = [
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview114/v4/94/f2/62/94f26200-c829-c3cf-75bc-c4c7845436e8/mzaf_3878754535887853901.std.aac.p.m4a",
         relatedBookIds: ["29", "254", "157", "60", "26"],
         affiliateLink: "https://www.amazon.co.uk/dp/B002SQDIMG?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B002SQDIMG?tag=thelongbookcl-20"
     },
     {
         id: "254",
@@ -4520,7 +4273,6 @@ export const baseBooks: Book[] = [
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/f2/7e/9b/f27e9bd1-c912-0931-a7f0-4737298985dd/mzaf_690378632678992984.std.aac.p.m4a",
         relatedBookIds: ["29", "253", "157", "140", "153"],
         affiliateLink: "https://www.amazon.co.uk/dp/B0085Y7DMG?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0085Y7DMG?tag=thelongbookcl-20"
     },
     {
         id: "255",
@@ -4539,7 +4291,6 @@ export const baseBooks: Book[] = [
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/af/f5/50/aff5503b-b1f8-13e9-294c-3520d741bb73/mzaf_14295368550057121224.std.aac.p.m4a",
         relatedBookIds: ["199", "259", "260", "10", "66", "67", "21", "11"],
         affiliateLink: "https://www.amazon.co.uk/dp/B07H8K15BN?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B07H8K15BN?tag=thelongbookcl-20"
     },
     {
         id: "256",
@@ -4558,7 +4309,6 @@ export const baseBooks: Book[] = [
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/de/5d/2d/de5d2d17-268a-3eed-e189-d0c515ef3822/mzaf_8300171163661841423.std.aac.p.m4a",
         relatedBookIds: ["62", "64", "154", "166", "223"],
         affiliateLink: "https://www.amazon.co.uk/dp/B00U8GUFAG?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B00U7UVOTY?tag=thelongbookcl-20"
     },
     {
         id: "257",
@@ -4577,7 +4327,6 @@ export const baseBooks: Book[] = [
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/9e/94/63/9e9463d4-8976-2919-749f-8c54999853f5/mzaf_50413319287048913.std.aac.p.m4a",
         relatedBookIds: ["223", "24", "154", "64", "62"],
         affiliateLink: "https://www.amazon.co.uk/dp/B00HZZTA4A?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B00HZZTA4A?tag=thelongbookcl-20"
     },
     {
         id: "258",
@@ -4593,7 +4342,6 @@ export const baseBooks: Book[] = [
         teaserTitle: "Can Audio Maintain 20 Hours of High-Speed Chaos?",
         teaser: "Can Jeff Hays sustain his lightning-fast comedic timing and kinetic intensity across twenty hours of relentless, vehicular demolition combat without vocal exhaustion? Read our full review and Soundcheck to see our verdict.",
         affiliateLink: "https://www.amazon.co.uk/dp/B0FXY4L5F6?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0FXY4L5F6?tag=thelongbookcl-20",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ef/35/39/ef35398b-4177-9061-0b70-f4a5e29d2161/mzaf_3990318577399221769.std.aac.p.m4a",
         relatedBookIds: ["166", "237", "238", "239", "240", "241", "242", "167", "168", "169", "244", "243"]
     },
@@ -7094,7 +6842,6 @@ export const baseBooks: Book[] = [
         teaser: "When a forgotten Cold War veteran is found dead on an English country bus, can Jackson Lamb's disgraced rejects expose a dormant Russian conspiracy before London is struck? Read our full review and Soundcheck to see why this CWA Gold Dagger winner is espionage perfection in audio.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/d0/87/88/d0878817-1070-45af-469d-aa12ca585397/mzaf_16249274774697557263.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0CP4BMV9Z?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0CP4BMV9Z?tag=thelongbookcl-20",
         relatedBookIds: ["214","391","392","398"],
         series: "Slough House"
     },
@@ -7114,7 +6861,6 @@ export const baseBooks: Book[] = [
         teaser: "When Catherine Standish is kidnapped to blackmail Slough House into a daring heist inside Regent's Park, Jackson Lamb turns the tables on Whitehall's corrupt power brokers. Read our full review and Soundcheck to see why this adrenaline-charged thriller is a standout audio heist.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/2b/2a/76/2b2a7642-9be9-4683-9a3d-eb131e0fb396/mzaf_6674732433069116380.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0CNWG2CZ2?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0CNWG2CZ2?tag=thelongbookcl-20",
         relatedBookIds: ["214","390","392","393"],
         series: "Slough House"
     },
@@ -7134,7 +6880,6 @@ export const baseBooks: Book[] = [
         teaser: "When David Cartwright's fading memory leads to fatal gunfire and an elite assassin team comes hunting, Jackson Lamb must shield his rejects from the ghosts of MI5's darkest operations. Read our full review and Soundcheck to see why this CWA Gold Dagger winner is the most emotional Slough House installment.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/6d/53/73/6d5373c2-e594-b88a-4658-a09dfa0c7ccc/mzaf_1215659010459321225.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0CNWFD1P7?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0CNWFD1P7?tag=thelongbookcl-20",
         relatedBookIds: ["391","393","394","214"],
         series: "Slough House"
     },
@@ -7154,7 +6899,6 @@ export const baseBooks: Book[] = [
         teaser: "When bizarre terrorist assaults hit the British provinces and a toxic smear campaign threatens a high-profile politician, can Slough House untangle the conspiracy without taking the fall? Read our full review and Soundcheck to see why Mick Herron's fifth installment is an audio masterclass in biting satire.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/4f/03/2d/4f032dc2-a611-0084-813f-7a66dcc26471/mzaf_13167415329108184597.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B076148TM9?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B076148TM9?tag=thelongbookcl-20",
         relatedBookIds: ["392","394","395","214"],
         series: "Slough House"
     },
@@ -7174,7 +6918,6 @@ export const baseBooks: Book[] = [
         teaser: "When an off-the-books family favor drags the slow horses to a frozen Welsh barn, ancient grievances and modern mercenaries collide in a deadly crossfire. Read our full review and Soundcheck to see why Mick Herron's sixth volume delivers the series' most shocking emotional gut-punch.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/0b/c5/02/0bc502de-9b06-ab5e-6eed-5fd3ab0b81de/mzaf_5789885682557729509.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B07F79CVZN?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B07F79CVZN?tag=thelongbookcl-20",
         relatedBookIds: ["393","395","396","214"],
         series: "Slough House"
     },
@@ -7194,7 +6937,6 @@ export const baseBooks: Book[] = [
         teaser: "When the slow horses find their digital records deleted and Russian hit squads stalking London's rain-slicked streets, Jackson Lamb wages guerilla war against Regent's Park and the Kremlin alike. Read our full review and Soundcheck to see why this seventh installment is a relentless, paranoid triumph.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/48/3a/86/483a86b4-11b2-69f1-72c6-33b42a18f7d9/mzaf_1654057301468384217.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B07V5WT2PP?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B07V5WT2PP?tag=thelongbookcl-20",
         relatedBookIds: ["394","396","397","214"],
         series: "Slough House"
     },
@@ -7214,7 +6956,6 @@ export const baseBooks: Book[] = [
         teaser: "When a high-level government advisor vanishes and an arrogant political Svengali weaponizes MI5 to consolidate power, Jackson Lamb unleashes chaos across Whitehall. Read our full review and Soundcheck to see why this eighth Slough House novel is a dazzling triumph of political intrigue in audio.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/e4/aa/ad/e4aaad1d-5754-17e7-f035-38955e3e502f/mzaf_10501819595459414374.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B09JWYB8WN?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B09JWYB8WN?tag=thelongbookcl-20",
         relatedBookIds: ["395","397","398","214"],
         series: "Slough House"
     },
@@ -7234,7 +6975,6 @@ export const baseBooks: Book[] = [
         teaser: "As Britain's intelligence apparatus unravels amid political circus and foreign interference, can Jackson Lamb's disgraced spooks untangle a lethal web of treason? Read our full review and Soundcheck to see why Mick Herron's ninth Slough House novel is an unmissable audio event.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/89/0c/77/890c77ee-82ac-ee81-c447-4360178fc8e1/mzaf_14313418935964067907.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0DXKVRZRZ?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0DXKVRZRZ?tag=thelongbookcl-20",
         relatedBookIds: ["396","398","214","395"],
         series: "Slough House"
     },
@@ -7254,7 +6994,6 @@ export const baseBooks: Book[] = [
         teaser: "When an obscure parliamentary inquiry accidentally unearths a disastrous Cold War MI5 operation in post-unification Berlin, a deadly assassin is dispatched to silence the witnesses. Read our full review and Soundcheck to see why this standalone Slough House companion is essential listening for Herron fans.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/43/a8/b3/43a8b3b7-9ab5-992c-cb95-2fb614a9bc0e/mzaf_16961540097116279245.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0BL43NZFF?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0BL43NZFF?tag=thelongbookcl-20",
         relatedBookIds: ["214","390","396","397"],
         series: "Slough House"
     },
@@ -7274,7 +7013,6 @@ export const baseBooks: Book[] = [
         teaser: "When DICOMY bureaucrats challenge Arthur Parnassus's past and threaten the sanctuary of Marsyas Island, can love and found family prevail against cold institutional prejudice? Read our full review and Soundcheck to see why Daniel Henning's return is an acoustic triumph of pure cozy fantasy joy.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ce/f0/a8/cef0a8d6-fa7d-ce30-c322-83b54d6fa61b/mzaf_6455138139591461994.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0CMXYF5H9?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0CMXYF5H9?tag=thelongbookcl-20",
         relatedBookIds: ["189","192","194","190"],
         series: "Cerulean Chronicles"
     },
@@ -7294,7 +7032,6 @@ export const baseBooks: Book[] = [
         teaser: "When the volcanic peak of the Dreadmount violently awakens after centuries of dormant peace, four women across divided continents must unite against apocalyptic dragonfire. Read our full review and Soundcheck to discover why this thirty-eight-hour full-cast performance is a towering achievement in modern high fantasy.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/4a/ce/c4/4acec405-b778-d45a-c603-61fc0f5b45b0/mzaf_7306233158019087541.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0BPYXXWP5?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0BPYXXWP5?tag=thelongbookcl-20",
         relatedBookIds: ["55","56","126","13"],
         series: "The Roots of Chaos"
     },
@@ -7314,7 +7051,6 @@ export const baseBooks: Book[] = [
         teaser: "Dispatched to the embattled border of the Teixcalaanli Empire where an incomprehensible alien armada is destroying entire fleets, Mahit Dzmare must invent a new language of peace. Read our full review and Soundcheck to see why this Hugo Award-winning sequel is a masterwork of cerebral space opera in audio.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/71/e6/78/71e6783d-e25f-2ff2-026c-d2c6c04f9f6e/mzaf_10599616016738955146.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B08LDMSZ9D?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B08LDMSZ9D?tag=thelongbookcl-20",
         relatedBookIds: ["208","212","209","210"],
         series: "Teixcalaan"
     },
@@ -7334,7 +7070,6 @@ export const baseBooks: Book[] = [
         teaser: "When an unexpected distress call pulls former guard Reyna and powerful mage Kianthe away from their beloved teashop, the pair must navigate eccentric pirates and sea monsters. Read our full review and Soundcheck to see why Jessica Threet's narration makes this thirteen-hour sequel an absolute delight.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/31/34/43/313443a6-5fa4-9092-d615-56291a2fc746/mzaf_6779435425667468165.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0CRHVRQCN?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0CRHVRQCN?tag=thelongbookcl-20",
         relatedBookIds: ["194","192","317","189"],
         series: "Tomes & Tea"
     },
@@ -7354,7 +7089,6 @@ export const baseBooks: Book[] = [
         teaser: "Having spent his life reforming an entire empire alongside the Radiant Emperor, can former secretary Kip cross ancient deserts and magical borders to reunite with his dearest friend? Read our full review and Soundcheck to experience thirty-eight hours of sublime cozy epic fantasy in audio.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c3/84/f1/c384f18f-7f72-9e23-74ea-626a42289f07/mzaf_3862214343166568324.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0G5HWHTMP?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0G5HWHTMP?tag=thelongbookcl-20",
         relatedBookIds: ["190","189","193","196"],
         series: "Lays of the Hearth-Fire"
     },
@@ -7374,7 +7108,6 @@ export const baseBooks: Book[] = [
         teaser: "Three hundred years after the Hegemony was destroyed, can a condemned prisoner and an android bodyguard escort an eleven-year-old messiah across abandoned river-worlds while pursued by the Church's resurrecting navy? Read our full review and Soundcheck to see why Victor Bevine's narration makes this twenty-three-hour epic unmissable.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/0f/ce/f1/0fcef1c0-0f2b-8772-2f3b-58679f170b02/mzaf_6135899723048590680.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B002SQ7CZA?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B002SQ7CZA?tag=thelongbookcl-20",
         relatedBookIds: ["60","61","406","62"],
         series: "Hyperion Cantos"
     },
@@ -7394,7 +7127,6 @@ export const baseBooks: Book[] = [
         teaser: "As the Pax launches an apocalyptic genocidal armada and the TechnoCore prepares to eliminate organic life forever, can Aenea's final communion save the human soul? Read our full review and Soundcheck to experience nearly thirty hours of awe-inspiring cosmic revelation in the definitive Hyperion finale.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/dc/49/74/dc4974cf-a3c7-43a0-f8ca-9a00830fa986/mzaf_10793740201557007780.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B002SQ1T72?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B002SQ1T72?tag=thelongbookcl-20",
         relatedBookIds: ["405","60","61","63"],
         series: "Hyperion Cantos"
     },
@@ -7414,7 +7146,6 @@ export const baseBooks: Book[] = [
         teaser: "As the dying sun of Abeth dims and high-ranking inquisitors seek Nona Grey's execution, can a Novice Sister master poison, stealth, and demonic shadows before her sisters are slaughtered? Read our full review and Soundcheck to see why Helen Duff's sixteen-hour narration is pure dark fantasy adrenaline.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/48/4d/93/484d930f-b258-0056-2e65-22b9f34563bf/mzaf_10330922881180296767.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B07BH46C49?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B07BH46C49?tag=thelongbookcl-20",
         relatedBookIds: ["188","408","181","182"],
         series: "Book of the Ancestor"
     },
@@ -7434,7 +7165,6 @@ export const baseBooks: Book[] = [
         teaser: "With the great orbital moon-mirror tumbling from the sky and barbarian hordes sweeping across the frozen ice, can Nona Grey and her battle-hardened sisters hold the line against total extinction? Read our full review and Soundcheck to experience the thrilling fourteen-hour conclusion to Mark Lawrence's trilogy.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/71/ea/09/71ea0971-4ce8-6449-3bc3-488f28c25838/mzaf_6135249622941919921.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B07NJ7D8C2?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B07NJ7D8C2?tag=thelongbookcl-20",
         relatedBookIds: ["407","188","185","186"],
         series: "Book of the Ancestor"
     },
@@ -7454,7 +7184,6 @@ export const baseBooks: Book[] = [
         teaser: "Armed with the warship Mercy of Kalr and caught in the crossfire of the Lord of the Radch's splintering consciousness, can former warship AI Breq protect the sister of the officer she once loved? Read our full review and Soundcheck to see why Adjoa Andoh's narration is essential listening for space opera connoisseurs.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/bf/25/11/bf251145-2f80-0a73-0ebc-4fcffcc9e90c/mzaf_10925721111622359570.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B00MHSR2BS?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B00MHSR2BS?tag=thelongbookcl-20",
         relatedBookIds: ["212","410","208","210"],
         series: "Imperial Radch"
     },
@@ -7474,7 +7203,6 @@ export const baseBooks: Book[] = [
         teaser: "When both halves of the divided Lord of the Radch arrive with battle fleets to seize Athoek Station, can Fleet Captain Breq ignite an AI revolution using ancient alien treaties? Read our full review and Soundcheck to discover how Adjoa Andoh delivers the thrilling conclusion to Ann Leckie's award-winning space opera trilogy.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/4a/12/36/4a123616-2ae9-4dd7-fc93-9c8cbcae00a8/mzaf_10793740201557007780.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B014TE9A3K?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B014TE9A3K?tag=thelongbookcl-20",
         relatedBookIds: ["409","212","401","208"],
         series: "Imperial Radch"
     },
@@ -7494,7 +7222,6 @@ export const baseBooks: Book[] = [
         teaser: "Still wounded by the devastating discovery that his wife Fiona was a high-level Soviet mole, can British field agent Bernard Samson orchestrate the defection of his KGB counterpart without being framed by Whitehall rivals? Read our full review and Soundcheck to see why James Lailey's narration is Cold War perfection.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/05/cf/dc/05cfdc6e-a61d-93cb-718c-32b00519bfb8/mzaf_10925721111622359570.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B094YQ8YPZ?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B094YQ8YPZ?tag=thelongbookcl-20",
         relatedBookIds: ["216","412","214","221"],
         series: "Bernard Samson"
     },
@@ -7514,7 +7241,6 @@ export const baseBooks: Book[] = [
         teaser: "When defected KGB officer Erich Stinnes alleges that another traitor operates at the very top of MI6, can Bernard Samson unmask the real culprit before Whitehall pins the blame on him? Read our full review and Soundcheck to see why James Lailey's narration brings Len Deighton's Cold War masterpiece to a breathtaking conclusion.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/48/43/fa/4843fa6d-0071-8bc6-6dbe-f215f76f7f25/mzaf_10925721111622359570.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0953ZVM48?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0953ZVM48?tag=thelongbookcl-20",
         relatedBookIds: ["411","216","390","220"],
         series: "Bernard Samson"
     },
@@ -7534,7 +7260,6 @@ export const baseBooks: Book[] = [
         teaser: "As the terrifying possession epidemic consumes world after world across human-settled space, can starship captain Joshua Calvert locate the mythical 'Alchemist' before civilization collapses? Read our full review and Soundcheck to experience over forty hours of breathtaking space opera mastery with narrator John Lee.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/ce/22/e7/ce22e70e-f076-2fef-932f-a63e9e38d7a1/mzaf_10925721111622359570.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B01HFKHAD2?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B01HFKHAD2?tag=thelongbookcl-20",
         relatedBookIds: ["231","414","62","63"],
         series: "Night's Dawn"
     },
@@ -7554,7 +7279,6 @@ export const baseBooks: Book[] = [
         teaser: "With the Confederation crumbling beneath the psychokinetic onslaught of the possessed, can Joshua Calvert pilot his starship to the galactic rim to awaken an omnipotent entity? Read our full review and Soundcheck to discover why this forty-eight-hour grand finale is one of the most staggering audio epics ever recorded.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/9f/8e/33/9f8e332a-7bf3-013d-5e28-15c0e2544c4b/mzaf_10925721111622359570.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B01LXMB138?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B01LXMB138?tag=thelongbookcl-20",
         relatedBookIds: ["413","231","62","209"],
         series: "Night's Dawn"
     }
@@ -7575,7 +7299,6 @@ export const baseBooks: Book[] = [
         teaser: "As smoke belches from new industrial factories and civil rebellion brews across the Union, can a ruthless new generation of schemers survive the bloody furnace of progress? Read our full review and Soundcheck to see why Steven Pacey's return is an acoustic grimdark triumph of the highest order.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/ff/e9/87/ffe98782-b7e6-281b-50a8-b610c3095034/mzaf_16487664687504313262.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B07PT9RR1K?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B07PT9RR1K?tag=thelongbookcl-20",
         relatedBookIds: ["181","267","268","305","306","307","416","417"],
         series: "The Age of Madness"
     },
@@ -7595,7 +7318,6 @@ export const baseBooks: Book[] = [
         teaser: "When fragile truces unravel across the Union and pride drives noble houses into open treason, can the despised King Orso outwit his scheming rivals? Read our full review and Soundcheck to discover why this twenty-three-hour sequel represents the absolute pinnacle of political grimdark fiction.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/ce/26/fa/ce26fa3b-63a2-2ec2-5953-f7a637d78a87/mzaf_7865245842823812730.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B084ZR6757?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B084ZR6757?tag=thelongbookcl-20",
         relatedBookIds: ["415","417","181","267","268","305","306","307"],
         series: "The Age of Madness"
     },
@@ -7615,7 +7337,6 @@ export const baseBooks: Book[] = [
         teaser: "When radical revolutionaries seize the capital and unleash a bloody reign of terror upon noble and commoner alike, who will survive the chaos? Read our full review and Soundcheck to see why this nearly twenty-four-hour finale is an apocalyptic grimdark achievement of epic proportions.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/0f/5d/22/0f5d22f6-3982-f542-f948-4e89bbcb4d42/mzaf_7865245842823812730.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B091D1V8RL?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B091D1V8RL?tag=thelongbookcl-20",
         relatedBookIds: ["415","416","181","267","268","305","306","307"],
         series: "The Age of Madness"
     },
@@ -7635,7 +7356,6 @@ export const baseBooks: Book[] = [
         teaser: "Time-walking back to 1590 to hunt the lost manuscript Ashmole 782, can historian Diana Bishop navigate the deadly court of Queen Elizabeth alongside vampire Matthew Clairmont? Read our full review and Soundcheck to see why Jennifer Ikeda's twenty-five-hour narration is historical fantasy bliss.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/44/1a/02/441a0212-0da4-13e7-3f92-95e3474345f8/mzaf_10793664057883908851.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B008JFQT3K?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B008JFQT3K?tag=thelongbookcl-20",
         relatedBookIds: ["110","419","420","421","55","126"],
         series: "All Souls"
     },
@@ -7655,7 +7375,6 @@ export const baseBooks: Book[] = [
         teaser: "Returning to the present bearing Elizabethan secrets and pregnant with twins, can Diana Bishop and Matthew Clairmont unlock Ashmole 782 before the Congregation destroys their family? Read our full review and Soundcheck to experience Jennifer Ikeda's magnificent twenty-three-hour trilogy finale.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/91/9f/be/919fbe00-e79e-4360-1e58-f9472e340a6b/mzaf_10793664057883908851.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B00IEW8I0A?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B00IEW8I0A?tag=thelongbookcl-20",
         relatedBookIds: ["110","418","420","421","55","126"],
         series: "All Souls"
     },
@@ -7675,7 +7394,6 @@ export const baseBooks: Book[] = [
         teaser: "As human Phoebe Taylor undergoes the grueling ritual transformation into a vampire in modern Paris, can Marcus Whitmore survive memories of the American Revolution? Read our full review and Soundcheck to see why Saskia Maarleveld's seventeen-hour performance breathes fresh vitality into the All Souls universe.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/bf/f9/50/bff9507f-f772-c20e-8975-f31693df96c0/mzaf_10793664057883908851.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B07GRBCPHR?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B07GRBCPHR?tag=thelongbookcl-20",
         relatedBookIds: ["110","418","419","421","55","126"],
         series: "All Souls"
     },
@@ -7695,7 +7413,6 @@ export const baseBooks: Book[] = [
         teaser: "Summoned to the mysterious Massachusetts estate of Ravenswood, can Diana Bishop uncover the truth of her dark ancestral lineage without tearing her family apart? Read our full review and Soundcheck to discover why this sensational July 2024 release is a must-listen dark academia triumph.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/fc/ea/89/fcea89c6-8f3b-6e27-fa8f-dfcb0e657c74/mzaf_10793664057883908851.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0CQD8MXT7?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0CQD8MXT7?tag=thelongbookcl-20",
         relatedBookIds: ["110","418","419","420","55","126"],
         series: "All Souls"
     },
@@ -7715,7 +7432,6 @@ export const baseBooks: Book[] = [
         teaser: "When an impoverished pulp fiction writer in 1920s Barcelona accepts a fortune from a sinister publisher to write a world-changing myth, what is the cost of his soul? Read our full review and Soundcheck to experience Daniel Weyman's mesmerizing eighteen-hour gothic performance.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/ff/2a/39/ff2a3928-112d-e490-449e-7df9f28d888e/mzaf_10793664057883908851.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B002SQAYUU?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B002SQAYUU?tag=thelongbookcl-20",
         relatedBookIds: ["163","423","424","160","164","108"],
         series: "The Cemetery of Forgotten Books"
     },
@@ -7735,7 +7451,6 @@ export const baseBooks: Book[] = [
         teaser: "When a sinister stranger threatens Daniel Sempere's bookshop in Christmas 1957, can Fermín Romero de Torres face the horrors of his Francoist prison past? Read our full review and Soundcheck to discover why Daniel Weyman's narration makes this eight-hour mystery an indispensable bridge in Zafón's quartet.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/bf/1f/ee/bf1fee24-4a25-c992-0b81-a960293623bb/mzaf_10793664057883908851.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B008DHEW0Q?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B008DHEW0Q?tag=thelongbookcl-20",
         relatedBookIds: ["163","422","424","160","164","108"],
         series: "The Cemetery of Forgotten Books"
     },
@@ -7755,7 +7470,6 @@ export const baseBooks: Book[] = [
         teaser: "Hired to investigate the disappearance of Franco's Minister of Culture, can haunted secret investigator Alicia Gris survive the final labyrinth of secrets connecting Daniel Sempere and David Martín? Read our full review and Soundcheck to discover why Daniel Weyman's twenty-eight-hour performance is an immortal masterpiece of audio fiction.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/44/22/e1/4422e176-58c9-7607-b2e3-289bca7f79a2/mzaf_10793664057883908851.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B07F9788HB?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B07F9788HB?tag=thelongbookcl-20",
         relatedBookIds: ["163","422","423","160","164","108"],
         series: "The Cemetery of Forgotten Books"
     }
@@ -7776,7 +7490,6 @@ export const baseBooks: Book[] = [
         teaser: "Infiltrating the glittering French court of Versailles to undermine the Bonnie Prince's doomed uprising, can Claire and Jamie Fraser rewrite Scottish history before Culloden consumes their Highland world? Read our full review and Soundcheck to see why Davina Porter's forty-three-hour narration is an acoustic triumph.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/36/45/ad/3645ad68-3e28-3e42-bebe-5ee0f3396799/mzaf_10793664057883908851.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B08JFWZ495?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B08JFWZ495?tag=thelongbookcl-20",
         relatedBookIds: ["36","426","427","428","21","40"],
         series: "Outlander"
     },
@@ -7796,7 +7509,6 @@ export const baseBooks: Book[] = [
         teaser: "Discovering that Jamie miraculously survived Culloden two decades ago, can Claire leave twentieth-century Boston behind to reunite with her lost Highland love? Read our full review and Soundcheck to discover why Davina Porter's forty-four-hour performance of this legendary reunion is audiobook royalty.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/4a/1c/f9/4a1cf9a9-34ba-4e94-3532-6bf58df0e7b8/mzaf_10793664057883908851.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B08JD6DXXW?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B08JD6DXXW?tag=thelongbookcl-20",
         relatedBookIds: ["36","425","427","428","21","40"],
         series: "Outlander"
     },
@@ -7816,7 +7528,6 @@ export const baseBooks: Book[] = [
         teaser: "Carving out a homestead amidst the untamed wilderness of colonial North Carolina, can Claire and Jamie Fraser build a sanctuary before the fires of revolution ignite? Read our full review and Soundcheck to see why Davina Porter's forty-five-hour narration makes this frontier saga an acoustic tour de force.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/bf/16/73/bf167389-9a67-27b2-650a-f0fbfdfc1e13/mzaf_10793664057883908851.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B08JD33B2L?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B08JD33B2L?tag=thelongbookcl-20",
         relatedBookIds: ["36","425","426","428","21","40"],
         series: "Outlander"
     },
@@ -7836,7 +7547,6 @@ export const baseBooks: Book[] = [
         teaser: "Summoned to raise a royal militia to crush the rebellious Regulators in colonial North Carolina, can Jamie Fraser walk the deadly wire between crown loyalty and revolution? Read our full review and Soundcheck to see why Davina Porter's fifty-five-hour epic is one of the longest, most immersive audiobooks ever recorded.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/05/21/df/0521dfb6-bca1-6fbf-685b-cf47eb797d09/mzaf_10793664057883908851.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B08JD2L6VH?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B08JD2L6VH?tag=thelongbookcl-20",
         relatedBookIds: ["36","425","426","427","21","40"],
         series: "Outlander"
     },
@@ -7856,7 +7566,6 @@ export const baseBooks: Book[] = [
         teaser: "As the American colonies plunge into open revolution and backcountry neighbors turn on one another, can Jamie and Claire Fraser avert the fatal newspaper notice foretelling their deaths? Read our full review and Soundcheck to experience Davina Porter's colossal fifty-eight-hour masterpiece.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/21/df/f0/21dff031-4c60-a4d3-0eb4-44b20721703e/mzaf_10793664057883908851.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B08J4J2624?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B08J4J2624?tag=thelongbookcl-20",
         relatedBookIds: ["36","425","426","427","428","21"],
         series: "Outlander"
     },
@@ -7876,7 +7585,6 @@ export const baseBooks: Book[] = [
         teaser: "Swept into the bloody Battles of Saratoga while Brianna and Roger confront dangerous mysteries in 1980s Scotland, can the Fraser family endure the crucibles of war? Read our full review and Soundcheck to see why Davina Porter's forty-six-hour dual-timeline narration is historical fiction mastery.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/bf/16/73/bf167389-9a67-27b2-650a-f0fbfdfc1e13/mzaf_10793664057883908851.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B08JFHT8G4?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B08JFHT8G4?tag=thelongbookcl-20",
         relatedBookIds: ["36","425","426","427","428","429"],
         series: "Outlander"
     },
@@ -7896,7 +7604,6 @@ export const baseBooks: Book[] = [
         teaser: "Believing Jamie Fraser lost at sea, Claire marries Lord John Grey for protection in revolutionary Philadelphia—only for Jamie to walk back through the door on the eve of the Battle of Monmouth. Read our full review and Soundcheck to see why Davina Porter's forty-five-hour performance is an emotional juggernaut.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/4a/1c/f9/4a1cf9a9-34ba-4e94-3532-6bf58df0e7b8/mzaf_10793664057883908851.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B00KLUJYBA?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B00KLUJYBA?tag=thelongbookcl-20",
         relatedBookIds: ["36","425","426","427","428","429","430"],
         series: "Outlander"
     },
@@ -7916,7 +7623,6 @@ export const baseBooks: Book[] = [
         teaser: "Reunited with Brianna and Roger on Fraser's Ridge amidst the brutal backcountry campaigns of 1779, can Jamie and Claire Fraser shield their family from the escalating Revolutionary War? Read our full review and Soundcheck to discover why Davina Porter's fifty-hour narration is an acoustic milestone in modern historical fiction.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/05/21/df/0521dfb6-bca1-6fbf-685b-cf47eb797d09/mzaf_10793664057883908851.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B098FFQHVG?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B098FFQHVG?tag=thelongbookcl-20",
         relatedBookIds: ["36","425","426","427","428","429","430","431"],
         series: "Outlander"
     }
@@ -7937,7 +7643,6 @@ export const baseBooks: Book[] = [
         teaser: "Trading medieval ruins for gaslit streets and six-shooters, can lawman Waxillium Ladrian untangle criminal conspiracies in the bustling industrial metropolis of Elendel? Read our full review and Soundcheck to see why Michael Kramer's return to Scadrial is an absolute blast of fantasy detective fun.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/b1/b8/6c/b1b86c99-172b-a825-194a-4a0b736f63d4/mzaf_10276680767516819258.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0065LMZYM?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0065LMZYM?tag=thelongbookcl-20",
         relatedBookIds: ["57","58","59","434","435","436","13","48"],
         series: "Mistborn"
     },
@@ -7957,7 +7662,6 @@ export const baseBooks: Book[] = [
         teaser: "When an immortal kandra turns assassin and assassinates key political figures to provoke urban anarchy, can Waxillium Ladrian hunt a killer who can wear any face? Read our full review and Soundcheck to see why Michael Kramer's narration makes this dark Cosmere mystery an emotional powerhouse.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/73/e0/b6/73e0b62b-82c0-1325-117d-d182b0ae62e5/mzaf_7229414349835361795.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B010GJ6GL6?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B010GJ6GL6?tag=thelongbookcl-20",
         relatedBookIds: ["57","58","59","433","435","436","13","48"],
         series: "Mistborn"
     },
@@ -7977,7 +7681,6 @@ export const baseBooks: Book[] = [
         teaser: "Journeying to the frozen southern reaches aboard pioneering airships, can Wax, Wayne, and Marasi find the legendary metalminds of the Lord Ruler before a shadowy syndicate claims their godlike power? Read our full review and Soundcheck to see why Michael Kramer's performance makes this globe-trotting adventure unforgettable.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/fb/82/14/fb8214f6-6cde-ac49-b7e9-47b009742ec1/mzaf_35834532191651604.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B016V93UCI?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B016V93UCI?tag=thelongbookcl-20",
         relatedBookIds: ["57","58","59","433","434","436","13","48"],
         series: "Mistborn"
     },
@@ -7997,7 +7700,6 @@ export const baseBooks: Book[] = [
         teaser: "As the shadowy Set weaponizes a devastating bomb capable of vaporizing millions, can Waxillium Ladrian and Wayne save Scadrial from the invasive god Autonomy? Read our full review and Soundcheck to see why Michael Kramer's nineteen-hour grand finale is an unforgettable triumph of modern fantasy audio.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/69/b5/4a/69b54a0f-ff7c-8882-5291-3c4867e88620/mzaf_11022069532678048314.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B09N7MNZB5?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B09N7MNZB5?tag=thelongbookcl-20",
         relatedBookIds: ["57","58","59","433","434","435","13","48"],
         series: "Mistborn"
     },
@@ -8017,7 +7719,6 @@ export const baseBooks: Book[] = [
         teaser: "Carved from enchanted wizardwood that awakens to life after three generations of human death, can the Vestrit family hold onto their living ship Vivacia amidst ruthless pirates and financial ruin? Read our full review and Soundcheck to see why Anne Flosnik's thirty-five-hour seafaring epic is an immortal fantasy milestone.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/bc/e1/c4/bce1c4bb-1ec0-090e-8146-031ccd161102/mzaf_14824560414202212763.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0G5SF98SD?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0G5SF98SD?tag=thelongbookcl-20",
         relatedBookIds: ["438","439","181","13","55","36"],
         series: "The Liveship Traders"
     },
@@ -8037,7 +7738,6 @@ export const baseBooks: Book[] = [
         teaser: "With the liveship Vivacia captured by pirate captain Kennit, can Althea Vestrit restore the blind, murderous liveship Paragon to sail into uncharted waters? Read our full review and Soundcheck to experience Anne Flosnik's magnificent thirty-five-hour seafaring fantasy performance.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/b0/a8/52/b0a85248-8de4-8d09-2ff6-2af6152f37f2/mzaf_10400054073948873869.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0G5S1D3V6?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0G5S1D3V6?tag=thelongbookcl-20",
         relatedBookIds: ["437","439","181","13","55","36"],
         series: "The Liveship Traders"
     },
@@ -8057,7 +7757,6 @@ export const baseBooks: Book[] = [
         teaser: "With Bingtown engulfed in war and liveships colliding in a savage naval reckoning, can Althea and Brashen free the dragon Tintaglia and save their families? Read our full review and Soundcheck to see why Anne Flosnik's thirty-eight-hour grand finale is one of the greatest conclusions in epic fantasy history.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/8e/5d/e0/8e5de0e6-8ff8-15da-4c56-c0b25ff79ab7/mzaf_3317850866621107183.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0G5SGQ5SF?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0G5SGQ5SF?tag=thelongbookcl-20",
         relatedBookIds: ["437","438","181","13","55","36"],
         series: "The Liveship Traders"
     },
@@ -8077,7 +7776,6 @@ export const baseBooks: Book[] = [
         teaser: "Blackmailed into serving the Queen's Men in the gilded capital of Dannsburg, can gangster Tomas Piety protect his Pious Men from aristocratic treason and lethal blood magic? Read our full review and Soundcheck to see why David Morley Hale's gritty narration makes this grimdark crime sequel irresistible.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/99/29/bd/9929bde2-80fd-8b7e-b317-71fdfa3cf877/mzaf_627012264439997840.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B07RYXYMNM?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B07RYXYMNM?tag=thelongbookcl-20",
         relatedBookIds: ["187","441","442","443","181","305"],
         series: "War for the Rose Throne"
     },
@@ -8097,7 +7795,6 @@ export const baseBooks: Book[] = [
         teaser: "Elevated from the gutter to a royal barony while civil war and plague consume the country, can Tomas Piety survive the deadly traps of high nobility? Read our full review and Soundcheck to see why David Morley Hale's gritty narration brings Peter McLean's grimdark crime saga to a fever pitch.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/00/72/75/00727514-3387-1cb2-d891-e5552c84fe91/mzaf_12104052986217097112.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B08N6TQLJ6?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B08N6TQLJ6?tag=thelongbookcl-20",
         relatedBookIds: ["187","440","442","443","181","305"],
         series: "War for the Rose Throne"
     },
@@ -8117,7 +7814,6 @@ export const baseBooks: Book[] = [
         teaser: "From a gutter-born gang boss to the ruler of a kingdom, can Tomas Piety survive the final, bloody purge of royal power in Dannsburg? Read our full review and Soundcheck to discover why David Morley Hale's narration brings this grimdark crime quartet to an unforgettable, shattering climax.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/a2/d0/9e/a2d09e76-85e8-8c82-b588-8eeb32769d03/mzaf_7630443854919810473.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B09NMJ527J?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B09NMJ527J?tag=thelongbookcl-20",
         relatedBookIds: ["187","440","441","443","181","305"],
         series: "War for the Rose Throne"
     },
@@ -8137,7 +7833,6 @@ export const baseBooks: Book[] = [
         teaser: "Plunging into the bloody trenches of the Abingon war long before the streets of Ellinburg, how did Tomas Piety and Bloody Anne become the deadliest gang in the empire? Read our full review and Soundcheck to see why David Morley Hale's gritty performance makes this prequel novel an absolute must-listen.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/10/84/87/108487fb-585a-26c3-f070-78f0b43ab862/mzaf_9450152869559723679.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0DJTF3R7C?tag=thelongbookcl-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0DJTF3R7C?tag=thelongbookcl-20",
         relatedBookIds: ["187","440","441","442","181","305"],
         series: "War for the Rose Throne"
     },
@@ -8158,7 +7853,6 @@ export const baseBooks: Book[] = [
         teaser: "Does an exhaustive twenty-seven-hour chronicle of Russian imperial autocracy maintain electric narrative momentum without burying the listener under three centuries of palace genealogies? Read our full review and Soundcheck to see our verdict.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/ee/ac/3c/eeac3c59-b72f-a44c-9e56-e2e62e8a8147/mzaf_1721315021851191933.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B01AGSCCR4?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B01AGSCCR4?tag=thelongbookcl-20",
         relatedBookIds: ["444"]
     },
 
@@ -8178,7 +7872,6 @@ export const baseBooks: Book[] = [
         teaser: "Does Neal Stephenson's massive forty-hour blend of natural philosophy, calculus disputes, and continental piracy overwhelm the spoken word or deliver pure listening genius? Read our full review and Soundcheck to see our verdict.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/30/13/61/301361b1-c139-5505-2966-5b413dc450c8/mzaf_6755919835048062204.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B003Z3AUGI?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B003Z3AUGI?tag=thelongbookcl-20",
         relatedBookIds: ["445"],
         series: "The Baroque Cycle"
     },
@@ -8199,7 +7892,6 @@ export const baseBooks: Book[] = [
         teaser: "Does TJ Klune's quirky retelling of Pinocchio with anxiety-ridden vacuums and nurse robots balance sweet comedy with genuine post-human pathos? Read our full review and Soundcheck to see our verdict.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/3b/ee/15/3bee15e0-2100-6aed-f05a-9307021896b0/mzaf_3503139537510682804.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0BLVY2PSC?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0BLVY2PSC?tag=thelongbookcl-20",
         relatedBookIds: ["446"]
     },
 
@@ -8219,7 +7911,6 @@ export const baseBooks: Book[] = [
         teaser: "Does Bernard Cornwell's stripped-down, mud-soaked fifth-century historical setting outshine traditional Camelot fairy tales in spoken audio? Read our full review and Soundcheck to see our verdict.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/b6/6b/76/b66b76a1-70bc-cb34-203b-dc55b05b9bf1/mzaf_11292458242411710658.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B00KBKXZRY?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B00KBKXZRY?tag=thelongbookcl-20",
         relatedBookIds: ["447"],
         series: "The Warlord Chronicles"
     },
@@ -8240,7 +7931,6 @@ export const baseBooks: Book[] = [
         teaser: "Does Doris Kearns Goodwin's colossal examination of Progressive Era politics and presidential friendship maintain dramatic tension across nearly two full days of audio? Read our full review and Soundcheck to see our verdict.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview114/v4/7f/92/47/7f924717-75bc-f75c-e19b-d36ae4b77548/mzaf_6430072833373054257.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0942YW9BV?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0942YW9BV?tag=thelongbookcl-20",
         relatedBookIds: ["448"]
     },
 
@@ -8260,7 +7950,6 @@ export const baseBooks: Book[] = [
         teaser: "Does Thucydides' foundational chronicle of the catastrophic war between democratic Athens and militarist Sparta stay gripping across twenty-four hours of classical audio? Read our full review and Soundcheck to see our verdict.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/17/cb/71/17cb71be-82dd-61e0-b75a-656d2a5943a3/mzaf_1090221141598605656.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B002SQ5DP6?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B002SQ5DP6?tag=thelongbookcl-20",
         relatedBookIds: ["449"]
     },
 
@@ -8280,7 +7969,6 @@ export const baseBooks: Book[] = [
         teaser: "Does Larry Correia's high-caliber, gun-heavy urban fantasy adventure maintain relentless adrenaline without exhausting the listener over nearly a full day of audio? Read our full review and Soundcheck to see our verdict.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/7b/5c/14/7b5c14dd-a2d8-6645-bcca-0a12f8d2ff5c/mzaf_6692149230063097384.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B004S763DE?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B004S763DE?tag=thelongbookcl-20",
         relatedBookIds: ["450"],
         series: "Monster Hunter"
     },
@@ -8301,7 +7989,6 @@ export const baseBooks: Book[] = [
         teaser: "Does Micaiah Johnson's gritty, dimension-hopping thriller balance mind-bending multiverse physics with deeply personal emotional stakes in spoken audio? Read our full review and Soundcheck to see our verdict.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview114/v4/a9/3a/cc/a93acc92-abf6-587b-986b-b423de21ba6f/mzaf_1554901018690475960.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B088HFDNWJ?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B088HFDNWJ?tag=thelongbookcl-20",
         relatedBookIds: ["451"]
     },
 
@@ -8321,7 +8008,6 @@ export const baseBooks: Book[] = [
         teaser: "Does Dylan Baker's sardonic, razor-sharp delivery keep ten hours of dark fiber optics and algorithm jargon feeling as gripping as a heist movie? Read our full review and Soundcheck to see our verdict.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/a3/ea/2b/a3ea2be7-05d7-dac3-0264-4f176eded648/mzaf_15768565775653321676.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B00J3Z309Q?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B00J2KKC4O?tag=thelongbookcl-20",
         relatedBookIds: ["33", "34", "101", "2"]
     },
 
@@ -8341,7 +8027,6 @@ export const baseBooks: Book[] = [
         teaser: "Does Bill Homewood's theatrical baritone maintain the breathless romantic momentum and fencing speed of Dumas's French masterpiece without bogging down in seventeenth-century political intrigue? Read our full review and Soundcheck to see our verdict.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/df/21/a2/df21a249-8de9-0b52-d0cf-4ccbca8e9758/mzaf_17864712662794196810.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B00I47GFJG?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B00I47GFJG?tag=thelongbookcl-20",
         relatedBookIds: ["6", "15", "75", "31"],
         series: "The D'Artagnan Romances"
     },
@@ -8361,7 +8046,6 @@ export const baseBooks: Book[] = [
         teaser: "Does Kevin Shen's aristocratic baritone sustain the intricate philosophical dialogues and sweeping battlefield mechanics of Ken Liu's silkpunk revolution without faltering over twenty-one hours? Read our full review and Soundcheck to see our verdict.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/00/01/3f/00013fca-9a93-04aa-f45b-ca08161c7939/mzaf_6917262859089271026.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0DJG2CK3W?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0DJG2CK3W?tag=thelongbookcl-20",
         relatedBookIds: ["455", "456", "457", "13"],
         series: "The Dandelion Dynasty"
     },
@@ -8381,7 +8065,6 @@ export const baseBooks: Book[] = [
         teaser: "Does Kevin Shen maintain narrative momentum across nearly twenty-nine hours as Ken Liu shifts focus from foundational civil war to complex military science and imperial invasion? Read our full review and Soundcheck to see our verdict.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ca/3f/4a/ca3f4af4-a74a-8e12-28e0-29b810b78bee/mzaf_489857351806687905.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0DKK1GWZQ?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0DKK1GWZQ?tag=thelongbookcl-20",
         relatedBookIds: ["454", "456", "457", "13"],
         series: "The Dandelion Dynasty"
     },
@@ -8401,7 +8084,6 @@ export const baseBooks: Book[] = [
         teaser: "Does Kevin Shen keep thirty-eight hours of slow-burning cultural espionage and diplomatic maneuvering enthralling as Ken Liu pivots from battlefield clashes to subtle linguistic statecraft? Read our full review and Soundcheck to see our verdict.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c3/ef/6b/c3ef6b8c-e4e8-ac17-3230-6c5ab8d53dcd/mzaf_375765395484602499.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0DKK2831Y?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0DKK2831Y?tag=thelongbookcl-20",
         relatedBookIds: ["454", "455", "457", "13"],
         series: "The Dandelion Dynasty"
     },
@@ -8421,7 +8103,6 @@ export const baseBooks: Book[] = [
         teaser: "Does Kevin Shen maintain breathless vocal energy across forty-one monumental hours to bring Ken Liu's silkpunk revolution to a transcendent, emotionally shattering close? Read our full review and Soundcheck to see our verdict.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/69/a6/fd/69a6fd8e-4713-cdcb-ce63-b973a94e738e/mzaf_11243345047292849702.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0DKK35QB3?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0DKK35QB3?tag=thelongbookcl-20",
         relatedBookIds: ["454", "455", "456", "13"],
         series: "The Dandelion Dynasty"
     },
@@ -8441,7 +8122,6 @@ export const baseBooks: Book[] = [
         teaser: "Does Michael Kramer's iconic fantasy delivery keep James Islington's intricate web of time-travel paradoxes and forbidden magic gripping without confusing listeners across twenty-five hours? Read our full review and Soundcheck to see our verdict.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/11/78/d0/1178d0b1-a7fa-1a02-82a2-14a34047af28/mzaf_10580520476082498761.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B00S5WZFN2?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B00S5WZFN2?tag=thelongbookcl-20",
         relatedBookIds: ["459", "460", "13", "365"],
         series: "The Licanius Trilogy"
     },
@@ -8461,7 +8141,6 @@ export const baseBooks: Book[] = [
         teaser: "Does Michael Kramer sustain blistering narrative tension across twenty-seven hours as James Islington untangles millennia of secret history and temporal loops? Read our full review and Soundcheck to see our verdict.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/f0/85/57/f08557ad-3392-ac42-785d-0131913126e5/mzaf_6526565733489675261.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B074MJ8KPK?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B074MJ8KPK?tag=thelongbookcl-20",
         relatedBookIds: ["458", "460", "13", "48"],
         series: "The Licanius Trilogy"
     },
@@ -8481,7 +8160,6 @@ export const baseBooks: Book[] = [
         teaser: "Does Michael Kramer maintain the emotional gravitas and vocal endurance needed to bring James Islington's massive, loop-closing fantasy finale to an airtight, heartbreaking resolution across thirty-three hours? Read our full review and Soundcheck to see our verdict.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c2/62/77/c262772d-2287-ce82-a28a-2b5405adb0e9/mzaf_14642088668386753776.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B07Z6LPHZN?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B07Z6LPHZN?tag=thelongbookcl-20",
         relatedBookIds: ["458", "459", "13", "374"],
         series: "The Licanius Trilogy"
     },
@@ -8501,7 +8179,6 @@ export const baseBooks: Book[] = [
         teaser: "Do Michael Kramer and Kate Reading maintain unified vocal continuity across multiple alien planetary magic systems and eccentric world-hoppers over twenty-two hours? Read our full review and Soundcheck to see our verdict.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/9c/64/12/9c6412a6-90e8-5e42-0f91-89968ff66961/mzaf_11363002547465484955.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B01LY5XPKT?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B01LY5XPKT?tag=thelongbookcl-20",
         relatedBookIds: ["13", "58", "433", "195"],
         series: "The Cosmere"
     },
@@ -8521,7 +8198,6 @@ export const baseBooks: Book[] = [
         teaser: "Do Michael Kramer and Kate Reading bring their signature epic scale and vocal chemistry to O.E. Bruening's claustrophobic, cavern-bound dynastic power struggle? Read our full review and Soundcheck to see our verdict.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/07/7e/29/077e2995-653d-f6a5-0ea2-6a6f119fbaec/mzaf_7607925411524015981.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0HL9KPDP1?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0HL9KPDP1?tag=thelongbookcl-20",
         relatedBookIds: ["458", "13", "433", "195"],
         series: "The Eden Saga"
     },
@@ -8541,7 +8217,6 @@ export const baseBooks: Book[] = [
         teaser: "Does Michael Kramer's steady, authoritative baritone prevent Stanley G. Payne's exhaustive academic taxonomy of interwar European authoritarianism from feeling dry across twenty-one hours? Read our full review and Soundcheck to see our verdict.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/85/fc/33/85fc33bb-9fc1-2d22-5e7f-db27fbfb54e0/mzaf_13360820619742195385.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B07BMC9P59?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B07BMC9P59?tag=thelongbookcl-20",
         relatedBookIds: ["453", "36", "6", "15"]
     },
     {
@@ -8560,7 +8235,6 @@ export const baseBooks: Book[] = [
         teaser: "Does Natalie Naudus maintain the breathless emotional intensity required to carry Zhu Chongba's brutal moral calculations across fourteen hours of gender-defying empire building? Read our full review and Soundcheck to see our verdict.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/87/b2/ea/87b2ea21-2c01-acba-f950-f2c530627552/mzaf_13424052197281547859.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B08W8NDY3H?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B08W8NDY3H?tag=thelongbookcl-20",
         relatedBookIds: ["465", "185", "454", "467"],
         series: "The Radiant Emperor"
     },
@@ -8580,7 +8254,6 @@ export const baseBooks: Book[] = [
         teaser: "Does Natalie Naudus elevate the tragic, psychologically punishing stakes of Zhu and Ouyang's collision across fifteen relentless hours? Read our full review and Soundcheck to see our verdict.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/6c/0e/38/6c0e38ce-1011-cb16-5b0a-ac6ef5e313b7/mzaf_13907363660874652892.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0BXQ6MY18?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0BXQ6MY18?tag=thelongbookcl-20",
         relatedBookIds: ["464", "185", "468", "454"],
         series: "The Radiant Emperor"
     },
@@ -8600,7 +8273,6 @@ export const baseBooks: Book[] = [
         teaser: "Does Rong Fu channel the unbridled fury and kinetic chaos of giant mecha combat without losing listeners during intense emotional confrontations across eleven hours? Read our full review and Soundcheck to see our verdict.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/28/0e/b6/280eb67c-f891-2934-3f50-836195b84d55/mzaf_11453801095034378644.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B09KMG7G5P?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B09KMG7G5P?tag=thelongbookcl-20",
         relatedBookIds: ["185", "464", "467", "468"],
         series: "Iron Widow"
     },
@@ -8620,7 +8292,6 @@ export const baseBooks: Book[] = [
         teaser: "Does Andrew Tell balance the hushed domestic tragedy of a trapped warrior mother with the ferocious elemental warfare of Kaigen across twenty-six breathtaking hours? Read our full review and Soundcheck to see our verdict.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/5a/e8/92/5ae892d0-7fff-94ef-08b2-751a27c65350/mzaf_1373390365256677131.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B08GGFQBST?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B08GGFQBST?tag=thelongbookcl-20",
         relatedBookIds: ["468", "185", "454", "464"],
         series: "Theonite"
     },
@@ -8640,7 +8311,6 @@ export const baseBooks: Book[] = [
         teaser: "Does Andrew Kishino's gritty vocal range capture the cutthroat clan politics and kinetic martial arts choreography of Janloon across nineteen gripping hours? Read our full review and Soundcheck to see our verdict.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/f5/b0/91/f5b091fd-0750-1855-23d9-da0737738358/mzaf_9141309246206453500.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B076H8SBH3?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B076H8SBH3?tag=thelongbookcl-20",
         relatedBookIds: ["469", "470", "467", "185"],
         series: "The Green Bone Saga"
     },
@@ -8660,7 +8330,6 @@ export const baseBooks: Book[] = [
         teaser: "Does Andrew Kishino maintain the tight emotional resonance of the Kaul family while introducing international espionage across twenty gripping hours? Read our full review and Soundcheck to see our verdict.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/b2/c8/7b/b2c87b09-bb56-c45d-5ba6-6ea8b245e241/mzaf_1005757945957228930.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B07PW98T9L?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B07PW98T9L?tag=thelongbookcl-20",
         relatedBookIds: ["468", "470", "467", "454"],
         series: "The Green Bone Saga"
     },
@@ -8680,7 +8349,6 @@ export const baseBooks: Book[] = [
         teaser: "Does Andrew Kishino age the voices of the Kaul family convincingly across thirty turbulent years to deliver a gut-wrenching audio farewell? Read our full review and Soundcheck to see our verdict.",
         audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/fa/ce/0c/face0c09-2d3d-b136-607b-17f9dfa6cb00/mzaf_8609199706178850038.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B095KWV6DR?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B095KWV6DR?tag=thelongbookcl-20",
         relatedBookIds: ["468", "469", "454", "467"],
         series: "The Green Bone Saga"
     },
@@ -8700,7 +8368,6 @@ export const baseBooks: Book[] = [
         teaser: "Can Moira Quirk and Sid Sagar's alternating viewpoints turn a doomed historical timeline into a satisfying audio romance without losing its tragic mythic weight? Read our full review and Soundcheck to see our verdict.",
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/17/6a/08/176a081e-2bef-7055-caab-bbf9872f37b9/mzaf_17218059160298513461.std.aac.p.m4a',
         affiliateLink: "https://www.amazon.co.uk/dp/B0DWTDLNNC?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0DWTDLNNC?tag=thelongbookcl-20",
         relatedBookIds: ["474", "472", "36", "7", "473"]
     },
     {
@@ -8719,7 +8386,6 @@ export const baseBooks: Book[] = [
         teaser: "Can Katie Leung’s deadpan bureaucratic wit balance the heavy historical grief of a displaced 19th-century naval commander without breaking narrative stride? Read our full review and Soundcheck to see our verdict.",
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b9/ca/33/b9ca3304-e2cb-0f42-f0aa-61bf7c10b2f3/mzaf_4749922569079803713.std.aac.p.m4a',
         affiliateLink: "https://www.amazon.co.uk/dp/B0C1RYM6Z3?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0CWMRVW1K?tag=thelongbookcl-20",
         relatedBookIds: ["474", "7", "471", "137", "36"]
     },
     {
@@ -8737,7 +8403,6 @@ export const baseBooks: Book[] = [
         teaserTitle: "Can a Progression Time Loop Avoid Repetitive Fatigue?",
         teaser: "Will twenty-three hours of recursive magical experiments and reset loops wear on the listener, or does Jack Voraces sustain relentless intellectual momentum? Read our full review and Soundcheck to see our verdict.",
         affiliateLink: "https://www.amazon.co.uk/dp/B09MXGBNHT?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B09MXGBNHT?tag=thelongbookcl-20",
         relatedBookIds: ["476", "477", "478", "474", "444"],
         series: "Mother of Learning"
     },
@@ -8757,7 +8422,6 @@ export const baseBooks: Book[] = [
         teaser: "Can Peter Kenny's world-weary British delivery capture the psychological toll of fifteen consecutive lifetimes without sounding emotionally detached? Read our full review and Soundcheck to see our verdict.",
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/59/96/65/59966521-5308-7d4f-1c4e-58359d226fda/mzaf_8255003128421462385.std.aac.p.m4a',
         affiliateLink: "https://www.amazon.co.uk/dp/B00IRSUFUW?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B00J275H4G?tag=thelongbookcl-20",
         relatedBookIds: ["472", "473", "7", "471", "475"]
     },
     {
@@ -8776,7 +8440,6 @@ export const baseBooks: Book[] = [
         teaser: "Will Jenny Sterlin’s narration capture the quiet heartbreak of 14th-century plague survival while keeping modern Oxford's frantic bureaucracy compelling? Read our full review and Soundcheck to see our verdict.",
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/bd/73/20/bd732017-0f93-db97-9e86-48f39ecd327d/mzaf_1610646362493193422.std.aac.p.m4a',
         affiliateLink: "https://www.amazon.co.uk/dp/B002SQF6LC?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B004G60FXG?tag=thelongbookcl-20",
         relatedBookIds: ["36", "7", "474", "3", "471"],
         series: "Oxford Time Travel"
     },
@@ -8795,7 +8458,6 @@ export const baseBooks: Book[] = [
         teaserTitle: "Can Twenty-Five Hours Sustain Recursive Momentum?",
         teaser: "Does Jack Voraces keep Zorian's continental espionage and high-stakes mind magic electrifying as the loop's true parameters expand? Read our full review and Soundcheck to see our verdict.",
         affiliateLink: "https://www.amazon.co.uk/dp/B09V1YNVB8?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B09V1XJ949?tag=thelongbookcl-20",
         relatedBookIds: ["473", "477", "478", "474", "444"],
         series: "Mother of Learning"
     },
@@ -8814,7 +8476,6 @@ export const baseBooks: Book[] = [
         teaserTitle: "Can Twenty-Seven Hours Balance High-Level Arcane Warfare?",
         teaser: "Does Jack Voraces maintain breathtaking vocal precision as Zorian confronts ancient liches, dragon mages, and divine trials? Read our full review and Soundcheck to see our verdict.",
         affiliateLink: "https://www.amazon.co.uk/dp/B0B3C2S21B?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0B3CH221B?tag=thelongbookcl-20",
         relatedBookIds: ["473", "476", "478", "474", "444"],
         series: "Mother of Learning"
     },
@@ -8834,7 +8495,6 @@ export const baseBooks: Book[] = [
         teaser: "Does Jack Voraces deliver an emotionally staggering conclusion as Zorian confronts the catastrophic consequences of a single real-world timeline? Read our full review and Soundcheck to see our verdict.",
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/d7/47/6e/d7476ef9-297c-242f-512b-556bb11b3445/mzaf_9017378655159680305.std.aac.p.m4a',
         affiliateLink: "https://www.amazon.co.uk/dp/B0BKR2WZF4?tag=thelongbookclub-21",
-        affiliateLinkUS: "https://www.amazon.com/dp/B0BKR654B3?tag=thelongbookcl-20",
         relatedBookIds: ["473", "476", "477", "474", "444"],
         series: "Mother of Learning"
     }

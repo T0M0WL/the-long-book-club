@@ -19,7 +19,6 @@ export const BookCurator = () => {
     const [relatedBookIdsStr, setRelatedBookIdsStr] = useState('');
     
     const [affiliateLink, setAffiliateLink] = useState('');
-    const [affiliateLinkUS, setAffiliateLinkUS] = useState('');
     const [cardOverview, setCardOverview] = useState('');
     const [teaserTitle, setTeaserTitle] = useState('');
     const [teaser, setTeaser] = useState('');
@@ -54,7 +53,6 @@ export const BookCurator = () => {
         setAudioPreviewUrl('');
         setRelatedBookIdsStr('');
         setAffiliateLink('');
-        setAffiliateLinkUS('');
         setCardOverview('');
         setTeaserTitle('');
         setTeaser('');
@@ -91,7 +89,6 @@ export const BookCurator = () => {
                 if (data.audioPreviewUrl) setAudioPreviewUrl(data.audioPreviewUrl);
                 if (data.relatedBookIdsStr) setRelatedBookIdsStr(data.relatedBookIdsStr);
                 if (data.affiliateLink) setAffiliateLink(data.affiliateLink);
-                if (data.affiliateLinkUS) setAffiliateLinkUS(data.affiliateLinkUS);
                 if (data.cardOverview) setCardOverview(data.cardOverview);
                 if (data.teaserTitle) setTeaserTitle(data.teaserTitle);
                 if (data.teaser) setTeaser(data.teaser);
@@ -111,14 +108,14 @@ export const BookCurator = () => {
     useEffect(() => {
         const draft = {
             title, author, originalId, lengthStr, selectedGenres, description,
-            audioPreviewUrl, relatedBookIdsStr, affiliateLink, affiliateLinkUS,
+            audioPreviewUrl, relatedBookIdsStr, affiliateLink,
             cardOverview, teaserTitle, teaser, curatorTitle, curatorNote,
             narrator, soundCheck, mode, selectedBookSlug
         };
         localStorage.setItem('tlbc_curator_draft', JSON.stringify(draft));
     }, [
         title, author, originalId, lengthStr, selectedGenres, description,
-        audioPreviewUrl, relatedBookIdsStr, affiliateLink, affiliateLinkUS,
+        audioPreviewUrl, relatedBookIdsStr, affiliateLink,
         cardOverview, teaserTitle, teaser, curatorTitle, curatorNote,
         narrator, soundCheck, mode, selectedBookSlug
     ]);
@@ -145,7 +142,6 @@ export const BookCurator = () => {
                 };
                 
                 setAffiliateLink(extractAsin(book.affiliateLink));
-                setAffiliateLinkUS(extractAsin(book.affiliateLinkUS));
                 
                 setCardOverview(book.cardOverview || '');
                 setTeaserTitle(book.teaserTitle || '');
@@ -168,7 +164,6 @@ export const BookCurator = () => {
             setAudioPreviewUrl('');
             setRelatedBookIdsStr('');
             setAffiliateLink('');
-            setAffiliateLinkUS('');
             setCardOverview('');
             setTeaserTitle('');
             setTeaser('');
@@ -257,19 +252,13 @@ export const BookCurator = () => {
             lines.push(`        relatedBookIds: [${parsedRelated.map(safeString).join(', ')}]`);
         }
         
-        // Smart Affiliate Link Parser
-        let finalUkLink = affiliateLink.trim();
-        if (finalUkLink && !finalUkLink.startsWith('http')) {
-            finalUkLink = `https://www.amazon.co.uk/dp/${finalUkLink}?tag=thelongbookclub-21`;
+        // Smart Affiliate Link Parser (UK tag with global Amazon OneLink geo-targeting)
+        let finalLink = affiliateLink.trim();
+        if (finalLink && !finalLink.startsWith('http')) {
+            finalLink = `https://www.amazon.co.uk/dp/${finalLink}?tag=thelongbookclub-21`;
         }
         
-        let finalUsLink = affiliateLinkUS.trim();
-        if (finalUsLink && !finalUsLink.startsWith('http')) {
-            finalUsLink = `https://www.amazon.com/dp/${finalUsLink}?tag=thelongbookcl-20`;
-        }
-        
-        if (finalUkLink) lines.push(`        affiliateLink: ${safeString(finalUkLink)}`);
-        if (finalUsLink) lines.push(`        affiliateLinkUS: ${safeString(finalUsLink)}`);
+        if (finalLink) lines.push(`        affiliateLink: ${safeString(finalLink)}`);
         
         if (teaserTitle) lines.push(`        teaserTitle: ${safeString(teaserTitle)}`);
         if (teaser) lines.push(`        teaser: ${safeString(teaser)}`);
@@ -434,15 +423,9 @@ export const BookCurator = () => {
                     ))}
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                    <div>
-                        <label style={labelStyle}>UK ASIN <span style={{fontWeight: 'normal', color: '#666', fontSize: '0.85rem'}}>(or full link)</span></label>
-                        <input type="text" value={affiliateLink} onChange={e => setAffiliateLink(e.target.value)} placeholder="e.g. B0FBSCF8N3" style={inputStyle} />
-                    </div>
-                    <div>
-                        <label style={labelStyle}>US ASIN <span style={{fontWeight: 'normal', color: '#666', fontSize: '0.85rem'}}>(or full link)</span></label>
-                        <input type="text" value={affiliateLinkUS} onChange={e => setAffiliateLinkUS(e.target.value)} placeholder="e.g. B0FBS7GCTV" style={inputStyle} />
-                    </div>
+                <div>
+                    <label style={labelStyle}>Amazon/Audible ASIN <span style={{fontWeight: 'normal', color: '#666', fontSize: '0.85rem'}}>(or full UK link — OneLink automatically redirects international visitors under tag thelongbookclub-21)</span></label>
+                    <input type="text" value={affiliateLink} onChange={e => setAffiliateLink(e.target.value)} placeholder="e.g. B0FBSCF8N3" style={inputStyle} />
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>

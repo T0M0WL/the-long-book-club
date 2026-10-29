@@ -97,7 +97,7 @@ Every audiobook added to the site MUST have 4 completely distinct copy blocks (0
 1. Verify all 18 required book/review fields (or Collection/Journal fields) are present.
 2. Check that `book.title` in `src/data/books.ts` matches the review key in `src/data/reviews.ts` **character-for-character** (including colons, subtitles, and apostrophes).
 3. Verify `cardOverview` is $\le 120$ characters.
-4. Confirm Thomas has provided (or left placeholders for) `coverUrl` (`/covers/[slug].webp`), `affiliateLink` (UK `?tag=thelongbookcl-21`), and `affiliateLinkUS` (US `?tag=thelongbookcl-20`).
+4. Confirm Thomas has provided (or left placeholders for) `coverUrl` (`/covers/[slug].webp`) and `affiliateLink` (UK `?tag=thelongbookclub-21`). The US affiliate account is defunct; Amazon OneLink handles all international referrals automatically via the primary UK tag.
 5. If any new niche genre tags are introduced in `book.genre`, add a matching `{ genre, metaTitle, intro }` entry in `src/data/genreData.ts`.
 6. **Sync Audio Previews:** Run `npm run sync:previews` (or `python3 scripts/sync-audio-previews.py --id <newId1,newId2>`) to query the Apple Books / iTunes Search API. This automatically discovers and injects verified `audioPreviewUrl` direct `.m4a` audio sample streams into `src/data/books.ts` so the Narrator Soundcheck audio player renders on the new book pages.
 
@@ -105,7 +105,7 @@ Every audiobook added to the site MUST have 4 completely distinct copy blocks (0
 1. First inspect `src/data/books.ts` to get the current list of all existing book titles and IDs so you never propose a duplicate book.
 2. Spawn a `research` sub-agent (or use `search_web`) to identify trending **10+ hour** unabridged audiobooks (prioritizing the longest, highest-value listens available in each niche genre), verify exact UK/US Audible runtimes (`XXh YYm`), and confirm narrator names.
 3. Query the **UK iTunes Search API** (`https://itunes.apple.com/search?term=<Title+Author>&media=audiobook&country=GB`) via `read_url_content` or run `npm run sync:previews` to pull the exact edition's 30-second `previewUrl` (`audioPreviewUrl`) and high-res square cover art (`artworkUrl100` with `100x100bb.jpg` replaced by `600x600bb.jpg`).
-4. Once Thomas approves the covers and provides his UK/US Amazon links (note: `amazon.com` visited from a UK IP serves the UK/Commonwealth licensed edition under its `.com` ASIN, so both UK and US links often point to the same UK narrator/edition), download the `600x600bb.jpg` covers directly into `public/covers/<slug>.jpg` and wire `/covers/<slug>.jpg` into `src/data/books.ts` and `src/data/collections.ts`.
+4. Once Thomas approves the covers and provides his Amazon/Audible link (using UK tag `thelongbookclub-21`; Amazon OneLink routes international visitors automatically), download the `600x600bb.jpg` covers directly into `public/covers/<slug>.jpg` and wire `/covers/<slug>.jpg` into `src/data/books.ts` and `src/data/collections.ts`.
 
 ### The 3-Tier Collection Content Framework (Anti-Duplicate Copy Standard)
 Every collection added or updated in `src/data/collections.ts` MUST adhere to this strict 3-tier content hierarchy to prevent duplicate content flags on Google and ensure uniform card heights across `/collections/`:

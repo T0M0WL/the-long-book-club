@@ -196,7 +196,6 @@ async function prerender() {
             const length = extractField(cleanBlock, 'length');
             const genres = extractGenre(cleanBlock);
             const affiliateLink = extractField(cleanBlock, 'affiliateLink');
-            const affiliateLinkUS = extractField(cleanBlock, 'affiliateLinkUS');
             const teaserTitle = extractField(cleanBlock, 'teaserTitle');
             const teaser = extractField(cleanBlock, 'teaser');
             const cardOverview = extractField(cleanBlock, 'cardOverview');
@@ -228,7 +227,6 @@ async function prerender() {
                 lengthHours,
                 genres,
                 affiliateLink,
-                affiliateLinkUS,
                 teaserTitle,
                 teaser,
                 cardOverview,
@@ -240,7 +238,7 @@ async function prerender() {
 
     let bookCount = 0;
     for (const book of allBooks) {
-        const { slug, title, author, description: bookDesc, coverUrl, narrator: bookNarrator, length, genres, affiliateLink, affiliateLinkUS, graphicAudioParts, audioPreviewUrl } = book;
+        const { slug, title, author, description: bookDesc, coverUrl, narrator: bookNarrator, length, genres, affiliateLink, graphicAudioParts, audioPreviewUrl } = book;
         const genreRaw = genres.join(', ');
 
         const review = reviewsMap.get(title);

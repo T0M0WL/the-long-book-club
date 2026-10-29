@@ -47,7 +47,7 @@ When researching new books, pitching collections, or drafting articles, balance 
 ## 1. Core Architectural Rules: The 3-Stage Funnel & 4-Tier Anti-Duplicate Copy Hierarchy
 
 ### A. The 3-Stage "Department Store" Funnel
-Every page on `thelongbookclub.com` is engineered to guide visitors smoothly toward the **Dedicated Book Pages (`/book/:slug/`)**, which are the **only** pages containing external Audible UK/US affiliate links:
+Every page on `thelongbookclub.com` is engineered to guide visitors smoothly toward the **Dedicated Book Pages (`/book/:slug/`)**, which are the **only** pages containing external Audible/Amazon affiliate links:
 1. **Top of Funnel ("The Magazine" & "The Kiosk")**:
    - **The Journal (`/journal/:slug/`)**: Captures informational and social search traffic. **Golden Rule:** Never place external Amazon/Audible links in Journal posts—always link internally to `/collections/:slug/`, `/genre/:slug/`, and `/book/:slug/` (with trailing slashes).
    - **Homepage & Long Book Finder (`/long-book-finder/`)**: Dynamic filtering tools whose cards route every click straight to `/book/:slug/`.
@@ -56,7 +56,7 @@ Every page on `thelongbookclub.com` is engineered to guide visitors smoothly tow
    - **Curated Collections (`/collections/:slug/`) & Niche Genres (`/genre/:slug/`)**: Rank for discovery keywords (e.g., *"Best Long Magical Realism Audiobooks"*).
    - **The Curiosity Gap Rule:** Collection teasers (`teaserTitle` + `teaser`) sit directly above the **"Read Full Review + Soundcheck →"** button. They must explain *why* the book belongs in the collection and **open an irresistible question** about narrator stamina, pacing, or adaptation comparison **without revealing the final verdict**, compelling the user to click through to `/book/:slug/`.
 3. **Bottom of Funnel ("The Product Boxes / Conversion Engine")**:
-   - **Dedicated Book Pages (`/book/:slug/`)**: Houses the **300+ word `curatorNote`** (conversion review that resolves the curiosity gap and justifies spending 1 Audible credit) and the signature **`soundCheck`** (narrator performance review with Apple Books sample player), right beside the prominent Audible US & UK affiliate buttons.
+   - **Dedicated Book Pages (`/book/:slug/`)**: Houses the **300+ word `curatorNote`** (conversion review that resolves the curiosity gap and justifies spending 1 Audible credit) and the signature **`soundCheck`** (narrator performance review with Apple Books sample player), right beside the prominent Audible affiliate CTA button.
 
 ### B. The 4-Tier Anti-Duplicate Copy Table
 Because each audiobook appears across multiple URLs on the website (and because our build script pre-renders raw static HTML for Googlebot), **every book requires 4 distinct tiers of copy**. Never copy-paste sentences between tiers, and never copy Amazon's publisher blurb verbatim.
@@ -100,11 +100,10 @@ For every new audiobook (must be **10+ hours minimum unabridged**, prioritizing 
 ### B. Retail Assets & Audio Previews (`src/data/books.ts`)
 9. **`coverUrl`** *(string)*:
    - Path in `/covers/` (e.g., `/covers/[slug].jpg` or `/covers/[slug].webp`).
-10. **`affiliateLink`** *(string — UK Audible/Amazon)*:
+10. **`affiliateLink`** *(string — Global Audible/Amazon link via UK store)*:
     - Format: `https://www.amazon.co.uk/dp/[UK_ASIN]?tag=thelongbookclub-21`
-11. **`affiliateLinkUS`** *(string — US Audible/Amazon)*:
-    - Format: `https://www.amazon.com/dp/[US_ASIN]?tag=thelongbookcl-20`
-12. **`audioPreviewUrl`** *(string, automated via `npm run sync:previews`)*:
+    - **CRITICAL AFFILIATE RULE:** The site exclusively uses the UK Amazon affiliate tag `thelongbookclub-21`. The legacy US affiliate account was shut down and `thelongbookcl-20` is **completely inactive/dead**. Amazon OneLink automatically redirects international visitors (US, Canada, Europe) to their regional store product pages, recording all commissions under `thelongbookclub-21`. Do NOT provide or request a US link or tag.
+11. **`audioPreviewUrl`** *(string, automated via `npm run sync:previews`)*:
     - Official Apple Books 30–90 second `.m4a` preview stream that powers the interactive audio player inside the Narrator Soundcheck card.
 
 ### C. Book Copy Tiers 1–3 (`src/data/books.ts`)
@@ -196,8 +195,7 @@ When prompting your Gemini Agent + NotebookLM to generate a new batch of books, 
 - **Length**: 
 - **Rating**: 
 - **Genres (4–6 tags)**: 
-- **UK ASIN / Link (Thomas)**: [PASTE UK LINK/ASIN]
-- **US ASIN / Link (Thomas)**: [PASTE US LINK/ASIN]
+- **UK ASIN / Link (Thomas)**: [PASTE UK LINK/ASIN — Amazon OneLink routes international & US traffic automatically]
 - **Cover Filename (Thomas)**: /covers/[slug].jpg
 
 #### Tier 1: Static HTML Plot Synopsis (`description` — 1–2 original sentences, 0% Amazon blurb)

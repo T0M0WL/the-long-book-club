@@ -37,7 +37,7 @@ The Long Book Club’s core identity is built upon **Dual Functionality**—two 
 
 ## 🏛️ The 3-Stage "Department Store" Funnel Architecture
 
-Every page on `thelongbookclub.com` is engineered to guide visitors smoothly toward the **Dedicated Book Pages (`/book/:slug/`)**, which are the **only** pages containing external Audible UK/US affiliate links:
+Every page on `thelongbookclub.com` is engineered to guide visitors smoothly toward the **Dedicated Book Pages (`/book/:slug/`)**, which are the **only** pages containing external Audible/Amazon affiliate links:
 
 1. **Top of Funnel ("The Magazine" & "The Kiosk")**:
    - **The Journal (`/journal/:slug/`)**: Captures informational and social search traffic. **Golden Rule:** Never place external Amazon/Audible links in Journal posts—always link internally to `/collections/:slug/`, `/genre/:slug/`, and `/book/:slug/` (with trailing slashes).
@@ -47,7 +47,7 @@ Every page on `thelongbookclub.com` is engineered to guide visitors smoothly tow
    - **Curated Collections (`/collections/:slug/`) & Niche Genres (`/genre/:slug/`)**: Rank for discovery keywords (e.g., *"Best Long Magical Realism Audiobooks"*).
    - **The Curiosity Gap Rule:** Collection teasers (`teaserTitle` + `teaser`) sit directly above the **"Read Full Review + Soundcheck →"** button. They explain *why* the book belongs in the collection and **open an irresistible question** about pacing or narrator stamina **without revealing the verdict**, compelling the user to click through to `/book/:slug/`.
 3. **Bottom of Funnel ("The Product Boxes / Conversion Engine")**:
-   - **Dedicated Book Pages (`/book/:slug/`)**: Houses the **300+ word `curatorNote`** (conversion review that resolves the curiosity gap and justifies spending 1 Audible credit), the signature **`soundCheck`** with Apple Books audio sample player, interactive **Commute & Value Calculators**, and the primary Audible US & UK affiliate buttons.
+   - **Dedicated Book Pages (`/book/:slug/`)**: Houses the **300+ word `curatorNote`** (conversion review that resolves the curiosity gap and justifies spending 1 Audible credit), the signature **`soundCheck`** with Apple Books audio sample player, interactive **Commute & Value Calculators**, and the primary Audible affiliate CTA button (leveraging Amazon OneLink for international traffic).
 
 ---
 
@@ -134,6 +134,11 @@ Because each audiobook appears across multiple URLs on the website (and because 
 - We do **NOT** serve a thin, empty SPA shell.
 - Every single route (`/book/*`, `/genre/*`, `/collections/*`, `/authors/*`, `/narrators/*`, `/journal/*`) serves rich, crawlable HTML inside `<div id="root">` via `scripts/prerender.cjs`.
 - Interactive calculators, audio previews, and reviews are injected into static `#no-js-content` blocks and schema JSON-LD so Googlebot indexes every word, rating, and runtime on first pass.
+
+### **4. Global Affiliate Architecture**
+- **Primary Affiliate Tag:** `thelongbookclub-21` (UK Amazon Associates).
+- **US Tag Status:** The legacy US affiliate account was closed; `thelongbookcl-20` is **completely defunct**. Never request, generate, or preserve it.
+- **Global Routing:** Amazon OneLink automatically detects visitor locale and redirects international shoppers (US, Canada, Germany, Australia, etc.) to their respective regional store while preserving earnings under `thelongbookclub-21`. Single link simplicity across the entire platform.
 
 ---
 

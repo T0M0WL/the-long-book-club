@@ -15,7 +15,6 @@ interface SoundCheckCardProps {
     soundCheckText: string;
     affiliateLinkUK?: string;
     affiliateLink?: string;
-    affiliateLinkUS?: string;
     audioPreviewUrl?: string;
     graphicAudioParts?: GraphicAudioPart[];
 }
