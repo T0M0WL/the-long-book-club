@@ -816,7 +816,7 @@ export const CollectionDetail = () => {
                                     {/* Titles */}
                                     <h2 style={{
                                         fontSize: 'clamp(2rem, 2.5vw, 2.8rem)', // Slightly smaller for 2-col
-                                        marginBottom: '0.25rem',
+                                        marginBottom: '0.75rem',
                                         lineHeight: 1.1,
                                         fontFamily: 'var(--font-serif-accent), Lora, Georgia, serif',
                                         fontStyle: 'italic',
@@ -835,7 +835,7 @@ export const CollectionDetail = () => {
 
                                     <h3 style={{
                                         color: 'var(--color-brand-forrest)',
-                                        marginBottom: '1.5rem',
+                                        marginBottom: '2rem',
                                         fontSize: '1.2rem',
                                         opacity: 0.9,
                                         fontFamily: 'var(--font-serif-accent)', // Lora
