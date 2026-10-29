@@ -1,10 +1,28 @@
 
+<IfModule mod_mime.c>
+  AddType text/javascript .js .mjs
+  AddType text/css .css
+  AddType image/svg+xml .svg
+</IfModule>
+
 <IfModule mod_headers.c>
   # Enable open CORS for public crawler and metadata files (sitemap.xml, robots.txt, ai.txt)
   <FilesMatch "\.(xml|txt)$">
     Header set Access-Control-Allow-Origin "*"
     Header set Access-Control-Allow-Methods "GET, HEAD, OPTIONS"
     Header set Access-Control-Allow-Headers "*"
+  </FilesMatch>
+
+  # HTML documents should always revalidate so browsers immediately receive current bundle hashes
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires 0
+  </FilesMatch>
+
+  # Hashed static assets can be safely cached long-term (1 year)
+  <FilesMatch "\.(js|css|webp|jpg|jpeg|png|gif|svg|woff|woff2|ttf|eot)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
 </IfModule>
 
@@ -967,6 +985,11 @@ Redirect 301 /book/478/ /book/mother-of-learning-arc-4-domagoj-kurmaic/
   Redirect 301 /genre/nonfiction/ /genre/non-fiction/
   Redirect 301 /genre/contemporary /genre/contemporary-fiction/
   Redirect 301 /genre/contemporary/ /genre/contemporary-fiction/
+
+  # Prevent missing static assets from falling back to index.html (return clean 404 instead of HTML)
+  RewriteCond %{REQUEST_URI} ^/(assets|covers)/ [NC]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^ - [R=404,L]
 
   # Standard SPA Fallback
   DirectoryIndex index.html
