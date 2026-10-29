@@ -531,7 +531,7 @@ export const narratorData: Record<string, NarratorProfile> = {
         audibleUrl: 'https://www.amazon.co.uk/s?k=Jeff+Hays&i=audible&tag=thelongbookclub-21',
         referenceUrl: 'https://www.jeffhaysnarrates.com',
         referenceLabel: 'Jeff Hays Official',
-        topGenres: ['LitRPG', 'Progression Fantasy', 'Satirical Sci-Fi', 'Dark Comedy'],
+        topGenres: ['LitRPG', 'GameLit', 'Sci-Fi', 'Comedy'],
         vocalHallmarksKeywords: [
             'Satirical',
             'Bite,',

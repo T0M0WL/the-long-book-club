@@ -56,21 +56,21 @@ function renderBioWithLinks(text: string) {
 }
 
 /**
- * Computes top N genres from a narrator's books.
+ * Computes top N genres from a narrator's books, optionally excluding already chosen genres.
  */
-function getTopGenresForBooks(narratorBooks: Book[], count = 4): string[] {
+function getTopGenresForBooks(narratorBooks: Book[], count = 4, exclude: Set<string> = new Set()): string[] {
     const freq = new Map<string, number>();
     for (const b of narratorBooks) {
         const gList = Array.isArray(b.genre) ? b.genre : [b.genre];
         for (const g of gList) {
-            if (!g) continue;
+            if (!g || exclude.has(g)) continue;
             freq.set(g, (freq.get(g) || 0) + 1);
         }
     }
     return Array.from(freq.entries())
         .sort((a, b) => b[1] - a[1])
-        .slice(0, count)
-        .map(([g]) => g);
+        .map(([g]) => g)
+        .slice(0, count);
 }
 
 /**
@@ -196,9 +196,21 @@ export const NarratorDetail = () => {
     const plainHeroBio = heroBioText.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1');
 
     // 2. Earned Badges (Style Badges + Single Highest Marathon Badge)
-    const topGenres = (profile?.topGenres && profile.topGenres.length > 0)
-        ? profile.topGenres.slice(0, 4)
-        : getTopGenresForBooks(narrator.books, 4);
+    // Filter manual topGenres to only those that exist in our catalog and have books by this narrator.
+    // If any are missing or non-existent in our library, backfill dynamically from the narrator's actual books.
+    const curatedValidGenres = (profile?.topGenres || []).filter(g => {
+        return narrator.books.some(b => {
+            const list = Array.isArray(b.genre) ? b.genre : [b.genre];
+            return list.some(item => slugify(item) === slugify(g));
+        });
+    });
+
+    const needed = 4 - curatedValidGenres.length;
+    const backfill = needed > 0
+        ? getTopGenresForBooks(narrator.books, needed, new Set(curatedValidGenres))
+        : [];
+
+    const topGenres = [...curatedValidGenres, ...backfill].slice(0, 4);
 
     const styleBadgeIds = profile?.styleBadges || getFallbackStyleBadges(topGenres, narrator.books);
     const earnedBadges: NarratorBadgeDef[] = styleBadgeIds
