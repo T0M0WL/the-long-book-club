@@ -52,6 +52,14 @@ const AudiobookValueCalculator: React.FC<Props> = ({ initialBookLength }) => {
                     .value-calc-mobile {
                         display: flex !important;
                     }
+                    .value-calc-mobile input[type=number]::-webkit-inner-spin-button,
+                    .value-calc-mobile input[type=number]::-webkit-outer-spin-button {
+                        -webkit-appearance: none;
+                        margin: 0;
+                    }
+                    .value-calc-mobile input[type=number] {
+                        -moz-appearance: textfield;
+                    }
                 }
             `}</style>
 
@@ -275,130 +283,105 @@ const AudiobookValueCalculator: React.FC<Props> = ({ initialBookLength }) => {
                 </div>
             </div>
 
-            {/* Mobile Version (<= 850px): Condensed Horizontal Scorecard Pill Layout */}
+            {/* Mobile Version (<= 850px): Refined Clean Card Layout */}
             <div
                 className="value-calc-mobile"
                 style={{
-                    backgroundColor: 'rgba(255, 255, 255, 0.5)',
-                    borderRadius: '1.25rem',
-                    padding: '1.5rem 1.35rem',
+                    backgroundColor: 'rgba(255, 255, 255, 0.65)',
+                    borderRadius: '1.75rem',
+                    padding: '1.75rem 1.4rem 1.65rem 1.4rem',
                     width: '100%',
                     marginBottom: '1.5rem',
                     boxSizing: 'border-box',
                     flexDirection: 'column',
-                    alignItems: 'flex-start'
+                    alignItems: 'center'
                 }}
             >
-                {/* Header Row: Title + Book Length */}
-                <div style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'baseline',
-                    width: '100%',
-                    marginBottom: '0.85rem',
-                    gap: '0.5rem',
-                    flexWrap: 'wrap'
+                {/* Title */}
+                <h3 style={{
+                    fontFamily: 'var(--font-serif-accent)',
+                    fontStyle: 'italic',
+                    fontWeight: 400,
+                    letterSpacing: '-0.01em',
+                    color: 'var(--color-brand-forrest)',
+                    fontSize: '1.65rem',
+                    margin: '0 0 1.15rem 0',
+                    lineHeight: 1.15,
+                    textAlign: 'center'
                 }}>
-                    <h3 style={{
-                        fontFamily: 'var(--font-serif-accent)',
-                        fontStyle: 'italic',
-                        fontWeight: 400,
-                        letterSpacing: '-0.02em',
-                        color: 'var(--color-brand-forrest)',
-                        fontSize: '1.55rem',
-                        margin: 0,
-                        lineHeight: 1.15
-                    }}>
-                        Value Calculator
-                    </h3>
-                    <span style={{
-                        fontFamily: 'Inter, sans-serif',
-                        color: 'var(--color-brand-forrest)',
-                        fontSize: '0.75rem',
-                        opacity: 0.8
-                    }}>
-                        Length: <strong>{hours}h {minutes}m</strong>
-                    </span>
-                </div>
+                    Value Calculator
+                </h3>
 
-                {/* Horizontal Coral Scorecard Pill */}
+                {/* Coral Result Pill */}
                 <div style={{
                     width: '100%',
                     backgroundColor: 'var(--color-brand-coral)',
-                    borderRadius: '1rem',
-                    padding: '0.95rem 1.15rem',
-                    marginBottom: '1.1rem',
+                    borderRadius: '1.25rem',
+                    padding: '1rem 1rem',
+                    marginBottom: '1.35rem',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'space-between',
-                    gap: '0.75rem',
+                    justifyContent: 'center',
                     boxSizing: 'border-box',
-                    color: 'var(--color-brand-cloud)'
+                    color: '#ffffff',
+                    textAlign: 'center'
                 }}>
-                    {/* Left: Price per hour */}
-                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.35rem' }}>
-                        <span style={{
-                            fontFamily: 'var(--font-serif-accent)',
-                            fontStyle: 'italic',
-                            fontWeight: 700,
-                            fontSize: '1.75rem',
-                            lineHeight: 1
-                        }}>
-                            {symbol}{costPerHour > 0 ? costPerHour.toFixed(2) : '0.00'}
-                        </span>
-                        <span style={{
-                            fontFamily: 'var(--font-serif-accent)',
-                            fontStyle: 'italic',
-                            fontSize: '1.05rem',
-                            opacity: 0.95
-                        }}>
-                            / hr
-                        </span>
-                    </div>
-
-                    {/* Right: Cinema multiplier badge */}
-                    <div style={{
-                        fontFamily: 'Inter, sans-serif',
-                        fontSize: '0.72rem',
-                        fontWeight: 600,
-                        backgroundColor: 'rgba(255, 255, 255, 0.18)',
-                        padding: '0.4rem 0.7rem',
-                        borderRadius: '2rem',
-                        textAlign: 'right',
-                        lineHeight: 1.2
+                    <span style={{
+                        fontFamily: 'var(--font-serif-accent)',
+                        fontSize: '1.7rem',
+                        lineHeight: 1.1,
+                        color: '#ffffff',
+                        fontWeight: 400
                     }}>
-                        <strong>{cinemaMultiplier > 0 ? cinemaMultiplier.toFixed(1) : '0'}x</strong> cheaper than cinema
-                    </div>
+                        {symbol}{costPerHour > 0 ? costPerHour.toFixed(2) : '0.00'} per hour
+                    </span>
                 </div>
 
-                {/* Adjust Label */}
-                <p style={{
-                    fontFamily: 'Inter, sans-serif',
-                    fontWeight: 700,
+                {/* Cinema comparison callout */}
+                <div style={{
+                    fontFamily: 'var(--font-serif-accent)',
+                    fontStyle: 'italic',
+                    fontWeight: 400,
                     color: 'var(--color-brand-forrest)',
-                    fontSize: '0.75rem',
-                    margin: '0 0 0.5rem 0'
+                    fontSize: '1.3rem',
+                    lineHeight: 1.35,
+                    textAlign: 'center',
+                    marginBottom: '1.5rem',
+                    maxWidth: '300px'
                 }}>
-                    Adjust for your credit cost
+                    This book is {cinemaMultiplier > 0 ? cinemaMultiplier.toFixed(1) : '0'}x cheaper<br />than the cinema per hour
+                </div>
+
+                {/* Subtitle */}
+                <p style={{
+                    fontFamily: 'var(--font-body)',
+                    fontWeight: 700,
+                    fontSize: '0.75rem',
+                    color: 'var(--color-brand-forrest)',
+                    textAlign: 'center',
+                    margin: '0 0 1rem 0',
+                    letterSpacing: '0.01em'
+                }}>
+                    Adjust for your book credit cost
                 </p>
 
-                {/* Bottom Controls */}
+                {/* Bottom Controls Row */}
                 <div style={{
                     display: 'flex',
-                    gap: '0.65rem',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    gap: '0.85rem',
                     width: '100%'
                 }}>
                     {/* Currency Toggle Pill */}
                     <div style={{
                         display: 'flex',
-                        backgroundColor: '#fff',
-                        borderRadius: '2rem',
-                        flex: 1.15,
-                        overflow: 'hidden',
-                        border: '1px solid rgba(0,0,0,0.06)',
-                        padding: '0.2rem',
-                        height: '38px',
-                        boxSizing: 'border-box'
+                        alignItems: 'center',
+                        backgroundColor: '#ffffff',
+                        borderRadius: '50px',
+                        padding: '3px',
+                        boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
+                        border: '1px solid rgba(0,0,0,0.04)'
                     }}>
                         <button
                             onClick={() => {
@@ -406,23 +389,19 @@ const AudiobookValueCalculator: React.FC<Props> = ({ initialBookLength }) => {
                                 if (creditCost === '14.99') setCreditCost('7.99');
                             }}
                             style={{
-                                flex: 1,
-                                padding: '0',
                                 border: 'none',
-                                borderRadius: '1.5rem',
                                 backgroundColor: currency === 'GBP' ? 'var(--color-brand-coral)' : 'transparent',
-                                color: currency === 'GBP' ? 'var(--color-brand-cloud)' : 'var(--color-brand-forrest)',
+                                color: currency === 'GBP' ? '#ffffff' : 'var(--color-brand-forrest)',
+                                padding: '6px 14px',
+                                borderRadius: '50px',
+                                fontFamily: 'var(--font-body)',
                                 fontWeight: 700,
-                                fontSize: '0.75rem',
+                                fontSize: '12px',
                                 cursor: 'pointer',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                transition: 'all 0.2s',
-                                fontFamily: 'Inter, sans-serif'
+                                transition: 'all 0.2s ease'
                             }}
                         >
-                            GBP (£)
+                            GBP(£)
                         </button>
                         <button
                             onClick={() => {
@@ -430,43 +409,44 @@ const AudiobookValueCalculator: React.FC<Props> = ({ initialBookLength }) => {
                                 if (creditCost === '7.99') setCreditCost('14.99');
                             }}
                             style={{
-                                flex: 1,
-                                padding: '0',
                                 border: 'none',
-                                borderRadius: '1.5rem',
                                 backgroundColor: currency === 'USD' ? 'var(--color-brand-coral)' : 'transparent',
-                                color: currency === 'USD' ? 'var(--color-brand-cloud)' : 'var(--color-brand-forrest)',
+                                color: currency === 'USD' ? '#ffffff' : 'var(--color-brand-forrest)',
+                                padding: '6px 14px',
+                                borderRadius: '50px',
+                                fontFamily: 'var(--font-body)',
                                 fontWeight: 700,
-                                fontSize: '0.75rem',
+                                fontSize: '12px',
                                 cursor: 'pointer',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                transition: 'all 0.2s',
-                                fontFamily: 'Inter, sans-serif'
+                                transition: 'all 0.2s ease'
                             }}
                         >
-                            USD ($)
+                            USD($)
                         </button>
                     </div>
 
-                    {/* Number Input Pill */}
+                    {/* Credit Price Input Pill */}
                     <div style={{
-                        position: 'relative',
-                        flex: 0.85,
-                        height: '38px',
-                        display: 'flex'
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '6px',
+                        backgroundColor: '#ffffff',
+                        borderRadius: '50px',
+                        padding: '6px 18px',
+                        height: '35px',
+                        boxSizing: 'border-box',
+                        boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
+                        border: '1px solid rgba(0,0,0,0.04)'
                     }}>
                         <span style={{
-                            position: 'absolute',
-                            left: '0.85rem',
-                            top: '50%',
-                            transform: 'translateY(-50%)',
-                            color: 'var(--color-brand-forrest)',
+                            fontFamily: 'var(--font-body)',
                             fontWeight: 600,
-                            fontSize: '0.9rem',
-                            fontFamily: 'Inter, sans-serif'
-                        }}>{symbol}</span>
+                            fontSize: '14px',
+                            color: 'var(--color-brand-forrest)'
+                        }}>
+                            {symbol}
+                        </span>
                         <input
                             type="number"
                             step="0.01"
@@ -474,17 +454,15 @@ const AudiobookValueCalculator: React.FC<Props> = ({ initialBookLength }) => {
                             value={creditCost}
                             onChange={(e) => setCreditCost(e.target.value)}
                             style={{
-                                width: '100%',
-                                height: '100%',
-                                padding: '0 0.75rem 0 1.85rem',
-                                borderRadius: '2rem',
-                                border: '1px solid rgba(0,0,0,0.06)',
-                                fontFamily: 'Inter, sans-serif',
-                                fontSize: '0.9rem',
+                                border: 'none',
+                                outline: 'none',
+                                background: 'transparent',
+                                fontFamily: 'var(--font-body)',
                                 fontWeight: 600,
+                                fontSize: '14px',
                                 color: 'var(--color-brand-forrest)',
-                                backgroundColor: '#fff',
-                                boxSizing: 'border-box'
+                                width: '48px',
+                                padding: 0
                             }}
                             placeholder={currency === 'GBP' ? '7.99' : '14.99'}
                         />

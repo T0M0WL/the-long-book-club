@@ -48,21 +48,27 @@ const customStyles = `
       display: flex !important;
     }
     .commute-slider {
-      height: 8px;
-      border-radius: 4px;
-      margin: 4px 0;
+      height: 6px;
+      border-radius: 50px;
+      margin: 6px 0;
     }
     .commute-slider::-webkit-slider-thumb {
-      width: 20px;
-      height: 20px;
-      border: 2px solid #fff;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.18);
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--color-brand-coral);
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.18);
     }
     .commute-slider::-moz-range-thumb {
-      width: 20px;
-      height: 20px;
-      border: 2px solid #fff;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.18);
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--color-brand-coral);
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.18);
     }
   }
 `;
@@ -256,97 +262,85 @@ const AudiobookCommuteCalculator: React.FC<Props> = ({ initialBookLength }) => {
                 </div>
             </div>
 
-            {/* Mobile Version (<= 850px): Condensed Horizontal Scorecard Pill Layout */}
+            {/* Mobile Version (<= 850px): Refined Clean Card Layout */}
             <div
                 className="commute-calc-mobile"
                 style={{
-                    backgroundColor: 'rgba(255, 255, 255, 0.5)',
-                    borderRadius: '1.25rem',
-                    padding: '1.5rem 1.35rem',
+                    backgroundColor: 'rgba(255, 255, 255, 0.65)',
+                    borderRadius: '1.75rem',
+                    padding: '1.75rem 1.4rem 1.65rem 1.4rem',
                     width: '100%',
-                    marginBottom: '1.25rem',
+                    marginBottom: '1.5rem',
                     boxSizing: 'border-box',
                     flexDirection: 'column',
-                    alignItems: 'flex-start'
+                    alignItems: 'center'
                 }}
             >
-                <div style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'baseline',
-                    width: '100%',
-                    marginBottom: '0.85rem',
-                    gap: '0.5rem',
-                    flexWrap: 'wrap'
+                {/* Title */}
+                <h3 style={{
+                    fontFamily: 'var(--font-serif-accent)',
+                    fontStyle: 'italic',
+                    fontWeight: 400,
+                    letterSpacing: '-0.01em',
+                    color: 'var(--color-brand-forrest)',
+                    fontSize: '1.65rem',
+                    margin: '0 0 1.15rem 0',
+                    lineHeight: 1.15,
+                    textAlign: 'center'
                 }}>
-                    <h3 style={{
-                        fontFamily: 'var(--font-serif-accent)',
-                        fontStyle: 'italic',
-                        fontWeight: 400,
-                        letterSpacing: '-0.02em',
-                        color: 'var(--color-brand-forrest)',
-                        fontSize: '1.55rem',
-                        margin: 0,
-                        lineHeight: 1.15
-                    }}>
-                        Commute Calendar
-                    </h3>
-                    <span style={{
-                        fontFamily: 'Inter, sans-serif',
-                        fontSize: '0.72rem',
-                        fontWeight: 600,
-                        color: 'var(--color-brand-forrest)',
-                        opacity: 0.75
-                    }}>
-                        Adjust your daily commute
-                    </span>
-                </div>
+                    Commute Calendar
+                </h3>
 
-                {/* Horizontal Coral Scorecard Pill */}
+                {/* Coral Result Pill */}
                 <div style={{
                     width: '100%',
                     backgroundColor: 'var(--color-brand-coral)',
-                    borderRadius: '1rem',
-                    padding: '0.95rem 1.15rem',
-                    marginBottom: '1.15rem',
+                    borderRadius: '1.25rem',
+                    padding: '1rem 1rem',
+                    marginBottom: '1.35rem',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'space-between',
-                    gap: '0.75rem',
+                    justifyContent: 'center',
                     boxSizing: 'border-box',
-                    color: 'var(--color-brand-cloud)'
+                    color: '#ffffff',
+                    textAlign: 'center'
                 }}>
-                    <div style={{
+                    <span style={{
                         fontFamily: 'var(--font-serif-accent)',
-                        fontStyle: 'italic',
-                        fontSize: '1.45rem',
+                        fontSize: '1.65rem',
                         lineHeight: 1.1,
+                        color: '#ffffff',
                         fontWeight: 400
                     }}>
-                        <strong>{calcWeeks}</strong> Weeks & <strong>{calcDays}</strong> Days
-                    </div>
-                    <div style={{
-                        fontFamily: 'Inter, sans-serif',
-                        fontSize: '0.7rem',
-                        fontWeight: 700,
-                        textTransform: ' uppercase',
-                        letterSpacing: '0.03em',
-                        backgroundColor: 'rgba(255, 255, 255, 0.18)',
-                        padding: '0.35rem 0.65rem',
-                        borderRadius: '2rem',
-                        whiteSpace: 'nowrap'
-                    }}>
-                        {dailyCommute}m/day • {daysPerWeek}d/wk
-                    </div>
+                        {calcWeeks} Weeks & {calcDays} Days
+                    </span>
                 </div>
 
-                {/* Compact Sliders Container */}
-                <div style={{ width: '100%' }}>
+                {/* Subtitle */}
+                <p style={{
+                    fontFamily: 'var(--font-body)',
+                    fontWeight: 700,
+                    fontSize: '0.75rem',
+                    color: 'var(--color-brand-forrest)',
+                    textAlign: 'center',
+                    margin: '0 0 1.5rem 0',
+                    letterSpacing: '0.01em'
+                }}>
+                    Adjust for your commute specifics:
+                </p>
+
+                {/* Sliders Container */}
+                <div style={{
+                    width: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '1.25rem'
+                }}>
                     {/* 1. Daily Commute Slider */}
-                    <div style={{ marginBottom: '0.85rem' }}>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.25rem' }}>
-                            <span style={{ fontWeight: 700, color: 'var(--color-brand-forrest)', fontFamily: 'Inter, sans-serif', fontSize: '0.78rem' }}>Commute Duration</span>
-                            <span style={{ fontWeight: 700, color: 'var(--color-brand-coral)', fontFamily: 'Inter, sans-serif', fontSize: '0.78rem' }}>{dailyCommute} mins/day</span>
+                    <div style={{ width: '100%' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.35rem' }}>
+                            <span style={{ fontWeight: 700, color: 'var(--color-brand-forrest)', fontFamily: 'var(--font-body)', fontSize: '0.82rem' }}>Commute Duration</span>
+                            <span style={{ fontWeight: 700, color: 'var(--color-brand-coral)', fontFamily: 'var(--font-body)', fontSize: '0.82rem' }}>{dailyCommute} Mins</span>
                         </div>
                         <input
                             type="range"
@@ -361,10 +355,10 @@ const AudiobookCommuteCalculator: React.FC<Props> = ({ initialBookLength }) => {
                     </div>
 
                     {/* 2. Commute Days Slider */}
-                    <div style={{ marginBottom: '0.85rem' }}>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.25rem' }}>
-                            <span style={{ fontWeight: 700, color: 'var(--color-brand-forrest)', fontFamily: 'Inter, sans-serif', fontSize: '0.78rem' }}>Commute Days</span>
-                            <span style={{ fontWeight: 700, color: 'var(--color-brand-coral)', fontFamily: 'Inter, sans-serif', fontSize: '0.78rem' }}>{daysPerWeek} days/week</span>
+                    <div style={{ width: '100%' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.35rem' }}>
+                            <span style={{ fontWeight: 700, color: 'var(--color-brand-forrest)', fontFamily: 'var(--font-body)', fontSize: '0.82rem' }}>Commute Days</span>
+                            <span style={{ fontWeight: 700, color: 'var(--color-brand-coral)', fontFamily: 'var(--font-body)', fontSize: '0.82rem' }}>{daysPerWeek} days/week</span>
                         </div>
                         <input
                             type="range"
@@ -379,10 +373,10 @@ const AudiobookCommuteCalculator: React.FC<Props> = ({ initialBookLength }) => {
                     </div>
 
                     {/* 3. Listening Speed Slider */}
-                    <div>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.25rem' }}>
-                            <span style={{ fontWeight: 700, color: 'var(--color-brand-forrest)', fontFamily: 'Inter, sans-serif', fontSize: '0.78rem' }}>Listening Speed</span>
-                            <span style={{ fontWeight: 700, color: 'var(--color-brand-coral)', fontFamily: 'Inter, sans-serif', fontSize: '0.78rem' }}>{currentSpeed.toFixed(1)}x</span>
+                    <div style={{ width: '100%' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.35rem' }}>
+                            <span style={{ fontWeight: 700, color: 'var(--color-brand-forrest)', fontFamily: 'var(--font-body)', fontSize: '0.82rem' }}>Listening Speed</span>
+                            <span style={{ fontWeight: 700, color: 'var(--color-brand-coral)', fontFamily: 'var(--font-body)', fontSize: '0.82rem' }}>{currentSpeed.toFixed(1)}x</span>
                         </div>
                         <input
                             type="range"
