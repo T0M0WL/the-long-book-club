@@ -2401,6 +2401,36 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://thelongbookclub.com/book/the-thursday-murder-club-richard-osman/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/magpie-murders-anthony-horowitz/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/the-appeal-janice-hallett/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/still-life-louise-penny/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/the-maid-nita-prose/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/the-sweetness-at-the-bottom-of-the-pie-alan-bradley/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thelongbookclub.com/genre/classics/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -3096,6 +3126,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://thelongbookclub.com/genre/british-literature/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thelongbookclub.com/genre/drama/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -3267,6 +3302,11 @@
   </url>
   <url>
     <loc>https://thelongbookclub.com/genre/magic-academy/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/genre/cozy-crime/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -3921,6 +3961,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://thelongbookclub.com/narrator/jayne-entwistle/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thelongbookclub.com/narrator/samuel-roukin/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -4012,6 +4057,11 @@
   </url>
   <url>
     <loc>https://thelongbookclub.com/journal/the-art-of-the-slow-burn-why-the-best-romantasy-requires-a-20-hour-commitment/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/collections/cozy-crime/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>

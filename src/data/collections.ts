@@ -18,6 +18,22 @@ export interface Collection {
 
 export const collections: Collection[] = [
     {
+        id: 'cozy-crime',
+        title: 'Best Long Cozy Crime & Village Mystery Audiobooks',
+        slug: 'cozy-crime',
+        coverUrl: '/covers/the-thursday-murder-club-richard-osman.jpg',
+        cardOverview: 'Trade gritty procedurals for tea, gossip, and village murder. 10+ hour mysteries solved by cunning amateur sleuths.',
+        heroSubtitle: 'The Best Long Cozy Crime & Village Mystery Audiobooks for Armchair Detectives.',
+        editorialHeading: 'Tea, Gossip, and Foul Play',
+        editorialIntro: 'Step away from the blood-slicked crime scenes of Nordic Noir and settle into the deceptively quiet world of village greens, eccentric pensioners, and locked-room puzzles. These 10+ hour audiobooks prove that a cunning amateur sleuth, a sharp wit, and a fresh pot of tea are all you need to catch a killer.',
+        description: 'Trade gritty procedurals for tea, gossip, and village murder. 10+ hour mysteries solved by cunning amateur sleuths.',
+        bookIds: ['479', '480', '481', '482', '483', '484'],
+        topGraphic: '/assets/Collections-Cards-Gfx/Collection-Card-Top-Sage-Green.gif',
+        iconSvg: '/assets/collections-hero-images/Collections Icons SVGs/cozy-crime-icon.svg',
+        iconColor: '#2c5143',
+        collectionNumber: '018'
+    },
+    {
         id: 'time-travel',
         title: 'Best Long Time Travel Audiobooks: Time Loops and Alternate Histories',
         slug: 'time-travel',

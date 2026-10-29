@@ -254,5 +254,15 @@ export const genreData: GenreMeta[] = [
         "genre": "Silkpunk",
         "metaTitle": "Best Long Silkpunk Audiobooks (20+ Hours) | The Long Book Club",
         "intro": "East Asian historical traditions meet ingenious organic engineering. Explore the best long silkpunk audiobooks featuring airships, battle kites, and philosophical rebellion across sweeping island empires."
+    },
+    {
+        "genre": "Cozy Crime",
+        "metaTitle": "Best Long Cozy Crime Audiobooks | The Long Book Club",
+        "intro": "Trade gritty procedurals for tea, eccentric pensioners, and village murder. Explore the best 10+ hour cozy crime and whodunnit audiobooks solved by cunning amateur sleuths."
+    },
+    {
+        "genre": "Village Mystery",
+        "metaTitle": "Best Long Village Mystery Audiobooks | The Long Book Club",
+        "intro": "Deceptively quiet English hamlets, locked-room puzzles, and country house murders. Discover the finest long-form village mystery audiobooks brought to life by master narrators."
     }
 ];
