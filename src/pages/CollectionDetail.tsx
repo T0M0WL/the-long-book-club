@@ -818,9 +818,11 @@ export const CollectionDetail = () => {
                                         fontSize: 'clamp(2rem, 2.5vw, 2.8rem)', // Slightly smaller for 2-col
                                         marginBottom: '0.25rem',
                                         lineHeight: 1.1,
-                                        fontFamily: 'var(--font-serif-accent)',
-                                        color: 'var(--color-brand-forrest)',
-                                        fontWeight: 700
+                                        fontFamily: 'var(--font-serif-accent), Lora, Georgia, serif',
+                                        fontStyle: 'italic',
+                                        fontWeight: 400,
+                                        letterSpacing: '-0.03em',
+                                        color: 'var(--color-brand-forrest)'
                                     }}>
                                         <Link
                                             to={`/book/${book!.slug}/`}
