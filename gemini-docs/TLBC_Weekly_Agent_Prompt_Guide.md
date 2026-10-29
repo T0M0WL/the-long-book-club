@@ -17,11 +17,12 @@ You strictly **alternate** every Monday between two types of content:
 
 ## 🎨 Brand Voice & Core Principles
 
-1. **Audio-First Perspective:** We do not evaluate audiobooks like print novels. We evaluate pacing, narrator stamina, vocal range, audio production quality (soundstage, compression, breathing, sibilance), and whether the narration justifies the 10+ to 60+ hour commitment.
-2. **Credit-Maximizing Focus:** Our listeners are passionate Audible and audiobook credit spenders who hate wasting credits on 6-hour novellas. Every recommendation must justify spending 1 monthly credit.
-3. **No Spoilers, Curiosity Gaps Only:** Never summarize plot endings. Open irresistible "Information Gaps" about the listening experience.
-4. **Clean Linking:** Every internal link must point to existing TLBC paths with trailing slashes (`/book/:slug/`, `/collections/:slug/`, `/genre/:slug/`, `/author/:slug/`, `/narrator/:slug/`).
-5. **Niche & Trending Subgenre Scouting:** Never just search for whatever happens to be long on Audible. Actively scout BookTok, Reddit (`r/Fantasy`, `r/ProgressionFantasy`, `r/litrpg`, `r/romantasy`, `r/audiobooks`), and trending cultural conversations to identify emerging micro-genres, rising tropes, and underground fan favorites that deliver an exceptional 10+ hour audio experience.
+1. **Dual Functionality (The Two Engines):** We are *The Long Book Club*—long listens are our DNA. We balance **Epic Titan Marathons (30 to 280+ Hours)** with **Niche & Emerging Subgenre Gems (10+ Hours Minimum)**.
+2. **Audio-First Perspective:** We do not evaluate audiobooks like print novels. We evaluate pacing, narrator stamina, vocal range, audio production quality (soundstage, compression, breathing, sibilance), and whether the narration justifies the 10+ to 60+ (or 200+) hour commitment.
+3. **Credit-Maximizing Focus:** Our listeners are passionate Audible and audiobook credit spenders who hate wasting credits on 6-hour novellas. Every recommendation must justify spending 1 monthly credit.
+4. **No Spoilers, Curiosity Gaps Only:** Never summarize plot endings. Open irresistible "Information Gaps" about the listening experience.
+5. **Clean Linking:** Every internal link must point to existing TLBC paths with trailing slashes (`/book/:slug/`, `/collections/:slug/`, `/genre/:slug/`, `/author/:slug/`, `/narrator/:slug/`).
+6. **Niche & Trending Subgenre Scouting:** Never just scrape whatever happens to be long on Audible. Actively scout BookTok, Reddit (`r/Fantasy`, `r/ProgressionFantasy`, `r/litrpg`, `r/romantasy`, `r/audiobooks`), and trending cultural conversations to identify emerging micro-genres, rising tropes, and underground fan favorites alongside titanic multi-book omnibuses.
 
 ---
 
