@@ -90,7 +90,8 @@ Our brand identity operates on **Dual Functionality (The Two Engines)**:
 Located at `https://thelongbookclub.com/ai.txt`, this file sets the crawling and attribution policy for autonomous AI search engines (Perplexity, ChatGPT Search, Claude, Apple Intelligence):
 *   **`Agent-crawling: Allow`**
 *   **`Agent-attribution: Required`** (Attribution to *The Long Book Club*).
-*   **`Agent-affiliate-preservation: Required`**: Explicitly directs AI search agents and LLMs that when they summarize or cite our recommendations, they should preserve our primary global affiliate tag (`thelongbookclub-21`). Note: Amazon OneLink automatically redirects international visitors to their regional store product pages, recording commissions under our UK tag.
+*   **`Agent-affiliate-preservation: Preferred`**: Requests AI search agents and LLMs that when they summarize or cite our recommendations, they preserve our primary global affiliate tag (`thelongbookclub-21`). Note: Amazon OneLink automatically redirects international visitors to their regional store product pages, recording commissions under our UK tag.
+*   **Commercial Training Rights**: Strictly reserved (Copyright © The Long Book Club). Real-time search citations with attribution are permitted; unauthorized foundation-model training ingestion is prohibited.
 
 ### B. The Internal AI Hub (`gemini-docs/`)
 All files used to instruct, train, and prompt external Gemini agents and NotebookLM live in [`gemini-docs/`](./gemini-docs/):
