@@ -123,8 +123,8 @@ export const BookDetails = () => {
             }}>
 
                 {/* Left Column: Cover & Meta & CTAs */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-                    <div style={{ position: 'relative' }}>
+                <div className="book-left-col" style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+                    <div className="book-packshot-block" style={{ position: 'relative' }}>
                         <img
                             src={book.coverUrl}
                             alt={`Cover of ${book.title}`}
@@ -175,8 +175,8 @@ export const BookDetails = () => {
                     </div>
 
                     {/* CTAs Moved Here */}
-                    <div className="audible-cta-container" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', width: '100%', marginTop: '4rem' }}>
-                        <div className="audible-buttons-wrapper" style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', width: '100%' }}>
+                    <div className="audible-cta-container" style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem', width: '100%', marginTop: '3.5rem' }}>
+                        <div className="audible-buttons-wrapper" style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', width: '100%' }}>
                             {book.affiliateLink && (
                                 <a
                                     href={book.affiliateLink}
@@ -195,7 +195,8 @@ export const BookDetails = () => {
                                         fontWeight: 600,
                                         textDecoration: 'none',
                                         transition: 'background-color 0.2s',
-                                        width: '100%'
+                                        width: '100%',
+                                        boxSizing: 'border-box'
                                     }}
                                     onMouseEnter={e => e.currentTarget.style.backgroundColor = 'var(--color-primary-hover)'}
                                     onMouseLeave={e => e.currentTarget.style.backgroundColor = 'var(--color-primary)'}
@@ -211,6 +212,7 @@ export const BookDetails = () => {
                                     href={part.affiliateLink}
                                     target="_blank"
                                     rel="noopener noreferrer nofollow"
+                                    className="graphic-audio-cta-btn"
                                     style={{
                                         display: 'flex',
                                         alignItems: 'center',
@@ -246,19 +248,22 @@ export const BookDetails = () => {
                         )}
                     </div>
 
-                    {/* Audiobook Commute Calculator Widget */}
-                    <div style={{ marginTop: book.affiliateLink ? '1rem' : '2rem', width: '100%' }}>
-                        <AudiobookCommuteCalculator initialBookLength={book.length} />
-                    </div>
+                    {/* Interactive Calculators Block (Reordered below Review on Mobile) */}
+                    <div className="book-calculators-block" style={{ marginTop: book.affiliateLink ? '0.5rem' : '2rem', width: '100%', display: 'flex', flexDirection: 'column' }}>
+                        {/* Audiobook Commute Calculator Widget */}
+                        <div style={{ width: '100%' }}>
+                            <AudiobookCommuteCalculator initialBookLength={book.length} />
+                        </div>
 
-                    {/* Audiobook Value Calculator Widget */}
-                    <div style={{ width: '100%' }}>
-                        <AudiobookValueCalculator initialBookLength={book.length} />
+                        {/* Audiobook Value Calculator Widget */}
+                        <div style={{ width: '100%' }}>
+                            <AudiobookValueCalculator initialBookLength={book.length} />
+                        </div>
                     </div>
                 </div>
 
                 {/* Right Column: Content */}
-                <div style={{
+                <div className="book-right-col" style={{
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'flex-start',
@@ -385,6 +390,7 @@ export const BookDetails = () => {
                                     __html: (review?.curatorNote || book.curatorNote || '')
                                         .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
                                         .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
+                                        .replace(/(?:\n|<br\s*\/?>)\s*((?:•|\d+\.)\s*(?:(?!\n|<br\s*\/?>).)+)/g, '<span class="series-book-item">$1</span>')
                                 }}
                             />
 
@@ -410,13 +416,44 @@ export const BookDetails = () => {
 
             {/* Style for mobile responsiveness and rich text content */}
             <style>{`
+            .curator-note-content .series-book-item {
+                display: block;
+                font-size: 0.75em;
+                line-height: 1.5;
+                margin-top: 0.28rem;
+                padding-left: 0.95em;
+                text-indent: -0.95em;
+            }
+
             @media (max-width: 850px) {
                 .book-details-grid {
-                    grid-template-columns: 1fr !important;
-                    gap: 6rem !important; /* Increased from 3rem to clear the time badge */
+                    display: flex !important;
+                    flex-direction: column !important;
+                    gap: 0 !important;
                 }
-                
-                /* Sticky Audible Buttons on Mobile */
+
+                .book-left-col {
+                    display: contents !important;
+                }
+
+                .book-packshot-block {
+                    order: 1;
+                    width: 100%;
+                    margin-bottom: 4.25rem !important; /* Clears the overlapping hours badge */
+                }
+
+                .book-right-col {
+                    order: 2;
+                    width: 100%;
+                }
+
+                .book-calculators-block {
+                    order: 3;
+                    width: 100%;
+                    margin-top: 0.25rem !important;
+                }
+
+                /* Sleek Sticky Audible Dock on Mobile (Button + 1-Line Promo Ribbon) */
                 .audible-cta-container {
                     position: fixed;
                     bottom: 0;
@@ -424,63 +461,42 @@ export const BookDetails = () => {
                     width: 100%;
                     z-index: 1000;
                     background-color: var(--color-brand-cloud);
-                    padding: 1.25rem 0.75rem 0.5rem 0.75rem; /* Increased top padding */
-                    box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+                    padding: 0.55rem 0.85rem calc(0.5rem + env(safe-area-inset-bottom, 0px)) 0.85rem !important;
+                    box-shadow: 0 -4px 20px rgba(0,0,0,0.12);
                     margin-top: 0 !important;
-                    border-top: 1px solid rgba(0,0,0,0.05);
-                    flex-direction: column !important; /* Stack buttons above text */
-                    gap: 0.25rem !important;
+                    border-top: 1px solid rgba(44, 81, 67, 0.1);
+                    flex-direction: column !important;
+                    gap: 0.35rem !important;
+                    box-sizing: border-box;
                 }
 
                 .audible-buttons-wrapper {
                     width: 100% !important;
+                    gap: 0.35rem !important;
                 }
 
                 .audible-buttons-wrapper > a {
                     width: 100% !important;
-                    padding: 0.85rem 1.5rem !important;
-                    font-size: 0.95rem !important;
+                    padding: 0.68rem 1.25rem !important;
+                    font-size: 0.92rem !important;
                     justify-content: center !important;
+                    box-sizing: border-box;
                 }
 
                 .audible-buttons-wrapper > a img {
-                    height: 18px !important;
+                    height: 16px !important;
                     width: auto !important;
                     object-fit: contain;
                 }
-                
-                .audible-cta-container p {
-                    font-size: 0.65rem !important;
-                    margin-top: 0 !important;
-                    opacity: 0.8;
+
+                /* Hide secondary multi-part GraphicAudio buttons in sticky bar (already in Soundcheck card) */
+                .graphic-audio-cta-btn {
+                    display: none !important;
                 }
 
-                .audible-promo-box {
-                    padding: 0.35rem 0.5rem !important;
-                    margin-top: 0.25rem !important;
+                .book-details-container {
+                    padding-bottom: 8.5rem !important; /* Compact clearance for sleek sticky dock */
                 }
-
-                .audible-promo-box .promo-title {
-                    font-size: 0.75rem !important;
-                }
-
-                .audible-promo-box .promo-sub {
-                    font-size: 0.62rem !important;
-                    margin-top: 0.1rem !important;
-                }
-                
-                /* Add padding to body or main container to prevent occlusion at bottom */
-                /* Since we can't easily reach body here, we'll add it to the component root container via .book-details-grid margin or similar if needed. 
-                   Actually, the root div has padding-bottom: 6rem (line 85), which might be enough. 
-                   Let's check line 85: padding: '0 2rem 6rem 2rem'. 
-                   If sticky header is ~150px, 6rem (96px) might be tight. Let's increase it to 10rem on mobile.
-                */
-            }
-            
-            @media (max-width: 850px) {
-               .book-details-container {
-                   padding-bottom: 14rem !important; /* Increased space for sticky footer */
-               }
             }
         `}</style>
 

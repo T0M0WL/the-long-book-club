@@ -22,9 +22,10 @@ export const AudiblePromoBanner: React.FC<AudiblePromoBannerProps> = ({
 }) => {
     const finalLink = affiliateLink || DEFAULT_AUDIBLE_AFFILIATE_LINK;
     const [isHovered, setIsHovered] = useState(false);
-    const [currencyInfo, setCurrencyInfo] = useState<{ amount: string; unit: string }>({
+    const [currencyInfo, setCurrencyInfo] = useState<{ amount: string; unit: string; shortUnit: string }>({
         amount: '99p',
-        unit: 'per month'
+        unit: 'per month',
+        shortUnit: '/mo'
     });
 
     // Detect user country/currency via timezone and locale
@@ -42,25 +43,25 @@ export const AudiblePromoBanner: React.FC<AudiblePromoBannerProps> = ({
                 lang.startsWith('en-GB')
             ) {
                 // UK
-                setCurrencyInfo({ amount: '99p', unit: 'per month' });
+                setCurrencyInfo({ amount: '99p', unit: 'per month', shortUnit: '/mo' });
             } else if (
                 tz.startsWith('America/') ||
                 tz.startsWith('US/') ||
                 lang === 'en-US'
             ) {
                 // US / Americas
-                setCurrencyInfo({ amount: '$0.99', unit: 'per month' });
+                setCurrencyInfo({ amount: '$0.99', unit: 'per month', shortUnit: '/mo' });
             } else if (tz.startsWith('Europe/')) {
                 // Eurozone (Europe excluding UK)
-                setCurrencyInfo({ amount: '€0.99', unit: 'per month' });
+                setCurrencyInfo({ amount: '€0.99', unit: 'per month', shortUnit: '/mo' });
             } else if (tz.startsWith('Canada/') || tz.startsWith('Australia/')) {
-                setCurrencyInfo({ amount: '$0.99', unit: 'per month' });
+                setCurrencyInfo({ amount: '$0.99', unit: 'per month', shortUnit: '/mo' });
             } else {
-                setCurrencyInfo({ amount: '99p / $0.99', unit: 'per month' });
+                setCurrencyInfo({ amount: '99p / $0.99', unit: 'per month', shortUnit: '/mo' });
             }
         } catch {
             // Default fallback
-            setCurrencyInfo({ amount: '99p', unit: 'per month' });
+            setCurrencyInfo({ amount: '99p', unit: 'per month', shortUnit: '/mo' });
         }
     }, []);
 
@@ -75,79 +76,144 @@ export const AudiblePromoBanner: React.FC<AudiblePromoBannerProps> = ({
     if (!finalLink) return null;
 
     return (
-        <a
-            href={finalLink}
-            target="_blank"
-            rel="noopener noreferrer nofollow"
-            style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                textAlign: 'center',
-                backgroundColor: isHovered ? '#244438' : '#2c5143',
-                borderRadius: '1.25rem',
-                padding: '1.25rem 1.15rem 1.15rem 1.15rem',
-                textDecoration: 'none',
-                marginTop: 0,
-                width: '100%',
-                boxSizing: 'border-box',
-                transition: 'background-color 0.2s ease',
-                cursor: 'pointer'
-            }}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-        >
-            {/* Audible Radiating Arches Logo Icon (35px) */}
-            <FaAudible
-                size={35}
-                color="#ffffff"
-                style={{
-                    display: 'block',
-                    marginBottom: '0.55rem'
-                }}
-            />
+        <>
+            <style>{`
+                .audible-promo-banner-mobile {
+                    display: none;
+                }
+                @media (max-width: 850px) {
+                    .audible-promo-banner-desktop {
+                        display: none !important;
+                    }
+                    .audible-promo-banner-mobile {
+                        display: flex !important;
+                    }
+                }
+            `}</style>
 
-            {/* Line 1: Audible Special offer (Uniform font size with Line 2, turns white on hover) */}
-            <span
+            {/* Desktop Version: Original Editorial Card */}
+            <a
+                href={finalLink}
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                className="audible-promo-banner-desktop"
                 style={{
-                    fontFamily: 'var(--font-body)',
-                    fontSize: '1.06rem',
-                    fontWeight: 700,
-                    color: isHovered ? '#ffffff' : 'var(--color-brand-coral)',
-                    lineHeight: 1.2,
-                    marginBottom: '0.15rem',
-                    transition: 'color 0.2s ease'
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    textAlign: 'center',
+                    backgroundColor: isHovered ? '#244438' : '#2c5143',
+                    borderRadius: '1.25rem',
+                    padding: '1.25rem 1.15rem 1.15rem 1.15rem',
+                    textDecoration: 'none',
+                    marginTop: 0,
+                    width: '100%',
+                    boxSizing: 'border-box',
+                    transition: 'background-color 0.2s ease',
+                    cursor: 'pointer'
+                }}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+            >
+                <FaAudible
+                    size={35}
+                    color="#ffffff"
+                    style={{
+                        display: 'block',
+                        marginBottom: '0.55rem'
+                    }}
+                />
+
+                <span
+                    style={{
+                        fontFamily: 'var(--font-body)',
+                        fontSize: '1.06rem',
+                        fontWeight: 700,
+                        color: isHovered ? '#ffffff' : 'var(--color-brand-coral)',
+                        lineHeight: 1.2,
+                        marginBottom: '0.15rem',
+                        transition: 'color 0.2s ease'
+                    }}
+                >
+                    Audible Special offer
+                </span>
+
+                <span
+                    style={{
+                        fontFamily: 'var(--font-body)',
+                        fontSize: '1.06rem',
+                        fontWeight: 700,
+                        color: isHovered ? '#ffffff' : 'var(--color-brand-coral)',
+                        lineHeight: 1.2,
+                        marginBottom: '0.45rem',
+                        transition: 'color 0.2s ease'
+                    }}
+                >
+                    3 Months for {currencyInfo.amount} {currencyInfo.unit}
+                </span>
+
+                <span
+                    style={{
+                        fontFamily: 'var(--font-body)',
+                        fontSize: '0.72rem',
+                        color: 'rgba(255, 255, 255, 0.75)',
+                        lineHeight: 1.35
+                    }}
+                >
+                    Limited-time subscription deal. Free trial also available
+                </span>
+            </a>
+
+            {/* Mobile Version: Sleek 1-Line Micro-Ribbon in Cloud on Forrest Green */}
+            <a
+                href={finalLink}
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                className="audible-promo-banner-mobile"
+                style={{
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '0.45rem',
+                    backgroundColor: 'var(--color-brand-forrest)',
+                    color: 'var(--color-brand-cloud)',
+                    borderRadius: '2rem',
+                    padding: '0.45rem 0.85rem',
+                    textDecoration: 'none',
+                    width: '100%',
+                    boxSizing: 'border-box',
+                    whiteSpace: 'nowrap',
+                    overflow: 'hidden'
                 }}
             >
-                Audible Special offer
-            </span>
-
-            {/* Line 2: 3 Months for 99p per month (Uniform font size with Line 1, turns white on hover) */}
-            <span
-                style={{
-                    fontFamily: 'var(--font-body)',
-                    fontSize: '1.06rem',
-                    fontWeight: 700,
-                    color: isHovered ? '#ffffff' : 'var(--color-brand-coral)',
-                    lineHeight: 1.2,
-                    marginBottom: '0.45rem',
-                    transition: 'color 0.2s ease'
-                }}
-            >
-                3 Months for {currencyInfo.amount} {currencyInfo.unit}
-            </span>
-
-            {/* Line 3: Limited-time subscription deal */}
-            <span
-                style={{
-                    fontFamily: 'var(--font-body)',
-                    fontSize: '0.72rem',
-                    color: 'rgba(255, 255, 255, 0.75)',
-                    lineHeight: 1.35
-                }}
-            >
-                Limited-time subscription deal. Free trial also available
-            </span>
-        </a>
+                <FaAudible
+                    size={15}
+                    color="var(--color-brand-cloud)"
+                    style={{ flexShrink: 0 }}
+                />
+                <span
+                    style={{
+                        fontFamily: 'var(--font-body)',
+                        fontSize: '0.75rem',
+                        fontWeight: 700,
+                        color: 'var(--color-brand-cloud)',
+                        lineHeight: 1
+                    }}
+                >
+                    Special Offer: 3 Months for {currencyInfo.amount}{currencyInfo.shortUnit}
+                </span>
+                <span
+                    style={{
+                        fontFamily: 'var(--font-body)',
+                        fontSize: '0.7rem',
+                        fontWeight: 500,
+                        color: 'var(--color-brand-cloud)',
+                        opacity: 0.9,
+                        lineHeight: 1
+                    }}
+                >
+                    • Free Trial →
+                </span>
+            </a>
+        </>
     );
 };
