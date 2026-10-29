@@ -2431,6 +2431,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://thelongbookclub.com/book/moonflower-murders-anthony-horowitz/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/marble-hall-murders-anthony-horowitz/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thelongbookclub.com/genre/classics/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -3311,6 +3321,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://thelongbookclub.com/genre/whodunnit/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thelongbookclub.com/author/victor-hugo/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -3686,6 +3701,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://thelongbookclub.com/author/anthony-horowitz/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thelongbookclub.com/narrator/bill-homewood/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -4042,6 +4062,16 @@
   </url>
   <url>
     <loc>https://thelongbookclub.com/narrator/jack-voraces/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/narrator/lesley-manville/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/narrator/allan-corduner/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

@@ -264,5 +264,15 @@ export const genreData: GenreMeta[] = [
         "genre": "Village Mystery",
         "metaTitle": "Best Long Village Mystery Audiobooks | The Long Book Club",
         "intro": "Deceptively quiet English hamlets, locked-room puzzles, and country house murders. Discover the finest long-form village mystery audiobooks brought to life by master narrators."
+    },
+    {
+        "genre": "Mystery",
+        "metaTitle": "Best Long Mystery Audiobooks (10+ Hours) | The Long Book Club",
+        "intro": "Unravel complex webs of deceit, brilliant deduction, and gripping investigations. The definitive collection of 10+ hour mystery audiobooks that maximize your credit."
+    },
+    {
+        "genre": "Whodunnit",
+        "metaTitle": "Best Long Whodunnit Audiobooks & Puzzle Mysteries | TLBC",
+        "intro": "Coded manuscripts, country house murders, and ingenious sleuths. Explore the finest long-form whodunnits packed with fair-play clues and shocking reveals."
     }
 ];

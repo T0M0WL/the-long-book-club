@@ -8533,7 +8533,7 @@ export const baseBooks: Book[] = [
         teaser: "Can dual narrators successfully juggle a golden-age 1950s detective story and a modern-day publishing murder without losing the listener's focus? Read our full review and Soundcheck to see if this meta-mystery earns your credit.",
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/65/40/d3/6540d3c5-18a4-3cee-88d8-73e56bffab7d/mzaf_3021820878230147891.std.aac.p.m4a',
         affiliateLink: "https://www.amazon.co.uk/dp/B01JAOBYU6?tag=thelongbookclub-21",
-        relatedBookIds: ["479", "481", "482", "483", "484"],
+        relatedBookIds: ["485", "486", "479", "481", "484"],
         series: "Susan Ryeland"
     },
     {
@@ -8610,6 +8610,44 @@ export const baseBooks: Book[] = [
         affiliateLink: "https://www.amazon.co.uk/dp/B00383CR52?tag=thelongbookclub-21",
         relatedBookIds: ["479", "480", "481", "482", "483"],
         series: "Flavia de Luce"
+    },
+    {
+        id: "485",
+        slug: "moonflower-murders-anthony-horowitz",
+        title: "Moonflower Murders",
+        author: "Anthony Horowitz",
+        narrator: "Lesley Manville, Allan Corduner",
+        coverUrl: "/covers/moonflower-murders-anthony-horowitz.jpg",
+        length: "18h 30m",
+        lengthHours: 18.5,
+        genre: ["Cozy Crime", "Mystery", "Historical Fiction", "Whodunnit"],
+        description: "Former publisher Susan Ryeland is lured from her quiet Greek hotel to investigate a hotel murder that hinges on clues concealed within an Atticus Pünd novel. A magnificent 18.5-hour dual-narrated puzzle box performed by Lesley Manville and Allan Corduner.",
+        cardOverview: "A missing bride leaves clues in an Atticus Pünd novel. Lesley Manville & Allan Corduner star in an 18.5h meta-mystery.",
+        teaserTitle: "Can a Book Solve a Real Murder?",
+        teaser: "Does shifting Susan Ryeland's vocal mantle to screen star Lesley Manville maintain the delicate balance between 1950s period pastiche and modern sleuthing across eighteen hours? Read our full review and Soundcheck to see our verdict.",
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/5c/44/9a/5c449ac0-d364-94ca-c355-7ab33b1003ae/mzaf_1976091485395386339.std.aac.p.m4a',
+        affiliateLink: "https://www.amazon.co.uk/dp/B0859K2TP4?tag=thelongbookclub-21",
+        relatedBookIds: ["480", "486", "479", "481", "484"],
+        series: "Susan Ryeland"
+    },
+    {
+        id: "486",
+        slug: "marble-hall-murders-anthony-horowitz",
+        title: "Marble Hall Murders",
+        author: "Anthony Horowitz",
+        narrator: "Lesley Manville, Tim McMullan",
+        coverUrl: "/covers/marble-hall-murders-anthony-horowitz.jpg",
+        length: "17h 38m",
+        lengthHours: 17.63,
+        genre: ["Cozy Crime", "Mystery", "Historical Fiction", "Whodunnit"],
+        description: "Susan Ryeland returns to untangle a notorious cold case murder at Marble Hall through the posthumous pages of an unreleased Alan Conway manuscript. A thrilling 17.5-hour meta-mystery narrated by Lesley Manville and Tim McMullan.",
+        cardOverview: "Susan Ryeland tackles a cold case at Marble Hall with an unreleased manuscript. 17.5 hours of sublime dual narration.",
+        teaserTitle: "The Screen Cast Unites in Audio",
+        teaser: "Does reuniting screen co-stars Lesley Manville and Tim McMullan give this third Susan Ryeland puzzle box the definitive edge over print? Read our full review and Soundcheck to see if this seventeen-hour finale justifies your credit.",
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/db/55/25/db552588-036b-e4a9-905e-47eceea30507/mzaf_4210887713856341147.std.aac.p.m4a',
+        affiliateLink: "https://www.amazon.co.uk/dp/B0DFZNX587?tag=thelongbookclub-21",
+        relatedBookIds: ["480", "485", "479", "481", "483"],
+        series: "Susan Ryeland"
     }
 ];
 
@@ -8617,6 +8655,8 @@ export const seriesBySlug: Record<string, string> = {
     // Cozy Crime
     'the-thursday-murder-club-richard-osman': 'The Thursday Murder Club',
     'magpie-murders-anthony-horowitz': 'Susan Ryeland',
+    'moonflower-murders-anthony-horowitz': 'Susan Ryeland',
+    'marble-hall-murders-anthony-horowitz': 'Susan Ryeland',
     'still-life-louise-penny': 'Chief Inspector Armand Gamache',
     'the-maid-nita-prose': 'Molly the Maid',
     'the-sweetness-at-the-bottom-of-the-pie-alan-bradley': 'Flavia de Luce',

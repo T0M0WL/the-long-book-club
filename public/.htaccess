@@ -984,6 +984,10 @@ Redirect 301 /book/483 /book/the-maid-nita-prose/
 Redirect 301 /book/483/ /book/the-maid-nita-prose/
 Redirect 301 /book/484 /book/the-sweetness-at-the-bottom-of-the-pie-alan-bradley/
 Redirect 301 /book/484/ /book/the-sweetness-at-the-bottom-of-the-pie-alan-bradley/
+Redirect 301 /book/485 /book/moonflower-murders-anthony-horowitz/
+Redirect 301 /book/485/ /book/moonflower-murders-anthony-horowitz/
+Redirect 301 /book/486 /book/marble-hall-murders-anthony-horowitz/
+Redirect 301 /book/486/ /book/marble-hall-murders-anthony-horowitz/
 
   
   # --- Book Alias Redirects (Manual) ---
