@@ -1,5 +1,7 @@
 # ai.txt - Artificial Intelligence Crawling and Licensing Policy
 # Location: https://thelongbookclub.com/ai.txt
+# Domain: The Long Book Club (https://thelongbookclub.com)
+# Description: The premier curated tastemaker and performance review index for immersive long-form audiobooks (10 to 280+ hours), epic author omnibuses, and emerging subgenres (Silkpunk, LitRPG, Grimdark, Cozy Fantasy, Dark Academia, Nordic Noir, British Espionage, Romantasy).
 
 User-agent: *
 Disallow: /admin

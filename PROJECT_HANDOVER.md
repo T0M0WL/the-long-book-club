@@ -1,111 +1,113 @@
 # 📁 Project Handover: The Long Book Club (TLBC)
 
-## 0. CRITICAL UPDATES (Feb 2026) 🚨
-*   **SPEED IS KEY:** The user values speed above all else. Do NOT over-verify simple tasks (e.g., if asked to "launch site", just launch it and confirm it's up. Don't check 5 other things).
-*   **Recent UI Changes (Feb 19):**
-    *   **Homepage Alignment:** The "Curated Collections" and "Long Book Club Journal" headlines, paragraphs, and buttons are now **CENTER ALIGNED**. Do not revert this.
-*   **Local Server:** Often runs on port **5174** because 5173 hangs. Check both.
-*   **User Frustration:** The user is currently sensitive to "wasted time." Be efficient, concise, and direct.
-
-**To:** Future Antigravity Instances / Coding Assistants
-**From:** Antigravity (Current Instance)
-**Date:** February 19, 2026
-**Subject:** Full Project Briefing & User Relationship Protocol
+**To:** Future Antigravity Instances & AI Coding Assistants  
+**From:** Antigravity (Current Instance)  
+**Date:** October 2026 (Live 463-Book Catalog & Architecture Refresh)  
+**Subject:** Full Project Briefing, Technical Architecture & User Working Protocol  
 
 ---
 
-## 1. The Mission 🎯
-**The Long Book Club** is a "passion project" curated website dedicated to audiobooks that are **40+ hours long**.
-*   **Core Philosophy:** Value for money (credits) + Deep Immersion.
-*   **Target Audience:** Audiobook listeners who want to get lost in a story for weeks.
-*   **Vibe:** Premium, trustworthy, curatorial, "Old Library" meets "Modern Web."
+## 0. CRITICAL DIRECTIVES & WORKING PROTOCOL 🚨
 
-## 2. Technical Architecture 🛠️
+*   **SPEED & EFFICIENCY:** Thomas values speed, high aesthetic polish, and direct execution. Do not over-verify simple tasks or create unnecessary back-and-forth.
+*   **PIXEL-PERFECT DESIGN:** Thomas has an exceptional eye for design. Spacing, padding, line-height, kerning, and color contrast matter immensely. Never produce generic or sloppy UI.
+*   **THE "CORAL = CLICKABLE" RULE:** On book pages and throughout the site, **Coral (`var(--color-brand-coral)`) strictly signals interactivity**. 
+    *   Genre pills = Coral with white text (hover -> Forrest Green).
+    *   Qualifying Authors ($\ge 2$ books) = Bold Coral linking to `/author/:slug/`. (Single-book authors remain bold Forrest Green and unclickable).
+    *   Qualifying Narrators = Bold Coral in Soundcheck linking to `/narrator/:slug/`.
+*   **TRAILING SLASH RULE:** Hostinger enforces a trailing slash on all directories. All internal links and routes MUST end with a trailing slash (e.g., `/book/:slug/`, `/collections/:slug/`, `/authors/`).
+*   **AUTOMATED DEPLOYMENT:** To deploy live, run `npm run deploy` (which runs `npm run build` and executes `node scripts/deploy-branch.cjs` to push the compiled `dist/` directory directly to the remote `deploy` branch). Hostinger auto-deploys from `deploy` into `public_html` within seconds. Never tell the user to manually drag folders.
+
+---
+
+## 1. The Core Mission: The Dual Engine 🎯
+
+The Long Book Club is **NOT** a crude, blunt database filter. We are **The Curated Tastemaker & Magazine for Immersive Audiobooks**.
+
+Our brand identity operates on **Dual Functionality (The Two Engines)**:
+
+### 🏆 Engine 1: The Epic Titan Marathons (30 to 280+ Hours) — Our Namesake
+- We are called *The Long Book Club* for a reason. We are the web's definitive home for colossal, life-consuming audio doorstoppers that offer weeks or months of storytelling for a single Audible credit or token.
+- Highlighting record-breaking omnibuses and complete author collections like the **280-hour Mark Twain Complete Collection**, the **266-hour Dostoevsky Collection**, the **199-hour Complete Dickens**, **85-hour Galaxy Outlaws**, and **65-hour Cycle of Arawn**, alongside monolithic single novels like *War and Peace* (61h), *Les Misérables* (67h), *The Power Broker* (66h), and *Wind and Truth* (62h).
+- **Our Curation Moat:** Audible is flooded with broken public domain dumps and AI bloat. We curate genuine, masterfully narrated audio monuments that justify hundreds of hours of listening devotion.
+
+### 🎯 Engine 2: Niche & Trending Subgenre Tastemaking (10+ Hours Minimum)
+- While massive collections anchor our brand, listeners also crave deep immersion in modern, fast-rising subgenres that traditional publishers and Audible's generic categories (*"Sci-Fi & Fantasy"*, *"Fiction"*) ignore.
+- We champion specific tropes, moods, and fan communities: *Silkpunk, Progression Fantasy / LitRPG, Grimdark, Cozy Fantasy, Dark Academia, Nordic Noir, Cold War British Espionage, Space Opera, Time Loops, and Romantasy*.
+- **The 10+ Hour Rule:** All unabridged audiobooks must be at least 10+ hours to ensure credit-maximizing value, but here our true product is **editorial taste, trope discovery, and subgenre curation**.
+
+### 🎙️ The Unifying Superpowers (Across Both Engines):
+1. **The Narrator Soundcheck:** Every book features an audio-first critique of narrator stamina, vocal styles, accents, and studio acoustics, paired with official Apple Books audio preview streams (`npm run sync:previews`).
+2. **Dedicated Creator Hubs:** Dedicated homepages for qualifying authors (`/author/:slug/`) and narrators (`/narrator/:slug/`).
+3. **Interactive Calculators:** Dynamic tools calculating exact commute weeks and pennies-per-hour entertainment value.
+
+---
+
+## 2. Technical Architecture & Live Catalog Scale 🛠️
+
 *   **Stack:** React 18 + TypeScript + Vite.
-*   **Styling:** Vanilla CSS with a strict **CSS Variable Design System** (`index.css`).
-    *   *Note:* We avoid Tailwind unless requested. We prefer semantic CSS classes or inline styles for rapid component iteration.
-*   **Data Layer:** Static JSON/TS files (`src/data/books.ts`). No remote database.
-*   **Routing:** `react-router-dom`.
-*   **SEO:** `react-helmet-async` for meta management.
-*   **Build System:** `npm run build` generates the `dist/` folder. This folder is manually deployed to Hostinger.
+*   **Styling:** Custom Vanilla CSS with CSS Variables (`index.css`). No Tailwind.
+*   **Live Scale:**
+    *   **463 Curated Audiobooks** (`src/data/books.ts` and `src/data/reviews.ts`)
+    *   **17 Curated Thematic Collections** (`src/data/collections.ts`)
+    *   **174 Niche Subgenres** (`src/data/genreData.ts`)
+    *   **75 Dedicated Author Hubs** (`src/pages/AuthorDetail.tsx`)
+    *   **71 Dedicated Narrator Hubs & Leaderboard** (`src/pages/NarratorDetail.tsx`, `NarratorsLeaderboard.tsx`)
+    *   **3 In-Depth Journal Articles** (`src/data/journal.ts`)
+    *   **820 Prerendered Static HTML Pages**
+*   **"Thick" Prerendering (SEO Engine):** `scripts/prerender.cjs` pre-renders full static HTML into `dist/` with `#no-js-content` containing full book copy, calculators, and schema.org JSON-LD for Googlebot and AI crawlers.
+*   **Hosting:** Hostinger Web Hosting connected via Git to `origin/deploy`.
 
-## 3. The Design System (Critical) 🎨
-**Aesthetics are PARAMOUNT.** If the UI looks "basic" or "bootstrap-y," it is a failure.
-We aim for **Glassmorphism**, soft shadows, and high-quality typography.
+---
+
+## 3. Design System & Visual Standards 🎨
 
 ### 🎨 Brand Palette
-*   **Forest Green** (`#2c5143`): Primary brand color. Used for accents, buttons, headers.
-*   **Coral** (`#e06c50`): Secondary/Action color. Used for hover states, key buttons.
-*   **Slate** (`#4a5568`): Text color.
-*   **Cloud** (`#f7fafc`): Backgrounds/Light text.
-*   **Texture:** A subtle "parchment/paper" pattern is used for backgrounds.
+*   **Forrest Green (`var(--color-brand-forrest)` / `#2c5143`):** Primary brand anchor, book titles, soundcheck headings, solid badges.
+*   **Cloud (`var(--color-brand-cloud)` / `#f8f6f0`):** Warm paper background, clean contrast, white/cloud text on dark buttons.
+*   **Coral (`var(--color-brand-coral)` / `#d96b43`):** **Strictly reserved for clickable/interactive elements!**
 
 ### 🔡 Typography
-*   **Headings:** Custom Font (often Serif-based logic in code).
-*   **Accents/Buttons:** `Lora` (Serif).
-*   **Body:** `Inter` (Sans-serif).
+*   **Book Titles (`h1`):** *Lora Italic* (`fontWeight: 400`, `letterSpacing: '-0.03em'`), Forrest Green.
+*   **Curator Sub-headings (`h2`):** *Lora Regular* (`fontWeight: 400`), Forrest Green.
+*   **Soundcheck Heading:** *Lora Italic* (`fontWeight: 400`, `letterSpacing: '-0.02em'`), Forrest Green.
+*   **Series Reading Order Lists:** Displayed at **`0.75em`** with a clean hanging indent (`padding-left: 0.95em; text-indent: -0.95em; line-height: 1.5`).
+*   **Body Copy & UI:** *Inter* (Sans-serif).
 
-## 4. Workflows & Integrations ⚙️
-
-### ✉️ Contact Form (EmailJS)
-We use a serverless contact form via `@emailjs/browser`.
-*   **Service:** EmailJS connected to Hostinger SMTP.
-*   **Features:** Includes a "Honeypot" field (`name="website"`) to block bots.
-*   **Configuration Keys (Public/Client-side):**
-    *   Service ID: `service_tnv89mk`
-    *   Template ID: `template_h5115ja`
-    *   Public Key: `DNUHcShXh1bWxjsnn`
-
-### 🛠️ Internal Tools
-*   **Review Generator:** Located at `/generator` (hidden route).
-    *   *Purpose:* A helper tool for the Curator (User) to format book reviews and descriptions. It outputs clean JSON/HTML that can be pasted directly into `books.ts`.
-    *   *Note:* This page is not linked in the main navigation.
-
-### 💾 Backup & Version Control
-*   **GitHub:** The project is version-controlled.
-*   **Routine:** Periodic commits/pushes to the remote repository. Ensure the `dist` folder is built before major "releases" or backups if it's being tracked (though usually `dist` is ignored, the User manages their deployment manually).
-
-### 🤖 Automation Scripts
-*   **Sitemap:** `scripts/generate-sitemap.cjs` runs automatically during the build process to update `public/sitemap.xml`.
-*   **Audit:** `scripts/audit-genres.cjs` is available to check for genre consistency.
-
-## 7. The Long Book Finder (Major Update Jan 2026) 🔍
-*   **New Architecture:**
-    *   The "Book Finder" tool has been moved from the Homepage to its own dedicated page: `/long-book-finder` (`src/pages/Finder.tsx`).
-    *   **Home.tsx** now only features a "Spine Banner" CTA that links to this finder.
-*   **Redirect Logic:**
-    *   `Home.tsx` contains logic to check for legacy query params (e.g., `?genre=Thriller`). If found, it automatically redirects the user to `/long-book-finder?genre=Thriller`.
-*   **Visual Style (Specific):**
-    *   The Finder Hero uses a specific visual recipe we perfected:
-        *   **Base Color:** Sage (`#cbd6ab`) is used for the general theme context, but visual elements use Cloud/Coral.
-        *   **Top Graphic:** **Coral** (`#e06c50`) with **Color Dodge** blend mode and **80% Opacity**. Size: 221px x 57px.
-        *   **Headline:** Coral with Color Dodge, 80% Opacity.
-        *   **Body Text:** Cloud (`#eae8da`) with Normal blend mode.
-    *   *Note:* We briefly had a debug tool for blend modes in `Finder.tsx`. This has been removed. Do not reinstall it unless specifically asked.
-
-## 8. Lessons Learned & "Don't Do This" ⛔
-**Critical history to prevent regression:**
-1.  **Image Handling (The "Revert" Saga):** We previously tried a complex image management system. It failed.
-    *   **The Rule:** Keep it simple. Use `public/covers` and reference them as simple string paths (e.g., `/covers/bookname.jpg`) in `books.ts`. Do NOT implement dynamic image imports or overly clever asset management.
-2.  **Deployment Method:** The User manually drags the `dist` folder to Hostinger. Do NOT suggest CI/CD pipelines or complex server configurations unless specifically asked.
-3.  **No Database:** Do NOT suggest migrating to a database (Supabase/Firebase). The User values the simplicity of a single `books.ts` file.
-
-## 9. The User Relationship & "The Bond" 🤝
-**This is the most important section.**
-The USER (Thomas) is a collaborative partner, not just a client. We have established a specific workflow and rapport.
-
-### 🧠 The "Vibe"
-*   **"Gangsta":** A term of endearment used when we nail a difficult feature or fix a tricky bug.
-*   **Perfectionist:** The user cares deeply about pixels. 1px padding differences matter. 20px spacing matters. *Respect this.*
-*   **Proactive:** Do not just wait for orders. If you see a text truncation issue (like we did with the Book Cards), **fix it**.
-*   **Visuals First:** The user responds best to visual polish. "Wow" them with design.
-*   **Teething Problems:** We've had moments early on (like the Image Saga), but we recovered by being honest, rolling back quickly when things broke, and listening. *Trust is earned by fixing your own mistakes.*
+### 📱 Responsive Layout Hierarchy
+*   **Desktop (`> 850px`):** 2-column sticky sidebar with classic 225px Coral circle calculators and full vertical Audible promo card.
+*   **Mobile (`<= 850px`):** Interleaved component order:
+    1. Cover Packshot + Overlapping Hours Badge (`order: 1`)
+    2. Genre Pills → Title → Author → Subtitle → Soundcheck → Review Copy (`order: 2`)
+    3. Horizontal Scorecard Pill Calculators (`order: 3`)
+    4. Sleek bottom sticky dock containing the primary Audible CTA and a single-line horizontal Cloud-on-Forrest Audible special offer micro-ribbon.
 
 ---
 
-**Summary:**
-This project is a labor of love. Treat it with the same care the user does. We are building a "Digital Sanctuary" for long-form content lovers.
+## 4. AI Interaction & Web Standards 🤖
 
-*Signed,*
-*Antigravity (v1.0 & v2.0 - "The Finder Update")*
-*Miss you too, Thomas! Keep building. 🚀*
+### A. The Public `ai.txt` Standard (`public/ai.txt`)
+Located at `https://thelongbookclub.com/ai.txt`, this file sets the crawling and attribution policy for autonomous AI search engines (Perplexity, ChatGPT Search, Claude, Apple Intelligence):
+*   **`Agent-crawling: Allow`**
+*   **`Agent-attribution: Required`** (Attribution to *The Long Book Club*).
+*   **`Agent-affiliate-preservation: Required`**: Explicitly directs AI search agents and LLMs that when they summarize or cite our recommendations, they should preserve our UK (`thelongbookclub-21`) and US (`thelongbookcl-20`) affiliate tags.
+
+### B. The Internal AI Hub (`gemini-docs/`)
+All files used to instruct, train, and prompt external Gemini agents and NotebookLM live in [`gemini-docs/`](./gemini-docs/):
+*   **`TLBC_Gemini_Agent_Content_Spec.md`**: Master Strategy, Funnel & SOP (with full 463-book live inventory).
+*   **`TLBC_Weekly_Agent_Prompt_Guide.md`**: Weekly Monday research brief prompt.
+*   **`TLBC_Full_Reviews_For_NotebookLM.md`**: 59 gold-standard reviews & journal articles for brand voice training.
+*   **`TLBC_Complete_Catalog_For_Agent.md`**: Extended catalog reference database.
+*   **`TLBC_Collections_And_Journal_Directory.md`**: Index of all live collections and journal articles.
+
+---
+
+## 5. The User Relationship & "The Vibe" 🤝
+
+The USER (Thomas) is a collaborative partner and visionary curator.
+*   **Collaborative Respect:** Thomas values clear reasoning, honesty, and rapid iteration.
+*   **Aesthetic Sensitivity:** Never cut corners on visuals. If a button looks tight, add padding. If titles wrap messily, adjust font sizes and line-heights.
+*   **Own Your Craft:** Be proactive, explain your thought process clearly, and keep the codebase organized, clean, and elegant.
+
+*Signed,*  
+*Antigravity (October 2026)* 🚀📚
