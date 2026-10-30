@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { FaTimes } from 'react-icons/fa';
 import { books } from '../data/books';
@@ -41,6 +41,17 @@ export const Narrators: React.FC = () => {
     const selectedStyle = searchParams.get('style') || 'All';
     const selectedGenre = searchParams.get('genre') || 'All';
     const sortBy = (searchParams.get('sort') as NarratorSortOption) || 'default';
+
+    // When navigating directly to a pre-selected vocal style or genre from the directory menu,
+    // scroll smoothly to the filter bar so the user immediately sees the active filter & results.
+    useEffect(() => {
+        if ((selectedStyle !== 'All' || selectedGenre !== 'All') && window.scrollY < 120) {
+            const timer = setTimeout(() => {
+                document.getElementById('scroll-target')?.scrollIntoView({ behavior: 'smooth' });
+            }, 80);
+            return () => clearTimeout(timer);
+        }
+    }, [selectedStyle, selectedGenre]);
 
     const updateParams = (key: string, value: string) => {
         setSearchParams(prev => {

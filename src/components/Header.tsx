@@ -8,7 +8,7 @@ import { collections } from '../data/collections';
 import { books } from '../data/books';
 
 export const Header = () => {
-    const { pathname } = useLocation();
+    const { pathname, search } = useLocation();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { theme } = useHeaderContext();
 
@@ -45,11 +45,11 @@ export const Header = () => {
         };
     }, []);
 
-    // Close menu on route change
+    // Close menu on route or query param change
     useEffect(() => {
         if (isMenuOpen) setIsMenuOpen(false);
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [pathname]);
+    }, [pathname, search]);
 
     // Prevent scrolling when menu is open
     useEffect(() => {
@@ -192,37 +192,44 @@ export const Header = () => {
             </header>
 
             {/* Full Screen Overlay - Page Turn Effect */}
-            <div style={{
-                position: 'fixed',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                backgroundColor: 'color-mix(in srgb, var(--color-brand-slate), black 20%)',
-                color: 'var(--color-brand-coral-light)',
-                zIndex: 100000,
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-                transformOrigin: 'right center',
-                transform: isMenuOpen ? 'perspective(2000px) rotateY(0deg)' : 'perspective(2000px) rotateY(90deg)',
-                opacity: isMenuOpen ? 1 : 0,
-                visibility: isMenuOpen ? 'visible' : 'hidden',
-                transition: 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease, visibility 0.6s',
-                boxShadow: isMenuOpen ? 'inset -20px 0 50px rgba(0,0,0,0.3)' : 'none',
-            }}>
+            <div
+                className="menu-takeover-overlay"
+                style={{
+                    position: 'fixed',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100dvh',
+                    overflowY: 'auto',
+                    overflowX: 'hidden',
+                    colorScheme: 'dark',
+                    backgroundColor: 'color-mix(in oklab, var(--color-brand-slate), black 20%)',
+                    color: 'var(--color-brand-coral-light)',
+                    zIndex: 100000,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: ' safe center',
+                    alignItems: 'center',
+                    transformOrigin: 'right center',
+                    transform: isMenuOpen ? 'perspective(2000px) rotateY(0deg)' : 'perspective(2000px) rotateY(90deg)',
+                    opacity: isMenuOpen ? 1 : 0,
+                    visibility: isMenuOpen ? 'visible' : 'hidden',
+                    transition: 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease, visibility 0.6s',
+                    boxShadow: isMenuOpen ? 'inset -20px 0 50px rgba(0,0,0,0.3)' : 'none',
+                }}
+            >
                 <button
                     onClick={() => setIsMenuOpen(false)}
                     style={{
-                        position: 'absolute',
-                        top: '2rem',
+                        position: 'fixed',
+                        top: 'clamp(1.25rem, 3dvh, 2rem)',
                         right: 'clamp(1.5rem, 5vw, 3rem)',
                         background: 'none',
                         border: 'none',
                         color: 'var(--color-brand-coral)', // Updated to Coral
                         cursor: 'pointer',
                         padding: '0.5rem',
+                        zIndex: 10,
                         touchAction: 'manipulation',
                         WebkitTapHighlightColor: 'transparent'
                     }}
@@ -241,10 +248,8 @@ export const Header = () => {
                     style={{
                         width: '100%',
                         maxWidth: '1240px',
-                        margin: '0 auto',
-                        padding: 'clamp(3rem, 5vw, 4.25rem) clamp(1.5rem, 5vw, 3.5rem) clamp(2rem, 3.5vw, 3rem) clamp(1.5rem, 5vw, 3.5rem)',
-                        maxHeight: '94vh',
-                        overflowY: 'auto',
+                        margin: 'auto',
+                        padding: 'clamp(1.75rem, 4dvh, 4rem) clamp(1.5rem, 5vw, 3.5rem) clamp(1.5rem, 3dvh, 2.75rem) clamp(1.5rem, 5vw, 3.5rem)',
                         display: 'flex',
                         flexDirection: 'column',
                         justifyContent: 'space-between',
@@ -259,7 +264,7 @@ export const Header = () => {
                             flexDirection: 'column',
                             alignItems: 'center',
                             textAlign: 'center',
-                            marginBottom: 'clamp(2rem, 3.5vw, 2.75rem)'
+                            marginBottom: 'clamp(1.25rem, 3dvh, 2.5rem)'
                         }}
                     >
                         <Link
@@ -268,7 +273,7 @@ export const Header = () => {
                             style={{
                                 display: 'inline-block',
                                 textDecoration: 'none',
-                                marginBottom: 'clamp(1.5rem, 4.5vw, 4.5rem)', // Doubled space under logo on desktop
+                                marginBottom: 'clamp(1.25rem, 3.8dvh, 3.75rem)',
                                 transition: 'transform 0.25s ease'
                             }}
                             className="menu-logo-link"
@@ -584,9 +589,12 @@ export const Header = () => {
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                                 {[
                                     { label: '100+ HOUR HALL OF FAME LEADERBOARD', path: '/narrators/leaderboard/' },
-                                    { label: 'BROWSE BY VOCAL STYLE BADGES', path: '/narrators/' },
-                                    { label: 'GRAVELLY & AUTHORITATIVE NARRATORS', path: '/narrator-styles/gravelly-authoritative/' },
-                                    { label: 'THEATRICAL & DYNAMIC PERFORMERS', path: '/narrator-styles/theatrical-dynamic/' }
+                                    { label: 'CHARACTER CHAMELEON PERFORMERS', path: '/narrators/?style=character-chameleon' },
+                                    { label: 'HISTORICAL GRAVITAS & AUTHORITY', path: '/narrators/?style=historical-gravitas' },
+                                    { label: 'FIRESIDE WARMTH STORYTELLERS', path: '/narrators/?style=fireside-warmth' },
+                                    { label: 'PROPULSIVE MOMENTUM PACING', path: '/narrators/?style=propulsive-momentum' },
+                                    { label: 'DIALECT & ACCENT IMMERSION', path: '/narrators/?style=dialect-immersion' },
+                                    { label: 'SATIRICAL BITE & DRY WIT', path: '/narrators/?style=satirical-bite' }
                                 ].map(item => (
                                     <Link
                                         key={item.label}
@@ -657,20 +665,23 @@ export const Header = () => {
                     </div>
 
                     {/* Bottom Understated Footer Strip - Left Links, Right Socials */}
-                    <div style={{
-                        marginTop: 'clamp(2rem, 3.5vw, 3.5rem)',
-                        paddingTop: '1.25rem',
-                        borderTop: '1px solid rgba(255, 107, 74, 0.25)',
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        alignItems: 'center',
-                        flexWrap: 'wrap',
-                        gap: '1rem',
-                        fontSize: '0.82rem',
-                        fontFamily: 'Inter, sans-serif',
-                        fontWeight: 400,
-                        color: 'var(--color-brand-coral)'
-                    }}>
+                    <div
+                        className="menu-footer-strip"
+                        style={{
+                            marginTop: 'clamp(1.5rem, 3.2dvh, 3.25rem)',
+                            paddingTop: '1.25rem',
+                            borderTop: '1px solid rgba(255, 107, 74, 0.25)',
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            flexWrap: 'wrap',
+                            gap: '1rem',
+                            fontSize: '0.82rem',
+                            fontFamily: 'Inter, sans-serif',
+                            fontWeight: 400,
+                            color: 'var(--color-brand-coral)'
+                        }}
+                    >
                         {/* Links */}
                         <div style={{
                             display: 'flex',
@@ -749,6 +760,25 @@ export const Header = () => {
                 </div>
 
                 <style>{`
+                    .menu-takeover-overlay {
+                        --scrollbar-thumb: rgba(217, 107, 67, 0.45);
+                        --scrollbar-track: #1f2926;
+                        scrollbar-width: thin;
+                        scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+                    }
+                    @supports not (scrollbar-color: auto) {
+                        .menu-takeover-overlay::-webkit-scrollbar {
+                            width: 8px;
+                            height: 8px;
+                        }
+                        .menu-takeover-overlay::-webkit-scrollbar-thumb {
+                            background: var(--scrollbar-thumb);
+                            border-radius: 4px;
+                        }
+                        .menu-takeover-overlay::-webkit-scrollbar-track {
+                            background: var(--scrollbar-track);
+                        }
+                    }
                     .menu-primary-link:hover {
                         color: var(--color-brand-cloud) !important;
                         transform: translateX(4px);
@@ -774,6 +804,27 @@ export const Header = () => {
                     }
                     .menu-logo-link:hover {
                         transform: scale(1.03);
+                    }
+                    @media (max-height: 880px) and (min-width: 881px) {
+                        .menu-overlay-container {
+                            padding-top: clamp(1rem, 2.2dvh, 2rem) !important;
+                            padding-bottom: clamp(1rem, 2dvh, 1.75rem) !important;
+                        }
+                        .menu-brand-block {
+                            margin-bottom: clamp(0.85rem, 1.8dvh, 1.5rem) !important;
+                        }
+                        .menu-logo-link {
+                            margin-bottom: clamp(0.85rem, 2dvh, 1.75rem) !important;
+                        }
+                        .menu-logo-img {
+                            width: clamp(145px, 18dvh, 185px) !important;
+                        }
+                        .menu-tagline {
+                            margin-bottom: clamp(0.85rem, 1.8dvh, 1.35rem) !important;
+                        }
+                        .menu-footer-strip {
+                            margin-top: clamp(1rem, 2dvh, 1.75rem) !important;
+                        }
                     }
                     @media (max-width: 880px) {
                         .menu-overlay-container {
