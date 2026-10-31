@@ -8,6 +8,7 @@ import { useSetHeaderTheme } from '../context/HeaderContext';
 import { SpineBanner } from '../components/SpineBanner';
 import { HallOfFameCarousel } from '../components/HallOfFameCarousel';
 import { LongBookLedger } from '../components/LongBookLedger';
+import { TwoWorldsFeature } from '../components/TwoWorldsFeature';
 
 export const Home = () => {
     useSetHeaderTheme({
@@ -80,6 +81,11 @@ export const Home = () => {
                 chevronColor="#dbd7bc"
                 chevronOpacity={1}
             />
+
+            <div id="scroll-target" style={{ scrollMarginTop: '2rem', height: 0 }} />
+
+            {/* Two Worlds Feature Section: Classic Pillars & Micro Genres */}
+            <TwoWorldsFeature />
 
             {/* Long Book Finder Tool - Standalone Section */}
             <div className="finder-feature-section" style={{
