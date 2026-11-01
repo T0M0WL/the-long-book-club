@@ -2,6 +2,8 @@ import { useMemo, useEffect } from 'react';
 import { useSearchParams, Link, useNavigate } from 'react-router-dom';
 import { Hero } from '../components/Hero';
 import { collections } from '../data/collections';
+import { books } from '../data/books';
+import { getNarratorStats } from '../utils/creatorUtils';
 import { CollectionCard } from '../components/CollectionCard';
 import { SEO } from '../components/SEO';
 import { useSetHeaderTheme } from '../context/HeaderContext';
@@ -40,6 +42,16 @@ export const Home = () => {
             .slice(0, 3);
     }, []);
 
+    // Dynamic Catalog Authority Statistics (100% automated from data)
+    const heroStats = useMemo(() => {
+        const epicsCount = `${Math.floor(books.length / 10) * 10}+ Vetted Epics`;
+        const collectionsCount = `${collections.length} Curated Collections`;
+        const narratorsCount = `${getNarratorStats(books).length}+ Narrators`;
+        const totalHours = Math.round(books.reduce((acc, b) => acc + (b.lengthHours || 0), 0));
+        const hoursCount = `${totalHours.toLocaleString()} Hours`;
+        return { epicsCount, collectionsCount, narratorsCount, hoursCount };
+    }, []);
+
     const websiteSchema = JSON.stringify({
         "@context": "https://schema.org",
         "@type": "WebSite",
@@ -58,11 +70,17 @@ export const Home = () => {
     return (
         <>
             <SEO
-                title="Curated Epic Audiobooks"
-                description="Discover the best long audiobooks to maximize your monthly credits. Curated selection of 40+ hour epics across all genres."
+                title="Curated Long Audiobooks"
+                description="Discover 470+ curated long audiobooks (10 to 280+ hours) across 18 collections and 74+ voice artists to maximize your monthly listening credits."
                 canonical="https://thelongbookclub.com/"
                 schema={websiteSchema}
             />
+
+            {/* Semantic H1 for Google & screen-readers (preserves the pristine, uncluttered visual masthead) */}
+            <h1 className="sr-only">
+                The Long Book Club — Curated Long Audiobooks for Deep Listening
+            </h1>
+
             <Hero
                 showCornerGraphics={false}
                 topGraphic="/assets/lbc-logo-stack-v2.svg"
@@ -81,7 +99,35 @@ export const Home = () => {
                 subtitleColor="#dbd7bc"
                 chevronColor="#dbd7bc"
                 chevronOpacity={1}
-            />
+            >
+                {/* Dynamic Catalog Authority Statistics Ticker */}
+                <div
+                    style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: 'clamp(0.4rem, 1vw, 0.75rem)',
+                        flexWrap: 'wrap',
+                        fontFamily: 'Inter, sans-serif',
+                        fontSize: 'clamp(0.68rem, 0.85vw, 0.76rem)',
+                        fontWeight: 700,
+                        letterSpacing: '0.1em',
+                        textTransform: 'uppercase',
+                        color: '#dbd7bc',
+                        opacity: 0.9,
+                        maxWidth: '900px',
+                        margin: 'clamp(2.5rem, 5vh, 3.75rem) auto clamp(2rem, 4.5vh, 3.5rem) auto'
+                    }}
+                >
+                    <span style={{ whiteSpace: 'nowrap' }}>{heroStats.epicsCount}</span>
+                    <span style={{ opacity: 0.35 }}>•</span>
+                    <span style={{ whiteSpace: 'nowrap' }}>{heroStats.collectionsCount}</span>
+                    <span style={{ opacity: 0.35 }}>•</span>
+                    <span style={{ whiteSpace: 'nowrap' }}>{heroStats.narratorsCount}</span>
+                    <span style={{ opacity: 0.35 }}>•</span>
+                    <span style={{ whiteSpace: 'nowrap' }}>{heroStats.hoursCount}</span>
+                </div>
+            </Hero>
 
             <div id="scroll-target" style={{ scrollMarginTop: '2rem', height: 0 }} />
 

@@ -110,6 +110,19 @@ body {
   overflow-x: clip; /* Prevent horizontal slip without forcing overflow-y to clip top tooltips */
 }
 
+/* Accessible screen reader utility for SEO and assistive technologies */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 button {
   cursor: pointer;
   transition: all 0.2s ease;

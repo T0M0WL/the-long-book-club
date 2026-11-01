@@ -35,6 +35,7 @@ interface HeroProps {
     titleLineHeight?: string | number;
     titleOpacity?: number;
     subtitleAs?: 'h2' | 'p';
+    children?: ReactNode;
 }
 
 export const Hero = ({
@@ -76,6 +77,7 @@ export const Hero = ({
     titleLineHeight,
     titleOpacity,
     subtitleAs = 'h2',
+    children,
     // Removed legacy logo props: compactLogo, showLogo
 }: HeroProps) => {
     const heroImageRef = useRef<HTMLImageElement>(null);
@@ -354,22 +356,24 @@ export const Hero = ({
                     )
                 )}
 
-                <h1 style={{
-                    fontSize: titleFontSize ?? 'clamp(6.2rem, 12vw, 9rem)', // Bigger Mobile (6.2rem), Smaller Desktop (9rem)
-                    fontFamily: 'var(--font-heading)',
-                    color: effectiveTitleColor,
-                    transition: 'color 0.5s ease',
-                    lineHeight: titleLineHeight ?? 0.85,
-                    margin: '0 auto 1rem auto',
-                    fontWeight: 400,
-                    letterSpacing: 'normal',
-                    mixBlendMode: titleBlendMode,
-                    opacity: titleOpacity ?? 0.88,
-                    position: childPosition, // Promote if needed
-                    zIndex: childZIndex
-                }}>
-                    {title}
-                </h1>
+                {Boolean(title) && (
+                    <h1 style={{
+                        fontSize: titleFontSize ?? 'clamp(6.2rem, 12vw, 9rem)', // Bigger Mobile (6.2rem), Smaller Desktop (9rem)
+                        fontFamily: 'var(--font-heading)',
+                        color: effectiveTitleColor,
+                        transition: 'color 0.5s ease',
+                        lineHeight: titleLineHeight ?? 0.85,
+                        margin: '0 auto 1rem auto',
+                        fontWeight: 400,
+                        letterSpacing: 'normal',
+                        mixBlendMode: titleBlendMode,
+                        opacity: titleOpacity ?? 0.88,
+                        position: childPosition, // Promote if needed
+                        zIndex: childZIndex
+                    }}>
+                        {title}
+                    </h1>
+                )}
 
                 {/* Separator Line */}
                 {showSeparator && (
@@ -423,12 +427,23 @@ export const Hero = ({
                     </p>
                 )}
 
+                {/* Additional Hero Children (e.g. Action Buttons & Catalog Ticker) */}
+                {children && (
+                    <div style={{
+                        width: '100%',
+                        position: childPosition,
+                        zIndex: childZIndex
+                    }}>
+                        {children}
+                    </div>
+                )}
+
                 <div
                     onClick={() => {
                         document.getElementById('scroll-target')?.scrollIntoView({ behavior: 'smooth' });
                     }}
                     style={{
-                        marginTop: '3rem',
+                        marginTop: '2rem',
                         cursor: 'pointer',
                         position: childPosition, // Promote if needed
                         zIndex: childZIndex
