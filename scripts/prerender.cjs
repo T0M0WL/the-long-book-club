@@ -974,6 +974,38 @@ async function prerender() {
         console.log(`✅ Prerendered ${cdCount} "Thick" collection detail pages.`);
     }
 
+    // --- 404 Page Prerendering ---
+    let notFoundHtml = template;
+    notFoundHtml = notFoundHtml.replace(/<title>.*?<\/title>/, `<title>Lost in the Library (404) | The Long Book Club</title>`);
+    notFoundHtml = notFoundHtml.replace(/<meta name="description" content="[^"]+" \/>/, `<meta name="description" content="You have stumbled into our secret, uncatalogued collection: epic audiobooks about getting lost and finding your way home." />`);
+    notFoundHtml = notFoundHtml.replace('</head>', '    <meta name="robots" content="noindex, follow" />\n  </head>');
+
+    const notFoundBody = `
+        <div id="no-js-content" style="max-width: 800px; margin: 0 auto; padding: 100px 20px; font-family: sans-serif; text-align: center;">
+            <p style="text-transform: uppercase; letter-spacing: 0.2em; font-weight: bold; color: #ff6b4a;">A Secret Archive • 404</p>
+            <h1>Lost in the Library</h1>
+            <p>You may have taken a wrong turn down an unmarked corridor of the stacks, but consider this a fortunate misdirection: you’ve slipped behind the hidden bookcase into the club’s private vault.</p>
+            <p>The page you sought has vanished into the shadows, but in its place, you’ve discovered our secret, unlisted collection of mammoth audiobooks dedicated to the art of getting hopelessly lost—and the monumental journeys taken to find your way home.</p>
+            <p><a href="/long-book-finder/">Search the Long Book Finder &rarr;</a> | <a href="/collections/">Explore Collections &rarr;</a></p>
+            <hr style="margin: 40px 0; border: none; border-top: 1px solid #ddd;" />
+            <h2>The Secret Shelf: Epics in Getting Lost & Finding Home</h2>
+            <ul style="text-align: left; line-height: 1.8;">
+                <li><a href="/book/odyssey-stephen-fry/"><strong>Odyssey</strong> by Stephen Fry</a> (10h 36m) &mdash; The archetypal ten-year voyage home across mythic seas.</li>
+                <li><a href="/book/project-hail-mary/"><strong>Project Hail Mary</strong> by Andy Weir</a> (16h 10m) &mdash; Stranded in deep space, solving impossible science to save Earth and return home.</li>
+                <li><a href="/book/the-terror-dan-simmons/"><strong>The Terror</strong> by Dan Simmons</a> (28h 28m) &mdash; A lost polar expedition's desperate battle against Arctic ice and an unseen stalker.</li>
+                <li><a href="/book/shantaram-gregory-david-roberts/"><strong>Shantaram</strong> by Gregory David Roberts</a> (43h 0m) &mdash; An exiled fugitive finding an unexpected spiritual home in Bombay's slums.</li>
+                <li><a href="/book/the-fellowship-of-the-ring-jrr-tolkien/"><strong>The Fellowship of the Ring</strong> by J.R.R. Tolkien</a> (19h 7m) &mdash; Stepping out from the Shire on a perilous quest, longing for the day to return.</li>
+                <li><a href="/book/outlander-diana-gabaldon/"><strong>Outlander</strong> by Diana Gabaldon</a> (32h 38m) &mdash; Trapped two centuries in the past, struggling to survive and return home.</li>
+            </ul>
+        </div>
+    `;
+    notFoundHtml = notFoundHtml.replace('<!-- SEO_CONTENT_HOLDER -->', notFoundBody);
+    fs.writeFileSync(path.join(DIST_DIR, '404.html'), notFoundHtml);
+    const notFoundDir = path.join(DIST_DIR, '404');
+    if (!fs.existsSync(notFoundDir)) fs.mkdirSync(notFoundDir, { recursive: true });
+    fs.writeFileSync(path.join(notFoundDir, 'index.html'), notFoundHtml);
+    console.log('✅ Prerendered 404.html and /404/ page.');
+
     // --- Legacy Redirect Map Generation (.htaccess) ---
     console.log('🔗 Generating Legacy Redirect Map for .htaccess...');
     let redirectRules = '\n# --- ID to Slug Legacy Redirects (Generated) ---\n';
@@ -1052,6 +1084,9 @@ async function prerender() {
   RewriteCond %{REQUEST_URI} ^/(assets|covers)/ [NC]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteRule ^ - [R=404,L]
+
+  # Custom Error Document
+  ErrorDocument 404 /404.html
 
   # Standard SPA Fallback
   DirectoryIndex index.html

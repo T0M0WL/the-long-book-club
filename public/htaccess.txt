@@ -1007,6 +1007,9 @@ Redirect 301 /book/486/ /book/marble-hall-murders-anthony-horowitz/
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteRule ^ - [R=404,L]
 
+  # Custom Error Document
+  ErrorDocument 404 /404.html
+
   # Standard SPA Fallback
   DirectoryIndex index.html
   Options -MultiViews

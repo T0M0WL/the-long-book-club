@@ -21,6 +21,7 @@ import { NarratorsLeaderboard } from './pages/NarratorsLeaderboard';
 import { NarratorStyleDetail } from './pages/NarratorStyleDetail';
 
 import { ThankYou } from './pages/ThankYou';
+import { NotFound } from './pages/NotFound';
 import { Footer } from './components/Footer';
 import { Links } from './pages/Links';
 
@@ -136,6 +137,10 @@ function App() {
                 
                 {/* Social Hub Links Page */}
                 <Route path="/links" element={<Links />} />
+
+                {/* 404 Lost in the Library Catch-All */}
+                <Route path="/404" element={<NotFound />} />
+                <Route path="*" element={<NotFound />} />
               </Routes>
             </MainLayout>
 
