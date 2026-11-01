@@ -958,7 +958,7 @@ export const CollectionDetail = () => {
                 }
                 
                 .page-container {
-                    padding: 0 1.5rem !important;
+                    padding: 0 1.5rem 6rem 1.5rem !important;
                 }
             }
             `}</style>
