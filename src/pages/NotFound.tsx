@@ -89,15 +89,17 @@ export const NotFound = () => {
 
                 {/* Main Headline */}
                 <h1 style={{
-                    fontSize: 'clamp(2.75rem, 6vw, 4.25rem)',
-                    fontFamily: 'var(--font-heading)',
+                    fontSize: 'clamp(3.5rem, 8vw, 5.5rem)',
+                    fontFamily: 'var(--font-serif-accent), Lora, Georgia, serif',
+                    fontStyle: 'italic',
                     color: 'var(--color-brand-forrest)',
-                    lineHeight: 1.05,
+                    lineHeight: 0.95,
                     fontWeight: 400,
-                    letterSpacing: '-0.02em',
-                    margin: '0 0 1.5rem 0'
+                    letterSpacing: '-0.04em',
+                    margin: '0 0 1.75rem 0'
                 }}>
-                    Lost in the Library
+                    Lost in <br />
+                    the Library
                 </h1>
 
                 {/* Editorial Story */}

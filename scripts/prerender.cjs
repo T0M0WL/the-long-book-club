@@ -983,7 +983,7 @@ async function prerender() {
     const notFoundBody = `
         <div id="no-js-content" style="max-width: 800px; margin: 0 auto; padding: 100px 20px; font-family: sans-serif; text-align: center;">
             <p style="text-transform: uppercase; letter-spacing: 0.2em; font-weight: bold; color: #ff6b4a;">A Secret Archive • 404</p>
-            <h1>Lost in the Library</h1>
+            <h1 style="font-family: Lora, Georgia, serif; font-style: italic; font-size: 3.5rem; line-height: 0.95; letter-spacing: -0.04em; color: #2c5143;">Lost in<br />the Library</h1>
             <p>You may have taken a wrong turn down an unmarked corridor of the stacks, but consider this a fortunate misdirection: you’ve slipped behind the hidden bookcase into the club’s private vault.</p>
             <p>The page you sought has vanished into the shadows, but in its place, you’ve discovered our secret, unlisted collection of mammoth audiobooks dedicated to the art of getting hopelessly lost—and the monumental journeys taken to find your way home.</p>
             <p><a href="/long-book-finder/">Search the Long Book Finder &rarr;</a> | <a href="/collections/">Explore Collections &rarr;</a></p>
