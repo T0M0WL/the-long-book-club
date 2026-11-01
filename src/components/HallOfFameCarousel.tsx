@@ -1,19 +1,54 @@
 import { useState, useMemo, useEffect, useRef, useCallback } from 'react';
 import { BookCard } from './BookCard';
-import { baseBooks } from '../data/books';
+import { books } from '../data/books';
+
+type TabKey = 'titans' | 'favorites' | 'newest';
 
 export const HallOfFameCarousel = () => {
     const cardWidth = 300;
     const gap = 67;
     const containerRef = useRef<HTMLDivElement>(null);
+    const [activeTab, setActiveTab] = useState<TabKey>('titans');
 
-    // Get top 10 longest books
-    const topBooks = useMemo(() => {
-        return [...baseBooks]
+    // 1. Calculate dynamic max hours for Titans tab
+    const maxHours = useMemo(() => {
+        return Math.round(Math.max(...books.map(b => b.lengthHours || 0)));
+    }, []);
+
+    // 2. Tab Datasets (10 books each)
+    // Tab 1: The Titans (60h - maxHours)
+    const titansBooks = useMemo(() => {
+        return [...books]
+            .filter(b => (b.lengthHours || 0) >= 60)
             .sort((a, b) => (b.lengthHours || 0) - (a.lengthHours || 0))
             .slice(0, 10);
     }, []);
 
+    // Tab 2: Epic Fan Favorites (30h - 58h iconic masterpieces)
+    const FAVORITE_IDS = ['1', '5', '8', '6', '7', '18', '19', '11', '12', '2'];
+    const favoritesBooks = useMemo(() => {
+        const mapped = FAVORITE_IDS.map(id => books.find(b => b.id === id)).filter(Boolean) as typeof books;
+        if (mapped.length >= 10) return mapped.slice(0, 10);
+        const others = books.filter(b => (b.lengthHours || 0) >= 30 && (b.lengthHours || 0) <= 58 && !mapped.some(m => m.id === b.id));
+        return [...mapped, ...others].slice(0, 10);
+    }, []);
+
+    // Tab 3: Newly Inducted (Most recently added 10 books with min 30 hours)
+    const newestBooks = useMemo(() => {
+        return [...books]
+            .filter(b => (b.lengthHours || 0) >= 30)
+            .slice(-10)
+            .reverse();
+    }, []);
+
+    // Active 10 books
+    const topBooks = useMemo(() => {
+        if (activeTab === 'favorites') return favoritesBooks;
+        if (activeTab === 'newest') return newestBooks;
+        return titansBooks;
+    }, [activeTab, titansBooks, favoritesBooks, newestBooks]);
+
+    // Infinite loop triple array
     const displayBooks = useMemo(() => [...topBooks, ...topBooks, ...topBooks], [topBooks]);
 
     const [currentIndex, setCurrentIndex] = useState(topBooks.length);
@@ -26,6 +61,14 @@ export const HallOfFameCarousel = () => {
     const [gestureLock, setGestureLock] = useState(false);
 
     const minSwipeDistance = 40;
+
+    // Handle tab change: smoothly reset carousel to center
+    const handleTabChange = (tab: TabKey) => {
+        if (tab === activeTab) return;
+        setIsTransitioning(false);
+        setActiveTab(tab);
+        setCurrentIndex(topBooks.length);
+    };
 
     useEffect(() => {
         const handleResize = () => {
@@ -140,26 +183,38 @@ export const HallOfFameCarousel = () => {
 
     const ChevronArrow = ({ direction }: { direction: 'left' | 'right' }) => (
         <div style={{
-            width: '60px',
-            height: '60px',
+            width: '56px',
+            height: '56px',
             borderRadius: '50%',
             backgroundColor: 'var(--color-brand-coral)',
+            border: '1px solid rgba(255, 255, 255, 0.4)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            transition: 'transform 0.2s'
+            transition: 'transform 0.2s, background-color 0.2s, box-shadow 0.2s',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
+            color: '#ffffff'
         }}>
-            <div style={{
-                width: '32px',
-                height: '32px',
-                backgroundColor: 'var(--color-brand-cloud)', 
-                maskImage: 'url("/assets/down-chevron.svg")',
-                WebkitMaskImage: 'url("/assets/down-chevron.svg")',
-                maskRepeat: 'no-repeat',
-                maskPosition: 'center',
-                maskSize: 'contain',
-                transform: direction === 'left' ? 'rotate(90deg)' : 'rotate(-90deg)'
-            }} />
+            <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.25"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                style={{
+                    display: 'block',
+                    marginLeft: direction === 'left' ? '-2px' : '2px'
+                }}
+            >
+                {direction === 'left' ? (
+                    <polyline points="15 18 9 12 15 6" />
+                ) : (
+                    <polyline points="9 18 15 12 9 6" />
+                )}
+            </svg>
         </div>
     );
 
@@ -170,7 +225,7 @@ export const HallOfFameCarousel = () => {
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
             style={{ 
-                paddingTop: 'calc(6rem + 30px)', // Reduced by 20px
+                paddingTop: 'calc(6rem + 20px)',
                 paddingBottom: 'calc(6rem + 50px)', 
                 position: 'relative', 
                 width: '100%',
@@ -178,12 +233,48 @@ export const HallOfFameCarousel = () => {
                 touchAction: 'pan-y' 
             }}
         >
+            <style>{`
+                .hof-tab-btn {
+                    border-radius: 100px;
+                    padding: 0.8rem 1.6rem;
+                    font-family: var(--font-serif-accent);
+                    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+                    cursor: pointer;
+                    transition: all 0.2s ease;
+                    border: 2px solid var(--color-brand-forrest);
+                    background: transparent;
+                    color: var(--color-brand-forrest);
+                    outline: none;
+                    white-space: nowrap;
+                    line-height: 1;
+                    font-weight: 500;
+                }
+
+                .hof-tab-btn:hover {
+                    background: rgba(44, 81, 67, 0.08);
+                }
+
+                .hof-tab-btn.active {
+                    background: var(--color-brand-coral);
+                    color: #ffffff;
+                    border-color: var(--color-brand-coral);
+                    box-shadow: 0 4px 12px rgba(224, 90, 71, 0.25);
+                    font-weight: 600;
+                }
+
+                .hof-tab-btn.active:hover {
+                    background: #cc563b;
+                    border-color: #cc563b;
+                }
+            `}</style>
+
             {/* Branded Section Header */}
             <div style={{
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                marginBottom: '5rem'
+                marginBottom: '4rem',
+                padding: '0 1rem'
             }}>
                 {/* Branding Icon */}
                 <div style={{
@@ -199,13 +290,14 @@ export const HallOfFameCarousel = () => {
                 }} />
 
                 <h2 style={{
-                    fontFamily: 'var(--font-serif-accent)',
+                    fontFamily: 'Lora, Georgia, serif',
+                    fontStyle: 'italic',
                     color: 'var(--color-brand-forrest)',
-                    fontSize: '2rem',
+                    fontSize: 'clamp(2rem, 3.2vw, 2.75rem)',
                     marginBottom: '1.25rem',
                     fontWeight: 400,
                     textAlign: 'center',
-                    lineHeight: 1
+                    lineHeight: 1.15
                 }}>
                     Long Book Club Hall of Fame
                 </h2>
@@ -230,17 +322,58 @@ export const HallOfFameCarousel = () => {
                     opacity: 0.9,
                     lineHeight: 1.4
                 }}>
-                    The definitive Top 10 longest audiobooks<br />
-                    that your credits can get you.
+                    {activeTab === 'titans' && (
+                        <>The definitive Top 10 longest audiobooks<br />that your credits can get you.</>
+                    )}
+                    {activeTab === 'favorites' && (
+                        <>The most acclaimed 30+ hour masterpieces<br />beloved by our listener community.</>
+                    )}
+                    {activeTab === 'newest' && (
+                        <>The 10 latest 30+ hour epics<br />inducted into The Long Book Club library.</>
+                    )}
                 </p>
+
+                {/* 3 Showcase Tabs */}
+                <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '0.85rem',
+                    flexWrap: 'wrap',
+                    marginTop: '2rem'
+                }}>
+                    <button
+                        type="button"
+                        onClick={() => handleTabChange('titans')}
+                        className={`hof-tab-btn ${activeTab === 'titans' ? 'active' : ''}`}
+                    >
+                        The Titans (60h – {maxHours}h)
+                    </button>
+                    <button
+                        type="button"
+                        onClick={() => handleTabChange('favorites')}
+                        className={`hof-tab-btn ${activeTab === 'favorites' ? 'active' : ''}`}
+                    >
+                        Epic Fan Favorites (30h – 55h)
+                    </button>
+                    <button
+                        type="button"
+                        onClick={() => handleTabChange('newest')}
+                        className={`hof-tab-btn ${activeTab === 'newest' ? 'active' : ''}`}
+                    >
+                        Newly Inducted
+                    </button>
+                </div>
             </div>
 
+            {/* Carousel Slider Track */}
             <div style={{
                 position: 'relative',
                 display: 'flex',
                 alignItems: 'center',
                 width: '100%',
-                minHeight: '500px'
+                minHeight: '520px',
+                paddingTop: '20px'
             }}>
                 <div 
                     onTransitionEnd={handleTransitionEnd}
@@ -254,17 +387,18 @@ export const HallOfFameCarousel = () => {
                 >
                     {displayBooks.map((book, idx) => {
                         const isActive = idx >= currentIndex && idx < currentIndex + itemsPerPage;
+                        const rankNumber = (idx % topBooks.length) + 1;
                         return (
                             <div 
-                                key={`${book.id}-${idx}`} 
+                                key={`${book.id}-${idx}-${activeTab}`} 
                                 style={{ 
                                     width: `${cardWidth}px`, 
                                     flexShrink: 0,
-                                    opacity: isActive ? 1 : 0.5,
+                                    opacity: isActive ? 1 : 0.45,
                                     transition: isTransitioning ? 'opacity 0.6s ease-in-out' : 'none'
                                 }}
                             >
-                                <BookCard book={book} />
+                                <BookCard book={book} rank={rankNumber} />
                             </div>
                         );
                     })}
@@ -272,10 +406,11 @@ export const HallOfFameCarousel = () => {
 
                 <button
                     onClick={prevSlide}
+                    aria-label="Previous Slide"
                     style={{
                         position: 'absolute',
                         left: `calc(50% - ${totalActiveWidth / 2}px - ${gap / 2}px)`,
-                        top: '50%',
+                        top: 'calc(50% + 17px)',
                         transform: 'translate(-50%, -50%)',
                         background: 'none',
                         border: 'none',
@@ -289,10 +424,11 @@ export const HallOfFameCarousel = () => {
                 </button>
                 <button
                     onClick={nextSlide}
+                    aria-label="Next Slide"
                     style={{
                         position: 'absolute',
                         right: `calc(50% - ${totalActiveWidth / 2}px - ${gap / 2}px)`,
-                        top: '50%',
+                        top: 'calc(50% + 17px)',
                         transform: 'translate(50%, -50%)',
                         background: 'none',
                         border: 'none',

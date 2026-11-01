@@ -27,12 +27,12 @@ const STYLE_BADGE_IDS: NarratorStyleBadgeId[] = [
 
 export const Narrators: React.FC = () => {
     useSetHeaderTheme({
-        logoColor: 'var(--color-brand-cloud)',
-        textColor: 'var(--color-brand-cloud)',
-        hamburgerColor: 'var(--color-brand-cloud)',
+        logoColor: 'var(--color-brand-sage)',
+        textColor: 'var(--color-brand-sage)',
+        hamburgerColor: 'var(--color-brand-sage)',
         activeLink: 'narrators',
-        activeLinkBg: 'var(--color-brand-cloud)',
-        activeLinkText: 'var(--color-brand-coral)'
+        activeLinkBg: 'var(--color-brand-sage)',
+        activeLinkText: 'var(--color-brand-slate)'
     });
 
     const [searchParams, setSearchParams] = useSearchParams();
@@ -239,27 +239,34 @@ export const Narrators: React.FC = () => {
                 schema={schemaData}
             />
             <Hero
-                backgroundImage="/assets/collections-hero-images/LongBookClub-Collections-background-01.gif"
+                backgroundImage="/assets/collections-hero-images/LongBookClub-Slate-Hero-Image-01.gif"
                 title={<>Audiobook <br /> Narrators</>}
                 subtitle="Meet the voices who bring our longest listening journeys to life. Explore every voice artist featured in our curated library."
                 showCornerGraphics={false}
                 topGraphic="/assets/Narrator-hub-Graphics/mic-badge.svg"
                 topGraphicDimensions={{ width: '68px', height: '84px' }}
-                topGraphicFilter="brightness(0) invert(1)"
-                topGraphicBlendMode="overlay"
+                topGraphicColor="rgba(203, 214, 171, 0.5)"
+                topGraphicBlendMode="normal"
+                topGraphicFilter="none"
+                topGraphicOpacity={0.9}
                 sectionHeight="auto"
                 sectionMinHeight="600px"
                 sectionPadding="11rem 1rem 8rem 1rem"
                 contentPaddingTop="0"
                 titleFontSize="4.5rem"
                 titleLineHeight={1.05}
-                titleOpacity={0.88}
-                titleColor="white"
-                subtitleColor="white"
-                contentBlendMode="overlay"
-                titleBlendMode="overlay"
-                subtitleBlendMode="overlay"
-                chevronBlendMode="overlay"
+                subtitleFontSize="1.4rem"
+                subtitleLineHeight={1.6}
+                titleOpacity={1}
+                titleColor="rgba(203, 214, 171, 0.5)"
+                subtitleColor="rgba(203, 214, 171, 0.5)"
+                separatorColor="rgba(203, 214, 171, 0.5)"
+                contentBlendMode="normal"
+                titleBlendMode="normal"
+                subtitleBlendMode="normal"
+                chevronColor="var(--color-brand-sage)"
+                chevronOpacity={0.5}
+                useDynamicColor={false}
                 overlayOpacity={0}
             />
 

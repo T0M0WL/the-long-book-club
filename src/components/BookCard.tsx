@@ -8,21 +8,23 @@ import { isQualifyingAuthor } from '../utils/creatorUtils';
 interface BookCardProps {
     book: Book;
     navigationState?: any;
+    rank?: number;
 }
 
-export const BookCard = ({ book, navigationState }: BookCardProps) => {
+export const BookCard = ({ book, navigationState, rank }: BookCardProps) => {
     return (
         <article
             className="book-card"
             style={{
                 backgroundColor: 'var(--color-surface)',
                 borderRadius: '0',
-                overflow: 'hidden',
+                overflow: rank ? 'visible' : 'hidden',
                 display: 'flex',
                 flexDirection: 'column',
                 border: '1px solid rgba(255,255,255,0.05)',
                 height: '100%',
-                position: 'relative'
+                position: 'relative',
+                marginTop: rank ? '34px' : '0'
             }}
         >
             <Link
@@ -30,6 +32,56 @@ export const BookCard = ({ book, navigationState }: BookCardProps) => {
                 state={navigationState}
                 style={{ display: 'block', position: 'relative', paddingTop: '100%', color: 'inherit' }}
             >
+                {/* Optional Rank Badge (Inversed Hall of Fame Medal: 33% smaller than 100px = 68px) */}
+                {typeof rank === 'number' && (
+                    <div
+                        style={{
+                            position: 'absolute',
+                            top: 0,
+                            left: '50%',
+                            transform: 'translate(-50%, -50%)',
+                            width: '68px',
+                            height: '68px',
+                            borderRadius: '50%',
+                            backgroundColor: 'var(--color-brand-forrest)',
+                            border: '1px solid #ffffff',
+                            color: 'var(--color-brand-cloud)',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            boxShadow: '0 4px 10px rgba(0,0,0,0.22)',
+                            zIndex: 3,
+                            lineHeight: 1
+                        }}
+                    >
+                        <span
+                            style={{
+                                fontSize: '0.56rem',
+                                fontWeight: 700,
+                                fontFamily: 'Inter, sans-serif',
+                                letterSpacing: '0.06em',
+                                textTransform: 'uppercase',
+                                opacity: 0.95,
+                                marginBottom: '1px'
+                            }}
+                        >
+                            NO.
+                        </span>
+                        <span
+                            style={{
+                                fontSize: '1.45rem',
+                                fontWeight: 700,
+                                fontFamily: 'Lora, Georgia, serif',
+                                fontStyle: 'italic',
+                                lineHeight: 0.95
+                            }}
+                        >
+                            {rank}
+                        </span>
+                    </div>
+                )}
+
                 <img
                     src={book.coverUrl}
                     alt={book.title}

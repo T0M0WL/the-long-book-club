@@ -49,8 +49,9 @@ export const LongBookLedger: React.FC = () => {
                 <h2
                     style={{
                         fontFamily: 'Lora, Georgia, serif',
+                        fontStyle: 'italic',
                         fontWeight: 400,
-                        fontSize: 'clamp(2.1rem, 3.8vw, 2.75rem)',
+                        fontSize: 'clamp(2rem, 3.2vw, 2.75rem)',
                         color: 'var(--color-brand-forrest)',
                         margin: '0 0 0.5rem 0',
                         lineHeight: 1.15,

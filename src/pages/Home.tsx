@@ -9,6 +9,7 @@ import { SpineBanner } from '../components/SpineBanner';
 import { HallOfFameCarousel } from '../components/HallOfFameCarousel';
 import { LongBookLedger } from '../components/LongBookLedger';
 import { TwoWorldsFeature } from '../components/TwoWorldsFeature';
+import { QuickBookFinder } from '../components/QuickBookFinder';
 
 export const Home = () => {
     useSetHeaderTheme({
@@ -87,173 +88,10 @@ export const Home = () => {
             {/* Two Worlds Feature Section: Classic Pillars & Micro Genres */}
             <TwoWorldsFeature />
 
-            {/* Long Book Finder Tool - Standalone Section */}
-            <div className="finder-feature-section" style={{
-                width: '100%',
-                maxWidth: '800px', // Constrain width for better readability
-                margin: '0 auto 6rem auto',
-                padding: '0 1rem',
-                textAlign: 'center', // Center text for standalone section
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center'
-            }}>
-                {/* Logo Icon (Restored) */}
-                <div style={{
-                    width: '72px', // Increased by 20% from 60px
-                    height: '72px',
-                    backgroundColor: 'var(--color-brand-forrest)',
-                    maskImage: 'url("/assets/lbc-Logo-Icon.svg")',
-                    WebkitMaskImage: 'url("/assets/lbc-Logo-Icon.svg")',
-                    maskRepeat: 'no-repeat',
-                    WebkitMaskRepeat: 'no-repeat',
-                    maskSize: 'contain',
-                    WebkitMaskSize: 'contain',
-                    maskPosition: 'center',
-                    WebkitMaskPosition: 'center',
-                    marginBottom: '1.5rem',
-                    marginTop: '2rem'
-                }} />
-
-                <h3 style={{ fontFamily: 'var(--font-serif-accent)', color: 'var(--color-brand-forrest)', fontSize: '2rem', marginBottom: '1.5rem', fontWeight: 400 }}>
-                    Long Book Finder Tool
-                </h3>
-                <p style={{ fontFamily: 'var(--font-body)', color: 'var(--color-brand-slate)', lineHeight: 1.6, marginBottom: '2.5rem', fontSize: '0.95rem', maxWidth: '600px' }}>
-                    This unique tool is designed to help you quickly find your next long-listen. Use the time-slider to sort by length, filter by genre or search by author and even narrator.
-                </p>
-                <Link to="/long-book-finder/" style={{
-                    backgroundColor: 'var(--color-brand-coral)',
-                    color: '#fff',
-                    textDecoration: 'none',
-                    padding: '14px 40px',
-                    borderRadius: '50px',
-                    fontFamily: 'var(--font-serif-accent)',
-                    fontSize: '1.2rem',
-                    whiteSpace: 'nowrap',
-                    transition: 'transform 0.2s',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '8px'
-                }}
-                    onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
-                    onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
-                >
-                    Find Your Next Long-Listen <span style={{ fontSize: '1.2em', lineHeight: 1, fontFamily: 'var(--font-body)' }}>&rarr;</span>
-                </Link>
+            {/* Quick Book Finder Section */}
+            <QuickBookFinder />
 
 
-            </div>
-
-            {/* Two Column Feature Section */}
-            <div style={{ width: '100%', maxWidth: '1280px', margin: '0 auto 8rem auto', padding: '0 1rem' }}>
-                <div className="feature-columns" style={{
-                    display: 'flex',
-                    alignItems: 'stretch',
-                    justifyContent: 'space-between',
-                    width: '100%',
-                }}>
-                    <style>{`
-                        /* Tablet / Intermediate: Reduce padding to prevent squishing */
-                        @media (max-width: 1200px) and (min-width: 901px) {
-                            .feature-item {
-                                padding: 0 1.5rem !important;
-                            }
-                        }
-
-                        @media (max-width: 900px) {
-                            .feature-columns {
-                                flexDirection: column;
-                                flex-direction: column;
-                                gap: 0;
-                            }
-                            .feature-divider {
-                                display: block !important;
-                                width: auto !important;
-                                height: 1px !important;
-                                margin: 4rem 50px !important;
-                            }
-                            .feature-item {
-                                width: 100% !important;
-                                padding: 0 50px !important;
-                                box-sizing: border-box;
-                                align-items: center !important;
-                                text-align: center !important;
-                            }
-                            
-                            /* Match padding for Finder section on mobile */
-                            .finder-feature-section {
-                                padding: 0 50px !important;
-                                box-sizing: border-box;
-                            }
-
-                            .intro-section {
-                                padding: 0 50px !important;
-                            }
-                        }
-                    `}</style>
-
-                    {/* Column 1: Collections */}
-                    <div className="feature-item" style={{ flex: 1, padding: '0 4rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-                        <h3 style={{ fontFamily: 'var(--font-serif-accent)', color: 'var(--color-brand-forrest)', fontSize: '2rem', marginBottom: '1.5rem', fontWeight: 400 }}>
-                            Curated Collections
-                        </h3>
-                        <p style={{ fontFamily: 'var(--font-body)', color: 'var(--color-brand-slate)', lineHeight: 1.6, marginBottom: '2.5rem', flex: 1, fontSize: '0.95rem' }}>
-                            From the longest ever audiobooks, to niche trending genres. Our long book Curated Collections help you find your next epic listen.
-                        </p>
-                        <Link to="/collections/" style={{
-                            backgroundColor: 'var(--color-brand-coral)',
-                            color: '#fff',
-                            textDecoration: 'none',
-                            padding: '12px 30px',
-                            borderRadius: '50px',
-                            fontFamily: 'var(--font-serif-accent)',
-                            fontSize: '1.1rem',
-                            whiteSpace: 'nowrap',
-                            transition: 'transform 0.2s',
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            gap: '8px'
-                        }}
-                            onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
-                            onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
-                        >
-                            Explore the Curated Lists <span style={{ fontSize: '1.2em', lineHeight: 1, fontFamily: 'var(--font-body)' }}>&rarr;</span>
-                        </Link>
-                    </div>
-
-                    {/* Divider */}
-                    <div className="feature-divider" style={{ width: '1px', backgroundColor: 'var(--color-brand-forrest)', flexShrink: 0, opacity: 0.5 }} />
-
-                    {/* Column 2: Journal */}
-                    <div className="feature-item" style={{ flex: 1, padding: '0 4rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-                        <h3 style={{ fontFamily: 'var(--font-serif-accent)', color: 'var(--color-brand-forrest)', fontSize: '2rem', marginBottom: '1.5rem', fontWeight: 400 }}>
-                            Long Book Club Journal
-                        </h3>
-                        <p style={{ fontFamily: 'var(--font-body)', color: 'var(--color-brand-slate)', lineHeight: 1.6, marginBottom: '2.5rem', flex: 1, fontSize: '0.95rem' }}>
-                            Our Club Journals focus on Audiobook hacks, industry news and deep dives into trending sub-genres and trends.
-                        </p>
-                        <Link to="/journal/" style={{
-                            backgroundColor: 'var(--color-brand-coral)',
-                            color: '#fff',
-                            textDecoration: 'none',
-                            padding: '12px 30px',
-                            borderRadius: '50px',
-                            fontFamily: 'var(--font-serif-accent)',
-                            fontSize: '1.1rem',
-                            whiteSpace: 'nowrap',
-                            transition: 'transform 0.2s',
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            gap: '8px'
-                        }}
-                            onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
-                            onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
-                        >
-                            The Long Book Journals <span style={{ fontSize: '1.2em', lineHeight: 1, fontFamily: 'var(--font-body)' }}>&rarr;</span>
-                        </Link>
-                    </div>
-                </div>
-            </div >
 
             <SpineBanner
                 backgroundImage="/assets/genre-specific-gfx/genre-hero-background.gif"
@@ -293,10 +131,11 @@ export const Home = () => {
                 }} />
 
                 <h3 style={{
-                    fontFamily: 'var(--font-serif-accent)',
+                    fontFamily: 'Lora, Georgia, serif',
+                    fontStyle: 'italic',
                     color: 'var(--color-brand-forrest)',
-                    fontSize: '2rem',
-                    lineHeight: 0.9,
+                    fontSize: 'clamp(2rem, 3.2vw, 2.75rem)',
+                    lineHeight: 1.15,
                     letterSpacing: '-0.02em',
                     fontWeight: 400,
                     marginBottom: '0',
