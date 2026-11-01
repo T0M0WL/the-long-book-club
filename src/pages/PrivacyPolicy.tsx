@@ -1,6 +1,15 @@
 import React, { useEffect } from 'react';
+import { useSetHeaderTheme } from '../context/HeaderContext';
 
 export const PrivacyPolicy: React.FC = () => {
+    useSetHeaderTheme({
+        logoColor: 'var(--color-brand-forrest)',
+        textColor: 'var(--color-brand-forrest)',
+        hamburgerColor: 'var(--color-brand-forrest)',
+        activeLink: '',
+        activeLinkBg: 'var(--color-brand-forrest)',
+        activeLinkText: 'var(--color-brand-cloud)'
+    });
 
     // Scroll to top on mount
     useEffect(() => {
@@ -8,7 +17,7 @@ export const PrivacyPolicy: React.FC = () => {
     }, []);
 
     return (
-        <div style={{ maxWidth: '800px', margin: '0 auto', padding: '2rem 1rem' }}>
+        <div style={{ maxWidth: '800px', margin: '0 auto', padding: '10rem 1.5rem 6rem' }}>
             <h1 style={{
                 fontFamily: 'var(--font-heading)',
                 fontSize: '2.5rem',
