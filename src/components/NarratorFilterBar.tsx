@@ -132,18 +132,26 @@ export const NarratorFilterBar: React.FC<NarratorFilterBarProps> = ({
                             pointerEvents: 'none',
                             display: 'flex',
                             alignItems: 'center',
+                            justifyContent: 'center',
                             gap: '0.5rem',
                             color: '#777',
                             fontFamily: 'var(--font-body)',
                             fontSize: '0.92rem',
                             width: '100%',
-                            justifyContent: 'center',
-                            padding: '0 1rem',
+                            maxWidth: '100%',
+                            padding: '0 1.75rem',
                             boxSizing: 'border-box',
-                            whiteSpace: 'nowrap'
+                            overflow: 'hidden'
                         }}>
                             <FaSearch style={{ color: 'var(--color-brand-forrest)', flexShrink: 0 }} />
-                            <span>Search narrators, books, authors...</span>
+                            <span style={{
+                                whiteSpace: 'nowrap',
+                                overflow: 'hidden',
+                                textOverflow: 'ellipsis',
+                                minWidth: 0
+                            }}>
+                                Search narrators, books, authors...
+                            </span>
                         </div>
                     )}
                     {searchTerm && (

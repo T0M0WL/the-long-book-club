@@ -320,15 +320,26 @@ export const FilterBar = ({
                             pointerEvents: 'none',
                             display: 'flex',
                             alignItems: 'center',
+                            justifyContent: 'center',
                             gap: '0.5rem',
                             color: '#777',
                             fontFamily: 'var(--font-body)',
-                            fontSize: '1rem',
+                            fontSize: 'clamp(0.88rem, 2.4vw, 1rem)',
                             width: '100%',
-                            justifyContent: 'center'
+                            maxWidth: '100%',
+                            padding: '0 1.75rem',
+                            boxSizing: 'border-box',
+                            overflow: 'hidden'
                         }}>
-                            <FaSearch style={{ color: 'var(--color-brand-forrest)' }} />
-                            <span>Search by title, author, series, narrator, or genre...</span>
+                            <FaSearch style={{ color: 'var(--color-brand-forrest)', flexShrink: 0 }} />
+                            <span style={{
+                                whiteSpace: 'nowrap',
+                                overflow: 'hidden',
+                                textOverflow: 'ellipsis',
+                                minWidth: 0
+                            }}>
+                                Search by title, author, series, narrator, or genre...
+                            </span>
                         </div>
                     )}
                 </div>
