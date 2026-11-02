@@ -10,6 +10,7 @@ import { useSetHeaderTheme } from '../context/HeaderContext';
 import { SpineBanner } from '../components/SpineBanner';
 import { HallOfFameCarousel } from '../components/HallOfFameCarousel';
 import { LongBookLedger } from '../components/LongBookLedger';
+import { NarratorsNook } from '../components/NarratorsNook';
 import { TwoWorldsFeature } from '../components/TwoWorldsFeature';
 import { QuickBookFinder } from '../components/QuickBookFinder';
 
@@ -150,6 +151,16 @@ export const Home = () => {
 
             {/* The Long Book Ledger (Audiobook News & Offers) */}
             <LongBookLedger />
+
+            {/* Narrators’ Nook (7 Vocal Styles & Audio Soundchecks) */}
+            <SpineBanner
+                backgroundImage="/assets/collections-hero-images/LongBookClub-Forrest-Hero-Image-01.gif"
+                fullWidth={true}
+                minHeight="790px"
+                brightness={0.65}
+            >
+                <NarratorsNook />
+            </SpineBanner>
 
             {/* Featured Collections Section */}
             <div style={{

@@ -3017,7 +3017,7 @@ export const baseBooks: Book[] = [
         teaser: "Falling shy of nine hours, can the author’s own beloved, velvet narration justify spending a whole Audible credit on an ex-barbarian's coffee shop? Read our full review and Soundcheck to see why this cozy trailblazer hooks listeners.",
         narrator: "Travis Baldree",
         relatedBookIds: ["317","189","190","191","193","194","195"],
-        audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/bf/b1/7a/bfb17a12-8889-cb48-b427-e43e34b9fae5/mzaf_6654274351336049969.std.aac.p.m4a",
+        audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/f7/4f/e0/f74fe0f8-8106-d18c-efbf-33ecdfed0583/mzaf_12024181535094970785.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B0B46TBQZ8?tag=thelongbookcl-21",
     },
     {
