@@ -404,16 +404,34 @@ export const NarratorsNook: React.FC = () => {
 
             {/* --- SECTION HEADER --- */}
             <div style={{ textAlign: 'center', marginBottom: '2.5rem', padding: '0 1.5rem' }}>
+                {/* Microphone Icon in Brand Coral */}
+                <div
+                    style={{
+                        width: '46px',
+                        height: '56px',
+                        backgroundColor: 'var(--color-brand-coral)',
+                        maskImage: 'url("/assets/Narrator-hub-Graphics/mic-badge.svg")',
+                        WebkitMaskImage: 'url("/assets/Narrator-hub-Graphics/mic-badge.svg")',
+                        maskRepeat: 'no-repeat',
+                        WebkitMaskRepeat: 'no-repeat',
+                        maskSize: 'contain',
+                        WebkitMaskSize: 'contain',
+                        maskPosition: 'center',
+                        WebkitMaskPosition: 'center',
+                        margin: '0 auto 1.15rem auto',
+                        filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.25))'
+                    }}
+                />
+
                 <h2 style={{
-                    fontFamily: 'var(--font-serif-accent)',
+                    fontFamily: 'Lora, Georgia, serif',
                     fontStyle: 'italic',
-                    fontSize: 'clamp(2.6rem, 5.2vw, 4.2rem)',
-                    lineHeight: 1.1,
+                    fontWeight: 400,
+                    fontSize: 'clamp(2rem, 3.2vw, 2.75rem)',
+                    lineHeight: 1.15,
                     letterSpacing: '-0.02em',
                     color: 'var(--color-brand-coral)',
-                    margin: '0 0 1.1rem 0',
-                    fontWeight: 500,
-                    textShadow: '0 2px 10px rgba(0,0,0,0.2)'
+                    margin: '0 0 1.1rem 0'
                 }}>
                     Narrators’ Nook
                 </h2>

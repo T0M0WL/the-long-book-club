@@ -156,7 +156,7 @@ export const Home = () => {
             <SpineBanner
                 backgroundImage="/assets/collections-hero-images/LongBookClub-Forrest-Hero-Image-01.gif"
                 fullWidth={true}
-                minHeight="790px"
+                minHeight="840px"
                 brightness={0.65}
             >
                 <NarratorsNook />
