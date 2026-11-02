@@ -103,19 +103,6 @@ export const NarratorsNook: React.FC = () => {
         setGestureLock(true);
     }, [isTransitioning, gestureLock, pauseAudio]);
 
-    // Go directly to style index (0-6)
-    const goToStyle = useCallback((targetIndex: number) => {
-        if (!isTransitioning || gestureLock) return;
-        pauseAudio();
-        const currentNorm = ((currentIndex % totalStyles) + totalStyles) % totalStyles;
-        let diff = targetIndex - currentNorm;
-        // Take shortest path around circular 7 items
-        if (diff > 3) diff -= 7;
-        if (diff < -3) diff += 7;
-        setCurrentIndex(prev => prev + diff);
-        setGestureLock(true);
-    }, [currentIndex, totalStyles, isTransitioning, gestureLock, pauseAudio]);
-
     // Gesture unlock timer
     useEffect(() => {
         if (gestureLock) {
@@ -431,106 +418,10 @@ export const NarratorsNook: React.FC = () => {
                     lineHeight: 1.15,
                     letterSpacing: '-0.02em',
                     color: 'var(--color-brand-coral)',
-                    margin: '0 0 1.1rem 0'
+                    margin: 0
                 }}>
                     Narrators’ Nook
                 </h2>
-
-                {/* Subtitle Navigation (7 Clickable Vocal Styles) */}
-                <div style={{
-                    fontFamily: 'var(--font-serif-accent)',
-                    fontStyle: 'italic',
-                    fontSize: 'clamp(0.9rem, 1.25vw, 1.1rem)',
-                    lineHeight: 1.6,
-                    color: ACCENT_COLOR,
-                    maxWidth: '850px',
-                    margin: '0 auto',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '0.2rem'
-                }}>
-                    {/* Line 1: Fireside Warmth / Character Chameleon / Historical Gravitas */}
-                    <div>
-                        {[0, 1, 2].map((idx, i) => {
-                            const style = NOOK_STYLES[idx];
-                            const isActive = activeStyleIndex === idx;
-                            return (
-                                <React.Fragment key={style.id}>
-                                    {i > 0 && (
-                                        <span style={{ opacity: 0.35, margin: '0 0.55rem', userSelect: 'none', color: ACCENT_COLOR }}>/</span>
-                                    )}
-                                    <button
-                                        type="button"
-                                        onClick={() => goToStyle(idx)}
-                                        style={{
-                                            background: 'none',
-                                            border: 'none',
-                                            padding: 0,
-                                            fontFamily: 'inherit',
-                                            fontStyle: 'inherit',
-                                            fontSize: 'inherit',
-                                            cursor: 'pointer',
-                                            color: isActive ? 'var(--color-brand-coral)' : ACCENT_COLOR,
-                                            fontWeight: isActive ? 600 : 400,
-                                            borderBottom: isActive ? '1px solid var(--color-brand-coral)' : '1px solid transparent',
-                                            transition: 'all 0.2s ease',
-                                            outline: 'none'
-                                        }}
-                                        onMouseEnter={(e) => {
-                                            if (!isActive) e.currentTarget.style.color = '#ffffff';
-                                        }}
-                                        onMouseLeave={(e) => {
-                                            if (!isActive) e.currentTarget.style.color = ACCENT_COLOR;
-                                        }}
-                                    >
-                                        {style.name}
-                                    </button>
-                                </React.Fragment>
-                            );
-                        })}
-                    </div>
-
-                    {/* Line 2: Propulsive Momentum / Satirical Bite / Dialect Immersion / Dual-POV Synergy */}
-                    <div>
-                        {[3, 4, 5, 6].map((idx, i) => {
-                            const style = NOOK_STYLES[idx];
-                            const isActive = activeStyleIndex === idx;
-                            return (
-                                <React.Fragment key={style.id}>
-                                    {i > 0 && (
-                                        <span style={{ opacity: 0.35, margin: '0 0.55rem', userSelect: 'none', color: ACCENT_COLOR }}>/</span>
-                                    )}
-                                    <button
-                                        type="button"
-                                        onClick={() => goToStyle(idx)}
-                                        style={{
-                                            background: 'none',
-                                            border: 'none',
-                                            padding: 0,
-                                            fontFamily: 'inherit',
-                                            fontStyle: 'inherit',
-                                            fontSize: 'inherit',
-                                            cursor: 'pointer',
-                                            color: isActive ? 'var(--color-brand-coral)' : ACCENT_COLOR,
-                                            fontWeight: isActive ? 600 : 400,
-                                            borderBottom: isActive ? '1px solid var(--color-brand-coral)' : '1px solid transparent',
-                                            transition: 'all 0.2s ease',
-                                            outline: 'none'
-                                        }}
-                                        onMouseEnter={(e) => {
-                                            if (!isActive) e.currentTarget.style.color = '#ffffff';
-                                        }}
-                                        onMouseLeave={(e) => {
-                                            if (!isActive) e.currentTarget.style.color = ACCENT_COLOR;
-                                        }}
-                                    >
-                                        {style.name}
-                                    </button>
-                                </React.Fragment>
-                            );
-                        })}
-                    </div>
-                </div>
             </div>
 
             {/* --- CAROUSEL TRACK STAGE --- */}
