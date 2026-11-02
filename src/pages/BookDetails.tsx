@@ -14,6 +14,7 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import AudiobookCommuteCalculator from '../components/AudiobookCommuteCalculator';
 import AudiobookValueCalculator from '../components/AudiobookValueCalculator';
 import { AudiblePromoBanner } from '../components/AudiblePromoBanner';
+import { NotFound } from './NotFound';
 
 export const BookDetails = () => {
     useSetHeaderTheme({
@@ -35,13 +36,7 @@ export const BookDetails = () => {
     const from = location.state?.from;
 
     if (!book) {
-        return (
-            <div style={{ textAlign: 'center', padding: '6rem 1rem', color: 'var(--color-brand-forrest)' }}>
-                <SEO title="Book Not Found" />
-                <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '3rem' }}>Book not found</h2>
-                <Link to="/" style={{ color: 'var(--color-brand-coral)', textDecoration: 'underline' }}>Return Home</Link>
-            </div>
-        );
+        return <NotFound />;
     }
 
     // Redirect old ID-based URLs to new Slug-based URLs

@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { books } from '../data/books';
 import { BookGrid } from '../components/BookGrid';
 import { SEO } from '../components/SEO';
@@ -6,6 +6,7 @@ import { slugify, unslugify } from '../utils/slugify';
 import { genreData } from '../data/genreData';
 import { useEffect, useRef } from 'react';
 import { useSetHeaderTheme } from '../context/HeaderContext';
+import { NotFound } from './NotFound';
 
 export const Genre = () => {
     useSetHeaderTheme({
@@ -57,13 +58,7 @@ export const Genre = () => {
     }, []);
 
     if (genreBooks.length === 0) {
-        return (
-            <div style={{ textAlign: 'center', padding: '6rem 1rem', color: 'var(--color-brand-forrest)' }}>
-                <SEO title="Genre Not Found" />
-                <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '3rem' }}>Genre not found</h2>
-                <Link to="/" style={{ color: 'var(--color-brand-coral)', textDecoration: 'underline' }}>Return Home</Link>
-            </div>
-        );
+        return <NotFound />;
     }
 
     const pageTitle = metadata?.metaTitle || `Best Long ${genreName} Audiobooks`;
