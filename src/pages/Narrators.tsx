@@ -284,6 +284,8 @@ export const Narrators: React.FC = () => {
             {/* Narrators’ Nook (Light Mode Vocal Styles & Soundchecks) */}
             <NarratorsNook
                 variant="light"
+                showMicIcon={false}
+                headerTitle="Vocal Styles & Soundchecks"
                 selectedStyleSlug={selectedStyle !== 'All' ? selectedStyle : undefined}
                 headerSubtitle="Audition sample soundchecks across our seven signature vocal styles, then filter the directory below."
                 onSelectStyle={handleNookSelectStyle}

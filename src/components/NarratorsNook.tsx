@@ -11,6 +11,7 @@ export interface NarratorsNookProps {
     onSelectStyle?: (styleSlug: string) => void;
     selectedStyleSlug?: string;
     showHeader?: boolean;
+    showMicIcon?: boolean;
     headerTitle?: React.ReactNode;
     headerSubtitle?: React.ReactNode;
 }
@@ -20,6 +21,7 @@ export const NarratorsNook: React.FC<NarratorsNookProps> = ({
     onSelectStyle,
     selectedStyleSlug,
     showHeader = true,
+    showMicIcon = true,
     headerTitle,
     headerSubtitle
 }) => {
@@ -446,25 +448,27 @@ export const NarratorsNook: React.FC<NarratorsNookProps> = ({
             {showHeader && (
                 <div style={{ textAlign: 'center', marginBottom: isLight ? '2rem' : '2.5rem', padding: '0 1.5rem' }}>
                     {/* Microphone Icon in Brand Coral */}
-                    <div
-                        style={{
-                            width: isLight ? '42px' : '46px',
-                            height: isLight ? '52px' : '56px',
-                            backgroundColor: 'var(--color-brand-coral)',
-                            maskImage: 'url("/assets/Narrator-hub-Graphics/mic-badge.svg")',
-                            WebkitMaskImage: 'url("/assets/Narrator-hub-Graphics/mic-badge.svg")',
-                            maskRepeat: 'no-repeat',
-                            WebkitMaskRepeat: 'no-repeat',
-                            maskSize: 'contain',
-                            WebkitMaskSize: 'contain',
-                            maskPosition: 'center',
-                            WebkitMaskPosition: 'center',
-                            margin: '0 auto 1.15rem auto',
-                            filter: isLight
-                                ? 'drop-shadow(0 2px 6px rgba(255, 107, 74, 0.25))'
-                                : 'drop-shadow(0 2px 6px rgba(0,0,0,0.25))'
-                        }}
-                    />
+                    {showMicIcon && (
+                        <div
+                            style={{
+                                width: isLight ? '42px' : '46px',
+                                height: isLight ? '52px' : '56px',
+                                backgroundColor: 'var(--color-brand-coral)',
+                                maskImage: 'url("/assets/Narrator-hub-Graphics/mic-badge.svg")',
+                                WebkitMaskImage: 'url("/assets/Narrator-hub-Graphics/mic-badge.svg")',
+                                maskRepeat: 'no-repeat',
+                                WebkitMaskRepeat: 'no-repeat',
+                                maskSize: 'contain',
+                                WebkitMaskSize: 'contain',
+                                maskPosition: 'center',
+                                WebkitMaskPosition: 'center',
+                                margin: '0 auto 1.15rem auto',
+                                filter: isLight
+                                    ? 'drop-shadow(0 2px 6px rgba(255, 107, 74, 0.25))'
+                                    : 'drop-shadow(0 2px 6px rgba(0,0,0,0.25))'
+                            }}
+                        />
+                    )}
 
                     <h2 style={{
                         fontFamily: 'Lora, Georgia, serif',
