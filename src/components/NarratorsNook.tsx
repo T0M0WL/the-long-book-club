@@ -4,9 +4,27 @@ import { NOOK_STYLES } from '../data/narratorNookData';
 import { isQualifyingNarrator } from '../utils/creatorUtils';
 import { slugify } from '../utils/slugify';
 
-const ACCENT_COLOR = '#dcd3b4';
+const DARK_ACCENT_COLOR = '#dcd3b4';
 
-export const NarratorsNook: React.FC = () => {
+export interface NarratorsNookProps {
+    variant?: 'dark' | 'light';
+    onSelectStyle?: (styleSlug: string) => void;
+    selectedStyleSlug?: string;
+    showHeader?: boolean;
+    headerTitle?: React.ReactNode;
+    headerSubtitle?: React.ReactNode;
+}
+
+export const NarratorsNook: React.FC<NarratorsNookProps> = ({
+    variant = 'dark',
+    onSelectStyle,
+    selectedStyleSlug,
+    showHeader = true,
+    headerTitle,
+    headerSubtitle
+}) => {
+    const isLight = variant === 'light';
+    const primaryColor = isLight ? 'var(--color-brand-forrest)' : DARK_ACCENT_COLOR;
     const totalStyles = NOOK_STYLES.length;
     // Triple array for smooth infinite carousel looping
     const displaySlides = React.useMemo(() => [...NOOK_STYLES, ...NOOK_STYLES, ...NOOK_STYLES], []);
@@ -14,8 +32,30 @@ export const NarratorsNook: React.FC = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const audioRef = useRef<HTMLAudioElement | null>(null);
 
+    // Initial index based on selectedStyleSlug if provided
+    const initialTargetIdx = selectedStyleSlug && selectedStyleSlug !== 'All'
+        ? NOOK_STYLES.findIndex(s => s.slug === selectedStyleSlug || s.id === selectedStyleSlug)
+        : -1;
+
     // Carousel state
-    const [currentIndex, setCurrentIndex] = useState(totalStyles); // start in middle group (index 7)
+    const [currentIndex, setCurrentIndex] = useState(
+        initialTargetIdx !== -1 ? totalStyles + initialTargetIdx : totalStyles
+    ); // start in middle group
+    const [prevStyleSlug, setPrevStyleSlug] = useState(selectedStyleSlug);
+
+    // Keep slide in sync when selectedStyleSlug changes externally
+    if (selectedStyleSlug !== prevStyleSlug) {
+        setPrevStyleSlug(selectedStyleSlug);
+        if (selectedStyleSlug && selectedStyleSlug !== 'All') {
+            const targetIdx = NOOK_STYLES.findIndex(s => s.slug === selectedStyleSlug || s.id === selectedStyleSlug);
+            if (targetIdx !== -1) {
+                const currentActive = ((currentIndex % totalStyles) + totalStyles) % totalStyles;
+                if (currentActive !== targetIdx) {
+                    setCurrentIndex(totalStyles + targetIdx);
+                }
+            }
+        }
+    }
     const [isTransitioning, setIsTransitioning] = useState(true);
     const [containerWidth, setContainerWidth] = useState(1200);
     const [gestureLock, setGestureLock] = useState(false);
@@ -87,6 +127,17 @@ export const NarratorsNook: React.FC = () => {
             setIsPlaying(false);
         }
     }, []);
+
+    const isMounted = useRef(false);
+    useEffect(() => {
+        if (!isMounted.current) {
+            isMounted.current = true;
+            return;
+        }
+        if (audioRef.current) {
+            audioRef.current.pause();
+        }
+    }, [currentIndex]);
 
     // Slide navigation
     const nextSlide = useCallback(() => {
@@ -180,7 +231,7 @@ export const NarratorsNook: React.FC = () => {
         setMouseStartX(e.clientX);
     };
 
-    const handleMouseMove = (_e: React.MouseEvent) => {
+    const handleMouseMove = () => {
         if (!isMouseDown || mouseStartX === null) return;
     };
 
@@ -265,13 +316,13 @@ export const NarratorsNook: React.FC = () => {
                                         if (!isCenter) e.preventDefault();
                                     }}
                                     style={{
-                                        color: ACCENT_COLOR,
+                                        color: primaryColor,
                                         textDecoration: 'underline',
                                         textUnderlineOffset: '3px',
                                         transition: 'color 0.2s ease'
                                     }}
                                     onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-brand-coral)'}
-                                    onMouseLeave={(e) => e.currentTarget.style.color = ACCENT_COLOR}
+                                    onMouseLeave={(e) => e.currentTarget.style.color = primaryColor}
                                 >
                                     {part}
                                 </Link>
@@ -292,13 +343,13 @@ export const NarratorsNook: React.FC = () => {
                         if (!isCenter) e.preventDefault();
                     }}
                     style={{
-                        color: ACCENT_COLOR,
+                        color: primaryColor,
                         textDecoration: 'underline',
                         textUnderlineOffset: '3px',
                         transition: 'color 0.2s ease'
                     }}
                     onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-brand-coral)'}
-                    onMouseLeave={(e) => e.currentTarget.style.color = ACCENT_COLOR}
+                    onMouseLeave={(e) => e.currentTarget.style.color = primaryColor}
                 >
                     {name}
                 </Link>
@@ -322,23 +373,23 @@ export const NarratorsNook: React.FC = () => {
             style={{
                 width: '100%',
                 position: 'relative',
-                paddingTop: 'calc(5rem + 15px)',
-                paddingBottom: 'calc(4rem + 15px)',
+                paddingTop: isLight ? '3.5rem' : 'calc(5rem + 15px)',
+                paddingBottom: isLight ? '3.5rem' : 'calc(4rem + 15px)',
                 overflow: 'hidden',
-                color: ACCENT_COLOR,
+                color: primaryColor,
                 userSelect: isMouseDown ? 'none' : 'auto'
             }}
         >
             <style>{`
                 .nook-dimmed-card {
-                    opacity: 0.35;
+                    opacity: ${isLight ? '0.38' : '0.35'};
                     filter: grayscale(20%);
                     transform: scale(0.965);
                     cursor: pointer;
                     transition: opacity 0.4s ease, transform 0.4s ease, filter 0.4s ease, background-color 0.3s ease;
                 }
                 .nook-dimmed-card:hover {
-                    opacity: 0.65 !important;
+                    opacity: 0.7 !important;
                     filter: grayscale(0%) !important;
                     transform: scale(0.98) !important;
                 }
@@ -348,7 +399,7 @@ export const NarratorsNook: React.FC = () => {
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    color: #dcd3b4;
+                    color: ${isLight ? 'var(--color-brand-forrest)' : '#dcd3b4'};
                     cursor: pointer;
                     padding: 6px;
                     transition: transform 0.2s ease, color 0.2s ease, opacity 0.2s ease;
@@ -383,6 +434,8 @@ export const NarratorsNook: React.FC = () => {
                         setAudioDuration(audioRef.current.duration);
                     }
                 }}
+                onPlay={() => setIsPlaying(true)}
+                onPause={() => setIsPlaying(false)}
                 onEnded={() => {
                     setIsPlaying(false);
                     setCurrentTime(0);
@@ -390,39 +443,57 @@ export const NarratorsNook: React.FC = () => {
             />
 
             {/* --- SECTION HEADER --- */}
-            <div style={{ textAlign: 'center', marginBottom: '2.5rem', padding: '0 1.5rem' }}>
-                {/* Microphone Icon in Brand Coral */}
-                <div
-                    style={{
-                        width: '46px',
-                        height: '56px',
-                        backgroundColor: 'var(--color-brand-coral)',
-                        maskImage: 'url("/assets/Narrator-hub-Graphics/mic-badge.svg")',
-                        WebkitMaskImage: 'url("/assets/Narrator-hub-Graphics/mic-badge.svg")',
-                        maskRepeat: 'no-repeat',
-                        WebkitMaskRepeat: 'no-repeat',
-                        maskSize: 'contain',
-                        WebkitMaskSize: 'contain',
-                        maskPosition: 'center',
-                        WebkitMaskPosition: 'center',
-                        margin: '0 auto 1.15rem auto',
-                        filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.25))'
-                    }}
-                />
+            {showHeader && (
+                <div style={{ textAlign: 'center', marginBottom: isLight ? '2rem' : '2.5rem', padding: '0 1.5rem' }}>
+                    {/* Microphone Icon in Brand Coral */}
+                    <div
+                        style={{
+                            width: isLight ? '42px' : '46px',
+                            height: isLight ? '52px' : '56px',
+                            backgroundColor: 'var(--color-brand-coral)',
+                            maskImage: 'url("/assets/Narrator-hub-Graphics/mic-badge.svg")',
+                            WebkitMaskImage: 'url("/assets/Narrator-hub-Graphics/mic-badge.svg")',
+                            maskRepeat: 'no-repeat',
+                            WebkitMaskRepeat: 'no-repeat',
+                            maskSize: 'contain',
+                            WebkitMaskSize: 'contain',
+                            maskPosition: 'center',
+                            WebkitMaskPosition: 'center',
+                            margin: '0 auto 1.15rem auto',
+                            filter: isLight
+                                ? 'drop-shadow(0 2px 6px rgba(255, 107, 74, 0.25))'
+                                : 'drop-shadow(0 2px 6px rgba(0,0,0,0.25))'
+                        }}
+                    />
 
-                <h2 style={{
-                    fontFamily: 'Lora, Georgia, serif',
-                    fontStyle: 'italic',
-                    fontWeight: 400,
-                    fontSize: 'clamp(2rem, 3.2vw, 2.75rem)',
-                    lineHeight: 1.15,
-                    letterSpacing: '-0.02em',
-                    color: 'var(--color-brand-coral)',
-                    margin: 0
-                }}>
-                    Narrators’ Nook
-                </h2>
-            </div>
+                    <h2 style={{
+                        fontFamily: 'Lora, Georgia, serif',
+                        fontStyle: 'italic',
+                        fontWeight: 400,
+                        fontSize: 'clamp(2rem, 3.2vw, 2.75rem)',
+                        lineHeight: 1.15,
+                        letterSpacing: '-0.02em',
+                        color: 'var(--color-brand-coral)',
+                        margin: headerSubtitle ? '0 0 0.65rem 0' : 0
+                    }}>
+                        {headerTitle || 'Narrators’ Nook'}
+                    </h2>
+
+                    {headerSubtitle && (
+                        <p style={{
+                            fontFamily: 'var(--font-body)',
+                            fontSize: 'clamp(0.95rem, 1.15vw, 1.05rem)',
+                            color: primaryColor,
+                            maxWidth: '650px',
+                            margin: '0 auto',
+                            opacity: 0.88,
+                            lineHeight: 1.55
+                        }}>
+                            {headerSubtitle}
+                        </p>
+                    )}
+                </div>
+            )}
 
             {/* --- CAROUSEL TRACK STAGE --- */}
             <div style={{
@@ -510,11 +581,15 @@ export const NarratorsNook: React.FC = () => {
                                     transform: isCenter ? 'scale(1)' : undefined,
                                     filter: isCenter ? 'none' : undefined,
                                     cursor: isCenter ? 'default' : 'pointer',
-                                    padding: '1.8rem 2.2rem 2.8rem 2.2rem',
+                                    padding: '1.8rem 2.2rem 2.4rem 2.2rem',
                                     backgroundColor: 'transparent',
                                     boxShadow: 'none',
-                                    borderRight: isCenter ? '1px solid rgba(220, 211, 180, 0.25)' : 'none',
-                                    borderLeft: isCenter ? '1px solid rgba(220, 211, 180, 0.25)' : 'none',
+                                    borderRight: isCenter
+                                        ? (isLight ? '1px solid rgba(44, 81, 67, 0.16)' : '1px solid rgba(220, 211, 180, 0.25)')
+                                        : 'none',
+                                    borderLeft: isCenter
+                                        ? (isLight ? '1px solid rgba(44, 81, 67, 0.16)' : '1px solid rgba(220, 211, 180, 0.25)')
+                                        : 'none',
                                     display: 'flex',
                                     flexDirection: 'column',
                                     justifyContent: 'space-between',
@@ -522,7 +597,7 @@ export const NarratorsNook: React.FC = () => {
                                 }}
                             >
                                 <div>
-                                    {/* --- 1. TOP ROW: SHIELD (+25% size, color #dcd3b4) + 2-LINE TITLE & INTRA REGULAR DESCRIPTION --- */}
+                                    {/* --- 1. TOP ROW: SHIELD + 2-LINE TITLE & INTRA REGULAR DESCRIPTION --- */}
                                     <div style={{
                                         display: 'flex',
                                         gap: '1.4rem',
@@ -530,13 +605,13 @@ export const NarratorsNook: React.FC = () => {
                                         marginBottom: '2.2rem',
                                         textAlign: 'left'
                                     }}>
-                                        {/* Badge Graphic Shield - Increased by 25% with #dcd3b4 color */}
+                                        {/* Badge Graphic Shield */}
                                         <div
                                             style={{
                                                 width: `${badgeWidth}px`,
                                                 height: `${badgeHeight}px`,
                                                 flexShrink: 0,
-                                                backgroundColor: ACCENT_COLOR,
+                                                backgroundColor: primaryColor,
                                                 maskImage: `url("${slide.badgeSvg}")`,
                                                 WebkitMaskImage: `url("${slide.badgeSvg}")`,
                                                 maskSize: 'contain',
@@ -545,11 +620,13 @@ export const NarratorsNook: React.FC = () => {
                                                 WebkitMaskRepeat: 'no-repeat',
                                                 maskPosition: 'center',
                                                 WebkitMaskPosition: 'center',
-                                                filter: 'drop-shadow(0 4px 10px rgba(0,0,0,0.35))'
+                                                filter: isLight
+                                                    ? 'drop-shadow(0 4px 8px rgba(44, 81, 67, 0.18))'
+                                                    : 'drop-shadow(0 4px 10px rgba(0,0,0,0.35))'
                                             }}
                                         />
 
-                                        {/* Style Name (2 lines) & Description (Inter Regular, #dcd3b4) */}
+                                        {/* Style Name (2 lines) & Description */}
                                         <div style={{ flex: 1 }}>
                                             <h3 style={{
                                                 fontFamily: 'var(--font-serif-accent)',
@@ -575,9 +652,9 @@ export const NarratorsNook: React.FC = () => {
                                                 fontStyle: 'normal',
                                                 fontSize: 'clamp(0.82rem, 0.98vw, 0.92rem)',
                                                 lineHeight: 1.48,
-                                                color: ACCENT_COLOR,
+                                                color: primaryColor,
                                                 margin: 0,
-                                                opacity: 0.95
+                                                opacity: isLight ? 0.9 : 0.95
                                             }}>
                                                 “{slide.description}”
                                             </p>
@@ -621,11 +698,11 @@ export const NarratorsNook: React.FC = () => {
                                                     style={{
                                                         backgroundColor: isSelected
                                                             ? 'var(--color-brand-coral)'
-                                                            : 'rgba(255, 107, 74, 0.16)',
+                                                            : (isLight ? 'rgba(255, 107, 74, 0.10)' : 'rgba(255, 107, 74, 0.16)'),
                                                         color: isSelected ? '#ffffff' : 'var(--color-brand-coral)',
                                                         border: isSelected
                                                             ? '1px solid var(--color-brand-coral)'
-                                                            : '1px solid rgba(255, 107, 74, 0.38)',
+                                                            : (isLight ? '1px solid rgba(255, 107, 74, 0.32)' : '1px solid rgba(255, 107, 74, 0.38)'),
                                                         padding: '0.45rem 1.15rem',
                                                         borderRadius: '9999px',
                                                         fontSize: 'clamp(0.82rem, 1vw, 0.92rem)',
@@ -641,13 +718,13 @@ export const NarratorsNook: React.FC = () => {
                                                     }}
                                                     onMouseEnter={(e) => {
                                                         if (isCenter && !isSelected) {
-                                                            e.currentTarget.style.backgroundColor = 'rgba(255, 107, 74, 0.28)';
-                                                            e.currentTarget.style.color = '#ffffff';
+                                                            e.currentTarget.style.backgroundColor = isLight ? 'rgba(255, 107, 74, 0.20)' : 'rgba(255, 107, 74, 0.28)';
+                                                            e.currentTarget.style.color = isLight ? 'var(--color-brand-coral)' : '#ffffff';
                                                         }
                                                     }}
                                                     onMouseLeave={(e) => {
                                                         if (isCenter && !isSelected) {
-                                                            e.currentTarget.style.backgroundColor = 'rgba(255, 107, 74, 0.16)';
+                                                            e.currentTarget.style.backgroundColor = isLight ? 'rgba(255, 107, 74, 0.10)' : 'rgba(255, 107, 74, 0.16)';
                                                             e.currentTarget.style.color = 'var(--color-brand-coral)';
                                                         }
                                                     }}
@@ -658,7 +735,7 @@ export const NarratorsNook: React.FC = () => {
                                         })}
                                     </div>
 
-                                    {/* --- 4. AUDIO PLAYER (Light elements in #dcd3b4, compact length) --- */}
+                                    {/* --- 4. AUDIO PLAYER --- */}
                                     <div style={{
                                         display: 'flex',
                                         alignItems: 'center',
@@ -667,7 +744,7 @@ export const NarratorsNook: React.FC = () => {
                                         maxWidth: '360px',
                                         margin: '0 auto 0.9rem auto'
                                     }}>
-                                        {/* Play / Pause circular button in #dcd3b4 */}
+                                        {/* Play / Pause circular button */}
                                         <button
                                             type="button"
                                             disabled={!isCenter}
@@ -680,14 +757,16 @@ export const NarratorsNook: React.FC = () => {
                                                 width: '38px',
                                                 height: '38px',
                                                 borderRadius: '50%',
-                                                backgroundColor: ACCENT_COLOR, // #dcd3b4
+                                                backgroundColor: isLight ? 'var(--color-brand-forrest)' : DARK_ACCENT_COLOR,
                                                 border: 'none',
                                                 display: 'flex',
                                                 alignItems: 'center',
                                                 justifyContent: 'center',
                                                 cursor: isCenter ? 'pointer' : 'default',
                                                 flexShrink: 0,
-                                                boxShadow: '0 2px 8px rgba(0,0,0,0.25)',
+                                                boxShadow: isLight
+                                                    ? '0 2px 8px rgba(44, 81, 67, 0.25)'
+                                                    : '0 2px 8px rgba(0,0,0,0.25)',
                                                 transition: 'transform 0.15s ease, background-color 0.15s ease',
                                                 outline: 'none'
                                             }}
@@ -700,19 +779,19 @@ export const NarratorsNook: React.FC = () => {
                                         >
                                             {isCenter && isPlaying ? (
                                                 // Pause Icon
-                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--color-brand-coral)">
+                                                <svg width="14" height="14" viewBox="0 0 24 24" fill={isLight ? '#ffffff' : 'var(--color-brand-coral)'}>
                                                     <rect x="6" y="4" width="4" height="16" rx="1.5" />
                                                     <rect x="14" y="4" width="4" height="16" rx="1.5" />
                                                 </svg>
                                             ) : (
                                                 // Play Icon
-                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--color-brand-coral)" style={{ marginLeft: '2px' }}>
+                                                <svg width="14" height="14" viewBox="0 0 24 24" fill={isLight ? '#ffffff' : 'var(--color-brand-coral)'} style={{ marginLeft: '2px' }}>
                                                     <polygon points="5 3 19 12 5 21 5 3" />
                                                 </svg>
                                             )}
                                         </button>
 
-                                        {/* Scrubber Track in #dcd3b4 */}
+                                        {/* Scrubber Track */}
                                         <div
                                             onClick={(e) => {
                                                 if (isCenter) {
@@ -732,20 +811,20 @@ export const NarratorsNook: React.FC = () => {
                                             <div style={{
                                                 width: '100%',
                                                 height: '3px',
-                                                backgroundColor: 'rgba(220, 211, 180, 0.28)', // #dcd3b4 track
+                                                backgroundColor: isLight ? 'rgba(44, 81, 67, 0.18)' : 'rgba(220, 211, 180, 0.28)',
                                                 borderRadius: '3px',
                                                 position: 'relative'
                                             }}>
-                                                {/* Progress Bar Fill in #dcd3b4 */}
+                                                {/* Progress Bar Fill */}
                                                 <div style={{
                                                     width: `${progressPercent}%`,
                                                     height: '100%',
-                                                    backgroundColor: ACCENT_COLOR, // #dcd3b4
+                                                    backgroundColor: primaryColor,
                                                     borderRadius: '3px',
                                                     transition: 'width 0.1s linear'
                                                 }} />
 
-                                                {/* Scrubber Thumb Knob in #dcd3b4 */}
+                                                {/* Scrubber Thumb Knob */}
                                                 <div style={{
                                                     position: 'absolute',
                                                     left: `${progressPercent}%`,
@@ -754,19 +833,19 @@ export const NarratorsNook: React.FC = () => {
                                                     width: '11px',
                                                     height: '11px',
                                                     borderRadius: '50%',
-                                                    backgroundColor: ACCENT_COLOR, // #dcd3b4
-                                                    boxShadow: '0 1px 4px rgba(0,0,0,0.3)',
+                                                    backgroundColor: primaryColor,
+                                                    boxShadow: isLight ? '0 1px 4px rgba(44, 81, 67, 0.3)' : '0 1px 4px rgba(0,0,0,0.3)',
                                                     transition: 'left 0.1s linear'
                                                 }} />
                                             </div>
                                         </div>
 
-                                        {/* Time Indicator in #dcd3b4, Inter Regular */}
+                                        {/* Time Indicator */}
                                         <div style={{
                                             fontFamily: 'var(--font-body)',
                                             fontSize: '0.88rem',
                                             fontWeight: 500,
-                                            color: ACCENT_COLOR,
+                                            color: primaryColor,
                                             minWidth: '32px',
                                             textAlign: 'right',
                                             userSelect: 'none'
@@ -775,7 +854,7 @@ export const NarratorsNook: React.FC = () => {
                                         </div>
                                     </div>
 
-                                    {/* --- 5. NARRATOR CITATION (Inter Bold, #dcd3b4, under player) --- */}
+                                    {/* --- 5. NARRATOR CITATION (Inter Bold, under player) --- */}
                                     <div style={{
                                         textAlign: 'center',
                                         padding: '0 0.5rem',
@@ -784,7 +863,7 @@ export const NarratorsNook: React.FC = () => {
                                         fontFamily: 'var(--font-body)', // Inter Bold
                                         fontWeight: 700,
                                         fontSize: 'clamp(0.82rem, 1vw, 0.9rem)',
-                                        color: ACCENT_COLOR,
+                                        color: primaryColor,
                                         lineHeight: 1.4
                                     }}>
                                         {renderNarratorLink(currentNarr.name, isCenter)}, from the Audio book{' '}
@@ -794,13 +873,13 @@ export const NarratorsNook: React.FC = () => {
                                                 if (!isCenter) e.preventDefault();
                                             }}
                                             style={{
-                                                color: ACCENT_COLOR,
+                                                color: primaryColor,
                                                 textDecoration: 'underline',
                                                 textUnderlineOffset: '3px',
                                                 transition: 'color 0.2s ease'
                                             }}
                                             onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-brand-coral)'}
-                                            onMouseLeave={(e) => e.currentTarget.style.color = ACCENT_COLOR}
+                                            onMouseLeave={(e) => e.currentTarget.style.color = primaryColor}
                                         >
                                             {currentNarr.bookTitle}
                                         </Link>
@@ -808,38 +887,112 @@ export const NarratorsNook: React.FC = () => {
                                 </div>
 
                                 {/* --- 6. BOTTOM CTA BUTTON (Lora Italic) --- */}
-                                <div style={{ textAlign: 'center', marginTop: '1.2rem', paddingBottom: '0.6rem' }}>
-                                    <Link
-                                        to={`/narrator-styles/${slide.slug}/`}
-                                        onClick={(e) => {
-                                            if (!isCenter) e.preventDefault();
-                                        }}
-                                        style={{
-                                            display: 'inline-block',
-                                            backgroundColor: 'var(--color-brand-coral)',
-                                            color: '#ffffff',
-                                            padding: '0.72rem 1.9rem',
-                                            borderRadius: '9999px',
-                                            fontFamily: 'var(--font-serif-accent)', // Lora Italic
-                                            fontStyle: 'italic',
-                                            fontSize: 'clamp(0.88rem, 1.08vw, 0.98rem)',
-                                            fontWeight: 500,
-                                            textDecoration: 'none',
-                                            boxShadow: '0 4px 14px rgba(0,0,0,0.22)',
-                                            transition: 'background-color 0.2s ease, transform 0.2s ease',
-                                            pointerEvents: isCenter ? 'auto' : 'none'
-                                        }}
-                                        onMouseEnter={(e) => {
-                                            e.currentTarget.style.backgroundColor = '#cc563b';
-                                            e.currentTarget.style.transform = 'translateY(-1px)';
-                                        }}
-                                        onMouseLeave={(e) => {
-                                            e.currentTarget.style.backgroundColor = 'var(--color-brand-coral)';
-                                            e.currentTarget.style.transform = 'translateY(0)';
-                                        }}
-                                    >
-                                        All Narrators with {slide.name} →
-                                    </Link>
+                                <div style={{ textAlign: 'center', marginTop: '1.2rem', paddingBottom: '0.4rem' }}>
+                                    {onSelectStyle ? (
+                                        <>
+                                            <button
+                                                type="button"
+                                                onClick={(e) => {
+                                                    if (isCenter) {
+                                                        e.stopPropagation();
+                                                        onSelectStyle(slide.slug);
+                                                    }
+                                                }}
+                                                style={{
+                                                    display: 'inline-block',
+                                                    backgroundColor: 'var(--color-brand-coral)',
+                                                    color: '#ffffff',
+                                                    padding: '0.72rem 1.9rem',
+                                                    borderRadius: '9999px',
+                                                    border: 'none',
+                                                    fontFamily: 'var(--font-serif-accent)', // Lora Italic
+                                                    fontStyle: 'italic',
+                                                    fontSize: 'clamp(0.88rem, 1.08vw, 0.98rem)',
+                                                    fontWeight: 500,
+                                                    textDecoration: 'none',
+                                                    cursor: isCenter ? 'pointer' : 'default',
+                                                    boxShadow: '0 4px 14px rgba(255, 107, 74, 0.32)',
+                                                    transition: 'background-color 0.2s ease, transform 0.2s ease',
+                                                    pointerEvents: isCenter ? 'auto' : 'none'
+                                                }}
+                                                onMouseEnter={(e) => {
+                                                    if (isCenter) {
+                                                        e.currentTarget.style.backgroundColor = '#cc563b';
+                                                        e.currentTarget.style.transform = 'translateY(-1px)';
+                                                    }
+                                                }}
+                                                onMouseLeave={(e) => {
+                                                    if (isCenter) {
+                                                        e.currentTarget.style.backgroundColor = 'var(--color-brand-coral)';
+                                                        e.currentTarget.style.transform = 'translateY(0)';
+                                                    }
+                                                }}
+                                            >
+                                                Filter by {slide.name} Narrators ↓
+                                            </button>
+                                            <div style={{ marginTop: '0.45rem' }}>
+                                                <Link
+                                                    to={`/narrator-styles/${slide.slug}/`}
+                                                    onClick={(e) => {
+                                                        if (!isCenter) e.preventDefault();
+                                                    }}
+                                                    style={{
+                                                        fontFamily: 'var(--font-body)',
+                                                        fontSize: '0.78rem',
+                                                        fontWeight: 500,
+                                                        color: primaryColor,
+                                                        opacity: 0.75,
+                                                        textDecoration: 'underline',
+                                                        textUnderlineOffset: '2px',
+                                                        transition: 'opacity 0.2s ease, color 0.2s ease',
+                                                        pointerEvents: isCenter ? 'auto' : 'none'
+                                                    }}
+                                                    onMouseEnter={(e) => {
+                                                        e.currentTarget.style.opacity = '1';
+                                                        e.currentTarget.style.color = 'var(--color-brand-coral)';
+                                                    }}
+                                                    onMouseLeave={(e) => {
+                                                        e.currentTarget.style.opacity = '0.75';
+                                                        e.currentTarget.style.color = primaryColor;
+                                                    }}
+                                                >
+                                                    or explore {slide.name} style guide →
+                                                </Link>
+                                            </div>
+                                        </>
+                                    ) : (
+                                        <Link
+                                            to={`/narrator-styles/${slide.slug}/`}
+                                            onClick={(e) => {
+                                                if (!isCenter) e.preventDefault();
+                                            }}
+                                            style={{
+                                                display: 'inline-block',
+                                                backgroundColor: 'var(--color-brand-coral)',
+                                                color: '#ffffff',
+                                                padding: '0.72rem 1.9rem',
+                                                borderRadius: '9999px',
+                                                fontFamily: 'var(--font-serif-accent)', // Lora Italic
+                                                fontStyle: 'italic',
+                                                fontSize: 'clamp(0.88rem, 1.08vw, 0.98rem)',
+                                                fontWeight: 500,
+                                                textDecoration: 'none',
+                                                boxShadow: '0 4px 14px rgba(0,0,0,0.22)',
+                                                transition: 'background-color 0.2s ease, transform 0.2s ease',
+                                                pointerEvents: isCenter ? 'auto' : 'none'
+                                            }}
+                                            onMouseEnter={(e) => {
+                                                e.currentTarget.style.backgroundColor = '#cc563b';
+                                                e.currentTarget.style.transform = 'translateY(-1px)';
+                                            }}
+                                            onMouseLeave={(e) => {
+                                                e.currentTarget.style.backgroundColor = 'var(--color-brand-coral)';
+                                                e.currentTarget.style.transform = 'translateY(0)';
+                                            }}
+                                        >
+                                            All Narrators with {slide.name} →
+                                        </Link>
+                                    )}
                                 </div>
                             </div>
                         );
