@@ -8694,7 +8694,43 @@ export const baseBooks: Book[] = [
         narrator: "Kirsten Potter",
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/86/6a/6c/866a6c7a-8ab1-b0a7-9fc9-10c96c3373c2/mzaf_10179264948149501865.std.aac.p.m4a',
         affiliateLink: "https://www.amazon.co.uk/dp/B0F9LJR4B5?tag=thelongbookclub-21",
-        relatedBookIds: ["487", "3", "131", "134", "65", "154"]
+        relatedBookIds: ["487", "3", "131", "134", "65", "154", "489"]
+    },
+    {
+        id: "489",
+        slug: "the-last-man-mary-shelley",
+        title: "The Last Man",
+        author: "Mary Shelley",
+        coverUrl: "/covers/the-last-man-mary-shelley.jpg",
+        length: "22h 33m",
+        lengthHours: 22.55,
+        genre: ["Classics", "Science Fiction", "Post-Apocalyptic", "Gothic", "Literary Fiction", "Survival"],
+        description: "Set in the late twenty-first century, Mary Shelley’s pioneering 1826 apocalyptic novel chronicles a global plague that slowly empties the earth of humanity until only a single survivor remains.",
+        cardOverview: "23 hours of prophetic ruin. Published in 1826, Mary Shelley’s visionary plague epic invented post-apocalyptic fiction.",
+        teaserTitle: "Does 1826’s Original Apocalypse Hold Up on Audio?",
+        teaser: "Can dual narrators Anna Bentinck and Matt Bates make Mary Shelley's nineteenth-century Romantic prose feel as haunting and urgent as modern pandemic fiction across twenty-three hours? Read our full review and Soundcheck to see our verdict.",
+        narrator: "Anna Bentinck, Matt Bates",
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/96/03/6a/96036ae2-2aa0-0ce1-dc8e-74c9c11fec6c/mzaf_3250322561085919028.std.aac.p.m4a',
+        affiliateLink: "https://www.amazon.co.uk/dp/B00CMC674W?tag=thelongbookclub-21",
+        relatedBookIds: ["490", "488", "487", "3", "131", "105"]
+    },
+    {
+        id: "490",
+        slug: "frankenstein-mary-shelley",
+        title: "Frankenstein",
+        author: "Mary Shelley",
+        coverUrl: "/covers/frankenstein-mary-shelley.jpg",
+        length: "11h 43m",
+        lengthHours: 11.72,
+        genre: ["Classics", "Gothic", "Horror", "Science Fiction", "Literary Fiction"],
+        description: "Driven by hubris to conquer death, young scientist Victor Frankenstein assembles a sentient creature from charnel-house remnants—unleashing a tragic pursuit from Geneva to the Arctic ice.",
+        cardOverview: "12 hours of Gothic obsession. The foundational masterpiece of modern science fiction, complete with scholarly extras.",
+        teaserTitle: "Why Is This Penguin Edition Nearly 12 Hours?",
+        teaser: "How does actor Colin Salmon's resonant, theatrical baritone transform Victor Frankenstein's nested Arctic confessions into an intimate twelve-hour psychological duel? Read our full review and Soundcheck to see our verdict.",
+        narrator: "Colin Salmon, Peter Noble",
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/02/4b/9b/024b9b56-8312-6d67-f117-2f1927418b22/mzaf_14631469298122841880.std.aac.p.m4a',
+        affiliateLink: "https://www.amazon.co.uk/dp/B07VNNG7TX?tag=thelongbookclub-21",
+        relatedBookIds: ["489", "105", "3", "487", "488"]
     }
 ];
 

@@ -992,6 +992,10 @@ Redirect 301 /book/487 /book/wool-hugh-howey/
 Redirect 301 /book/487/ /book/wool-hugh-howey/
 Redirect 301 /book/488 /book/station-eleven-emily-st-john-mandel/
 Redirect 301 /book/488/ /book/station-eleven-emily-st-john-mandel/
+Redirect 301 /book/489 /book/the-last-man-mary-shelley/
+Redirect 301 /book/489/ /book/the-last-man-mary-shelley/
+Redirect 301 /book/490 /book/frankenstein-mary-shelley/
+Redirect 301 /book/490/ /book/frankenstein-mary-shelley/
 
   
   # --- Book Alias Redirects (Manual) ---

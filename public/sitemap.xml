@@ -2451,6 +2451,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://thelongbookclub.com/book/the-last-man-mary-shelley/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/book/frankenstein-mary-shelley/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thelongbookclub.com/genre/classics/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -3716,6 +3726,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://thelongbookclub.com/author/mary-shelley/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thelongbookclub.com/narrator/bill-homewood/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -3952,6 +3967,11 @@
   </url>
   <url>
     <loc>https://thelongbookclub.com/narrator/steven-pacey/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thelongbookclub.com/narrator/peter-noble/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
