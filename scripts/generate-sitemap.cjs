@@ -192,12 +192,14 @@ function generateSitemap() {
     try {
         if (fs.existsSync(JOURNAL_FILE_PATH)) {
             const journalContent = fs.readFileSync(JOURNAL_FILE_PATH, 'utf8');
+            // Only index active journalPosts, ignore stagedJournalPosts
+            const activeSection = journalContent.split('export const journalPosts: JournalPost[] =')[1] || journalContent;
             const jSlugRegex = /slug:\s*['"]([^'"]+)['"]/g;
 
             let jMatch;
             let jCount = 0;
 
-            while ((jMatch = jSlugRegex.exec(journalContent)) !== null) {
+            while ((jMatch = jSlugRegex.exec(activeSection)) !== null) {
                 urls.push({
                     url: `/journal/${jMatch[1]}/`,
                     changefreq: 'weekly', // Journals might update or be important

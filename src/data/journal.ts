@@ -10,7 +10,20 @@ export interface JournalPost {
     tags?: string[];
 }
 
-export const journalPosts: JournalPost[] = [
+export interface JournalPost {
+    id: string;
+    slug: string;
+    title: string;
+    date: string;
+    author: string;
+    excerpt: string;
+    content: string; // Markdown content
+    coverUrl?: string;
+    tags?: string[];
+}
+
+// Staged drafts queued for future launch (not visible on the live site)
+export const stagedJournalPosts: JournalPost[] = [
     {
         id: '1793781700000',
         slug: 'from-noahs-mud-to-silos-dust-the-4000-year-history-of-post-apocalyptic-fiction',
@@ -126,7 +139,10 @@ From the muddy slopes of Mount Ararat to the rusted concrete stairwells of the S
 
 ---
 *(Explore 245+ hours of marathon listens in our flagship collection: [Best Long Post-Apocalyptic & Wasteland Survival Audiobooks](/collections/post-apocalyptic-survival/).)*`
-    },
+    }
+];
+
+export const journalPosts: JournalPost[] = [
     {
         id: '1793781600000',
     slug: 'tea-shops-vs-wastelands-why-audiobook-listeners-are-splitting-toward-two-opposite-extremes',

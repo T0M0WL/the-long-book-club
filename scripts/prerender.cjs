@@ -390,7 +390,9 @@ async function prerender() {
     // --- Journal Prerendering ---
     if (fs.existsSync(JOURNAL_FILE)) {
         const journalContent = fs.readFileSync(JOURNAL_FILE, 'utf-8');
-        const jBlocks = journalContent.split(/(?:\s*\{)/gm).slice(1);
+        // Only prerender active journalPosts, ignore stagedJournalPosts
+        const activeSection = journalContent.split('export const journalPosts: JournalPost[] =')[1] || journalContent;
+        const jBlocks = activeSection.split(/(?:\s*\{)/gm).slice(1);
         let jCount = 0;
 
         for (const block of jBlocks) {
