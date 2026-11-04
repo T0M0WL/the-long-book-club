@@ -1059,9 +1059,9 @@ export const baseBooks: Book[] = [
     {
         relatedBookIds: ['301', '300', '299', '298', '297', '296', '295', '294', '27', '66', '20', '68', '69', '60', '61', '63', '64', '67', '8'],
         cardOverview: "32 hours of survival. Hard sci-fi that spans 5,000 years, exploring how humanity rebuilds after the end.",
-        teaserTitle: "Why Does the Narrator Change Halfway Through?",
-        teaser: "How does switching from Mary Robinette Kowal to Will Damron handle a sudden 5,000-year time jump across thirty-two hours of orbital survival? Read our full review and Soundcheck to see our verdict.",
-        narrator: "Mary Robinette Kowal, Will Damron",
+        teaserTitle: "Can One Voice Carry a 5,000-Year Orbital Survival Epic?",
+        teaser: "How does veteran narrator Peter Brooke handle the immense technical weight, catastrophic orbital disasters, and sweeping 5,000-year time jump across thirty-two hours of hard sci-fi survival? Read our full review and Soundcheck to see our verdict.",
+        narrator: "Peter Brooke",
         genre: ['Science Fiction', 'Hard Sci-Fi', 'Post-Apocalyptic', 'Space Survival', 'Epic', 'Speculative Fiction', 'Military Sci-Fi', 'Ecology'],
         description: "A catastrophic event renders the earth a ticking time bomb. In a feverish race against the inevitable, nations around the globe band together.",
         id: '65',
