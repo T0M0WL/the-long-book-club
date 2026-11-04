@@ -369,6 +369,11 @@ async function prerender() {
         html = html.replace(/<meta property="og:url" content="[^"]+" \/>/, `<meta property="og:url" content="${absoluteUrl}" />`);
         html = html.replace(/<link rel="canonical" href="[^"]+" \/>/, `<link rel="canonical" href="${absoluteUrl}" />`);
 
+        // Twitter Card tags
+        html = html.replace(/<meta name="twitter:title" content="[^"]+" \/>/, `<meta name="twitter:title" content="${escapeHtml(title)}" />`);
+        html = html.replace(/<meta name="twitter:description" content="[^"]+" \/>/, `<meta name="twitter:description" content="${escapeHtml(seoDescription)}" />`);
+        html = html.replace(/<meta name="twitter:image" content="[^"]+" \/>/, `<meta name="twitter:image" content="${absoluteCoverUrl}" />`);
+
         // Inject Body Content
         html = html.replace('<!-- SEO_CONTENT_HOLDER -->', bodyContent);
         
@@ -431,6 +436,11 @@ async function prerender() {
             html = html.replace(/<meta property="og:image" content="[^"]+" \/>/, `<meta property="og:image" content="${absoluteCoverUrl}" />`);
             html = html.replace(/<meta property="og:url" content="[^"]+" \/>/, `<meta property="og:url" content="${absoluteUrl}" />`);
             html = html.replace(/<link rel="canonical" href="[^"]+" \/>/, `<link rel="canonical" href="${absoluteUrl}" />`);
+
+            // Twitter Card tags
+            html = html.replace(/<meta name="twitter:title" content="[^"]+" \/>/, `<meta name="twitter:title" content="${escapeHtml(title)}" />`);
+            html = html.replace(/<meta name="twitter:description" content="[^"]+" \/>/, `<meta name="twitter:description" content="${escapeHtml(excerpt)}" />`);
+            html = html.replace(/<meta name="twitter:image" content="[^"]+" \/>/, `<meta name="twitter:image" content="${absoluteCoverUrl}" />`);
 
             html = html.replace('<!-- SEO_CONTENT_HOLDER -->', bodyContent);
             
@@ -963,6 +973,11 @@ async function prerender() {
             html = html.replace(/<meta property="og:image" content="[^"]+" \/>/, `<meta property="og:image" content="${absoluteCoverUrl}" />`);
             html = html.replace(/<meta property="og:url" content="[^"]+" \/>/, `<meta property="og:url" content="${absoluteUrl}" />`);
             html = html.replace(/<link rel="canonical" href="[^"]+" \/>/, `<link rel="canonical" href="${absoluteUrl}" />`);
+
+            // Twitter Card tags
+            html = html.replace(/<meta name="twitter:title" content="[^"]+" \/>/, `<meta name="twitter:title" content="${escapeHtml(title)}" />`);
+            html = html.replace(/<meta name="twitter:description" content="[^"]+" \/>/, `<meta name="twitter:description" content="${escapeHtml(seoDescription)}" />`);
+            html = html.replace(/<meta name="twitter:image" content="[^"]+" \/>/, `<meta name="twitter:image" content="${absoluteCoverUrl}" />`);
 
             html = html.replace('<!-- SEO_CONTENT_HOLDER -->', bodyContent);
             
