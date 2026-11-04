@@ -15,7 +15,17 @@ This skill governs how Antigravity (and any spawned `research` or `self` sub-age
 ## 🎯 The Core Editorial Philosophy: Subgenre Discovery & The Curation Moat
 
 - **Tastemaker Over Database:** Audible's native "sort by length" is famously flooded with public-domain dumps, AI audio, and filler. We do not compete as a crude length filter; we compete as **the premier curated magazine for immersive audiobooks**.
-- **The 10+ Hour Rule:** All featured audiobooks must be **10+ hours** (ensuring high return on a single Audible credit or token), but our true differentiator is **Editorial Taste, Subgenre Discovery, and Narrator Soundchecks**.
+- **The 10+ Hour Rule & 7+ Hour Exception:**
+  - **Baseline:** Featured audiobooks should be **10+ hours** (ensuring a strong return on a single Audible credit or token).
+  - **The 7–10 Hour Exception:** A book over **7 hours** (between 7h and 10h) is eligible if:
+    1. The book is **extremely popular**, OR it is **Book 1 of a series** that has longer (10+ hour) sequels, **AND**
+    2. **At least 4 other books** in that same Curated Collection are **over 10 hours**.
+  - **Editions:** We are **not** limited to standard single-narrator "unabridged" editions—we can feature **cinematic, dramatized, or full-cast audio productions** whenever they meet our runtime/exception criteria.
+- **Curated Collection Selection Criteria:**
+  - **Collection Size:** Ideally **over 7 books (8+ books)** per Curated Collection. For niche or emerging subgenres where fewer qualifying titles exist, we allow a minimum exception of **5 books**.
+  - **Catalog Reuse:** Collections can freely combine matching books **already featured on the website** (`src/data/books.ts`) with newly researched additions.
+  - **Buzz Over Star Ratings:** No minimum Goodreads or Reddit star rating is required. Instead, prioritize **volume of online chatter, gossip, controversy, and community buzz** (Reddit, BookTok, bookish media) when choosing new subgenre themes and titles.
+  - **Narrators:** No restrictive selection rules on narrators.
 - **Weekly Release Cadence:** The site targets publishing **one new curated subgenre collection / trending niche spotlight every week** (e.g. Silkpunk, Grimdark, Romantasy, Cozy Fantasy, LitRPG) with accompanying Journal deep-dives, establishing TLBC as the definitive tastemaker for audio trends.
 
 ---
@@ -48,6 +58,11 @@ Every page on `thelongbookclub.com` plays a specific role in guiding visitors to
 
 1. **Top of Funnel — Discovery & Ingress ("The Magazine" & "The Kiosk")**:
    - **The Journal (`/journal/:slug/`)**: Captures informational and social search traffic. **Golden Rule:** Never put external Amazon/Audible links in Journal posts; always link internally to `/collections/:slug/`, `/genre/:slug/`, and `/book/:slug/` (with trailing slashes) to pass SEO link equity and move readers down the funnel.
+   - **Journal Editorial Pillar — Emerging Genre Deep-Dives:** Prioritize essay-style deep dives into emerging or trending subgenres that explore:
+     1. **Origin Story:** Where the genre came from, who coined it, and its literary/cultural roots.
+     2. **Why It's Surging Now:** What is driving the current wave of online buzz and audio popularity.
+     3. **The Bigger Picture & Listener Psychology:** What the trend says about the broader cultural moment and the *psychology* of why listeners are drawn to these worlds right now.
+     4. **Interesting Facts & Audio Hooks:** Surprising trivia, defining tropes, and why the long-form audio format elevates the subgenre—paired with natural internal links to our matching Curated Collection and featured Book pages.
    - **Homepage & Long Book Finder (`/long-book-finder/`)**: Dynamic filtering tools whose cards (`BookCard.tsx`) route every click to `/book/:slug/` via the *"Read Full Review →"* button.
 2. **Middle of Funnel — "The Window Displays / SEO Honey Traps"**:
    - **Curated Collections (`/collections/:slug/`) & Niche Genres (`/genre/:slug/`)**: Rank for broad & niche discovery keywords (e.g., *"Best Long Magical Realism Audiobooks"*).
@@ -102,8 +117,8 @@ Every audiobook added to the site MUST have 4 completely distinct copy blocks (0
 6. **Sync Audio Previews:** Run `npm run sync:previews` (or `python3 scripts/sync-audio-previews.py --id <newId1,newId2>`) to query the Apple Books / iTunes Search API. This automatically discovers and injects verified `audioPreviewUrl` direct `.m4a` audio sample streams into `src/data/books.ts` so the Narrator Soundcheck audio player renders on the new book pages.
 
 ### Mode B: Autonomous Research & Drafting Inside Antigravity
-1. First inspect `src/data/books.ts` to get the current list of all existing book titles and IDs so you never propose a duplicate book.
-2. Spawn a `research` sub-agent (or use `search_web`) to identify trending **10+ hour** unabridged audiobooks (prioritizing the longest, highest-value listens available in each niche genre), verify exact UK/US Audible runtimes (`XXh YYm`), and confirm narrator names.
+1. First inspect `src/data/books.ts` and `src/data/collections.ts` to identify existing catalog books that fit a proposed Curated Collection (reusing existing site books is encouraged) and avoid duplicating books that already exist when adding new entries.
+2. Spawn a `research` sub-agent (or use `search_web`) to identify high-buzz subgenre themes and audiobooks (10+ hours baseline, or 7–10 hours if extremely popular / Book 1 of a longer series when at least 4 other books in the collection are 10+ hours; standard, cinematic, and full-cast editions are all eligible), verify exact UK/US Audible runtimes (`XXh YYm`), and confirm narrator names. Target 8+ books (over 7) per collection, with a 5-book minimum exception for emerging/niche genres.
 3. Query the **UK iTunes Search API** (`https://itunes.apple.com/search?term=<Title+Author>&media=audiobook&country=GB`) via `read_url_content` or run `npm run sync:previews` to pull the exact edition's 30-second `previewUrl` (`audioPreviewUrl`) and high-res square cover art (`artworkUrl100` with `100x100bb.jpg` replaced by `600x600bb.jpg`).
 4. Once Thomas approves the covers and provides his Amazon/Audible link (using UK tag `thelongbookclub-21`; Amazon OneLink routes international visitors automatically), download the `600x600bb.jpg` covers directly into `public/covers/<slug>.jpg` and wire `/covers/<slug>.jpg` into `src/data/books.ts` and `src/data/collections.ts`.
 

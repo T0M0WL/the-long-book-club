@@ -12,6 +12,36 @@ export interface LedgerNewsItem {
 
 export const ledgerNewsItems: LedgerNewsItem[] = [
     {
+        id: 'audie-awards-full-cast-categories-2026',
+        categoryTag: 'INDUSTRY SHIFT',
+        headline: 'The Audie Awards Crown Full-Cast Audio',
+        dateString: 'WED NOV 4th | 2026',
+        subHeadline: 'Ensemble Performance and Sound Design get their own major categories.',
+        paragraph: 'The Audio Publishers Association has officially added four new categories to the Audie Awards—headlined by Ensemble Performance and Production & Sound Design. The shake-up confirms that cinematic, multi-voice audio productions are no longer just prestige experiments, but a dominant pillar of modern publishing.',
+        ctaText: 'Explore our collection of the longest cinematic full-cast audiobooks →',
+        ctaLink: '/collections/graphic-audio/'
+    },
+    {
+        id: 'audible-full-cast-dracula-2026',
+        categoryTag: 'NEW RELEASE',
+        headline: 'Gothic Audio Goes Blockbuster',
+        dateString: 'WED NOV 4th | 2026',
+        subHeadline: 'Jonathan Bailey, Ella Purnell & Maggie Gyllenhaal headline Dracula.',
+        paragraph: "Audible has unveiled a star-studded full-cast reimagining of Bram Stoker's Dracula across seven languages. Featuring Jonathan Bailey as Count Dracula, Ella Purnell as Mina, and Maggie Gyllenhaal as Van Helsing, you can <a href=\"https://www.amazon.co.uk/dp/B0H959NDFJ?tag=thelongbookclub-21\" target=\"_blank\" rel=\"noopener noreferrer nofollow\" style=\"color: var(--color-brand-forrest); text-decoration: underline; font-weight: 700;\">listen to the new full-cast dramatization on Audible</a> or explore our definitive 15-hour classic edition below.",
+        ctaText: 'Read our review and Soundcheck of Dracula (Audible Edition) →',
+        ctaLink: '/book/dracula-audible-edition-bram-stoker/'
+    },
+    {
+        id: 'audible-character-guide-feature-2026',
+        categoryTag: 'AUDIO TECH',
+        headline: 'Who Is Speaking? Audible Adds Live Character Guides',
+        dateString: 'WED NOV 4th | 2026',
+        subHeadline: 'Never lose track of sprawling ensemble casts in 30-hour epics again.',
+        paragraph: 'To solve one of marathon listening’s biggest headaches—losing track of who is speaking in massive multi-cast dramas—Audible has rolled out an interactive Character Guide. The feature visually highlights which character and voice actor is speaking in real time as the audio plays.',
+        ctaText: 'Browse our Full-Cast & GraphicAudio collection →',
+        ctaLink: '/collections/graphic-audio/'
+    },
+    {
         id: 'audible-winter-offer-2026',
         categoryTag: 'CREDIT HACK',
         headline: 'The 99p Audible Winter Offer is Live',

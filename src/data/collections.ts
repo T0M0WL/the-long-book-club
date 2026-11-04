@@ -18,6 +18,22 @@ export interface Collection {
 
 export const collections: Collection[] = [
     {
+        id: 'post-apocalyptic-survival',
+        title: 'Best Long Post-Apocalyptic & Wasteland Survival Audiobooks',
+        slug: 'post-apocalyptic-survival',
+        coverUrl: '/covers/wool-hugh-howey.jpg',
+        cardOverview: 'Subterranean silos, global pandemics, nuclear winters, and resilient survivors. Explore 225+ hours of gripping post-apocalyptic audiobooks where humanity fights to rebuild from the ashes.',
+        heroSubtitle: 'Step into subterranean bunkers, depopulated highways, and shattered civilizations across audio’s most gripping, credit-maximizing post-apocalyptic survival epics.',
+        editorialHeading: 'Survival After the Collapse',
+        editorialIntro: 'Post-apocalyptic audio turns solitary commutes into high-stakes survival marathons. Whether climbing the claustrophobic stairs of Hugh Howey’s [Wool](/book/wool-hugh-howey/), traversing depopulated highways in Stephen King’s [The Stand](/book/the-stand-stephen-king/) and Robert McCammon’s [Swan Song](/book/swan-song-robert-mccammon/), or following nomadic Shakespeare actors in [Station Eleven](/book/station-eleven-emily-st-john-mandel/), these epics pair master narrators like Edoardo Ballerini and Grover Gardner with unforgettable human resilience.',
+        description: 'Subterranean silos, global pandemics, nuclear winters, and resilient survivors. Explore 225+ hours of gripping post-apocalyptic audiobooks where humanity fights to rebuild from the ashes.',
+        bookIds: ['487', '488', '131', '3', '134', '65', '12', '154', '166'],
+        topGraphic: '/assets/Collections-Cards-Gfx/Collection-Card-Top-Coral-Red.gif',
+        iconSvg: '/assets/collections-hero-images/Collections Icons SVGs/post-apocalyptic-survival-icon.svg',
+        iconColor: '#c0c39a',
+        collectionNumber: '019'
+    },
+    {
         id: 'cozy-crime',
         title: 'Best Long Cozy Crime & Village Mystery Audiobooks',
         slug: 'cozy-crime',

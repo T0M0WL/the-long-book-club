@@ -71,6 +71,8 @@ export const baseBooks: Book[] = [
     {
         relatedBookIds: ['11','3','7'],
         cardOverview: "34 hours trapped in a small town. A claustrophobic study of society breaking down.",
+        teaserTitle: "34 Hours Inside a Suffocating Pressure Cooker",
+        teaser: "Can Broadway veteran Raul Esparza sustain the mounting panic of an entire trapped town across thirty-four hours without listener burnout? Read our full review and Soundcheck to see our verdict.",
         narrator: "Raul Esparza",
         genre: ['Science Fiction', 'Horror', 'Thriller', 'Dystopian', 'Survival'],
         description: "On an entirely normal, beautiful fall day in Chester's Mill, Maine, the town is inexplicably and suddenly sealed off from the rest of the world by an invisible force field.",
@@ -122,6 +124,8 @@ export const baseBooks: Book[] = [
     {
         relatedBookIds: ['11','12','7'],
         cardOverview: "48 hours of apocalypse. The ultimate battle between good and evil, with a scope that justifies every minute.",
+        teaserTitle: "Does the 48-Hour Uncut Edition Earn Its Length?",
+        teaser: "Can Grover Gardner keep nearly forty-eight hours of quiet highway scavenging and cross-country survival feeling urgent from start to finish? Read our full review and Soundcheck to see our verdict.",
         narrator: "Grover Gardner",
         genre: ['Horror', 'Post-Apocalyptic', 'Science Fiction', 'Dark Fantasy', 'Survival', 'Southern Gothic', 'Speculative Fiction'],
         description: "A patient escapes from a biological testing facility, unknowingly carrying a deadly weapon: a mutated strain of super-flu that will wipe out 99 percent of the world's population within a few weeks.",
@@ -1055,6 +1059,8 @@ export const baseBooks: Book[] = [
     {
         relatedBookIds: ['301', '300', '299', '298', '297', '296', '295', '294', '27', '66', '20', '68', '69', '60', '61', '63', '64', '67', '8'],
         cardOverview: "32 hours of survival. Hard sci-fi that spans 5,000 years, exploring how humanity rebuilds after the end.",
+        teaserTitle: "Why Does the Narrator Change Halfway Through?",
+        teaser: "How does switching from Mary Robinette Kowal to Will Damron handle a sudden 5,000-year time jump across thirty-two hours of orbital survival? Read our full review and Soundcheck to see our verdict.",
         narrator: "Mary Robinette Kowal, Will Damron",
         genre: ['Science Fiction', 'Hard Sci-Fi', 'Post-Apocalyptic', 'Space Survival', 'Epic', 'Speculative Fiction', 'Military Sci-Fi', 'Ecology'],
         description: "A catastrophic event renders the earth a ticking time bomb. In a feverish race against the inevitable, nations around the globe band together.",
@@ -2096,6 +2102,8 @@ export const baseBooks: Book[] = [
     },
     {
         cardOverview: '34 hours of nuclear horror. Often compared to "The Stand," but grittier and more magical.',
+        teaserTitle: "More Visceral Than Stephen King's The Stand?",
+        teaser: "Can Tom Stechschulte's weathered, gravelly voice carry thirty-four hours of brutal nuclear winter without overwhelming the listener? Read our full review and Soundcheck to see our verdict.",
         narrator: "Tom Stechschulte",
         genre: ['Horror', 'Post-Apocalyptic', 'Dark Fantasy', 'Science Fiction', 'Survival'],
         description: "Facing down an unprecedented malevolent force, Swan, a young girl with the ability to heal the earth, and an unlikely mix of survivors must traverse a nuclear wasteland to save humanity.",
@@ -2126,6 +2134,8 @@ export const baseBooks: Book[] = [
     },
     {
         cardOverview: "37 hours of the viral apocalypse. A literary blockbuster that spans a century of survival.",
+        teaserTitle: "Can Audio Survive a Sudden 100-Year Time Jump?",
+        teaser: "When the narrative abruptly leaps forward a full century a third of the way into this 37-hour epic, does Scott Brick keep you emotionally anchored? Read our full review and Soundcheck to see our verdict.",
         narrator: "Scott Brick",
         genre: ['Horror', 'Post-Apocalyptic', 'Science Fiction', 'Vampires', 'Survival', 'Epic'],
         description: "A government experiment goes wrong, unleashing a viral apocalypse of vampire-like beings. A century later, a colony of survivors must leave their sanctuary to save the world, guided by a girl who has been alive since it all began.",
@@ -8648,10 +8658,48 @@ export const baseBooks: Book[] = [
         affiliateLink: "https://www.amazon.co.uk/dp/B0DFZNX587?tag=thelongbookclub-21",
         relatedBookIds: ["480", "485", "479", "481", "483"],
         series: "Susan Ryeland"
+    },
+    {
+        id: "487",
+        slug: "wool-hugh-howey",
+        title: "Wool",
+        author: "Hugh Howey",
+        coverUrl: "/covers/wool-hugh-howey.jpg",
+        length: "14h 53m",
+        lengthHours: 14.9,
+        genre: ["Science Fiction", "Post-Apocalyptic", "Dystopian", "Thriller", "Survival", "Mystery"],
+        description: "In a ruined and toxic future landscape, a community exists inside a giant underground silo vertical miles deep, bound by strict rules they believe are meant to protect them.",
+        cardOverview: "15 hours trapped in an underground silo. The claustrophobic sci-fi phenomenon behind the hit TV series.",
+        teaserTitle: "Better in Your Headphones Than on Screen?",
+        teaser: "Does Edoardo Ballerini's hushed, claustrophobic narration make climbing the Silo's endless steel stairs even more suffocating than the television adaptation? Read our full review and Soundcheck to see our verdict.",
+        narrator: "Edoardo Ballerini",
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/4f/5b/d7/4f5bd768-a7ce-808a-98ac-db69e8f0e22a/mzaf_5217924729886696300.std.aac.p.m4a',
+        affiliateLink: "https://www.amazon.co.uk/dp/B00B28ODUM?tag=thelongbookclub-21",
+        relatedBookIds: ["3", "131", "134", "65", "12", "488"],
+        series: "Silo"
+    },
+    {
+        id: "488",
+        slug: "station-eleven-emily-st-john-mandel",
+        title: "Station Eleven",
+        author: "Emily St. John Mandel",
+        coverUrl: "/covers/station-eleven-emily-st-john-mandel.jpg",
+        length: "10h 50m",
+        lengthHours: 10.8,
+        genre: ["Science Fiction", "Post-Apocalyptic", "Literary Fiction", "Survival", "Dystopian"],
+        description: "After a devastating flu pandemic wipes out civilization, a nomadic troupe of actors and musicians travels the Great Lakes region performing Shakespeare for scattered survivor settlements.",
+        cardOverview: "11 hours of post-pandemic grace. A nomadic Shakespeare troupe proves that mere survival is insufficient.",
+        teaserTitle: "Can an Apocalypse Actually Feel Comforting?",
+        teaser: "How does Kirsten Potter navigate constant time jumps between the night civilization collapsed and twenty years later without losing narrative momentum? Read our full review and Soundcheck to see our verdict.",
+        narrator: "Kirsten Potter",
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/86/6a/6c/866a6c7a-8ab1-b0a7-9fc9-10c96c3373c2/mzaf_10179264948149501865.std.aac.p.m4a',
+        affiliateLink: "https://www.amazon.co.uk/dp/B0F9LJR4B5?tag=thelongbookclub-21",
+        relatedBookIds: ["487", "3", "131", "134", "65", "154"]
     }
 ];
 
 export const seriesBySlug: Record<string, string> = {
+    'wool-hugh-howey': 'Silo',
     // Cozy Crime
     'the-thursday-murder-club-richard-osman': 'The Thursday Murder Club',
     'magpie-murders-anthony-horowitz': 'Susan Ryeland',

@@ -1,5 +1,5 @@
 {
-  "lastAudited": "2026-11-03",
+  "lastAudited": "2026-11-04",
   "totalSitemapUrls": 836,
   "totalDiscoveredInGSC": 193,
   "totalUndiscoveredUrls": 643,
@@ -27,9 +27,26 @@
         "https://thelongbookclub.com/collections/cozy-fantasy/",
         "https://thelongbookclub.com/collections/space-opera/"
       ]
+    },
+    {
+      "date": "2026-11-04",
+      "label": "Batch 2 (Day 2 - Editorial Journal Guides & Top Narrators)",
+      "status": "Submitted",
+      "urls": [
+        "https://thelongbookclub.com/journal/how-to-squeeze-every-drop-of-value-out-of-your-audible-credits-and-free-trials/",
+        "https://thelongbookclub.com/journal/the-single-credit-survival-kit-audiobooks-that-last-an-entire-month/",
+        "https://thelongbookclub.com/journal/the-art-of-the-slow-burn-why-the-best-romantasy-requires-a-20-hour-commitment/",
+        "https://thelongbookclub.com/narrator/steven-pacey/",
+        "https://thelongbookclub.com/narrator/travis-baldree/",
+        "https://thelongbookclub.com/narrator/davina-porter/",
+        "https://thelongbookclub.com/narrator/michael-page/",
+        "https://thelongbookclub.com/narrator/rob-inglis/",
+        "https://thelongbookclub.com/narrator/tim-gerard-reynolds/",
+        "https://thelongbookclub.com/narrator/andy-serkis/"
+      ]
     }
   ],
-  "nextUpcomingBatch": "Batch 2 (Day 2 - Editorial Journal Guides & Top Narrators)",
+  "nextUpcomingBatch": "Batch 3 (Day 3 - 50h-280h Monumental Doorstoppers)",
   "batches": {
     "Batch 1 (Day 1 - Pillar Hubs & Core Collections)": [
       "https://thelongbookclub.com/long-book-finder/",

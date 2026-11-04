@@ -988,6 +988,10 @@ Redirect 301 /book/485 /book/moonflower-murders-anthony-horowitz/
 Redirect 301 /book/485/ /book/moonflower-murders-anthony-horowitz/
 Redirect 301 /book/486 /book/marble-hall-murders-anthony-horowitz/
 Redirect 301 /book/486/ /book/marble-hall-murders-anthony-horowitz/
+Redirect 301 /book/487 /book/wool-hugh-howey/
+Redirect 301 /book/487/ /book/wool-hugh-howey/
+Redirect 301 /book/488 /book/station-eleven-emily-st-john-mandel/
+Redirect 301 /book/488/ /book/station-eleven-emily-st-john-mandel/
 
   
   # --- Book Alias Redirects (Manual) ---

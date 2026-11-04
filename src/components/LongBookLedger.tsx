@@ -183,9 +183,8 @@ export const LongBookLedger: React.FC = () => {
                                 color: '#44514b',
                                 margin: '0 0 1.35rem 0'
                             }}
-                        >
-                            {item.paragraph}
-                        </p>
+                            dangerouslySetInnerHTML={{ __html: item.paragraph }}
+                        />
 
                         {/* 6. Call to Action / Link */}
                         {item.isExternal ? (
