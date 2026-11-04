@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FaSearch, FaTimes } from 'react-icons/fa';
+import { NARRATOR_BADGES, type NarratorStyleBadgeId } from '../data/narratorData';
 
 export type NarratorSortOption = 'default' | 'hours-desc' | 'longest-performance' | 'name-asc' | 'name-desc';
 
@@ -86,7 +88,7 @@ export const NarratorFilterBar: React.FC<NarratorFilterBarProps> = ({
             alignItems: 'center',
             width: '100%',
             maxWidth: '1240px',
-            margin: '0 auto 2.5rem auto',
+            margin: '0 auto 3.5rem auto',
             padding: '0 1rem'
         }}>
             {/* Main Controls Row: Search + Vocal Style + Genre + Sort + Clear */}
@@ -265,17 +267,21 @@ export const NarratorFilterBar: React.FC<NarratorFilterBarProps> = ({
             {/* Results Count Summary */}
             <div style={{
                 display: 'flex',
+                flexDirection: 'column',
                 justifyContent: 'center',
                 alignItems: 'center',
                 width: '100%',
-                marginTop: '1.75rem',
-                padding: '0 0.5rem',
+                marginTop: '3.25rem',
+                marginBottom: activeStyleObj ? '1.5rem' : '0.75rem',
+                padding: '0.5rem 0.5rem',
                 textAlign: 'center'
             }}>
                 <p style={{
                     fontFamily: 'var(--font-serif-accent), Lora, Georgia, serif',
                     fontStyle: 'italic',
-                    fontSize: '1.15rem',
+                    fontSize: 'clamp(1.85rem, 3.4vw, 2.3rem)',
+                    lineHeight: 1.25,
+                    letterSpacing: '-0.02em',
                     color: 'var(--color-brand-forrest)',
                     margin: 0
                 }}>
@@ -284,6 +290,101 @@ export const NarratorFilterBar: React.FC<NarratorFilterBarProps> = ({
                     {selectedGenre !== 'All' && <span> in <strong>{selectedGenre}</strong></span>}
                     {searchTerm && <span> matching &ldquo;<strong>{searchTerm}</strong>&rdquo;</span>}
                 </p>
+
+                {/* Active Vocal Style Spotlight Banner (No Background Box, Generous Vertical Padding) */}
+                {activeStyleObj && NARRATOR_BADGES[activeStyleObj.id as NarratorStyleBadgeId] && (() => {
+                    const badgeDef = NARRATOR_BADGES[activeStyleObj.id as NarratorStyleBadgeId];
+                    return (
+                        <div style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'space-between',
+                            gap: '2.25rem',
+                            flexWrap: 'wrap',
+                            width: '100%',
+                            maxWidth: '940px',
+                            marginTop: '2.75rem',
+                            padding: '1.5rem 0 2rem 0',
+                            textAlign: 'left',
+                            boxSizing: 'border-box'
+                        }}>
+                            {/* Left: SVG Shield + Title & 1-Sentence Overview */}
+                            <div style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '1.5rem',
+                                flex: '1 1 360px'
+                            }}>
+                                <img
+                                    src={badgeDef.imageUrl}
+                                    alt={badgeDef.name}
+                                    style={{
+                                        width: '72px',
+                                        height: 'auto',
+                                        flexShrink: 0,
+                                        filter: 'drop-shadow(0 4px 8px rgba(25, 45, 38, 0.2))'
+                                    }}
+                                />
+                                <div>
+                                    <h3 style={{
+                                        fontFamily: 'var(--font-serif-accent), Lora, Georgia, serif',
+                                        fontStyle: 'italic',
+                                        fontWeight: 500,
+                                        fontSize: '1.6rem',
+                                        color: 'var(--color-brand-coral)',
+                                        margin: '0 0 0.4rem 0',
+                                        lineHeight: 1.15
+                                    }}>
+                                        {badgeDef.name}
+                                    </h3>
+                                    <p style={{
+                                        fontFamily: 'var(--font-body)',
+                                        fontSize: '0.95rem',
+                                        lineHeight: 1.55,
+                                        color: 'var(--color-brand-forrest)',
+                                        opacity: 0.9,
+                                        margin: 0
+                                    }}>
+                                        {badgeDef.tooltip}
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Right: Coral CTA Button to Style Hub Page */}
+                            <Link
+                                to={`/narrator-styles/${badgeDef.id}/`}
+                                style={{
+                                    display: 'inline-flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    backgroundColor: 'var(--color-brand-coral)',
+                                    color: '#ffffff',
+                                    padding: '0.88rem 1.85rem',
+                                    borderRadius: '9999px',
+                                    fontFamily: 'var(--font-serif-accent), Lora, Georgia, serif',
+                                    fontStyle: 'italic',
+                                    fontSize: '0.98rem',
+                                    fontWeight: 500,
+                                    textDecoration: 'none',
+                                    whiteSpace: 'nowrap',
+                                    boxShadow: '0 4px 12px rgba(250, 112, 82, 0.28)',
+                                    transition: 'background-color 0.2s ease, transform 0.2s ease',
+                                    flexShrink: 0
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.backgroundColor = '#cc563b';
+                                    e.currentTarget.style.transform = 'translateY(-1px)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.backgroundColor = 'var(--color-brand-coral)';
+                                    e.currentTarget.style.transform = 'translateY(0)';
+                                }}
+                            >
+                                Explore Our {badgeDef.name} Department
+                            </Link>
+                        </div>
+                    );
+                })()}
             </div>
         </div>
     );

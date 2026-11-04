@@ -6,7 +6,6 @@ import { CreatorCard } from '../components/CreatorCard';
 import { LeaderboardPromoCard } from '../components/LeaderboardPromoCard';
 import { SEO } from '../components/SEO';
 import { Hero } from '../components/Hero';
-import { NarratorsNook } from '../components/NarratorsNook';
 import { getNarratorStats } from '../utils/creatorUtils';
 import { useSetHeaderTheme } from '../context/HeaderContext';
 import { NarratorFilterBar, type NarratorSortOption } from '../components/NarratorFilterBar';
@@ -75,16 +74,6 @@ export const Narrators: React.FC = () => {
             next.delete('sort');
             return next;
         }, { replace: true });
-    };
-
-    const handleNookSelectStyle = (styleSlug: string) => {
-        updateParams('style', styleSlug);
-        setTimeout(() => {
-            const target = document.getElementById('scroll-target');
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        }, 60);
     };
 
     const allNarrators = useMemo(() => getNarratorStats(books, 1), []);
@@ -279,16 +268,6 @@ export const Narrators: React.FC = () => {
                 chevronOpacity={0.5}
                 useDynamicColor={false}
                 overlayOpacity={0}
-            />
-
-            {/* Narrators’ Nook (Light Mode Vocal Styles & Soundchecks) */}
-            <NarratorsNook
-                variant="light"
-                showMicIcon={false}
-                headerTitle="Vocal Styles & Soundchecks"
-                selectedStyleSlug={selectedStyle !== 'All' ? selectedStyle : undefined}
-                headerSubtitle="Audition sample soundchecks across our seven signature vocal styles, then filter the directory below."
-                onSelectStyle={handleNookSelectStyle}
             />
 
             <div className="page-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>

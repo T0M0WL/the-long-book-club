@@ -89,7 +89,7 @@ If the wasteland feels too bleak, step into an island orphanage for magical yout
 The beauty of a monthly Audible credit is that you don’t have to choose just one side of human nature. When the week feels chaotic and overwhelming, retreat into our [Best Long Cozy Fantasy & Slice-of-Life Audiobooks](/collections/cozy-fantasy/). And when you want to trade everyday routine for forty hours of raw survival, grit, and rebuilding the world from scratch, step into our brand-new [Best Long Post-Apocalyptic & Wasteland Survival Audiobooks](/collections/post-apocalyptic-survival/) collection.
 `,
     tags: ['Psychology', 'Post-Apocalyptic', 'Cozy Fantasy', 'Subgenres'],
-    coverUrl: '/assets/journal/tea-shops-vs-wastelands.gif',
+    coverUrl: '/assets/journal/tea-shops-vs-wastelands.jpg',
 }, {
     id: '1770317893347',
     slug: 'the-single-credit-survival-kit-audiobooks-that-last-an-entire-month',

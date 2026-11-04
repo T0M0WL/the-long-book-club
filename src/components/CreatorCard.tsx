@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import type { CreatorItem } from '../utils/creatorUtils';
 import {
     narratorData,
@@ -16,6 +16,7 @@ interface CreatorCardProps {
 
 export const CreatorCard: React.FC<CreatorCardProps> = ({ creator, type }) => {
     const [isHovered, setIsHovered] = useState(false);
+    const navigate = useNavigate();
     const isSingleBook = creator.bookCount === 1 && creator.books.length > 0;
     const linkPath = isSingleBook && creator.books[0]?.slug
         ? `/book/${creator.books[0].slug}/`
@@ -226,16 +227,41 @@ export const CreatorCard: React.FC<CreatorCardProps> = ({ creator, type }) => {
                             const lines = (badge.labelLines && badge.labelLines.length > 0)
                                 ? badge.labelLines
                                 : badge.name.split(' ');
+                            const isMarathon = badge.id.endsWith('-club');
+                            const targetUrl = isMarathon ? '/narrators/leaderboard/' : `/narrator-styles/${badge.id}/`;
 
                             return (
                                 <div
                                     key={badge.id}
+                                    role="link"
+                                    tabIndex={0}
+                                    title={isMarathon ? `${badge.name} — View Marathon Leaderboard` : `${badge.name} — Explore Vocal Style Hub`}
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        e.stopPropagation();
+                                        navigate(targetUrl);
+                                    }}
+                                    onKeyDown={(e) => {
+                                        if (e.key === 'Enter' || e.key === ' ') {
+                                            e.preventDefault();
+                                            e.stopPropagation();
+                                            navigate(targetUrl);
+                                        }
+                                    }}
                                     style={{
                                         display: 'flex',
                                         flexDirection: 'column',
                                         alignItems: 'center',
                                         textAlign: 'center',
-                                        width: '66px'
+                                        width: '66px',
+                                        cursor: 'pointer',
+                                        transition: 'transform 0.2s ease'
+                                    }}
+                                    onMouseEnter={(e) => {
+                                        e.currentTarget.style.transform = 'scale(1.08)';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.currentTarget.style.transform = 'scale(1)';
                                     }}
                                 >
                                     <img

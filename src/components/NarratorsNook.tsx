@@ -8,6 +8,7 @@ const DARK_ACCENT_COLOR = '#dcd3b4';
 
 export interface NarratorsNookProps {
     variant?: 'dark' | 'light';
+    compact?: boolean;
     onSelectStyle?: (styleSlug: string) => void;
     selectedStyleSlug?: string;
     showHeader?: boolean;
@@ -18,6 +19,7 @@ export interface NarratorsNookProps {
 
 export const NarratorsNook: React.FC<NarratorsNookProps> = ({
     variant = 'dark',
+    compact = false,
     onSelectStyle,
     selectedStyleSlug,
     showHeader = true,
@@ -375,8 +377,8 @@ export const NarratorsNook: React.FC<NarratorsNookProps> = ({
             style={{
                 width: '100%',
                 position: 'relative',
-                paddingTop: isLight ? '3.5rem' : 'calc(5rem + 15px)',
-                paddingBottom: isLight ? '3.5rem' : 'calc(4rem + 15px)',
+                paddingTop: compact ? '2.5rem' : (isLight ? '3.5rem' : 'calc(5rem + 15px)'),
+                paddingBottom: compact ? '1.15rem' : (isLight ? '3.5rem' : 'calc(4rem + 15px)'),
                 overflow: 'hidden',
                 color: primaryColor,
                 userSelect: isMouseDown ? 'none' : 'auto'
@@ -446,7 +448,7 @@ export const NarratorsNook: React.FC<NarratorsNookProps> = ({
 
             {/* --- SECTION HEADER --- */}
             {showHeader && (
-                <div style={{ textAlign: 'center', marginBottom: isLight ? '2rem' : '2.5rem', padding: '0 1.5rem' }}>
+                <div style={{ textAlign: 'center', marginBottom: compact ? '1.35rem' : (isLight ? '2rem' : '2.5rem'), padding: '0 1.5rem' }}>
                     {/* Microphone Icon in Brand Coral */}
                     {showMicIcon && (
                         <div
@@ -503,7 +505,7 @@ export const NarratorsNook: React.FC<NarratorsNookProps> = ({
             <div style={{
                 position: 'relative',
                 width: '100%',
-                minHeight: '440px',
+                minHeight: compact ? 'auto' : '440px',
                 display: 'flex',
                 alignItems: 'center'
             }}>
@@ -569,6 +571,11 @@ export const NarratorsNook: React.FC<NarratorsNookProps> = ({
                             : 0;
 
                         const nameWords = slide.name.split(' ');
+                        const isStyleActive = Boolean(
+                            selectedStyleSlug &&
+                            selectedStyleSlug !== 'All' &&
+                            (selectedStyleSlug === slide.slug || selectedStyleSlug === slide.id)
+                        );
 
                         return (
                             <div
@@ -585,7 +592,7 @@ export const NarratorsNook: React.FC<NarratorsNookProps> = ({
                                     transform: isCenter ? 'scale(1)' : undefined,
                                     filter: isCenter ? 'none' : undefined,
                                     cursor: isCenter ? 'default' : 'pointer',
-                                    padding: '1.8rem 2.2rem 2.4rem 2.2rem',
+                                    padding: compact ? '1.35rem 2.2rem 1.4rem 2.2rem' : '1.8rem 2.2rem 2.4rem 2.2rem',
                                     backgroundColor: 'transparent',
                                     boxShadow: 'none',
                                     borderRight: isCenter
@@ -597,7 +604,7 @@ export const NarratorsNook: React.FC<NarratorsNookProps> = ({
                                     display: 'flex',
                                     flexDirection: 'column',
                                     justifyContent: 'space-between',
-                                    minHeight: '450px'
+                                    minHeight: compact ? 'auto' : '450px'
                                 }}
                             >
                                 <div>
@@ -605,8 +612,8 @@ export const NarratorsNook: React.FC<NarratorsNookProps> = ({
                                     <div style={{
                                         display: 'flex',
                                         gap: '1.4rem',
-                                        alignItems: 'flex-start',
-                                        marginBottom: '2.2rem',
+                                        alignItems: compact ? 'center' : 'flex-start',
+                                        marginBottom: compact ? '1.25rem' : '2.2rem',
                                         textAlign: 'left'
                                     }}>
                                         {/* Badge Graphic Shield */}
@@ -665,233 +672,237 @@ export const NarratorsNook: React.FC<NarratorsNookProps> = ({
                                         </div>
                                     </div>
 
-                                    {/* --- 2. SOUNDCHECK SECTION HEADER (Inter Bold, uppercase, Coral) --- */}
-                                    <div style={{
-                                        textAlign: 'center',
-                                        fontFamily: 'var(--font-body)', // Inter Bold
-                                        fontWeight: 700,
-                                        fontSize: '0.82rem',
-                                        letterSpacing: '0.16em',
-                                        color: 'var(--color-brand-coral)',
-                                        marginTop: '1.4rem',
-                                        marginBottom: '1.4rem',
-                                        textTransform: 'uppercase'
-                                    }}>
-                                        Soundcheck
-                                    </div>
+                                    {!compact && (
+                                        <>
+                                            {/* --- 2. SOUNDCHECK SECTION HEADER (Inter Bold, uppercase, Coral) --- */}
+                                            <div style={{
+                                                textAlign: 'center',
+                                                fontFamily: 'var(--font-body)', // Inter Bold
+                                                fontWeight: 700,
+                                                fontSize: '0.82rem',
+                                                letterSpacing: '0.16em',
+                                                color: 'var(--color-brand-coral)',
+                                                marginTop: '1.4rem',
+                                                marginBottom: '1.4rem',
+                                                textTransform: 'uppercase'
+                                            }}>
+                                                Soundcheck
+                                            </div>
 
-                                    {/* --- 3. 3 NARRATOR PILLS (Lora Italic) --- */}
-                                    <div style={{
-                                        display: 'flex',
-                                        gap: '0.65rem',
-                                        justifyContent: 'center',
-                                        marginBottom: '2.2rem',
-                                        flexWrap: 'wrap'
-                                    }}>
-                                        {slide.narrators.map((narr, nIdx) => {
-                                            const isSelected = currentNarrIndex === nIdx;
-                                            return (
+                                            {/* --- 3. 3 NARRATOR PILLS (Lora Italic) --- */}
+                                            <div style={{
+                                                display: 'flex',
+                                                gap: '0.65rem',
+                                                justifyContent: 'center',
+                                                marginBottom: '2.2rem',
+                                                flexWrap: 'wrap'
+                                            }}>
+                                                {slide.narrators.map((narr, nIdx) => {
+                                                    const isSelected = currentNarrIndex === nIdx;
+                                                    return (
+                                                        <button
+                                                            key={narr.name}
+                                                            type="button"
+                                                            disabled={!isCenter}
+                                                            onClick={(e) => {
+                                                                e.stopPropagation();
+                                                                handleNarratorChange(styleIdx, nIdx);
+                                                            }}
+                                                            style={{
+                                                                backgroundColor: isSelected
+                                                                    ? 'var(--color-brand-coral)'
+                                                                    : (isLight ? 'rgba(255, 107, 74, 0.10)' : 'rgba(255, 107, 74, 0.16)'),
+                                                                color: isSelected ? '#ffffff' : 'var(--color-brand-coral)',
+                                                                border: isSelected
+                                                                    ? '1px solid var(--color-brand-coral)'
+                                                                    : (isLight ? '1px solid rgba(255, 107, 74, 0.32)' : '1px solid rgba(255, 107, 74, 0.38)'),
+                                                                padding: '0.45rem 1.15rem',
+                                                                borderRadius: '9999px',
+                                                                fontSize: 'clamp(0.82rem, 1vw, 0.92rem)',
+                                                                fontFamily: 'var(--font-serif-accent)', // Lora Italic
+                                                                fontStyle: 'italic',
+                                                                fontWeight: isSelected ? 600 : 400,
+                                                                cursor: isCenter ? 'pointer' : 'default',
+                                                                transition: 'all 0.2s ease',
+                                                                boxShadow: isSelected
+                                                                    ? '0 3px 10px rgba(255, 107, 74, 0.35)'
+                                                                    : 'none',
+                                                                outline: 'none'
+                                                            }}
+                                                            onMouseEnter={(e) => {
+                                                                if (isCenter && !isSelected) {
+                                                                    e.currentTarget.style.backgroundColor = isLight ? 'rgba(255, 107, 74, 0.20)' : 'rgba(255, 107, 74, 0.28)';
+                                                                    e.currentTarget.style.color = isLight ? 'var(--color-brand-coral)' : '#ffffff';
+                                                                }
+                                                            }}
+                                                            onMouseLeave={(e) => {
+                                                                if (isCenter && !isSelected) {
+                                                                    e.currentTarget.style.backgroundColor = isLight ? 'rgba(255, 107, 74, 0.10)' : 'rgba(255, 107, 74, 0.16)';
+                                                                    e.currentTarget.style.color = 'var(--color-brand-coral)';
+                                                                }
+                                                            }}
+                                                        >
+                                                            {narr.name}
+                                                        </button>
+                                                    );
+                                                })}
+                                            </div>
+
+                                            {/* --- 4. AUDIO PLAYER --- */}
+                                            <div style={{
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                gap: '0.85rem',
+                                                width: '86%',
+                                                maxWidth: '360px',
+                                                margin: '0 auto 0.9rem auto'
+                                            }}>
+                                                {/* Play / Pause circular button */}
                                                 <button
-                                                    key={narr.name}
                                                     type="button"
                                                     disabled={!isCenter}
                                                     onClick={(e) => {
                                                         e.stopPropagation();
-                                                        handleNarratorChange(styleIdx, nIdx);
+                                                        togglePlay();
                                                     }}
+                                                    aria-label={isCenter && isPlaying ? 'Pause soundcheck' : 'Play soundcheck'}
                                                     style={{
-                                                        backgroundColor: isSelected
-                                                            ? 'var(--color-brand-coral)'
-                                                            : (isLight ? 'rgba(255, 107, 74, 0.10)' : 'rgba(255, 107, 74, 0.16)'),
-                                                        color: isSelected ? '#ffffff' : 'var(--color-brand-coral)',
-                                                        border: isSelected
-                                                            ? '1px solid var(--color-brand-coral)'
-                                                            : (isLight ? '1px solid rgba(255, 107, 74, 0.32)' : '1px solid rgba(255, 107, 74, 0.38)'),
-                                                        padding: '0.45rem 1.15rem',
-                                                        borderRadius: '9999px',
-                                                        fontSize: 'clamp(0.82rem, 1vw, 0.92rem)',
-                                                        fontFamily: 'var(--font-serif-accent)', // Lora Italic
-                                                        fontStyle: 'italic',
-                                                        fontWeight: isSelected ? 600 : 400,
+                                                        width: '38px',
+                                                        height: '38px',
+                                                        borderRadius: '50%',
+                                                        backgroundColor: isLight ? 'var(--color-brand-forrest)' : DARK_ACCENT_COLOR,
+                                                        border: 'none',
+                                                        display: 'flex',
+                                                        alignItems: 'center',
+                                                        justifyContent: 'center',
                                                         cursor: isCenter ? 'pointer' : 'default',
-                                                        transition: 'all 0.2s ease',
-                                                        boxShadow: isSelected
-                                                            ? '0 3px 10px rgba(255, 107, 74, 0.35)'
-                                                            : 'none',
+                                                        flexShrink: 0,
+                                                        boxShadow: isLight
+                                                            ? '0 2px 8px rgba(44, 81, 67, 0.25)'
+                                                            : '0 2px 8px rgba(0,0,0,0.25)',
+                                                        transition: 'transform 0.15s ease, background-color 0.15s ease',
                                                         outline: 'none'
                                                     }}
                                                     onMouseEnter={(e) => {
-                                                        if (isCenter && !isSelected) {
-                                                            e.currentTarget.style.backgroundColor = isLight ? 'rgba(255, 107, 74, 0.20)' : 'rgba(255, 107, 74, 0.28)';
-                                                            e.currentTarget.style.color = isLight ? 'var(--color-brand-coral)' : '#ffffff';
-                                                        }
+                                                        if (isCenter) e.currentTarget.style.transform = 'scale(1.08)';
                                                     }}
                                                     onMouseLeave={(e) => {
-                                                        if (isCenter && !isSelected) {
-                                                            e.currentTarget.style.backgroundColor = isLight ? 'rgba(255, 107, 74, 0.10)' : 'rgba(255, 107, 74, 0.16)';
-                                                            e.currentTarget.style.color = 'var(--color-brand-coral)';
-                                                        }
+                                                        if (isCenter) e.currentTarget.style.transform = 'scale(1)';
                                                     }}
                                                 >
-                                                    {narr.name}
+                                                    {isCenter && isPlaying ? (
+                                                        // Pause Icon
+                                                        <svg width="14" height="14" viewBox="0 0 24 24" fill={isLight ? '#ffffff' : 'var(--color-brand-coral)'}>
+                                                            <rect x="6" y="4" width="4" height="16" rx="1.5" />
+                                                            <rect x="14" y="4" width="4" height="16" rx="1.5" />
+                                                        </svg>
+                                                    ) : (
+                                                        // Play Icon
+                                                        <svg width="14" height="14" viewBox="0 0 24 24" fill={isLight ? '#ffffff' : 'var(--color-brand-coral)'} style={{ marginLeft: '2px' }}>
+                                                            <polygon points="5 3 19 12 5 21 5 3" />
+                                                        </svg>
+                                                    )}
                                                 </button>
-                                            );
-                                        })}
-                                    </div>
 
-                                    {/* --- 4. AUDIO PLAYER --- */}
-                                    <div style={{
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        gap: '0.85rem',
-                                        width: '86%',
-                                        maxWidth: '360px',
-                                        margin: '0 auto 0.9rem auto'
-                                    }}>
-                                        {/* Play / Pause circular button */}
-                                        <button
-                                            type="button"
-                                            disabled={!isCenter}
-                                            onClick={(e) => {
-                                                e.stopPropagation();
-                                                togglePlay();
-                                            }}
-                                            aria-label={isCenter && isPlaying ? 'Pause soundcheck' : 'Play soundcheck'}
-                                            style={{
-                                                width: '38px',
-                                                height: '38px',
-                                                borderRadius: '50%',
-                                                backgroundColor: isLight ? 'var(--color-brand-forrest)' : DARK_ACCENT_COLOR,
-                                                border: 'none',
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                justifyContent: 'center',
-                                                cursor: isCenter ? 'pointer' : 'default',
-                                                flexShrink: 0,
-                                                boxShadow: isLight
-                                                    ? '0 2px 8px rgba(44, 81, 67, 0.25)'
-                                                    : '0 2px 8px rgba(0,0,0,0.25)',
-                                                transition: 'transform 0.15s ease, background-color 0.15s ease',
-                                                outline: 'none'
-                                            }}
-                                            onMouseEnter={(e) => {
-                                                if (isCenter) e.currentTarget.style.transform = 'scale(1.08)';
-                                            }}
-                                            onMouseLeave={(e) => {
-                                                if (isCenter) e.currentTarget.style.transform = 'scale(1)';
-                                            }}
-                                        >
-                                            {isCenter && isPlaying ? (
-                                                // Pause Icon
-                                                <svg width="14" height="14" viewBox="0 0 24 24" fill={isLight ? '#ffffff' : 'var(--color-brand-coral)'}>
-                                                    <rect x="6" y="4" width="4" height="16" rx="1.5" />
-                                                    <rect x="14" y="4" width="4" height="16" rx="1.5" />
-                                                </svg>
-                                            ) : (
-                                                // Play Icon
-                                                <svg width="14" height="14" viewBox="0 0 24 24" fill={isLight ? '#ffffff' : 'var(--color-brand-coral)'} style={{ marginLeft: '2px' }}>
-                                                    <polygon points="5 3 19 12 5 21 5 3" />
-                                                </svg>
-                                            )}
-                                        </button>
+                                                {/* Scrubber Track */}
+                                                <div
+                                                    onClick={(e) => {
+                                                        if (isCenter) {
+                                                            e.stopPropagation();
+                                                            handleScrubberClick(e);
+                                                        }
+                                                    }}
+                                                    style={{
+                                                        flex: 1,
+                                                        height: '14px',
+                                                        display: 'flex',
+                                                        alignItems: 'center',
+                                                        cursor: isCenter ? 'pointer' : 'default',
+                                                        position: 'relative'
+                                                    }}
+                                                >
+                                                    <div style={{
+                                                        width: '100%',
+                                                        height: '3px',
+                                                        backgroundColor: isLight ? 'rgba(44, 81, 67, 0.18)' : 'rgba(220, 211, 180, 0.28)',
+                                                        borderRadius: '3px',
+                                                        position: 'relative'
+                                                    }}>
+                                                        {/* Progress Bar Fill */}
+                                                        <div style={{
+                                                            width: `${progressPercent}%`,
+                                                            height: '100%',
+                                                            backgroundColor: primaryColor,
+                                                            borderRadius: '3px',
+                                                            transition: 'width 0.1s linear'
+                                                        }} />
 
-                                        {/* Scrubber Track */}
-                                        <div
-                                            onClick={(e) => {
-                                                if (isCenter) {
-                                                    e.stopPropagation();
-                                                    handleScrubberClick(e);
-                                                }
-                                            }}
-                                            style={{
-                                                flex: 1,
-                                                height: '14px',
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                cursor: isCenter ? 'pointer' : 'default',
-                                                position: 'relative'
-                                            }}
-                                        >
-                                            <div style={{
-                                                width: '100%',
-                                                height: '3px',
-                                                backgroundColor: isLight ? 'rgba(44, 81, 67, 0.18)' : 'rgba(220, 211, 180, 0.28)',
-                                                borderRadius: '3px',
-                                                position: 'relative'
-                                            }}>
-                                                {/* Progress Bar Fill */}
+                                                        {/* Scrubber Thumb Knob */}
+                                                        <div style={{
+                                                            position: 'absolute',
+                                                            left: `${progressPercent}%`,
+                                                            top: '50%',
+                                                            transform: 'translate(-50%, -50%)',
+                                                            width: '11px',
+                                                            height: '11px',
+                                                            borderRadius: '50%',
+                                                            backgroundColor: primaryColor,
+                                                            boxShadow: isLight ? '0 1px 4px rgba(44, 81, 67, 0.3)' : '0 1px 4px rgba(0,0,0,0.3)',
+                                                            transition: 'left 0.1s linear'
+                                                        }} />
+                                                    </div>
+                                                </div>
+
+                                                {/* Time Indicator */}
                                                 <div style={{
-                                                    width: `${progressPercent}%`,
-                                                    height: '100%',
-                                                    backgroundColor: primaryColor,
-                                                    borderRadius: '3px',
-                                                    transition: 'width 0.1s linear'
-                                                }} />
-
-                                                {/* Scrubber Thumb Knob */}
-                                                <div style={{
-                                                    position: 'absolute',
-                                                    left: `${progressPercent}%`,
-                                                    top: '50%',
-                                                    transform: 'translate(-50%, -50%)',
-                                                    width: '11px',
-                                                    height: '11px',
-                                                    borderRadius: '50%',
-                                                    backgroundColor: primaryColor,
-                                                    boxShadow: isLight ? '0 1px 4px rgba(44, 81, 67, 0.3)' : '0 1px 4px rgba(0,0,0,0.3)',
-                                                    transition: 'left 0.1s linear'
-                                                }} />
+                                                    fontFamily: 'var(--font-body)',
+                                                    fontSize: '0.88rem',
+                                                    fontWeight: 500,
+                                                    color: primaryColor,
+                                                    minWidth: '32px',
+                                                    textAlign: 'right',
+                                                    userSelect: 'none'
+                                                }}>
+                                                    {isCenter && isPlaying ? formatAudioTime(currentTime) : currentNarr.defaultDuration}
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        {/* Time Indicator */}
-                                        <div style={{
-                                            fontFamily: 'var(--font-body)',
-                                            fontSize: '0.88rem',
-                                            fontWeight: 500,
-                                            color: primaryColor,
-                                            minWidth: '32px',
-                                            textAlign: 'right',
-                                            userSelect: 'none'
-                                        }}>
-                                            {isCenter && isPlaying ? formatAudioTime(currentTime) : currentNarr.defaultDuration}
-                                        </div>
-                                    </div>
-
-                                    {/* --- 5. NARRATOR CITATION (Inter Bold, under player) --- */}
-                                    <div style={{
-                                        textAlign: 'center',
-                                        padding: '0 0.5rem',
-                                        marginTop: '0.4rem',
-                                        marginBottom: '0.8rem',
-                                        fontFamily: 'var(--font-body)', // Inter Bold
-                                        fontWeight: 700,
-                                        fontSize: 'clamp(0.82rem, 1vw, 0.9rem)',
-                                        color: primaryColor,
-                                        lineHeight: 1.4
-                                    }}>
-                                        {renderNarratorLink(currentNarr.name, isCenter)}, from the Audio book{' '}
-                                        <Link
-                                            to={`/book/${currentNarr.bookSlug}/`}
-                                            onClick={(e) => {
-                                                if (!isCenter) e.preventDefault();
-                                            }}
-                                            style={{
+                                            {/* --- 5. NARRATOR CITATION (Inter Bold, under player) --- */}
+                                            <div style={{
+                                                textAlign: 'center',
+                                                padding: '0 0.5rem',
+                                                marginTop: '0.4rem',
+                                                marginBottom: '0.8rem',
+                                                fontFamily: 'var(--font-body)', // Inter Bold
+                                                fontWeight: 700,
+                                                fontSize: 'clamp(0.82rem, 1vw, 0.9rem)',
                                                 color: primaryColor,
-                                                textDecoration: 'underline',
-                                                textUnderlineOffset: '3px',
-                                                transition: 'color 0.2s ease'
-                                            }}
-                                            onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-brand-coral)'}
-                                            onMouseLeave={(e) => e.currentTarget.style.color = primaryColor}
-                                        >
-                                            {currentNarr.bookTitle}
-                                        </Link>
-                                    </div>
+                                                lineHeight: 1.4
+                                            }}>
+                                                {renderNarratorLink(currentNarr.name, isCenter)}, from the Audio book{' '}
+                                                <Link
+                                                    to={`/book/${currentNarr.bookSlug}/`}
+                                                    onClick={(e) => {
+                                                        if (!isCenter) e.preventDefault();
+                                                    }}
+                                                    style={{
+                                                        color: primaryColor,
+                                                        textDecoration: 'underline',
+                                                        textUnderlineOffset: '3px',
+                                                        transition: 'color 0.2s ease'
+                                                    }}
+                                                    onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-brand-coral)'}
+                                                    onMouseLeave={(e) => e.currentTarget.style.color = primaryColor}
+                                                >
+                                                    {currentNarr.bookTitle}
+                                                </Link>
+                                            </div>
+                                        </>
+                                    )}
                                 </div>
 
                                 {/* --- 6. BOTTOM CTA BUTTON (Lora Italic) --- */}
-                                <div style={{ textAlign: 'center', marginTop: '1.2rem', paddingBottom: '0.4rem' }}>
+                                <div style={{ textAlign: 'center', marginTop: compact ? '0.4rem' : '1.2rem', paddingBottom: '0.2rem' }}>
                                     {onSelectStyle ? (
                                         <>
                                             <button
@@ -899,14 +910,14 @@ export const NarratorsNook: React.FC<NarratorsNookProps> = ({
                                                 onClick={(e) => {
                                                     if (isCenter) {
                                                         e.stopPropagation();
-                                                        onSelectStyle(slide.slug);
+                                                        onSelectStyle(isStyleActive ? 'All' : slide.slug);
                                                     }
                                                 }}
                                                 style={{
                                                     display: 'inline-block',
-                                                    backgroundColor: 'var(--color-brand-coral)',
+                                                    backgroundColor: isStyleActive ? 'var(--color-brand-forrest)' : 'var(--color-brand-coral)',
                                                     color: '#ffffff',
-                                                    padding: '0.72rem 1.9rem',
+                                                    padding: '0.68rem 1.85rem',
                                                     borderRadius: '9999px',
                                                     border: 'none',
                                                     fontFamily: 'var(--font-serif-accent)', // Lora Italic
@@ -915,26 +926,30 @@ export const NarratorsNook: React.FC<NarratorsNookProps> = ({
                                                     fontWeight: 500,
                                                     textDecoration: 'none',
                                                     cursor: isCenter ? 'pointer' : 'default',
-                                                    boxShadow: '0 4px 14px rgba(255, 107, 74, 0.32)',
+                                                    boxShadow: isStyleActive
+                                                        ? '0 4px 14px rgba(44, 81, 67, 0.28)'
+                                                        : '0 4px 14px rgba(255, 107, 74, 0.32)',
                                                     transition: 'background-color 0.2s ease, transform 0.2s ease',
                                                     pointerEvents: isCenter ? 'auto' : 'none'
                                                 }}
                                                 onMouseEnter={(e) => {
                                                     if (isCenter) {
-                                                        e.currentTarget.style.backgroundColor = '#cc563b';
+                                                        e.currentTarget.style.backgroundColor = isStyleActive ? '#213d32' : '#cc563b';
                                                         e.currentTarget.style.transform = 'translateY(-1px)';
                                                     }
                                                 }}
                                                 onMouseLeave={(e) => {
                                                     if (isCenter) {
-                                                        e.currentTarget.style.backgroundColor = 'var(--color-brand-coral)';
+                                                        e.currentTarget.style.backgroundColor = isStyleActive ? 'var(--color-brand-forrest)' : 'var(--color-brand-coral)';
                                                         e.currentTarget.style.transform = 'translateY(0)';
                                                     }
                                                 }}
                                             >
-                                                Filter by {slide.name} Narrators ↓
+                                                {isStyleActive
+                                                    ? `✓ Filtering by ${slide.name} (Clear)`
+                                                    : `Filter by ${slide.name} Narrators ↓`}
                                             </button>
-                                            <div style={{ marginTop: '0.45rem' }}>
+                                            <div style={{ marginTop: '0.6rem' }}>
                                                 <Link
                                                     to={`/narrator-styles/${slide.slug}/`}
                                                     onClick={(e) => {
@@ -942,25 +957,22 @@ export const NarratorsNook: React.FC<NarratorsNookProps> = ({
                                                     }}
                                                     style={{
                                                         fontFamily: 'var(--font-body)',
-                                                        fontSize: '0.78rem',
-                                                        fontWeight: 500,
-                                                        color: primaryColor,
-                                                        opacity: 0.75,
+                                                        fontSize: '0.84rem',
+                                                        fontWeight: 600,
+                                                        color: 'var(--color-brand-coral)',
                                                         textDecoration: 'underline',
-                                                        textUnderlineOffset: '2px',
+                                                        textUnderlineOffset: '3px',
                                                         transition: 'opacity 0.2s ease, color 0.2s ease',
                                                         pointerEvents: isCenter ? 'auto' : 'none'
                                                     }}
                                                     onMouseEnter={(e) => {
-                                                        e.currentTarget.style.opacity = '1';
-                                                        e.currentTarget.style.color = 'var(--color-brand-coral)';
-                                                    }}
-                                                    onMouseLeave={(e) => {
-                                                        e.currentTarget.style.opacity = '0.75';
                                                         e.currentTarget.style.color = primaryColor;
                                                     }}
+                                                    onMouseLeave={(e) => {
+                                                        e.currentTarget.style.color = 'var(--color-brand-coral)';
+                                                    }}
                                                 >
-                                                    or explore {slide.name} style guide →
+                                                    Explore {slide.name} Style Guide &amp; Soundchecks →
                                                 </Link>
                                             </div>
                                         </>

@@ -589,12 +589,12 @@ export const Header = () => {
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                                 {[
                                     { label: '100+ HOUR HALL OF FAME LEADERBOARD', path: '/narrators/leaderboard/' },
-                                    { label: 'CHARACTER CHAMELEON PERFORMERS', path: '/narrators/?style=character-chameleon' },
-                                    { label: 'HISTORICAL GRAVITAS & AUTHORITY', path: '/narrators/?style=historical-gravitas' },
-                                    { label: 'FIRESIDE WARMTH STORYTELLERS', path: '/narrators/?style=fireside-warmth' },
-                                    { label: 'PROPULSIVE MOMENTUM PACING', path: '/narrators/?style=propulsive-momentum' },
-                                    { label: 'DIALECT & ACCENT IMMERSION', path: '/narrators/?style=dialect-immersion' },
-                                    { label: 'SATIRICAL BITE & DRY WIT', path: '/narrators/?style=satirical-bite' }
+                                    { label: 'CHARACTER CHAMELEON PERFORMERS', path: '/narrator-styles/character-chameleon/' },
+                                    { label: 'HISTORICAL GRAVITAS & AUTHORITY', path: '/narrator-styles/historical-gravitas/' },
+                                    { label: 'FIRESIDE WARMTH STORYTELLERS', path: '/narrator-styles/fireside-warmth/' },
+                                    { label: 'PROPULSIVE MOMENTUM PACING', path: '/narrator-styles/propulsive-momentum/' },
+                                    { label: 'DIALECT & ACCENT IMMERSION', path: '/narrator-styles/dialect-immersion/' },
+                                    { label: 'SATIRICAL BITE & DRY WIT', path: '/narrator-styles/satirical-bite/' }
                                 ].map(item => (
                                     <Link
                                         key={item.label}
