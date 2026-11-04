@@ -8731,6 +8731,24 @@ export const baseBooks: Book[] = [
         audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/02/4b/9b/024b9b56-8312-6d67-f117-2f1927418b22/mzaf_14631469298122841880.std.aac.p.m4a',
         affiliateLink: "https://www.amazon.co.uk/dp/B07VNNG7TX?tag=thelongbookclub-21",
         relatedBookIds: ["489", "105", "3", "487", "488"]
+    },
+    {
+        id: "491",
+        slug: "metamorphoses-ovid",
+        title: "Metamorphoses",
+        author: "Ovid",
+        coverUrl: "/covers/metamorphoses-ovid.jpg",
+        length: "17h 56m",
+        lengthHours: 17.93,
+        genre: ["Classics", "Mythology", "Poetry", "Ancient World", "Literary Fiction"],
+        description: "Ovid’s Roman epic spans fifteen books of mythical transformation, opening with the creation of the cosmos, Jupiter’s catastrophic world-cleansing deluge, and the repopulation of the earth.",
+        cardOverview: "18 hours of Roman myth. Ovid’s masterpiece of divine transformations, ancient deluges, and the birth of mankind.",
+        teaserTitle: "Can Classical Roman Verse Keep You Spellbound for 18 Hours?",
+        teaser: "How does veteran British actor Martin Jarvis bring theatrical vitality, dry wit, and epic gravitas to David Raeburn’s acclaimed Penguin translation across eighteen hours? Read our full review and Soundcheck to see our verdict.",
+        narrator: "Martin Jarvis, John Sackville, Maya Saroya",
+        audioPreviewUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/e6/83/f1/e683f1e5-86c1-3b80-1049-656cf1960c09/mzaf_2455520489709482755.std.aac.p.m4a',
+        affiliateLink: "https://www.amazon.co.uk/dp/B07VKPYBP3?tag=thelongbookclub-21",
+        relatedBookIds: ["205", "197", "198", "489", "490"]
     }
 ];
 

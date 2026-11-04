@@ -996,6 +996,8 @@ Redirect 301 /book/489 /book/the-last-man-mary-shelley/
 Redirect 301 /book/489/ /book/the-last-man-mary-shelley/
 Redirect 301 /book/490 /book/frankenstein-mary-shelley/
 Redirect 301 /book/490/ /book/frankenstein-mary-shelley/
+Redirect 301 /book/491 /book/metamorphoses-ovid/
+Redirect 301 /book/491/ /book/metamorphoses-ovid/
 
   
   # --- Book Alias Redirects (Manual) ---
