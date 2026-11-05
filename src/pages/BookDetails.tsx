@@ -384,7 +384,12 @@ export const BookDetails = () => {
                                 dangerouslySetInnerHTML={{
                                     __html: (review?.curatorNote || book.curatorNote || '')
                                         .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
-                                        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
+                                        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_match, text, url) => {
+                                            const isExternal = url.startsWith('http');
+                                            return isExternal
+                                                ? `<a href="${url}" target="_blank" rel="noopener noreferrer nofollow" style="color: var(--color-primary); text-decoration: underline;">${text}</a>`
+                                                : `<a href="${url}">${text}</a>`;
+                                        })
                                         .replace(/(?:\n|<br\s*\/?>)\s*((?:•|\d+\.)\s*(?:(?!\n|<br\s*\/?>).)+)/g, '<span class="series-book-item">$1</span>')
                                 }}
                             />
