@@ -698,11 +698,27 @@ async function prerender() {
     console.log(`✅ Prerendered ${staticPages.length} "Thick" hub pages.`);
 
     // --- Author Detail Prerendering (Enriched) ---
+    const AUTHOR_DATA_FILE = path.join(__dirname, '../src/data/authorData.ts');
+    const authorDataContent = fs.existsSync(AUTHOR_DATA_FILE) ? fs.readFileSync(AUTHOR_DATA_FILE, 'utf-8') : '';
+    const authorProfilesMap = new Map();
+    if (authorDataContent) {
+        const aBlocks = authorDataContent.split(/\n\s*'([a-z0-9-]+)':\s*\{/g);
+        for (let i = 1; i < aBlocks.length; i += 2) {
+            const aSlug = aBlocks[i];
+            const aBody = aBlocks[i + 1] || '';
+            const editorialBio = extractField(aBody, 'editorialBio', true);
+            authorProfilesMap.set(aSlug, { editorialBio });
+        }
+    }
+
     let authorCount = 0;
     sortedAuthors.forEach((author) => {
         const slug = author.slug;
+        const profile = authorProfilesMap.get(slug);
         const metaTitle = `${author.name} Audiobooks Over 20 Hours | The Long Book Club`;
-        const metaDesc = `Discover the best, longest audiobooks by ${author.name}. Explore ${author.books.length} epic listens totaling over ${Math.floor(author.totalHours)} hours of immersive storytelling, complete with narration reviews and soundchecks.`;
+        const metaDesc = profile?.editorialBio
+            ? `${author.name} in long-form audio. ${profile.editorialBio.slice(0, 150)}...`
+            : `Discover the best, longest audiobooks by ${author.name}. Explore ${author.books.length} epic listens totaling over ${Math.floor(author.totalHours)} hours of immersive storytelling, complete with narration reviews and soundchecks.`;
 
         let booksListHtml = '<ul>';
         for (const b of author.books) {
@@ -716,11 +732,15 @@ async function prerender() {
         }
         booksListHtml += '</ul>';
 
+        const bioHtml = profile?.editorialBio
+            ? `<div class="author-bio" style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;"><p>${escapeHtml(profile.editorialBio)}</p></div>`
+            : `<p>Every long-listen edition by ${escapeHtml(author.name)} in our collection, curated for expansive storytelling, deep worldbuilding, and maximum credit value.</p>`;
+
         const bodyContent = `
             <div id="no-js-content" style="max-width: 800px; margin: 0 auto; padding: 20px; font-family: sans-serif;">
                 <h1>${escapeHtml(author.name)} Audiobooks Over 20 Hours</h1>
                 <p><strong>${author.books.length} Audiobooks • Over ${Math.floor(author.totalHours)} Hours of Listening</strong></p>
-                <p>Every long-listen edition by ${escapeHtml(author.name)} in our collection, curated for expansive storytelling, deep worldbuilding, and maximum credit value.</p>
+                ${bioHtml}
                 <hr />
                 <h2>Epic Audiobooks by ${escapeHtml(author.name)}</h2>
                 ${booksListHtml}

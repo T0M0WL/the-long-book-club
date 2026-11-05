@@ -1,6 +1,9 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { books } from '../data/books';
+import { collections } from '../data/collections';
+import { authorProfiles } from '../data/authorData';
 import { BookGrid } from '../components/BookGrid';
+import { BookCard } from '../components/BookCard';
 import { SEO } from '../components/SEO';
 import { getAuthorBySlug } from '../utils/creatorUtils';
 import { useEffect, useRef } from 'react';
@@ -67,8 +70,12 @@ export const AuthorDetail = () => {
         );
     }
 
+    const profile = author ? authorProfiles[author.slug] : undefined;
+
     const pageTitle = `${author.name} Audiobooks Over 20 Hours`;
-    const seoDescription = `Discover the best, longest audiobooks by ${author.name}. Explore ${author.bookCount} epic listens totaling over ${Math.floor(author.totalHours)} hours of immersive storytelling, complete with narration reviews and soundchecks.`;
+    const seoDescription = profile?.editorialBio
+        ? `${author.name} in long-form audio. ${profile.editorialBio.slice(0, 150)}...`
+        : `Discover the best, longest audiobooks by ${author.name}. Explore ${author.bookCount} epic listens totaling over ${Math.floor(author.totalHours)} hours of immersive storytelling, complete with narration reviews and soundchecks.`;
     const canonicalUrl = `https://thelongbookclub.com/author/${author.slug}/`;
 
     const scrollToContent = () => {
@@ -216,17 +223,31 @@ export const AuthorDetail = () => {
                     }} />
 
                     {/* Intro */}
-                    <p style={{
-                        fontFamily: 'var(--font-serif-accent)',
-                        fontSize: '1.35rem',
-                        color: 'var(--color-brand-forrest)',
-                        maxWidth: '620px',
-                        margin: '0 auto',
-                        lineHeight: 1.6,
-                        opacity: 0.95
-                    }}>
-                        Every long-listen edition by {author.name} in our collection, curated for expansive storytelling, deep worldbuilding, and maximum credit value.
-                    </p>
+                    {profile?.editorialBio ? (
+                        <p style={{
+                            fontFamily: 'var(--font-serif-accent)',
+                            fontSize: '1.25rem',
+                            color: 'var(--color-brand-forrest)',
+                            maxWidth: '720px',
+                            margin: '0 auto',
+                            lineHeight: 1.65,
+                            opacity: 0.95
+                        }}>
+                            {profile.editorialBio}
+                        </p>
+                    ) : (
+                        <p style={{
+                            fontFamily: 'var(--font-serif-accent)',
+                            fontSize: '1.35rem',
+                            color: 'var(--color-brand-forrest)',
+                            maxWidth: '620px',
+                            margin: '0 auto',
+                            lineHeight: 1.6,
+                            opacity: 0.95
+                        }}>
+                            Every long-listen edition by {author.name} in our collection, curated for expansive storytelling, deep worldbuilding, and maximum credit value.
+                        </p>
+                    )}
 
                     {/* Chevron */}
                     <div
@@ -278,6 +299,147 @@ export const AuthorDetail = () => {
                 <div style={{ textAlign: 'left' }}>
                     <BookGrid books={author.books} />
                 </div>
+
+                {/* If You Like [Author], You Might Enjoy... */}
+                {(() => {
+                    const relatedCollection = profile?.relatedCollectionSlugs?.[0]
+                        ? collections.find(c => c.slug === profile.relatedCollectionSlugs![0])
+                        : undefined;
+
+                    const recommendedBooks = profile?.recommendedBookIds
+                        ? profile.recommendedBookIds.map(id => books.find(b => b.id === id)).filter(Boolean)
+                        : [];
+
+                    const maxRecBooks = relatedCollection ? 2 : 3;
+                    const displayRecBooks = recommendedBooks.slice(0, maxRecBooks);
+
+                    if (!relatedCollection && displayRecBooks.length === 0) return null;
+
+                    return (
+                        <div style={{ marginTop: '5rem', borderTop: '1px solid rgba(0,0,0,0.1)', paddingTop: '4rem' }}>
+                            <h3 style={{
+                                fontFamily: 'var(--font-serif-accent)',
+                                fontSize: '2rem',
+                                color: 'var(--color-brand-forrest)',
+                                marginBottom: '2rem',
+                                textAlign: 'left'
+                            }}>
+                                If You Enjoy {author.name}, You Might Also Like
+                            </h3>
+                            <div style={{
+                                display: 'grid',
+                                gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+                                gap: '2rem'
+                            }}>
+                                {/* Recommended Collection Card */}
+                                {relatedCollection && (
+                                    <Link
+                                        to={`/collections/${relatedCollection.slug}/`}
+                                        style={{
+                                            textDecoration: 'none',
+                                            color: 'inherit',
+                                            display: 'block'
+                                        }}
+                                    >
+                                        <div style={{
+                                            transition: 'transform 0.3s ease',
+                                            height: '100%',
+                                            display: 'flex',
+                                            flexDirection: 'column',
+                                            borderRadius: '0',
+                                            overflow: 'hidden'
+                                        }}
+                                            onMouseEnter={(e) => {
+                                                e.currentTarget.style.transform = 'translateY(-5px)';
+                                            }}
+                                            onMouseLeave={(e) => {
+                                                e.currentTarget.style.transform = 'translateY(0)';
+                                            }}
+                                        >
+                                            {relatedCollection.topGraphic ? (
+                                                <img
+                                                    src={relatedCollection.topGraphic}
+                                                    alt={relatedCollection.title}
+                                                    style={{ width: '100%', display: 'block' }}
+                                                />
+                                            ) : (
+                                                <div style={{ height: '150px', background: '#ccc' }}></div>
+                                            )}
+
+                                            <div style={{
+                                                backgroundColor: '#f2f1e7',
+                                                padding: '1.5rem',
+                                                flex: 1,
+                                                display: 'flex',
+                                                flexDirection: 'column',
+                                                alignItems: 'center',
+                                                textAlign: 'center'
+                                            }}>
+                                                <h3 style={{
+                                                    fontSize: '1.5rem',
+                                                    marginBottom: '0.5rem',
+                                                    fontFamily: 'var(--font-serif-accent)',
+                                                    color: 'var(--color-brand-forrest)',
+                                                    fontWeight: 400,
+                                                    lineHeight: 1.2
+                                                }}>
+                                                    {relatedCollection.title}
+                                                </h3>
+
+                                                <div style={{
+                                                    width: '40px',
+                                                    height: '2px',
+                                                    backgroundColor: 'var(--color-brand-forrest)',
+                                                    margin: '1rem 0',
+                                                    opacity: 0.6
+                                                }}></div>
+
+                                                <p style={{
+                                                    fontSize: '0.9rem',
+                                                    color: 'var(--color-text-muted)',
+                                                    marginBottom: '1.5rem',
+                                                    lineHeight: '1.5',
+                                                    fontFamily: 'var(--font-body)',
+                                                    flex: 1
+                                                }}>
+                                                    {relatedCollection.description}
+                                                </p>
+
+                                                <div style={{
+                                                    backgroundColor: 'var(--color-brand-coral)',
+                                                    color: 'white',
+                                                    padding: '0.75rem 2rem',
+                                                    borderRadius: '50px',
+                                                    fontSize: '1rem',
+                                                    fontWeight: 400,
+                                                    fontFamily: 'var(--font-serif-accent)',
+                                                    marginTop: 'auto'
+                                                }}>
+                                                    View Collection <span style={{ fontSize: '1.1em', lineHeight: 1, fontFamily: 'var(--font-body)' }}>&rarr;</span>
+                                                </div>
+                                            </div>
+
+                                            <img
+                                                src="/assets/Collections-Cards-Gfx/collectionsCard_bottom-Curve.svg"
+                                                alt=""
+                                                style={{
+                                                    width: '100%',
+                                                    display: 'block',
+                                                    marginTop: '-1px'
+                                                }}
+                                            />
+                                        </div>
+                                    </Link>
+                                )}
+
+                                {/* Recommended Books */}
+                                {displayRecBooks.map(b => (
+                                    <BookCard key={b!.id} book={b!} />
+                                ))}
+                            </div>
+                        </div>
+                    );
+                })()}
             </div>
         </div>
     );
