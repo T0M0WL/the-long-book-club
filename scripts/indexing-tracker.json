@@ -52,9 +52,26 @@
       "urls": [
         "https://thelongbookclub.com/collections/post-apocalyptic-survival/"
       ]
+    },
+    {
+      "date": "2026-11-05",
+      "label": "Batch 3 (Day 3 - New Editorial, Shelley Hub & Verified Unindexed Marquee Titles)",
+      "status": "Submitted",
+      "urls": [
+        "https://thelongbookclub.com/journal/tea-shops-vs-wastelands-why-audiobook-listeners-are-splitting-toward-two-opposite-extremes/",
+        "https://thelongbookclub.com/author/mary-shelley/",
+        "https://thelongbookclub.com/book/the-last-man-mary-shelley/",
+        "https://thelongbookclub.com/book/frankenstein-mary-shelley/",
+        "https://thelongbookclub.com/book/1q84-haruki-murakami/",
+        "https://thelongbookclub.com/book/2666-roberto-bolao/",
+        "https://thelongbookclub.com/book/a-dance-with-dragons-george-rr-martin/",
+        "https://thelongbookclub.com/book/a-discovery-of-witches-deborah-harkness/",
+        "https://thelongbookclub.com/book/a-feast-for-crows-george-rr-martin/",
+        "https://thelongbookclub.com/book/a-game-of-thrones-george-rr-martin/"
+      ]
     }
   ],
-  "nextUpcomingBatch": "Batch 3 (Day 3 - New Editorial, Shelley Hub & Verified Unindexed Marquee Titles)",
+  "nextUpcomingBatch": "Batch 4 (Day 4 - Verified GSC Unindexed URLs)",
   "batches": {
     "Batch 3 (Day 3 - New Editorial, Shelley Hub & Verified Unindexed Marquee Titles)": [
       "https://thelongbookclub.com/journal/tea-shops-vs-wastelands-why-audiobook-listeners-are-splitting-toward-two-opposite-extremes/",
