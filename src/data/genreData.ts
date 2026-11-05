@@ -216,6 +216,11 @@ export const genreData: GenreMeta[] = [
         "intro": "Towering collegiate spires, dangerous arcane libraries, rigorous combat trials, and forbidden curricula. Immerse yourself in expansive magic school audiobooks full of wonder and dark mystery."
     },
     {
+        "genre": "Magic Systems",
+        "metaTitle": "Best Long Audiobooks with Intricate Magic Systems (20+ Hours) | TLBC",
+        "intro": "Hard magic, internal consistency, and rule-bound sorcery. Explore long-form audiobooks where the mechanics, costs, and limits of magic are as deeply engineered as the plot."
+    },
+    {
         "genre": "Police Procedural",
         "metaTitle": "Best Long Police Procedural Audiobooks | The Long Book Club",
         "intro": "Forensic details, dogged detectives, precinct politics, and methodical criminal investigations. Explore gritty, true-to-life procedural audiobooks that reward patient, analytical listeners."

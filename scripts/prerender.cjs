@@ -16,7 +16,7 @@ const BASE_URL = 'https://thelongbookclub.com';
  * Enhanced to handle multi-line content for body injection.
  */
 function extractField(content, fieldName, stripHtml = true) {
-    const regex = new RegExp(`${fieldName}:\\s*(['"\`])((?:\\\\.|(?!\\1)[\\s\\S])*?)\\1`, 'm');
+    const regex = new RegExp(`["']?${fieldName}["']?\\s*:\\s*(['"\`])((?:\\\\.|(?!\\1)[\\s\\S])*?)\\1`, 'm');
     const match = content.match(regex);
     if (!match) return null;
     
