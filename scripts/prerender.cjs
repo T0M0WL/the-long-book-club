@@ -707,7 +707,27 @@ async function prerender() {
             const aSlug = aBlocks[i];
             const aBody = aBlocks[i + 1] || '';
             const editorialBio = extractField(aBody, 'editorialBio', true);
-            authorProfilesMap.set(aSlug, { editorialBio });
+            const colMatch = aBody.match(/relatedCollectionSlugs:\s*\[([^\]]+)\]/);
+            const relatedCollectionSlugs = colMatch ? colMatch[1].replace(/['"\s]/g, '').split(',').filter(Boolean) : [];
+            const bookIdsMatch = aBody.match(/recommendedBookIds:\s*\[([^\]]+)\]/);
+            const recommendedBookIds = bookIdsMatch ? bookIdsMatch[1].replace(/['"\s]/g, '').split(',').filter(Boolean) : [];
+            authorProfilesMap.set(aSlug, { editorialBio, relatedCollectionSlugs, recommendedBookIds });
+        }
+    }
+
+    // Parse collections for author recommendation injection
+    const collectionsList = [];
+    if (collectionsContent) {
+        const cBlocks = extractAllBlocks(collectionsContent);
+        for (const b of cBlocks) {
+            const cTitle = extractField(b, 'title');
+            const cDesc = extractField(b, 'description');
+            const cSlug = extractField(b, 'slug');
+            const bookIdsMatch = b.match(/bookIds:\s*\[([^\]]+)\]/);
+            const bookIds = bookIdsMatch ? bookIdsMatch[1].replace(/['"\s]/g, '').split(',').filter(Boolean) : [];
+            if (cTitle && cSlug) {
+                collectionsList.push({ title: cTitle, description: cDesc, slug: cSlug, bookIds });
+            }
         }
     }
 
@@ -736,6 +756,47 @@ async function prerender() {
             ? `<div class="author-bio" style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;"><p>${escapeHtml(profile.editorialBio)}</p></div>`
             : `<p>Every long-listen edition by ${escapeHtml(author.name)} in our collection, curated for expansive storytelling, deep worldbuilding, and maximum credit value.</p>`;
 
+        // Build recommendations (manual curated or automated fallback)
+        const authorBookIds = new Set(author.books.map(b => b.id));
+        const manualColSlug = profile?.relatedCollectionSlugs?.[0];
+        const manualCollection = manualColSlug ? collectionsList.find(c => c.slug === manualColSlug) : null;
+        const fallbackCollection = !manualCollection ? collectionsList.find(c => c.bookIds.some(id => authorBookIds.has(id))) : null;
+        const relatedCollection = manualCollection || fallbackCollection;
+
+        let recommendedBooks = [];
+        if (profile?.recommendedBookIds && profile.recommendedBookIds.length > 0) {
+            recommendedBooks = profile.recommendedBookIds
+                .map(id => allBooks.find(b => b.id === id))
+                .filter(Boolean);
+        } else {
+            const authorGenres = new Set(author.books.flatMap(b => Array.isArray(b.genre) ? b.genre : [b.genre]));
+            recommendedBooks = allBooks
+                .filter(b => !authorBookIds.has(b.id) && b.author !== author.name)
+                .map(b => {
+                    const otherGenres = Array.isArray(b.genre) ? b.genre : [b.genre];
+                    const overlap = otherGenres.filter(g => authorGenres.has(g));
+                    return { book: b, score: overlap.length };
+                })
+                .filter(item => item.score > 0)
+                .sort((a, b) => b.score - a.score)
+                .map(item => item.book);
+        }
+
+        const maxRecBooks = relatedCollection ? 2 : 3;
+        const displayRecBooks = recommendedBooks.slice(0, maxRecBooks);
+
+        let recHtml = '';
+        if (relatedCollection || displayRecBooks.length > 0) {
+            recHtml += `<hr /><h2>If You Enjoy ${escapeHtml(author.name)}, You Might Also Like</h2><ul>`;
+            if (relatedCollection) {
+                recHtml += `<li><strong>Curated Collection:</strong> <a href="/collections/${relatedCollection.slug}/">${escapeHtml(relatedCollection.title)}</a> &mdash; ${escapeHtml(relatedCollection.description || '')}</li>`;
+            }
+            for (const recBook of displayRecBooks) {
+                recHtml += `<li><strong>Recommended Audiobook:</strong> <a href="/book/${recBook.slug}/">${escapeHtml(recBook.title)}</a> (${escapeHtml(recBook.length || '')})${recBook.narrator ? ` - Narrated by ${escapeHtml(recBook.narrator)}` : ''}</li>`;
+            }
+            recHtml += `</ul>`;
+        }
+
         const bodyContent = `
             <div id="no-js-content" style="max-width: 800px; margin: 0 auto; padding: 20px; font-family: sans-serif;">
                 <h1>${escapeHtml(author.name)} Audiobooks Over 20 Hours</h1>
@@ -744,6 +805,7 @@ async function prerender() {
                 <hr />
                 <h2>Epic Audiobooks by ${escapeHtml(author.name)}</h2>
                 ${booksListHtml}
+                ${recHtml}
             </div>
         `;
 

@@ -302,13 +302,38 @@ export const AuthorDetail = () => {
 
                 {/* If You Like [Author], You Might Enjoy... */}
                 {(() => {
-                    const relatedCollection = profile?.relatedCollectionSlugs?.[0]
+                    const authorBookIds = new Set(author.books.map(b => b.id));
+
+                    // 1. Linked collection: manual from profile, or fallback to any collection containing one of the author's books
+                    const manualCollection = profile?.relatedCollectionSlugs?.[0]
                         ? collections.find(c => c.slug === profile.relatedCollectionSlugs![0])
                         : undefined;
 
-                    const recommendedBooks = profile?.recommendedBookIds
-                        ? profile.recommendedBookIds.map(id => books.find(b => b.id === id)).filter(Boolean)
+                    const fallbackCollection = !manualCollection
+                        ? collections.find(c => c.bookIds.some(id => authorBookIds.has(id)))
+                        : undefined;
+
+                    const relatedCollection = manualCollection || fallbackCollection;
+
+                    // 2. Recommended books: manual from profile, or fallback based on genre overlap
+                    let recommendedBooks = profile?.recommendedBookIds
+                        ? profile.recommendedBookIds.map(id => books.find(b => b.id === id)).filter((b): b is typeof books[0] => Boolean(b))
                         : [];
+
+                    if (recommendedBooks.length === 0) {
+                        const authorGenres = new Set(author.books.flatMap(b => Array.isArray(b.genre) ? b.genre : [b.genre]));
+
+                        recommendedBooks = books
+                            .filter(b => !authorBookIds.has(b.id) && b.author !== author.name)
+                            .map(b => {
+                                const otherGenres = Array.isArray(b.genre) ? b.genre : [b.genre];
+                                const overlap = otherGenres.filter(g => authorGenres.has(g));
+                                return { book: b, score: overlap.length };
+                            })
+                            .filter(item => item.score > 0)
+                            .sort((a, b) => b.score - a.score)
+                            .map(item => item.book);
+                    }
 
                     const maxRecBooks = relatedCollection ? 2 : 3;
                     const displayRecBooks = recommendedBooks.slice(0, maxRecBooks);
