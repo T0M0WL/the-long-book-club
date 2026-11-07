@@ -1838,7 +1838,7 @@ export const baseBooks: Book[] = [
     },
     {
         relatedBookIds: ["389", "388", "387", "386", "385", "384", "383", "382", "381", "380", "379", "378", "377", "376", "147"],
-        cardOverview: "24 hours of higher stakes. Saeris must confront political treachery and ancient magic as the Blood Court rises.",
+        cardOverview: "24 hours of Fae & Alchemy Book 2. Saeris must confront political treachery and ancient magic as the Blood Court rises.",
         narrator: "Stella Bloom, Anthony Palmini",
         teaserTitle: "Can 24 Hours of Treachery Sustain Romantic Tension?",
         teaser: "Do Stella Bloom and Anthony Palmini maintain the electric chemistry of Saeris and Kingfisher across twenty-four hours of escalating political betrayal? Read our full review and Soundcheck to see our verdict.",

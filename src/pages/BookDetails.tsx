@@ -383,6 +383,23 @@ export const BookDetails = () => {
                             }}
                                 dangerouslySetInnerHTML={{
                                     __html: (review?.curatorNote || book.curatorNote || '')
+                                        .replace(/(?:^|\n|<br\s*\/?>)\s*•\s*!\[([^\]]*)\]\(([^)]+)\)\s*([^\n\r]+)/g, (_match: string, alt: string, imgSrc: string, restText: string) => {
+                                            const firstLinkMatch = restText.match(/\[[^\]]+\]\(([^)]+)\)/);
+                                            const coverUrl = firstLinkMatch ? firstLinkMatch[1] : null;
+                                            const processedRest = restText
+                                                .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+                                                .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m: string, text: string, url: string) => {
+                                                    const isExternal = url.startsWith('http');
+                                                    return isExternal
+                                                        ? `<a href="${url}" target="_blank" rel="noopener noreferrer nofollow" style="color: var(--color-primary); text-decoration: underline;">${text}</a>`
+                                                        : `<a href="${url}">${text}</a>`;
+                                                });
+                                            const imgHtml = `<img src="${imgSrc}" alt="${alt}" style="width: 68px; height: 68px; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.14); object-fit: cover; display: block;" />`;
+                                            const linkedCover = coverUrl
+                                                ? `<a href="${coverUrl}" target="_blank" rel="noopener noreferrer nofollow" style="flex-shrink: 0; display: block;">${imgHtml}</a>`
+                                                : `<div style="flex-shrink: 0;">${imgHtml}</div>`;
+                                            return `<div class="companion-audiobook-card" style="display: flex; align-items: flex-start; gap: 14px; margin: 0.85rem 0; padding: 12px; background: rgba(0,0,0,0.025); border: 1px solid rgba(0,0,0,0.07); border-radius: 8px;">${linkedCover}<div style="flex: 1; min-width: 0; font-size: 0.88em; line-height: 1.55;">${processedRest}</div></div>`;
+                                        })
                                         .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
                                         .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_match, text, url) => {
                                             const isExternal = url.startsWith('http');

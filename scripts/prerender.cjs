@@ -85,10 +85,31 @@ function normalizeInternalUrl(url) {
  */
 function formatRichTextHtml(text) {
     if (!text) return '';
+    const customBlocks = [];
+
+    // Capture companion card markdown: • ![alt](imgSrc) restText
+    let processed = text.replace(/(?:^|\n|<br\s*\/?>)\s*•\s*!\[([^\]]*)\]\(([^)]+)\)\s*([^\n\r]+)/g, (_, alt, imgSrc, restText) => {
+        const firstLinkMatch = restText.match(/\[[^\]]+\]\(([^)]+)\)/);
+        const coverUrl = firstLinkMatch ? firstLinkMatch[1] : null;
+        let processedRest = restText
+            .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+            .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer nofollow" style="color: var(--color-primary); text-decoration: underline;">$1</a>');
+
+        const imgHtml = `<img src="${escapeHtml(imgSrc)}" alt="${escapeHtml(alt)}" style="width: 68px; height: 68px; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.14); object-fit: cover; display: block;" />`;
+        const linkedCover = coverUrl
+            ? `<a href="${escapeHtml(coverUrl)}" target="_blank" rel="noopener noreferrer nofollow" style="flex-shrink: 0; display: block;">${imgHtml}</a>`
+            : `<div style="flex-shrink: 0;">${imgHtml}</div>`;
+
+        const block = `<div class="companion-audiobook-card" style="display: flex; align-items: flex-start; gap: 14px; margin: 0.85rem 0; padding: 12px; background: rgba(0,0,0,0.025); border: 1px solid rgba(0,0,0,0.07); border-radius: 8px;">${linkedCover}<div style="flex: 1; min-width: 0; font-size: 0.88em; line-height: 1.55;">${processedRest}</div></div>`;
+        const token = `%%TLBC_CUSTOM_${customBlocks.length}%%`;
+        customBlocks.push(block);
+        return token;
+    });
+
     const links = [];
 
     // 1. Capture existing HTML <a href="...">label</a> tags
-    let processed = text.replace(/<a\s+[^>]*href=(?:\\?["'])([^"'\s\\]+)(?:\\?["'])[^>]*>([\s\S]*?)<\/a>/gi, (_, url, label) => {
+    processed = processed.replace(/<a\s+[^>]*href=(?:\\?["'])([^"'\s\\]+)(?:\\?["'])[^>]*>([\s\S]*?)<\/a>/gi, (_, url, label) => {
         const token = `%%TLBC_LINK_${links.length}%%`;
         const cleanLabel = label.replace(/<[^>]*>/g, '').trim();
         links.push(`<a href="${escapeHtml(normalizeInternalUrl(url))}">${escapeHtml(cleanLabel)}</a>`);
@@ -111,6 +132,11 @@ function formatRichTextHtml(text) {
     // 5. Restore crawlable <a> tags
     links.forEach((htmlLink, idx) => {
         processed = processed.replace(`%%TLBC_LINK_${idx}%%`, htmlLink);
+    });
+
+    // 6. Restore customBlocks
+    customBlocks.forEach((blockHtml, idx) => {
+        processed = processed.replace(`%%TLBC_CUSTOM_${idx}%%`, blockHtml);
     });
 
     return processed;
