@@ -6,6 +6,11 @@ export interface GenreMeta {
 
 export const genreData: GenreMeta[] = [
     {
+        "genre": "Hard Magic",
+        "metaTitle": "Best Long Hard Magic System Audiobooks (20+ Hours) | TLBC",
+        "intro": "Strict rules, physical costs, and rigorous internal logic. Explore audiobooks where magic operates with the exactitude of physics, chemistry, and code."
+    },
+    {
         "genre": "Adventure",
         "metaTitle": "Best Long Adventure Audiobooks (20+ Hours) | TLBC",
         "intro": "Embark on epic journeys with our curated list of long adventure audiobooks. Survival stories and grand expeditions that last for days."

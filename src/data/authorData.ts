@@ -7,6 +7,34 @@ export interface AuthorProfile {
 }
 
 export const authorProfiles: Record<string, AuthorProfile> = {
+    'james-islington': {
+        slug: 'james-islington',
+        name: 'James Islington',
+        editorialBio: "Australian fantasy sensation James Islington constructs monumental, labyrinthine epics defined by clockwork plotting, ancient mysteries, and morally complex protagonists. His acclaimed Hierarchy saga—anchored by *The Will of the Many* and *The Strength of the Few*—blends Roman-inspired academy intrigue with terrifying pyramidal power systems, brought to life through Euan Morton's aristocratic vocal brilliance.",
+        relatedCollectionSlugs: ['hard-magic-systems', 'grimdark-fantasy'],
+        recommendedBookIds: ['492', '493', '13']
+    },
+    'brent-weeks': {
+        slug: 'brent-weeks',
+        name: 'Brent Weeks',
+        editorialBio: "New York Times bestselling titan Brent Weeks is a master of relentless pacing, gritty tactical warfare, and innovative, rule-driven magic systems. Across his celebrated five-volume Lightbringer quintet—narrated with peerless versatility by Audie Award winner Simon Vance—Weeks crafts a kaleidoscopic world where light itself is transformed into weaponized matter through the science of Chromaturgy.",
+        relatedCollectionSlugs: ['hard-magic-systems', 'grimdark-fantasy'],
+        recommendedBookIds: ['494', '495', '496']
+    },
+    'robert-jackson-bennett': {
+        slug: 'robert-jackson-bennett',
+        name: 'Robert Jackson Bennett',
+        editorialBio: "Shirley Jackson and World Fantasy Award winner Robert Jackson Bennett writes high-octane speculative fiction featuring razor-sharp social commentary, cyberpunk sensibilities, and inventive industrial magic. His acclaimed Founders Trilogy—narrated with gritty underworld energy by Tara Sands—imagines a world where reality itself is hacked through the ancient programming language of scriving.",
+        relatedCollectionSlugs: ['hard-magic-systems'],
+        recommendedBookIds: ['499', '500', '501']
+    },
+    'andrew-rowe': {
+        slug: 'andrew-rowe',
+        name: 'Andrew Rowe',
+        editorialBio: "Game designer and progression fantasy pioneer Andrew Rowe crafts deeply analytical, puzzle-solving audio epics where magic operates with the systematic precision of computer code and tactical RPGs. His beloved Arcane Ascension saga—brought to life with infectious comedic charm and emotional sincerity by Nick Podehl—turns tower climbing, enchanting, and spire survival into an addictive modern listening obsession.",
+        relatedCollectionSlugs: ['hard-magic-systems', 'litrpg-gamelit'],
+        recommendedBookIds: ['502', '503', '504']
+    },
     'alexandre-dumas': {
         slug: 'alexandre-dumas',
         name: 'Alexandre Dumas',

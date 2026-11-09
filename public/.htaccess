@@ -1001,6 +1001,38 @@ Redirect 301 /book/490 /book/frankenstein-mary-shelley/
 Redirect 301 /book/490/ /book/frankenstein-mary-shelley/
 Redirect 301 /book/491 /book/metamorphoses-ovid/
 Redirect 301 /book/491/ /book/metamorphoses-ovid/
+Redirect 301 /book/492 /book/the-will-of-the-many-james-islington/
+Redirect 301 /book/492/ /book/the-will-of-the-many-james-islington/
+Redirect 301 /book/493 /book/the-strength-of-the-few-james-islington/
+Redirect 301 /book/493/ /book/the-strength-of-the-few-james-islington/
+Redirect 301 /book/494 /book/the-black-prism-brent-weeks/
+Redirect 301 /book/494/ /book/the-black-prism-brent-weeks/
+Redirect 301 /book/495 /book/the-blinding-knife-brent-weeks/
+Redirect 301 /book/495/ /book/the-blinding-knife-brent-weeks/
+Redirect 301 /book/496 /book/the-broken-eye-brent-weeks/
+Redirect 301 /book/496/ /book/the-broken-eye-brent-weeks/
+Redirect 301 /book/497 /book/the-blood-mirror-brent-weeks/
+Redirect 301 /book/497/ /book/the-blood-mirror-brent-weeks/
+Redirect 301 /book/498 /book/the-burning-white-brent-weeks/
+Redirect 301 /book/498/ /book/the-burning-white-brent-weeks/
+Redirect 301 /book/499 /book/foundryside-robert-jackson-bennett/
+Redirect 301 /book/499/ /book/foundryside-robert-jackson-bennett/
+Redirect 301 /book/500 /book/shorefall-robert-jackson-bennett/
+Redirect 301 /book/500/ /book/shorefall-robert-jackson-bennett/
+Redirect 301 /book/501 /book/locklands-robert-jackson-bennett/
+Redirect 301 /book/501/ /book/locklands-robert-jackson-bennett/
+Redirect 301 /book/502 /book/sufficiently-advanced-magic-andrew-rowe/
+Redirect 301 /book/502/ /book/sufficiently-advanced-magic-andrew-rowe/
+Redirect 301 /book/503 /book/on-the-shoulders-of-titans-andrew-rowe/
+Redirect 301 /book/503/ /book/on-the-shoulders-of-titans-andrew-rowe/
+Redirect 301 /book/504 /book/the-torch-that-ignites-the-stars-andrew-rowe/
+Redirect 301 /book/504/ /book/the-torch-that-ignites-the-stars-andrew-rowe/
+Redirect 301 /book/505 /book/the-silence-of-unworthy-gods-andrew-rowe/
+Redirect 301 /book/505/ /book/the-silence-of-unworthy-gods-andrew-rowe/
+Redirect 301 /book/506 /book/when-wizards-follow-fools-andrew-rowe/
+Redirect 301 /book/506/ /book/when-wizards-follow-fools-andrew-rowe/
+Redirect 301 /book/507 /book/a-brief-history-of-chronomancy-andrew-rowe/
+Redirect 301 /book/507/ /book/a-brief-history-of-chronomancy-andrew-rowe/
 
   
   # --- Book Alias Redirects (Manual) ---

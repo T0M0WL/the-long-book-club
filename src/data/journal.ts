@@ -23,12 +23,14 @@ export interface JournalPost {
 }
 
 // Staged drafts queued for future launch (not visible on the live site)
-export const stagedJournalPosts: JournalPost[] = [
+export const stagedJournalPosts: JournalPost[] = [];
+
+export const journalPosts: JournalPost[] = [
     {
         id: '1793781700000',
         slug: 'from-noahs-mud-to-silos-dust-the-4000-year-history-of-post-apocalyptic-fiction',
         title: "From Noah’s Mud to Silo’s Dust: The 4,000-Year History of Post-Apocalyptic Fiction",
-        date: '2026-11-04',
+        date: '2026-11-09',
         author: "The Long Book Club",
         coverUrl: '/assets/journal/From-Noahs-Mud-to-Silos-Dust.jpg',
         excerpt: "When we picture the end of the world today, our minds conjure Geiger counters, ash-choked skies, and subterranean concrete bunkers. But humanity’s earliest recorded stories were asking the exact same question: What does the morning after feel like? From Mesopotamian flood mud and angelic rebellions to Mary Shelley and the Silo, explore the 4,000-year evolution of post-apocalyptic fiction.",
@@ -139,10 +141,7 @@ From the muddy slopes of Mount Ararat to the rusted concrete stairwells of the S
 
 ---
 *(Explore 245+ hours of marathon listens in our flagship collection: [Best Long Post-Apocalyptic & Wasteland Survival Audiobooks](/collections/post-apocalyptic-survival/).)*`
-    }
-];
-
-export const journalPosts: JournalPost[] = [
+    },
     {
         id: '1793781600000',
     slug: 'tea-shops-vs-wastelands-why-audiobook-listeners-are-splitting-toward-two-opposite-extremes',

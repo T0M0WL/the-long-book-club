@@ -12,6 +12,36 @@ export interface LedgerNewsItem {
 
 export const ledgerNewsItems: LedgerNewsItem[] = [
     {
+        id: 'peacock-dungeon-crawler-carl-series-2026',
+        categoryTag: 'SCREEN ADAPTATION',
+        headline: 'Jeff Hays Will Voice Princess Donut in TV Series',
+        dateString: 'MON NOV 9th | 2026',
+        subHeadline: 'Peacock orders live-action series with Seth MacFarlane producing.',
+        paragraph: 'Matt Dinniman’s runaway LitRPG phenomenon is officially headed to television via Seth MacFarlane’s Fuzzy Door Productions and Universal TV. In unprecedented news for audiobook purists, legendary narrator Jeff Hays is attached to voice Princess Donut in the live-action production.',
+        ctaText: 'Read our review and Soundcheck of Dungeon Crawler Carl →',
+        ctaLink: '/book/dungeon-crawler-carl-matt-dinniman/'
+    },
+    {
+        id: 'the-captives-war-faith-of-beasts-2026',
+        categoryTag: 'NEW RELEASE',
+        headline: 'The Expanse Creators Expand Alien Empire',
+        dateString: 'MON NOV 9th | 2026',
+        subHeadline: 'James S.A. Corey and narrator Jefferson Mays return for The Faith of Beasts.',
+        paragraph: 'Following the critical triumph of The Mercy of Gods, author duo James S.A. Corey and master narrator Jefferson Mays continue The Captive\'s War saga, plunging deeper into human survival under the terrifying biological hierarchy of the Carryx empire.',
+        ctaText: 'Read our review and Soundcheck of The Mercy of Gods →',
+        ctaLink: '/book/the-mercy-of-gods-james-sa-corey/'
+    },
+    {
+        id: 'hard-magic-systems-collection-launch-2026',
+        categoryTag: 'CURATOR SPOTLIGHT',
+        headline: "Why 'Hard Magic' Is Dominating Audiobook Search",
+        dateString: 'MON NOV 9th | 2026',
+        subHeadline: "From Sanderson's Allomancy to Bennett's Scriving, listeners want magic with rules.",
+        paragraph: 'Forget vague hand-waving—today’s marathon listeners are flocking to fantasy worlds where magical systems operate with the rigorous logic of physics, coding, and metallurgy. Explore our brand-new curated collection featuring audio’s most intricate, rule-driven arcane epics.',
+        ctaText: 'Explore the Hard Magic Systems Curated Collection →',
+        ctaLink: '/collections/hard-magic-systems/'
+    },
+    {
         id: 'audie-awards-full-cast-categories-2026',
         categoryTag: 'INDUSTRY SHIFT',
         headline: 'The Audie Awards Crown Full-Cast Audio',

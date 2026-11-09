@@ -18,6 +18,22 @@ export interface Collection {
 
 export const collections: Collection[] = [
     {
+        id: 'hard-magic-systems',
+        title: 'Best Long Hard Magic System Audiobooks',
+        slug: 'hard-magic-systems',
+        coverUrl: '/covers/the-will-of-the-many-james-islington.jpg',
+        cardOverview: 'Alchemical equations, light drafting, reality scriving, and pyramidal mana. Explore 260+ hours of rule-driven magic systems with ruthless internal logic.',
+        heroSubtitle: 'Immerse yourself in fantasy worlds where magic functions with the rigorous logic of physics, mathematics, and code, brought to life across audio’s longest marathons.',
+        editorialHeading: 'Magic as Physics and Code',
+        editorialIntro: 'Coined by Brandon Sanderson in his famous First Law of Magic, hard magic systems prioritize strict rules, measurable costs, and logical constraints over mysterious hand-waving. From the light-refracting prism drafting of Brent Weeks’s [The Black Prism](/book/the-black-prism-brent-weeks/) and the reality-coding scriving of Robert Jackson Bennett’s [Foundryside](/book/foundryside-robert-jackson-bennett/) to James Islington’s brutal Roman-inspired Will hierarchy in [The Will of the Many](/book/the-will-of-the-many-james-islington/) and Andrew Rowe’s tactical spire progression in [Sufficiently Advanced Magic](/book/sufficiently-advanced-magic-andrew-rowe/), these 20+ hour audiobooks turn arcane mechanics into deeply satisfying, credit-maximizing intellectual thrillers.',
+        description: 'Alchemical equations, light drafting, reality scriving, and pyramidal mana. Explore 260+ hours of rule-driven magic systems with ruthless internal logic.',
+        bookIds: ['492', '494', '499', '502', '13', '23', '57', '473', '56', '468', '186', '467'],
+        topGraphic: '/assets/Collections-Cards-Gfx/Collection-Card-Top-DarkGrey.gif',
+        iconSvg: '/assets/collections-hero-images/Collections Icons SVGs/hard-magic-systems-icon.svg',
+        iconColor: '#e56a4e',
+        collectionNumber: '020'
+    },
+    {
         id: 'post-apocalyptic-survival',
         title: 'Best Long Post-Apocalyptic & Wasteland Survival Audiobooks',
         slug: 'post-apocalyptic-survival',
