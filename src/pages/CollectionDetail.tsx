@@ -911,6 +911,22 @@ export const CollectionDetail = () => {
 
 
                                     {/* Titles */}
+                                    {collection.slug === 'hard-magic-systems' && book!.id === '107' && (
+                                        <span style={{
+                                            display: 'inline-block',
+                                            backgroundColor: 'var(--color-brand-coral)',
+                                            color: 'white',
+                                            fontSize: '0.75rem',
+                                            fontWeight: 600,
+                                            padding: '0.25rem 0.75rem',
+                                            borderRadius: '1rem',
+                                            textTransform: 'uppercase',
+                                            letterSpacing: '0.05em',
+                                            marginBottom: '0.75rem'
+                                        }}>
+                                            Collection Wildcard
+                                        </span>
+                                    )}
                                     <h2 style={{
                                         fontSize: 'clamp(2rem, 2.5vw, 2.8rem)', // Slightly smaller for 2-col
                                         marginBottom: '0.75rem',
@@ -948,7 +964,18 @@ export const CollectionDetail = () => {
                                     </h3>
 
                                     {/* Curator Title / Teaser Title */}
-                                    {(book!.teaserTitle || book!.curatorTitle) && (
+                                    {collection.slug === 'hard-magic-systems' && book!.id === '107' ? (
+                                        <h4 style={{
+                                            fontSize: '1.25rem',
+                                            fontWeight: 700,
+                                            fontFamily: 'var(--font-serif-accent)',
+                                            color: 'var(--color-brand-forrest)',
+                                            marginBottom: '0.75rem',
+                                            lineHeight: 1.3
+                                        }}>
+                                            The Dark Alchemical Wildcard: Magic as Brutal Bioengineering
+                                        </h4>
+                                    ) : (book!.teaserTitle || book!.curatorTitle) && (
                                         <h4 style={{
                                             fontSize: '1.25rem',
                                             fontWeight: 700,
@@ -970,7 +997,9 @@ export const CollectionDetail = () => {
                                         fontFamily: 'var(--font-body)',
                                         opacity: 0.9
                                     }}>
-                                        {book!.teaser || book!.cardOverview || book!.description.substring(0, 180) + "..."}
+                                        {collection.slug === 'hard-magic-systems' && book!.id === '107'
+                                            ? "Our collection wildcard. While rooted in gothic romantasy and wartime survival, SenLinYu strips away wand-waving in favor of forensic medicine, cellular grafting, and systemic toxicity. Here, bodily modifications and alchemical enhancements obey unforgiving physical laws with devastating bodily costs."
+                                            : (book!.teaser || book!.cardOverview || book!.description.substring(0, 180) + "...")}
                                     </p>
 
                                     {/* Read More Button */}

@@ -1063,8 +1063,12 @@ async function prerender() {
             for (const id of bookIds) {
                 const book = allBooks.find(b => b.id === id);
                 if (book) {
-                    const snippetTitle = book.teaserTitle ? `<h4>${escapeHtml(book.teaserTitle)}</h4>` : '';
-                    const snippetText = book.teaser || book.cardOverview || book.description || '';
+                    let snippetTitle = book.teaserTitle ? `<h4>${escapeHtml(book.teaserTitle)}</h4>` : '';
+                    let snippetText = book.teaser || book.cardOverview || book.description || '';
+                    if (slug === 'hard-magic-systems' && book.id === '107') {
+                        snippetTitle = `<h4>[Collection Wildcard] The Dark Alchemical Wildcard: Magic as Brutal Bioengineering</h4>`;
+                        snippetText = `Our collection wildcard. While rooted in gothic romantasy and wartime survival, SenLinYu strips away wand-waving in favor of forensic medicine, cellular grafting, and systemic toxicity. Here, bodily modifications and alchemical enhancements obey unforgiving physical laws with devastating bodily costs.`;
+                    }
                     const snippetP = snippetText ? `<p>${escapeHtml(snippetText)}</p>` : '';
                     bookListHtml += `<li>
                         <h3><a href="/book/${book.slug}/">${escapeHtml(book.title)}</a> by ${escapeHtml(book.author)} (${escapeHtml(book.length)})</h3>
