@@ -194,7 +194,7 @@ function generateSitemap() {
             const journalContent = fs.readFileSync(JOURNAL_FILE_PATH, 'utf8');
             // Only index active journalPosts, ignore stagedJournalPosts
             const activeSection = journalContent.split('export const journalPosts: JournalPost[] =')[1] || journalContent;
-            const jSlugRegex = /slug:\s*['"]([^'"]+)['"]/g;
+            const jSlugRegex = /["']?slug["']?\s*:\s*['"]([^'"]+)['"]/g;
 
             let jMatch;
             let jCount = 0;

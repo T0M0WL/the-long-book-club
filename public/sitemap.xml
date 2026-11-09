@@ -4231,6 +4231,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://thelongbookclub.com/journal/magic-as-physics-and-code-hard-magic-system-audiobooks/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://thelongbookclub.com/journal/from-noahs-mud-to-silos-dust-the-4000-year-history-of-post-apocalyptic-fiction/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
