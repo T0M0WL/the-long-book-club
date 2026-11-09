@@ -821,17 +821,23 @@ export const TwoWorldsFeature: React.FC = () => {
         // Collect all book IDs belonging to Classic Pillar collections
         const classicBookIds = new Set<string>();
         classicCols.forEach(c => c.bookIds.forEach(id => classicBookIds.add(id)));
-        const classicBooksPool = books.filter(b => classicBookIds.has(b.id) && b.coverUrl);
+        // Brand rule: only feature 20+ hour audiobooks in these homepage spotlight positions.
+        // Shorter series entries may live in collections, but must never be showcased here.
+        const MIN_FEATURED_HOURS = 20;
+        const isFeatureEligible = (b: Book) =>
+            !!b.coverUrl && (b.lengthHours || getRoundedHours(b.length)) >= MIN_FEATURED_HOURS;
+
+        const classicBooksPool = books.filter(b => classicBookIds.has(b.id) && isFeatureEligible(b));
 
         // Collect all book IDs belonging to Micro Genre collections
         const microBookIds = new Set<string>();
         microCols.forEach(c => c.bookIds.forEach(id => microBookIds.add(id)));
-        const microBooksPool = books.filter(b => microBookIds.has(b.id) && b.coverUrl);
+        const microBooksPool = books.filter(b => microBookIds.has(b.id) && isFeatureEligible(b));
 
         const chosenClassicBook =
-            classicBooksPool[Math.floor(Math.random() * classicBooksPool.length)] || books[0];
+            classicBooksPool[Math.floor(Math.random() * classicBooksPool.length)] || books.find(isFeatureEligible) || books[0];
         const chosenMicroBook =
-            microBooksPool[Math.floor(Math.random() * microBooksPool.length)] || books[1];
+            microBooksPool[Math.floor(Math.random() * microBooksPool.length)] || books.filter(isFeatureEligible)[1] || books[1];
 
         return {
             featuredClassicCollection: chosenClassicCol,
