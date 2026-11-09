@@ -139,7 +139,7 @@ export const collections: Collection[] = [
         editorialHeading: 'Ancient Lore, Modern Resonance',
         editorialIntro: 'Classical mythology has found its modern golden age in audio. Authors like Madeline Miller in [Circe](/book/circe/) strip away centuries of dust to give ancient figures fierce agency, emotional complexity, and poetic resonance. Brought to life by voices like Perdita Weeks, these 10+ hour recordings honor ancient oral traditions while delivering profound contemporary resonance.',
         description: 'Olympian halls, Trojan beaches, and ancient lore resurrected with modern agency. Explore monumental 10+ hour audiobooks celebrating gods, monsters, and classical epics.',
-        bookIds: ['197', '198', '199', '200', '201', '202', '203', '204', '205'],
+        bookIds: ['197', '198', '199', '200', '201', '202', '203', '204', '205', '508'],
         topGraphic: '/assets/Collections-Cards-Gfx/Collection-Card-Top-Sage-Green.gif',
         iconSvg: '/assets/collections-hero-images/Collections Icons SVGs/mythology-icon.svg',
         iconColor: '#2c5143',

@@ -7,6 +7,13 @@ export interface AuthorProfile {
 }
 
 export const authorProfiles: Record<string, AuthorProfile> = {
+    'neil-gaiman': {
+        slug: 'neil-gaiman',
+        name: 'Neil Gaiman',
+        editorialBio: "Literary icon, master mythologist, and celebrated narrator Neil Gaiman crafts darkly whimsical, folkloric masterpieces that reawaken ancient oral traditions. Renowned for his distinctively warm, hypnotic British vocal cadence, Gaiman brings timeless vitality, sly wit, and profound poetic gravity to the gods, monsters, and mortal mortals of ancient Norse myth and modern fantasy.",
+        relatedCollectionSlugs: ['mythology-epics'],
+        recommendedBookIds: ['508', '197', '205']
+    },
     'james-islington': {
         slug: 'james-islington',
         name: 'James Islington',

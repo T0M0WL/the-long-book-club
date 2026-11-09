@@ -1033,6 +1033,8 @@ Redirect 301 /book/506 /book/when-wizards-follow-fools-andrew-rowe/
 Redirect 301 /book/506/ /book/when-wizards-follow-fools-andrew-rowe/
 Redirect 301 /book/507 /book/a-brief-history-of-chronomancy-andrew-rowe/
 Redirect 301 /book/507/ /book/a-brief-history-of-chronomancy-andrew-rowe/
+Redirect 301 /book/508 /book/norse-mythology-neil-gaiman/
+Redirect 301 /book/508/ /book/norse-mythology-neil-gaiman/
 
   
   # --- Book Alias Redirects (Manual) ---

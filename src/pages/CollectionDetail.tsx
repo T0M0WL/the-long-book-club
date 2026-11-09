@@ -34,7 +34,7 @@ export const CollectionDetail = () => {
 
     if (['romantasy', 'graphic-audio', 'litrpg-gamelit', 'space-opera'].includes(slug || '')) {
         themeColor = 'var(--color-brand-cloud)'; // White for Dark Heros
-    } else if (['bucket-list', 'dark-academia', 'long-life-stories', 'best-long-books-2025', 'nordic-noir', 'grimdark-fantasy', 'mythology-epics', 'british-espionage', 'silkpunk', 'time-travel', 'post-apocalyptic-survival'].includes(slug || '')) {
+    } else if (['bucket-list', 'dark-academia', 'long-life-stories', 'best-long-books-2025', 'nordic-noir', 'grimdark-fantasy', 'mythology-epics', 'british-espionage', 'silkpunk', 'time-travel', 'post-apocalyptic-survival', 'hard-magic-systems'].includes(slug || '')) {
         themeColor = 'var(--color-brand-sage)'; // Sage for Bucket List, Dark Academia, Long Life, Best of 2025, Nordic Noir, Grimdark, Mythology, British Espionage, Silkpunk, Time Travel, Post-Apocalyptic
     }
 
@@ -684,6 +684,39 @@ export const CollectionDetail = () => {
                             topGraphic="/assets/collections-hero-images/Collections Icons SVGs/post-apocalyptic-survival-icon.svg"
                             topGraphicDimensions={getBalancedDims('post-apocalyptic-survival')}
                             title="Post-Apocalyptic &amp; Wasteland Survival"
+                            sectionHeight="auto"
+                            sectionMinHeight="600px"
+                            sectionPadding="11rem 1rem 8rem 1rem"
+                            contentPaddingTop="0"
+                            titleFontSize="4.5rem"
+                            titleLineHeight={1.05}
+                            subtitleFontSize="1.4rem"
+                            subtitleLineHeight={1.6}
+                            subtitle={collection.heroSubtitle || collection.description}
+                            useDynamicColor={false}
+                            subtitleColor="rgba(203, 214, 171, 0.5)"
+                            separatorColor="rgba(203, 214, 171, 0.5)"
+                            showCornerGraphics={false}
+                            overlayOpacity={0}
+                            topGraphicColor="rgba(203, 214, 171, 0.5)"
+                            topGraphicBlendMode="normal"
+                            topGraphicFilter="none"
+                            topGraphicOpacity={0.9}
+                            contentBlendMode="normal"
+                            titleColor="rgba(203, 214, 171, 0.5)"
+                            titleBlendMode="normal"
+                            titleOpacity={1}
+                            chevronColor="var(--color-brand-sage)"
+                            chevronOpacity={0.5}
+                        />
+                    </>
+                ) : collection.slug === 'hard-magic-systems' ? (
+                    <>
+                        <Hero
+                            backgroundImage="/assets/collections-hero-images/LongBookClub-Slate-Hero-Image-01.gif"
+                            topGraphic="/assets/collections-hero-images/Collections Icons SVGs/hard-magic-systems-icon.svg"
+                            topGraphicDimensions={getBalancedDims('hard-magic-systems')}
+                            title="Hard Magic Systems"
                             sectionHeight="auto"
                             sectionMinHeight="600px"
                             sectionPadding="11rem 1rem 8rem 1rem"

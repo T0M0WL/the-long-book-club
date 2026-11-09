@@ -9038,6 +9038,24 @@ export const baseBooks: Book[] = [
         affiliateLink: "https://www.amazon.co.uk/dp/B0F15NQFFQ?tag=thelongbookclub-21",
         relatedBookIds: ["502","503","506","474","7"]
     },
+    {
+        id: "508",
+        slug: "norse-mythology-neil-gaiman",
+        title: "Norse Mythology",
+        author: "Neil Gaiman",
+        narrator: "Neil Gaiman",
+        coverUrl: "/covers/norse-mythology-neil-gaiman.jpg",
+        length: "6h 29m",
+        lengthHours: 6.48,
+        genre: ["Mythology", "Folklore", "Classics", "Fantasy", "Short Stories"],
+        description: "Master storyteller Neil Gaiman crafts a dazzling, witty rendition of the great Norse myths, following Odin, Thor, Loki, and the nine realms toward the apocalyptic twilight of Ragnarök.",
+        cardOverview: "6.5 hours of ancient Norse lore. Neil Gaiman narrates the exploits of Odin, Thor, and Loki from genesis to Ragnarök.",
+        teaserTitle: "Can Neil Gaiman's Fireside Narration Breathe New Fire into the Eddas?",
+        teaser: "Spanning six and a half hours of fireside storytelling, does Gaiman's lyrical, slyly comedic vocal delivery bring contemporary resonance to the brutal, apocalyptic doom of Norse myth? Read our curator review and Soundcheck to see why this recording is an essential companion for deep-dive mythology fans.",
+        audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/5a/1a/06/5a1a06ae-7fb5-9ba8-c57e-4e4fe2eb6acf/mzaf_2321083880888543021.std.aac.p.m4a",
+        affiliateLink: "https://www.amazon.co.uk/dp/B06WWM5HRC?tag=thelongbookclub-21",
+        relatedBookIds: ["205", "197", "198", "489"]
+    },
 ];
 
 export const seriesBySlug: Record<string, string> = {

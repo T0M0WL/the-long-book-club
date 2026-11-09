@@ -437,7 +437,26 @@ async function prerender() {
             const absoluteCoverUrl = coverUrl.startsWith('http') ? coverUrl : BASE_URL + coverUrl;
 
             const formattedJournalBody = fullContent
-                ? fullContent.split('\n\n').map(p => `<p>${formatRichTextHtml(p.trim())}</p>`).join('')
+                ? fullContent.split('\n\n').map(p => {
+                    const trimmed = p.trim();
+                    if (trimmed.startsWith('[Book: ') && trimmed.endsWith(']')) {
+                        const bookSlug = trimmed.replace('[Book: ', '').replace(']', '').trim();
+                        const b = allBooks.find(item => item.slug === bookSlug);
+                        if (b) {
+                            return `<div class="inline-book-card" style="margin: 2rem 0; background: #fff; border: 1px solid #eee; border-radius: 8px; overflow: hidden; display: flex; flex-direction: row; align-items: stretch;">
+                                <div style="width: 120px; height: 120px; flex-shrink: 0;">
+                                    <img src="${b.coverUrl}" alt="${escapeHtml(b.title)}" style="width: 100%; height: 100%; object-fit: cover;" />
+                                </div>
+                                <div style="padding: 1rem 1.5rem; display: flex; flex-direction: column; justify-content: center; text-align: left;">
+                                    <h4 style="margin: 0 0 0.5rem 0; font-size: 1.2rem; color: #2c5143;">${escapeHtml(b.title)}</h4>
+                                    <p style="margin: 0 0 0.5rem 0; font-size: 0.95rem; color: #666;">${escapeHtml(b.author)} • ${escapeHtml(b.length)}</p>
+                                    <a href="/book/${b.slug}/" style="color: #e56a4e; font-weight: bold; text-decoration: none;">View Book Details &rarr;</a>
+                                </div>
+                            </div>`;
+                        }
+                    }
+                    return `<p>${formatRichTextHtml(trimmed)}</p>`;
+                }).join('')
                 : `<p>${formatRichTextHtml(excerpt)}</p>`;
 
             const bodyContent = `
