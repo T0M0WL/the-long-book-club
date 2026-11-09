@@ -32,16 +32,16 @@ export const CollectionDetail = () => {
     // Determine Theme based on Collection (Hero Image Brightness)
     let themeColor = 'var(--color-brand-forrest)'; // Default (Dark Text for Light Heros)
 
-    if (['romantasy', 'graphic-audio', 'litrpg-gamelit', 'space-opera'].includes(slug || '')) {
+    if (['romantasy', 'graphic-audio', 'litrpg-gamelit', 'space-opera', 'post-apocalyptic-survival'].includes(slug || '')) {
         themeColor = 'var(--color-brand-cloud)'; // White for Dark Heros
-    } else if (['bucket-list', 'dark-academia', 'long-life-stories', 'best-long-books-2025', 'nordic-noir', 'grimdark-fantasy', 'mythology-epics', 'british-espionage', 'silkpunk', 'time-travel', 'post-apocalyptic-survival', 'hard-magic-systems'].includes(slug || '')) {
-        themeColor = 'var(--color-brand-sage)'; // Sage for Bucket List, Dark Academia, Long Life, Best of 2025, Nordic Noir, Grimdark, Mythology, British Espionage, Silkpunk, Time Travel, Post-Apocalyptic
+    } else if (['bucket-list', 'dark-academia', 'long-life-stories', 'best-long-books-2025', 'nordic-noir', 'grimdark-fantasy', 'mythology-epics', 'british-espionage', 'silkpunk', 'time-travel', 'hard-magic-systems'].includes(slug || '')) {
+        themeColor = 'var(--color-brand-sage)'; // Sage for Bucket List, Dark Academia, Long Life, Best of 2025, Nordic Noir, Grimdark, Mythology, British Espionage, Silkpunk, Time Travel, Hard Magic Systems
     }
 
     // Determine Active Link Text Color based on spec
     const getActiveLinkTextColor = (s: string | undefined) => {
         if (!s) return 'var(--color-brand-slate)';
-        if (['romantasy', 'graphic-audio', 'litrpg-gamelit', 'space-opera'].includes(s)) return 'var(--color-brand-coral)';
+        if (['romantasy', 'graphic-audio', 'litrpg-gamelit', 'space-opera', 'post-apocalyptic-survival'].includes(s)) return 'var(--color-brand-coral)';
         if (['longest-ever', 'magical-realism', 'cozy-fantasy', 'cozy-crime'].includes(s)) return 'var(--color-brand-sage)';
         if (['long-life-stories', 'bucket-list', 'grimdark-fantasy', 'mythology-epics', 'silkpunk', 'time-travel'].includes(s)) return 'var(--color-brand-forrest)';
         // Default for others (including dark-academia, nordic-noir, post-apocalyptic-survival which use Slate)
@@ -680,7 +680,7 @@ export const CollectionDetail = () => {
                 ) : collection.slug === 'post-apocalyptic-survival' ? (
                     <>
                         <Hero
-                            backgroundImage="/assets/collections-hero-images/LongBookClub-Slate-Hero-Image-01.gif"
+                            backgroundImage="/assets/collections-hero-images/LongBookClub-Collections-background-01.jpg"
                             topGraphic="/assets/collections-hero-images/Collections Icons SVGs/post-apocalyptic-survival-icon.svg"
                             topGraphicDimensions={getBalancedDims('post-apocalyptic-survival')}
                             title="Post-Apocalyptic &amp; Wasteland Survival"
@@ -690,24 +690,22 @@ export const CollectionDetail = () => {
                             contentPaddingTop="0"
                             titleFontSize="4.5rem"
                             titleLineHeight={1.05}
+                            titleOpacity={0.9}
                             subtitleFontSize="1.4rem"
                             subtitleLineHeight={1.6}
                             subtitle={collection.heroSubtitle || collection.description}
                             useDynamicColor={false}
-                            subtitleColor="rgba(203, 214, 171, 0.5)"
-                            separatorColor="rgba(203, 214, 171, 0.5)"
+                            titleColor="white"
+                            subtitleColor="white"
                             showCornerGraphics={false}
                             overlayOpacity={0}
-                            topGraphicColor="rgba(203, 214, 171, 0.5)"
-                            topGraphicBlendMode="normal"
-                            topGraphicFilter="none"
-                            topGraphicOpacity={0.9}
-                            contentBlendMode="normal"
-                            titleColor="rgba(203, 214, 171, 0.5)"
-                            titleBlendMode="normal"
-                            titleOpacity={1}
-                            chevronColor="var(--color-brand-sage)"
-                            chevronOpacity={0.5}
+                            topGraphicBlendMode="overlay"
+                            topGraphicFilter="brightness(0) invert(1)"
+                            topGraphicOpacity={0.95}
+                            contentBlendMode="overlay"
+                            titleBlendMode="overlay"
+                            subtitleBlendMode="overlay"
+                            chevronBlendMode="overlay"
                         />
                     </>
                 ) : collection.slug === 'hard-magic-systems' ? (
