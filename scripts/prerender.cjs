@@ -1185,6 +1185,9 @@ async function prerender() {
   RewriteRule ^genres/(.*)$ /genre/$1 [R=301,L]
   RewriteRule ^books/(.*)$ /book/$1 [R=301,L]
 
+  # Strip accidental doubled Markdown URLs if crawled (e.g. /book/slug/](https://...)
+  RewriteRule ^(.*)\]\(.*$ /$1 [R=301,L]
+
   # Force trailing slash on directories for SEO consistency and Prerender discovery
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_URI} !(.*)/$
