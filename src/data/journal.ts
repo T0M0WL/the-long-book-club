@@ -382,6 +382,12 @@ In the 2010s, Hugh Howey’s indie sensation [Wool](/book/wool-hugh-howey/) shif
 
 With Emily St. John Mandel’s [Station Eleven](/book/station-eleven-emily-st-john-mandel/) (11 hours), the genre completed its full 4,000-year circle. Focusing on a traveling troupe of actors performing Shakespeare twenty years after a devastating flu epidemic, Mandel discarded the violent gunfights of typical wasteland fiction to ask the fundamental question first posed on Mount Ararat: *Once you survive, what makes being alive worth it?* Their motto—*Because survival is insufficient*—is the ancient human spirit speaking across millennia.
 
+### 2026: The Booker Prize Surrenders to the Wasteland
+
+In November 2026, the 4,000-year evolution of apocalyptic storytelling reached a historic pinnacle when 81-year-old British author **M. John Harrison** won the Booker Prize for [*The End of Everything*](https://www.amazon.co.uk/dp/B0GVNBXV9N?tag=thelongbookclub-21)—becoming the oldest author ever to receive Britain’s premier literary honour. 
+
+Set along an unraveling English coastline in the wake of an eerie, reality-altering catastrophe, the novel proved that post-apocalyptic fiction is no longer confined to the genre paperback shelves: it is now recognized as the defining mirror of contemporary existential anxiety. While Harrison’s prize-winning audiobook is a concise 3.8-hour listen (too brief for our 10+ hour marathon shelves), listeners who want to experience his post-apocalyptic genius in full epic scale can turn to his legendary Dying Earth masterwork, [*Viriconium*](https://www.amazon.co.uk/Viriconium-Pastel-Nights-FANTASY-MASTERWORKS/dp/1857989953?tag=thelongbookclub-21)—a melancholic far-future sequence exploring an entropic Earth littered with the rusted, incomprehensible tech of fallen civilizations (with a phenomenal 19-hour and 45-minute unabridged audio edition narrated by Simon Vance on Audible).
+
 
 ## 5. Why Does the Wasteland Sound So Addictive in Headphones?
 
