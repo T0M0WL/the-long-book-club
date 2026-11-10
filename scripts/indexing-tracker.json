@@ -143,9 +143,28 @@
         "https://thelongbookclub.com/book/endymion-dan-simmons/",
         "https://thelongbookclub.com/book/gone-with-the-wind-margaret-mitchell/"
       ]
+    },
+    {
+      "date": "2026-11-10",
+      "label": "Batch 8 (Day 8 - Hard Magic Launch, Editorial & Verified GSC Unindexed)",
+      "status": "Submitted",
+      "urls": [
+        "https://thelongbookclub.com/collections/hard-magic-systems/",
+        "https://thelongbookclub.com/journal/magic-as-physics-and-code/",
+        "https://thelongbookclub.com/book/grant-ron-chernow/",
+        "https://thelongbookclub.com/book/great-expectations-charles-dickens/",
+        "https://thelongbookclub.com/book/harry-potter-and-the-philosopher-s-stone-j-k-rowling/",
+        "https://thelongbookclub.com/book/he-who-fights-with-monsters-11-shirtaloon-travis-deverell/",
+        "https://thelongbookclub.com/book/he-who-fights-with-monsters-12-shirtaloon-travis-deverell/",
+        "https://thelongbookclub.com/book/house-of-flame-and-shadow-sarah-j-maas/",
+        "https://thelongbookclub.com/book/house-of-sky-and-breath-sarah-j-maas/",
+        "https://thelongbookclub.com/book/impact-winter-travis-beacham/",
+        "https://thelongbookclub.com/book/iron-widow-xiran-jay-zhao/",
+        "https://thelongbookclub.com/book/it-stephen-king/"
+      ]
     }
   ],
-  "nextUpcomingBatch": "Batch 8 (Day 8 - Verified GSC Unindexed URLs)",
+  "nextUpcomingBatch": "Batch 9 (Day 9 - Verified GSC Unindexed URLs)",
   "batches": {
     "Batch 3 (Day 3 - New Editorial, Shelley Hub & Verified Unindexed Marquee Titles)": [
       "https://thelongbookclub.com/journal/tea-shops-vs-wastelands-why-audiobook-listeners-are-splitting-toward-two-opposite-extremes/",
@@ -212,7 +231,9 @@
       "https://thelongbookclub.com/book/endymion-dan-simmons/",
       "https://thelongbookclub.com/book/gone-with-the-wind-margaret-mitchell/"
     ],
-    "Batch 8 (Day 8 - Verified GSC Unindexed URLs)": [
+    "Batch 8 (Day 8 - Hard Magic Launch, Editorial & Verified GSC Unindexed)": [
+      "https://thelongbookclub.com/collections/hard-magic-systems/",
+      "https://thelongbookclub.com/journal/magic-as-physics-and-code/",
       "https://thelongbookclub.com/book/grant-ron-chernow/",
       "https://thelongbookclub.com/book/great-expectations-charles-dickens/",
       "https://thelongbookclub.com/book/harry-potter-and-the-philosopher-s-stone-j-k-rowling/",
@@ -222,23 +243,21 @@
       "https://thelongbookclub.com/book/house-of-sky-and-breath-sarah-j-maas/",
       "https://thelongbookclub.com/book/impact-winter-travis-beacham/",
       "https://thelongbookclub.com/book/iron-widow-xiran-jay-zhao/",
-      "https://thelongbookclub.com/book/it-stephen-king/",
-      "https://thelongbookclub.com/book/jane-eyre-charlotte-bront/",
-      "https://thelongbookclub.com/book/jonathan-strange-mr-norrell-susanna-clarke/"
+      "https://thelongbookclub.com/book/it-stephen-king/"
     ],
     "Batch 9 (Day 9 - Verified GSC Unindexed URLs)": [
+      "https://thelongbookclub.com/book/jane-eyre-charlotte-bront/",
+      "https://thelongbookclub.com/book/jonathan-strange-mr-norrell-susanna-clarke/",
+      "https://thelongbookclub.com/book/the-will-of-the-many-james-islington/",
+      "https://thelongbookclub.com/book/the-black-prism-brent-weeks/",
+      "https://thelongbookclub.com/book/foundryside-robert-jackson-bennett/",
+      "https://thelongbookclub.com/book/sufficiently-advanced-magic-andrew-rowe/",
       "https://thelongbookclub.com/book/katabasis-rf-kuang/",
       "https://thelongbookclub.com/book/knife-of-dreams-robert-jordan/",
       "https://thelongbookclub.com/book/kushiels-dart-jacqueline-carey/",
       "https://thelongbookclub.com/book/les-misrables-victor-hugo/",
       "https://thelongbookclub.com/book/leviathan-wakes-james-sa-corey/",
-      "https://thelongbookclub.com/book/locke-key-joe-hill/",
-      "https://thelongbookclub.com/book/lord-of-chaos-robert-jordan/",
-      "https://thelongbookclub.com/book/middlemarch-george-eliot/",
-      "https://thelongbookclub.com/book/moby-dick-herman-melville/",
-      "https://thelongbookclub.com/book/morning-star-pierce-brown/",
-      "https://thelongbookclub.com/book/nemesis-games-james-sa-corey/",
-      "https://thelongbookclub.com/book/new-spring-robert-jordan/"
+      "https://thelongbookclub.com/book/locke-key-joe-hill/"
     ],
     "Batch 10 (Day 10 - Verified GSC Unindexed URLs)": [
       "https://thelongbookclub.com/book/nexus-yuval-noah-harari/",
