@@ -250,7 +250,7 @@ Step into the labyrinth, turn up the volume, and discover why rules don't constr
         title: "From Noah’s Mud to Silo’s Dust: The 4,000-Year History of Post-Apocalyptic Fiction",
         date: '2026-11-09',
         author: "The Long Book Club",
-        coverUrl: '/assets/journal/From-Noahs-Mud-to-Silos-Dust.jpg',
+        coverUrl: '/assets/journal/from-noahs-mud-to-silos-dust-cover.jpg',
         excerpt: "When we picture the end of the world today, our minds conjure Geiger counters, ash-choked skies, and subterranean concrete bunkers. But humanity’s earliest recorded stories were asking the exact same question: What does the morning after feel like? From Mesopotamian flood mud and angelic rebellions to Mary Shelley and the Silo, explore the 4,000-year evolution of post-apocalyptic fiction.",
         tags: ["Post-Apocalyptic", "Literary History", "Audiobook Classics", "Curator Deep Dive"],
         content: `When you slip on your headphones to begin Hugh Howey’s 15-hour subterranean thriller [Wool](/book/wool-hugh-howey/), Stephen King’s 47-hour pandemic epic [The Stand](/book/the-stand-stephen-king/), or Robert McCammon’s 34-hour nuclear survival odyssey [Swan Song](/book/swan-song-robert-mccammon/), you are stepping onto very familiar modern ground. You expect rusted highway overpasses, desperate scavengers trading canned goods, biohazard suits, and the suffocating psychological weight of surviving an emptied world.
