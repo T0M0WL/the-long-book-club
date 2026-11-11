@@ -174,7 +174,7 @@ export const JournalPost = () => {
                 }}>
 
                     {/* LEFT COLUMN: Main Content */}
-                    <article>
+                    <article style={{ minWidth: 0, maxWidth: '100%' }}>
                         {/* Header Info - Title & Excerpt */}
                         <header style={{ marginBottom: '4rem', textAlign: 'left' }}>
 
@@ -205,7 +205,7 @@ export const JournalPost = () => {
                         </header>
 
                         {/* Render simple HTML/Markdown content */}
-                        <div className="journal-content">
+                        <div className="journal-content" style={{ minWidth: 0, maxWidth: '100%', overflowWrap: 'break-word', wordBreak: 'break-word' }}>
                             <ReactMarkdown
                                 remarkPlugins={[remarkBreaks]}
                                 components={{
@@ -236,7 +236,7 @@ export const JournalPost = () => {
                                         paddingLeft: '1.5rem',
                                         fontSize: '1.025rem',
                                         fontFamily: 'var(--font-body)',
-                                        lineHeight: 1.5,
+                                        lineHeight: 1.6,
                                         color: 'var(--color-brand-slate)',
                                         textAlign: 'left'
                                     }} {...props} />,
@@ -254,6 +254,37 @@ export const JournalPost = () => {
                                         lineHeight: 1.4,
                                         textAlign: 'left'
                                     }} {...props} />,
+                                    pre: ({ ...props }) => (
+                                        <div style={{
+                                            maxWidth: '100%',
+                                            overflowX: 'auto',
+                                            WebkitOverflowScrolling: 'touch',
+                                            margin: '2rem 0',
+                                            borderRadius: '8px',
+                                            backgroundColor: 'rgba(44, 81, 67, 0.04)',
+                                            border: '1px solid rgba(44, 81, 67, 0.1)',
+                                            padding: '1.25rem'
+                                        }}>
+                                            <pre style={{
+                                                margin: 0,
+                                                fontFamily: 'monospace',
+                                                fontSize: '0.85rem',
+                                                lineHeight: 1.5,
+                                                whiteSpace: 'pre',
+                                                color: 'var(--color-brand-slate)'
+                                            }} {...props} />
+                                        </div>
+                                    ),
+                                    code: ({ ...props }) => (
+                                        <code style={{
+                                            fontFamily: 'monospace',
+                                            fontSize: '0.9em',
+                                            backgroundColor: 'rgba(44, 81, 67, 0.06)',
+                                            padding: '0.15em 0.35em',
+                                            borderRadius: '4px',
+                                            color: 'var(--color-brand-forrest)'
+                                        }} {...props} />
+                                    ),
                                     a: ({ ...props }) => <a style={{
                                         color: 'var(--color-brand-forrest)',
                                         textDecoration: 'underline',
@@ -402,13 +433,27 @@ export const JournalPost = () => {
                 {/* Mobile Responsive Styles */}
                 <style>{`
                     @media (max-width: 900px) {
+                        #post-content {
+                            padding: 2rem 1.25rem 6rem 1.25rem !important;
+                        }
+                        article {
+                            min-width: 0 !important;
+                            max-width: 100% !important;
+                            width: 100% !important;
+                        }
                         .journal-content {
-                                grid-template-columns: 1fr;
+                            min-width: 0 !important;
+                            max-width: 100% !important;
+                            width: 100% !important;
+                        }
+                        .journal-content pre {
+                            max-width: 100% !important;
+                            overflow-x: auto !important;
                         }
                         /* Convert grid to single column on mobile */
                         div[style*="grid-template-columns"] {
                             grid-template-columns: 1fr !important;
-                            gap: 4rem !important;
+                            gap: 3rem !important;
                         }
                         aside {
                             position: static !important;
@@ -417,7 +462,7 @@ export const JournalPost = () => {
                             padding: 1.5rem !important; /* Less padding on mobile */
                         }
                         h1 {
-                            font-size: 3rem !important;
+                            font-size: 2.75rem !important;
                         }
                         .inline-book-card > div:first-child {
                             width: 100px !important;
