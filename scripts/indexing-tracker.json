@@ -181,9 +181,28 @@
         "https://thelongbookclub.com/book/les-misrables-victor-hugo/",
         "https://thelongbookclub.com/book/leviathan-wakes-james-sa-corey/"
       ]
+    },
+    {
+      "date": "2026-11-12",
+      "label": "Batch 10 (Day 10 - Verified GSC Unindexed URLs)",
+      "status": "Submitted",
+      "urls": [
+        "https://thelongbookclub.com/book/locke-key-joe-hill/",
+        "https://thelongbookclub.com/book/nexus-yuval-noah-harari/",
+        "https://thelongbookclub.com/book/oathbringer-brandon-sanderson/",
+        "https://thelongbookclub.com/book/onyx-storm-rebecca-yarros/",
+        "https://thelongbookclub.com/book/outlander-diana-gabaldon/",
+        "https://thelongbookclub.com/book/pandoras-star-peter-f-hamilton/",
+        "https://thelongbookclub.com/book/peter-the-great-robert-k-massie/",
+        "https://thelongbookclub.com/book/polostan-neal-stephenson/",
+        "https://thelongbookclub.com/book/priest-of-crowns-peter-mclean/",
+        "https://thelongbookclub.com/book/quicksilver-callie-hart/",
+        "https://thelongbookclub.com/book/reamde-neal-stephenson/",
+        "https://thelongbookclub.com/book/red-storm-rising-tom-clancy/"
+      ]
     }
   ],
-  "nextUpcomingBatch": "Batch 10 (Day 10 - Verified GSC Unindexed URLs)",
+  "nextUpcomingBatch": "Batch 11 (Day 11 - Verified GSC Unindexed URLs)",
   "batches": {
     "Batch 3 (Day 3 - New Editorial, Shelley Hub & Verified Unindexed Marquee Titles)": [
       "https://thelongbookclub.com/journal/tea-shops-vs-wastelands-why-audiobook-listeners-are-splitting-toward-two-opposite-extremes/",
@@ -487,5 +506,5 @@
     ]
   },
   "totalIndexedInGSC": 676,
-  "totalRemainingToSubmit": 177
+  "totalRemainingToSubmit": 165
 }
