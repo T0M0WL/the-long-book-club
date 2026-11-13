@@ -199,9 +199,27 @@
         "https://thelongbookclub.com/book/quicksilver-callie-hart/",
         "https://thelongbookclub.com/book/reamde-neal-stephenson/"
       ]
+    },
+    {
+      "date": "2026-11-13",
+      "label": "Batch 11 (Day 11 - Verified GSC Unindexed URLs)",
+      "status": "Submitted",
+      "urls": [
+        "https://thelongbookclub.com/book/red-storm-rising-tom-clancy/",
+        "https://thelongbookclub.com/book/resurrection-leo-tolstoy/",
+        "https://thelongbookclub.com/book/rhythm-of-war-brandon-sanderson/",
+        "https://thelongbookclub.com/book/seveneves-neal-stephenson/",
+        "https://thelongbookclub.com/book/shantaram-gregory-david-roberts/",
+        "https://thelongbookclub.com/book/sherlock-holmes-the-definitive-collection-arthur-conan-doyle/",
+        "https://thelongbookclub.com/book/ship-of-magic-robin-hobb/",
+        "https://thelongbookclub.com/book/shogun-james-clavell/",
+        "https://thelongbookclub.com/book/swan-song-robert-mccammon/",
+        "https://thelongbookclub.com/book/team-of-rivals-doris-kearns-goodwin/",
+        "https://thelongbookclub.com/book/the-amazing-adventures-of-kavalier-clay-michael-chabon/"
+      ]
     }
   ],
-  "nextUpcomingBatch": "Batch 11 (Day 11 - Verified GSC Unindexed URLs)",
+  "nextUpcomingBatch": "Batch 12 (Day 12 - Verified GSC Unindexed URLs)",
   "batches": {
     "Batch 3 (Day 3 - New Editorial, Shelley Hub & Verified Unindexed Marquee Titles)": [
       "https://thelongbookclub.com/journal/tea-shops-vs-wastelands-why-audiobook-listeners-are-splitting-toward-two-opposite-extremes/",
@@ -325,6 +343,7 @@
       "https://thelongbookclub.com/book/the-bee-sting-paul-murray/"
     ],
     "Batch 12 (Day 12 - Verified GSC Unindexed URLs)": [
+      "https://thelongbookclub.com/book/the-bee-sting-paul-murray/",
       "https://thelongbookclub.com/book/the-books-of-enoch/",
       "https://thelongbookclub.com/book/the-brothers-karamazov-fyodor-dostoevsky/",
       "https://thelongbookclub.com/book/the-city-and-its-uncertain-walls-haruki-murakami/",
@@ -335,10 +354,10 @@
       "https://thelongbookclub.com/book/the-decline-and-fall-of-the-roman-empire-edward-gibbon/",
       "https://thelongbookclub.com/book/the-dragon-reborn-robert-jordan/",
       "https://thelongbookclub.com/book/the-evening-and-the-morning-ken-follett/",
-      "https://thelongbookclub.com/book/the-eye-of-the-world-robert-jordan/",
-      "https://thelongbookclub.com/book/the-fall-of-hyperion-dan-simmons/"
+      "https://thelongbookclub.com/book/the-eye-of-the-world-robert-jordan/"
     ],
     "Batch 13 (Day 13 - Verified GSC Unindexed URLs)": [
+      "https://thelongbookclub.com/book/the-fall-of-hyperion-dan-simmons/",
       "https://thelongbookclub.com/book/the-fellowship-of-the-ring-jrr-tolkien/",
       "https://thelongbookclub.com/book/the-fires-of-heaven-robert-jordan/",
       "https://thelongbookclub.com/book/the-first-fifteen-lives-of-harry-august-claire-north/",
@@ -349,10 +368,10 @@
       "https://thelongbookclub.com/book/the-hero-of-ages-brandon-sanderson/",
       "https://thelongbookclub.com/book/the-historian-elizabeth-kostova/",
       "https://thelongbookclub.com/book/the-hunchback-of-notre-dame-victor-hugo/",
-      "https://thelongbookclub.com/book/the-jane-austen-collection-jane-austen/",
-      "https://thelongbookclub.com/book/the-lies-of-locke-lamora-scott-lynch/"
+      "https://thelongbookclub.com/book/the-jane-austen-collection-jane-austen/"
     ],
     "Batch 14 (Day 14 - Verified GSC Unindexed URLs)": [
+      "https://thelongbookclub.com/book/the-lies-of-locke-lamora-scott-lynch/",
       "https://thelongbookclub.com/book/the-magic-mountain-thomas-mann/",
       "https://thelongbookclub.com/book/the-naked-god-peter-f-hamilton/",
       "https://thelongbookclub.com/book/the-passage-justin-cronin/",
@@ -363,10 +382,10 @@
       "https://thelongbookclub.com/book/the-rise-and-fall-of-the-third-reich-william-l-shirer/",
       "https://thelongbookclub.com/book/the-sandman-neil-gaiman/",
       "https://thelongbookclub.com/book/the-secret-history-donna-tartt/",
-      "https://thelongbookclub.com/book/the-shadow-rising-robert-jordan/",
-      "https://thelongbookclub.com/book/the-song-of-achilles/"
+      "https://thelongbookclub.com/book/the-shadow-rising-robert-jordan/"
     ],
     "Batch 15 (Day 15 - Verified GSC Unindexed URLs)": [
+      "https://thelongbookclub.com/book/the-song-of-achilles/",
       "https://thelongbookclub.com/book/the-spellshop-sarah-beth-durst/",
       "https://thelongbookclub.com/book/the-stand-stephen-king/",
       "https://thelongbookclub.com/book/the-sword-of-kaigen-ml-wang/",
@@ -377,10 +396,10 @@
       "https://thelongbookclub.com/book/the-wandering-inn-book-2-pirateaba/",
       "https://thelongbookclub.com/book/the-way-of-kings-brandon-sanderson/",
       "https://thelongbookclub.com/book/the-well-of-ascension-brandon-sanderson/",
-      "https://thelongbookclub.com/book/the-wisdom-of-crowds-joe-abercrombie/",
-      "https://thelongbookclub.com/book/the-wise-mans-fear-patrick-rothfuss/"
+      "https://thelongbookclub.com/book/the-wisdom-of-crowds-joe-abercrombie/"
     ],
     "Batch 16 (Day 16 - Verified GSC Unindexed URLs)": [
+      "https://thelongbookclub.com/book/the-wise-mans-fear-patrick-rothfuss/",
       "https://thelongbookclub.com/book/the-witchs-heart/",
       "https://thelongbookclub.com/book/this-kingdom-will-not-kill-me-maggie-the-undying-ilona-andrews/",
       "https://thelongbookclub.com/book/titan-ron-chernow/",
@@ -391,10 +410,10 @@
       "https://thelongbookclub.com/book/wind-and-truth-brandon-sanderson/",
       "https://thelongbookclub.com/book/winter-solstice-the-wandering-inn-book-4-pirateaba/",
       "https://thelongbookclub.com/book/winters-heart-robert-jordan/",
-      "https://thelongbookclub.com/book/words-of-radiance-brandon-sanderson/",
-      "https://thelongbookclub.com/book/world-war-z-max-brooks/"
+      "https://thelongbookclub.com/book/words-of-radiance-brandon-sanderson/"
     ],
     "Batch 17 (Day 17 - Verified GSC Unindexed URLs)": [
+      "https://thelongbookclub.com/book/world-war-z-max-brooks/",
       "https://thelongbookclub.com/book/wuthering-heights-emily-bront/",
       "https://thelongbookclub.com/author/bryce-o/",
       "https://thelongbookclub.com/author/callie-hart/",
@@ -405,10 +424,10 @@
       "https://thelongbookclub.com/author/jk-rowling/",
       "https://thelongbookclub.com/author/matt-dinniman/",
       "https://thelongbookclub.com/author/patrick-rothfuss/",
-      "https://thelongbookclub.com/author/pierce-brown/",
-      "https://thelongbookclub.com/author/rebecca-thorne/"
+      "https://thelongbookclub.com/author/pierce-brown/"
     ],
     "Batch 18 (Day 18 - Verified GSC Unindexed URLs)": [
+      "https://thelongbookclub.com/author/rebecca-thorne/",
       "https://thelongbookclub.com/author/rebecca-yarros/",
       "https://thelongbookclub.com/author/robert-jordan/",
       "https://thelongbookclub.com/author/ron-chernow/",
@@ -419,10 +438,10 @@
       "https://thelongbookclub.com/narrator-styles/dual-pov-synergy/",
       "https://thelongbookclub.com/narrator-styles/historical-gravitas/",
       "https://thelongbookclub.com/narrator-styles/propulsive-momentum/",
-      "https://thelongbookclub.com/narrator/damian-lynch/",
-      "https://thelongbookclub.com/narrator/kate-reading/"
+      "https://thelongbookclub.com/narrator/damian-lynch/"
     ],
     "Batch 19 (Day 19 - Verified GSC Unindexed URLs)": [
+      "https://thelongbookclub.com/narrator/kate-reading/",
       "https://thelongbookclub.com/narrator/michael-kramer/",
       "https://thelongbookclub.com/narrator/neil-gaiman/",
       "https://thelongbookclub.com/narrator/pavi-proczko/",
@@ -433,10 +452,10 @@
       "https://thelongbookclub.com/genre/american-civil-war/",
       "https://thelongbookclub.com/genre/biopunk/",
       "https://thelongbookclub.com/genre/classic-sci-fi/",
-      "https://thelongbookclub.com/genre/classic/",
-      "https://thelongbookclub.com/genre/cold-war/"
+      "https://thelongbookclub.com/genre/classic/"
     ],
     "Batch 20 (Day 20 - Verified GSC Unindexed URLs)": [
+      "https://thelongbookclub.com/genre/cold-war/",
       "https://thelongbookclub.com/genre/dark-fantasy/",
       "https://thelongbookclub.com/genre/dark-romance/",
       "https://thelongbookclub.com/genre/dragons/",
@@ -447,10 +466,10 @@
       "https://thelongbookclub.com/genre/family-drama/",
       "https://thelongbookclub.com/genre/family-saga/",
       "https://thelongbookclub.com/genre/fantasy/",
-      "https://thelongbookclub.com/genre/fiction/",
-      "https://thelongbookclub.com/genre/first-contact/"
+      "https://thelongbookclub.com/genre/fiction/"
     ],
     "Batch 21 (Day 21 - Verified GSC Unindexed URLs)": [
+      "https://thelongbookclub.com/genre/first-contact/",
       "https://thelongbookclub.com/genre/flintlock-fantasy/",
       "https://thelongbookclub.com/genre/folklore/",
       "https://thelongbookclub.com/genre/gothic/",
@@ -461,10 +480,10 @@
       "https://thelongbookclub.com/genre/historical-fantasy/",
       "https://thelongbookclub.com/genre/history/",
       "https://thelongbookclub.com/genre/india/",
-      "https://thelongbookclub.com/genre/industrial-fantasy/",
-      "https://thelongbookclub.com/genre/literary-fiction/"
+      "https://thelongbookclub.com/genre/industrial-fantasy/"
     ],
     "Batch 22 (Day 22 - Verified GSC Unindexed URLs)": [
+      "https://thelongbookclub.com/genre/literary-fiction/",
       "https://thelongbookclub.com/genre/low-fantasy/",
       "https://thelongbookclub.com/genre/magic-academy/",
       "https://thelongbookclub.com/genre/magic/",
@@ -475,10 +494,10 @@
       "https://thelongbookclub.com/genre/mythology/",
       "https://thelongbookclub.com/genre/paranormal/",
       "https://thelongbookclub.com/genre/physics/",
-      "https://thelongbookclub.com/genre/picaresque/",
-      "https://thelongbookclub.com/genre/pirates/"
+      "https://thelongbookclub.com/genre/picaresque/"
     ],
     "Batch 23 (Day 23 - Verified GSC Unindexed URLs)": [
+      "https://thelongbookclub.com/genre/pirates/",
       "https://thelongbookclub.com/genre/portal-fantasy/",
       "https://thelongbookclub.com/genre/post-apocalyptic/",
       "https://thelongbookclub.com/genre/postmodernism/",
@@ -489,10 +508,10 @@
       "https://thelongbookclub.com/genre/romance/",
       "https://thelongbookclub.com/genre/romantasy/",
       "https://thelongbookclub.com/genre/russian-lit/",
-      "https://thelongbookclub.com/genre/sapphic/",
-      "https://thelongbookclub.com/genre/sci-fi-mystery/"
+      "https://thelongbookclub.com/genre/sapphic/"
     ],
     "Batch 24 (Day 24 - Verified GSC Unindexed URLs)": [
+      "https://thelongbookclub.com/genre/sci-fi-mystery/",
       "https://thelongbookclub.com/genre/seafaring-fantasy/",
       "https://thelongbookclub.com/genre/space-exploration/",
       "https://thelongbookclub.com/genre/speculative-fiction/",
@@ -506,5 +525,5 @@
     ]
   },
   "totalIndexedInGSC": 676,
-  "totalRemainingToSubmit": 166
+  "totalRemainingToSubmit": 155
 }
