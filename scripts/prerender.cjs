@@ -1234,6 +1234,8 @@ async function prerender() {
   Redirect 301 /genre/social-satire/ /genre/satire/
   Redirect 301 /genre/technology /genre/science-fiction/
   Redirect 301 /genre/technology/ /genre/science-fiction/
+  Redirect 301 /genre/fiction /genre/literary-fiction/
+  Redirect 301 /genre/fiction/ /genre/literary-fiction/
 
   # Prevent missing static assets from falling back to index.html (return clean 404 instead of HTML)
   RewriteCond %{REQUEST_URI} ^/(assets|covers)/ [NC]
