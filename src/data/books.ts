@@ -9124,7 +9124,7 @@ export const baseBooks: Book[] = [
         cardOverview: "21 hours of medieval library mystery. A sharp-minded friar hunts a killer inside a forbidden abbey labyrinth.",
         teaserTitle: "Can Audio Make Eco's Medieval Labyrinth Effortless?",
         teaser: "Famous for dense theological debates and Latin passages that stall print readers, does Sean Barrett's twenty-one-hour performance turn this monastic thriller into an addictive listen? Read our full review and Soundcheck to see our verdict.",
-        audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/b8/cd/13/b8cd137f-feca-b1c5-ebc4-e22457a0f81a/mzaf_10063816663130621015.std.aac.p.m4a",
+        audioPreviewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview114/v4/b8/b1/9a/b8b19a49-1b5a-2ed8-2541-d388ee0dbffd/mzaf_7137853007739020629.std.aac.p.m4a",
         affiliateLink: "https://www.amazon.co.uk/dp/B00EV89UEO?tag=thelongbookclub-21",
         relatedBookIds: ["108", "109", "163", "509"]
     },
