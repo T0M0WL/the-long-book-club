@@ -261,7 +261,7 @@ export const collections: Collection[] = [
         editorialHeading: 'Scholarly Ambition, Gothic Shadows',
         editorialIntro: 'Dark academia marries gothic romanticism with intellectual fever dreams. Anchored by Donna Tartt’s modern classic [The Secret History](/book/the-secret-history-donna-tartt/) and R.F. Kuang’s linguistically razor-sharp [Babel](/book/babel-rf-kuang/), these atmospheric audiobooks lure listeners into cloistered libraries, obsessive Greek societies, and moral ruin. Their slow-burn tension and rich vocabulary reward attentive, marathon listening.',
         description: 'Gothic campuses, intellectual obsessions, ancient languages, and dark collegiate secrets. The moodiest, most atmospheric long listens in modern audio, perfect for rainy afternoons.',
-        bookIds: ['108', '56', '109', '38', '110'],
+        bookIds: ['509', '510', '513', '514', '511', '515', '516', '512', '126', '492', '493', '23', '125', '163', '422', '418', '419', '421', '108', '56', '109', '38', '110'],
         topGraphic: '/assets/Collections-Cards-Gfx/cc2-dark-academia-top-gfx.gif'
     },
     {

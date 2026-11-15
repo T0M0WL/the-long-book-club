@@ -1035,6 +1035,22 @@ Redirect 301 /book/507 /book/a-brief-history-of-chronomancy-andrew-rowe/
 Redirect 301 /book/507/ /book/a-brief-history-of-chronomancy-andrew-rowe/
 Redirect 301 /book/508 /book/norse-mythology-neil-gaiman/
 Redirect 301 /book/508/ /book/norse-mythology-neil-gaiman/
+Redirect 301 /book/509 /book/if-we-were-villains-ml-rio/
+Redirect 301 /book/509/ /book/if-we-were-villains-ml-rio/
+Redirect 301 /book/510 /book/ninth-house-leigh-bardugo/
+Redirect 301 /book/510/ /book/ninth-house-leigh-bardugo/
+Redirect 301 /book/511 /book/the-atlas-six-olivie-blake/
+Redirect 301 /book/511/ /book/the-atlas-six-olivie-blake/
+Redirect 301 /book/512 /book/the-name-of-the-rose-umberto-eco/
+Redirect 301 /book/512/ /book/the-name-of-the-rose-umberto-eco/
+Redirect 301 /book/513 /book/hell-bent-leigh-bardugo/
+Redirect 301 /book/513/ /book/hell-bent-leigh-bardugo/
+Redirect 301 /book/514 /book/dead-beat-leigh-bardugo/
+Redirect 301 /book/514/ /book/dead-beat-leigh-bardugo/
+Redirect 301 /book/515 /book/the-atlas-paradox-olivie-blake/
+Redirect 301 /book/515/ /book/the-atlas-paradox-olivie-blake/
+Redirect 301 /book/516 /book/the-atlas-complex-olivie-blake/
+Redirect 301 /book/516/ /book/the-atlas-complex-olivie-blake/
 
   
   # --- Book Alias Redirects (Manual) ---
